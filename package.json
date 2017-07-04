@@ -3,15 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel": "^6.23.0",
+    "chai": "^4.0.2",
+    "expect.js": "^0.3.1",
+    "express": "^4.15.3",
     "material-ui": "^0.18.5",
+    "mocha": "^3.4.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-scripts": "1.0.10"
+    "react-scripts": "1.0.10",
+    "request": "^2.81.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "./node_modules/.bin/mocha --recursive --reporter spec",
     "eject": "react-scripts eject"
+
   }
 }

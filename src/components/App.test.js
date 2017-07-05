@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import RaisedButton from 'material-ui/RaisedButton';
 
 it('renders without crashing', () => {

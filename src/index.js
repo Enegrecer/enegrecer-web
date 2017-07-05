@@ -10,7 +10,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 ReactDOM.render(
-    <MuiThemeProvider>
+ <MuiThemeProvider>
         <App />
     </MuiThemeProvider>,
   document.getElementById('root')

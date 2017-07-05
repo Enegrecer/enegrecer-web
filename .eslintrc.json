@@ -3,6 +3,16 @@
     "plugins": [
         "react"
     ],
+    "globals": {
+        "expect": true,
+        "it": true
+    },
+    "env": {
+        "es6": true,
+        "mocha": true,
+        "node": true,
+        "browser": true
+    },        
     "settings": {
         "react": {
             "createClass": "createReactClass", // Regex for Component Factory to use, default to "createReactClass"
@@ -10,8 +20,15 @@
             "version": "15.0" // React version, default to the latest React stable release
         }
     },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },        
+        "sourceType": "module"    
+    },
     "rules": {
         "react/jsx-uses-react": "error",
         "react/jsx-uses-vars": "error"
     }
+
 }

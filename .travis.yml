@@ -1,0 +1,7 @@
+language: node_js
+cache: yarn
+node_js: '7'
+jobs:
+  include:
+  - stage: node_js unit tests
+    script: yarn test

@@ -1,4 +1,4 @@
-import  * as firebase from 'firebase';
+import * as firebase from 'firebase';
 
 var config = {
     apiKey: "AIzaSyDBiMFbhXtZudaEzdrASgnLtSwx94dXVB8",
@@ -7,7 +7,7 @@ var config = {
     projectId: "enegrecer-e37b3",
     storageBucket: "enegrecer-e37b3.appspot.com",
     messagingSenderId: "762507318866"
-  };
+};
 
 const firebaseApp = firebase.initializeApp(config);
 export default firebaseApp;

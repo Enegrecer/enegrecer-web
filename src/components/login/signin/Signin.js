@@ -1,69 +1,78 @@
 import React from 'react';
 import firebaseApp from '../../../utils/firebaseUtils';
 import styles from '../Login.style';
-
-const loginText = "Login";
-const passwordText = "Password";
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
+import Check from 'material-ui/svg-icons/navigation/check';
 
 export default class Signin extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
-        this.state={
-          logged: false,
-          login: ""
+        this.state = {
+            logged: false,
+            login: '',
+            password: ''
         };
-        this.setLogin = this.setLogin.bind(this)
-        this.setPassword = this.setPassword.bind(this)
-        this.onPressLoginButton = this.onPressLoginButton.bind(this)
     }
 
     render() {
         return (
             <div style={styles.wrapper}>
-                <div style={styles.input}>
-                    <p>{loginText}</p>
-                    <input id="login" value={this.state.login} onChange={this.setLogin}></input>
-                </div>
-                <div style={styles.input}>
-                    <p>{passwordText}</p>
-                    <input id="password" type="password" value={this.state.password} onChange={this.setPassword}></input>
-                </div>
-                <div style={styles.input}>
-                    <button onClick={this.onPressLoginButton}>{loginText}</button>
-                </div>
-                {this.state.logged && <p>Uhuu</p>}
+                {"Acesso"}
+                <TextField
+                    id="login"
+                    hintText="exemplo@email.com"
+                    errorText={this.state.loginError && "Informe o email utilizado para login"}
+                    floatingLabelText="Email"
+                    value={this.state.login}
+                    onChange={(e) => this.setProperty(e, 'login')}
+                />
+                <TextField
+                    id="password"
+                    errorText={this.state.loginError && "Informe a senha cadastrada"}
+                    floatingLabelText="Senha"
+                    value={this.state.password}
+                    onChange={(e) => this.setProperty(e, 'password')}
+                    type="password"
+                />
+                <RaisedButton
+                    label="Entrar"
+                    labelPosition="before"
+                    primary={true}
+                    icon={<Check />}
+                    fullWidth={true}
+                    disabled={this.state.logged}
+                    onTouchTap={() => this.onPressLoginButton()}
+                    style={styles.input}
+                />
             </div>
         )
     }
 
-    setLogin(event){
-      const currentState = this.state;
-      this.setState({
-        ...currentState,
-        login : event.target.value
-      })
+    setProperty(event, property) {
+        const currentState = this.state;
+        this.setState({
+            ...currentState,
+            [property]: event.target.value
+        })
     }
 
-    setPassword(event){
-      const currentState = this.state;
-      this.setState({
-        ...currentState,
-        password : event.target.value
-      })
-    }
-
-    onPressLoginButton(){
-      const login = this.state.login;
-      const password = this.state.password;
-      firebaseApp.auth().signInWithEmailAndPassword(login, password)
-        .then(() => {
-          this.setState({
-            ...this.state,
-            logged : true
-          })
-        }).then((error) => {
-      });
+    onPressLoginButton() {
+        firebaseApp.auth().signInWithEmailAndPassword(this.state.login, this.state.password)
+            .then(() => {
+                this.setState({
+                    ...this.state,
+                    logged: true
+                });
+            })
+            .catch((error) => {
+                this.setState({
+                    loginError: true,
+                    password: '',
+                    login: ''
+                });
+            });
     }
 
 }

@@ -1,78 +1,87 @@
 import React from 'react';
 import firebaseApp from '../../../utils/firebaseUtils';
 import styles from '../Login.style';
-
-const loginText = "Login";
-const registerText = "Register";
-const passwordText = "Password";
-const firstNameText = "First Name";
-const lastNameText = "Last Name";
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
+import Check from 'material-ui/svg-icons/navigation/check';
 
 export default class Signup extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
-        this.state={
-          logged: false,
-          login: "",
-          password: "",
-          firstName: "",
-          lastName: ""
+        this.state = {
+            logged: false,
+            login: "",
+            password: "",
+            firstName: "",
+            lastName: ""
         };
     }
 
     render() {
         return (
             <div style={styles.wrapper}>
-                <div style={styles.input}>
-                    <p>{firstNameText}</p>
-                    <input id="first_name" value={this.state.firstName}
-                    onChange={(event) => this.setProperty(event,"firstName")}></input>
-                </div>
-                <div style={styles.input}>
-                    <p>{lastNameText}</p>
-                    <input id="last_name" value={this.state.lastName}
-                    onChange={(event) => this.setProperty(event,"lastName")}></input>
-                </div>
-                <div style={styles.input}>
-                    <p>{loginText}</p>
-                    <input id="login" value={this.state.login}
-                    onChange={(event) => this.setProperty(event,"login")}></input>
-                </div>
-                <div style={styles.input}>
-                    <p>{passwordText}</p>
-                    <input id="password" type="password" value={this.state.password}
-                    onChange={(event) => this.setProperty(event,"password")}></input>
-                </div>
-                <div style={styles.input}>
-                    <button onClick={() => this.onPressRegisterButton()}>{registerText}</button>
-                </div>
-                {this.state.logged && <p>Uhuu</p>}
+                {"Cadastro"}
+                <TextField
+                    id="firstName"
+                    floatingLabelText="Nome"
+                    value={this.state.firstName}
+                    onChange={(e) => this.setProperty(e, 'firstName')}
+                />
+                <TextField
+                    id="lastName"
+                    floatingLabelText="Sobrenome"
+                    value={this.state.lastName}
+                    onChange={(e) => this.setProperty(e, 'lastName')}
+                />
+                <TextField
+                    id="login"
+                    floatingLabelText="Email"
+                    value={this.state.login}
+                    onChange={(e) => this.setProperty(e, 'login')}
+                />
+                <TextField
+                    id="password"
+                    floatingLabelText="Senha"
+                    value={this.state.password}
+                    onChange={(e) => this.setProperty(e, 'password')}
+                    type="password"
+                />
+                <RaisedButton
+                    label="Registrar"
+                    labelPosition="before"
+                    primary={true}
+                    icon={<Check />}
+                    disabled={this.state.logged}
+                    fullWidth={true}
+                    onTouchTap={() => this.onPressRegisterButton()}
+                    style={styles.input}
+                />
             </div>
         )
     }
 
-    setProperty(event, property){
-      const currentState = this.state;
-      this.setState({
-        ...currentState,
-        [property]: event.target.value
-      })
+    setProperty(event, property) {
+        const currentState = this.state;
+        this.setState({
+            ...currentState,
+            [property]: event.target.value
+        })
     }
 
-    onPressRegisterButton(){
-      const login = this.state.login;
-      const password = this.state.password;
-      firebaseApp.auth().createUserWithEmailAndPassword(login, password)
-        .then(() => {
-          this.setState({
-            ...this.state,
-            logged : true
-          });
-          const user = firebaseApp.auth().currentUser;
-          user.sendEmailVerification();
-        }).then((error) => {
-      });
+    onPressRegisterButton() {
+        const login = this.state.login;
+        const password = this.state.password;
+        firebaseApp.auth().createUserWithEmailAndPassword(login, password)
+            .then(() => {
+                this.setState({
+                    ...this.state,
+                    logged: true
+                });
+                const user = firebaseApp.auth().currentUser;
+                user.sendEmailVerification();
+            }).then((error) => {
+            });
     }
 
 }

@@ -1,9 +1,7 @@
 import React from 'react';
-import firebaseApp from '../../utils/firebaseUtils';
 import Signin from './signin/Signin.js'
 import Signup from './signup/Signup.js'
-const loginText = "Login";
-const passwordText = "Password";
+
 const signupText = "Signup";
 const backText = "Back";
 

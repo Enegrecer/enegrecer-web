@@ -67,7 +67,9 @@ export default class Signup extends React.Component {
           this.setState({
             ...this.state,
             logged : true
-          })
+          });
+          const user = firebaseApp.auth().currentUser;
+          user.sendEmailVerification();
         }).then((error) => {
       });
     }

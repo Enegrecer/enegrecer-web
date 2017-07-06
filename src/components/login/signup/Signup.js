@@ -1,5 +1,6 @@
 import React from 'react';
 import firebaseApp from '../../../utils/firebaseUtils';
+import styles from '../Login.style';
 
 const loginText = "Login";
 const registerText = "Register";
@@ -22,28 +23,28 @@ export default class Signup extends React.Component {
 
     render() {
         return (
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", margin: "20px" }}>
-                <div style={{ marginTop: "20px" }}>
+            <div style={styles.wrapper}>
+                <div style={styles.input}>
                     <p>{firstNameText}</p>
                     <input id="first_name" value={this.state.firstName}
                     onChange={(event) => this.setProperty(event,"firstName")}></input>
                 </div>
-                <div style={{ marginTop: "20px" }}>
+                <div style={styles.input}>
                     <p>{lastNameText}</p>
                     <input id="last_name" value={this.state.lastName}
                     onChange={(event) => this.setProperty(event,"lastName")}></input>
                 </div>
-                <div style={{ marginTop: "20px" }}>
+                <div style={styles.input}>
                     <p>{loginText}</p>
                     <input id="login" value={this.state.login}
                     onChange={(event) => this.setProperty(event,"login")}></input>
                 </div>
-                <div style={{ marginTop: "20px" }}>
+                <div style={styles.input}>
                     <p>{passwordText}</p>
                     <input id="password" type="password" value={this.state.password}
                     onChange={(event) => this.setProperty(event,"password")}></input>
                 </div>
-                <div style={{ marginTop: "20px" }}>
+                <div style={styles.input}>
                     <button onClick={() => this.onPressRegisterButton()}>{registerText}</button>
                 </div>
                 {this.state.logged && <p>Uhuu</p>}

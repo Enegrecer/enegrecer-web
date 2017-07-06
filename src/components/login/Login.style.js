@@ -3,10 +3,10 @@ export default {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        margin: "20"
+        padding: "10px"
     },
 
     input: {
-        marginTop: "20"
+        marginTop: "10px"
     }
 }

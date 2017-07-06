@@ -16,6 +16,7 @@ export default class Login extends React.Component {
     render() {
       let button;
       let loginElement;
+      
       if (this.state.isLogging){
         button = (
           <div>

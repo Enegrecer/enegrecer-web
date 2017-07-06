@@ -22,28 +22,28 @@ export default class Signup extends React.Component {
 
     render() {
         return (
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", margin: "20" }}>
-                <div style={{ marginTop: "20" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", margin: "20px" }}>
+                <div style={{ marginTop: "20px" }}>
                     <p>{firstNameText}</p>
                     <input id="first_name" value={this.state.firstName}
                     onChange={(event) => this.setProperty(event,"firstName")}></input>
                 </div>
-                <div style={{ marginTop: "20" }}>
+                <div style={{ marginTop: "20px" }}>
                     <p>{lastNameText}</p>
                     <input id="last_name" value={this.state.lastName}
                     onChange={(event) => this.setProperty(event,"lastName")}></input>
                 </div>
-                <div style={{ marginTop: "20" }}>
+                <div style={{ marginTop: "20px" }}>
                     <p>{loginText}</p>
                     <input id="login" value={this.state.login}
                     onChange={(event) => this.setProperty(event,"login")}></input>
                 </div>
-                <div style={{ marginTop: "20" }}>
+                <div style={{ marginTop: "20px" }}>
                     <p>{passwordText}</p>
                     <input id="password" type="password" value={this.state.password}
                     onChange={(event) => this.setProperty(event,"password")}></input>
                 </div>
-                <div style={{ marginTop: "20" }}>
+                <div style={{ marginTop: "20px" }}>
                     <button onClick={() => this.onPressRegisterButton()}>{registerText}</button>
                 </div>
                 {this.state.logged && <p>Uhuu</p>}

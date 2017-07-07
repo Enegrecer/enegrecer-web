@@ -14,4 +14,4 @@ jobs:
       provider: firebase
       skip_cleanup: true
       on:
-        branch: firebase_travis_tests
+        branch: master

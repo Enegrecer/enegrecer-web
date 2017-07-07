@@ -1,8 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import CategoriesList from './CategoriesList';
+import CategoriesCard from '../card/CategoriesCard';
 
-it('renders without crashing', () => {
-	const wrapper = shallow(<CategoriesList />);
-	expect(wrapper.find(<div />).exists()).toBe(false);
+describe('<CategoriesList />', () => {
+
+	it('has CategoriesCard', () => {
+		const wrapper = shallow(<CategoriesList />);
+		expect(wrapper.containsMatchingElement(<CategoriesCard />)).toBe(true);
+	});
+
 });

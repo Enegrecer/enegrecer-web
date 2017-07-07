@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
+import CategoriesCard from '../card/CategoriesCard';
 
 export default class CategoriesList extends Component {
   render() {
     return (
-			<div>
-				<h2>Olar</h2>
-			</div>
+			<CategoriesCard />
     );
   }
 }

@@ -3,8 +3,15 @@ cache: yarn
 node_js: '7'
 jobs:
   include:
-  - stage: lint        
+  - stage: lint
     script:
-      - yarn lint  
-  - stage: node_js unit tests
+      - yarn lint
+  - stage: unit tests
     script: yarn test
+  - stage: deploy
+    before_script: yarn build
+    deploy:
+      provider: firebase
+      skip_cleanup: true
+      on:
+        branch: master

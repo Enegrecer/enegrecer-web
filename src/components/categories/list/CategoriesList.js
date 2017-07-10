@@ -7,7 +7,7 @@ export default class CategoriesList extends Component {
     super();
 
     this.state = {
-      categories: [] 
+      categories: []
     };
   }
 
@@ -16,7 +16,7 @@ export default class CategoriesList extends Component {
     this.firebaseRef = firebaseApp.database().ref('categories');
 
     this.firebaseRef.on('value', snapshot => {
-      snapshot.forEach((child) => {                
+      snapshot.forEach((child) => {
         categories.push({
           key: child.key,
           description: child.val().description,
@@ -26,8 +26,8 @@ export default class CategoriesList extends Component {
         });
       });
 
-      this.setState({ categories });    
-    });     
+      this.setState({ categories });
+    });
   }
 
   componentWillMount() {
@@ -38,7 +38,7 @@ export default class CategoriesList extends Component {
     return (
       <div style={styles.root}>
         {this.state.categories.map(category => (
-          <CategoriesCard key={category.key} props={category}/>
+          <CategoriesCard key={category.key} category={category}/>
         ))}
       </div>
     );

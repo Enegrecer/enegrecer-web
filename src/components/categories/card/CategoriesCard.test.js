@@ -3,9 +3,24 @@ import { shallow } from 'enzyme';
 import CategoriesCard from './CategoriesCard';
 
 describe('<CategoriesCard />', () => {
-	it('have a card component', () => {
-		const wrapper = shallow(<CategoriesCard />);
+	let category = {
+			name: 'name',
+			description: 'description'
+	};
+
+	let wrapper;
+
+	beforeEach(() => {
+		wrapper = shallow(<CategoriesCard category={category} />);
+	});
+
+	it('has a card component', () => {
 		expect(wrapper.find('Card').exists()).toBe(true);
+	});
+
+	it('has a props category', () => {
+		const wrapperWithoutProps = shallow(<CategoriesCard />);
+		expect(wrapperWithoutProps.find('Card').exists()).toBe(false);
 	});
 
 });

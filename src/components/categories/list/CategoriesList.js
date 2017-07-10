@@ -1,54 +1,46 @@
 import React, { Component } from 'react';
-// import CategoriesCard from '../card/CategoriesCard';
+import CategoriesCard from '../card/CategoriesCard';
 import firebaseApp from '../../../utils/firebaseUtils';
-import {GridList, GridTile} from 'material-ui/GridList';
-import Subheader from 'material-ui/Subheader';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
-import IconButton from 'material-ui/IconButton';
 
 export default class CategoriesList extends Component {
   constructor() {
     super();
 
     this.state = {
-      categories: []
+      categories: [] 
     };
+  }
 
-    var categories = [];
+  _get_firebase_categories() {
+    let categories = [];
     this.firebaseRef = firebaseApp.database().ref('categories');
-    this.firebaseRef.on('value', function(snapshot) {
-      snapshot.forEach((child) => {
+
+    this.firebaseRef.on('value', snapshot => {
+      snapshot.forEach((child) => {                
         categories.push({
           key: child.key,
-          description: child.val().descricao
+          description: child.val().description,
+          name: child.val().name,
+          image: child.val().image,
+          slug: child.val().slug
         });
       });
 
-      console.log(categories);
-    }.bind(this));
+      this.setState({ categories });    
+    });     
+  }
 
+  componentWillMount() {
+    this._get_firebase_categories();
   }
 
   render() {
     return (
-      // <div style={styles.root}>
-      // <GridList
-      //   cellHeight={180}
-      //   style={styles.gridList}
-      // >
-      //   <Subheader>December</Subheader>
-      //     {this.state.categories.map((tile) => (
-      //     <GridTile
-      //       key={tile.title}
-      //       title={tile.title}
-      //       subtitle={<span>by <b>{tile.author}</b></span>}
-      //       actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
-      //     >
-      //     </GridTile>
-      //   ))}
-      // </GridList>
-      // </div>
-      <h2>{this.state.categories}</h2>
+      <div style={styles.root}>
+        {this.state.categories.map(category => (
+          <CategoriesCard key={category.key} props={category}/>
+        ))}
+      </div>
     );
   }
 }
@@ -58,10 +50,5 @@ const styles = {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
-  },
-  gridList: {
-    width: 500,
-    height: 450,
-    overflowY: 'auto',
-  },
+  }
 };

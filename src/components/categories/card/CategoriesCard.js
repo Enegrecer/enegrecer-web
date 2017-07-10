@@ -10,7 +10,7 @@ export default class CategoriesCard extends Component {
           title="Without Avatar"
           subtitle="Subtitle"
           actAsExpander={true}
-          showExpandableButton={true}
+          showExpandableButton={false}
         />
         <CardActions>
           <FlatButton label="Action1" />

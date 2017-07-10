@@ -5,7 +5,8 @@
     ],
     "globals": {
         "expect": true,
-        "it": true
+        "it": true,
+        "jest": true
     },
     "env": {
         "es6": true,
@@ -22,7 +23,8 @@
     },
     "parserOptions": {
         "ecmaFeatures": {
-            "jsx": true
+            "jsx": true,
+            "experimentalObjectRestSpread": true
         },        
         "sourceType": "module"    
     },

@@ -40,7 +40,7 @@ CategoriesCard.propTypes = {
 		name: PropTypes.string,
 		description: PropTypes.string,
 		slug: PropTypes.string,
-		key: PropTypes.number,
+		key: PropTypes.string,
 		image: PropTypes.string
 	})
 };

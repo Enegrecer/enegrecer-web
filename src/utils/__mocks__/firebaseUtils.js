@@ -48,7 +48,7 @@ export const firebaseAuth = {
     }
 }
 
-class DataSnapshot {    
+class DataSnapshot {
     constructor(id, name, slug, description, image) {
         this.key = id;
         this.id = id;
@@ -56,7 +56,7 @@ class DataSnapshot {
         this.slug = slug;
         this.description = description;
         this.image = image;
-    }    
+    }
 
     val() {
         return this;
@@ -64,11 +64,11 @@ class DataSnapshot {
 }
 
 const Reference = {
-    on(eventType, callbackFunction) {        
+    on(eventType, callbackFunction) {
         if(eventType == "value") {
             callbackFunction([
-                new DataSnapshot(1, "category 1", "category-1", "description 1", "image1"),
-                new DataSnapshot(2, "category 2", "category-2", "description 2", "image2")
+                new DataSnapshot("1", "category 1", "category-1", "description 1", "image1"),
+                new DataSnapshot("2", "category 2", "category-2", "description 2", "image2")
             ]);
         }
     }

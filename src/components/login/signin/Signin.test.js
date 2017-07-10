@@ -1,7 +1,6 @@
 import React from 'react';
 import Signin from './Signin';
 import { shallow } from 'enzyme';
-import firebaseApp from '../../../utils/firebaseUtils';
 
 jest.mock('../../../utils/firebaseUtils');
 

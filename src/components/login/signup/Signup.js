@@ -70,18 +70,21 @@ export default class Signup extends React.Component {
     }
 
     onPressRegisterButton() {
-        const login = this.state.login;
-        const password = this.state.password;
-        firebaseApp.auth().createUserWithEmailAndPassword(login, password)
-            .then(() => {
+        return firebaseApp.auth().createUserWithEmailAndPassword(this.state.login, this.state.password)
+            .then((user) => {
                 this.setState({
                     ...this.state,
                     logged: true
                 });
-                const user = firebaseApp.auth().currentUser;
                 user.sendEmailVerification();
-            }).then((error) => {
+            }).catch((error) => {
+                this.setState({
+                    ...this.state,
+                    loginError: error.code,
+                    loginErrorMessage: error.message,
+                    logged: false,
+                    password: '',
+                })
             });
     }
-
 }

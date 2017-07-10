@@ -13,7 +13,7 @@ export default class CategoriesCard extends Component {
 									title={this.props.category.name}
 									subtitle={this.props.category.description}
 									actAsExpander={true}
-									showExpandableButton={false}
+									showExpandableButton={true}
 								/>
 								<CardActions>
 									<FlatButton label="Action1" />

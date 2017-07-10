@@ -23,4 +23,11 @@ describe('<CategoriesCard />', () => {
 		expect(wrapperWithoutProps.find('Card').exists()).toBe(false);
 	});
 
+	it('fill Card with category info', () => {
+		let cardHeader = wrapper.find('CardHeader').props();
+		expect(cardHeader.title).toBe(category.name);
+		expect(cardHeader.subtitle).toBe(category.description);
+	});
+
+
 });

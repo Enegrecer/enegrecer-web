@@ -59,7 +59,7 @@ export default class Signin extends React.Component {
     }
 
     onPressLoginButton() {
-        firebaseApp.auth().signInWithEmailAndPassword(this.state.login, this.state.password)
+        return firebaseApp.auth().signInWithEmailAndPassword(this.state.login, this.state.password)
             .then(() => {
                 this.setState({
                     ...this.state,

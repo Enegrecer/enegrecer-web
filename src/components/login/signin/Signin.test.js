@@ -2,6 +2,8 @@ import React from 'react';
 import Signin from './Signin';
 import { shallow } from 'enzyme';
 
+jest.mock('../../../utils/firebaseUtils');
+
 describe('Signin Component', () => {
     it('renders without crashing', () => {
         const wrapper = shallow(<Signin />);
@@ -45,6 +47,18 @@ describe('Signin Component', () => {
 
             wrapper.instance().setProperty(simulatedEvent, propertyToSet);
             expect(wrapper.state()).toEqual(expetctedState);
+        });
+    });
+
+    describe('onPressLoginButton method', () => {
+        it('call the signInWithEmailAndPassword method on the firebaseApp', async () => {
+            const wrapper = shallow(<Signin />);
+            wrapper.setState({
+                login: 'pass',
+                password: 'any'
+            });
+            await wrapper.instance().onPressLoginButton();
+            expect(wrapper.state('logged')).toBeTruthy();
         });
     });
 });

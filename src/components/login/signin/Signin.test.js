@@ -1,6 +1,7 @@
 import React from 'react';
 import Signin from './Signin';
 import { shallow } from 'enzyme';
+import firebaseApp from '../../../utils/firebaseUtils';
 
 jest.mock('../../../utils/firebaseUtils');
 
@@ -15,7 +16,9 @@ describe('Signin Component', () => {
         const expetctedState = {
             logged: false,
             login: '',
-            password: ''
+            password: '',
+            loginError: null,
+            loginErrorMessage: ''
         };
         expect(wrapper.state()).toEqual(expetctedState);
     });
@@ -51,7 +54,7 @@ describe('Signin Component', () => {
     });
 
     describe('onPressLoginButton method', () => {
-        it('call the signInWithEmailAndPassword method on the firebaseApp', async () => {
+        it('sets the state with "logged" to true when login is sucessfull', async () => {
             const wrapper = shallow(<Signin />);
             wrapper.setState({
                 login: 'pass',
@@ -59,6 +62,20 @@ describe('Signin Component', () => {
             });
             await wrapper.instance().onPressLoginButton();
             expect(wrapper.state('logged')).toBeTruthy();
+        });
+
+        it('sets the state with the error variables when the login fails', async () => {
+            const wrapper = shallow(<Signin />);
+            wrapper.setState({
+                login: 'error',
+                password: 'wrongPassword'
+            });
+            await wrapper.instance().onPressLoginButton();
+            expect(wrapper.state('loginErrorMessage')).toEqual('Senha errada');
+            expect(wrapper.state('loginError')).toEqual('auth/wrong-password');
+            expect(wrapper.state('logged')).toBe(false);
+            expect(wrapper.state('login')).toEqual('');
+            expect(wrapper.state('password')).toEqual('');
         });
     });
 });

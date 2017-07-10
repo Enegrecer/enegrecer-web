@@ -7,14 +7,14 @@ const firebaseAuth = {
                 }
 
                 if (email == 'error') {
-                    if (password == 'wrongPassord') {
-                        reject({});
+                    if (password == 'wrongPassword') {
+                        reject({code: 'auth/wrong-password', message: 'Senha errada'});
                     } else if (password == 'userNotFound') {
-                        reject({});
+                        reject({code: 'auth/user-no-found', message: 'Usuário não encontrado'});
                     } else if (password == 'userDisabled') {
-                        reject({});
+                        reject({code: 'auth/user-disabled', message: 'Usuário inativo'});
                     } else if (password == 'invalidEmail') {
-                        reject({});
+                        reject({code: 'auth/invalid-email', message: 'Email inválido'});
                     }
                 }
             });

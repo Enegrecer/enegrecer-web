@@ -12,7 +12,9 @@ export default class Signin extends React.Component {
         this.state = {
             logged: false,
             login: '',
-            password: ''
+            password: '',
+            loginError: null,
+            loginErrorMessage: ''
         };
     }
 
@@ -23,19 +25,21 @@ export default class Signin extends React.Component {
                 <TextField
                     id="login"
                     hintText="exemplo@email.com"
-                    errorText={this.state.loginError && "Informe o email utilizado para login"}
+                    errorText={this.state.loginError && " "}
                     floatingLabelText="Email"
                     value={this.state.login}
                     onChange={(e) => this.setProperty(e, 'login')}
                 />
                 <TextField
                     id="password"
-                    errorText={this.state.loginError && "Informe a senha cadastrada"}
+                    errorText={this.state.loginError && " "}
                     floatingLabelText="Senha"
                     value={this.state.password}
                     onChange={(e) => this.setProperty(e, 'password')}
                     type="password"
                 />
+                <br />
+                {this.state.loginError && <div>{'Erro: ' + this.state.loginError}</div>}
                 <RaisedButton
                     label="Entrar"
                     labelPosition="before"
@@ -54,12 +58,14 @@ export default class Signin extends React.Component {
         const currentState = this.state;
         this.setState({
             ...currentState,
+            loginError: null,
+            loginErrorMessage: '',
             [property]: event.target.value
         })
     }
 
     onPressLoginButton() {
-        firebaseApp.auth().signInWithEmailAndPassword(this.state.login, this.state.password)
+        return firebaseApp.auth().signInWithEmailAndPassword(this.state.login, this.state.password)
             .then(() => {
                 this.setState({
                     ...this.state,
@@ -68,7 +74,10 @@ export default class Signin extends React.Component {
             })
             .catch((error) => {
                 this.setState({
-                    loginError: true,
+                    ...this.state,
+                    logged: false,
+                    loginError: error.code,
+                    loginErrorMessage: error.message,
                     password: '',
                     login: ''
                 });

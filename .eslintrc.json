@@ -5,14 +5,15 @@
     ],
     "globals": {
         "expect": true,
-        "it": true
+        "it": true,
+        "jest": true
     },
     "env": {
         "es6": true,
         "mocha": true,
         "node": true,
         "browser": true
-    },        
+    },
     "settings": {
         "react": {
             "createClass": "createReactClass", // Regex for Component Factory to use, default to "createReactClass"
@@ -22,9 +23,11 @@
     },
     "parserOptions": {
         "ecmaFeatures": {
-            "jsx": true
-        },        
-        "sourceType": "module"    
+            "jsx": true,
+            "experimentalObjectRestSpread": true
+        },
+        "sourceType": "module",
+        "ecmaVersion": 8
     },
     "rules": {
         "react/jsx-uses-react": "error",

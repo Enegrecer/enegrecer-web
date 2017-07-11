@@ -15,7 +15,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "eslint ."
+    "lint": "eslint src",
+    "watch:lint": "esw -w src"
   },
   "devDependencies": {
     "enzyme": "^2.9.1",
@@ -26,6 +27,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.1.0",
     "eslint-plugin-standard": "^3.0.1",
+    "eslint-watch": "^3.1.2",
     "react-test-renderer": "^15.6.1"
   }
 }

@@ -26,8 +26,11 @@ describe('<CategoriesCard />', () => {
 	it('fill Card with category info', () => {
 		let cardHeader = wrapper.find('CardHeader').props();
 		expect(cardHeader.title).toBe(category.name);
-		expect(cardHeader.subtitle).toBe(category.description);
 	});
 
+	it('fill CardText with category description', () => {
+		let cardText = wrapper.find('CardText').props();
+		expect(cardText.children).toBe(category.description);
+	});
 
 });

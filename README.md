@@ -8,6 +8,7 @@
   * [Testes](#testes)
   * [Lint](#lint)
   * [Build](#build)
+* [Deploy](#deploy)
 * [Tech Stack](#tech-stack)
 
 ## O Projeto
@@ -49,7 +50,7 @@ npm test
 
 irá rodar todos os arquivos de teste (arquivos __.test.js__) e entrar em modo de _watch_. De forma que toda vez que arquivos são alterados, sejam eles testes ou não, os testes que possuem qualquer relação com tal arquivo são executados novamente. 
 
-Por exemplo, se o componente __Sigin__ for alterado, todos os testes de _Signin.test.js_ serão executados, mas também os testes de _Login.test.js_, pois o componente de __Login__ utiliza, ou depende, do componete de __Signin__, e assim por diante. O mesmo é válido para alterações em arquivos de teste. 
+Por exemplo, se o componente __Signin__ for alterado, todos os testes de _Signin.test.js_ serão executados, mas também os testes de _Login.test.js_, pois o componente de __Login__ utiliza, ou depende, do componete de __Signin__, e assim por diante. O mesmo é válido para alterações em arquivos de teste. 
 
 O projeto está utilizando o [Jest](https://facebook.github.io/jest/) como framework de testes. O jest oferece praticamente tudo que é necessário para testes no projeto, definindo a sintaxe de escrita dos mesmos, provendo mocks, e atuando como test runner. Adicionalmente, o [enzyme](http://airbnb.io/enzyme/) é utilizado como facilitador dos testes de componentes do React.
 
@@ -77,14 +78,18 @@ npm run build
 
 roda o script de build, responsável por preparar o projeto para um deploy em produção. Os arquivos passam por um processo de minificação e bundling. Gerando arquivos mais concisos, e mais leves. Todo o resultado do script aparece na pasta build que será gerada dentro do projeto.
 
+## Deploy
+
+Atualmente o projeto está rodando em [https://enegrecer-e37b3.firebaseapp.com/](https://enegrecer-e37b3.firebaseapp.com/), sendo o Firebase o host e também responsável pelo controle de usuários e banco de dados da aplicação. A atualização ocorre automaticamente através do [Travis-CI](https://travis-ci.org/Enegrecer/enegrecer-web), que monitora por modificações na branch master deste repositório, e executa passos de lint, testes e deploy para o Firebase.
+
 ## Tech stack
 
-Na nossa stack temos: 
+Na nossa stack temos:
 * [React](https://facebook.github.io/react/) para criação do UI em componentes 
 * [Babel](https://babeljs.io/) como transpilador que permite que tais componentes sejam escritos utilizando [ES8](http://www.ecma-international.org/ecma-262/8.0/index.html).
 * [Webpack](https://webpack.github.io/) para servidor local de desenvolvimento, compilação, e bundling do código
 * [Jest](https://facebook.github.io/jest/) como framework de testes
 * [Enzyme](http://airbnb.io/enzyme/) para auxiliar nos testes
 * [Eslint](http://eslint.org/) como ferramenta de linter
-* [Firebase](https://firebase.google.com/) Como back-end mantendo controle de dados, usuários, etc
+* [Firebase](https://firebase.google.com/) Como hosting e back-end mantendo controle de dados, usuários, etc
 * [Travis-CI](https://travis-ci.org/) para criar nosso CI, executar testes e build automaticamente

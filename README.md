@@ -3,7 +3,7 @@
 
 ### Neste Wiki
 * [O Projeto](#o-projeto)
-* [Configurações](#configuracoes)
+* [Configurações](#configurações)
   * [Rodando o projeto](#rodando-o-projeto)
   * [Testes](#testes)
   * [Lint](#lint)

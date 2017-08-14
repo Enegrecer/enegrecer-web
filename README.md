@@ -1,6 +1,7 @@
 # Coletivo Enegrecer
 [![Build Status](https://travis-ci.org/Enegrecer/enegrecer-web.svg?branch=master)](https://travis-ci.org/Enegrecer/enegrecer-web)
 [![Coverage Status](https://coveralls.io/repos/github/Enegrecer/enegrecer-web/badge.svg?branch=master)](https://coveralls.io/github/Enegrecer/enegrecer-web?branch=master)
+[![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/Enegrecer/enegrecer-web)
 
 ### Neste Wiki
 * [O Projeto](#o-projeto)

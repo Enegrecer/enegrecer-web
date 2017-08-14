@@ -15,11 +15,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "test-coverage": "react-scripts test --env=jsdom --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "eject": "react-scripts eject",
     "lint": "eslint src",
     "watch:lint": "esw -w src"
   },
   "devDependencies": {
+    "coveralls": "^2.13.1",
     "enzyme": "^2.9.1",
     "eslint": "^4.1.1",
     "eslint-config-standard": "^10.2.1",

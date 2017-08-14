@@ -10,7 +10,7 @@ jobs:
     script:
       - yarn lint
   - stage: unit tests
-    script: yarn test
+    script: yarn test-coverage
   - stage: deploy
     before_script: yarn build
     deploy:

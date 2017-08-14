@@ -1,5 +1,6 @@
 # Coletivo Enegrecer
 [![Build Status](https://travis-ci.org/Enegrecer/enegrecer-web.svg?branch=master)](https://travis-ci.org/Enegrecer/enegrecer-web)
+[![Coverage Status](https://coveralls.io/repos/github/Enegrecer/enegrecer-web/badge.svg?branch=master)](https://coveralls.io/github/Enegrecer/enegrecer-web?branch=master)
 
 ### Neste Wiki
 * [O Projeto](#o-projeto)
@@ -32,7 +33,7 @@ npm install
 
 ### Rodando o projeto
 
-Para subir um servidor local para desenvolvimento rode 
+Para subir um servidor local para desenvolvimento rode
 
 ```shell
 npm start
@@ -48,9 +49,9 @@ O projeto está configurado para que o desenvolvimento seja feito em TDD, e assi
 npm test
 ```
 
-irá rodar todos os arquivos de teste (arquivos __.test.js__) e entrar em modo de _watch_. De forma que toda vez que arquivos são alterados, sejam eles testes ou não, os testes que possuem qualquer relação com tal arquivo são executados novamente. 
+irá rodar todos os arquivos de teste (arquivos __.test.js__) e entrar em modo de _watch_. De forma que toda vez que arquivos são alterados, sejam eles testes ou não, os testes que possuem qualquer relação com tal arquivo são executados novamente.
 
-Por exemplo, se o componente __Signin__ for alterado, todos os testes de _Signin.test.js_ serão executados, mas também os testes de _Login.test.js_, pois o componente de __Login__ utiliza, ou depende, do componete de __Signin__, e assim por diante. O mesmo é válido para alterações em arquivos de teste. 
+Por exemplo, se o componente __Signin__ for alterado, todos os testes de _Signin.test.js_ serão executados, mas também os testes de _Login.test.js_, pois o componente de __Login__ utiliza, ou depende, do componete de __Signin__, e assim por diante. O mesmo é válido para alterações em arquivos de teste.
 
 O projeto está utilizando o [Jest](https://facebook.github.io/jest/) como framework de testes. O jest oferece praticamente tudo que é necessário para testes no projeto, definindo a sintaxe de escrita dos mesmos, provendo mocks, e atuando como test runner. Adicionalmente, o [enzyme](http://airbnb.io/enzyme/) é utilizado como facilitador dos testes de componentes do React.
 
@@ -85,7 +86,7 @@ Atualmente o projeto está rodando em [https://enegrecer-e37b3.firebaseapp.com/]
 ## Tech stack
 
 Na nossa stack temos:
-* [React](https://facebook.github.io/react/) para criação do UI em componentes 
+* [React](https://facebook.github.io/react/) para criação do UI em componentes
 * [Babel](https://babeljs.io/) como transpilador que permite que tais componentes sejam escritos utilizando [ES8](http://www.ecma-international.org/ecma-262/8.0/index.html).
 * [Webpack](https://webpack.github.io/) para servidor local de desenvolvimento, compilação, e bundling do código
 * [Jest](https://facebook.github.io/jest/) como framework de testes

@@ -9,7 +9,7 @@ import registerServiceWorker from './utils/registerServiceWorker';
 import './index.css';
 import App from './components/App';
 import reducers from './reducers';
-import rootSaga from './sagas/index';
+import rootSaga from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

@@ -1,6 +1,6 @@
 import React from 'react';
-import Signin from './signin/Signin.js'
-import Signup from './signup/Signup.js'
+import SignIn from './SignIn.js'
+import SignUp from './SignUp.js'
 import Paper from 'material-ui/Paper';
 import styles from './Login.style';
 import FlatButton from 'material-ui/FlatButton';
@@ -22,25 +22,25 @@ export default class Login extends React.Component {
         if (this.state.isLogging) {
             button = (
                 <FlatButton
-                    onClick={() => this.onSignupPress(false)}
+                    onClick={() => this.onSignUpPress(false)}
                     fullWidth={true}
                     icon={<ChevronRight />}
                 >
                     {"Registre-se"}
                 </FlatButton>
             );
-            loginElement = (<Signin />);
+            loginElement = (<SignIn />);
         } else {
             button = (
                 <FlatButton
-                    onClick={() => this.onSignupPress(true)}
+                    onClick={() => this.onSignUpPress(true)}
                     fullWidth={true}
                     icon={<ChevronLeft />}
                 >
                     {"Fazer Login"}
                 </FlatButton>
             );
-            loginElement = (<Signup />);
+            loginElement = (<SignUp />);
         }
 
         return (
@@ -53,7 +53,7 @@ export default class Login extends React.Component {
         );
     }
 
-    onSignupPress(show) {
+    onSignUpPress(show) {
         this.setState({ isLogging: show });
     }
 

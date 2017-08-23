@@ -1,11 +1,11 @@
 import React from 'react';
-import firebaseApp from '../../../utils/firebaseUtils';
-import styles from '../Login.style';
+import firebaseApp from '../../utils/firebaseUtils';
+import styles from './Login.style';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Check from 'material-ui/svg-icons/navigation/check';
 
-export default class Signup extends React.Component {
+export default class SignUp extends React.Component {
 
     constructor(props) {
         super(props)

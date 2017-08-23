@@ -1,17 +1,17 @@
 import React from 'react';
-import Signin from './Signin';
+import { SignIn } from './SignIn';
 import { shallow } from 'enzyme';
 
 jest.mock('../../../utils/firebaseUtils');
 
-describe('Signin Component', () => {
+describe('SignIn Component', () => {
     it('renders without crashing', () => {
-        const wrapper = shallow(<Signin />);
+        const wrapper = shallow(<SignIn />);
         expect(wrapper.exists()).toBe(true);
     });
 
     it('initialize the state object properly', () => {
-        const wrapper = shallow(<Signin />);
+        const wrapper = shallow(<SignIn />);
         const expetctedState = {
             logged: false,
             login: '',
@@ -24,7 +24,7 @@ describe('Signin Component', () => {
 
     describe('setProperty method', () => {
         it('set a property in the state', () => {
-            const wrapper = shallow(<Signin />);
+            const wrapper = shallow(<SignIn />);
             const simulatedEvent = {
                 target: {
                     value: true
@@ -36,7 +36,7 @@ describe('Signin Component', () => {
         });
 
         it('does not override other properties of the state', () => {
-            const wrapper = shallow(<Signin />);
+            const wrapper = shallow(<SignIn />);
             const propertyToSet = 'logged';
             const simulatedEvent = {
                 target: {
@@ -54,7 +54,7 @@ describe('Signin Component', () => {
 
     describe('onPressLoginButton method', () => {
         it('sets the state with "logged" to true when login is sucessfull', async () => {
-            const wrapper = shallow(<Signin />);
+            const wrapper = shallow(<SignIn />);
             wrapper.setState({
                 login: 'pass',
                 password: 'any'
@@ -64,7 +64,7 @@ describe('Signin Component', () => {
         });
 
         it('sets the state with the error variables when the login fails', async () => {
-            const wrapper = shallow(<Signin />);
+            const wrapper = shallow(<SignIn />);
             wrapper.setState({
                 login: 'error',
                 password: 'wrongPassword'

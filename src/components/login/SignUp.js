@@ -18,35 +18,26 @@ export default class SignUp extends React.Component {
         };
     }
 
+    generateTextField(id, text, value, property, type) {
+        return (
+            <TextField
+                id={id}
+                floatingLabelText={text}
+                value={value}
+                onChange={(e) => this.setProperty(e, property)}
+                type={type || 'text'}
+            />
+        );
+    }
+
     render() {
         return (
             <div style={styles.wrapper}>
                 {"Cadastro"}
-                <TextField
-                    id="firstName"
-                    floatingLabelText="Nome"
-                    value={this.state.firstName}
-                    onChange={(e) => this.setProperty(e, 'firstName')}
-                />
-                <TextField
-                    id="lastName"
-                    floatingLabelText="Sobrenome"
-                    value={this.state.lastName}
-                    onChange={(e) => this.setProperty(e, 'lastName')}
-                />
-                <TextField
-                    id="login"
-                    floatingLabelText="Email"
-                    value={this.state.login}
-                    onChange={(e) => this.setProperty(e, 'login')}
-                />
-                <TextField
-                    id="password"
-                    floatingLabelText="Senha"
-                    value={this.state.password}
-                    onChange={(e) => this.setProperty(e, 'password')}
-                    type="password"
-                />
+                {this.generateTextField('firstName', 'Nome', this.state.firstName, 'firstName')}
+                {this.generateTextField('lastName', 'Sobrenome', this.state.lastName, 'lastName')}
+                {this.generateTextField('login', 'Email', this.state.login, 'login')}
+                {this.generateTextField('password', 'Senha', this.state.password, 'password', 'password')}
                 <RaisedButton
                     label="Registrar"
                     labelPosition="before"

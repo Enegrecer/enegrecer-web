@@ -1,11 +1,13 @@
 import React from 'react';
-import firebaseApp from '../../../utils/firebaseUtils';
-import styles from '../Login.style';
+import PropTypes from 'prop-types'
+import styles from './Login.style';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Check from 'material-ui/svg-icons/navigation/check';
+import { connect } from 'react-redux';
+import { requestSignIn } from '../../actions';
 
-export default class Signin extends React.Component {
+export class SignIn extends React.Component {
 
     constructor(props) {
         super(props)
@@ -65,23 +67,35 @@ export default class Signin extends React.Component {
     }
 
     onPressLoginButton() {
-        return firebaseApp.auth().signInWithEmailAndPassword(this.state.login, this.state.password)
-            .then(() => {
-                this.setState({
-                    ...this.state,
-                    logged: true
-                });
-            })
-            .catch((error) => {
-                this.setState({
-                    ...this.state,
-                    logged: false,
-                    loginError: error.code,
-                    loginErrorMessage: error.message,
-                    password: '',
-                    login: ''
-                });
-            });
+        this.props.onLoginPress(this.state.login, this.state.password);
     }
-
 }
+
+SignIn.propTypes = {
+    onLoginPress: PropTypes.func.isRequired
+}
+
+const mapStateToProps = state => {
+    return {
+        auth: state.auth
+    }
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onLoginPress: (login, password) => {
+            dispatch(requestSignIn({
+                email: login,
+                password: password
+            }));
+        }
+    };
+};
+
+const reduxSignIn = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(SignIn);
+
+export default reduxSignIn;
+

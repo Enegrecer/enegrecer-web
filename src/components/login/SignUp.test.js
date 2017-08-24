@@ -1,18 +1,18 @@
 import React from 'react';
-import Signup from './Signup';
+import SignUp from './SignUp';
 import { shallow } from 'enzyme';
-import * as firebase from '../../../utils/firebaseUtils';
+import * as firebase from '../../utils/firebaseUtils';
 
-jest.mock('../../../utils/firebaseUtils');
+jest.mock('../../utils/firebaseUtils');
 
-describe('Signup component', () => {
+describe('SignUp component', () => {
     it('renders without crashing', () => {
-        const wrapper = shallow(<Signup />);
+        const wrapper = shallow(<SignUp />);
         expect(wrapper.exists()).toBe(true);
     });
 
     it('initializes the state properly', () => {
-        const wrapper = shallow(<Signup />);
+        const wrapper = shallow(<SignUp />);
         const expectedState = {
             logged: false,
             login: "",
@@ -25,7 +25,7 @@ describe('Signup component', () => {
 
     describe('setProperty method', () => {
         it('set a property in the state', () => {
-            const wrapper = shallow(<Signup />);
+            const wrapper = shallow(<SignUp />);
             const simulatedEvent = {
                 target: {
                     value: true
@@ -37,7 +37,7 @@ describe('Signup component', () => {
         });
 
         it('does not override other properties of the state', () => {
-            const wrapper = shallow(<Signup />);
+            const wrapper = shallow(<SignUp />);
             const propertyToSet = 'logged';
             const simulatedEvent = {
                 target: {
@@ -59,7 +59,7 @@ describe('Signup component', () => {
         });
 
         it('sets the state with "logged" to true when registration is sucessfull', async () => {
-            const wrapper = shallow(<Signup />);
+            const wrapper = shallow(<SignUp />);
             wrapper.setState({
                 login: 'pass',
                 password: 'any'
@@ -69,7 +69,7 @@ describe('Signup component', () => {
         });
 
         it('sets the state with the error variables when the login fails', async () => {
-            const wrapper = shallow(<Signup />);
+            const wrapper = shallow(<SignUp />);
             wrapper.setState({
                 login: 'error',
                 password: 'weak'
@@ -82,7 +82,7 @@ describe('Signup component', () => {
         });
 
         it('should call the "sendEmailVerification" method when creating a user', async () => {
-            const wrapper = shallow(<Signup />);
+            const wrapper = shallow(<SignUp />);
             wrapper.setState({
                 login: 'pass',
                 password: 'any'

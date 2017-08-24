@@ -6,39 +6,43 @@ jest.mock('../utils/firebaseUtils');
 
 describe('Auth Sagas', () => {
     describe('Sign in', () => {
-        it('should login with success', () => {
-            const saga = handleRequestSignIn();
-            const mockAction = {
-                type: REQUEST_SIGN_IN,
-                payload: {
-                    email: "pass",
-                    password: "any"
-                }
-            };
-            
-            expect(saga.next().value).toEqual(take(REQUEST_SIGN_IN));
-            expect(saga.next(mockAction).value).toEqual(call(signIn, mockAction));
-            expect(saga.next({user: 'any'}).value).toEqual(put(successSignIn({user: 'any'})))
+        let saga;
+        let mockRequestSignInAction = {
+            type: REQUEST_SIGN_IN,
+            payload: {}
+        };
+
+        beforeEach(() => {
+            saga = handleRequestSignIn();
         });
 
         it('should login with success', () => {
-            const saga = handleRequestSignIn();
-            const mockAction = {
-                type: REQUEST_SIGN_IN,
-                payload: {
-                    email: "error",
-                    password: "userNotFound"
-                }
+            mockRequestSignInAction.payload = {
+                email: "pass",
+                password: "any"
             };
-            
+
             expect(saga.next().value).toEqual(take(REQUEST_SIGN_IN));
-            expect(saga.next(mockAction).value).toEqual(call(signIn, mockAction));
-            expect(saga.next({error: 'any'}).value).toEqual(put(failureSignIn({error: 'any'})))
+            expect(saga.next(mockRequestSignInAction).value).toEqual(call(signIn, mockRequestSignInAction));
+            expect(saga.next({ user: 'any' }).value).toEqual(put(successSignIn({ user: 'any' })))
         });
 
-        it('should login with success', () => {
+        it('should faill login', () => {
+            mockRequestSignInAction.payload = {
+                email: "error",
+                password: "userNotFound"
+            };
+
+            expect(saga.next().value).toEqual(take(REQUEST_SIGN_IN));
+            expect(saga.next(mockRequestSignInAction).value).toEqual(call(signIn, mockRequestSignInAction));
+            expect(saga.next({ error: 'any' }).value).toEqual(put(failureSignIn({ error: 'any' })))
+        });
+    });
+
+    describe('Root Sagas', () => {
+        it('should contain handleRequestSignIn', () => {
             const saga = rootSaga();
-            
+
             expect(saga.next().value).toEqual(fork(handleRequestSignIn));
             expect(saga.next().done).toBe(true);
         });

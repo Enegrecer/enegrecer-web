@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 export class Home extends Component {
     constructor(props) {
@@ -23,6 +24,15 @@ export class Home extends Component {
             
         );
     }
+}
+
+Home.propTypes = {
+    auth: PropTypes.shape({
+        logged : PropTypes.bool,
+        user : PropTypes.shape({
+            email : PropTypes.string
+        })
+    })
 }
 
 const mapStateToProps = state => {

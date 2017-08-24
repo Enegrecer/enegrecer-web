@@ -4,10 +4,6 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 export class Home extends Component {
-    constructor(props) {
-        super(props)
-    }
-
     render() {
         let userInfo;
         

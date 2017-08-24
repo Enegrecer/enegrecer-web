@@ -5,7 +5,13 @@ const reducer = (state = {}, action) => {
     case SUCCESS_SIGN_IN:
       return { 
         ...state, 
-        logged: true
+        logged: true,
+        user : {
+          email: action.payload.user.email,
+          displayName: action.payload.user.displayName,
+          emailVerified: action.payload.user.emailVerified,
+          uid: action.payload.user.uid
+        }
        };
 
     case REQUEST_SIGN_IN:

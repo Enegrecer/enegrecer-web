@@ -23,9 +23,38 @@ describe('Auth Reducer', () => {
   });
 
   it('set logged to true inside the state when a sigin request succeds', () => {
-    const expectedState = { logged: true };
-    const mockAction = { type: SUCCESS_SIGN_IN };
+    const mockAction = {
+      type: SUCCESS_SIGN_IN,
+      payload: {
+        user: {
+          email: '',
+          displayName: '',
+          emailVerified: '',
+          uid: ''
+        }
+      }
+    };
 
-    expect(reducer(undefined, mockAction)).toEqual(expectedState);
+    let newState = reducer(undefined, mockAction);
+    expect(newState.logged).toBe(true);
+  });
+
+  it('set user info inside the state when a sigin request succeds', () => {
+    let expectedValue = {
+      email: 'a@a.com',
+      displayName: 'Teste',
+      emailVerified: true,
+      uid: '123456'
+    };
+
+    const mockAction = {
+      type: SUCCESS_SIGN_IN,
+      payload: {
+        user: expectedValue
+      }
+    };
+
+    let newState = reducer(undefined, mockAction);
+    expect(newState.user).toEqual(expectedValue);
   });
 });

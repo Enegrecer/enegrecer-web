@@ -3,7 +3,7 @@ import SignUp from './SignUp';
 import { shallow } from 'enzyme';
 import * as firebase from '../../utils/firebaseUtils';
 
-jest.mock('../../../utils/firebaseUtils');
+jest.mock('../../utils/firebaseUtils');
 
 describe('SignUp component', () => {
     it('renders without crashing', () => {

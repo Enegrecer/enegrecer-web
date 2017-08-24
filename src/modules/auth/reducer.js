@@ -6,7 +6,7 @@ const reducer = (state = {}, action) => {
       return { 
         ...state, 
         logged: true,
-        userId: action.payload.user
+        user: action.payload.user
        };
 
     case REQUEST_SIGN_IN:

@@ -5,8 +5,7 @@ const reducer = (state = {}, action) => {
     case SUCCESS_SIGN_IN:
       return { 
         ...state, 
-        logged: true,
-        user: action.payload.user
+        logged: true
        };
 
     case REQUEST_SIGN_IN:

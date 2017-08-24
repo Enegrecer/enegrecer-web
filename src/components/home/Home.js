@@ -11,7 +11,7 @@ class Home extends Component {
         let userInfo;
         
         if(this.props.auth.logged){
-            userInfo = <div>Meu usuário é: {this.props.auth.user.email} </div>
+            userInfo = <div>Meu usuário é: {this.props.user.email} </div>
         }
 
         return (
@@ -27,7 +27,8 @@ class Home extends Component {
 
 const mapStateToProps = state => {
     return {
-        auth: state.auth
+        auth: state.auth,
+        user: state.user
     }
 };
 

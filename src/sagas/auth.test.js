@@ -7,20 +7,23 @@ jest.mock('../utils/firebaseUtils');
 describe('Auth Sagas', () => {
     describe('Sign in', () => {
         let saga;
-        let mockRequestSignInAction = {
-            type: REQUEST_SIGN_IN,
-            payload: {}
-        };
+
+        function generateRequestSignInMockAction(email, password) {
+            return {
+                type: REQUEST_SIGN_IN,
+                payload: {
+                    email,
+                    password
+                }
+            };
+        }
 
         beforeEach(() => {
             saga = handleRequestSignIn();
         });
 
         it('should login with success', () => {
-            mockRequestSignInAction.payload = {
-                email: "pass",
-                password: "any"
-            };
+            let mockRequestSignInAction = generateRequestSignInMockAction("pass", "any");
 
             expect(saga.next().value).toEqual(take(REQUEST_SIGN_IN));
             expect(saga.next(mockRequestSignInAction).value).toEqual(call(signIn, mockRequestSignInAction));
@@ -28,10 +31,7 @@ describe('Auth Sagas', () => {
         });
 
         it('should faill login', () => {
-            mockRequestSignInAction.payload = {
-                email: "error",
-                password: "userNotFound"
-            };
+            let mockRequestSignInAction = generateRequestSignInMockAction("error", "userNotFound");
 
             expect(saga.next().value).toEqual(take(REQUEST_SIGN_IN));
             expect(saga.next(mockRequestSignInAction).value).toEqual(call(signIn, mockRequestSignInAction));

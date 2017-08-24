@@ -2,16 +2,14 @@ import React from 'react';
 import { SignIn } from './SignIn';
 import { shallow } from 'enzyme';
 
-jest.mock('../../../utils/firebaseUtils');
-
 describe('SignIn Component', () => {
     it('renders without crashing', () => {
-        const wrapper = shallow(<SignIn />);
+        const wrapper = shallow(<SignIn onLoginPress={() => {}} />);
         expect(wrapper.exists()).toBe(true);
     });
 
     it('initialize the state object properly', () => {
-        const wrapper = shallow(<SignIn />);
+        const wrapper = shallow(<SignIn onLoginPress={() => {}} />);
         const expetctedState = {
             logged: false,
             login: '',
@@ -24,7 +22,7 @@ describe('SignIn Component', () => {
 
     describe('setProperty method', () => {
         it('set a property in the state', () => {
-            const wrapper = shallow(<SignIn />);
+            const wrapper = shallow(<SignIn onLoginPress={() => {}} />);
             const simulatedEvent = {
                 target: {
                     value: true
@@ -36,7 +34,7 @@ describe('SignIn Component', () => {
         });
 
         it('does not override other properties of the state', () => {
-            const wrapper = shallow(<SignIn />);
+            const wrapper = shallow(<SignIn onLoginPress={() => {}} />);
             const propertyToSet = 'logged';
             const simulatedEvent = {
                 target: {
@@ -53,28 +51,18 @@ describe('SignIn Component', () => {
     });
 
     describe('onPressLoginButton method', () => {
-        it('sets the state with "logged" to true when login is sucessfull', async () => {
-            const wrapper = shallow(<SignIn />);
-            wrapper.setState({
-                login: 'pass',
+        it('calls the onPressLoginButton function passed as props with email and password', () => {
+            let mockLoginPress = jest.fn();
+            const wrapper = shallow(<SignIn onLoginPress={mockLoginPress} />);
+            let mockLoginAndPassword = {
+                login: 'any',
                 password: 'any'
-            });
-            await wrapper.instance().onPressLoginButton();
-            expect(wrapper.state('logged')).toBeTruthy();
-        });
+            };
 
-        it('sets the state with the error variables when the login fails', async () => {
-            const wrapper = shallow(<SignIn />);
-            wrapper.setState({
-                login: 'error',
-                password: 'wrongPassword'
-            });
-            await wrapper.instance().onPressLoginButton();
-            expect(wrapper.state('loginErrorMessage')).toEqual('Senha errada');
-            expect(wrapper.state('loginError')).toEqual('auth/wrong-password');
-            expect(wrapper.state('logged')).toBe(false);
-            expect(wrapper.state('login')).toEqual('');
-            expect(wrapper.state('password')).toEqual('');
+            wrapper.setState(mockLoginAndPassword);
+            wrapper.instance().onPressLoginButton();
+            expect(mockLoginPress.mock.calls.length).toBe(1);
+            expect(mockLoginPress.mock.calls[0]).toEqual([mockLoginAndPassword.login, mockLoginAndPassword.password]);
         });
     });
 });

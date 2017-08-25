@@ -88,6 +88,8 @@ Atualmente o projeto está rodando em [https://enegrecer-e37b3.firebaseapp.com/]
 
 Na nossa stack temos:
 * [React](https://facebook.github.io/react/) para criação do UI em componentes
+* [Redux](http://redux.js.org/) para controle do estado da aplicação
+* [Redux-Saga](https://redux-saga.js.org/) para gerenciamento de chamadas assíncronas dentro do redux
 * [Babel](https://babeljs.io/) como transpilador que permite que tais componentes sejam escritos utilizando [ES8](http://www.ecma-international.org/ecma-262/8.0/index.html).
 * [Webpack](https://webpack.github.io/) para servidor local de desenvolvimento, compilação, e bundling do código
 * [Jest](https://facebook.github.io/jest/) como framework de testes

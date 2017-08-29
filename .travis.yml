@@ -11,6 +11,8 @@ jobs:
       - yarn lint
   - stage: unit tests
     script: yarn test-coverage
+  - stage: collect coverage
+    script: CODECLIMATE_REPO_TOKEN=CODECLIMATE_TOKEN codeclimate-test-reporter < ./coverage/lcov.info
   - stage: deploy
     before_script: yarn build
     deploy:

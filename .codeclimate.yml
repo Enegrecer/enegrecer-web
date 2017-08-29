@@ -1,2 +1,4 @@
+JavaScript: true
+
 exclude_paths:
 - "**.test.js"

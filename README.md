@@ -97,3 +97,5 @@ Na nossa stack temos:
 * [Eslint](http://eslint.org/) como ferramenta de linter
 * [Firebase](https://firebase.google.com/) Como hosting e back-end mantendo controle de dados, usuários, etc
 * [Travis-CI](https://travis-ci.org/) para criar nosso CI, executar testes e build automaticamente
+
+[Para mais informações, acesse a nossa wiki :)](https://github.com/Enegrecer/enegrecer-web/wiki)

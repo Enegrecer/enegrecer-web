@@ -4,5 +4,5 @@ import { reducer as authReducer } from './modules/auth';
 
 export default combineReducers({
   complaints: complaintsReducer,
-  auth: authReducer
+  auth: authReducer,
 });

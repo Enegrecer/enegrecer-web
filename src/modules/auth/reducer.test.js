@@ -30,31 +30,31 @@ describe('Auth Reducer', () => {
           email: '',
           displayName: '',
           emailVerified: '',
-          uid: ''
-        }
-      }
+          uid: '',
+        },
+      },
     };
 
-    let newState = reducer(undefined, mockAction);
+    const newState = reducer(undefined, mockAction);
     expect(newState.logged).toBe(true);
   });
 
   it('set user info inside the state when a sigin request succeds', () => {
-    let expectedValue = {
+    const expectedValue = {
       email: 'a@a.com',
       displayName: 'Teste',
       emailVerified: true,
-      uid: '123456'
+      uid: '123456',
     };
 
     const mockAction = {
       type: SUCCESS_SIGN_IN,
       payload: {
-        user: expectedValue
-      }
+        user: expectedValue,
+      },
     };
 
-    let newState = reducer(undefined, mockAction);
+    const newState = reducer(undefined, mockAction);
     expect(newState.user).toEqual(expectedValue);
   });
 });

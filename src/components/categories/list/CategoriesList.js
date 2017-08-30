@@ -7,22 +7,22 @@ export default class CategoriesList extends Component {
     super();
 
     this.state = {
-      categories: []
+      categories: [],
     };
   }
 
   _get_firebase_categories() {
-    let categories = [];
+    const categories = [];
     this.firebaseRef = firebaseApp.database().ref('categories');
 
-    this.firebaseRef.on('value', snapshot => {
+    this.firebaseRef.on('value', (snapshot) => {
       snapshot.forEach((child) => {
         categories.push({
           key: child.key,
           description: child.val().description,
           name: child.val().name,
           image: child.val().image,
-          slug: child.val().slug
+          slug: child.val().slug,
         });
       });
 
@@ -38,7 +38,7 @@ export default class CategoriesList extends Component {
     return (
       <div style={styles.root}>
         {this.state.categories.map(category => (
-          <CategoriesCard key={category.key} category={category}/>
+          <CategoriesCard key={category.key} category={category} />
         ))}
       </div>
     );
@@ -50,5 +50,5 @@ const styles = {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
-  }
+  },
 };

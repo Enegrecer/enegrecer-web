@@ -1,9 +1,9 @@
-import reducer from './reducer'
+import reducer from './reducer';
 
 describe('reducer', () => {
   it('returns state unchanged', () => {
-    const mockState = { items: [] }
+    const mockState = { items: [] };
 
-    expect(reducer(mockState, {})).toEqual(mockState)
-  })
-})
+    expect(reducer(mockState, {})).toEqual(mockState);
+  });
+});

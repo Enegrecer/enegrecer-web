@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import CategoriesCard from '../card/CategoriesCard';
 import firebaseApp from '../../../utils/firebaseUtils';
 
+const styles = {
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+  },
+};
+
 export default class CategoriesList extends Component {
   constructor() {
     super();
@@ -11,7 +19,11 @@ export default class CategoriesList extends Component {
     };
   }
 
-  _get_firebase_categories() {
+  componentWillMount() {
+    this.getFirebaseCategories();
+  }
+
+  getFirebaseCategories() {
     const categories = [];
     this.firebaseRef = firebaseApp.database().ref('categories');
 
@@ -30,10 +42,6 @@ export default class CategoriesList extends Component {
     });
   }
 
-  componentWillMount() {
-    this._get_firebase_categories();
-  }
-
   render() {
     return (
       <div style={styles.root}>
@@ -44,11 +52,3 @@ export default class CategoriesList extends Component {
     );
   }
 }
-
-const styles = {
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-  },
-};

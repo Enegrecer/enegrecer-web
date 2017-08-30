@@ -18,11 +18,6 @@ describe('<CategoriesCard />', () => {
     expect(wrapper.find('Card').exists()).toBe(true);
   });
 
-  it('has a props category', () => {
-    const wrapperWithoutProps = shallow(<CategoriesCard />);
-    expect(wrapperWithoutProps.find('Card').exists()).toBe(false);
-  });
-
   it('fill Card with category info', () => {
     const cardHeader = wrapper.find('CardHeader').props();
     expect(cardHeader.title).toBe(category.name);

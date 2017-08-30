@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 
-export default class CategoriesCard extends Component {
+export default class CategoriesCard extends React.PureComponent {
   render() {
-    let card = null;
-
-    if (this.props.category) {
-      card = (<Card>
+    return (
+      <Card>
         <CardHeader
           title={this.props.category.name}
           actAsExpander
@@ -21,11 +19,7 @@ export default class CategoriesCard extends Component {
         <CardText expandable>
           {this.props.category.description}
         </CardText>
-      </Card>);
-    }
-
-    return (
-      card
+      </Card>
     );
   }
 }
@@ -37,5 +31,5 @@ CategoriesCard.propTypes = {
     slug: PropTypes.string,
     key: PropTypes.string,
     image: PropTypes.string,
-  }),
+  }).isRequired,
 };

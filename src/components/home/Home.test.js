@@ -1,6 +1,6 @@
 import React from 'react';
-import { Home } from './Home';
 import { shallow } from 'enzyme';
+import { Home } from './Home';
 
 describe('<Home />', () => {
   it('has a H1', () => {

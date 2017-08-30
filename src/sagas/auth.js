@@ -1,11 +1,12 @@
-import firebaseApp from '../utils/firebaseUtils';
 import { fork, call, put, take } from 'redux-saga/effects';
+import firebaseApp from '../utils/firebaseUtils';
 import {
   REQUEST_SIGN_IN, successSignIn, failureSignIn,
 } from '../actions';
 
 export function signIn(action) {
-  return firebaseApp.auth().signInWithEmailAndPassword(action.payload.email, action.payload.password)
+  return firebaseApp.auth()
+    .signInWithEmailAndPassword(action.payload.email, action.payload.password)
     .then(user => ({ user }))
     .catch(error => ({ error }));
 }

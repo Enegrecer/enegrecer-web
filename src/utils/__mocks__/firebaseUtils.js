@@ -6,18 +6,18 @@ export const firebaseAuth = {
   signInWithEmailAndPassword(email, password) {
     return new Promise((resolve, reject) => {
       process.nextTick(() => {
-        if (email == 'pass') {
+        if (email === 'pass') {
           resolve();
         }
 
-        if (email == 'error') {
-          if (password == 'wrongPassword') {
+        if (email === 'error') {
+          if (password === 'wrongPassword') {
             reject({ code: 'auth/wrong-password', message: 'Senha errada' });
-          } else if (password == 'userNotFound') {
+          } else if (password === 'userNotFound') {
             reject({ code: 'auth/user-no-found', message: 'Usuário não encontrado' });
-          } else if (password == 'userDisabled') {
+          } else if (password === 'userDisabled') {
             reject({ code: 'auth/user-disabled', message: 'Usuário inativo' });
-          } else if (password == 'invalidEmail') {
+          } else if (password === 'invalidEmail') {
             reject({ code: 'auth/invalid-email', message: 'Email inválido' });
           }
         }
@@ -28,18 +28,18 @@ export const firebaseAuth = {
   createUserWithEmailAndPassword(email, password) {
     return new Promise((resolve, reject) => {
       process.nextTick(() => {
-        if (email == 'pass') {
+        if (email === 'pass') {
           resolve(userObj);
         }
 
-        if (email == 'error') {
-          if (password == 'alreadyInUse') {
+        if (email === 'error') {
+          if (password === 'alreadyInUse') {
             reject({ code: 'auth/email-already-in-use', message: 'Email já utilizado por outro usuário' });
-          } else if (password == 'notAllowed') {
+          } else if (password === 'notAllowed') {
             reject({ code: 'auth/operation-not-allowed', message: 'Ação não permitida' });
-          } else if (password == 'weak') {
+          } else if (password === 'weak') {
             reject({ code: 'auth/weak-password', message: 'Senha deve ter no mínimo 6 caracteres' });
-          } else if (password == 'invalidEmail') {
+          } else if (password === 'invalidEmail') {
             reject({ code: 'auth/invalid-email', message: 'Email inválido' });
           }
         }
@@ -65,7 +65,7 @@ class DataSnapshot {
 
 const Reference = {
   on(eventType, callbackFunction) {
-    if (eventType == 'value') {
+    if (eventType === 'value') {
       callbackFunction([
         new DataSnapshot('1', 'category 1', 'category-1', 'description 1', 'image1'),
         new DataSnapshot('2', 'category 2', 'category-2', 'description 2', 'image2'),
@@ -76,9 +76,10 @@ const Reference = {
 
 const Database = {
   ref(path) {
-    if (path == 'categories') {
+    if (path === 'categories') {
       return Reference;
     }
+    return undefined;
   },
 };
 

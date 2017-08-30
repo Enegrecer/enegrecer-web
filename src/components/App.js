@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import Home from './home/Home';
-import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import CategoriesList from './categories/list/CategoriesList';
-import Login from './login/Login';
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import AppBar from 'material-ui/AppBar';
 import { IconButton, Drawer, MenuItem } from 'material-ui';
-import { Link } from 'react-router-dom';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
+
+import HomePage from './home/Home';
+import './App.css';
+import CategoriesList from './categories/list/CategoriesList';
+import Login from './login/Login';
 
 
 export default class App extends Component {
@@ -16,6 +16,8 @@ export default class App extends Component {
     this.state = {
       open: false,
     };
+
+    this.handleToggle = this.handleToggle.bind(this);
   }
 
   handleToggle() { this.setState({ open: !this.state.open }); }
@@ -26,14 +28,18 @@ export default class App extends Component {
         <div>
           <AppBar
             title="Enegrecer"
-            onLeftIconButtonTouchTap={this.handleToggle.bind(this)}
+            onLeftIconButtonTouchTap={this.handleToggle}
           />
 
-          <Drawer docked={false} open={this.state.open} onRequestChange={open => this.setState({ open })}>
+          <Drawer
+            docked={false}
+            open={this.state.open}
+            onRequestChange={open => this.setState({ open })}
+          >
             <AppBar
               iconElementLeft={<IconButton><NavigationClose /></IconButton>}
               title="Enegrecer"
-              onLeftIconButtonTouchTap={this.handleToggle.bind(this)}
+              onLeftIconButtonTouchTap={this.handleToggle}
             />
             <Link to="/"><MenuItem>Home</MenuItem></Link>
             <Link to="/categorias"><MenuItem>Categorias</MenuItem></Link>
@@ -42,7 +48,7 @@ export default class App extends Component {
 
 
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={HomePage} />
             <Route path="/categorias" component={CategoriesList} />
             <Route path="/login" component={Login} />
           </Switch>

@@ -1,11 +1,11 @@
 import React from 'react';
-import SignIn from './SignIn.js';
-import SignUp from './SignUp.js';
 import Paper from 'material-ui/Paper';
-import styles from './Login.style';
 import FlatButton from 'material-ui/FlatButton';
 import ChevronRight from 'material-ui/svg-icons/navigation/chevron-right';
 import ChevronLeft from 'material-ui/svg-icons/navigation/chevron-left';
+import SignInPage from './SignIn';
+import SignUp from './SignUp';
+import styles from './Login.style';
 
 export default class Login extends React.Component {
   constructor() {
@@ -14,6 +14,11 @@ export default class Login extends React.Component {
       isLogging: true,
     };
   }
+
+  onSignUpPress(show) {
+    this.setState({ isLogging: show });
+  }
+
   render() {
     let button;
     let loginElement;
@@ -28,7 +33,7 @@ export default class Login extends React.Component {
           {'Registre-se'}
         </FlatButton>
       );
-      loginElement = (<SignIn />);
+      loginElement = (<SignInPage />);
     } else {
       button = (
         <FlatButton
@@ -50,9 +55,5 @@ export default class Login extends React.Component {
         </Paper>
       </div>
     );
-  }
-
-  onSignUpPress(show) {
-    this.setState({ isLogging: show });
   }
 }

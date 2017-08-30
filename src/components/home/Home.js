@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-export class Home extends Component {
+export class Home extends React.PureComponent {
   render() {
     let userInfo;
 
@@ -28,7 +28,7 @@ Home.propTypes = {
     user: PropTypes.shape({
       email: PropTypes.string,
     }),
-  }),
+  }).isRequired,
 };
 
 const mapStateToProps = state => ({

@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Login.style';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Check from 'material-ui/svg-icons/navigation/check';
 import { connect } from 'react-redux';
+import styles from './Login.style';
 import { requestSignIn } from '../../actions';
 
 export class SignIn extends React.Component {
@@ -17,6 +17,20 @@ export class SignIn extends React.Component {
       loginError: null,
       loginErrorMessage: '',
     };
+  }
+
+  onPressLoginButton() {
+    this.props.onLoginPress(this.state.login, this.state.password);
+  }
+
+  setProperty(event, property) {
+    const currentState = this.state;
+    this.setState({
+      ...currentState,
+      loginError: null,
+      loginErrorMessage: '',
+      [property]: event.target.value,
+    });
   }
 
   render() {
@@ -54,20 +68,6 @@ export class SignIn extends React.Component {
       </div>
     );
   }
-
-  setProperty(event, property) {
-    const currentState = this.state;
-    this.setState({
-      ...currentState,
-      loginError: null,
-      loginErrorMessage: '',
-      [property]: event.target.value,
-    });
-  }
-
-  onPressLoginButton() {
-    this.props.onLoginPress(this.state.login, this.state.password);
-  }
 }
 
 SignIn.propTypes = {
@@ -93,4 +93,3 @@ const reduxSignIn = connect(
 )(SignIn);
 
 export default reduxSignIn;
-

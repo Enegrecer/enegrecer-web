@@ -1,6 +1,6 @@
 import React from 'react';
-import { SignIn } from './SignIn';
 import { shallow } from 'enzyme';
+import { SignIn } from './SignIn';
 
 describe('SignIn Component', () => {
   it('renders without crashing', () => {
@@ -61,8 +61,10 @@ describe('SignIn Component', () => {
 
       wrapper.setState(mockLoginAndPassword);
       wrapper.instance().onPressLoginButton();
-      expect(mockLoginPress.mock.calls.length).toBe(1);
-      expect(mockLoginPress.mock.calls[0]).toEqual([mockLoginAndPassword.login, mockLoginAndPassword.password]);
+      expect(mockLoginPress.mock.calls.length)
+        .toBe(1);
+      expect(mockLoginPress.mock.calls[0])
+        .toEqual([mockLoginAndPassword.login, mockLoginAndPassword.password]);
     });
   });
 });

@@ -1,6 +1,6 @@
 import React from 'react';
-import SignUp from './SignUp';
 import { shallow } from 'enzyme';
+import SignUp from './SignUp';
 import * as firebase from '../../utils/firebaseUtils';
 
 jest.mock('../../utils/firebaseUtils');

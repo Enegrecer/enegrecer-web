@@ -1,9 +1,9 @@
 import React from 'react';
-import firebaseApp from '../../utils/firebaseUtils';
-import styles from './Login.style';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Check from 'material-ui/svg-icons/navigation/check';
+import firebaseApp from '../../utils/firebaseUtils';
+import styles from './Login.style';
 
 export default class SignUp extends React.Component {
   constructor(props) {
@@ -15,6 +15,33 @@ export default class SignUp extends React.Component {
       firstName: '',
       lastName: '',
     };
+  }
+
+  onPressRegisterButton() {
+    return firebaseApp.auth().createUserWithEmailAndPassword(this.state.login, this.state.password)
+      .then((user) => {
+        this.setState({
+          ...this.state,
+          logged: true,
+        });
+        user.sendEmailVerification();
+      }).catch((error) => {
+        this.setState({
+          ...this.state,
+          loginError: error.code,
+          loginErrorMessage: error.message,
+          logged: false,
+          password: '',
+        });
+      });
+  }
+
+  setProperty(event, property) {
+    const currentState = this.state;
+    this.setState({
+      ...currentState,
+      [property]: event.target.value,
+    });
   }
 
   generateTextField(id, text, value, property, type) {
@@ -49,32 +76,5 @@ export default class SignUp extends React.Component {
         />
       </div>
     );
-  }
-
-  setProperty(event, property) {
-    const currentState = this.state;
-    this.setState({
-      ...currentState,
-      [property]: event.target.value,
-    });
-  }
-
-  onPressRegisterButton() {
-    return firebaseApp.auth().createUserWithEmailAndPassword(this.state.login, this.state.password)
-      .then((user) => {
-        this.setState({
-          ...this.state,
-          logged: true,
-        });
-        user.sendEmailVerification();
-      }).catch((error) => {
-        this.setState({
-          ...this.state,
-          loginError: error.code,
-          loginErrorMessage: error.message,
-          logged: false,
-          password: '',
-        });
-      });
   }
 }

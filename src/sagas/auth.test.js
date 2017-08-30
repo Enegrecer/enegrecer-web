@@ -1,5 +1,5 @@
-import rootSaga, { handleRequestSignIn, signIn } from './auth';
 import { fork, call, put, take } from 'redux-saga/effects';
+import rootSaga, { handleRequestSignIn, signIn } from './auth';
 import { REQUEST_SIGN_IN, successSignIn, failureSignIn } from '../actions';
 
 jest.mock('../utils/firebaseUtils');
@@ -25,17 +25,23 @@ describe('Auth Sagas', () => {
     it('should login with success', () => {
       const mockRequestSignInAction = generateRequestSignInMockAction('pass', 'any');
 
-      expect(saga.next().value).toEqual(take(REQUEST_SIGN_IN));
-      expect(saga.next(mockRequestSignInAction).value).toEqual(call(signIn, mockRequestSignInAction));
-      expect(saga.next({ user: 'any' }).value).toEqual(put(successSignIn({ user: 'any' })));
+      expect(saga.next().value)
+        .toEqual(take(REQUEST_SIGN_IN));
+      expect(saga.next(mockRequestSignInAction).value)
+        .toEqual(call(signIn, mockRequestSignInAction));
+      expect(saga.next({ user: 'any' }).value)
+        .toEqual(put(successSignIn({ user: 'any' })));
     });
 
     it('should faill login', () => {
       const mockRequestSignInAction = generateRequestSignInMockAction('error', 'userNotFound');
 
-      expect(saga.next().value).toEqual(take(REQUEST_SIGN_IN));
-      expect(saga.next(mockRequestSignInAction).value).toEqual(call(signIn, mockRequestSignInAction));
-      expect(saga.next({ error: 'any' }).value).toEqual(put(failureSignIn({ error: 'any' })));
+      expect(saga.next().value)
+        .toEqual(take(REQUEST_SIGN_IN));
+      expect(saga.next(mockRequestSignInAction).value)
+        .toEqual(call(signIn, mockRequestSignInAction));
+      expect(saga.next({ error: 'any' }).value)
+        .toEqual(put(failureSignIn({ error: 'any' })));
     });
   });
 

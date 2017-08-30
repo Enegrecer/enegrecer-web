@@ -15,7 +15,8 @@ export class Home extends Component {
             <div id="home">
                 {userInfo}
                 <h1>Enegrecer</h1>
-                <Link to="/categorias">Categorias</Link>
+                <Link to="/categorias">Categorias</Link> <br />
+                <Link to="/newComplaint">Criar Denúncia</Link>
             </div>
             
         );

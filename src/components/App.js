@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import Home from './home/Home';
 import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import CategoriesList from './categories/list/CategoriesList'
-import Login from './login/Login'
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 import AppBar from 'material-ui/AppBar'
 import { IconButton, Drawer, MenuItem } from 'material-ui'
-import { Link } from 'react-router-dom'
 import NavigationClose from 'material-ui/svg-icons/navigation/close'
-
+import RouterSwitcher from './RouterSwitcher'
 
 export default class App extends Component {
     constructor() {
@@ -40,12 +36,8 @@ export default class App extends Component {
                     <Link to="/login"><MenuItem>Login</MenuItem></Link>
                 </Drawer>
             
-                   
-                <Switch>       
-                    <Route exact path="/" component={Home} />
-                    <Route path="/categorias" component={CategoriesList} />
-                    <Route path="/login" component={Login} />
-                </Switch>                        
+                <RouterSwitcher />   
+                                    
             </div>
         </BrowserRouter>
         );

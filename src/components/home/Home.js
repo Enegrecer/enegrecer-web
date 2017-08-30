@@ -9,16 +9,17 @@ export class Home extends React.PureComponent {
 
     if (this.props.auth.logged) {
       userInfo = <div>Meu usuário é: {this.props.auth.user.email} </div>;
+      return (
+        <div id="home">
+          {userInfo}
+          <h1>Enegrecer</h1>
+          <Link to="/categorias">Categorias</Link> <br />
+          <Link to="/newComplaint">Criar Denúncia</Link>
+        </div>
+      );
     }
 
-    return (
-      <div id="home">
-        {userInfo}
-        <h1>Enegrecer</h1>
-        <Link to="/categorias">Categorias</Link>
-      </div>
-
-    );
+    return <div />;
   }
 }
 

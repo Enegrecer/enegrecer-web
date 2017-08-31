@@ -1,5 +1,5 @@
 {
-    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "extends": "airbnb",
     "plugins": [
         "react"
     ],
@@ -13,7 +13,7 @@
         "mocha": true,
         "node": true,
         "browser": true
-    },        
+    },
     "settings": {
         "react": {
             "createClass": "createReactClass", // Regex for Component Factory to use, default to "createReactClass"
@@ -32,7 +32,9 @@
     "rules": {
         "react/jsx-uses-react": "error",
         "react/jsx-uses-vars": "error",
-        "no-constant-condition": "off"
+        "no-constant-condition": "off",
+  			"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }]
     }
 
 }

@@ -1,68 +1,70 @@
 import React from 'react';
-import { SignIn } from './SignIn';
 import { shallow } from 'enzyme';
+import { SignIn } from './SignIn';
 
 describe('SignIn Component', () => {
-    it('renders without crashing', () => {
-        const wrapper = shallow(<SignIn onLoginPress={() => {}} />);
-        expect(wrapper.exists()).toBe(true);
+  it('renders without crashing', () => {
+    const wrapper = shallow(<SignIn onLoginPress={() => {}} />);
+    expect(wrapper.exists()).toBe(true);
+  });
+
+  it('initialize the state object properly', () => {
+    const wrapper = shallow(<SignIn onLoginPress={() => {}} />);
+    const expetctedState = {
+      logged: false,
+      login: '',
+      password: '',
+      loginError: null,
+      loginErrorMessage: '',
+    };
+    expect(wrapper.state()).toEqual(expetctedState);
+  });
+
+  describe('setProperty method', () => {
+    it('set a property in the state', () => {
+      const wrapper = shallow(<SignIn onLoginPress={() => {}} />);
+      const simulatedEvent = {
+        target: {
+          value: true,
+        },
+      };
+      const propertyToSet = 'logged';
+      wrapper.instance().setProperty(simulatedEvent, propertyToSet);
+      expect(wrapper.state(propertyToSet)).toBe(simulatedEvent.target.value);
     });
 
-    it('initialize the state object properly', () => {
-        const wrapper = shallow(<SignIn onLoginPress={() => {}} />);
-        const expetctedState = {
-            logged: false,
-            login: '',
-            password: '',
-            loginError: null,
-            loginErrorMessage: ''
-        };
-        expect(wrapper.state()).toEqual(expetctedState);
+    it('does not override other properties of the state', () => {
+      const wrapper = shallow(<SignIn onLoginPress={() => {}} />);
+      const propertyToSet = 'logged';
+      const simulatedEvent = {
+        target: {
+          value: true,
+        },
+      };
+
+      const expetctedState = wrapper.state();
+      expetctedState[propertyToSet] = simulatedEvent.target.value;
+
+      wrapper.instance().setProperty(simulatedEvent, propertyToSet);
+      expect(wrapper.state()).toEqual(expetctedState);
     });
+  });
 
-    describe('setProperty method', () => {
-        it('set a property in the state', () => {
-            const wrapper = shallow(<SignIn onLoginPress={() => {}} />);
-            const simulatedEvent = {
-                target: {
-                    value: true
-                }
-            };
-            const propertyToSet = 'logged';
-            wrapper.instance().setProperty(simulatedEvent, propertyToSet);
-            expect(wrapper.state(propertyToSet)).toBe(simulatedEvent.target.value);
-        });
+  describe('onPressLoginButton method', () => {
+    it('calls the onPressLoginButton function passed as props with email and password', () => {
+      const mockLoginPress = jest.fn();
+      const wrapper = shallow(<SignIn onLoginPress={mockLoginPress} />);
+      const mockLoginAndPassword = {
+        login: 'any',
+        password: 'any',
+      };
 
-        it('does not override other properties of the state', () => {
-            const wrapper = shallow(<SignIn onLoginPress={() => {}} />);
-            const propertyToSet = 'logged';
-            const simulatedEvent = {
-                target: {
-                    value: true
-                }
-            };
-
-            let expetctedState = wrapper.state();
-            expetctedState[propertyToSet] = simulatedEvent.target.value;
-
-            wrapper.instance().setProperty(simulatedEvent, propertyToSet);
-            expect(wrapper.state()).toEqual(expetctedState);
-        });
+      wrapper.setState(mockLoginAndPassword);
+      wrapper.instance().onPressLoginButton();
+      expect(mockLoginPress.mock.calls.length)
+        .toBe(1);
+      expect(mockLoginPress.mock.calls[0])
+        .toEqual([mockLoginAndPassword.login, mockLoginAndPassword.password]);
     });
-
-    describe('onPressLoginButton method', () => {
-        it('calls the onPressLoginButton function passed as props with email and password', () => {
-            let mockLoginPress = jest.fn();
-            const wrapper = shallow(<SignIn onLoginPress={mockLoginPress} />);
-            let mockLoginAndPassword = {
-                login: 'any',
-                password: 'any'
-            };
-
-            wrapper.setState(mockLoginAndPassword);
-            wrapper.instance().onPressLoginButton();
-            expect(mockLoginPress.mock.calls.length).toBe(1);
-            expect(mockLoginPress.mock.calls[0]).toEqual([mockLoginAndPassword.login, mockLoginAndPassword.password]);
-        });
-    });
+  });
 });

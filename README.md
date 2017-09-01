@@ -67,7 +67,7 @@ npm run lint
 E existe também o modo de watch que pode ser rodado com:
 
 ```shell
-npm run watch:lint
+npm run watch-lint
 ```
 
 ### Build

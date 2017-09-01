@@ -5,7 +5,6 @@ import { IconButton, Drawer, MenuItem } from 'material-ui';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
 import HomePage from './home/Home';
-import './App.css';
 import CategoriesList from './categories/list/CategoriesList';
 import Login from './login/Login';
 

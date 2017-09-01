@@ -34,8 +34,7 @@
         "react/jsx-uses-vars": "error",
         "no-constant-condition": "off",
   			"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }],
-        "comma-dangle": ["error", { "functions": "ignore" }]
+        "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }]
     }
 
 }

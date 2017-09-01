@@ -8,7 +8,7 @@ describe('Painel', () => {
     <Painel>
       <span />
       <span />
-    </Painel>
+    </Painel>,
   );
 
   it('renderiza os filhos', () => {

@@ -18,3 +18,10 @@ jobs:
       skip_cleanup: true
       on:
         branch: master
+notifications:
+  webhooks:
+    urls:
+      - https://webhooks.gitter.im/e/a387d084c573fd34e585
+    on_success: change
+    on_failure: always
+    on_start: always

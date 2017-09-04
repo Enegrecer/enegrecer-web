@@ -14,6 +14,7 @@ const reducer = (state = {}, action) => {
        };
     case FAILURE_CREATE_COMPLAINT:
        console.log('falhou');
+
        return { 
          ...state
         };

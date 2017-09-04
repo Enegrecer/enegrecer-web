@@ -67,7 +67,6 @@ export class NewComplaintContainer extends Component {
                 />
             <br />
 
-
              <button onClick={() => this.onPressSaveButton()}>
               Salvar
             </button>

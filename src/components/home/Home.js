@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 export class Home extends React.PureComponent {
   render() {
     let userInfo;
-
     if (this.props.auth.logged) {
       userInfo = <div>Meu usuário é: {this.props.auth.user.email} </div>;
       return (

@@ -1,11 +1,15 @@
 import firebaseApp from '../utils/firebaseUtils';
 import { fork, call, put, take } from 'redux-saga/effects';
+<<<<<<< HEAD
 import * as firebase from 'firebase';
+=======
+>>>>>>> 4f2095316116dcd807774bb4e77eb5e107276aa9
 import {
     REQUEST_CREATE_COMPLAINT, successCreateComplaint, failureCreateComplaint
 } from '../actions';
 
 export function createComplaint(action) {
+<<<<<<< HEAD
   var ref = firebaseApp.database().ref();
   var complaintsRef = ref.child('complaints');
   
@@ -31,7 +35,6 @@ export function createComplaint(action) {
 
   
   return { success };
-  
 }
 
 export function* handleRequestCreateComplaint() {

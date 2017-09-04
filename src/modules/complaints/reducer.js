@@ -8,8 +8,12 @@ const reducer = (state = {}, action) => {
         ...state
        };
     case SUCCESS_CREATE_COMPLAINT:
+       console.log('sucesso');
+       return { 
+        ...state
+       };
     case FAILURE_CREATE_COMPLAINT:
-       console.log('falhou/sucesso');
+       console.log('falhou');
        return { 
          ...state
         };

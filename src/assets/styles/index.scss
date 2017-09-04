@@ -1,0 +1,76 @@
+@import "colors";
+@import "helpers";
+@import "components/brand";
+@import "components/topbar";
+@import "components/nav";
+@import "components/btn";
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+.en-text--light {
+  color: $light-color;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.en-subtitle--primary {
+  font-size: 25px;
+  text-transform: uppercase;
+  color: $primary-color;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.en-title {
+  font-size: 50px;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px;
+
+  &.en-title--light {
+    color: $light-color;
+  }
+
+  &.en-title--marker::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 6px;
+    background: $primary-color;
+    margin-top: 10px;
+    margin-left: 2px;
+  }
+}
+
+#banner {
+  height: 600px;
+  background: url('./../images/face.jpg') no-repeat center top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border-left: 86px solid $primary-color;
+  position: relative;
+
+  #banner__blur {
+    height: 100%;
+    width: 80%;
+    max-width: 870px;
+    background-color: #525252;
+    opacity: 0.84;
+    position: absolute;
+  }
+
+  .container {
+    > .row {
+      margin: 30px -15px;
+    }
+  }
+
+  #en-banner__description {
+    margin-bottom: 33px;
+  }
+}

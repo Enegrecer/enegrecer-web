@@ -1,0 +1,9 @@
+.en-topbar {
+  padding: 34px 0;
+  display: flex;
+  flex-direction: row;
+
+  .en-topbar__right {
+    margin-left: auto;
+  }
+}

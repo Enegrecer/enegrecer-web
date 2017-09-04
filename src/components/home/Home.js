@@ -1,20 +1,17 @@
 import React from 'react';
+import Logo from './../Logo';
+import Nav from './../Nav';
+import Topbar from './../Topbar';
 
 const Home = () => (
   <div id="banner">
     <div id="banner__blur" />
 
     <div className="container">
-      <div className="en-topbar">
-        <span className="en-brand">Enegrecer</span>
-
-        <div className="en-topbar__right">
-          <nav className="en-nav">
-            <a className="en-extra-margin-right" href="">Sobre</a>
-            <a className="en-btn en-btn--outline en-btn--primary" href="">Registrar / Entrar</a>
-          </nav>
-        </div>
-      </div>
+      <Topbar
+        leftComponent={<Logo />}
+        rightComponent={<Nav />}
+      />
 
       <div className="row">
         <div className="col-md-4">

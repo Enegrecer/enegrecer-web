@@ -9,14 +9,13 @@ import { push } from 'react-router-redux';
 export class NewComplaintContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      report: '',
-    };
+    this.state = {};
   }
 
   onPressSaveButton() {
     this.props.requestCreateComplaint({
       ...this.state,
+      informer: this.props.informer,
       onSuccess: push('/painel'),
     });
   }
@@ -93,16 +92,11 @@ export class NewComplaintContainer extends Component {
 
 NewComplaintContainer.propTypes = {
   requestCreateComplaint: PropTypes.func.isRequired,
+  informer: PropTypes.string.isRequired,
 };
 
-
 const mapStateToProps = state => ({
-  report: state.report,
-  latitude: state.latitude,
-  longitude: state.longitude,
-  address: state.address,
-  ocurrenceDate: state.ocurrenceDate,
-  categoryId: state.categoryId,
+  informer: state.auth.user.uid,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
@@ -113,6 +107,5 @@ const reduxNewComplaint = connect(
   mapStateToProps,
   mapDispatchToProps,
 )(NewComplaintContainer);
-
 
 export default reduxNewComplaint;

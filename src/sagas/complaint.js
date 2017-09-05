@@ -1,5 +1,6 @@
 import firebaseApp from '../utils/firebaseUtils';
 import { fork, call, put, take } from 'redux-saga/effects';
+import * as firebase from 'firebase';
 
 import {
   REQUEST_CREATE_COMPLAINT, successCreateComplaint,
@@ -11,8 +12,8 @@ export function createComplaint(action) {
 
   const complaintKey = complaintsRef.push({
     categoryId: action.payload.categoryId,
-    createdAt: firebaseApp.database.ServerValue.TIMESTAMP,
-    informer: 'uuid',
+    createdAt: firebase.database.ServerValue.TIMESTAMP,
+    informer: action.payload.informer,
     legalInformations: {
       category: 'Agressão Moral',
       formalComplaint: '07621/12',

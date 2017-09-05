@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { requestCreateComplaint } from '../../actions';
 import TextField from 'material-ui/TextField';
+import { push } from 'react-router-redux';
 
 export class NewComplaintContainer extends Component {
   constructor(props) {
@@ -13,7 +15,10 @@ export class NewComplaintContainer extends Component {
   }
 
   onPressSaveButton() {
-    console.log(this.props.onSavePress(this.state));
+    this.props.requestCreateComplaint({
+      ...this.state,
+      onSuccess: push('/painel'),
+    });
   }
 
   setProperty(event, property) {
@@ -39,8 +44,8 @@ export class NewComplaintContainer extends Component {
         <label>Data e Hora do ocorrido:</label>
         <TextField
           id="occuranceDate"
-          value={this.state.ocurranceDate}
-          onChange={e => this.setProperty(e, 'ocurranceDate')}
+          value={this.state.ocurrenceDate}
+          onChange={e => this.setProperty(e, 'ocurrenceDate')}
         />
 
         <label>Categoria (injury ou racism)</label>
@@ -87,7 +92,7 @@ export class NewComplaintContainer extends Component {
 }
 
 NewComplaintContainer.propTypes = {
-  onSavePress: PropTypes.func.isRequired,
+  requestCreateComplaint: PropTypes.func.isRequired,
 };
 
 
@@ -96,20 +101,13 @@ const mapStateToProps = state => ({
   latitude: state.latitude,
   longitude: state.longitude,
   address: state.address,
-  ocurranceDate: state.ocurranceDate,
+  ocurrenceDate: state.ocurrenceDate,
   categoryId: state.categoryId,
 });
 
-const mapDispatchToProps = dispatch => ({
-  onSavePress: complaint => dispatch(requestCreateComplaint({
-    report: complaint.report,
-    latitude: complaint.latitude,
-    longitude: complaint.longitude,
-    address: complaint.address,
-    ocurranceDate: complaint.ocurranceDate,
-    categoryId: complaint.categoryId,
-  })),
-});
+const mapDispatchToProps = dispatch => bindActionCreators({
+  requestCreateComplaint,
+}, dispatch);
 
 const reduxNewComplaint = connect(
   mapStateToProps,

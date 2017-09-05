@@ -1,18 +1,17 @@
 import firebaseApp from '../utils/firebaseUtils';
 import { fork, call, put, take } from 'redux-saga/effects';
-import * as firebase from 'firebase';
 
 import {
-  REQUEST_CREATE_COMPLAINT, successCreateComplaint, failureCreateComplaint,
+  REQUEST_CREATE_COMPLAINT, successCreateComplaint,
 } from '../actions';
 
 export function createComplaint(action) {
   const ref = firebaseApp.database().ref();
   const complaintsRef = ref.child('complaints');
 
-  const success = complaintsRef.push({
+  const complaintKey = complaintsRef.push({
     categoryId: action.payload.categoryId,
-    createdAt: firebase.database.ServerValue.TIMESTAMP,
+    createdAt: firebaseApp.database.ServerValue.TIMESTAMP,
     informer: 'uuid',
     legalInformations: {
       category: 'Agressão Moral',
@@ -25,25 +24,21 @@ export function createComplaint(action) {
       latitude: action.payload.latitude,
       longitude: action.payload.longitude,
     },
-    ocurranceDate: action.payload.ocurranceDate,
+    ocurrenceDate: action.payload.ocurrenceDate,
     report: action.payload.report,
     statusId: 'new',
   }).getKey();
 
-
-  return { success };
+  return complaintKey;
 }
 
 export function* handleRequestCreateComplaint() {
   while (true) {
     const action = yield take(REQUEST_CREATE_COMPLAINT);
-    const { success, error } = yield call(createComplaint, action);
+    const complaintKey = yield call(createComplaint, action);
 
-    if (success && !error) {
-      yield put(successCreateComplaint({ success }));
-    } else {
-      yield put(failureCreateComplaint({ error }));
-    }
+    yield put(successCreateComplaint(complaintKey));
+    yield put(action.payload.onSuccess);
   }
 }
 

@@ -1,6 +1,6 @@
-import firebaseApp from '../utils/firebaseUtils';
 import { fork, call, put, take } from 'redux-saga/effects';
 import * as firebase from 'firebase';
+import firebaseApp from '../utils/firebaseUtils';
 
 import {
   REQUEST_CREATE_COMPLAINT, successCreateComplaint,

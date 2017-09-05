@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { requestCreateComplaint } from '../../actions';
 import TextField from 'material-ui/TextField';
 import { push } from 'react-router-redux';
+import { requestCreateComplaint } from '../../actions';
 
 export class NewComplaintContainer extends Component {
   constructor(props) {
@@ -39,7 +39,7 @@ export class NewComplaintContainer extends Component {
     return (
       <div>
         <h1>Nova Denúncia</h1>
-        <label>Detalhamento:</label>
+        <label htmlFor="report">Detalhamento:</label>
 
         <TextField
           id="report"
@@ -47,14 +47,14 @@ export class NewComplaintContainer extends Component {
           onChange={e => this.setProperty(e, 'report')}
         />
 
-        <label>Data e Hora do ocorrido:</label>
+        <label htmlFor="ocurrenceDate">Data e Hora do ocorrido:</label>
         <TextField
-          id="occuranceDate"
+          id="occurenceDate"
           value={this.state.ocurrenceDate}
           onChange={e => this.setProperty(e, 'ocurrenceDate')}
         />
 
-        <label>Categoria (injury ou racism)</label>
+        <label htmlFor="categoryId">Categoria (injury ou racism)</label>
         <TextField
           id="categoryId"
           value={this.state.categoryId}
@@ -64,7 +64,7 @@ export class NewComplaintContainer extends Component {
         <h3>Local do crime</h3>
         <br />
 
-        <label>Endereço:</label>
+        <label htmlFor="address">Endereço:</label>
         <TextField
           id="address"
           value={this.state.address}
@@ -73,7 +73,7 @@ export class NewComplaintContainer extends Component {
 
         <br />
 
-        <label>Latitude:</label>
+        <label htmlFor="latitude">Latitude:</label>
         <TextField
           id="latitude"
           value={this.state.latitude}
@@ -82,7 +82,7 @@ export class NewComplaintContainer extends Component {
         <br />
 
 
-        <label>Longitude:</label>
+        <label htmlFor="longitude">Longitude:</label>
         <TextField
           id="longitude"
           value={this.state.longitude}

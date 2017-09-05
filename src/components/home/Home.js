@@ -12,8 +12,8 @@ export class Home extends React.PureComponent {
         <div id="home">
           {userInfo}
           <h1>Enegrecer</h1>
-          <Link to="/categorias">Categorias</Link> <br />
-          <Link to="/newComplaint">Criar Denúncia</Link>
+          <Link id="categorias" to="/categorias">Categorias</Link> <br />
+          <Link id="criar-denuncia" to="/newComplaint">Criar Denúncia</Link>
         </div>
       );
     }

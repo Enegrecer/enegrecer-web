@@ -5,124 +5,116 @@ import { requestCreateComplaint } from '../../actions';
 import TextField from 'material-ui/TextField';
 
 export class NewComplaintContainer extends Component {
-    constructor(props) {
-      super(props)
-      this.state = {
-          report: ''
-      };
+  constructor(props) {
+    super(props);
+    this.state = {
+      report: '',
+    };
   }
 
-    render() {
-      return  (
-          <div> 
-          <h1>Nova Denúncia</h1>
-             <label>Detalhamento:</label>
+  onPressSaveButton() {
+    console.log(this.props.onSavePress(this.state));
+  }
 
-             <TextField
-                    id="report"
-                    value={this.state.report}
-                    onChange={(e) => this.setProperty(e, 'report')}
-                />
+  setProperty(event, property) {
+    const currentState = this.state;
+    this.setState({
+      ...currentState,
+      [property]: event.target.value,
+    });
+  }
 
-            <label>Data e Hora do ocorrido:</label>
-            <TextField
-                    id="occuranceDate"
-                    value={this.state.ocurranceDate}
-                    onChange={(e) => this.setProperty(e, 'ocurranceDate')}
-                />
+  render() {
+    return (
+      <div>
+        <h1>Nova Denúncia</h1>
+        <label>Detalhamento:</label>
 
-            <label>Categoria (injury ou racism)</label>
-            <TextField
-                    id="categoryId"
-                    value={this.state.categoryId}
-                    onChange={(e) => this.setProperty(e, 'categoryId')}
-                />
+        <TextField
+          id="report"
+          value={this.state.report}
+          onChange={e => this.setProperty(e, 'report')}
+        />
 
-             <h3>Local do crime</h3>
-            <br />
+        <label>Data e Hora do ocorrido:</label>
+        <TextField
+          id="occuranceDate"
+          value={this.state.ocurranceDate}
+          onChange={e => this.setProperty(e, 'ocurranceDate')}
+        />
 
-            <label>Endereço:</label>
-            <TextField
-                    id="address"
-                    value={this.state.address}
-                    onChange={(e) => this.setProperty(e, 'address')}
-                />
-            
-            <br />
+        <label>Categoria (injury ou racism)</label>
+        <TextField
+          id="categoryId"
+          value={this.state.categoryId}
+          onChange={e => this.setProperty(e, 'categoryId')}
+        />
 
-            <label>Latitude:</label>
-            <TextField
-                    id="latitude"
-                    value={this.state.latitude}
-                    onChange={(e) => this.setProperty(e, 'latitude')}
-                />
-            <br />
+        <h3>Local do crime</h3>
+        <br />
+
+        <label>Endereço:</label>
+        <TextField
+          id="address"
+          value={this.state.address}
+          onChange={e => this.setProperty(e, 'address')}
+        />
+
+        <br />
+
+        <label>Latitude:</label>
+        <TextField
+          id="latitude"
+          value={this.state.latitude}
+          onChange={e => this.setProperty(e, 'latitude')}
+        />
+        <br />
 
 
-            <label>Longitude:</label>
-            <TextField
-                    id="longitude"
-                    value={this.state.longitude}
-                    onChange={(e) => this.setProperty(e, 'longitude')}
-                />
-            <br />
+        <label>Longitude:</label>
+        <TextField
+          id="longitude"
+          value={this.state.longitude}
+          onChange={e => this.setProperty(e, 'longitude')}
+        />
+        <br />
 
-             <button onClick={() => this.onPressSaveButton()}>
+        <button onClick={() => this.onPressSaveButton()}>
               Salvar
-            </button>
-          </div>)
-          
-    }
-
-
-    setProperty(event, property) {
-        const currentState = this.state;
-        this.setState({
-            ...currentState,
-            [property]: event.target.value
-        })
-    }
-
-    onPressSaveButton() {
-      console.log(this.props.onSavePress(this.state));
-    }
+        </button>
+      </div>);
   }
+}
 
-   NewComplaintContainer.propTypes = {
-    onSavePress: PropTypes.func.isRequired
-    }
-
-
-  const mapStateToProps = state => {
-    return {
-        report: state.report,
-        latitude: state.latitude,
-        longitude: state.longitude,
-        address: state.address,
-        ocurranceDate: state.ocurranceDate,
-        categoryId: state.categoryId
-    }
+NewComplaintContainer.propTypes = {
+  onSavePress: PropTypes.func.isRequired,
 };
 
-  const mapDispatchToProps = dispatch => {
-      return {
-          onSavePress: (complaint) => {
-              return dispatch(requestCreateComplaint({
-                report: complaint.report,
-                latitude: complaint.latitude,
-                longitude: complaint.longitude,
-                address: complaint.address,
-                ocurranceDate: complaint.ocurranceDate,
-                categoryId: complaint.categoryId
-              }));
-          }
-      };
-  };
 
-  const reduxNewComplaint = connect(
-      mapStateToProps,
-      mapDispatchToProps
-  )(NewComplaintContainer);
+const mapStateToProps = state => ({
+  report: state.report,
+  latitude: state.latitude,
+  longitude: state.longitude,
+  address: state.address,
+  ocurranceDate: state.ocurranceDate,
+  categoryId: state.categoryId,
+});
+
+const mapDispatchToProps = dispatch => ({
+  onSavePress: complaint => dispatch(requestCreateComplaint({
+    report: complaint.report,
+    latitude: complaint.latitude,
+    longitude: complaint.longitude,
+    address: complaint.address,
+    ocurranceDate: complaint.ocurranceDate,
+    categoryId: complaint.categoryId,
+  })),
+});
+
+const reduxNewComplaint = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(NewComplaintContainer);
 
 
-  export default reduxNewComplaint;
+export default reduxNewComplaint;

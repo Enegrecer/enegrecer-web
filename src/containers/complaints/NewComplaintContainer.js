@@ -9,7 +9,14 @@ import { push } from 'react-router-redux';
 export class NewComplaintContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      report: '',
+      ocurrenceDate: '',
+      categoryId: '',
+      address: '',
+      latitude: '',
+      longitude: '',
+    };
   }
 
   onPressSaveButton() {

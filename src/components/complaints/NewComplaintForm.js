@@ -82,7 +82,7 @@ export default class NewComplaintForm extends Component {
         />
         <br />
 
-        <button onClick={() => this.onPressSaveButton()}>
+        <button id="btn-salvar-denuncia" onClick={() => this.onPressSaveButton()}>
               Salvar
         </button>
       </div>);

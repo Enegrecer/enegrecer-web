@@ -29,7 +29,7 @@ export default class NewComplaintForm extends Component {
 
   render() {
     return (
-      <div>
+      <div id="form-nova-denuncia">
         <h1>Nova Denúncia</h1>
         <label htmlFor="report">Detalhamento:</label>
 

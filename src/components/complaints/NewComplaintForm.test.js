@@ -8,6 +8,37 @@ describe('NewComplaintForm Component', () => {
     expect(wrapper.exists()).toBe(true);
   });
 
+  it('renderiza sem erro o input de report do componente', () => {
+    const wrapper = shallow(<NewComplaintForm salvarDenuncia={() => { }} />);
+
+    expect(wrapper.children('#report').length).toBe(1);
+  });
+
+  it('renderiza sem erro o input de ocurrenceDate do componente', () => {
+    const wrapper = shallow(<NewComplaintForm salvarDenuncia={() => { }} />);
+    expect(wrapper.children('#ocurrenceDate').length).toBe(1);
+  });
+
+  it('renderiza sem erro o input de categoryId do componente', () => {
+    const wrapper = shallow(<NewComplaintForm salvarDenuncia={() => { }} />);
+    expect(wrapper.children('#categoryId').length).toBe(1);
+  });
+
+  it('renderiza sem erro o input de address do componente', () => {
+    const wrapper = shallow(<NewComplaintForm salvarDenuncia={() => { }} />);
+    expect(wrapper.children('#address').length).toBe(1);
+  });
+
+  it('renderiza sem erro o input de latitude do componente', () => {
+    const wrapper = shallow(<NewComplaintForm salvarDenuncia={() => { }} />);
+    expect(wrapper.children('#latitude').length).toBe(1);
+  });
+
+  it('renderiza sem erro o input de longitude do componente', () => {
+    const wrapper = shallow(<NewComplaintForm salvarDenuncia={() => { }} />);
+    expect(wrapper.children('#longitude').length).toBe(1);
+  });
+
   it('inicializa o componente com o estado esperado', () => {
     const wrapper = shallow(<NewComplaintForm salvarDenuncia={() => { }} />);
 

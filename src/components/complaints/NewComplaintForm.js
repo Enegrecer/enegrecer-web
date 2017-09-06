@@ -41,7 +41,7 @@ export default class NewComplaintForm extends Component {
 
         <label htmlFor="ocurrenceDate">Data e Hora do ocorrido:</label>
         <TextField
-          id="occurenceDate"
+          id="ocurrenceDate"
           value={this.state.ocurrenceDate}
           onChange={e => this.setProperty(e, 'ocurrenceDate')}
         />

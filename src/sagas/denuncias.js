@@ -36,9 +36,9 @@ export function criarDenuncia(action) {
 export function* handleCriarDenunciaRequisicao() {
   while (true) {
     const action = yield take(CRIAR_DENUNCIA_REQUISICAO);
-    const denunciaId = yield call(criarDenuncia, action);
+    const idDenuncia = yield call(criarDenuncia, action);
 
-    yield put(denunciaCriadaSucesso(denunciaId));
+    yield put(denunciaCriadaSucesso(idDenuncia));
     yield put(action.payload.onSuccess);
   }
 }

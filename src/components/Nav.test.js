@@ -4,7 +4,10 @@ import { shallow } from 'enzyme';
 import Nav from './Nav';
 
 describe('Nav', () => {
-  const wrapper = shallow(<Nav />);
+  const historyMock = { push: jest.fn() };
+  const wrapper = shallow(
+    <Nav history={historyMock} />,
+  );
 
   it('tem a classe en-nav', () => {
     expect(wrapper.hasClass('en-nav')).toBeTruthy();
@@ -14,7 +17,13 @@ describe('Nav', () => {
     expect(wrapper.find('[href="/sobre"]').exists()).toBeTruthy();
   });
 
-  it('tem o link de registrar/entrar', () => {
-    expect(wrapper.find('[href="/entrar"]').exists()).toBeTruthy();
+  describe('quando clicar no botão de registrar/entrar', () => {
+    beforeEach(() => {
+      wrapper.find('Botao[outline]').simulate('click');
+    });
+
+    it('deve chamar a função push com /registrar', () => {
+      expect(historyMock.push).toBeCalledWith('/registrar');
+    });
   });
 });

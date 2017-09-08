@@ -1,10 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Logo = () => (
+import Botao from './Botao';
+
+const Nav = props => (
   <nav className="en-nav">
     <a className="en-extra-margin-right" href="/sobre">Sobre</a>
-    <a className="en-btn en-btn--outline en-btn--primary" href="/entrar">Registrar / Entrar</a>
+    <Botao outline primary onClick={() => props.history.push('/registrar')}>Registrar / Entrar</Botao>
   </nav>
 );
 
-export default Logo;
+Nav.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
+
+export default Nav;

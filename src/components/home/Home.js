@@ -1,16 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Logo from './../Logo';
 import Nav from './../Nav';
 import Topbar from './../Topbar';
+import Botao from './../Botao';
 
-const Home = () => (
+const Home = props => (
   <div id="banner">
     <div id="banner__blur" />
-
     <div className="container">
       <Topbar
         leftComponent={<Logo />}
-        rightComponent={<Nav />}
+        rightComponent={<Nav history={props.history} />}
       />
 
       <div className="row">
@@ -21,11 +22,17 @@ const Home = () => (
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <a href="" className="en-btn en-btn--colored">Denunciar Racismo</a>
+          <Botao onClick={() => {}} colored>Denunciar Racismo</Botao>
         </div>
       </div>
     </div>
   </div>
 );
+
+Home.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default Home;

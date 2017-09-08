@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Rotas from './Rotas';
 import HomePage from './home/Home';
-import CategoriesList from './categories/list/CategoriesList';
 import Login from './login/Login';
 
 function possuiRotaComComponente(rotas, rota, componente) {
@@ -17,6 +16,5 @@ describe('Rotas', () => {
   const rotas = shallow(<Rotas />);
 
   possuiRotaComComponente(rotas, '/', HomePage);
-  possuiRotaComComponente(rotas, '/painel/categorias', CategoriesList);
   possuiRotaComComponente(rotas, '/painel/login', Login);
 });

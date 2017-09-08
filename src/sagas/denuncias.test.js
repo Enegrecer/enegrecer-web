@@ -1,17 +1,17 @@
 import { fork, call, put, take } from 'redux-saga/effects';
-import rootSaga, { handleRequestCreateComplaint, createComplaint } from './complaint';
-import { REQUEST_CREATE_COMPLAINT, successCreateComplaint } from '../actions';
+import rootSaga, { handlecriarDenunciaRequisicao, createComplaint } from './denuncias';
+import { CRIAR_DENUNCIA_REQUISICAO, denunciaCriadaSucesso } from '../actions';
 
 jest.mock('../utils/firebaseUtils');
 
 describe('Saga de Denúncias', () => {
   describe('Deve criar uma denúncia com sucesso', () => {
-    const saga = handleRequestCreateComplaint();
+    const saga = handlecriarDenunciaRequisicao();
     const mockDaAcaoDeCriarDenuncia = {
-      type: REQUEST_CREATE_COMPLAINT,
+      type: CRIAR_DENUNCIA_REQUISICAO,
       payload: {
-        categoryId: 'injury',
-        report: 'teste',
+        idCategoria: 'injury',
+        detalhamento: 'teste',
         onSuccess: {
           type: 'TESTE_CRIAR_DENUNCIA',
         },
@@ -20,7 +20,7 @@ describe('Saga de Denúncias', () => {
 
     it('Deve esperar pela ação de criar denúncia', () => {
       expect(saga.next().value)
-        .toEqual(take(REQUEST_CREATE_COMPLAINT));
+        .toEqual(take(CRIAR_DENUNCIA_REQUISICAO));
     });
 
     it('Deve chamar a função createComplaint com o payload recebido da ação', () => {
@@ -30,7 +30,7 @@ describe('Saga de Denúncias', () => {
 
     it('deve despachar a ação de denuncia criada com sucesso', () => {
       expect(saga.next('idDaDenuncia').value)
-        .toEqual(put(successCreateComplaint('idDaDenuncia')));
+        .toEqual(put(denunciaCriadaSucesso('idDaDenuncia')));
     });
 
     it('deve despachar a ação de onSuccess', () => {
@@ -41,10 +41,10 @@ describe('Saga de Denúncias', () => {
 });
 
 describe('Root Sagas', () => {
-  it('deve contar o handleRequestCreateComplaint', () => {
+  it('deve contar o handlecriarDenunciaRequisicao', () => {
     const saga = rootSaga();
 
-    expect(saga.next().value).toEqual(fork(handleRequestCreateComplaint));
+    expect(saga.next().value).toEqual(fork(handlecriarDenunciaRequisicao));
     expect(saga.next().done).toBe(true);
   });
 });

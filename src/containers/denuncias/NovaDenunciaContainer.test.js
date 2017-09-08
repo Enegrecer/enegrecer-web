@@ -1,30 +1,30 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { shallow, mount } from 'enzyme';
-import { NewComplaintContainer } from './NewComplaintContainer';
+import { NovaDenunciaContainer } from './NovaDenunciaContainer';
 
 
-describe('NewComplaintContainer', () => {
+describe('NovaDenunciaContainer', () => {
   it('renderiza o container sem erros', () => {
     const wrapper = shallow(
-      <NewComplaintContainer informer="" requestCreateComplaint={() => { }} />);
+      <NovaDenunciaContainer denunciante="" criarDenunciaRequisicao={() => { }} />);
     expect(wrapper.exists()).toBe(true);
   });
 
   it('renderiza sem erros o formulário de denúncias dentro do container', () => {
     const wrapper = mount(<MuiThemeProvider>
-      <NewComplaintContainer informer="" requestCreateComplaint={() => { }} />
+      <NovaDenunciaContainer denunciante="" criarDenunciaRequisicao={() => { }} />
     </MuiThemeProvider>);
     expect(wrapper.find('#form-nova-denuncia').length).toBe(1);
   });
 
   describe('método onPressSaveButton', () => {
-    it('chama o método requestCreateComplaint recebido via prop', () => {
-      const requestCreateComplaintMock = jest.fn();
+    it('chama o método criarDenunciaRequisicao recebido via prop', () => {
+      const criarDenunciaRequisicaoMock = jest.fn();
       const wrapper = shallow(
-        <NewComplaintContainer informer="" requestCreateComplaint={requestCreateComplaintMock} />);
+        <NovaDenunciaContainer denunciante="" criarDenunciaRequisicao={criarDenunciaRequisicaoMock} />);
       wrapper.instance().onPressSaveButton();
-      expect(requestCreateComplaintMock).toHaveBeenCalled();
+      expect(criarDenunciaRequisicaoMock).toHaveBeenCalled();
     });
   });
 });

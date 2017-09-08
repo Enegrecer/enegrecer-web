@@ -3,44 +3,44 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
-import { requestCreateComplaint } from '../../actions';
-import NewComplaintForm from '../../components/complaints/NewComplaintForm';
+import { criarDenunciaRequisicao } from '../../actions';
+import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
 
-export class NewComplaintContainer extends Component {
+export class NovaDenunciaContainer extends Component {
   constructor(props) {
     super(props);
     this.onPressSaveButton = this.onPressSaveButton.bind(this);
   }
 
   onPressSaveButton(state) {
-    this.props.requestCreateComplaint({
+    this.props.criarDenunciaRequisicao({
       ...state,
-      informer: this.props.informer,
+      denunciante: this.props.denunciante,
       onSuccess: push('/painel'),
     });
   }
 
   render() {
-    return <NewComplaintForm salvarDenuncia={this.onPressSaveButton} />;
+    return <NovaDenunciaForm salvarDenuncia={this.onPressSaveButton} />;
   }
 }
 
-NewComplaintContainer.propTypes = {
-  informer: PropTypes.string.isRequired,
-  requestCreateComplaint: PropTypes.func.isRequired,
+NovaDenunciaContainer.propTypes = {
+  denunciante: PropTypes.string.isRequired,
+  criarDenunciaRequisicao: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
-  informer: state.auth.user.uid,
+  denunciante: state.auth.user.uid,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  requestCreateComplaint,
+  criarDenunciaRequisicao,
 }, dispatch);
 
 const reduxNewComplaint = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(NewComplaintContainer);
+)(NovaDenunciaContainer);
 
 export default reduxNewComplaint;

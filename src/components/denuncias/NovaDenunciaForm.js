@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 
-export default class NewComplaintForm extends Component {
+export default class NovaDenunciaForm extends Component {
   constructor(props) {
     super(props);
 
@@ -10,8 +10,8 @@ export default class NewComplaintForm extends Component {
 
     this.state = {
       report: '',
-      ocurrenceDate: '',
-      categoryId: '',
+      dataHoraOcorrencia: '',
+      idCategoria: '',
       address: '',
       latitude: '',
       longitude: '',
@@ -43,11 +43,11 @@ export default class NewComplaintForm extends Component {
         <label htmlFor="report">Detalhamento:</label>
         {this.renderTextField('report')}
 
-        <label htmlFor="ocurrenceDate">Data e Hora do ocorrido:</label>
-        {this.renderTextField('ocurrenceDate')}
+        <label htmlFor="dataHoraOcorrencia">Data e Hora do ocorrido:</label>
+        {this.renderTextField('dataHoraOcorrencia')}
 
-        <label htmlFor="categoryId">Categoria (injury ou racism)</label>
-        {this.renderTextField('categoryId')}
+        <label htmlFor="idCategoria">Categoria (injury ou racism)</label>
+        {this.renderTextField('idCategoria')}
 
         <h3>Local do crime</h3>
         <br />
@@ -71,6 +71,6 @@ export default class NewComplaintForm extends Component {
   }
 }
 
-NewComplaintForm.propTypes = {
+NovaDenunciaForm.propTypes = {
   salvarDenuncia: PropTypes.func.isRequired,
 };

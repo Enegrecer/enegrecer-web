@@ -8,9 +8,9 @@ export const requestSignIn = createAction(REQUEST_SIGN_IN);
 export const successSignIn = createAction(SUCCESS_SIGN_IN);
 export const failureSignIn = createAction(FAILURE_SIGN_IN);
 
-export const REQUEST_CREATE_COMPLAINT = 'REQUEST_CREATE_COMPLAINT';
-export const SUCCESS_CREATE_COMPLAINT = 'SUCCESS_CREATE_COMPLAINT';
-export const FAILURE_CREATE_COMPLAINT = 'FAILURE_CREATE_COMPLAINT';
-export const requestCreateComplaint = createAction(REQUEST_CREATE_COMPLAINT);
-export const successCreateComplaint = createAction(SUCCESS_CREATE_COMPLAINT);
-export const failureCreateComplaint = createAction(FAILURE_CREATE_COMPLAINT);
+export const CRIAR_DENUNCIA_REQUISICAO = 'CRIAR_DENUNCIA_REQUISICAO';
+export const DENUNCIA_CRIADA_SUCESSO = 'DENUNCIA_CRIADA_SUCESSO';
+export const FALHA_CRIACAO_DENUNCIA = 'FALHA_CRIACAO_DENUNCIA';
+export const criarDenunciaRequisicao = createAction(CRIAR_DENUNCIA_REQUISICAO);
+export const denunciaCriadaSucesso = createAction(DENUNCIA_CRIADA_SUCESSO);
+export const falhaCriacaoDenuncia = createAction(FALHA_CRIACAO_DENUNCIA);

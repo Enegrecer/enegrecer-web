@@ -54,53 +54,49 @@ describe('NewComplaintForm Component', () => {
     expect(wrapper.state()).toEqual(expectedState);
   });
 
-  describe('método onPressSaveButton', () => {
-    it('chama o método de criar denúncia recebido via prop', () => {
-      const salvarDenunciaMock = jest.fn();
-      const wrapper = shallow(<NewComplaintForm salvarDenuncia={salvarDenunciaMock} />);
-      wrapper.instance().onPressSaveButton();
-      expect(salvarDenunciaMock).toHaveBeenCalled();
+  describe('quando o valor do input for alterado', () => {
+    const wrapper = shallow(<NewComplaintForm salvarDenuncia={() => { }} />);
+
+    beforeEach(() => {
+      const eventMock = {
+        target: {
+          value: 'valor report',
+        },
+      };
+
+      wrapper.find('#report').simulate('change', eventMock);
     });
 
-    it('chama o método de criar denúncia passando o seu estado interno', () => {
-      const salvarDenunciaMock = jest.fn();
-      const wrapper = shallow(<NewComplaintForm salvarDenuncia={salvarDenunciaMock} />);
-
-      const estadoNoMomentoDaChamada = wrapper.state();
-      wrapper.instance().onPressSaveButton();
-
-      const primeiraChamadaAoMock = salvarDenunciaMock.mock.calls[0];
-      const objetoPassadoAoMock = primeiraChamadaAoMock[0];
-      expect(objetoPassadoAoMock).toEqual(estadoNoMomentoDaChamada);
+    it('altera o valor correspondente no estado', () => {
+      expect(wrapper.state().report).toEqual('valor report');
     });
   });
 
-  describe('método setProperty', () => {
-    let wrapper;
-    const eventoSimulado = {
-      target: {
-        value: 'texto de teste',
-      },
+  describe('quando o form for submetido', () => {
+    const salvarDenunciaSpy = jest.fn();
+    const wrapper = shallow(<NewComplaintForm salvarDenuncia={salvarDenunciaSpy} />);
+    const stateMock = {
+      report: 'valor report',
+      categoryId: 'valor categoria',
     };
-    const propriedade = 'report';
 
     beforeEach(() => {
-      wrapper = shallow(<NewComplaintForm salvarDenuncia={() => { }} />);
+      wrapper.setState(stateMock);
+
+      wrapper.find('form').simulate('submit');
     });
 
-    it('configura valor de uma propriedade no estado', () => {
-      wrapper.instance().setProperty(eventoSimulado, propriedade);
+    it('deve chamar salvar denúncia com os dados corretos', () => {
+      const expectedParams = {
+        report: 'valor report',
+        ocurrenceDate: '',
+        categoryId: 'valor categoria',
+        address: '',
+        latitude: '',
+        longitude: '',
+      };
 
-      const propriedadeAlterada = wrapper.state(propriedade);
-      expect(propriedadeAlterada).toBe(eventoSimulado.target.value);
-    });
-
-    it('não muda o valor de outras propriedades do estado', () => {
-      const estadoEsperado = { ...wrapper.state() };
-      estadoEsperado[propriedade] = eventoSimulado.target.value;
-
-      wrapper.instance().setProperty(eventoSimulado, propriedade);
-      expect(wrapper.state()).toEqual(estadoEsperado);
+      expect(salvarDenunciaSpy).toBeCalledWith(expectedParams);
     });
   });
 });

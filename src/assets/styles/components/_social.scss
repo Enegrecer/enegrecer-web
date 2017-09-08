@@ -1,0 +1,23 @@
+.en-social {
+  text-align: center;
+
+  .en-social__title {
+    font-size: 20px;
+    color: $text-gray-color;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .en-social__links {
+    a {
+      color: $text-gray-color;
+      text-decoration: none;
+      font-size: 30px;
+      margin-right: 25px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

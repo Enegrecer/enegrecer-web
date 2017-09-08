@@ -4,9 +4,15 @@
 @import "components/topbar";
 @import "components/nav";
 @import "components/btn";
+@import "components/footer";
+@import "components/social";
 
 * {
   font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: $light-gray-color;
 }
 
 .en-text--light {

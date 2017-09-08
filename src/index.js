@@ -8,6 +8,7 @@ import { createBrowserHistory } from 'history';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'font-awesome/css/font-awesome.css';
 
 import registerServiceWorker from './utils/registerServiceWorker';
 import App from './components/App';

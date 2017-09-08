@@ -38,9 +38,9 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   criarDenunciaRequisicao,
 }, dispatch);
 
-const reduxNewComplaint = connect(
+const reduxNovaDenuncia = connect(
   mapStateToProps,
   mapDispatchToProps,
 )(NovaDenunciaContainer);
 
-export default reduxNewComplaint;
+export default reduxNovaDenuncia;

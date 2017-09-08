@@ -6,11 +6,11 @@ import {
   CRIAR_DENUNCIA_REQUISICAO, denunciaCriadaSucesso,
 } from '../actions';
 
-export function createComplaint(action) {
+export function criarDenuncia(action) {
   const ref = firebaseApp.database().ref();
-  const complaintsRef = ref.child('complaints');
+  const refDenuncias = ref.child('denuncias');
 
-  const complaintKey = complaintsRef.push({
+  const idDenuncia = refDenuncias.push({
     idCategoria: action.payload.idCategoria,
     dataHoraCriacao: firebase.database.ServerValue.TIMESTAMP,
     denunciante: action.payload.denunciante,
@@ -30,19 +30,19 @@ export function createComplaint(action) {
     idStatus: 'nova',
   }).getKey();
 
-  return complaintKey;
+  return idDenuncia;
 }
 
-export function* handlecriarDenunciaRequisicao() {
+export function* handleCriarDenunciaRequisicao() {
   while (true) {
     const action = yield take(CRIAR_DENUNCIA_REQUISICAO);
-    const complaintKey = yield call(createComplaint, action);
+    const denunciaId = yield call(criarDenuncia, action);
 
-    yield put(denunciaCriadaSucesso(complaintKey));
+    yield put(denunciaCriadaSucesso(denunciaId));
     yield put(action.payload.onSuccess);
   }
 }
 
 export default function* rootSaga() {
-  yield fork(handlecriarDenunciaRequisicao);
+  yield fork(handleCriarDenunciaRequisicao);
 }

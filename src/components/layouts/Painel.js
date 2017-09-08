@@ -39,8 +39,9 @@ class Painel extends React.Component {
             onLeftIconButtonTouchTap={this.handleToggle}
           />
           <Link to="/"><MenuItem>Home</MenuItem></Link>
-          <Link to="/categorias"><MenuItem>Categorias</MenuItem></Link>
-          <Link to="/login"><MenuItem>Login</MenuItem></Link>
+          <Link to="/painel/categorias"><MenuItem>Categorias</MenuItem></Link>
+          <Link to="/painel/login"><MenuItem>Login</MenuItem></Link>
+          <Link to="/painel/denuncias/nova"><MenuItem>Criar Denúncia</MenuItem></Link>
         </Drawer>
 
         {this.props.children}

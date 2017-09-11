@@ -1,11 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Logo from './../Logo';
 import Nav from './../Nav';
 import Topbar from './../Topbar';
 import Botao from './../Botao';
 import Footer from './../Footer';
 import Social from './../Social';
+import { withHistoryPropTypes } from './../sharedPropTypes';
 
 const networks = [
   { title: 'Facebook', href: '#', icon: 'facebook-square' },
@@ -43,10 +43,6 @@ const Home = props => (
   </div>
 );
 
-Home.propTypes = {
-  history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }).isRequired,
-};
+Home.propTypes = withHistoryPropTypes();
 
 export default Home;

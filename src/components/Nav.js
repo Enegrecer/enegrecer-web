@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import Botao from './Botao';
+import { withHistoryPropTypes } from './sharedPropTypes';
 
 const Nav = props => (
   <nav className="en-nav">
@@ -10,10 +10,6 @@ const Nav = props => (
   </nav>
 );
 
-Nav.propTypes = {
-  history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }).isRequired,
-};
+Nav.propTypes = withHistoryPropTypes();
 
 export default Nav;

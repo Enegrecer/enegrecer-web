@@ -19,6 +19,7 @@ O coletivo nacional de Juventude Enegrecer é uma expressão do movimento social
 
 O Web App implementado neste respositório é uma das interfaces para essa plataforma, onde o usuário pode se informar mais a respeito e relatar um crime. As denúncias, ou relatos podem ser anônimos, mas é oferecido ao usuário a possibilidade de se identificar, podendo este se cadastrar como usuário da plataforma.
 
+
 ## Configurações
 
 Primeiro clone o repositório
@@ -26,10 +27,10 @@ Primeiro clone o repositório
 git clone https://github.com/Enegrecer/enegrecer-web.git
 ```
 
-em seguida entre na pasta do projeto clonado e rode `npm install` para baixar todas as dependencias
+em seguida entre na pasta do projeto clonado e rode `yarn install` para baixar todas as dependencias
 ```shell
 cd enegrecer-web
-npm install
+yarn install
 ```
 
 ### Rodando o projeto
@@ -37,7 +38,7 @@ npm install
 Para subir um servidor local para desenvolvimento rode
 
 ```shell
-npm start
+yarn start
 ```
 
 Isso irá subir um servidor com o aplicativo rodando em `http://localhost:3000`. Quando os arquivos dentro de `src` são alterados, automaticamente o código é recompilado e o aplicativo recarregado com as alterações.
@@ -47,7 +48,7 @@ Isso irá subir um servidor com o aplicativo rodando em `http://localhost:3000`.
 O projeto está configurado para que o desenvolvimento seja feito em TDD, e assim o script:
 
 ```shell
-npm test
+yarn test
 ```
 
 irá rodar todos os arquivos de teste (arquivos __.test.js__) e entrar em modo de _watch_. De forma que toda vez que arquivos são alterados, sejam eles testes ou não, os testes que possuem qualquer relação com tal arquivo são executados novamente.
@@ -61,13 +62,13 @@ O projeto está utilizando o [Jest](https://facebook.github.io/jest/) como frame
 O [eslint](http://eslint.org/) é utilizado como linter do projeto. É recomendado que um plugin do mesmo seja utilizado em seu editor de preferência durante o desenvolvimento. Além disso é possível executar o lint de todo o projeto rodando o comando:
 
 ```shell
-npm run lint
+yarn lint
 ```
 
 E existe também o modo de watch que pode ser rodado com:
 
 ```shell
-npm run watch:lint
+yarn watch-lint
 ```
 
 ### Build
@@ -75,7 +76,7 @@ npm run watch:lint
 O comando
 
 ```shell
-npm run build
+yarn build
 ```
 
 roda o script de build, responsável por preparar o projeto para um deploy em produção. Os arquivos passam por um processo de minificação e bundling. Gerando arquivos mais concisos, e mais leves. Todo o resultado do script aparece na pasta build que será gerada dentro do projeto.
@@ -97,5 +98,6 @@ Na nossa stack temos:
 * [Eslint](http://eslint.org/) como ferramenta de linter
 * [Firebase](https://firebase.google.com/) Como hosting e back-end mantendo controle de dados, usuários, etc
 * [Travis-CI](https://travis-ci.org/) para criar nosso CI, executar testes e build automaticamente
+* [Code Climate](https://codeclimate.com/github/Enegrecer/enegrecer-web) para cobertura de código e análise estática
 
 [Para mais informações, acesse a nossa wiki :)](https://github.com/Enegrecer/enegrecer-web/wiki)

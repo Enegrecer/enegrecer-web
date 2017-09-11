@@ -3,17 +3,17 @@ import * as firebase from 'firebase';
 import firebaseApp from '../utils/firebaseUtils';
 
 import {
-  CRIAR_DENUNCIA_REQUISICAO, denunciaCriadaSucesso,
+  CRIAR_DENUNCIA_REQUISICAO, criarDenunciaSucesso,
 } from '../actions';
 
-export function criarDenuncia(action) {
+export function criarDenuncia(acao) {
   const ref = firebaseApp.database().ref();
   const refDenuncias = ref.child('denuncias');
 
   const idDenuncia = refDenuncias.push({
-    idCategoria: action.payload.idCategoria,
+    idCategoria: acao.payload.idCategoria,
     dataHoraCriacao: firebase.database.ServerValue.TIMESTAMP,
-    denunciante: action.payload.denunciante,
+    denunciante: acao.payload.denunciante,
     informacoesLegais: {
       categoria: 'Agressão Moral',
       numeroBoletimOcorrencia: '07621/12',
@@ -21,12 +21,12 @@ export function criarDenuncia(action) {
       orgao: 'TJMG',
     },
     local: {
-      endereco: action.payload.endereco,
-      latitude: action.payload.latitude,
-      longitude: action.payload.longitude,
+      endereco: acao.payload.endereco,
+      latitude: acao.payload.latitude,
+      longitude: acao.payload.longitude,
     },
-    dataHoraOcorrencia: action.payload.dataHoraOcorrencia,
-    detalhamento: action.payload.detalhamento,
+    dataHoraOcorrencia: acao.payload.dataHoraOcorrencia,
+    detalhamento: acao.payload.detalhamento,
     idStatus: 'nova',
   }).getKey();
 
@@ -35,11 +35,11 @@ export function criarDenuncia(action) {
 
 export function* handleCriarDenunciaRequisicao() {
   while (true) {
-    const action = yield take(CRIAR_DENUNCIA_REQUISICAO);
-    const idDenuncia = yield call(criarDenuncia, action);
+    const acao = yield take(CRIAR_DENUNCIA_REQUISICAO);
+    const idDenuncia = yield call(criarDenuncia, acao);
 
-    yield put(denunciaCriadaSucesso(idDenuncia));
-    yield put(action.payload.onSuccess);
+    yield put(criarDenunciaSucesso(idDenuncia));
+    yield put(acao.payload.onSuccess);
   }
 }
 

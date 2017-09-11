@@ -9,10 +9,10 @@ export default class NovaDenunciaForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
 
     this.state = {
-      report: '',
+      detalhamento: '',
       dataHoraOcorrencia: '',
       idCategoria: '',
-      address: '',
+      endereco: '',
       latitude: '',
       longitude: '',
     };
@@ -40,20 +40,20 @@ export default class NovaDenunciaForm extends Component {
     return (
       <form id="form-nova-denuncia" onSubmit={this.handleSubmit}>
         <h1>Nova Denúncia</h1>
-        <label htmlFor="report">Detalhamento:</label>
-        {this.renderTextField('report')}
+        <label htmlFor="detalhamento">Detalhamento:</label>
+        {this.renderTextField('detalhamento')}
 
         <label htmlFor="dataHoraOcorrencia">Data e Hora do ocorrido:</label>
         {this.renderTextField('dataHoraOcorrencia')}
 
-        <label htmlFor="idCategoria">Categoria (injury ou racism)</label>
+        <label htmlFor="idCategoria">Categoria (injuria ou racismo)</label>
         {this.renderTextField('idCategoria')}
 
         <h3>Local do crime</h3>
         <br />
 
-        <label htmlFor="address">Endereço:</label>
-        {this.renderTextField('address')}
+        <label htmlFor="endereco">Endereço:</label>
+        {this.renderTextField('endereco')}
         <br />
 
         <label htmlFor="latitude">Latitude:</label>

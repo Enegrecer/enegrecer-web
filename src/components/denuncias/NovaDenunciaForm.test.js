@@ -8,10 +8,10 @@ describe('NovaDenunciaForm Component', () => {
     expect(wrapper.exists()).toBe(true);
   });
   describe('testa as renderizações dos inputs do componente', () => {
-    it('renderiza sem erro o input de report do componente', () => {
+    it('renderiza sem erro o input de detalhamento do componente', () => {
       const wrapper = shallow(<NovaDenunciaForm salvarDenuncia={() => { }} />);
 
-      expect(wrapper.children('#report').length).toBe(1);
+      expect(wrapper.children('#detalhamento').length).toBe(1);
     });
 
     it('renderiza sem erro o input de dataHoraOcorrencia do componente', () => {
@@ -24,9 +24,9 @@ describe('NovaDenunciaForm Component', () => {
       expect(wrapper.children('#idCategoria').length).toBe(1);
     });
 
-    it('renderiza sem erro o input de address do componente', () => {
+    it('renderiza sem erro o input de endereco do componente', () => {
       const wrapper = shallow(<NovaDenunciaForm salvarDenuncia={() => { }} />);
-      expect(wrapper.children('#address').length).toBe(1);
+      expect(wrapper.children('#endereco').length).toBe(1);
     });
 
     it('renderiza sem erro o input de latitude do componente', () => {
@@ -44,10 +44,10 @@ describe('NovaDenunciaForm Component', () => {
     const wrapper = shallow(<NovaDenunciaForm salvarDenuncia={() => { }} />);
 
     const expectedState = {
-      report: '',
+      detalhamento: '',
       dataHoraOcorrencia: '',
       idCategoria: '',
-      address: '',
+      endereco: '',
       latitude: '',
       longitude: '',
     };
@@ -60,15 +60,15 @@ describe('NovaDenunciaForm Component', () => {
     beforeEach(() => {
       const eventMock = {
         target: {
-          value: 'valor report',
+          value: 'valor detalhamento',
         },
       };
 
-      wrapper.find('#report').simulate('change', eventMock);
+      wrapper.find('#detalhamento').simulate('change', eventMock);
     });
 
     it('altera o valor correspondente no estado', () => {
-      expect(wrapper.state().report).toEqual('valor report');
+      expect(wrapper.state().detalhamento).toEqual('valor detalhamento');
     });
   });
 
@@ -76,7 +76,7 @@ describe('NovaDenunciaForm Component', () => {
     const salvarDenunciaSpy = jest.fn();
     const wrapper = shallow(<NovaDenunciaForm salvarDenuncia={salvarDenunciaSpy} />);
     const stateMock = {
-      report: 'valor report',
+      detalhamento: 'valor detalhamento',
       idCategoria: 'valor categoria',
     };
 
@@ -88,10 +88,10 @@ describe('NovaDenunciaForm Component', () => {
 
     it('deve chamar salvar denúncia com os dados corretos', () => {
       const expectedParams = {
-        report: 'valor report',
+        detalhamento: 'valor detalhamento',
         dataHoraOcorrencia: '',
         idCategoria: 'valor categoria',
-        address: '',
+        endereco: '',
         latitude: '',
         longitude: '',
       };

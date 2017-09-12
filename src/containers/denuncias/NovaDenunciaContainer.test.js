@@ -22,7 +22,10 @@ describe('NovaDenunciaContainer', () => {
     it('chama o método criarDenunciaRequisicao recebido via prop', () => {
       const criarDenunciaRequisicaoMock = jest.fn();
       const wrapper = shallow(
-        <NovaDenunciaContainer denunciante="" criarDenunciaRequisicao={criarDenunciaRequisicaoMock} />);
+        <NovaDenunciaContainer
+          denunciante=""
+          criarDenunciaRequisicao={criarDenunciaRequisicaoMock}
+        />);
       wrapper.instance().onPressSaveButton();
       expect(criarDenunciaRequisicaoMock).toHaveBeenCalled();
     });

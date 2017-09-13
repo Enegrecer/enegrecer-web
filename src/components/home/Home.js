@@ -13,7 +13,7 @@ export class Home extends React.PureComponent {
           {userInfo}
           <h1>Enegrecer</h1>
           <Link id="categorias" to="/categorias">Categorias</Link> <br />
-          <Link id="criar-denuncia" to="/newComplaint">Criar Denúncia</Link>
+          <Link id="criar-denuncia" to="/novaDenuncia">Criar Denúncia</Link>
         </div>
       );
     }

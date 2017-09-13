@@ -2,10 +2,9 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import HomePage from './home/Home';
-import CategoriesList from './categories/list/CategoriesList';
 import Login from './login/Login';
 import Painel from './layouts/Painel';
-import NewComplaint from '../containers/complaints/NewComplaintContainer';
+import NovaDenuncia from '../containers/denuncias/NovaDenunciaContainer';
 
 const Rotas = () => (
   <Switch>
@@ -13,9 +12,8 @@ const Rotas = () => (
 
     <Route path="/painel">
       <Painel>
-        <Route path="/painel/categorias" component={CategoriesList} />
         <Route path="/painel/login" component={Login} />
-        <Route path="/painel/denuncias/nova" component={NewComplaint} />
+        <Route path="/painel/denuncias/nova" component={NovaDenuncia} />
       </Painel>
     </Route>
   </Switch>

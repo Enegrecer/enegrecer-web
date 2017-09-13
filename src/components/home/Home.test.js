@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { Home } from './Home';
 
 describe('<Home />', () => {
-  it('has a H1', () => {
+  it('tem um H1', () => {
     const wrapper = shallow(<Home auth={{}} />);
     wrapper.setProps({
       auth: {
@@ -16,21 +16,7 @@ describe('<Home />', () => {
     expect(wrapper.find('h1').exists()).toBe(true);
   });
 
-  it('has a link to categories page;', () => {
-    const wrapper = shallow(<Home auth={{}} />);
-    wrapper.setProps({
-      auth: {
-        logged: true,
-        user: {
-          email: 'teste',
-        },
-      },
-    });
-    const link = wrapper.find('#categorias').props();
-    expect(link).toHaveProperty('to', '/categorias');
-  });
-
-  it('has a link to createNewComplaint page;', () => {
+  it('possui um link para a página de nova denúncia;', () => {
     const wrapper = shallow(<Home auth={{}} />);
     wrapper.setProps({
       auth: {
@@ -41,6 +27,6 @@ describe('<Home />', () => {
       },
     });
     const link = wrapper.find('#criar-denuncia').props();
-    expect(link).toHaveProperty('to', '/newComplaint');
+    expect(link).toHaveProperty('to', '/novaDenuncia');
   });
 });

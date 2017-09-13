@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
+import TestemunhaBox from './testemunhas/TestemunhaBox';
 
 export default class NovaDenunciaForm extends Component {
   constructor(props) {
@@ -63,6 +64,8 @@ export default class NovaDenunciaForm extends Component {
         <label htmlFor="longitude">Longitude:</label>
         {this.renderTextField('longitude')}
         <br />
+
+        <TestemunhaBox />
 
         <button type="submit" id="btn-salvar-denuncia">
               Salvar

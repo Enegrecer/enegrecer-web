@@ -12,6 +12,7 @@
   * [Build](#build)
 * [Deploy](#deploy)
 * [Tech Stack](#tech-stack)
+* [Mais Informações](#mais-informações)
 
 ## O Projeto
 
@@ -99,6 +100,8 @@ Na nossa stack temos:
 * [Firebase](https://firebase.google.com/) Como hosting e back-end mantendo controle de dados, usuários, etc
 * [Travis-CI](https://travis-ci.org/) para criar nosso CI, executar testes e build automaticamente
 * [Code Climate](https://codeclimate.com/github/Enegrecer/enegrecer-web) para cobertura de código e análise estática
+
+## Mais Informações
 
 [Para mais informações, acesse a nossa wiki :)](https://github.com/Enegrecer/enegrecer-web/wiki)
 

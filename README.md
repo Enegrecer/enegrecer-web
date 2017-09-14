@@ -44,6 +44,10 @@ yarn start
 
 Isso irá subir um servidor com o aplicativo rodando em `http://localhost:3000`. Quando os arquivos dentro de `src` são alterados, automaticamente o código é recompilado e o aplicativo recarregado com as alterações.
 
+Ao abrir o caminho `http://localhost:3000`, é normal a página aparecer em branco. Para acessar as opções, vá para `http://localhost:3000/painel`
+
+Após efetuar login, a pessoa usuária ainda não está sendo redirecionada, então aguarde alguns segundos e acesse o menu novamente e escolha a opção desejada por favor.
+
 ### Testes
 
 O projeto está configurado para que o desenvolvimento seja feito em TDD, e assim o script:

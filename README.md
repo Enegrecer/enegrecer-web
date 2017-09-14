@@ -101,3 +101,5 @@ Na nossa stack temos:
 * [Code Climate](https://codeclimate.com/github/Enegrecer/enegrecer-web) para cobertura de código e análise estática
 
 [Para mais informações, acesse a nossa wiki :)](https://github.com/Enegrecer/enegrecer-web/wiki)
+
+Ou junte-se ao nosso espaço no [Gitter](https://gitter.im/Coletivo-Enegrecer/Enegrecer)

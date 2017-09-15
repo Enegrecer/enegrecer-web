@@ -74,9 +74,13 @@ export default class NovaDenunciaForm extends Component {
         {this.renderTextField('longitude')}
         <br />
 
+<<<<<<< HEAD
+        <button name="salvarDenuncia" type="submit" id="btn-salvar-denuncia">
+=======
         <NovaVitimaForm alterarVitimaForm={this.adicionarVitimaEmForm} />
 
-        <button name="salvarDenuncia" type="submit" id="btn-salvar-denuncia">
+        <button type="submit" id="btn-salvar-denuncia">
+>>>>>>> Inclusão do formulário de vítimas
               Salvar
         </button>
       </form>);

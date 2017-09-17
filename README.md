@@ -18,7 +18,7 @@
 
 O coletivo nacional de Juventude Enegrecer é uma expressão do movimento social negro que luta contra as opressões da sociedade em favor da juventude negra. O projeto se propõe como uma plataforma para registrar denúncias de crimes raciais, a fim de se coletar dados para embasar e guiar ações e políticas antirracismo.
 
-O Web App implementado neste respositório é uma das interfaces para essa plataforma, onde o usuário pode se informar mais a respeito e relatar um crime. As denúncias, ou relatos podem ser anônimos, mas é oferecido ao usuário a possibilidade de se identificar, podendo este se cadastrar como usuário da plataforma.
+O Web App implementado neste respositório é uma das interfaces para essa plataforma, onde o usuário pode se informar mais a respeito e relatar um crime.
 
 
 ## Configurações

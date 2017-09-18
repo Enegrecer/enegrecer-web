@@ -30,6 +30,24 @@ export function criarDenuncia(acao) {
     idStatus: 'nova',
   }).getKey();
 
+  const refPessoasEnvolvidas = ref.child('pessoasEnvolvidas').child(idDenuncia);
+  refPessoasEnvolvidas.set({
+    vitimas: {
+      dataNascimento: acao.payload.vitima.pessoa.dataNascimento,
+      genero: acao.payload.vitima.pessoa.genero,
+      informacoesComplementares: acao.payload.vitima.pessoa.informacoesComplementares,
+      nome: acao.payload.vitima.pessoa.nome,
+      raca: acao.payload.vitima.pessoa.raca,
+      informacoesContato: {
+        email: 'email@email.com',
+        endereco: 'Rua B, 19 - Teste',
+        telefone: 23458907,
+      },
+    },
+    testemunhas: { },
+    autores: { },
+  });
+
   return idDenuncia;
 }
 

@@ -7,6 +7,7 @@ import Footer from './../Footer';
 import Social from './../Social';
 import { withHistoryPropTypes } from './../sharedPropTypes';
 
+<<<<<<< HEAD
 const networks = [
   { title: 'Facebook', href: '#', icon: 'facebook-square' },
   { title: 'Twitter', href: '#', icon: 'twitter' },
@@ -26,6 +27,22 @@ const Home = props => (
             }
             />}
         />
+=======
+export class Home extends React.PureComponent {
+  render() {
+    let userInfo;
+    if (this.props.auth.logged) {
+      userInfo = <div>Meu usuário é: {this.props.auth.user.email} </div>;
+      return (
+        <div id="home">
+          {userInfo}
+          <h1>Enegrecer</h1>
+          <Link id="categorias" to="/categorias">Categorias</Link> <br />
+          <Link id="criar-denuncia" to="/novaDenuncia">Criar Denúncia</Link>
+        </div>
+      );
+    }
+>>>>>>> origin/master
 
         <div className="row">
           <div className="col-md-4">

@@ -6,6 +6,9 @@ cache:
 node_js: '7'
 jobs:
   include:
+  - stage: sass
+    script:
+      - yarn run build-css
   - stage: lint
     script:
       - yarn lint

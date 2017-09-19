@@ -20,7 +20,11 @@ const Home = props => (
       <div className="container">
         <Topbar
           leftComponent={<Logo />}
-          rightComponent={<Nav history={props.history} />}
+          rightComponent={
+            <Nav history={
+              props.history // eslint-disable-line react/prop-types
+            }
+            />}
         />
 
         <div className="row">

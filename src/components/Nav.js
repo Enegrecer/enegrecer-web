@@ -6,7 +6,13 @@ import { withHistoryPropTypes } from './sharedPropTypes';
 const Nav = props => (
   <nav className="en-nav">
     <a className="en-extra-margin-right" href="/sobre">Sobre</a>
-    <Botao outline primary onClick={() => props.history.push('/registrar')}>Registrar / Entrar</Botao>
+    <Botao
+      outline
+      primary
+      onClick={
+        () => props.history.push('/registrar') // eslint-disable-line react/prop-types
+      }
+    >Registrar / Entrar</Botao>
   </nav>
 );
 

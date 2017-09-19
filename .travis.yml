@@ -6,14 +6,10 @@ cache:
 node_js: '7'
 jobs:
   include:
-  - stage: dependencies
-    script:
-      - yarn install
-  - stage: sass
-    script:
-      - yarn run build-css
   - stage: lint
     script:
+      - yarn install
+      - yarn run build-css
       - yarn lint
   - stage: unit tests
     script: yarn test-coverage

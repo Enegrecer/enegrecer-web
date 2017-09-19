@@ -4,29 +4,31 @@ import TextField from 'material-ui/TextField';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import Checkbox from 'material-ui/Checkbox';
+import DatePicker from 'material-ui/DatePicker';
 
 export default class NovaPessoaForm extends Component {
   constructor(props) {
     super(props);
+    let formatoDataHora;
 
-    this.handleTextFieldChange = this.handleTextFieldChange.bind(this);
     this.handleOptionChange = this.handleOptionChange.bind(this);
-    this.handleSelectFieldGeneroChange = this.handleSelectFieldGeneroChange.bind(this);
-    this.handleSelectFieldRacaChange = this.handleSelectFieldRacaChange.bind(this);
+    this.alterarCampoTexto = this.alterarCampoTexto.bind(this);
+    this.alterarGenero = this.alterarGenero.bind(this);
+    this.alterarRaca = this.alterarRaca.bind(this);
+    this.alterarDataNascimento = this.alterarDataNascimento.bind(this);
 
     this.state = {
       pessoaIdentificada: false,
       nome: '',
       genero: '',
       raca: '',
-      tipo: '',
       informacoesComplementares: '',
       dataNascimento: '',
       descricao: '',
     };
   }
-
-  handleTextFieldChange(event, property) {
+  
+  alterarCampoTexto(event, property) {
     this.setState({
       ...this.state,
       [property]: event.target.value });
@@ -41,17 +43,24 @@ export default class NovaPessoaForm extends Component {
     this.props.alterarPessoaForm(this.state);
   }
 
-  handleSelectFieldGeneroChange(event, index, value) {
+  alterarGenero(event, index, value) {
     this.setState({
       ...this.state,
       genero: value,
     });
   }
 
-  handleSelectFieldRacaChange(event, index, value) {
+  alterarRaca(event, index, value) {
     this.setState({
       ...this.state,
       raca: value,
+    });
+  }
+
+  alterarDataNascimento(event, date) {
+    this.setState({
+      ...this.state,
+      dataNascimento: date,
     });
   }
 
@@ -60,7 +69,7 @@ export default class NovaPessoaForm extends Component {
       <TextField
         id={name}
         value={this.state[name]}
-        onChange={event => this.handleTextFieldChange(event, name)}
+        onChange={event => this.alterarCampoTexto(event, name)}
       />
     );
   }
@@ -81,7 +90,7 @@ export default class NovaPessoaForm extends Component {
           name="genero"
           floatingLabelText="Gênero"
           value={this.state.genero}
-          onChange={this.handleSelectFieldGeneroChange}
+          onChange={this.alterarGenero}
         >
           <MenuItem value={'feminino'} primaryText="Feminino" />
           <MenuItem value={'masculino'} primaryText="Masculino" />
@@ -93,7 +102,7 @@ export default class NovaPessoaForm extends Component {
           id="raca"
           floatingLabelText="Cor ou raça"
           value={this.state.raca}
-          onChange={this.handleSelectFieldRacaChange}
+          onChange={this.alterarRaca}
         >
           <MenuItem value={'preta'} primaryText="Preta" />
           <MenuItem value={'parda'} primaryText="Parda" />
@@ -103,16 +112,17 @@ export default class NovaPessoaForm extends Component {
         </SelectField>
         <br />
 
-        <label htmlFor="tipo">Tipo:</label>
-        {this.renderTextField('tipo')}
-        <br />
-
         <label htmlFor="informacoesComplementares">Informacoes Complementares:</label>
         {this.renderTextField('informacoesComplementares')}
         <br />
 
         <label htmlFor="dataNascimento">Data de Nascimento:</label>
-        {this.renderTextField('dataNascimento')}
+        <DatePicker
+          id="dataNascimento"
+          container="inline"
+          value={this.state.dataNascimento}
+          onChange={this.alterarDataNascimento}
+        />
         <br />
 
         <label htmlFor="descricao">Descrição:</label>

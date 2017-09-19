@@ -1,17 +1,21 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
-import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
+import Checkbox from 'material-ui/Checkbox';
 
 export default class NovaPessoaForm extends Component {
   constructor(props) {
     super(props);
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleTextFieldChange = this.handleTextFieldChange.bind(this);
     this.handleOptionChange = this.handleOptionChange.bind(this);
+    this.handleSelectFieldGeneroChange = this.handleSelectFieldGeneroChange.bind(this);
+    this.handleSelectFieldRacaChange = this.handleSelectFieldRacaChange.bind(this);
 
     this.state = {
-      pessoaIdentificada: 'nao',
+      pessoaIdentificada: false,
       nome: '',
       genero: '',
       raca: '',
@@ -22,19 +26,33 @@ export default class NovaPessoaForm extends Component {
     };
   }
 
-  handleChange(event, property) {
+  handleTextFieldChange(event, property) {
     this.setState({
       ...this.state,
       [property]: event.target.value });
     this.props.alterarPessoaForm(this.state);
   }
 
-  handleOptionChange(changeEvent) {
+  handleOptionChange(changeEvent, isInputChecked) {
     this.setState({
       ...this.state,
-      pessoaIdentificada: changeEvent.target.value,
+      pessoaIdentificada: isInputChecked,
     });
     this.props.alterarPessoaForm(this.state);
+  }
+
+  handleSelectFieldGeneroChange(event, index, value) {
+    this.setState({
+      ...this.state,
+      genero: value,
+    });
+  }
+
+  handleSelectFieldRacaChange(event, index, value) {
+    this.setState({
+      ...this.state,
+      raca: value,
+    });
   }
 
   renderTextField(name) {
@@ -42,37 +60,47 @@ export default class NovaPessoaForm extends Component {
       <TextField
         id={name}
         value={this.state[name]}
-        onChange={event => this.handleChange(event, name)}
+        onChange={event => this.handleTextFieldChange(event, name)}
       />
     );
   }
 
-  renderRadioButton(name) {
-    return (
-      <RadioButton
-        value={name}
-        label={name}
-        checked={this.state.pessoaIdentificada === { name }}
-        onChange={this.handleOptionChange}
-      />
-    );
-  }
   render() {
     return (
       <div>
-        <label htmlFor="vitimaIdentificada">Vitima Identificada:</label>
-        <RadioButtonGroup name="identificacaoVitima" defaultSelected="nao">
-          {this.renderRadioButton('sim')}
-          {this.renderRadioButton('nao')}
-        </RadioButtonGroup>
+        <Checkbox
+          label="Conheço a vítima"
+          checked={this.state.pessoaIdentificada}
+          onCheck={this.handleOptionChange}
+        />
+
         <label htmlFor="nome">Nome:</label>
         {this.renderTextField('nome')}
+        <br />
+        <SelectField
+          name="genero"
+          floatingLabelText="Gênero"
+          value={this.state.genero}
+          onChange={this.handleSelectFieldGeneroChange}
+        >
+          <MenuItem value={'feminino'} primaryText="Feminino" />
+          <MenuItem value={'masculino'} primaryText="Masculino" />
+          <MenuItem value={'não-binario'} primaryText="Não-Binário" />
+          <MenuItem value={'agênero'} primaryText="Agênero" />
+        </SelectField>
 
-        <label htmlFor="genero">Gênero</label>
-        {this.renderTextField('genero')}
-
-        <label htmlFor="raca">Raça:</label>
-        {this.renderTextField('raca')}
+        <SelectField
+          id="raca"
+          floatingLabelText="Cor ou raça"
+          value={this.state.raca}
+          onChange={this.handleSelectFieldRacaChange}
+        >
+          <MenuItem value={'preta'} primaryText="Preta" />
+          <MenuItem value={'parda'} primaryText="Parda" />
+          <MenuItem value={'indígena'} primaryText="Indígena" />
+          <MenuItem value={'amarela'} primaryText="Amarela" />
+          <MenuItem value={'branca'} primaryText="Branca" />
+        </SelectField>
         <br />
 
         <label htmlFor="tipo">Tipo:</label>

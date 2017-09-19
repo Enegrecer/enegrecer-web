@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
+import Divider from 'material-ui/Divider';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import NovaVitimaForm from '../pessoas/vitima/NovaVitimaForm';
+
 
 export default class NovaDenunciaForm extends Component {
   constructor(props) {
@@ -54,11 +56,11 @@ export default class NovaDenunciaForm extends Component {
     );
   }
 
-  renderRadioButton(name) {
+  renderRadioButton(name, label) {
     return (
       <RadioButton
         value={name}
-        label={name}
+        label={label}
         checked={this.state.idCategoria === { name }}
       />
     );
@@ -76,8 +78,8 @@ export default class NovaDenunciaForm extends Component {
 
         <label htmlFor="idCategoria">Categoria:</label>
         <RadioButtonGroup name="idCategoria" onChange={this.handleOptionChange}>
-          {this.renderRadioButton('injuria')}
-          {this.renderRadioButton('racismo')}
+          {this.renderRadioButton('injuria', 'Injúria')}
+          {this.renderRadioButton('racismo', 'Racismo')}
         </RadioButtonGroup>
 
         <h3>Local do crime</h3>
@@ -94,6 +96,8 @@ export default class NovaDenunciaForm extends Component {
         <label htmlFor="longitude">Longitude:</label>
         {this.renderTextField('longitude')}
         <br />
+
+        <Divider />
 
         <NovaVitimaForm alterarVitimaForm={this.adicionarVitimaEmForm} />
 

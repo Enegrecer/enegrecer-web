@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
+import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import NovaVitimaForm from '../pessoas/vitima/NovaVitimaForm';
 
 export default class NovaDenunciaForm extends Component {
@@ -9,6 +10,7 @@ export default class NovaDenunciaForm extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleOptionChange = this.handleOptionChange.bind(this);
     this.adicionarVitimaEmForm = this.adicionarVitimaEmForm.bind(this);
 
     this.state = {
@@ -29,6 +31,12 @@ export default class NovaDenunciaForm extends Component {
     this.props.salvarDenuncia(this.state);
   }
 
+  handleOptionChange(changeEvent) {
+    this.setState({
+      idCategoria: changeEvent.target.value,
+    });
+  }
+
   adicionarVitimaEmForm(state) {
     this.setState({
       ...this.state,
@@ -46,6 +54,16 @@ export default class NovaDenunciaForm extends Component {
     );
   }
 
+  renderRadioButton(name) {
+    return (
+      <RadioButton
+        value={name}
+        label={name}
+        checked={this.state.idCategoria === { name }}
+      />
+    );
+  }
+
   render() {
     return (
       <form name="form-denuncia" id="form-nova-denuncia" onSubmit={this.handleSubmit}>
@@ -56,8 +74,11 @@ export default class NovaDenunciaForm extends Component {
         <label htmlFor="dataHoraOcorrencia">Data e Hora do ocorrido:</label>
         {this.renderTextField('dataHoraOcorrencia')}
 
-        <label htmlFor="idCategoria">Categoria (injuria ou racismo)</label>
-        {this.renderTextField('idCategoria')}
+        <label htmlFor="idCategoria">Categoria:</label>
+        <RadioButtonGroup name="idCategoria" onChange={this.handleOptionChange}>
+          {this.renderRadioButton('injuria')}
+          {this.renderRadioButton('racismo')}
+        </RadioButtonGroup>
 
         <h3>Local do crime</h3>
         <br />

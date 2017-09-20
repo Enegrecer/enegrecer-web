@@ -13,7 +13,9 @@ jobs:
   - stage: unit tests
     script: yarn test-coverage
   - stage: deploy
-    before_script: yarn build
+    before_script:
+      - yarn run build-css 
+      - yarn build
     deploy:
       provider: firebase
       skip_cleanup: true

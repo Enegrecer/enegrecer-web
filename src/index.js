@@ -7,11 +7,14 @@ import { ConnectedRouter, routerMiddleware as createRouterMiddleware } from 'rea
 import { createBrowserHistory } from 'history';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'font-awesome/css/font-awesome.css';
+
 import registerServiceWorker from './utils/registerServiceWorker';
-import './index.css';
 import App from './components/App';
 import reducers from './reducers';
 import rootSaga from './sagas';
+import './assets/styles/index.css';
 
 const history = createBrowserHistory();
 const sagaMiddleware = createSagaMiddleware();

@@ -1,0 +1,12 @@
+.en-nav {
+  text-transform: uppercase;
+
+  > * {
+    margin-left: 20px;
+  }
+
+  a {
+    color: #FFF;
+    font-size: 14px;
+  }
+}

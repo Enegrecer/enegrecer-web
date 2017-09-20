@@ -1,0 +1,30 @@
+.en-btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 40px;
+  color: #FFF;
+  text-transform: uppercase;
+
+  &.en-btn--primary {
+    background: $primary-color;
+  }
+
+  &.en-btn--colored {
+    background-color: $colored-color;
+  }
+
+  &.en-btn--outline {
+    border: 1px solid transparent;
+    background: transparent;
+
+    &.en-btn--primary {
+      border-color: $primary-color;
+      color: $primary-color;
+    }
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: $light-color;
+  }
+}

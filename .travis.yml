@@ -3,12 +3,11 @@ cache:
   yarn: true
   directories:
   - "node_modules"
-node_js: '7'
+node_js: '8'
 jobs:
   include:
   - stage: lint
     script:
-      - yarn install
       - yarn run build-css
       - yarn lint
   - stage: unit tests

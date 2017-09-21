@@ -25,7 +25,7 @@
     "redux-saga": "^0.15.6"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "yarn build-css && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "test-coverage": "react-scripts test --env=jsdom --coverage && ./node_modules/codeclimate-test-reporter/bin/codeclimate.js < ./coverage/lcov.info",

@@ -1,10 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import TextField from 'material-ui/TextField';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
-import Checkbox from 'material-ui/Checkbox';
-import DatePicker from 'material-ui/DatePicker';
+import { Button, FormGroup, Label, Input } from 'reactstrap';
+
 
 export default class NovaPessoaForm extends Component {
   constructor(props) {
@@ -27,6 +24,17 @@ export default class NovaPessoaForm extends Component {
       descricao: '',
     };
   }
+
+  renderCampoTexto(name) {
+      return (
+        <Input
+          type="textarea"
+          id={name}
+          value={this.state[name]}
+          onChange={event => this.alterarCampoTexto(event, name)}
+        />
+      );
+    }
   
   alterarCampoTexto(event, property) {
     this.setState({
@@ -43,90 +51,77 @@ export default class NovaPessoaForm extends Component {
     this.props.alterarPessoaForm(this.state);
   }
 
-  alterarGenero(event, index, value) {
+  alterarGenero(event) {
     this.setState({
       ...this.state,
-      genero: value,
+      genero: event.target.value,
     });
+    this.props.alterarPessoaForm(this.state);
   }
 
-  alterarRaca(event, index, value) {
+  alterarRaca(event) {
     this.setState({
       ...this.state,
-      raca: value,
+      raca: event.target.value,
     });
+    this.props.alterarPessoaForm(this.state);
   }
 
-  alterarDataNascimento(event, date) {
+  alterarDataNascimento(event) {
     this.setState({
       ...this.state,
-      dataNascimento: date,
+      dataNascimento: event.target.value,
     });
-  }
-
-  renderTextField(name) {
-    return (
-      <TextField
-        id={name}
-        value={this.state[name]}
-        onChange={event => this.alterarCampoTexto(event, name)}
-      />
-    );
+    this.props.alterarPessoaForm(this.state);
   }
 
   render() {
     return (
-      <div>
-        <Checkbox
-          label="Conheço a vítima"
-          checked={this.state.pessoaIdentificada}
-          onCheck={this.handleOptionChange}
-        />
+    <div>
+      <FormGroup check>
+        <Label check>
+          <Input type="checkbox" value={this.state.pessoaIdentificada} onChange={this.handleOptionChange}/>{' '}
+          Conheço a vítima
+        </Label>
+      </FormGroup>
 
-        <label htmlFor="nome">Nome:</label>
-        {this.renderTextField('nome')}
-        <br />
-        <SelectField
-          name="genero"
-          floatingLabelText="Gênero"
-          value={this.state.genero}
-          onChange={this.alterarGenero}
-        >
-          <MenuItem value={'feminino'} primaryText="Feminino" />
-          <MenuItem value={'masculino'} primaryText="Masculino" />
-          <MenuItem value={'não-binario'} primaryText="Não-Binário" />
-          <MenuItem value={'agênero'} primaryText="Agênero" />
-        </SelectField>
 
-        <SelectField
-          id="raca"
-          floatingLabelText="Cor ou raça"
-          value={this.state.raca}
-          onChange={this.alterarRaca}
-        >
-          <MenuItem value={'preta'} primaryText="Preta" />
-          <MenuItem value={'parda'} primaryText="Parda" />
-          <MenuItem value={'indígena'} primaryText="Indígena" />
-          <MenuItem value={'amarela'} primaryText="Amarela" />
-          <MenuItem value={'branca'} primaryText="Branca" />
-        </SelectField>
-        <br />
+        <FormGroup>
+          <Label for="nome">Nome</Label>
+          {this.renderCampoTexto('nome')}
+        </FormGroup>
 
-        <label htmlFor="informacoesComplementares">Informacoes Complementares:</label>
-        {this.renderTextField('informacoesComplementares')}
-        <br />
+        <FormGroup>
+          <Label for="genero">Gênero</Label>
+          <Input type="select" name="genero" id="genero" onChange={this.alterarGenero} value={this.state.genero}>
+            <option value={''}>Escolha uma opção</option>
+            <option value={'feminino'}>Feminino</option>
+            <option value={'masculino'}>Masculino</option>
+            <option value={'não-binario'}>Não-Binário</option>
+            <option value={'agênero'}>Agênero</option>
+          </Input>
+        </FormGroup>
 
-        <label htmlFor="dataNascimento">Data de Nascimento:</label>
-        <DatePicker
-          id="dataNascimento"
-          container="inline"
-          value={this.state.dataNascimento}
-          onChange={this.alterarDataNascimento}
-        />
-        <br />
+        <FormGroup>
+          <Label for="raca">Cor ou raça</Label>
+          <Input type="select" name="raca" id="raca" onChange={this.alterarRaca} value={this.state.raca}>
+            <option value={''}>Escolha uma opção</option>
+            <option value={'preta'}>Preta</option>
+            <option value={'parda'}>Parda</option>
+            <option value={'indígena'}>Indígena</option>
+            <option value={'amarela'}>Amarela</option>
+            <option value={'branca'}>Branca</option>
+          </Input>
+        </FormGroup>
 
-        <label htmlFor="descricao">Descrição:</label>
-        {this.renderTextField('descricao')}
+        <FormGroup>
+          <Label for="dataNascimento">Data de Nascimento</Label>
+          <Input type="date" name="dataNascimento" id="dataNascimento" placeholder="date placeholder" onChange={this.alterarDataNascimento}/>
+        </FormGroup>
+         <FormGroup>
+          <Label for="informacoesComplementares">Você deseja fornecer maiores detalhes?</Label>
+          {this.renderCampoTexto('informacoesComplementares')}
+        </FormGroup>
         <br />
       </div>);
   }

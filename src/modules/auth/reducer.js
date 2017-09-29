@@ -6,6 +6,8 @@ const reducer = (state = {}, action) => {
       return {
         ...state,
         logged: true,
+        loginError: false,
+        loginErrorMessage: null,
         user: {
           email: action.payload.user.email,
           displayName: action.payload.user.displayName,
@@ -15,9 +17,17 @@ const reducer = (state = {}, action) => {
       };
 
     case REQUEST_SIGN_IN:
+      return {
+        ...state,
+        logged: false
+      }
     case FAILURE_SIGN_IN:
-      return { ...state, logged: false };
-
+      return { 
+        ...state, 
+        logged: false,
+        loginError: true,
+        loginErrorMessage: "E-mail ou senha inválidos"
+      };
     default:
       return state;
   }

@@ -22,10 +22,9 @@ export function criarDenuncia(acao) {
     },
     local: {
       endereco: acao.payload.endereco,
-      latitude: acao.payload.latitude,
-      longitude: acao.payload.longitude,
     },
-    dataHoraOcorrencia: acao.payload.dataHoraOcorrencia,
+    dataOcorrencia: acao.payload.dataOcorrencia,
+    horaOcorrencia: acao.payload.horaOcorrencia,
     detalhamento: acao.payload.detalhamento,
     idStatus: 'nova',
   }).getKey();
@@ -39,9 +38,9 @@ export function criarDenuncia(acao) {
       nome: acao.payload.vitima.pessoa.nome,
       raca: acao.payload.vitima.pessoa.raca,
       informacoesContato: {
-        email: 'email@email.com',
-        endereco: 'Rua B, 19 - Teste',
-        telefone: 23458907,
+        email: acao.payload.vitima.pessoa.email,
+        endereco: acao.payload.vitima.pessoa.endereco,
+        telefone: acao.payload.vitima.pessoa.telefone,
       },
     },
     testemunhas: { },

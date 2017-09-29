@@ -6,7 +6,6 @@ import { Button, FormGroup, Label, Input } from 'reactstrap';
 export default class NovaPessoaForm extends Component {
   constructor(props) {
     super(props);
-    let formatoDataHora;
 
     this.handleOptionChange = this.handleOptionChange.bind(this);
     this.alterarCampoTexto = this.alterarCampoTexto.bind(this);
@@ -22,6 +21,9 @@ export default class NovaPessoaForm extends Component {
       informacoesComplementares: '',
       dataNascimento: '',
       descricao: '',
+      endereco: '',
+      telefone: '',
+      email: '',
     };
   }
 
@@ -75,6 +77,7 @@ export default class NovaPessoaForm extends Component {
     this.props.alterarPessoaForm(this.state);
   }
 
+
   render() {
     return (
     <div>
@@ -97,8 +100,8 @@ export default class NovaPessoaForm extends Component {
             <option value={''}>Escolha uma opção</option>
             <option value={'feminino'}>Feminino</option>
             <option value={'masculino'}>Masculino</option>
-            <option value={'não-binario'}>Não-Binário</option>
-            <option value={'agênero'}>Agênero</option>
+            <option value={'nao-binario'}>Não-Binário</option>
+            <option value={'agenero'}>Agênero</option>
           </Input>
         </FormGroup>
 
@@ -108,7 +111,7 @@ export default class NovaPessoaForm extends Component {
             <option value={''}>Escolha uma opção</option>
             <option value={'preta'}>Preta</option>
             <option value={'parda'}>Parda</option>
-            <option value={'indígena'}>Indígena</option>
+            <option value={'indigena'}>Indígena</option>
             <option value={'amarela'}>Amarela</option>
             <option value={'branca'}>Branca</option>
           </Input>
@@ -121,6 +124,18 @@ export default class NovaPessoaForm extends Component {
          <FormGroup>
           <Label for="informacoesComplementares">Você deseja fornecer maiores detalhes?</Label>
           {this.renderCampoTexto('informacoesComplementares')}
+        </FormGroup>
+        <FormGroup>
+          <Label for="endereco">Endereço</Label>
+          {this.renderCampoTexto('endereco')}
+        </FormGroup>
+         <FormGroup>
+          <Label for="telefone">Telefone</Label>
+          {this.renderCampoTexto('telefone')}
+        </FormGroup>
+        <FormGroup>
+          <Label for="email">Email</Label>
+          {this.renderCampoTexto('email')}
         </FormGroup>
         <br />
       </div>);

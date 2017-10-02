@@ -19,14 +19,14 @@ const reducer = (state = {}, action) => {
     case REQUEST_SIGN_IN:
       return {
         ...state,
-        logged: false
-      }
+        logged: false,
+      };
     case FAILURE_SIGN_IN:
-      return { 
-        ...state, 
+      return {
+        ...state,
         logged: false,
         loginError: true,
-        loginErrorMessage: "E-mail ou senha inválidos"
+        loginErrorMessage: 'E-mail ou senha inválidos',
       };
     default:
       return state;

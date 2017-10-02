@@ -12,7 +12,7 @@ export class SignIn extends React.Component {
     super(props);
     this.state = {
       login: '',
-      password: ''
+      password: '',
     };
   }
 
@@ -49,7 +49,11 @@ export class SignIn extends React.Component {
           type="password"
         />
         <br />
-        {this.props.auth && this.props.auth.loginError && <div className="alert alert-danger" role="alert">{this.props.auth.loginErrorMessage}</div>}
+        {
+          this.props.auth &&
+          this.props.auth.loginError &&
+          <div className="alert alert-danger" role="alert">{this.props.auth.loginErrorMessage}</div>
+        }
         <RaisedButton
           label="Entrar"
           labelPosition="before"
@@ -67,6 +71,7 @@ export class SignIn extends React.Component {
 
 SignIn.propTypes = {
   onLoginPress: PropTypes.func.isRequired,
+  auth: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({

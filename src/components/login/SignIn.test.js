@@ -9,17 +9,17 @@ describe('SignIn Component', () => {
   });
 
   it('initialize the state object properly', () => {
-    const wrapper = shallow(<SignIn onLoginPress={() => {}} auth={() => {}}/>);
+    const wrapper = shallow(<SignIn onLoginPress={() => {}} auth={() => {}} />);
     const expetctedState = {
       login: '',
-      password: ''
+      password: '',
     };
     expect(wrapper.state()).toEqual(expetctedState);
   });
 
   describe('setProperty method', () => {
     it('set a property in the state', () => {
-      const wrapper = shallow(<SignIn onLoginPress={() => {}} auth={() => {}}/>);
+      const wrapper = shallow(<SignIn onLoginPress={() => {}} auth={() => {}} />);
       const simulatedEvent = {
         target: {
           value: true,
@@ -31,7 +31,7 @@ describe('SignIn Component', () => {
     });
 
     it('does not override other properties of the state', () => {
-      const wrapper = shallow(<SignIn onLoginPress={() => {}} auth={() => {}}/>);
+      const wrapper = shallow(<SignIn onLoginPress={() => {}} auth={() => {}} />);
       const propertyToSet = 'logged';
       const simulatedEvent = {
         target: {

@@ -9,8 +9,8 @@ describe('Auth Reducer', () => {
   });
 
   it('set logged to false inside the state when a sigin request is made', () => {
-    const expectedState = { 
-      logged: false
+    const expectedState = {
+      logged: false,
     };
     const mockAction = { type: REQUEST_SIGN_IN };
 
@@ -18,10 +18,10 @@ describe('Auth Reducer', () => {
   });
 
   it('set logged to false inside the state when a sigin request fails', () => {
-    const expectedState = { 
-      logged: false,  
+    const expectedState = {
+      logged: false,
       loginError: true,
-      loginErrorMessage: "E-mail ou senha inválidos"
+      loginErrorMessage: 'E-mail ou senha inválidos',
     };
     const mockAction = { type: FAILURE_SIGN_IN };
 

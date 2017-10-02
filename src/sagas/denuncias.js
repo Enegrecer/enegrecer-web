@@ -22,6 +22,7 @@ export function criarDenuncia(acao) {
     },
     local: {
       endereco: acao.payload.endereco,
+      estado: acao.payload.estado,
     },
     dataOcorrencia: acao.payload.dataOcorrencia,
     horaOcorrencia: acao.payload.horaOcorrencia,
@@ -41,6 +42,7 @@ export function criarDenuncia(acao) {
         email: acao.payload.vitima.pessoa.email,
         endereco: acao.payload.vitima.pessoa.endereco,
         telefone: acao.payload.vitima.pessoa.telefone,
+        estado: acao.payload.vitima.pessoa.estado,
       },
     },
     testemunhas: { },

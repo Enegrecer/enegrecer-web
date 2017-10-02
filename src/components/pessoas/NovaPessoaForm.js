@@ -12,6 +12,7 @@ export default class NovaPessoaForm extends Component {
     this.alterarGenero = this.alterarGenero.bind(this);
     this.alterarRaca = this.alterarRaca.bind(this);
     this.alterarDataNascimento = this.alterarDataNascimento.bind(this);
+    this.alterarEstado = this.alterarEstado.bind(this);
 
     this.state = {
       pessoaIdentificada: false,
@@ -22,6 +23,7 @@ export default class NovaPessoaForm extends Component {
       dataNascimento: '',
       descricao: '',
       endereco: '',
+      estado: '',
       telefone: '',
       email: '',
     };
@@ -77,6 +79,13 @@ export default class NovaPessoaForm extends Component {
     this.props.alterarPessoaForm(this.state);
   }
 
+  alterarEstado(event) {
+      this.setState({
+        ...this.state,
+        estado: event.target.value,
+      });
+      this.props.alterarPessoaForm(this.state);
+  }
 
   render() {
     return (
@@ -129,6 +138,40 @@ export default class NovaPessoaForm extends Component {
           <Label for="endereco">Endereço</Label>
           {this.renderCampoTexto('endereco')}
         </FormGroup>
+         <FormGroup>
+          <Label for="estado">Estado</Label>
+          <Input type="select" name="estado" id="estado" onChange={this.alterarEstado} value={this.state.estado}>
+            <option value={''}>Escolha uma opção</option>
+            <option value={'AC'}>AC</option>
+            <option value={'AL'}>AL</option>
+            <option value={'AM'}>AM</option>
+            <option value={'AP'}>AP</option>
+            <option value={'BA'}>BA</option>
+            <option value={'CE'}>CE</option>
+            <option value={'DF'}>DF</option>
+            <option value={'ES'}>ES</option>
+            <option value={'GO'}>GO</option>
+            <option value={'MA'}>MA</option>
+            <option value={'MG'}>MG</option>
+            <option value={'MS'}>MS</option>
+            <option value={'MT'}>MT</option>
+            <option value={'PA'}>PA</option>
+            <option value={'PB'}>PB</option>
+            <option value={'PE'}>PE</option>
+            <option value={'PI'}>PI</option>
+            <option value={'PR'}>PR</option>
+            <option value={'RJ'}>RJ</option>
+            <option value={'PI'}>RN</option>
+            <option value={'PR'}>RS</option>
+            <option value={'RJ'}>RO</option>
+            <option value={'RR'}>RR</option>
+            <option value={'SC'}>SC</option>
+            <option value={'SE'}>SE</option>
+            <option value={'SP'}>SP</option>
+            <option value={'TO'}>TO</option>
+          </Input>
+        </FormGroup>
+
          <FormGroup>
           <Label for="telefone">Telefone</Label>
           {this.renderCampoTexto('telefone')}

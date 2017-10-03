@@ -54,7 +54,7 @@ export class SignIn extends React.Component {
           type="password"
         />
         <br />
-        {this.state.loginError && <div>{`Erro: ${this.state.loginError}`}</div>}
+        {this.state.loginError && <div>{'Erro: ${this.state.loginError}'}</div>}
         <RaisedButton
           label="Entrar"
           labelPosition="before"

@@ -1,4 +1,5 @@
 import { fork, call, put, take } from 'redux-saga/effects';
+import { push } from 'react-router-redux';
 import rootSaga, { handleRequestSignIn, signIn } from './auth';
 import { REQUEST_SIGN_IN, successSignIn, failureSignIn } from '../actions';
 
@@ -31,6 +32,8 @@ describe('Auth Sagas', () => {
         .toEqual(call(signIn, mockRequestSignInAction));
       expect(saga.next({ user: 'any' }).value)
         .toEqual(put(successSignIn({ user: 'any' })));
+      expect(saga.next().value)
+        .toEqual(put(push('/painel/denuncias/nova')));
     });
 
     it('should faill login', () => {

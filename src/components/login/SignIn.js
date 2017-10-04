@@ -11,11 +11,8 @@ export class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      logged: false,
       login: '',
       password: '',
-      loginError: null,
-      loginErrorMessage: '',
     };
   }
 
@@ -27,8 +24,6 @@ export class SignIn extends React.Component {
     const currentState = this.state;
     this.setState({
       ...currentState,
-      loginError: null,
-      loginErrorMessage: '',
       [property]: event.target.value,
     });
   }
@@ -40,21 +35,25 @@ export class SignIn extends React.Component {
         <TextField
           id="login"
           hintText="exemplo@email.com"
-          errorText={this.state.loginError && ' '}
+          errorText={this.props.auth && this.props.auth.loginError && ' '}
           floatingLabelText="Email"
           value={this.state.login}
           onChange={e => this.setProperty(e, 'login')}
         />
         <TextField
           id="password"
-          errorText={this.state.loginError && ' '}
+          errorText={this.props.auth && this.props.auth.loginError && ' '}
           floatingLabelText="Senha"
           value={this.state.password}
           onChange={e => this.setProperty(e, 'password')}
           type="password"
         />
         <br />
-        {this.state.loginError && <div>{'Erro: ${this.state.loginError}'}</div>}
+        {
+          this.props.auth &&
+          this.props.auth.loginError &&
+          <div className="alert alert-danger" role="alert">{this.props.auth.loginErrorMessage}</div>
+        }
         <RaisedButton
           label="Entrar"
           labelPosition="before"
@@ -72,6 +71,7 @@ export class SignIn extends React.Component {
 
 SignIn.propTypes = {
   onLoginPress: PropTypes.func.isRequired,
+  auth: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({

@@ -6,6 +6,7 @@ import Login from './login/Login';
 import Painel from './layouts/Painel';
 import NovaDenuncia from '../containers/denuncias/NovaDenunciaContainer';
 
+/* eslint-disable */
 function PrivateRoute({ component: Component, authed, ...rest }) {
   return (
     <Route
@@ -28,6 +29,7 @@ function PublicRoute({ component: Component, authed, ...rest }) {
   );
 }
 
+/* eslint-enable */
 const Rotas = props => (
   <Switch>
     <Route exact path="/" component={HomePage} />

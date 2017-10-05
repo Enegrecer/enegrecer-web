@@ -3,13 +3,15 @@ import { shallow } from 'enzyme';
 import { SignIn } from './SignIn';
 
 describe('SignIn Component', () => {
+  const auth = { loginError: '', loginErrorMessage: '' };
+
   it('renders without crashing', () => {
-    const wrapper = shallow(<SignIn onLoginPress={() => {}} auth={() => {}} />);
+    const wrapper = shallow(<SignIn onLoginPress={() => {}} auth={auth} />);
     expect(wrapper.exists()).toBe(true);
   });
 
   it('initialize the state object properly', () => {
-    const wrapper = shallow(<SignIn onLoginPress={() => {}} auth={() => {}} />);
+    const wrapper = shallow(<SignIn onLoginPress={() => {}} auth={auth} />);
     const expetctedState = {
       login: '',
       password: '',
@@ -19,7 +21,7 @@ describe('SignIn Component', () => {
 
   describe('setProperty method', () => {
     it('set a property in the state', () => {
-      const wrapper = shallow(<SignIn onLoginPress={() => {}} auth={() => {}} />);
+      const wrapper = shallow(<SignIn onLoginPress={() => {}} auth={auth} />);
       const simulatedEvent = {
         target: {
           value: true,
@@ -31,7 +33,7 @@ describe('SignIn Component', () => {
     });
 
     it('does not override other properties of the state', () => {
-      const wrapper = shallow(<SignIn onLoginPress={() => {}} auth={() => {}} />);
+      const wrapper = shallow(<SignIn onLoginPress={() => {}} auth={auth} />);
       const propertyToSet = 'logged';
       const simulatedEvent = {
         target: {
@@ -50,7 +52,7 @@ describe('SignIn Component', () => {
   describe('onPressLoginButton method', () => {
     it('calls the onPressLoginButton function passed as props with email and password', () => {
       const mockLoginPress = jest.fn();
-      const wrapper = shallow(<SignIn onLoginPress={mockLoginPress} auth={() => {}} />);
+      const wrapper = shallow(<SignIn onLoginPress={mockLoginPress} auth={auth} />);
       const mockLoginAndPassword = {
         login: 'any',
         password: 'any',

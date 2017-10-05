@@ -38,7 +38,7 @@ const Home = props => (
             </p>
             <Botao
               onClick={
-                () => props.history.push('/painel/denuncias/nova')
+                () => props.history.push('/painel/denuncias/nova') // eslint-disable-line react/prop-types
               }
               colored
             >Denunciar Racismo</Botao>

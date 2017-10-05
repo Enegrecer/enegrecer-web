@@ -5,7 +5,7 @@ import Login from './login/Login';
 import Painel from './layouts/Painel';
 import NovaDenuncia from '../containers/denuncias/NovaDenunciaContainer';
 
-function PrivateRoute({component: Component, authed, ...rest}) {
+function PrivateRoute({ component: Component, authed, ...rest }) {
   return (
     <Route
       {...rest}
@@ -16,7 +16,7 @@ function PrivateRoute({component: Component, authed, ...rest}) {
   );
 }
 
-function PublicRoute({component: Component, authed, ...rest}) {
+function PublicRoute({ component: Component, authed, ...rest }) {
   return (
     <Route
       {...rest}

@@ -71,7 +71,17 @@ export class SignIn extends React.Component {
 
 SignIn.propTypes = {
   onLoginPress: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
+  auth: PropTypes.shape({
+    loginErrorMessage: PropTypes.string.isRequired,
+    loginError: PropTypes.string.isRequired,
+  }),
+};
+
+SignIn.defaultProps = {
+  auth: {
+    loginErrorMessage: null,
+    loginError: null,
+  },
 };
 
 const mapStateToProps = state => ({

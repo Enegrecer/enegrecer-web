@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { SignIn } from './SignIn';
 
 describe('SignIn Component', () => {
-  const auth = { loginError: '', loginErrorMessage: '' };
+  const auth = { loginError: false, loginErrorMessage: '' };
 
   it('renders without crashing', () => {
     const wrapper = shallow(<SignIn onLoginPress={() => {}} auth={auth} />);

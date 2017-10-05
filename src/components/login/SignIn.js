@@ -73,14 +73,14 @@ SignIn.propTypes = {
   onLoginPress: PropTypes.func.isRequired,
   auth: PropTypes.shape({
     loginErrorMessage: PropTypes.string.isRequired,
-    loginError: PropTypes.string.isRequired,
+    loginError: PropTypes.bool.isRequired,
   }),
 };
 
 SignIn.defaultProps = {
   auth: {
     loginErrorMessage: null,
-    loginError: null,
+    loginError: false,
   },
 };
 

@@ -32,8 +32,6 @@ describe('Auth Sagas', () => {
         .toEqual(call(signIn, mockRequestSignInAction));
       expect(saga.next({ user: 'any' }).value)
         .toEqual(put(successSignIn({ user: 'any' })));
-      expect(saga.next().value)
-        .toEqual(put(push('/painel/denuncias/nova')));
     });
 
     it('should faill login', () => {

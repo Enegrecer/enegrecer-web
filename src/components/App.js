@@ -40,9 +40,3 @@ export default class App extends Component {
   }
 }
 
-/* const App = () => (
-  <Rotas />
-);
-
-export default App; */
-

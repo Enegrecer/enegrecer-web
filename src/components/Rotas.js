@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import HomePage from './home/Home';
 import Login from './login/Login';
@@ -37,5 +38,9 @@ const Rotas = props => (
     </Painel>
   </Switch>
 );
+
+Rotas.propTypes = {
+  authed: PropTypes.bool.isRequired,
+};
 
 export default Rotas;

@@ -71,7 +71,7 @@ export class SignIn extends React.Component {
 
 SignIn.propTypes = {
   onLoginPress: PropTypes.func.isRequired,
-  auth: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({

@@ -1,5 +1,4 @@
 import { fork, call, put, take } from 'redux-saga/effects';
-import { push } from 'react-router-redux';
 import firebaseApp from '../utils/firebaseUtils';
 import {
   REQUEST_SIGN_IN, successSignIn, failureSignIn,
@@ -18,7 +17,6 @@ export function* handleRequestSignIn() {
     const { user, error } = yield call(signIn, action);
     if (user && !error) {
       yield put(successSignIn({ user }));
-      yield put(push('/painel/denuncias/nova'));
     } else {
       yield put(failureSignIn({ error }));
     }

@@ -5,26 +5,34 @@ import Login from './login/Login';
 import Painel from './layouts/Painel';
 import NovaDenuncia from '../containers/denuncias/NovaDenunciaContainer';
 
-function PrivateRoute ({component: Component, authed, ...rest}) {
+function PrivateRoute({component: Component, authed, ...rest}) {
   return (
     <Route
       {...rest}
-      render={() => {
-        return authed === true
-          ? <Component />
-          : <Redirect to='/painel/login' />;
-      }}
+      render={props => (authed === true
+        ? <Component {...props} />
+        : <Redirect to={{ pathname: '/painel/login', state: { from: props.location } }} />)}
     />
   );
 }
 
+function PublicRoute({component: Component, authed, ...rest}) {
+  return (
+    <Route
+      {...rest}
+      render={props => (authed === false
+        ? <Component {...props} />
+        : <Redirect to="/painel/denuncias/nova" />)}
+    />
+  );
+}
 
-const Rotas = (props) => (
+const Rotas = props => (
   <Switch>
     <Route exact path="/" component={HomePage} />
 
     <Painel>
-      <Route path="/painel/login" render={() => <Login />} />
+      <PublicRoute authed={props.authed} path="/painel/login" component={Login} />
       <PrivateRoute authed={props.authed} path="/painel/denuncias/nova" component={NovaDenuncia} />
     </Painel>
   </Switch>

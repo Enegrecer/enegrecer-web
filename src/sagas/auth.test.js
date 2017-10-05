@@ -1,5 +1,4 @@
 import { fork, call, put, take } from 'redux-saga/effects';
-import { push } from 'react-router-redux';
 import rootSaga, { handleRequestSignIn, signIn } from './auth';
 import { REQUEST_SIGN_IN, successSignIn, failureSignIn } from '../actions';
 

@@ -32,7 +32,7 @@ export default class App extends Component {
   }
 
   render() {
-    return this.state.loading === true ? <h1>Loading</h1> : (
+    return this.state.loading === true ? <h1>Loading...</h1> : (
       <div>
         <Rotas authed={this.state.authed} />
       </div>

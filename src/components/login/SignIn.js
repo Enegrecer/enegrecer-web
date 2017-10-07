@@ -1,23 +1,33 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Check from 'material-ui/svg-icons/navigation/check';
-import { connect } from 'react-redux';
 import styles from './Login.style';
-import { requestSignIn } from '../../actions';
+import { login, resetPassword } from '../../modules/auth';
 
-export class SignIn extends React.Component {
+function setErrorMsg(error) {
+  return {
+    loginMessage: error,
+  };
+}
+
+export default class SignIn extends Component {
   constructor(props) {
     super(props);
     this.state = {
       login: '',
       password: '',
+      loginMessage: null,
     };
+
+    this.resetPassword = this.resetPassword.bind(this);
   }
 
   onPressLoginButton() {
-    this.props.onLoginPress(this.state.login, this.state.password);
+    login(this.state.login, this.state.password)
+      .catch(() => {
+        this.setState(setErrorMsg('Invalid email/password.'));
+      });
   }
 
   setProperty(event, property) {
@@ -28,6 +38,12 @@ export class SignIn extends React.Component {
     });
   }
 
+  resetPassword() {
+    resetPassword(this.state.login)
+      .then(() => this.setState(setErrorMsg(`Password reset email sent to ${this.state.login}.`)))
+      .catch(() => this.setState(setErrorMsg('Email address not found.')));
+  }
+
   render() {
     return (
       <div style={styles.wrapper}>
@@ -35,14 +51,14 @@ export class SignIn extends React.Component {
         <TextField
           id="login"
           hintText="exemplo@email.com"
-          errorText={this.props.auth && this.props.auth.loginError && ' '}
+          errorText={this.state.loginMessage && ' '}
           floatingLabelText="Email"
           value={this.state.login}
           onChange={e => this.setProperty(e, 'login')}
         />
         <TextField
           id="password"
-          errorText={this.props.auth && this.props.auth.loginError && ' '}
+          errorText={this.state.loginMessage && ' '}
           floatingLabelText="Senha"
           value={this.state.password}
           onChange={e => this.setProperty(e, 'password')}
@@ -50,9 +66,12 @@ export class SignIn extends React.Component {
         />
         <br />
         {
-          this.props.auth &&
-          this.props.auth.loginError &&
-          <div className="alert alert-danger" role="alert">{this.props.auth.loginErrorMessage}</div>
+          this.state.loginMessage &&
+          <div className="alert alert-danger" role="alert">
+            <span className="sr-only">Error:</span>
+            {this.state.loginMessage}<br />
+            <a role="button" tabIndex="0" onClick={this.resetPassword} className="alert-link">Esqueceu sua Senha?</a>
+          </div>
         }
         <RaisedButton
           label="Entrar"
@@ -68,38 +87,3 @@ export class SignIn extends React.Component {
     );
   }
 }
-
-SignIn.propTypes = {
-  onLoginPress: PropTypes.func.isRequired,
-  auth: PropTypes.shape({
-    loginErrorMessage: PropTypes.string.isRequired,
-    loginError: PropTypes.bool.isRequired,
-  }),
-};
-
-SignIn.defaultProps = {
-  auth: {
-    loginErrorMessage: null,
-    loginError: false,
-  },
-};
-
-const mapStateToProps = state => ({
-  auth: state.auth,
-});
-
-const mapDispatchToProps = dispatch => ({
-  onLoginPress: (login, password) => {
-    dispatch(requestSignIn({
-      email: login,
-      password,
-    }));
-  },
-});
-
-const reduxSignIn = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(SignIn);
-
-export default reduxSignIn;

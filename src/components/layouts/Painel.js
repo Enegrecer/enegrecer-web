@@ -42,7 +42,6 @@ class Painel extends React.Component {
           <Link to="/"><MenuItem>Home</MenuItem></Link>
           <Link to="/painel/categorias"><MenuItem>Categorias</MenuItem></Link>
           <Link to="/painel/denuncias/nova"><MenuItem>Criar Denúncia</MenuItem></Link>
-          {console.log(this.props.children[0].props.authed)}
           {
             this.props.children[0].props.authed
               ? <Link to="#" onClick={logout}><MenuItem>Logout</MenuItem></Link>

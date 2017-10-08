@@ -70,7 +70,13 @@ export default class SignIn extends Component {
           <div className="alert alert-danger" role="alert">
             <span className="sr-only">Error:</span>
             {this.state.loginMessage}<br />
-            <a role="button" tabIndex="0" onClick={this.resetPassword} className="alert-link">Esqueceu sua Senha?</a>
+            <a
+              role="button"
+              tabIndex="0"
+              onClick={this.resetPassword}
+              className="alert-link"
+            >Esqueceu sua Senha?
+            </a>
           </div>
         }
         <RaisedButton

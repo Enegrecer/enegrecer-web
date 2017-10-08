@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import AppBar from 'material-ui/AppBar';
 import { IconButton, Drawer, MenuItem } from 'material-ui';
-import { logout } from '../../modules/auth';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
+import { logout } from '../../modules/auth';
 
 class Painel extends React.Component {
   constructor(props) {

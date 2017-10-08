@@ -1,27 +1,26 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { SignIn } from './SignIn';
+import SignIn from './SignIn';
 
 describe('SignIn Component', () => {
-  const auth = { loginError: false, loginErrorMessage: '' };
-
   it('renders without crashing', () => {
-    const wrapper = shallow(<SignIn onLoginPress={() => {}} auth={auth} />);
+    const wrapper = shallow(<SignIn />);
     expect(wrapper.exists()).toBe(true);
   });
 
   it('initialize the state object properly', () => {
-    const wrapper = shallow(<SignIn onLoginPress={() => {}} auth={auth} />);
+    const wrapper = shallow(<SignIn />);
     const expetctedState = {
       login: '',
       password: '',
+      loginMessage: null,
     };
     expect(wrapper.state()).toEqual(expetctedState);
   });
 
   describe('setProperty method', () => {
     it('set a property in the state', () => {
-      const wrapper = shallow(<SignIn onLoginPress={() => {}} auth={auth} />);
+      const wrapper = shallow(<SignIn />);
       const simulatedEvent = {
         target: {
           value: true,
@@ -33,7 +32,7 @@ describe('SignIn Component', () => {
     });
 
     it('does not override other properties of the state', () => {
-      const wrapper = shallow(<SignIn onLoginPress={() => {}} auth={auth} />);
+      const wrapper = shallow(<SignIn />);
       const propertyToSet = 'logged';
       const simulatedEvent = {
         target: {
@@ -52,14 +51,18 @@ describe('SignIn Component', () => {
   describe('onPressLoginButton method', () => {
     it('calls the onPressLoginButton function passed as props with email and password', () => {
       const mockLoginPress = jest.fn();
-      const wrapper = shallow(<SignIn onLoginPress={mockLoginPress} auth={auth} />);
+      const wrapper = shallow(<SignIn onPressLoginButton={mockLoginPress} />);
       const mockLoginAndPassword = {
         login: 'any',
         password: 'any',
       };
 
       wrapper.setState(mockLoginAndPassword);
-      wrapper.instance().onPressLoginButton();
+      wrapper
+        .instance()
+        .props
+        .onPressLoginButton(mockLoginAndPassword.login, mockLoginAndPassword.password);
+
       expect(mockLoginPress.mock.calls.length)
         .toBe(1);
       expect(mockLoginPress.mock.calls[0])

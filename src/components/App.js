@@ -8,6 +8,7 @@ export default class App extends Component {
     this.state = {
       authed: false,
       loading: true,
+      currentUserUID: '',
     };
   }
 
@@ -17,6 +18,7 @@ export default class App extends Component {
         this.setState({
           authed: true,
           loading: false,
+          currentUserUID: user.uid,
         });
       } else {
         this.setState({
@@ -34,7 +36,7 @@ export default class App extends Component {
   render() {
     return this.state.loading === true ? <h1>Loading...</h1> : (
       <div>
-        <Rotas authed={this.state.authed} />
+        <Rotas authed={this.state.authed} currentUserUID={this.state.currentUserUID} />
       </div>
     );
   }

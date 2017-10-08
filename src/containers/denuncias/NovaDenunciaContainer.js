@@ -10,12 +10,15 @@ export class NovaDenunciaContainer extends Component {
   constructor(props) {
     super(props);
     this.onPressSaveButton = this.onPressSaveButton.bind(this);
+    this.state = {
+      denunciante: this.props.currentUserUID,
+    };
   }
 
   onPressSaveButton(state) {
     this.props.criarDenunciaRequisicao({
       ...state,
-      denunciante: this.props.denunciante,
+      denunciante: this.state.denunciante,
       onSuccess: push('/painel'),
     });
   }
@@ -26,20 +29,15 @@ export class NovaDenunciaContainer extends Component {
 }
 
 NovaDenunciaContainer.propTypes = {
-  denunciante: PropTypes.string.isRequired,
+  currentUserUID: PropTypes.string.isRequired,
   criarDenunciaRequisicao: PropTypes.func.isRequired,
 };
-
-const mapStateToProps = state => ({
-  denunciante: state.auth.user.uid,
-});
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   criarDenunciaRequisicao,
 }, dispatch);
 
 const reduxNovaDenuncia = connect(
-  mapStateToProps,
   mapDispatchToProps,
 )(NovaDenunciaContainer);
 

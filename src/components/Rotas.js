@@ -12,7 +12,7 @@ function PrivateRoute({ component: Component, authed, ...rest }) {
     <Route
       {...rest}
       render={props => (authed === true
-        ? <Component {...props} />
+        ? <Component {...props} currentUserUID={rest.currentUserUID} />
         : <Redirect to={{ pathname: '/painel/login', state: { from: props.location } }} />)}
     />
   );
@@ -36,13 +36,19 @@ const Rotas = props => (
 
     <Painel>
       <PublicRoute authed={props.authed} path="/painel/login" component={Login} />
-      <PrivateRoute authed={props.authed} path="/painel/denuncias/nova" component={NovaDenuncia} />
+      <PrivateRoute
+        currentUserUID={props.currentUserUID}
+        authed={props.authed}
+        path="/painel/denuncias/nova"
+        component={NovaDenuncia}
+      />
     </Painel>
   </Switch>
 );
 
 Rotas.propTypes = {
   authed: PropTypes.bool.isRequired,
+  currentUserUID: PropTypes.string.isRequired,
 };
 
 export default Rotas;

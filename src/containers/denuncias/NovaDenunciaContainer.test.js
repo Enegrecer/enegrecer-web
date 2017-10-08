@@ -7,13 +7,13 @@ import { NovaDenunciaContainer } from './NovaDenunciaContainer';
 describe('NovaDenunciaContainer', () => {
   it('renderiza o container sem erros', () => {
     const wrapper = shallow(
-      <NovaDenunciaContainer denunciante="" criarDenunciaRequisicao={() => { }} />);
+      <NovaDenunciaContainer currentUserUID="" criarDenunciaRequisicao={() => { }} />);
     expect(wrapper.exists()).toBe(true);
   });
 
   it('renderiza sem erros o formulário de denúncias dentro do container', () => {
     const wrapper = mount(<MuiThemeProvider>
-      <NovaDenunciaContainer denunciante="" criarDenunciaRequisicao={() => { }} />
+      <NovaDenunciaContainer currentUserUID="" criarDenunciaRequisicao={() => { }} />
     </MuiThemeProvider>);
     expect(wrapper.find('#form-nova-denuncia').length).toBe(1);
   });
@@ -23,7 +23,7 @@ describe('NovaDenunciaContainer', () => {
       const criarDenunciaRequisicaoMock = jest.fn();
       const wrapper = shallow(
         <NovaDenunciaContainer
-          denunciante=""
+          currentUserUID=""
           criarDenunciaRequisicao={criarDenunciaRequisicaoMock}
         />);
       wrapper.instance().onPressSaveButton();

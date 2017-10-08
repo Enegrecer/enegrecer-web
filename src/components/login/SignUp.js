@@ -2,7 +2,7 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Check from 'material-ui/svg-icons/navigation/check';
-import { auth } from '../../modules/auth';
+import { firebaseAuth } from '../../utils/firebaseUtils';
 import styles from './Login.style';
 
 export default class SignUp extends React.Component {
@@ -18,7 +18,7 @@ export default class SignUp extends React.Component {
   }
 
   onPressRegisterButton() {
-    return auth(this.state.login, this.state.password)
+    return firebaseAuth.createUserWithEmailAndPassword(this.state.login, this.state.password)
       .then((user) => {
         this.setState({
           ...this.state,

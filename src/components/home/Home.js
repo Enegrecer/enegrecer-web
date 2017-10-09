@@ -7,6 +7,7 @@ import Footer from './../Footer';
 import Social from './../Social';
 import { withHistoryPropTypes } from './../sharedPropTypes';
 
+
 const networks = [
   { title: 'Facebook', href: '#', icon: 'facebook-square' },
   { title: 'Twitter', href: '#', icon: 'twitter' },
@@ -35,7 +36,12 @@ const Home = props => (
               Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <Botao onClick={() => {}} colored>Denunciar Racismo</Botao>
+            <Botao
+              onClick={
+                () => props.history.push('/painel/denuncias/nova') // eslint-disable-line react/prop-types
+              }
+              colored
+            >Denunciar Racismo</Botao>
           </div>
         </div>
       </div>

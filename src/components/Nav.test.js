@@ -23,7 +23,7 @@ describe('Nav', () => {
     });
 
     it('deve chamar a função push com /registrar', () => {
-      expect(historyMock.push).toBeCalledWith('/registrar');
+      expect(historyMock.push).toBeCalledWith('/painel/login');
     });
   });
 });

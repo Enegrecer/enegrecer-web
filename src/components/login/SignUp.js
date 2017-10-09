@@ -3,6 +3,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Check from 'material-ui/svg-icons/navigation/check';
 import firebaseApp from '../../utils/firebaseUtils';
+import { setProperty } from '../../modules/auth';
 import styles from './Login.style';
 
 export default class SignUp extends React.Component {
@@ -35,22 +36,13 @@ export default class SignUp extends React.Component {
         });
       });
   }
-
-  setProperty(event, property) {
-    const currentState = this.state;
-    this.setState({
-      ...currentState,
-      [property]: event.target.value,
-    });
-  }
-
   generateTextField(id, text, value, property, type) {
     return (
       <TextField
         id={id}
         floatingLabelText={text}
         value={value}
-        onChange={e => this.setProperty(e, property)}
+        onChange={e => setProperty(e, property, this)}
         type={type || 'text'}
       />
     );

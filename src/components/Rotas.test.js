@@ -13,7 +13,9 @@ function possuiRotaComComponente(rotas, rota, componente) {
 }
 
 describe('Rotas', () => {
-  const rotas = shallow(<Rotas />);
+  const authed = true;
+  const uid = '123456';
+  const rotas = shallow(<Rotas authed={authed} currentUserUID={uid} />);
 
   possuiRotaComComponente(rotas, '/', HomePage);
   possuiRotaComComponente(rotas, '/painel/login', Login);

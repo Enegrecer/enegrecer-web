@@ -1,10 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import Divider from 'material-ui/Divider';
-import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import NovaVitimaForm from '../pessoas/vitima/NovaVitimaForm';
 import { Form, Button, FormGroup, Label, Input } from 'reactstrap';
-
 
 export default class NovaDenunciaForm extends Component {
   constructor(props) {
@@ -73,7 +70,6 @@ export default class NovaDenunciaForm extends Component {
     return (
       <Input
         type="textarea"
-        valid={false}
         id={name}
         value={this.state[name]}
         onChange={event => this.alterarCampo(event, name)}
@@ -83,7 +79,7 @@ export default class NovaDenunciaForm extends Component {
 
   renderRadioButton(name, label) {
     return (
-      <RadioButton
+      <Input type="radio"
         value={name}
         label={label}
         checked={this.state.idCategoria === { name }}
@@ -97,7 +93,7 @@ export default class NovaDenunciaForm extends Component {
         <h1>Nova Denúncia</h1>
 
         <FormGroup>
-          <Label for="detalhamento">Detalhamento</Label>
+          <Label for="detalhamento">Detalhamento*</Label>
           {this.renderCampoTexto('detalhamento')}
         </FormGroup>
 
@@ -165,8 +161,6 @@ export default class NovaDenunciaForm extends Component {
          </Input>
        </FormGroup>
         <br />
-
-        <Divider />
 
         <NovaVitimaForm alterarVitimaForm={this.adicionarVitimaEmForm} />
 

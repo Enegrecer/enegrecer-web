@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Button, FormGroup, Label, Input } from 'reactstrap';
+import { Button, FormGroup, Label, Input, FormFeedback } from 'reactstrap';
 
 
 export default class NovaPessoaForm extends Component {

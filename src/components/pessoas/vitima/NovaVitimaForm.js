@@ -33,12 +33,6 @@ export default class NovaVitimaForm extends Component {
   render() {
     return (
       <div>
-        <Checkbox
-          label="Sou a vítima desta denúncia"
-          checked={this.state.souVitima}
-          onCheck={this.handleOptionChange}
-        />
-
         <NovaPessoaForm alterarPessoaForm={this.adicionarPessoaEmVitimaForm} />
       </div>);
   }

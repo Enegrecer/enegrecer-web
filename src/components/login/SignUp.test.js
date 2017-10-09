@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import SignUp from './SignUp';
 import * as firebase from '../../utils/firebaseUtils';
+import { setProperty } from '../../modules/auth';
 
 jest.mock('../../utils/firebaseUtils');
 
@@ -32,7 +33,7 @@ describe('SignUp component', () => {
         },
       };
       const propertyToSet = 'logged';
-      wrapper.instance().setProperty(simulatedEvent, propertyToSet);
+      setProperty(simulatedEvent, propertyToSet, wrapper.instance());
       expect(wrapper.state(propertyToSet)).toBe(simulatedEvent.target.value);
     });
 
@@ -48,7 +49,7 @@ describe('SignUp component', () => {
       const expetctedState = wrapper.state();
       expetctedState[propertyToSet] = simulatedEvent.target.value;
 
-      wrapper.instance().setProperty(simulatedEvent, propertyToSet);
+      setProperty(simulatedEvent, propertyToSet, wrapper.instance());
       expect(wrapper.state()).toEqual(expetctedState);
     });
   });

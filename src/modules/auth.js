@@ -25,3 +25,11 @@ export function login(email, pw) {
 export function resetPassword(email) {
   return firebaseAuth().sendPasswordResetEmail(email);
 }
+
+export function setProperty(event, property, self) {
+  const currentState = self.state;
+  self.setState({
+    ...currentState,
+    [property]: event.target.value,
+  });
+}

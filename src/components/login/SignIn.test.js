@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import SignIn from './SignIn';
+import { setProperty } from '../../modules/auth';
 
 describe('SignIn Component', () => {
   it('renders without crashing', () => {
@@ -27,7 +28,7 @@ describe('SignIn Component', () => {
         },
       };
       const propertyToSet = 'logged';
-      wrapper.instance().setProperty(simulatedEvent, propertyToSet);
+      setProperty(simulatedEvent, propertyToSet, wrapper.instance());
       expect(wrapper.state(propertyToSet)).toBe(simulatedEvent.target.value);
     });
 
@@ -43,7 +44,7 @@ describe('SignIn Component', () => {
       const expetctedState = wrapper.state();
       expetctedState[propertyToSet] = simulatedEvent.target.value;
 
-      wrapper.instance().setProperty(simulatedEvent, propertyToSet);
+      setProperty(simulatedEvent, propertyToSet, wrapper.instance());
       expect(wrapper.state()).toEqual(expetctedState);
     });
   });

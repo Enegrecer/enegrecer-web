@@ -3,7 +3,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Check from 'material-ui/svg-icons/navigation/check';
 import styles from './Login.style';
-import { login, resetPassword } from '../../modules/auth';
+import { login, resetPassword, setProperty } from '../../modules/auth';
 
 function setErrorMsg(error) {
   return {
@@ -30,14 +30,6 @@ export default class SignIn extends Component {
       });
   }
 
-  setProperty(event, property) {
-    const currentState = this.state;
-    this.setState({
-      ...currentState,
-      [property]: event.target.value,
-    });
-  }
-
   resetPassword() {
     resetPassword(this.state.login)
       .then(() => this.setState(setErrorMsg(`Password reset email sent to ${this.state.login}.`)))
@@ -54,14 +46,14 @@ export default class SignIn extends Component {
           errorText={this.state.loginMessage && ' '}
           floatingLabelText="Email"
           value={this.state.login}
-          onChange={e => this.setProperty(e, 'login')}
+          onChange={e => setProperty(e, 'login', this)}
         />
         <TextField
           id="password"
           errorText={this.state.loginMessage && ' '}
           floatingLabelText="Senha"
           value={this.state.password}
-          onChange={e => this.setProperty(e, 'password')}
+          onChange={e => setProperty(e, 'password', this)}
           type="password"
         />
         <br />

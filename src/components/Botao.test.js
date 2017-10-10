@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
 import Botao from './Botao';
 
@@ -10,6 +11,11 @@ describe('Botao', () => {
       Clique aqui
     </Botao>,
   );
+
+  it('possui a mesma estrutura', () => {
+    const tree = toJson(wrapper);
+    expect(tree).toMatchSnapshot();
+  });
 
   it('tem a classe en-btn', () => {
     expect(wrapper.hasClass('en-btn')).toBeTruthy();

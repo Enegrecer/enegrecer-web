@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home DOM 1`] = `
+exports[`Home possui a mesma estrutura 1`] = `
 <div>
   <div
     id="banner"

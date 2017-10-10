@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home DOM 1`] = `
+<div>
+  <div
+    id="banner"
+  >
+    <div
+      id="banner__blur"
+    />
+    <div
+      className="container"
+    >
+      <Topbar
+        leftComponent={<Logo />}
+        rightComponent={
+          <Nav
+            history={
+              Object {
+                "push": [Function],
+              }
+            }
+          />
+        }
+      />
+      <div
+        className="row"
+      >
+        <div
+          className="col-md-4"
+        >
+          <div
+            className="en-subtitle--primary"
+          >
+            LOREM IPSUM SIT
+          </div>
+          <div
+            className="en-title en-title--light en-title--marker"
+          >
+            LOREM IPSUM CONSECTETUR
+          </div>
+          <p
+            className="en-text--light"
+            id="en-banner__description"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <Botao
+            colored={true}
+            onClick={[Function]}
+            outline={false}
+            primary={false}
+          >
+            Denunciar Racismo
+          </Botao>
+        </div>
+      </div>
+    </div>
+  </div>
+  <Footer>
+    <Social
+      networks={
+        Array [
+          Object {
+            "href": "#",
+            "icon": "facebook-square",
+            "title": "Facebook",
+          },
+          Object {
+            "href": "#",
+            "icon": "twitter",
+            "title": "Twitter",
+          },
+          Object {
+            "href": "#",
+            "icon": "instagram",
+            "title": "Instagram",
+          },
+        ]
+      }
+    />
+  </Footer>
+</div>
+`;

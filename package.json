@@ -38,6 +38,7 @@
   "devDependencies": {
     "codeclimate-test-reporter": "^0.5.0",
     "enzyme": "^2.9.1",
+    "enzyme-to-json": "1.5.1",
     "eslint": "^4.1.1",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-config-standard": "^10.2.1",

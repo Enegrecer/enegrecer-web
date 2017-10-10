@@ -10,4 +10,12 @@ describe('App', () => {
     wrapper.setState({ loading: false });
     expect(wrapper.find('Rotas').exists()).toBeTruthy();
   });
+  it('nao atualiza o status de authed', () => {
+    wrapper.instance().componentDidMount();
+    expect(wrapper.instance().state.authed).toBe(false);
+  });
+  it('nao atualiza o status de currentUserUID', () => {
+    wrapper.instance().componentDidMount();
+    expect(wrapper.instance().state.currentUserUID).toBe('');
+  });
 });

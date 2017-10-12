@@ -42,7 +42,7 @@ Primeiro clone o repositório
 git clone https://github.com/Enegrecer/enegrecer-web.git
 ```
 
-em seguida entre na pasta do projeto clonado e rode `yarn install` para baixar todas as dependencias
+em seguida entre na pasta do projeto clonado
 ```shell
 cd enegrecer-web
 docker build -t enegrecer-web .
@@ -53,7 +53,7 @@ docker build -t enegrecer-web .
 Para subir um servidor local para desenvolvimento rode
 
 ```shell
-sh cli/start.sh
+sh cli/enegrecer.sh s
 ```
 
 Isso irá subir um servidor com o aplicativo rodando em `http://localhost:3000`. Quando os arquivos dentro de `src` são alterados, automaticamente o código é recompilado e o aplicativo recarregado com as alterações.

@@ -3,6 +3,8 @@
 [![Test Coverage](https://codeclimate.com/github/Enegrecer/enegrecer-web/badges/coverage.svg)](https://codeclimate.com/github/Enegrecer/enegrecer-web/coverage)
 [![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/Enegrecer/enegrecer-web)
 
+Informações para contribuir no projeto você pode encontrar no contributing.md.
+
 ### Neste Wiki
 * [O Projeto](#o-projeto)
 * [Configurações](#configurações)

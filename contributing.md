@@ -37,17 +37,17 @@ O projeto utiliza gerenciador de pacote [`yarn`](https://yarnpkg.com).
 
 # Rodando o projeto localmente
 
-Construa a imagem
+Antes de qualquer comando construa a imagem
 `docker build -t enegrecer-web .`
 
-Rode o comando `docker run --rm --name enegrecer-web -p 3000:3000 -v "$PWD":/usr/src/app -w /usr/src/app -t enegrecer-web yarn start`
+Rode o comando `sh cli/start.sh`
 
 # Rodar testes
 
-`docker run --rm --name enegrecer-web -p 3000:3000 -v "$PWD":/usr/src/app -w /usr/src/app -it enegrecer-web yarn test`
+`sh cli/test.sh`
 
 Aparecerá uma tela para escolher o modo de teste.
 
 # Lint
 
-`docker run --rm --name enegrecer-web -p 3000:3000 -v "$PWD":/usr/src/app -w /usr/src/app -t enegrecer-web yarn lint`
+`sh cli/lint.sh`

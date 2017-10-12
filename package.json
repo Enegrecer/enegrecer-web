@@ -26,7 +26,7 @@
   },
   "scripts": {
     "start": "yarn build-css && ../node_modules/.bin/react-scripts start",
-    "build": "../node_modules/.bin/r.bin/eact-scripts build",
+    "build": "../node_modules/.bin/react-scripts build",
     "test": "../node_modules/.bin/react-scripts test --env=jsdom",
     "test-coverage": "../node_modules/.bin/react-scripts test --env=jsdom --coverage && ../node_modules/.bin/codeclimate-test-reporter/bin/codeclimate.js < ./coverage/lcov.info",
     "eject": "../node_modules/.bin/react-scripts eject",

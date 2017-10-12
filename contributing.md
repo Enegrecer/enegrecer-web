@@ -35,19 +35,67 @@ Na nossa stack temos:
 A imagem do Docker é construída com a imagem [`kkarczmarczyk/node-yarn`](https://hub.docker.com/r/kkarczmarczyk/node-yarn/).
 O projeto utiliza gerenciador de pacote [`yarn`](https://yarnpkg.com).
 
-# Rodando o projeto localmente
+## Configurações
 
-Antes de qualquer comando construa a imagem
-`docker build -t enegrecer-web .`
+Primeiro clone o repositório
+```shell
+git clone https://github.com/Enegrecer/enegrecer-web.git
+```
 
-Rode o comando `sh cli/start.sh`
+em seguida entre na pasta do projeto clonado e rode `yarn install` para baixar todas as dependencias
+```shell
+cd enegrecer-web
+docker build -t enegrecer-web .
+```
 
-# Rodar testes
+### Rodando o projeto
 
-`sh cli/test.sh`
+Para subir um servidor local para desenvolvimento rode
 
-Aparecerá uma tela para escolher o modo de teste.
+```shell
+sh cli/start.sh
+```
 
-# Lint
+Isso irá subir um servidor com o aplicativo rodando em `http://localhost:3000`. Quando os arquivos dentro de `src` são alterados, automaticamente o código é recompilado e o aplicativo recarregado com as alterações.
 
-`sh cli/lint.sh`
+Ao abrir o caminho `http://localhost:3000`, é normal a página aparecer em branco. Para acessar as opções, vá para `http://localhost:3000/painel`
+
+Após efetuar login, a pessoa usuária ainda não está sendo redirecionada, então aguarde alguns segundos e acesse o menu novamente e escolha a opção desejada por favor.
+
+### Testes
+
+O projeto está configurado para que o desenvolvimento seja feito em TDD, e assim o script:
+
+```shell
+sh cli/enegrecer.sh t
+```
+
+irá rodar todos os arquivos de teste (arquivos __.test.js__) e entrar em modo de _watch_. De forma que toda vez que arquivos são alterados, sejam eles testes ou não, os testes que possuem qualquer relação com tal arquivo são executados novamente.
+
+Por exemplo, se o componente __Signin__ for alterado, todos os testes de _Signin.test.js_ serão executados, mas também os testes de _Login.test.js_, pois o componente de __Login__ utiliza, ou depende, do componete de __Signin__, e assim por diante. O mesmo é válido para alterações em arquivos de teste.
+
+O projeto está utilizando o [Jest](https://facebook.github.io/jest/) como framework de testes. O jest oferece praticamente tudo que é necessário para testes no projeto, definindo a sintaxe de escrita dos mesmos, provendo mocks, e atuando como test runner. Adicionalmente, o [enzyme](http://airbnb.io/enzyme/) é utilizado como facilitador dos testes de componentes do React.
+
+### Lint
+
+O [eslint](http://eslint.org/) é utilizado como linter do projeto. É recomendado que um plugin do mesmo seja utilizado em seu editor de preferência durante o desenvolvimento. Além disso é possível executar o lint de todo o projeto rodando o comando:
+
+```shell
+sh cli/enegrecer.sh l
+```
+
+E existe também o modo de watch que pode ser rodado com:
+
+```shell
+sh cli/enegrecer.sh ws
+```
+
+### Build
+
+O comando
+
+```shell
+sh cli/enegrecer.sh b
+```
+
+roda o script de build, responsável por preparar o projeto para um deploy em produção. Os arquivos passam por um processo de minificação e bundling. Gerando arquivos mais concisos, e mais leves. Todo o resultado do script aparece na pasta build que será gerada dentro do projeto.

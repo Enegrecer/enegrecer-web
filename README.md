@@ -25,7 +25,7 @@ O Web App implementado neste respositório é uma das interfaces para essa plata
 
 ## Deploy
 
-Atualmente o projeto está rodando em [https://enegrecer-e37b3.firebaseapp.com/](https://enegrecer-e37b3.firebaseapp.com/), sendo o Firebase o host e também responsável pelo controle de usuários e banco de dados da aplicação. A atualização ocorre automaticamente através do [Travis-CI](https://travis-ci.org/Enegrecer/enegrecer-web), que monitora por modificações na branch master deste repositório, e executa passos de lint, testes e deploy para o Firebase.
+Atualmente o projeto está rodando em [https://enegrecer-e37b3.firebaseapp.com/](https://enegrecer-e37b3.firebaseapp.com/), sendo o Firebase o host e também responsável pelo controle de usuários e banco de dados da aplicação. A atualização ocorre automaticamente através do [Travis-CI](https://travis-ci.org/Enegrecer/enegrecer-web), **que monitora por modificações na branch master deste repositório**, e executa passos de lint, testes e deploy para o Firebase.
 
 ## Tech stack
 

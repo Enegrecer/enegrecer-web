@@ -48,6 +48,8 @@ cd enegrecer-web
 docker build -t enegrecer-web .
 ```
 
+**Crie um branch para modificações. O deploy no circle está para o branch master**
+
 ### Rodando o projeto
 
 Para subir um servidor local para desenvolvimento rode
@@ -84,10 +86,15 @@ O [eslint](http://eslint.org/) é utilizado como linter do projeto. É recomenda
 sh cli/enegrecer.sh l
 ```
 
-E existe também o modo de watch que pode ser rodado com:
+E existe também o modo de watch. Abra o bash do container:
 
 ```shell
-sh cli/enegrecer.sh ws
+sh cli/enegrecer.sh bash
+```
+
+o comando acima abrirá o terminal dentro do container, e então execute:
+```shell
+../node_modules/.bin/esw -w src
 ```
 
 ### Build

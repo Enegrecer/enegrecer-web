@@ -41,9 +41,12 @@ export default class NovaPessoaForm extends Component {
     }
   
   alterarCampoTexto(event, property) {
+      var valor = event.target.value;
+      console.log(validarEmail(valor));
+      console.log(validarTelefone(valor));
     this.setState({
       ...this.state,
-      [property]: event.target.value });
+      [property]: valor });
     this.props.alterarPessoaForm(this.state);
   }
 

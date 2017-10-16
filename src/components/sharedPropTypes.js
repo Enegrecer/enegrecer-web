@@ -9,5 +9,5 @@ export function withHistoryPropTypes(propTypes) {
   };
 }
 
-// Remover quando houver mais de uma função bo arquivo
+// Remover quando houver mais de uma função no arquivo
 export default withHistoryPropTypes;

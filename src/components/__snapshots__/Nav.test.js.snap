@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav possui a mesma estrutura 1`] = `
+<nav
+  className="en-nav"
+>
+  <a
+    className="en-extra-margin-right"
+    href="/sobre"
+  >
+    Sobre
+  </a>
+  <Botao
+    colored={false}
+    onClick={[Function]}
+    outline={true}
+    primary={true}
+  >
+    Registrar / Entrar
+  </Botao>
+</nav>
+`;

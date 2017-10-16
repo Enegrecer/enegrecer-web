@@ -8,6 +8,7 @@ import NovaDenuncia from '../containers/denuncias/NovaDenunciaContainer';
 
 /* eslint-disable */
 function PrivateRoute({ component: Component, authed, ...rest }) {
+  console.log("private");
   return (
     <Route
       {...rest}

@@ -27,7 +27,7 @@ describe('Nav', () => {
       wrapper.find('Botao[outline]').simulate('click');
     });
 
-    it('deve chamar a função push com /registrar', () => {
+    it('deve chamar a função push com /painel/login', () => {
       expect(historyMock.push).toBeCalledWith('/painel/login');
     });
   });

@@ -38,6 +38,7 @@ export function criarDenuncia(acao) {
       informacoesComplementares: acao.payload.vitima.pessoa.informacoesComplementares,
       nome: acao.payload.vitima.pessoa.nome,
       raca: acao.payload.vitima.pessoa.raca,
+      camposValidados: acao.payload.vitima.pessoa.camposValidados,
       informacoesContato: {
         email: acao.payload.vitima.pessoa.email,
         endereco: acao.payload.vitima.pessoa.endereco,

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Checkbox from 'material-ui/Checkbox';
 import NovaPessoaForm from '../NovaPessoaForm';
 
+
 export default class NovaVitimaForm extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +20,8 @@ export default class NovaVitimaForm extends Component {
     this.setState({
       ...this.state,
       pessoa: state });
-    this.props.alterarVitimaForm(this.state);
+      this.props.alterarVitimaForm(this.state);
+ //   console.log(this.props.alterarVitimaForm(this.state));
   }
 
   handleOptionChange(changeEvent, isInputChecked) {

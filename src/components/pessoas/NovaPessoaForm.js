@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Button, FormGroup, Label, Input, FormFeedback } from 'reactstrap';
+import {validarCampo, campoObrigatorio} from '../pessoas/ValidacoesPessoa';
 
 
-export default class NovaPessoaForm extends Component {
+export default class NovaPessoaForm extends React.Component {
   constructor(props) {
     super(props);
 
@@ -21,7 +22,6 @@ export default class NovaPessoaForm extends Component {
       raca: '',
       informacoesComplementares: '',
       dataNascimento: '',
-      descricao: '',
       endereco: '',
       estado: '',
       telefone: '',
@@ -32,21 +32,24 @@ export default class NovaPessoaForm extends Component {
   renderCampoTexto(name) {
       return (
         <Input
-          type="textarea"
           id={name}
           value={this.state[name]}
           onChange={event => this.alterarCampoTexto(event, name)}
+         // onBlur={campoObrigatorio(this.state[name])}
+          autoComplete='off'
         />
       );
     }
   
   alterarCampoTexto(event, property) {
       var valor = event.target.value;
-      console.log(validarEmail(valor));
-      console.log(validarTelefone(valor));
+      var validacaoCampo = validarCampo(property, valor);
+      //fazer alerta visual caso validacaoCampo seja false
+
     this.setState({
       ...this.state,
-      [property]: valor });
+      [property]: valor,
+      });
     this.props.alterarPessoaForm(this.state);
   }
 
@@ -59,6 +62,8 @@ export default class NovaPessoaForm extends Component {
   }
 
   alterarGenero(event) {
+    var valor = event.target.value;
+    var validacaoCampo = campoObrigatorio(valor);
     this.setState({
       ...this.state,
       genero: event.target.value,
@@ -67,6 +72,9 @@ export default class NovaPessoaForm extends Component {
   }
 
   alterarRaca(event) {
+  var valor = event.target.value;
+  var validacaoCampo = campoObrigatorio(valor);
+
     this.setState({
       ...this.state,
       raca: event.target.value,
@@ -83,6 +91,7 @@ export default class NovaPessoaForm extends Component {
   }
 
   alterarEstado(event) {
+    var valor = event.target.value;
       this.setState({
         ...this.state,
         estado: event.target.value,

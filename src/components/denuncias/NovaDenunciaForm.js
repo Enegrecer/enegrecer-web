@@ -38,7 +38,7 @@ export default class NovaDenunciaForm extends Component {
 
   render() {
     return (
-      <form id="form-nova-denuncia" onSubmit={this.handleSubmit}>
+      <form name="form-denuncia" id="form-nova-denuncia" onSubmit={this.handleSubmit}>
         <h1>Nova Denúncia</h1>
         <label htmlFor="detalhamento">Detalhamento:</label>
         {this.renderTextField('detalhamento')}

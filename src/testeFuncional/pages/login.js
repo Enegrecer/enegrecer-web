@@ -22,8 +22,8 @@ module.exports = {
   },
 
   preencherCampos(email, senha) {
-    I.fillField(this.fields.email, 'a@a.com');
-    I.fillField(this.fields.senha, '123456');
+    I.fillField(this.fields.email, email);
+    I.fillField(this.fields.senha, senha);
   },
 
 }

@@ -23,8 +23,8 @@ module.exports = {
   },
 
   preencherCampos(detalhamento, data) {
-    I.fillField(this.fields.detalhamento, 'Teste');
-    I.fillField(this.fields.data, '12/10/2017');
+    I.fillField(this.fields.detalhamento, detalhamento);
+    I.fillField(this.fields.data, data);
   },
 
 }

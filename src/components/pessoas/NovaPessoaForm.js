@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import { Button, FormGroup, Label, Input, FormFeedback } from 'reactstrap';
-import {validarCampo, campoObrigatorio} from '../pessoas/ValidacoesPessoa';
+import React from 'react';
+import { FormGroup, Label, Input } from 'reactstrap';
 
 
 export default class NovaPessoaForm extends React.Component {
@@ -29,27 +28,13 @@ export default class NovaPessoaForm extends React.Component {
     };
   }
 
-  renderCampoTexto(name) {
-      return (
-        <Input
-          id={name}
-          value={this.state[name]}
-          onChange={event => this.alterarCampoTexto(event, name)}
-         // onBlur={campoObrigatorio(this.state[name])}
-          autoComplete='off'
-        />
-      );
-    }
-  
   alterarCampoTexto(event, property) {
-      var valor = event.target.value;
-      var validacaoCampo = validarCampo(property, valor);
-      //fazer alerta visual caso validacaoCampo seja false
+    const valor = event.target.value;
 
     this.setState({
       ...this.state,
       [property]: valor,
-      });
+    });
     this.props.alterarPessoaForm(this.state);
   }
 
@@ -62,8 +47,6 @@ export default class NovaPessoaForm extends React.Component {
   }
 
   alterarGenero(event) {
-    var valor = event.target.value;
-    var validacaoCampo = campoObrigatorio(valor);
     this.setState({
       ...this.state,
       genero: event.target.value,
@@ -72,8 +55,6 @@ export default class NovaPessoaForm extends React.Component {
   }
 
   alterarRaca(event) {
-  var valor = event.target.value;
-  var validacaoCampo = campoObrigatorio(valor);
 
     this.setState({
       ...this.state,
@@ -91,23 +72,33 @@ export default class NovaPessoaForm extends React.Component {
   }
 
   alterarEstado(event) {
-    var valor = event.target.value;
-      this.setState({
-        ...this.state,
-        estado: event.target.value,
-      });
-      this.props.alterarPessoaForm(this.state);
+    this.setState({
+      ...this.state,
+      estado: event.target.value,
+    });
+    this.props.alterarPessoaForm(this.state);
+  }
+
+  renderCampoTexto(name) {
+    return (
+      <Input
+        id={name}
+        value={this.state[name]}
+        onChange={event => this.alterarCampoTexto(event, name)}
+        autoComplete="off"
+      />
+    );
   }
 
   render() {
     return (
-    <div>
-      <FormGroup check>
-        <Label check>
-          <Input type="checkbox" value={this.state.pessoaIdentificada} onChange={this.handleOptionChange}/>{' '}
+      <div>
+        <FormGroup check>
+          <Label check>
+          <Input type="checkbox" value={this.state.pessoaIdentificada} onChange={this.handleOptionChange} />{' '}
           Conheço a vítima
-        </Label>
-      </FormGroup>
+          </Label>
+        </FormGroup>
 
 
         <FormGroup>
@@ -142,7 +133,7 @@ export default class NovaPessoaForm extends React.Component {
           <Label for="dataNascimento">Data de Nascimento</Label>
           <Input type="date" name="dataNascimento" id="dataNascimento" placeholder="date placeholder" onChange={this.alterarDataNascimento}/>
         </FormGroup>
-         <FormGroup>
+        <FormGroup>
           <Label for="informacoesComplementares">Você deseja fornecer maiores detalhes?</Label>
           {this.renderCampoTexto('informacoesComplementares')}
         </FormGroup>
@@ -150,7 +141,7 @@ export default class NovaPessoaForm extends React.Component {
           <Label for="endereco">Endereço</Label>
           {this.renderCampoTexto('endereco')}
         </FormGroup>
-         <FormGroup>
+        <FormGroup>
           <Label for="estado">Estado</Label>
           <Input type="select" name="estado" id="estado" onChange={this.alterarEstado} value={this.state.estado}>
             <option value={''}>Escolha uma opção</option>
@@ -184,7 +175,7 @@ export default class NovaPessoaForm extends React.Component {
           </Input>
         </FormGroup>
 
-         <FormGroup>
+        <FormGroup>
           <Label for="telefone">Telefone</Label>
           {this.renderCampoTexto('telefone')}
         </FormGroup>

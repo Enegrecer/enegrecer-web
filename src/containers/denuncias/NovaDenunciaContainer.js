@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { criarDenunciaRequisicao } from '../../actions';
 import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
-import {validaCamposForm} from '../denuncias/ValidacoesDenunciaForm';
+import { validaCamposForm } from '../denuncias/ValidacoesDenunciaForm';
 
 export class NovaDenunciaContainer extends Component {
   constructor(props) {
@@ -17,15 +17,14 @@ export class NovaDenunciaContainer extends Component {
   }
 
   onPressSaveButton(state) {
-
-  if(validaCamposForm(state)){
-        this.props.criarDenunciaRequisicao({
-          ...state,
-          denunciante: this.props.denunciante,
-          onSuccess: push('/painel'),
-        });
-  }else{
-    alert("Favor preencher todos os campos corretamente.");
+    if(validaCamposForm(state)){
+      this.props.criarDenunciaRequisicao({
+        ...state,
+        denunciante: this.props.denunciante,
+        onSuccess: push('/painel'),
+      });
+  } else {
+     alert('Favor preencher todos os campos corretamente.');
   }
 
   }

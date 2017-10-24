@@ -8,6 +8,7 @@ exports[`Botao possui a mesma estrutura 1`] = `
       false
       false
     "
+  name="btn"
   onClick={[Function]}
   role="button"
   tabIndex="0"

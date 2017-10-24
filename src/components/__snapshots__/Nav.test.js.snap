@@ -7,11 +7,13 @@ exports[`Nav possui a mesma estrutura 1`] = `
   <a
     className="en-extra-margin-right"
     href="/sobre"
+    name="sobre"
   >
     Sobre
   </a>
   <Botao
     colored={false}
+    name="Registrar / Entrar"
     onClick={[Function]}
     outline={true}
     primary={true}

@@ -47,6 +47,7 @@ exports[`Home possui a mesma estrutura 1`] = `
           </p>
           <Botao
             colored={true}
+            name="denuncia"
             onClick={[Function]}
             outline={false}
             primary={false}

@@ -7,7 +7,7 @@ import Botao from './Botao';
 describe('Botao', () => {
   const onClickSpy = jest.fn();
   const wrapper = shallow(
-    <Botao onClick={onClickSpy}>
+    <Botao name="btn" onClick={onClickSpy}>
       Clique aqui
     </Botao>,
   );
@@ -23,6 +23,10 @@ describe('Botao', () => {
 
   it('tem o texto "Clique aqui"', () => {
     expect(wrapper.text()).toEqual('Clique aqui');
+  });
+
+  it('tem o nome "btn"', () => {
+    expect(wrapper.props().name).toEqual('btn');
   });
 
   it('não deve ter a classe en-btn--outline por padrão', () => {

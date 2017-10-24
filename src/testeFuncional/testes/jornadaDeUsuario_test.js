@@ -1,4 +1,3 @@
-
 Feature('Criar Denuncia');
 
 Scenario('Fazer Denuncia', (I, homePage, loginPage, denunciaPage) => {
@@ -10,6 +9,3 @@ Scenario('Fazer Denuncia', (I, homePage, loginPage, denunciaPage) => {
   denunciaPage.preencherCampos('Teste', '12/10/2017');
   denunciaPage.salvarDenuncia();
 });
-
-
-

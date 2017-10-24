@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
+    "codeceptjs": "^1.0.3",
     "firebase": "^4.0.0",
     "font-awesome": "^4.7.0",
     "history": "^4.7.2",

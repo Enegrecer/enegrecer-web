@@ -1,11 +1,11 @@
-'use strict';
+const actor = require('../steps/steps_file');
 
 let I;
 
 module.exports = {
 
   _init() {
-    I = require('../steps/steps_file.js')();
+    I = actor();
   },
 
   // locators
@@ -26,4 +26,4 @@ module.exports = {
     I.fillField(this.fields.senha, senha);
   },
 
-}
+};

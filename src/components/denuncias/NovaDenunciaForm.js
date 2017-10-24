@@ -64,7 +64,7 @@ export default class NovaDenunciaForm extends Component {
         {this.renderTextField('longitude')}
         <br />
 
-        <button type="submit" id="btn-salvar-denuncia">
+        <button name="salvarDenuncia" type="submit" id="btn-salvar-denuncia">
               Salvar
         </button>
       </form>);

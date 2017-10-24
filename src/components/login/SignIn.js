@@ -72,6 +72,7 @@ export default class SignIn extends Component {
           </div>
         }
         <RaisedButton
+          name="Entrar"
           label="Entrar"
           labelPosition="before"
           primary

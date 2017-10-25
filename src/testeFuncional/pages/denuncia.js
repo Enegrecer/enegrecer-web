@@ -20,7 +20,7 @@ module.exports = {
     I.click(this.botaoSalvarDenuncia);
   },
 
-  preencherCampos(detalhamento, data) {
+  preencherDenuncia(detalhamento, data) {
     I.fillField(this.fields.detalhamento, detalhamento);
     I.fillField(this.fields.data, data);
   },

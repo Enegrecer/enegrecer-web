@@ -21,7 +21,7 @@ module.exports = {
     I.click(this.botaoEntrar);
   },
 
-  preencherCampos(email, senha) {
+  preencherLogin(email, senha) {
     I.fillField(this.fields.email, email);
     I.fillField(this.fields.senha, senha);
   },

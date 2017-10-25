@@ -31,6 +31,7 @@
   },
   "scripts": {
     "start": "yarn build-css && react-scripts start",
+    "start-local": "yarn build-css-local && ../node_modules/.bin/react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "test-coverage": "react-scripts test --env=jsdom --coverage && ./node_modules/codeclimate-test-reporter/bin/codeclimate.js < ./coverage/lcov.info",
@@ -38,6 +39,7 @@
     "lint": "eslint src",
     "watch-lint": "esw -w src",
     "build-css": "node-sass-chokidar src/ -o src/",
+    "build-css-local": "../node_modules/.bin/node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
   },
   "devDependencies": {

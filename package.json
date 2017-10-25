@@ -4,9 +4,12 @@
   "private": true,
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
+    "codeceptjs": "^1.0.3",
+    "codeclimate": "0.0.32",
     "firebase": "^4.0.0",
     "font-awesome": "^4.7.0",
     "history": "^4.7.2",
+    "jest-cli": "^21.2.1",
     "material-ui": "^0.18.5",
     "node-sass-chokidar": "^0.0.3",
     "prop-types": "^15.5.10",
@@ -16,13 +19,15 @@
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.1.2",
-    "react-router-redux": "next",
+    "react-router-redux": "^5.0.0-alpha.8",
     "react-scripts": "1.0.10",
     "react-tap-event-plugin": "^2.0.1",
     "reactstrap": "^4.8.0",
     "redux": "^3.7.2",
     "redux-actions": "^2.2.1",
-    "redux-saga": "^0.15.6"
+    "redux-saga": "^0.15.6",
+    "selenium-standalone": "6.11.0",
+    "selenium-webdriver": "^3.4.0"
   },
   "scripts": {
     "start": "yarn build-css && react-scripts start",
@@ -38,6 +43,7 @@
   "devDependencies": {
     "codeclimate-test-reporter": "^0.5.0",
     "enzyme": "^2.9.1",
+    "enzyme-to-json": "1.5.1",
     "eslint": "^4.1.1",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-config-standard": "^10.2.1",

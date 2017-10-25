@@ -17,6 +17,7 @@ const Botao = (props) => {
       className={getClassName(props)}
       role="button"
       tabIndex="0"
+      name={props.name}
     >
       {props.children}
     </a>
@@ -32,6 +33,7 @@ Botao.propTypes = {
   outline: PropTypes.bool,
   primary: PropTypes.bool,
   colored: PropTypes.bool,
+  name: PropTypes.string.isRequired,
 };
 
 Botao.defaultProps = {

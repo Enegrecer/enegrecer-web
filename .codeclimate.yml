@@ -15,3 +15,4 @@ engines:
       - javascript:
 exclude_paths:
 - "**.test.*"
+- "testeFuncional/"

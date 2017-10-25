@@ -1,0 +1,24 @@
+{
+  "output": "./output",
+  "helpers": {
+    "WebdriverIO": {
+      "url": "http://localhost:3000",
+      "browser": "chrome",
+      "smartWait": 5000
+    }
+  },
+  "include": {
+    "I": "./src/testeFuncional/steps/steps_file.js",
+    "homePage": "./src/testeFuncional/pages/home.js",
+    "loginPage": "./src/testeFuncional/pages/login.js",
+    "denunciaPage": "./src/testeFuncional/pages/denuncia.js"
+  },
+  "mocha": {},
+  "bootstrap": false,
+  "teardown": null,
+  "hooks": [],
+  "tests": "./src/testeFuncional/testes/*_test.js",
+  "timeout": 10000,
+  "name": "enegrecer-web",
+  "translation": "pt-BR"
+}

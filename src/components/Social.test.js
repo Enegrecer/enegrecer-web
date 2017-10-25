@@ -7,6 +7,7 @@ describe('Social', () => {
   const networks = [
     { icon: 'facebook-square', title: 'Facebook', href: '#' },
     { icon: 'twitter', title: 'Twitter', href: '#' },
+    { icon: 'instagram', title: 'Instagram', href: '#' },
   ];
   const wrapper = shallow(
     <Social networks={networks} />,
@@ -22,5 +23,9 @@ describe('Social', () => {
 
   it('tem link para o twitter', () => {
     expect(wrapper.find('a[title="Twitter"][href="#"] .fa-twitter').exists()).toBeTruthy();
+  });
+
+  it('tem link para o instagram', () => {
+    expect(wrapper.find('a[title="Instagram"][href="#"] .fa-instagram').exists()).toBeTruthy();
   });
 });

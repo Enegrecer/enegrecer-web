@@ -37,6 +37,7 @@ const Home = props => (
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
             <Botao
+              name="denuncia"
               onClick={
                 () => props.history.push('/painel/denuncias/nova') // eslint-disable-line react/prop-types
               }

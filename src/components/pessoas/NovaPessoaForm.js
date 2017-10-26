@@ -31,27 +31,27 @@ export default class NovaPessoaForm extends React.Component {
   alterarCampoTexto(event, property) {
     const valor = event.target.value;
 
-    this.setState({
-      ...this.state,
-      [property]: valor,
-    });
-    this.props.alterarPessoaForm(this.state);
+    this.setState({ [property]: valor }, function() {
+          this.alteraState(this.state);
+      });
   }
 
   handleOptionChange(changeEvent, isInputChecked) {
     this.setState({
       ...this.state,
       pessoaIdentificada: isInputChecked,
+    }, function() {
+        this.alteraState(this.state);
     });
-    this.props.alterarPessoaForm(this.state);
   }
 
   alterarGenero(event) {
     this.setState({
       ...this.state,
       genero: event.target.value,
+    }, function() {
+        this.alteraState(this.state);
     });
-    this.props.alterarPessoaForm(this.state);
   }
 
   alterarRaca(event) {
@@ -59,25 +59,33 @@ export default class NovaPessoaForm extends React.Component {
     this.setState({
       ...this.state,
       raca: event.target.value,
+    }, function() {
+        this.alteraState(this.state);
     });
-    this.props.alterarPessoaForm(this.state);
   }
 
   alterarDataNascimento(event) {
+    alert("vim pra funcao");
     this.setState({
       ...this.state,
       dataNascimento: event.target.value,
+    }, function() {
+        this.alteraState(this.state);
     });
-    this.props.alterarPessoaForm(this.state);
   }
 
   alterarEstado(event) {
     this.setState({
       ...this.state,
       estado: event.target.value,
+    }, function() {
+        this.alteraState(this.state);
     });
-    this.props.alterarPessoaForm(this.state);
   }
+
+   alteraState (state) {
+        this.props.alterarPessoaForm(state);
+   }
 
   renderCampoTexto(name) {
     return (

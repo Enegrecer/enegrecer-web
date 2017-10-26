@@ -39,11 +39,16 @@ NovaDenunciaContainer.propTypes = {
   criarDenunciaRequisicao: PropTypes.func.isRequired,
 };
 
+// const mapStateToProps = state => ({
+//   denunciante: state.auth.user.uid,
+// });
+
 const mapDispatchToProps = dispatch => bindActionCreators({
   criarDenunciaRequisicao,
 }, dispatch);
 
 const reduxNovaDenuncia = connect(
+ // mapStateToProps,
   mapDispatchToProps,
 )(NovaDenunciaContainer);
 

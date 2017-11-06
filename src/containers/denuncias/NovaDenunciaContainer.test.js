@@ -19,15 +19,17 @@ describe('NovaDenunciaContainer', () => {
   });
 
   describe('método onPressSaveButton', () => {
-    it('chama o método criarDenunciaRequisicao recebido via prop', () => {
+    it('não deve chamar o método criarDenunciaRequisicao quando renderizar pela primeira vez', () => {
       const criarDenunciaRequisicaoMock = jest.fn();
       const wrapper = shallow(
         <NovaDenunciaContainer
           currentUserUID=""
           criarDenunciaRequisicao={criarDenunciaRequisicaoMock}
         />);
+
       wrapper.instance().onPressSaveButton();
-      expect(criarDenunciaRequisicaoMock).toHaveBeenCalled();
+      expect(criarDenunciaRequisicaoMock).not.toHaveBeenCalled();
     });
   });
+
 });

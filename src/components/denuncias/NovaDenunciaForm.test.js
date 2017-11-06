@@ -7,54 +7,54 @@ describe('NovaDenunciaForm Component', () => {
     const wrapper = shallow(<NovaDenunciaForm salvarDenuncia={() => { }} />);
     expect(wrapper.exists()).toBe(true);
   });
-  describe('testa as renderizações dos inputs do componente', () => {
-    it('renderiza sem erro o input de detalhamento do componente', () => {
+  describe('testa as renderizações dos campos do componente', () => {
+    it('renderiza sem erro o campo de detalhamento do componente', () => {
       const wrapper = shallow(<NovaDenunciaForm salvarDenuncia={() => { }} />);
 
-      expect(wrapper.children('#detalhamento').length).toBe(1);
+      expect(wrapper.find('#detalhamento').length).toEqual(1);
     });
 
-    it('renderiza sem erro o input de dataHoraOcorrencia do componente', () => {
+    it('renderiza sem erro o campo de horaOcorrencia do componente', () => {
       const wrapper = shallow(<NovaDenunciaForm salvarDenuncia={() => { }} />);
-      expect(wrapper.children('#dataHoraOcorrencia').length).toBe(1);
+      expect(wrapper.find('#horaOcorrencia').length).toEqual(1);
     });
 
-    it('renderiza sem erro o input de idCategoria do componente', () => {
+    it('renderiza sem erro o campo de dataOcorrencia do componente', () => {
       const wrapper = shallow(<NovaDenunciaForm salvarDenuncia={() => { }} />);
-      expect(wrapper.children('#idCategoria').length).toBe(1);
+      expect(wrapper.find('#dataOcorrencia').length).toEqual(1);
     });
 
-    it('renderiza sem erro o input de endereco do componente', () => {
+    it('renderiza sem erro o campo de idCategoria do componente', () => {
       const wrapper = shallow(<NovaDenunciaForm salvarDenuncia={() => { }} />);
-      expect(wrapper.children('#endereco').length).toBe(1);
+      expect(wrapper.find('[name="idCategoria"]').length).toEqual(2);
     });
 
-    it('renderiza sem erro o input de latitude do componente', () => {
+    it('renderiza sem erro o campo de endereco do componente', () => {
       const wrapper = shallow(<NovaDenunciaForm salvarDenuncia={() => { }} />);
-      expect(wrapper.children('#latitude').length).toBe(1);
+      expect(wrapper.find('#endereco').length).toEqual(1);
     });
 
-    it('renderiza sem erro o input de longitude do componente', () => {
+    it('renderiza sem erro o campo seletor de estados do componente', () => {
       const wrapper = shallow(<NovaDenunciaForm salvarDenuncia={() => { }} />);
-      expect(wrapper.children('#longitude').length).toBe(1);
+      expect(wrapper.find('#estado').length).toEqual(1);
     });
   });
 
-  it('inicializa o componente com o estado esperado', () => {
+  it('inicializa o componente com o state esperado', () => {
     const wrapper = shallow(<NovaDenunciaForm salvarDenuncia={() => { }} />);
 
     const expectedState = {
       detalhamento: '',
-      dataHoraOcorrencia: '',
+      dataOcorrencia: '',
+      horaOcorrencia: '',
       idCategoria: '',
+      estado: '',
       endereco: '',
-      latitude: '',
-      longitude: '',
     };
     expect(wrapper.state()).toEqual(expectedState);
   });
 
-  describe('quando o valor do input for alterado', () => {
+  describe('quando o valor do campo for alterado', () => {
     const wrapper = shallow(<NovaDenunciaForm salvarDenuncia={() => { }} />);
 
     beforeEach(() => {
@@ -89,11 +89,11 @@ describe('NovaDenunciaForm Component', () => {
     it('deve chamar salvar denúncia com os dados corretos', () => {
       const expectedParams = {
         detalhamento: 'valor detalhamento',
-        dataHoraOcorrencia: '',
+        dataOcorrencia: '',
+        horaOcorrencia: '',
         idCategoria: 'valor categoria',
         endereco: '',
-        latitude: '',
-        longitude: '',
+        estado: '',
       };
 
       expect(salvarDenunciaSpy).toBeCalledWith(expectedParams);

@@ -12,20 +12,22 @@ export class NovaDenunciaContainer extends Component {
     super(props);
     this.onPressSaveButton = this.onPressSaveButton.bind(this);
     this.state = {
+      vitima: null,
       denunciante: this.props.currentUserUID,
     };
   }
 
-  onPressSaveButton(state) {
-    if(validaCamposForm(state)){
+  onPressSaveButton() {
+
+    if(validaCamposForm(this.state.vitima)){
       this.props.criarDenunciaRequisicao({
-        ...state,
+        ...this.state,
         denunciante: this.props.denunciante,
         onSuccess: push('/painel'),
       });
-  } else {
-     alert('Favor preencher todos os campos corretamente.');
-  }
+    } else {
+      alert('Favor preencher todos os campos corretamente.');
+    }
 
   }
 

@@ -24,7 +24,7 @@ function validarTelefone(valor) {
 }
 
 function validarDataDeNascimento(valor){
-  if(valor.trim() == ''){
+  if(valor.trim() === ''){
     return true;
   }
     var data = new Date(valor);
@@ -38,12 +38,12 @@ function validarDataDeNascimento(valor){
 
 }
 
-export function validaCamposForm(state) {
-  return campoObrigatorio(state.vitima.pessoa.nome) &&
-      campoObrigatorio(state.vitima.pessoa.genero) &&
-      campoObrigatorio(state.vitima.pessoa.raca) &&
-      validarDataDeNascimento(state.vitima.pessoa.dataNascimento) &&
-      campoObrigatorio(state.vitima.pessoa.estado) &&
-      validarTelefone(state.vitima.pessoa.telefone) &&
-      validarEmail(state.vitima.pessoa.email);
+export function validaCamposForm(vitima) {
+return vitima !== null && campoObrigatorio(vitima.pessoa.nome) &&
+      campoObrigatorio(vitima.pessoa.genero) &&
+      campoObrigatorio(vitima.pessoa.raca) &&
+      validarDataDeNascimento(vitima.pessoa.dataNascimento) &&
+      campoObrigatorio(vitima.pessoa.estado) &&
+      validarTelefone(vitima.pessoa.telefone) &&
+      validarEmail(vitima.pessoa.email);
 }

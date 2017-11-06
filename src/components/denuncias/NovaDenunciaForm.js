@@ -23,7 +23,6 @@ export default class NovaDenunciaForm extends Component {
       idCategoria: '',
       endereco: '',
       estado: '',
-
     };
   }
 
@@ -111,13 +110,13 @@ export default class NovaDenunciaForm extends Component {
 
         <FormGroup check>
           <Label check>
-            <Input type="radio" name="idCategoria" value='injuria'onChange={this.handleOptionChange} />{' '}
+            <Input type="radio" name="idCategoria" value='injuria' onChange={this.handleOptionChange} />{' '}
             Injúria
           </Label>
         </FormGroup>
         <FormGroup check>
           <Label check>
-            <Input type="radio" name="idCategoria" value='racismo'onChange={this.handleOptionChange} />{' '}
+            <Input type="radio" name="idCategoria" value='racismo' onChange={this.handleOptionChange} />{' '}
             Racismo
           </Label>
         </FormGroup>

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { criarDenunciaRequisicao } from '../../actions';
 import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
-import { validaCamposForm } from '../denuncias/ValidacoesDenunciaForm';
+import { validaCamposForm } from '../../utils/validacoesCamposForm';
 
 export class NovaDenunciaContainer extends Component {
   constructor(props) {
@@ -50,7 +50,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 }, dispatch);
 
 const reduxNovaDenuncia = connect(
- // mapStateToProps,
+  // mapStateToProps,
   mapDispatchToProps,
 )(NovaDenunciaContainer);
 

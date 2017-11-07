@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { Component } from 'react';
 import { FormGroup, Label, Input } from 'reactstrap';
 
 
-export default class NovaPessoaForm extends React.Component {
+export default class NovaVitimaForm extends Component {
   constructor(props) {
     super(props);
 
@@ -31,61 +31,55 @@ export default class NovaPessoaForm extends React.Component {
   alterarCampoTexto(event, property) {
     const valor = event.target.value;
 
-    this.setState({ [property]: valor }, function() {
-          this.alteraState(this.state);
+    this.setState({ [property]: valor },
+      function() {
+          this.alteraState();
       });
   }
 
-  handleOptionChange(changeEvent, isInputChecked) {
-    this.setState({
-      ...this.state,
-      pessoaIdentificada: isInputChecked,
+  handleOptionChange(event) {
+      this.setState({
+      pessoaIdentificada: event.target.checked,
     }, function() {
-        this.alteraState(this.state);
+        this.alteraState();
     });
   }
 
   alterarGenero(event) {
     this.setState({
-      ...this.state,
       genero: event.target.value,
     }, function() {
-        this.alteraState(this.state);
+        this.alteraState();
     });
   }
 
   alterarRaca(event) {
-
     this.setState({
-      ...this.state,
       raca: event.target.value,
     }, function() {
-        this.alteraState(this.state);
+        this.alteraState();
     });
   }
 
   alterarDataNascimento(event) {
-    alert("vim pra funcao");
     this.setState({
-      ...this.state,
       dataNascimento: event.target.value,
     }, function() {
-        this.alteraState(this.state);
+        this.alteraState();
     });
   }
 
   alterarEstado(event) {
     this.setState({
-      ...this.state,
       estado: event.target.value,
     }, function() {
-        this.alteraState(this.state);
+        this.alteraState();
     });
   }
 
-   alteraState (state) {
-        this.props.alterarPessoaForm(state);
-   }
+  alteraState () {
+    this.props.alterarVitimaForm(this.state);
+  }
 
   renderCampoTexto(name) {
     return (
@@ -101,11 +95,14 @@ export default class NovaPessoaForm extends React.Component {
   render() {
     return (
       <div>
+        <h3>Informacões da Vítima</h3>
+        <br/>
         <FormGroup check>
           <Label check>
-          <Input type="checkbox" value={this.state.pessoaIdentificada} onChange={this.handleOptionChange} />{' '}
-          Conheço a vítima
+            <Input type="checkbox" onChange={this.handleOptionChange} />{' '}
+            Sou a vítima
           </Label>
+
         </FormGroup>
 
 
@@ -196,6 +193,7 @@ export default class NovaPessoaForm extends React.Component {
   }
 }
 
-NovaPessoaForm.propTypes = {
-  alterarPessoaForm: PropTypes.func.isRequired,
+NovaVitimaForm.propTypes = {
+  alterarVitimaForm: PropTypes.func.isRequired,
 };
+

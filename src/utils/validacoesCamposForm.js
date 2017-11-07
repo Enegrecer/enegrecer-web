@@ -33,13 +33,12 @@ function validarDataDeNascimento(valor){
     dataDeHoje.setHours(0,0,0,0);
     var primeiraDataValida = new Date('01/01/1900');
     primeiraDataValida.setHours(0,0,0,0);
-
     return (data > primeiraDataValida) && (data < dataDeHoje);
 
 }
 
 export function validaCamposForm(vitima) {
-return vitima !== null && campoObrigatorio(vitima.pessoa.nome) &&
+  return vitima !== null && campoObrigatorio(vitima.pessoa.nome) &&
       campoObrigatorio(vitima.pessoa.genero) &&
       campoObrigatorio(vitima.pessoa.raca) &&
       validarDataDeNascimento(vitima.pessoa.dataNascimento) &&

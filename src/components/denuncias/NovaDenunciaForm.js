@@ -42,7 +42,10 @@ export default class NovaDenunciaForm extends Component {
     });
   }
 
-  handleSubmit() {
+  handleSubmit(event) {
+    if(event){
+      event.preventDefault();
+    }
     this.props.salvarDenuncia(this.state);
   }
 
@@ -61,6 +64,8 @@ export default class NovaDenunciaForm extends Component {
   adicionarVitimaEmForm(vitima) {
     this.setState({
       vitima,
+    }, () => {
+      this.props.alterarDenunciaForm(this.state)
     });
   }
 
@@ -180,4 +185,5 @@ export default class NovaDenunciaForm extends Component {
 
 NovaDenunciaForm.propTypes = {
   salvarDenuncia: PropTypes.func.isRequired,
+  alterarDenunciaForm: PropTypes.func
 };

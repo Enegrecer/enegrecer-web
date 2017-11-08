@@ -11,6 +11,7 @@ export class NovaDenunciaContainer extends Component {
   constructor(props) {
     super(props);
     this.onPressSaveButton = this.onPressSaveButton.bind(this);
+    this.adicionarDenunciaNoForm = this.adicionarDenunciaNoForm.bind(this);
     this.state = {
       vitima: null,
       denunciante: this.props.currentUserUID,
@@ -31,8 +32,21 @@ export class NovaDenunciaContainer extends Component {
 
   }
 
+  adicionarDenunciaNoForm(denuncia) {
+    this.setState({
+      ...denuncia,
+    }, () => {
+      console.clear()
+      console.log(this.state)
+    });
+  }
+
   render() {
-    return <NovaDenunciaForm salvarDenuncia={this.onPressSaveButton} />;
+    return <NovaDenunciaForm 
+        salvarDenuncia={this.onPressSaveButton}  
+        alterarDenunciaForm={this.adicionarDenunciaNoForm}
+      />;
+    
   }
 }
 

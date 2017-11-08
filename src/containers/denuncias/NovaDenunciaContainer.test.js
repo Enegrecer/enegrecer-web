@@ -19,17 +19,41 @@ describe('NovaDenunciaContainer', () => {
   });
 
   describe('método onPressSaveButton', () => {
-    it('não deve chamar o método criarDenunciaRequisicao quando renderizar pela primeira vez', () => {
-      const criarDenunciaRequisicaoMock = jest.fn();
-      const wrapper = shallow(
-        <NovaDenunciaContainer
-          currentUserUID=""
-          criarDenunciaRequisicao={criarDenunciaRequisicaoMock}
-        />);
+    const criarDenunciaRequisicaoMock = jest.fn();
+    const wrapper = shallow(
+      <NovaDenunciaContainer
+        currentUserUID=""
+        criarDenunciaRequisicao={criarDenunciaRequisicaoMock}
+      />);
 
+
+    it('não deve chamar o método criarDenunciaRequisicao quando o form estiver inválido', () => {
+      
       wrapper.instance().onPressSaveButton();
       expect(criarDenunciaRequisicaoMock).not.toHaveBeenCalled();
     });
+
+    it('deve chamar o método criarDenunciaRequisicao quando o form estiver válido', () => {
+      wrapper.setState({
+          vitima: {
+            pessoaIdentificada: false,
+            nome: 'Teste',
+            genero: 'feminino',
+            raca: 'parda',
+            informacoesComplementares: '',
+            dataNascimento: '1900-01-02',
+            endereco: 'Av. teste',
+            estado: 'AM',
+            telefone: '99999999999',
+            email: 't@t.com',
+          }
+        },
+        () => {
+          wrapper.instance().onPressSaveButton();
+          expect(criarDenunciaRequisicaoMock).toHaveBeenCalled();
+        })
+
+    })
   });
 
 });

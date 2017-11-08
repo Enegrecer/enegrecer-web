@@ -28,21 +28,23 @@ function validarDataDeNascimento(valor){
     return true;
   }
     var data = new Date(valor);
-    data.setHours(0,0,0,0);
     var dataDeHoje = new Date();
-    dataDeHoje.setHours(0,0,0,0);
     var primeiraDataValida = new Date('01/01/1900');
-    primeiraDataValida.setHours(0,0,0,0);
-    return (data > primeiraDataValida) && (data < dataDeHoje);
 
+    data = data.toJSON().slice(0,10)
+    dataDeHoje = dataDeHoje.toJSON().slice(0,10)
+    primeiraDataValida = primeiraDataValida.toJSON().slice(0,10)
+    
+    return (data > primeiraDataValida) && (data < dataDeHoje);
 }
 
-export function validaCamposForm(vitima) {
-  return vitima !== null && campoObrigatorio(vitima.pessoa.nome) &&
-      campoObrigatorio(vitima.pessoa.genero) &&
-      campoObrigatorio(vitima.pessoa.raca) &&
-      validarDataDeNascimento(vitima.pessoa.dataNascimento) &&
-      campoObrigatorio(vitima.pessoa.estado) &&
-      validarTelefone(vitima.pessoa.telefone) &&
-      validarEmail(vitima.pessoa.email);
+export function validaCamposForm(campos) {
+  debugger
+  return campos !== null && campoObrigatorio(campos.nome) &&
+      campoObrigatorio(campos.genero) &&
+      campoObrigatorio(campos.raca) &&
+      validarDataDeNascimento(campos.dataNascimento) &&
+      campoObrigatorio(campos.estado) &&
+      validarTelefone(campos.telefone) &&
+      validarEmail(campos.email);
 }

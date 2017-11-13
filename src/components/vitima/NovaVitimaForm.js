@@ -92,6 +92,18 @@ export default class NovaVitimaForm extends Component {
     );
   }
 
+  renderCampoNome(name) {
+    return (
+      <Input
+        id={name}
+        value={this.state[name]}
+        onChange={event => this.alterarCampoTexto(event, name)}
+        autoComplete="off"
+        maxLength="40"
+      />
+    );
+  }
+
   render() {
     return (
       <div>
@@ -108,7 +120,7 @@ export default class NovaVitimaForm extends Component {
 
         <FormGroup>
           <Label for="nome">Nome</Label>
-          {this.renderCampoTexto('nome')}
+          {this.renderCampoNome('nome')}
         </FormGroup>
 
         <FormGroup>

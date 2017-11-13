@@ -92,7 +92,7 @@ export default class NovaVitimaForm extends Component {
     );
   }
 
-  renderCampoNome(name) {
+  renderCampo40Caracteres(name) {
     return (
       <Input
         id={name}
@@ -100,6 +100,18 @@ export default class NovaVitimaForm extends Component {
         onChange={event => this.alterarCampoTexto(event, name)}
         autoComplete="off"
         maxLength="40"
+      />
+    );
+  }
+
+    renderCampo255Caracteres(name) {
+    return (
+      <Input
+        id={name}
+        value={this.state[name]}
+        onChange={event => this.alterarCampoTexto(event, name)}
+        autoComplete="off"
+        maxLength="255"
       />
     );
   }
@@ -120,7 +132,7 @@ export default class NovaVitimaForm extends Component {
 
         <FormGroup>
           <Label for="nome">Nome</Label>
-          {this.renderCampoNome('nome')}
+          {this.renderCampo40Caracteres('nome')}
         </FormGroup>
 
         <FormGroup>
@@ -156,7 +168,7 @@ export default class NovaVitimaForm extends Component {
         </FormGroup>
         <FormGroup>
           <Label for="endereco">Endereço</Label>
-          {this.renderCampoTexto('endereco')}
+          {this.renderCampo255Caracteres('endereco')}
         </FormGroup>
         <FormGroup>
           <Label for="estado">Estado</Label>

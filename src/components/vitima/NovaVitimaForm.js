@@ -81,37 +81,14 @@ export default class NovaVitimaForm extends Component {
     this.props.alterarVitimaForm(this.state);
   }
 
-  renderCampoTexto(name) {
+  renderCampoTexto(name, max_length) {
     return (
       <Input
         id={name}
         value={this.state[name]}
+        maxLength={max_length}
         onChange={event => this.alterarCampoTexto(event, name)}
         autoComplete="off"
-      />
-    );
-  }
-
-  renderCampo40Caracteres(name) {
-    return (
-      <Input
-        id={name}
-        value={this.state[name]}
-        onChange={event => this.alterarCampoTexto(event, name)}
-        autoComplete="off"
-        maxLength="40"
-      />
-    );
-  }
-
-    renderCampo255Caracteres(name) {
-    return (
-      <Input
-        id={name}
-        value={this.state[name]}
-        onChange={event => this.alterarCampoTexto(event, name)}
-        autoComplete="off"
-        maxLength="255"
       />
     );
   }
@@ -132,18 +109,12 @@ export default class NovaVitimaForm extends Component {
 
         <FormGroup>
           <Label for="nome">Nome</Label>
-          {this.renderCampo40Caracteres('nome')}
+          {this.renderCampoTexto('nome', '40')}
         </FormGroup>
 
         <FormGroup>
           <Label for="genero">Gênero</Label>
-          <Input type="select" name="genero" id="genero" onChange={this.alterarGenero} value={this.state.genero}>
-            <option value={''}>Escolha uma opção</option>
-            <option value={'feminino'}>Feminino</option>
-            <option value={'masculino'}>Masculino</option>
-            <option value={'nao-binario'}>Não-Binário</option>
-            <option value={'agenero'}>Agênero</option>
-          </Input>
+          {this.renderCampoTexto('genero', '15')}
         </FormGroup>
 
         <FormGroup>
@@ -168,7 +139,7 @@ export default class NovaVitimaForm extends Component {
         </FormGroup>
         <FormGroup>
           <Label for="endereco">Endereço</Label>
-          {this.renderCampo255Caracteres('endereco')}
+          {this.renderCampoTexto('endereco','255')}
         </FormGroup>
         <FormGroup>
           <Label for="estado">Estado</Label>

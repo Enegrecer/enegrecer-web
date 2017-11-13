@@ -42,7 +42,6 @@ export function validaCamposForm(campos) {
   debugger
   return campos !== null && campoObrigatorio(campos.nome) &&
       campoObrigatorio(campos.genero) &&
-      campoObrigatorio(campos.raca) &&
       validarDataDeNascimento(campos.dataNascimento) &&
       campoObrigatorio(campos.estado) &&
       validarTelefone(campos.telefone) &&

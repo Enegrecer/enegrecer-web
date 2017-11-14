@@ -187,6 +187,10 @@ export default class NovaVitimaForm extends Component {
           <Label for="email">Email</Label>
           {this.renderCampoTexto('email')}
         </FormGroup>
+        <FormGroup>
+          <Label for="caracteristicaVitima">Se preferir descreva aqui as características da vítima </Label>
+          {this.renderCampoTexto('caracteristicaVitima', '255')}
+        </FormGroup>
         <br />
       </div>);
   }

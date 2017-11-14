@@ -40,7 +40,6 @@ function validarDataDeNascimento(valor){
 
 export function validaCamposForm(campos) {
   return campos !== null && campoObrigatorio(campos.nome) &&
-      campoObrigatorio(campos.genero) &&
       validarDataDeNascimento(campos.dataNascimento) &&
       campoObrigatorio(campos.estado) &&
       validarTelefone(campos.telefone) &&

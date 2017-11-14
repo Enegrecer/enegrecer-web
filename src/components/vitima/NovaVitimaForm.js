@@ -139,6 +139,12 @@ export default class NovaVitimaForm extends Component {
           <Label for="endereco">Endereço</Label>
           {this.renderCampoTexto('endereco', '255')}
         </FormGroup>
+
+        <FormGroup>
+          <Label for="naturalidade">Naturalidade</Label>
+          {this.renderCampoTexto('naturalidade', '40')}
+        </FormGroup>
+
         <FormGroup>
           <Label for="estado">Estado</Label>
           <Input type="select" name="estado" id="estado" onChange={this.alterarEstado} value={this.state.estado}>

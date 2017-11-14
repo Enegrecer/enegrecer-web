@@ -16,7 +16,7 @@ function ehEmailValido(valor) {
 }
 
 function validarEmail(valor) {
-  return ehEmailValido(valor);
+  return ehEmailValido(valor) || valor === '';
 }
 
 function validarTelefone(valor) {

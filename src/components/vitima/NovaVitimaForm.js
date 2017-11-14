@@ -106,6 +106,14 @@ export default class NovaVitimaForm extends Component {
 
         </FormGroup>
 
+        <FormGroup check>
+          <Label check>
+            <Input type="checkbox" onChange={this.handleOptionChange} />{' '}
+            Sou a Vítima
+          </Label>
+
+        </FormGroup>
+
 
         <FormGroup>
           <Label for="nome">Nome</Label>

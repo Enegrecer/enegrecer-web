@@ -81,12 +81,12 @@ export default class NovaVitimaForm extends Component {
     this.props.alterarVitimaForm(this.state);
   }
 
-  renderCampoTexto(name, max_length) {
+  renderCampoTexto(name, maxLength) {
     return (
       <Input
         id={name}
         value={this.state[name]}
-        maxLength={max_length}
+        maxLength={maxLength}
         onChange={event => this.alterarCampoTexto(event, name)}
         autoComplete="off"
       />
@@ -124,8 +124,6 @@ export default class NovaVitimaForm extends Component {
             <option value={'preta'}>Preta</option>
             <option value={'parda'}>Parda</option>
             <option value={'indigena'}>Indígena</option>
-            <option value={'amarela'}>Amarela</option>
-            <option value={'branca'}>Branca</option>
           </Input>
         </FormGroup>
 
@@ -139,7 +137,7 @@ export default class NovaVitimaForm extends Component {
         </FormGroup>
         <FormGroup>
           <Label for="endereco">Endereço</Label>
-          {this.renderCampoTexto('endereco','255')}
+          {this.renderCampoTexto('endereco', '255')}
         </FormGroup>
         <FormGroup>
           <Label for="estado">Estado</Label>

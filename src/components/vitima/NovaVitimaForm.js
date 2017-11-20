@@ -16,6 +16,7 @@ export default class NovaVitimaForm extends Component {
 
     this.state = {
       pessoaIdentificada: false,
+      souAVitima: false,
       nome: '',
       genero: '',
       raca: '',
@@ -25,6 +26,8 @@ export default class NovaVitimaForm extends Component {
       estado: '',
       telefone: '',
       email: '',
+      naturalidade: '',
+      caracteristicaVitima: '',
     };
   }
 
@@ -109,6 +112,14 @@ export default class NovaVitimaForm extends Component {
         <FormGroup check>
           <Label check>
             <Input type="checkbox" onChange={this.handleOptionChange} />{' '}
+            Sou a Vítima
+          </Label>
+
+        </FormGroup>
+
+        <FormGroup check>
+          <Label check>
+            <Input for="souAVitima" type="checkbox" onChange={this.handleOptionChange} />{' '}
             Sou a Vítima
           </Label>
 

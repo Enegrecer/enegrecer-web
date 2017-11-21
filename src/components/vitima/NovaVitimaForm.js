@@ -48,6 +48,14 @@ export default class NovaVitimaForm extends Component {
     });
   }
 
+  marcarSouAVitima(event) {
+    this.setState({
+    pessoaIdentificada: event.target.checked,
+    }, function() {
+    this.alteraState();
+    });
+  }
+
   alterarRaca(event) {
     this.setState({
       raca: event.target.value,
@@ -102,7 +110,7 @@ export default class NovaVitimaForm extends Component {
 
         <FormGroup check>
           <Label check>
-            <Input for="souAVitima" type="checkbox" onChange={this.handleOptionChange} />{' '}
+            <Input for="souAVitima" type="checkbox" onChange={this.marcarSouAVitima} />{' '}
             Sou a Vítima
           </Label>
 

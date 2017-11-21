@@ -40,11 +40,11 @@ export default class NovaVitimaForm extends Component {
       });
   }
 
-  handleOptionChange(event) {
-      this.setState({
-      pessoaIdentificada: event.target.checked,
+  marcarConhecoAVitima(event) {
+    this.setState({
+    pessoaIdentificada: event.target.checked,
     }, function() {
-        this.alteraState();
+    this.alteraState();
     });
   }
 
@@ -95,7 +95,7 @@ export default class NovaVitimaForm extends Component {
         <br/>
         <FormGroup check>
           <Label check>
-            <Input for="conhecoAVitma"type="checkbox" onChange={this.handleOptionChange} />{' '}
+            <Input for="conhecoAVitma"type="checkbox" onChange={this.marcarConhecoAVitima} />{' '}
             Conheço a Vítima
           </Label>
         </FormGroup>

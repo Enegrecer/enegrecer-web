@@ -48,14 +48,6 @@ export default class NovaVitimaForm extends Component {
     });
   }
 
-  alterarGenero(event) {
-    this.setState({
-      genero: event.target.value,
-    }, function() {
-        this.alteraState();
-    });
-  }
-
   alterarRaca(event) {
     this.setState({
       raca: event.target.value,

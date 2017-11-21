@@ -7,7 +7,8 @@ export default class NovaVitimaForm extends Component {
   constructor(props) {
     super(props);
 
-    this.handleOptionChange = this.handleOptionChange.bind(this);
+    this.marcarConhecoAVitima = this.marcarConhecoAVitima.bind(this);
+    this.marcarSouAVitima = this.marcarConhecoAVitima;
     this.alterarCampoTexto = this.alterarCampoTexto.bind(this);
     this.alterarGenero = this.alterarGenero.bind(this);
     this.alterarRaca = this.alterarRaca.bind(this);

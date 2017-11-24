@@ -154,7 +154,7 @@ export default class NovaDenunciaForm extends Component {
           <option value={'PI'}>PI</option>
           <option value={'PR'}>PR</option>
           <option value={'RJ'}>RJ</option>
-          <option value={'PI'}>RN</option>
+          <option value={'RN'}>RN</option>
           <option value={'PR'}>RS</option>
           <option value={'RJ'}>RO</option>
           <option value={'RR'}>RR</option>

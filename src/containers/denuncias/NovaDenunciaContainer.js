@@ -14,7 +14,8 @@ export class NovaDenunciaContainer extends Component {
     this.adicionarDenunciaNoForm = this.adicionarDenunciaNoForm.bind(this);
     this.state = {
       vitima: null,
-      denunciante: this.props.currentUserUID,
+      denunciante: null,
+      userId: this.props.currentUserUID,
     };
   }
 
@@ -23,7 +24,7 @@ export class NovaDenunciaContainer extends Component {
     if(validaCamposForm(this.state.vitima)){
       this.props.criarDenunciaRequisicao({
         ...this.state,
-        denunciante: this.props.denunciante,
+        // denunciante: this.props.denunciante,
         onSuccess: push('/painel'),
       });
     } else {
@@ -55,16 +56,20 @@ NovaDenunciaContainer.propTypes = {
   criarDenunciaRequisicao: PropTypes.func.isRequired,
 };
 
-// const mapStateToProps = state => ({
-//   denunciante: state.auth.user.uid,
-// });
+//  const mapStateToProps = state => ({
+// //   denunciante: state.auth & state.auth.user.uid,
+//  });
+
+const mapStateToProps = state => ({
+  denunciante: state.auth ? state.auth.user.uid : undefined,
+});
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   criarDenunciaRequisicao,
 }, dispatch);
 
 const reduxNovaDenuncia = connect(
-  // mapStateToProps,
+  mapStateToProps,
   mapDispatchToProps,
 )(NovaDenunciaContainer);
 

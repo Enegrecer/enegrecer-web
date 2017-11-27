@@ -1,4 +1,4 @@
-export function campoObrigatorio(valor) {
+export function campoDesejadoEhVazio(valor) {
   return valor.trim() !== '';
 }
 
@@ -38,10 +38,27 @@ function validarDataDeNascimento(valor){
     return (data > primeiraDataValida) && (data < dataDeHoje);
 }
 
+  export function verificarCamposDaVitima(campos){
+    var dialog = false;
+    if(verificarCamposVazios(campos)){
+      dialog =  window.confirm('Notamos que nenhuma informação sobre a vítima foi inserida, é algo importante, deseja voltar e complementar a denúncia?');
+    }
+    return dialog;
+  }
+
+  function verificarCamposVazios(campos){
+    for (var key in campos){
+      if(!campoDesejadoEhVazio(key)){
+        return false;
+      }
+    }
+    return true; 
+  }
+
+
 export function validaCamposForm(campos) {
-  return campos !== null && campoObrigatorio(campos.nome) &&
+  return campos !== null && 
       validarDataDeNascimento(campos.dataNascimento) &&
-      campoObrigatorio(campos.estado) &&
       validarTelefone(campos.telefone) &&
-      validarEmail(campos.email);
+      validarEmail(campos.email); 
 }

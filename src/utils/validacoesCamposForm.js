@@ -1,4 +1,4 @@
-export function campoDesejadoEhVazio(valor) {
+export function campoDesejadoNaoEhVazio(valor) {
   return valor.trim() !== '';
 }
 
@@ -48,13 +48,12 @@ function validarDataDeNascimento(valor){
 
   function verificarCamposVazios(campos){
     for (var key in campos){
-      if(!campoDesejadoEhVazio(key)){
+      if(!campoDesejadoNaoEhVazio(key)){
         return false;
       }
     }
     return true; 
   }
-
 
 export function validaCamposForm(campos) {
   return campos !== null && 

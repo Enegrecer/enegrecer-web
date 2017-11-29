@@ -84,13 +84,14 @@ export default class NovaVitimaForm extends Component {
     this.props.alterarVitimaForm(this.state);
   }
 
-  renderCampoTexto(name, maxLength) {
+  renderCampoTexto(name, maxLength, placeholder = '') {
     return (
       <Input
         id={name}
         value={this.state[name]}
         maxLength={maxLength}
         onChange={event => this.alterarCampoTexto(event, name)}
+        placeholder={placeholder}
         autoComplete="off"
       />
     );
@@ -123,7 +124,7 @@ export default class NovaVitimaForm extends Component {
 
         <FormGroup>
           <Label for="genero">Gênero</Label>
-          {this.renderCampoTexto('genero', '15')}
+          {this.renderCampoTexto('genero', '15', 'Feminino, Masculino, Não Binário, Agênero, etc...')}
         </FormGroup>
 
         <FormGroup>

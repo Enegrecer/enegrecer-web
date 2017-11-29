@@ -1,5 +1,5 @@
-export function campoDesejadoNaoEhVazio(valor) {
-  return valor.trim() !== '';
+export function campoVazio(valor) {
+  return valor.trim() === '';
 }
 
 function tamanhoTelefoneValido(valor) {
@@ -38,24 +38,30 @@ function validarDataDeNascimento(valor){
     return (data > primeiraDataValida) && (data < dataDeHoje);
 }
 
-  export function verificarCamposDaVitima(campos){
-    var dialog = false;
-    if(verificarCamposVazios(campos)){
-      dialog =  window.confirm('Notamos que nenhuma informação sobre a vítima foi inserida, é algo importante, deseja voltar e complementar a denúncia?');
+  export function alertaDeCamposNaoPreenchidos(campos){
+    var dialog = true;
+    if(verificarCamposVaziosdaVitima(campos) || campos === null){
+      dialog =  window.confirm('Notamos que ainda existe dados sobre a vítima que não foram informados, é algo importante, deseja continuar e preenchendo a denúncia?');
     }
     return dialog;
   }
 
-  function verificarCamposVazios(campos){
-    for (var key in campos){
-      if(!campoDesejadoNaoEhVazio(key)){
-        return false;
-      }
-    }
-    return true; 
-  }
+function verificarCamposVaziosdaVitima(campos){
+  return  campos != null ||   campoVazio(campos.nome) ||
+                              campoVazio(campos.genero) ||
+                              campoVazio(campos.raca) ||
+                              campoVazio(campos.informacoesComplementares) ||
+                              campoVazio(campos.dataNascimento) ||
+                              campoVazio(campos.endereco) ||
+                              campoVazio(campos.estado)||
+                              campoVazio(campos.telefone) ||
+                              campoVazio(campos.email) ||
+                              campoVazio(campos.naturalidade) ||
+                              campoVazio(campos.caracteristicaVitima);
+}
 
 export function validaCamposForm(campos) {
+  
   return campos !== null && 
       validarDataDeNascimento(campos.dataNascimento) &&
       validarTelefone(campos.telefone) &&

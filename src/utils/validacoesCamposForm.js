@@ -41,23 +41,23 @@ function validarDataDeNascimento(valor){
   export function alertaDeCamposNaoPreenchidos(campos){
     var dialog = true;
     if(verificarCamposVaziosdaVitima(campos) || campos === null){
-      dialog =  window.confirm('Notamos que ainda existe dados sobre a vítima que não foram informados, é algo importante, deseja continuar e preenchendo a denúncia?');
+      dialog =  window.confirm('Notamos que ainda existe dados sobre a vítima que não foram informados, é algo importante, deseja continuar preenchendo a denúncia?');
     }
     return dialog;
   }
 
 function verificarCamposVaziosdaVitima(campos){
-  return  campos != null ||   campoVazio(campos.nome) ||
-                              campoVazio(campos.genero) ||
-                              campoVazio(campos.raca) ||
-                              campoVazio(campos.informacoesComplementares) ||
-                              campoVazio(campos.dataNascimento) ||
-                              campoVazio(campos.endereco) ||
-                              campoVazio(campos.estado)||
-                              campoVazio(campos.telefone) ||
-                              campoVazio(campos.email) ||
-                              campoVazio(campos.naturalidade) ||
-                              campoVazio(campos.caracteristicaVitima);
+  return  campoVazio(campos.nome) ||
+          campoVazio(campos.genero) ||
+          campoVazio(campos.raca) ||
+          campoVazio(campos.informacoesComplementares) ||
+          campoVazio(campos.dataNascimento) ||
+          campoVazio(campos.endereco) ||
+          campoVazio(campos.estado)||
+          campoVazio(campos.telefone) ||
+          campoVazio(campos.email) ||
+          campoVazio(campos.naturalidade) ||
+          campoVazio(campos.caracteristicaVitima);
 }
 
 export function validaCamposForm(campos) {

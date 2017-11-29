@@ -33,19 +33,21 @@ describe('NovaDenunciaContainer', () => {
       expect(criarDenunciaRequisicaoMock).not.toHaveBeenCalled();
     });
 
-    it('deve chamar o método criarDenunciaRequisicao quando o form estiver válido', () => {
+    it('deve chamar o método criarDenunciaRequisicao quando o form estiver válido', () => { 
       wrapper.setState({
           vitima: {
             pessoaIdentificada: false,
             nome: 'Teste',
             genero: 'feminino',
             raca: 'parda',
-            informacoesComplementares: '',
+            informacoesComplementares: 'INFORMACOES COMPLEMENTARES',
             dataNascimento: '1900-01-02',
             endereco: 'Av. teste',
             estado: 'AM',
             telefone: '99999999999',
             email: 't@t.com',
+            naturalidade: 'naturalidade',
+            caracteristicaVitima: 'caracteristicas da vitima',
           }
         },
         () => {

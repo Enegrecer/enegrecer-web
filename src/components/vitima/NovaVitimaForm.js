@@ -124,7 +124,7 @@ export default class NovaVitimaForm extends Component {
 
         <FormGroup>
           <Label for="genero">Gênero</Label>
-          {this.renderCampoTexto('genero', '15', 'Feminino, Masculino, Não Binário, Agênero, etc...')}
+          {this.renderCampoTexto('genero', '15', 'Ex.: Feminino, Masculino, Não Binário...')}
         </FormGroup>
 
         <FormGroup>

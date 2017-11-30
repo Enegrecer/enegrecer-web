@@ -20,16 +20,11 @@ export class NovaDenunciaContainer extends Component {
   }
 
   onPressSaveButton() {
-
     if(validaCamposForm(this.state.vitima)){
-      if(alertaDeCamposNaoPreenchidos(this.state.vitima)){
         this.props.criarDenunciaRequisicao({ 
           ...this.state,
           onSuccess: push('/painel'),
         });
-      }
-    }else {
-      alert('Favor preencher todos os campos corretamente.');
     }
   }
 

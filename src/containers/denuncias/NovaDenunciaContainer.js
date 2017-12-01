@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { criarDenunciaRequisicao } from '../../actions';
 import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
-import { validaCamposForm, alertaDeCamposNaoPreenchidos } from '../../utils/validacoesCamposForm';
+import { validaCamposForm } from '../../utils/validacoesCamposForm';
 
 export class NovaDenunciaContainer extends Component {
   constructor(props) {
@@ -13,7 +13,22 @@ export class NovaDenunciaContainer extends Component {
     this.onPressSaveButton = this.onPressSaveButton.bind(this);
     this.adicionarDenunciaNoForm = this.adicionarDenunciaNoForm.bind(this);
     this.state = {
-      vitima: null,
+      vitima: {
+        pessoaIdentificada: false,
+        souAVitima: false,
+        nome: '',
+        genero: '',
+        raca: '',
+        informacoesComplementares: '',
+        dataNascimento: '',
+        endereco: '',
+        estado: '',
+        telefone: '',
+        email: '',
+        naturalidade: '',
+        caracteristicaVitima: '',
+        camposNaoPreenchidos: 'sim',
+      },
       denunciante: null,
       userId: this.props.currentUserUID,
     };

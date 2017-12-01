@@ -45,7 +45,8 @@ function validarDataDeNascimento(valor){
   }
 
 function verificarCamposVaziosdaVitima(campos){
-  return  campoVazio(campos.nome) &&
+  return  campos != null &&
+          campoVazio(campos.nome) &&
           campoVazio(campos.genero) &&
           campoVazio(campos.raca) &&
           campoVazio(campos.informacoesComplementares) &&

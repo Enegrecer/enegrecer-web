@@ -28,6 +28,7 @@ export default class NovaVitimaForm extends Component {
       email: '',
       naturalidade: '',
       caracteristicaVitima: '',
+      camposNaoPreenchidos: '',
     };
   }
 
@@ -104,7 +105,7 @@ export default class NovaVitimaForm extends Component {
         <br/>
         <FormGroup check>
           <Label check>
-            <Input for="conhecoAVitma"type="checkbox" onChange={this.marcarConhecoAVitima} />{' '}
+            <Input  for="conhecoAVitma"type="checkbox" onChange={this.marcarConhecoAVitima} />{' '}
             Conheço a Vítima
           </Label>
         </FormGroup>
@@ -151,7 +152,7 @@ export default class NovaVitimaForm extends Component {
         </FormGroup>
 
         <FormGroup>
-          <Label for="naturalidade">Naturalidade</Label>
+          <Label for="naturalidade" >Naturalidade</Label>
           {this.renderCampoTexto('naturalidade', '40')}
         </FormGroup>
 

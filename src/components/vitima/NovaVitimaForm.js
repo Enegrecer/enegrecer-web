@@ -17,6 +17,7 @@ export default class NovaVitimaForm extends Component {
     this.state = {
       pessoaIdentificada: false,
       souAVitima: false,
+      conhecoAVitima: false,
       nome: '',
       genero: '',
       raca: '',
@@ -43,7 +44,7 @@ export default class NovaVitimaForm extends Component {
 
   marcarConhecoAVitima(event) {
     this.setState({
-    pessoaIdentificada: event.target.checked,
+      conhecoAVitima: event.target.checked,
     }, function() {
     this.alteraState();
     });
@@ -51,7 +52,7 @@ export default class NovaVitimaForm extends Component {
 
   marcarSouAVitima(event) {
     this.setState({
-    pessoaIdentificada: event.target.checked,
+      souAVitima: event.target.checked,
     }, function() {
     this.alteraState();
     });
@@ -143,10 +144,6 @@ export default class NovaVitimaForm extends Component {
           <Input type="date" name="dataNascimento" id="dataNascimento" placeholder="date placeholder" onChange={this.alterarDataNascimento}/>
         </FormGroup>
         <FormGroup>
-          <Label for="informacoesComplementares">Você deseja fornecer maiores detalhes?</Label>
-          {this.renderCampoTexto('informacoesComplementares')}
-        </FormGroup>
-        <FormGroup>
           <Label for="endereco">Endereço</Label>
           {this.renderCampoTexto('endereco', '255')}
         </FormGroup>
@@ -199,8 +196,8 @@ export default class NovaVitimaForm extends Component {
           {this.renderCampoTexto('email')}
         </FormGroup>
         <FormGroup>
-          <Label for="caracteristicaVitima">Se preferir descreva aqui as características da vítima </Label>
-          {this.renderCampoTexto('caracteristicaVitima', '255')}
+          <Label for="informacoesComplementares">Por favor, descreva aqui as características da vítima:*</Label>
+          {this.renderCampoTexto('informacoesComplementares', '255', 'Era uma mulher negra, com aproximadamente 40 anos, magra, alta com cabelo curto...')}
         </FormGroup>
         <br />
       </div>);

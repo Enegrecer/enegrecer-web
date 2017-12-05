@@ -13,22 +13,7 @@ export class NovaDenunciaContainer extends Component {
     this.onPressSaveButton = this.onPressSaveButton.bind(this);
     this.adicionarDenunciaNoForm = this.adicionarDenunciaNoForm.bind(this);
     this.state = {
-      vitima: {
-        pessoaIdentificada: false,
-        souAVitima: false,
-        nome: '',
-        genero: '',
-        raca: '',
-        informacoesComplementares: '',
-        dataNascimento: '',
-        endereco: '',
-        estado: '',
-        telefone: '',
-        email: '',
-        naturalidade: '',
-        caracteristicaVitima: '',
-        camposNaoPreenchidos: 'sim',
-      },
+      vitima: null,
       denunciante: null,
       userId: this.props.currentUserUID,
     };

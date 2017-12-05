@@ -40,14 +40,13 @@ describe('NovaDenunciaContainer', () => {
             nome: 'Teste',
             genero: 'feminino',
             raca: 'parda',
-            informacoesComplementares: 'INFORMACOES COMPLEMENTARES',
             dataNascimento: '1900-01-02',
             endereco: 'Av. teste',
             estado: 'AM',
             telefone: '99999999999',
             email: 't@t.com',
             naturalidade: 'naturalidade',
-            caracteristicaVitima: 'caracteristicas da vitima',
+            informacoesComplementares: 'INFORMACOES COMPLEMENTARES',
           }
         },
         () => {

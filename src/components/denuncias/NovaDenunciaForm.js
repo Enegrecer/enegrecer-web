@@ -17,12 +17,12 @@ export default class NovaDenunciaForm extends Component {
     this.alterarEstado = this.alterarEstado.bind(this);
 
     this.state = {
-      detalhamento: '',
-      dataOcorrencia: '',
-      horaOcorrencia: '',
-      idCategoria: '',
-      endereco: '',
-      estado: '',
+        detalhamento: '',
+        dataOcorrencia: '',
+        horaOcorrencia: '',
+        idCategoria: '',
+        endereco: '',
+        estado: '',
     };
   }
 

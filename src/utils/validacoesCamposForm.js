@@ -23,33 +23,44 @@ function validarTelefone(valor) {
   return (!isNaN(valor) && ehNumeroValido(valor) && tamanhoTelefoneValido(valor)) || (valor === '');
 }
 
-function validarDataDeNascimento(valor){
-
-  if(valor.trim() === ''){
+function validarDataDeNascimento(valor) {
+  if (valor.trim() === '') {
     return true;
   }
-    var data = new Date(valor);
-    var dataDeHoje = new Date();
-    var primeiraDataValida = new Date('01/01/1900');
+  var data = new Date(valor);
+  var dataDeHoje = new Date();
+  var primeiraDataValida = new Date('01/01/1900');
 
-    data = data.toJSON().slice(0,10)
-    dataDeHoje = dataDeHoje.toJSON().slice(0,10)
-    primeiraDataValida = primeiraDataValida.toJSON().slice(0,10)
-    
-    return (data > primeiraDataValida) && (data < dataDeHoje);
+  data = data.toJSON().slice(0,10);
+  dataDeHoje = dataDeHoje.toJSON().slice(0,10);
+  primeiraDataValida = primeiraDataValida.toJSON().slice(0,10);
+  
+  return (data > primeiraDataValida) && (data < dataDeHoje);
 }
 
-  export function alertaDeCamposNaoPreenchidos(campos){
-    var dialog  =  window.confirm('Você quer concluir sem inserir informação sobre a vítima? Isso é algo importante, você pode cancelar e complementar.');
-    return dialog;
+function alertaDeCamposNaoPreenchidos(campos) {
+  var dialog  =  window.confirm('Você não inseriu alguma(s) informação(s) sobre a vítima? Isso é algo importante, você pode cancelar e complementar.');
+  return dialog;
+}
+
+function alertaDeCamposObrigatorios() {
+  alert('Você não inseriu informações sobre a vítima. Precisamos que você complemente inserindo ao menos uma descrição informal sobre a pessoa.');
+  focoNoCampo('informacoesComplementares');
+}
+
+function focoNoCampo(idCampo) {
+  const campoHtml = document.getElementById(idCampo);
+  if (campoHtml) {
+    campoHtml.focus();
+    campoHtml.style.borderColor = 'red';
   }
+} 
 
 function verificarCamposVaziosdaVitima(campos){
   return  campos != null &&
           campoVazio(campos.nome) &&
           campoVazio(campos.genero) &&
           campoVazio(campos.raca) &&
-          campoVazio(campos.informacoesComplementares) &&
           campoVazio(campos.dataNascimento) &&
           campoVazio(campos.endereco) &&
           campoVazio(campos.estado) &&
@@ -62,23 +73,27 @@ function verificarCamposVaziosdaVitima(campos){
 function validarInputsDaVitima(campos){
   return validarDataDeNascimento(campos.dataNascimento) && 
   validarTelefone(campos.telefone) && 
-  validarEmail(campos.email)
+  validarEmail(campos.email);
 }
 
 function alertaCamposNaoPreenchidosCorretamente() {
   alert('Existem campos que foram preenchidos de forma incorreta. \n Favor verificar os seguintes campos: Data de nascimento da vítima, Telefone da vítima e/ou E-mail da vítima.')
 }
 
-
 export function validaCamposForm(campos) { 
+
+  if (campos === null || campoVazio(campos.informacoesComplementares)) {
+    alertaDeCamposObrigatorios();
+    return false;
+  }
   if (campos === null || verificarCamposVaziosdaVitima(campos)){
-    return alertaDeCamposNaoPreenchidos(campos)
+    return alertaDeCamposNaoPreenchidos(campos);
   } else {
     if (validarInputsDaVitima(campos)){
       return true;
     } else {
       alertaCamposNaoPreenchidosCorretamente();
-      return false
+      return false;
     }
   }
 }

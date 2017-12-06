@@ -22,13 +22,35 @@ export function criarDenuncia(acao) {
     },
     local: {
       endereco: acao.payload.endereco,
-      latitude: acao.payload.latitude,
-      longitude: acao.payload.longitude,
+      estado: acao.payload.estado,
     },
-    dataHoraOcorrencia: acao.payload.dataHoraOcorrencia,
+    dataOcorrencia: acao.payload.dataOcorrencia,
+    horaOcorrencia: acao.payload.horaOcorrencia,
     detalhamento: acao.payload.detalhamento,
     idStatus: 'nova',
   }).getKey();
+
+  const refPessoasEnvolvidas = ref.child('pessoasEnvolvidas').child(idDenuncia);
+  refPessoasEnvolvidas.set({
+    vitimas: {
+      naturalidade: acao.payload.vitima.naturalidade,
+      dataNascimento: acao.payload.vitima.dataNascimento,
+      genero: acao.payload.vitima.genero,
+      informacoesComplementares: acao.payload.vitima.informacoesComplementares,
+      souAVitima: acao.payload.vitima.souAVitima,
+      conhecoAVitima: acao.payload.vitima.conhecoAVitima,
+      nome: acao.payload.vitima.nome,
+      raca: acao.payload.vitima.raca,
+      informacoesContato: {
+        email: acao.payload.vitima.email,
+        endereco: acao.payload.vitima.endereco,
+        telefone: acao.payload.vitima.telefone,
+        estado: acao.payload.vitima.estado,
+      },
+    },
+    testemunhas: { },
+    autores: { },
+  });
 
   return idDenuncia;
 }

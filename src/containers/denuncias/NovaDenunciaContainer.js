@@ -5,26 +5,44 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { criarDenunciaRequisicao } from '../../actions';
 import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
+import { validaCamposForm } from '../../utils/validacoesCamposForm';
 
 export class NovaDenunciaContainer extends Component {
   constructor(props) {
     super(props);
     this.onPressSaveButton = this.onPressSaveButton.bind(this);
+    this.adicionarDenunciaNoForm = this.adicionarDenunciaNoForm.bind(this);
     this.state = {
-      denunciante: this.props.currentUserUID,
+      vitima: null,
+      denunciante: null,
+      userId: this.props.currentUserUID,
     };
   }
 
-  onPressSaveButton(state) {
-    this.props.criarDenunciaRequisicao({
-      ...state,
-      denunciante: this.state.denunciante,
-      onSuccess: push('/painel'),
+  onPressSaveButton() {
+    if(validaCamposForm(this.state.vitima)){
+        this.props.criarDenunciaRequisicao({ 
+          ...this.state,
+          onSuccess: push('/painel'),
+        });
+    }
+  }
+
+  adicionarDenunciaNoForm(denuncia) {
+    this.setState({
+      ...denuncia,
+    }, () => {
+      console.clear()
+      console.log(this.state)
     });
   }
 
   render() {
-    return <NovaDenunciaForm salvarDenuncia={this.onPressSaveButton} />;
+    return <NovaDenunciaForm 
+        salvarDenuncia={this.onPressSaveButton}  
+        alterarDenunciaForm={this.adicionarDenunciaNoForm}
+      />;
+    
   }
 }
 
@@ -33,11 +51,20 @@ NovaDenunciaContainer.propTypes = {
   criarDenunciaRequisicao: PropTypes.func.isRequired,
 };
 
+//  const mapStateToProps = state => ({
+// //   denunciante: state.auth & state.auth.user.uid,
+//  });
+
+const mapStateToProps = state => ({
+  denunciante: state.auth ? state.auth.user.uid : undefined,
+});
+
 const mapDispatchToProps = dispatch => bindActionCreators({
   criarDenunciaRequisicao,
 }, dispatch);
 
 const reduxNovaDenuncia = connect(
+  mapStateToProps,
   mapDispatchToProps,
 )(NovaDenunciaContainer);
 

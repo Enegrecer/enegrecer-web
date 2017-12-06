@@ -15,6 +15,7 @@ import App from './components/App';
 import reducers from './reducers';
 import rootSaga from './sagas';
 import './assets/styles/index.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const history = createBrowserHistory();
 const sagaMiddleware = createSagaMiddleware();

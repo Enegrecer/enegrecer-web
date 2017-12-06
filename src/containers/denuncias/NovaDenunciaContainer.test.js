@@ -19,15 +19,42 @@ describe('NovaDenunciaContainer', () => {
   });
 
   describe('método onPressSaveButton', () => {
-    it('chama o método criarDenunciaRequisicao recebido via prop', () => {
-      const criarDenunciaRequisicaoMock = jest.fn();
-      const wrapper = shallow(
-        <NovaDenunciaContainer
-          currentUserUID=""
-          criarDenunciaRequisicao={criarDenunciaRequisicaoMock}
-        />);
+    const criarDenunciaRequisicaoMock = jest.fn();
+    const wrapper = shallow(
+      <NovaDenunciaContainer
+        currentUserUID=""
+        criarDenunciaRequisicao={criarDenunciaRequisicaoMock}
+      />);
+
+
+    it('não deve chamar o método criarDenunciaRequisicao quando o form estiver inválido', () => {
+      
       wrapper.instance().onPressSaveButton();
-      expect(criarDenunciaRequisicaoMock).toHaveBeenCalled();
+      expect(criarDenunciaRequisicaoMock).not.toHaveBeenCalled();
     });
+
+    it('deve chamar o método criarDenunciaRequisicao quando o form estiver válido', () => { 
+      wrapper.setState({
+          vitima: {
+            pessoaIdentificada: false,
+            nome: 'Teste',
+            genero: 'feminino',
+            raca: 'parda',
+            dataNascimento: '1900-01-02',
+            endereco: 'Av. teste',
+            estado: 'AM',
+            telefone: '99999999999',
+            email: 't@t.com',
+            naturalidade: 'naturalidade',
+            informacoesComplementares: 'INFORMACOES COMPLEMENTARES',
+          }
+        },
+        () => {
+          wrapper.instance().onPressSaveButton();
+          expect(criarDenunciaRequisicaoMock).toHaveBeenCalled();
+        })
+
+    })
   });
+
 });

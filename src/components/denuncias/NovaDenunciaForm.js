@@ -160,12 +160,12 @@ export default class NovaDenunciaForm extends Component {
       <h3>Local do crime</h3>
       <br />
 
-      { this.renderEstadosSelection() }
-
       <FormGroup>
         <Label for="endereco">Endereço</Label>
         {this.renderCampoTexto('endereco')}
       </FormGroup>
+
+      { this.renderEstadosSelection() }
     </div>
   }
 

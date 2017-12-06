@@ -18,7 +18,6 @@ export default class NovaVitimaForm extends Component {
       nome: '',
       genero: '',
       raca: '',
-      informacoesComplementares: '',
       dataNascimento: '',
       endereco: '',
       estado: '',
@@ -50,7 +49,7 @@ export default class NovaVitimaForm extends Component {
     );
   }
 
-  renderCampoTexto(name, maxLength, placeholder = '', type='text') {
+  renderCampo(name, maxLength, placeholder = '', type = 'text') {
     return (
       <Input
         id={name}
@@ -115,12 +114,12 @@ export default class NovaVitimaForm extends Component {
 
         <FormGroup>
           <Label for="nome">Nome</Label>
-          {this.renderCampoTexto('nome', '40')}
+          {this.renderCampo('nome', '40')}
         </FormGroup>
 
         <FormGroup>
           <Label for="genero">Gênero</Label>
-          {this.renderCampoTexto('genero', '15', 'Ex.: Feminino, Masculino, Não Binário...')}
+          {this.renderCampo('genero', '15', 'Ex.: Feminino, Masculino, Não Binário...')}
         </FormGroup>
 
         <FormGroup>
@@ -151,30 +150,30 @@ export default class NovaVitimaForm extends Component {
         </FormGroup>
         <FormGroup>
           <Label for="endereco">Endereço</Label>
-          {this.renderCampoTexto('endereco', '255')}
+          {this.renderCampo('endereco', '255')}
         </FormGroup>
 
         <FormGroup>
           <Label for="naturalidade" >Naturalidade</Label>
-          {this.renderCampoTexto('naturalidade', '40')}
+          {this.renderCampo('naturalidade', '40')}
         </FormGroup>
 
         { this.renderSeletorDeEstados() }
 
         <FormGroup>
           <Label for="telefone">Telefone</Label>
-          {this.renderCampoTexto('telefone')}
+          {this.renderCampo('telefone')}
         </FormGroup>
         <FormGroup>
           <Label for="email">Email</Label>
-          {this.renderCampoTexto('email')}
+          {this.renderCampo('email')}
         </FormGroup>
         <FormGroup>
-          <Label for="informacoesComplementares">
+          <Label for="caracteristicasVitima">
             Por favor, descreva aqui as características da vítima:*
           </Label>
-          {this.renderCampoTexto(
-            'informacoesComplementares',
+          {this.renderCampo(
+            'caracteristicasVitima',
             '255',
             'Era uma mulher negra, com aproximadamente 40 anos, magra, alta com cabelo curto...')}
         </FormGroup>

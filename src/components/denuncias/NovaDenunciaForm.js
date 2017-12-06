@@ -17,12 +17,12 @@ export default class NovaDenunciaForm extends Component {
     this.alterarEstado = this.alterarEstado.bind(this);
 
     this.state = {
-        detalhamento: '',
-        dataOcorrencia: '',
-        horaOcorrencia: '',
-        idCategoria: '',
-        endereco: '',
-        estado: '',
+      detalhamento: '',
+      dataOcorrencia: '',
+      horaOcorrencia: '',
+      idCategoria: '',
+      endereco: '',
+      estado: '',
     };
   }
 
@@ -91,10 +91,33 @@ export default class NovaDenunciaForm extends Component {
     );
   }
 
+  renderEstadosSelection() {
+    const stados = ['AC',
+      'AL','AM','AP','BA','CE','DF','ES','GO','MA','MG','MS','MT','PA',
+      'PB','PE','PI','PR','RJ','RN','PR','RJ','RR','SC','SE','SP','TO']
+
+    return (
+      <FormGroup>
+        <Label for="estado">Estado</Label>
+        <Input type="select"
+          name="estado"
+          id="estado"
+          onChange={this.alterarEstado}
+          value={this.state.estado}
+        >
+          <option value={''}>Escolha uma opção</option>
+          {
+            stados.map((estado, key) => <option key={key} value={estado}>{estado}</option>)
+          }
+        </Input>
+      </FormGroup>
+    )
+  }
+
   novaDenunciaForm() {
     return <div>
       <h1>Nova Denúncia</h1>
-      
+
       <FormGroup>
         <Label for="detalhamento">Detalhamento*</Label>
         {this.renderCampoTexto('detalhamento')}
@@ -102,12 +125,23 @@ export default class NovaDenunciaForm extends Component {
 
       <FormGroup>
         <Label for="dataOcorrencia">Data do ocorrido</Label>
-        <Input type="date" name="dataOcorrencia" id="dataOcorrencia" placeholder="date placeholder" onChange={this.alterarDataOcorrencia}/>
+        <Input type="date"
+          name="dataOcorrencia"
+          id="dataOcorrencia"
+          placeholder="date placeholder"
+          onChange={this.alterarDataOcorrencia}
+        />
       </FormGroup>
+
 
       <FormGroup>
         <Label for="horaOcorrencia">Hora do ocorrido</Label>
-        <Input type="time" name="horaOcorrencia" id="horaOcorrencia" placeholder="time placeholder" onChange={this.alterarHoraOcorrencia}/>
+        <Input type="time"
+          name="horaOcorrencia"
+          id="horaOcorrencia"
+          placeholder="time placeholder"
+          onChange={this.alterarHoraOcorrencia}
+        />
       </FormGroup>
 
       <FormGroup check>
@@ -126,43 +160,11 @@ export default class NovaDenunciaForm extends Component {
       <h3>Local do crime</h3>
       <br />
 
+      { this.renderEstadosSelection() }
+
       <FormGroup>
         <Label for="endereco">Endereço</Label>
         {this.renderCampoTexto('endereco')}
-      </FormGroup>
-
-      <FormGroup>
-        <Label for="estado">Estado</Label>
-        <Input type="select" name="estado" id="estado" onChange={this.alterarEstado} value={this.state.estado}>
-          <option value={''}>Escolha uma opção</option>
-          <option value={'AC'}>AC</option>
-          <option value={'AL'}>AL</option>
-          <option value={'AM'}>AM</option>
-          <option value={'AP'}>AP</option>
-          <option value={'BA'}>BA</option>
-          <option value={'CE'}>CE</option>
-          <option value={'DF'}>DF</option>
-          <option value={'ES'}>ES</option>
-          <option value={'GO'}>GO</option>
-          <option value={'MA'}>MA</option>
-          <option value={'MG'}>MG</option>
-          <option value={'MS'}>MS</option>
-          <option value={'MT'}>MT</option>
-          <option value={'PA'}>PA</option>
-          <option value={'PB'}>PB</option>
-          <option value={'PE'}>PE</option>
-          <option value={'PI'}>PI</option>
-          <option value={'PR'}>PR</option>
-          <option value={'RJ'}>RJ</option>
-          <option value={'RN'}>RN</option>
-          <option value={'PR'}>RS</option>
-          <option value={'RJ'}>RO</option>
-          <option value={'RR'}>RR</option>
-          <option value={'SC'}>SC</option>
-          <option value={'SE'}>SE</option>
-          <option value={'SP'}>SP</option>
-          <option value={'TO'}>TO</option>
-        </Input>
       </FormGroup>
     </div>
   }
@@ -176,8 +178,8 @@ export default class NovaDenunciaForm extends Component {
 
         <NovaVitimaForm alterarVitimaForm={this.adicionarVitimaEmForm} />
 
-        <Button  name="salvarDenuncia" type="submit" id="btn-salvar-denuncia">
-              Salvar
+        <Button name="salvarDenuncia" type="submit" id="btn-salvar-denuncia">
+          Salvar
         </Button>
       </form>);
   }

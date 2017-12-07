@@ -33,10 +33,9 @@ export default class NovaVitimaForm extends Component {
     this.props.alterarVitimaForm(this.state);
   }
 
-  alterarCampo(event, property) {
+  alterarCampo(event, property, maxLength) {
     const valor = event.target.value;
-
-    this.setState({ [property]: valor },
+    this.setState({ [property]: valor.slice(0, maxLength) },
       function() {
         this.alteraState();
       });
@@ -56,7 +55,7 @@ export default class NovaVitimaForm extends Component {
         type={type}
         value={this.state[name]}
         maxLength={maxLength}
-        onChange={event => this.alterarCampo(event, name)}
+        onChange={event => this.alterarCampo(event, name, maxLength)}
         placeholder={placeholder}
         autoComplete="off"
       />

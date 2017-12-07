@@ -36,7 +36,7 @@ export function criarDenuncia(acao) {
       naturalidade: acao.payload.vitima.naturalidade,
       dataNascimento: acao.payload.vitima.dataNascimento,
       genero: acao.payload.vitima.genero,
-      informacoesComplementares: acao.payload.vitima.informacoesComplementares,
+      caracteristicasVitima: acao.payload.vitima.caracteristicasVitima,
       souAVitima: acao.payload.vitima.souAVitima,
       conhecoAVitima: acao.payload.vitima.conhecoAVitima,
       nome: acao.payload.vitima.nome,

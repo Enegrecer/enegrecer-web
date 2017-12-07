@@ -34,7 +34,7 @@ function validarDataDeNascimento(valor) {
   data = data.toJSON().slice(0,10);
   dataDeHoje = dataDeHoje.toJSON().slice(0,10);
   primeiraDataValida = primeiraDataValida.toJSON().slice(0,10);
-  
+
   return (data > primeiraDataValida) && (data < dataDeHoje);
 }
 
@@ -43,20 +43,20 @@ function alertaDeCamposNaoPreenchidos(campos) {
   return dialog;
 }
 
-function alertaDeCamposObrigatorios() {
-  alert('Você não inseriu informações sobre a vítima. Precisamos que você complemente inserindo ao menos uma descrição informal sobre a pessoa.');
-  focoNoCampo('informacoesComplementares');
-}
-
 function focoNoCampo(idCampo) {
   const campoHtml = document.getElementById(idCampo);
   if (campoHtml) {
     campoHtml.focus();
     campoHtml.style.borderColor = 'red';
   }
-} 
+}
 
-function verificarCamposVaziosdaVitima(campos){
+function alertaDeCamposObrigatorios() {
+  alert('Você não inseriu informações sobre a vítima. Precisamos que você complemente inserindo ao menos uma descrição informal sobre a pessoa.');
+  focoNoCampo('caracteristicasVitima');
+}
+
+function verificarCamposVaziosdaVitima(campos) {
   return  campos != null &&
           campoVazio(campos.nome) &&
           campoVazio(campos.genero) &&
@@ -71,8 +71,8 @@ function verificarCamposVaziosdaVitima(campos){
 }
 
 function validarInputsDaVitima(campos){
-  return validarDataDeNascimento(campos.dataNascimento) && 
-  validarTelefone(campos.telefone) && 
+  return validarDataDeNascimento(campos.dataNascimento) &&
+  validarTelefone(campos.telefone) &&
   validarEmail(campos.email);
 }
 
@@ -80,9 +80,8 @@ function alertaCamposNaoPreenchidosCorretamente() {
   alert('Existem campos que foram preenchidos de forma incorreta. \n Favor verificar os seguintes campos: Data de nascimento da vítima, Telefone da vítima e/ou E-mail da vítima.')
 }
 
-export function validaCamposForm(campos) { 
-
-  if (campos === null || campoVazio(campos.informacoesComplementares)) {
+export function validaCamposForm(campos) {
+  if (campos === null || campoVazio(campos.caracteristicasVitima)) {
     alertaDeCamposObrigatorios();
     return false;
   }

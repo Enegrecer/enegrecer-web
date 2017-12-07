@@ -55,7 +55,10 @@ describe('NovaDenunciaForm Component', () => {
   });
 
   describe('quando o valor do campo for alterado', () => {
-    const wrapper = shallow(<NovaDenunciaForm salvarDenuncia={() => { }} />);
+    const wrapper = shallow(<NovaDenunciaForm
+      salvarDenuncia={() => { }}
+      alterarDenunciaForm={() => { }}
+    />);
 
     beforeEach(() => {
       const eventMock = {

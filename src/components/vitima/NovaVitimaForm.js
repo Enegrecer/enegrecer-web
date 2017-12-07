@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { FormGroup, Label, Input } from 'reactstrap';
+import { EstadoFormGroup } from '../FormGroups'
 
 
 export default class NovaVitimaForm extends Component {
@@ -9,7 +10,6 @@ export default class NovaVitimaForm extends Component {
 
     this.alterarCheckbox = this.alterarCheckbox.bind(this);
     this.alterarCampo = this.alterarCampo.bind(this);
-    this.renderSeletorDeEstados = this.renderSeletorDeEstados.bind(this);
 
     this.state = {
       pessoaIdentificada: false,
@@ -49,7 +49,7 @@ export default class NovaVitimaForm extends Component {
     );
   }
 
-  renderCampo(name, maxLength, placeholder = '', type = 'text') {
+  renderCampo(name, maxLength, placeholder = '', type = '') {
     return (
       <Input
         id={name}
@@ -63,32 +63,13 @@ export default class NovaVitimaForm extends Component {
     );
   }
 
-  renderCheckbox(name) {
-    return <Input id={name} name={name} type="checkbox" onChange={this.alterarCheckbox} />
-  }
-
-  renderSeletorDeEstados() {
-    const stados = ['AC',
-      'AL','AM','AP','BA','CE','DF','ES','GO','MA','MG','MS','MT','PA',
-      'PB','PE','PI','PR','RJ','RN','PR','RJ','RR','SC','SE','SP','TO']
-
-    return (
-      <FormGroup>
-        <Label for="estadoVitima">Estado</Label>
-        <Input
-          type="select"
-          name="estadoVitima"
-          id="estadoVitima"
-          onChange={event => this.alterarCampo(event, 'estado')}
-          value={this.state.estado}
-        >
-          <option value={''}>Escolha uma opção</option>
-          {
-            stados.map((estado,key) => <option key={key} value={estado}>{estado}</option>)
-          }
-        </Input>
-      </FormGroup>
-    )
+  renderCheckbox(name, label) {
+    return <FormGroup check>
+      <Label for="souAVitima" check>
+        <Input id={name} name={name} type="checkbox" onChange={this.alterarCheckbox} />
+        {label}
+      </Label>
+    </FormGroup>
   }
 
 
@@ -96,21 +77,11 @@ export default class NovaVitimaForm extends Component {
     return (
       <div>
         <h3>Informacões da Vítima</h3>
-        <br/>
-        <FormGroup check>
-          <Label for="conhecoAVitma" check>
-            { this.renderCheckbox('conhecoAVitma', this.alterarCheckbox) }
-            Conheço a Vítima
-          </Label>
-        </FormGroup>
+        <br />
 
-        <FormGroup check>
-          <Label for="souAVitima" check>
-            { this.renderCheckbox('souAVitima', this.alterarCheckbox) }
-            Sou a Vítima
-          </Label>
+        { this.renderCheckbox('conhecoAVitma', 'Conheço a Vítima') }
 
-        </FormGroup>
+        { this.renderCheckbox('souAVitima', 'Sou a Vítima') }
 
         <FormGroup>
           <Label for="nome">Nome</Label>
@@ -139,15 +110,9 @@ export default class NovaVitimaForm extends Component {
 
         <FormGroup>
           <Label for="dataNascimento">Data de Nascimento</Label>
-
-          <Input
-            type="date"
-            name="dataNascimento"
-            id="dataNascimento"
-            placeholder="date placeholder"
-            onChange={event => this.alterarCampo(event, 'dataNascimento')}
-          />
+          {this.renderCampo('dataNascimento', '', 'date placeholder', 'date')}
         </FormGroup>
+
         <FormGroup>
           <Label for="endereco">Endereço</Label>
           {this.renderCampo('endereco', '255')}
@@ -158,7 +123,11 @@ export default class NovaVitimaForm extends Component {
           {this.renderCampo('naturalidade', '40')}
         </FormGroup>
 
-        { this.renderSeletorDeEstados() }
+        <EstadoFormGroup
+          id="estadoVitima"
+          estado={this.state.estado}
+          handleChange={this.alterarCampo}
+        />
 
         <FormGroup>
           <Label for="telefone">Telefone</Label>
@@ -172,10 +141,11 @@ export default class NovaVitimaForm extends Component {
           <Label for="caracteristicasVitima">
             Por favor, descreva aqui as características da vítima:*
           </Label>
-          {this.renderCampo(
+          { this.renderCampo(
             'caracteristicasVitima',
             '255',
-            'Era uma mulher negra, com aproximadamente 40 anos, magra, alta com cabelo curto...')}
+            'Era uma mulher negra, com aproximadamente 40 anos, magra, alta com cabelo curto...',
+            'textarea')}
         </FormGroup>
         <br />
       </div>);

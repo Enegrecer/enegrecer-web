@@ -20,11 +20,11 @@ export class NovaDenunciaContainer extends Component {
   }
 
   onPressSaveButton() {
-    if(validaCamposForm(this.state.vitima)){
-        this.props.criarDenunciaRequisicao({ 
-          ...this.state,
-          onSuccess: push('/painel'),
-        });
+    if (validaCamposForm(this.state.vitima)) {
+      this.props.criarDenunciaRequisicao({
+        ...this.state,
+        onSuccess: push('/'),
+      });
     }
   }
 
@@ -38,11 +38,11 @@ export class NovaDenunciaContainer extends Component {
   }
 
   render() {
-    return <NovaDenunciaForm 
-        salvarDenuncia={this.onPressSaveButton}  
-        alterarDenunciaForm={this.adicionarDenunciaNoForm}
-      />;
-    
+    return <NovaDenunciaForm
+      salvarDenuncia={this.onPressSaveButton}
+      alterarDenunciaForm={this.adicionarDenunciaNoForm}
+    />;
+
   }
 }
 

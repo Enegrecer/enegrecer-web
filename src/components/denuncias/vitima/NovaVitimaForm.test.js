@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { mock } from 'sinon';
 import NovaVitimaForm from './NovaVitimaForm';
-import sinon, { mock } from 'sinon'
 
 
 describe('NovaVitimaForm Component', () => {

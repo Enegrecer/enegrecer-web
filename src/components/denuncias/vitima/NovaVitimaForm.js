@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { FormGroup, Label, Input } from 'reactstrap';
-import { EstadoFormGroup } from '../FormGroups'
+import { EstadoFormGroup } from '../../FormGroups'
 
 
 export default class NovaVitimaForm extends Component {
@@ -29,22 +29,17 @@ export default class NovaVitimaForm extends Component {
     };
   }
 
-  alteraState() {
-    this.props.alterarVitimaForm(this.state);
-  }
+  alterarCampo(valor, property, maxLength) {
+    const inputLen = window.parseInt(maxLength);
 
-  alterarCampo(event, property, maxLength) {
-    const valor = event.target.value;
-    this.setState({ [property]: valor.slice(0, maxLength) },
-      function() {
-        this.alteraState();
-      });
+    this.setState({ [property]: isNaN(inputLen) ? valor : valor.slice(0, inputLen) },
+      () => this.props.handleChange({ vitima: this.state })
+    );
   }
 
   alterarCheckbox(event, property) {
-    this.setState(
-      { [property]: event.target.checked },
-      () => this.alteraState()
+    this.setState({ [property]: event.target.checked },
+      () => this.props.handleChange({ vitima: this.state })
     );
   }
 
@@ -55,7 +50,7 @@ export default class NovaVitimaForm extends Component {
         type={type}
         value={this.state[name]}
         maxLength={maxLength}
-        onChange={event => this.alterarCampo(event, name, maxLength)}
+        onChange={event => this.alterarCampo(event.target.value, name, maxLength)}
         placeholder={placeholder}
         autoComplete="off"
       />
@@ -63,12 +58,18 @@ export default class NovaVitimaForm extends Component {
   }
 
   renderCheckbox(name, label) {
-    return <FormGroup check>
-      <Label for="souAVitima" check>
-        <Input id={name} name={name} type="checkbox" onChange={this.alterarCheckbox} />
-        {label}
-      </Label>
-    </FormGroup>
+    return (
+      <FormGroup check>
+        <Label for={name} check>
+          <Input
+            id={name}
+            name={name}
+            type="checkbox"
+            onChange={event => this.alterarCampo(event.target.checked, name)}
+          /> {` ${label}`}
+        </Label>
+      </FormGroup>
+    )
   }
 
 
@@ -78,7 +79,7 @@ export default class NovaVitimaForm extends Component {
         <h3>Informacões da Vítima</h3>
         <br />
 
-        { this.renderCheckbox('conhecoAVitma', 'Conheço a Vítima') }
+        { this.renderCheckbox('conhecoAVitima', 'Conheço a Vítima') }
 
         { this.renderCheckbox('souAVitima', 'Sou a Vítima') }
 
@@ -98,8 +99,9 @@ export default class NovaVitimaForm extends Component {
             type="select"
             name="raca"
             id="raca"
-            onChange={event => this.alterarCampo(event, 'raca')}
-            value={this.state.raca}>
+            onChange={event => this.alterarCampo(event.target.value, 'raca')}
+            value={this.state.raca}
+          >
             <option value={''}>Escolha uma opção</option>
             <option value={'preta'}>Preta</option>
             <option value={'parda'}>Parda</option>
@@ -114,7 +116,7 @@ export default class NovaVitimaForm extends Component {
 
         <FormGroup>
           <Label for="endereco">Endereço</Label>
-          {this.renderCampo('endereco', '255')}
+          {this.renderCampo('endereco', '255', '', 'textarea')}
         </FormGroup>
 
         <FormGroup>
@@ -125,7 +127,7 @@ export default class NovaVitimaForm extends Component {
         <EstadoFormGroup
           id="estadoVitima"
           estado={this.state.estado}
-          handleChange={this.alterarCampo}
+          handleChange={event => this.alterarCampo(event.target.value, 'estado')}
         />
 
         <FormGroup>
@@ -150,8 +152,8 @@ export default class NovaVitimaForm extends Component {
       </div>);
   }
 }
-
+NovaVitimaForm.defaultProps = { handleChange: () => {} }
 NovaVitimaForm.propTypes = {
-  alterarVitimaForm: PropTypes.func.isRequired,
+  handleChange: PropTypes.func,
 };
 

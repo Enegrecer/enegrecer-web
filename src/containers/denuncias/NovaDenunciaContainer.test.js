@@ -28,7 +28,6 @@ describe('NovaDenunciaContainer', () => {
 
 
     it('não deve chamar o método criarDenunciaRequisicao quando o form estiver inválido', () => {
-
       wrapper.instance().onPressSaveButton();
       expect(criarDenunciaRequisicaoMock).not.toHaveBeenCalled();
     });
@@ -55,5 +54,4 @@ describe('NovaDenunciaContainer', () => {
       })
     })
   });
-
 });

@@ -32,7 +32,7 @@ export function criarDenuncia(acao) {
 
   const refPessoasEnvolvidas = ref.child('pessoasEnvolvidas').child(idDenuncia);
   refPessoasEnvolvidas.set({
-    vitimas: {
+    vitimas: [{
       naturalidade: acao.payload.vitima.naturalidade,
       dataNascimento: acao.payload.vitima.dataNascimento,
       genero: acao.payload.vitima.genero,
@@ -47,7 +47,7 @@ export function criarDenuncia(acao) {
         telefone: acao.payload.vitima.telefone,
         estado: acao.payload.vitima.estado,
       },
-    },
+    }],
     testemunhas: { },
     autores: { },
   });

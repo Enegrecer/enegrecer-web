@@ -38,11 +38,12 @@ export class NovaDenunciaContainer extends Component {
   }
 
   render() {
-    return <NovaDenunciaForm
-      salvarDenuncia={this.onPressSaveButton}
-      alterarDenunciaForm={this.adicionarDenunciaNoForm}
-    />;
-
+    return (
+      <NovaDenunciaForm
+        salvarDenuncia={this.onPressSaveButton}
+        alterarDenunciaForm={this.adicionarDenunciaNoForm}
+      />
+    );
   }
 }
 
@@ -50,10 +51,6 @@ NovaDenunciaContainer.propTypes = {
   currentUserUID: PropTypes.string.isRequired,
   criarDenunciaRequisicao: PropTypes.func.isRequired,
 };
-
-//  const mapStateToProps = state => ({
-// //   denunciante: state.auth & state.auth.user.uid,
-//  });
 
 const mapStateToProps = state => ({
   denunciante: state.auth ? state.auth.user.uid : undefined,

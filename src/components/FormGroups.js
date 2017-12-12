@@ -17,7 +17,7 @@ export function EstadoFormGroup(props) {
       >
         <option value="">Escolha uma opção</option>
         {
-          ESTADOS.map((estado,key) => <option key={key} value={estado}>{estado}</option>)
+          ESTADOS.map((estado, key) => <option key={key} value={estado}>{estado}</option>)
         }
       </Input>
     </FormGroup>

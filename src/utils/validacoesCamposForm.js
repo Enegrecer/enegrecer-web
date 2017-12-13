@@ -48,7 +48,6 @@ function focoNoCampo(idCampo) {
 }
 
 export function alertaDeCamposObrigatorios() {
-  console.log('--- alertaDeCamposObrigatorios')
   alert('Você não inseriu informações sobre a vítima. ' +
   'Precisamos que você complemente inserindo ao menos uma descrição informal sobre a pessoa.');
   focoNoCampo('caracteristicasVitima');
@@ -65,8 +64,7 @@ function verificarCamposVaziosdaVitima(campos) {
         campoVazio(campos.estado) &&
         campoVazio(campos.telefone) &&
         campoVazio(campos.email) &&
-        campoVazio(campos.naturalidade) &&
-        campoVazio(campos.caracteristicaVitima);
+        campoVazio(campos.naturalidade);
 }
 
 function validarInputsDaVitima(campos) {
@@ -82,7 +80,6 @@ function alertaCamposNaoPreenchidosCorretamente() {
 }
 
 export function validaCamposForm(campos) {
-
   if (campos === null || campoVazio(campos.caracteristicasVitima)) {
     return alertaDeCamposObrigatorios();
   } else if (verificarCamposVaziosdaVitima(campos)) {
@@ -93,4 +90,3 @@ export function validaCamposForm(campos) {
 
   return true;
 }
-

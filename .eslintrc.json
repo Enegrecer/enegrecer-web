@@ -40,7 +40,8 @@
         "react/no-array-index-key": "warn",
         "no-constant-condition": "off",
   			"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }]
+        "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }],
+        "prefer-const": "warn"
     }
 
 }

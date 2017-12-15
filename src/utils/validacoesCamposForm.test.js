@@ -116,7 +116,7 @@ describe('validacoesCamposForm', () => {
       assert.isFalse(retorno);
     })
 
-    it('O formulário deve ser inválido se o campo dataNascimento for menor que 1900', () => {
+    it('O formulário deve ser inválido se o campo data Nascimento da vítima for menor que 1900', () => {
       let campos = {
         nome: '',
         genero: '',

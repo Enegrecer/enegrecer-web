@@ -105,7 +105,6 @@ export default class NovaVitimaForm extends Component {
             <option value={''}>Escolha uma opção</option>
             <option value={'preta'}>Preta</option>
             <option value={'parda'}>Parda</option>
-            <option value={'indigena'}>Indígena</option>
           </Input>
         </FormGroup>
 

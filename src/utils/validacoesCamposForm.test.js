@@ -236,9 +236,9 @@ describe('validacoesCamposForm', () => {
       assert.isFalse(validaTamanhoDeCampoString(campos.nome, 40));
     })
 
-    it('O formulário deve ser inválido caso o usuário insira números e/ou caracteres especiais no campo nome', () => {
+    it('O formulário deve ser inválido caso o usuário insira números no campo nome', () => {
       let campos = {
-        nome: 'Izael',
+        nome: 'Izael123',
         genero: '',
         raca: '',
         dataNascimento: '',
@@ -249,7 +249,41 @@ describe('validacoesCamposForm', () => {
         naturalidade: '',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      let retorno = validacoesCamposForm.nomeDaVitimaInvalido(campos.nome);
+      let retorno = validacoesCamposForm.validaCamposForm(campos.nome);
+      assert.isFalse(retorno);
+    })
+
+    it('O formulário deve ser inválido caso o usuário insira caracteres especiais no campo nome', () => {
+      let campos = {
+        nome: 'Izael!',
+        genero: '',
+        raca: '',
+        dataNascimento: '',
+        endereco: '',
+        estado: '',
+        telefone: '',
+        email: '',
+        naturalidade: '',
+        caracteristicasVitima: 'caracteristicasVitima',
+      }
+      let retorno = validacoesCamposForm.validaCamposForm(campos.nome);
+      assert.isFalse(retorno);
+    })
+
+    it('O formulário deve ser inválido caso o usuário insira acentos no campo nome', () => {
+      let campos = {
+        nome: 'Izáel',
+        genero: '',
+        raca: '',
+        dataNascimento: '',
+        endereco: '',
+        estado: '',
+        telefone: '',
+        email: '',
+        naturalidade: '',
+        caracteristicasVitima: 'caracteristicasVitima',
+      }
+      let retorno = validacoesCamposForm.validaCamposForm(campos.nome);
       assert.isFalse(retorno);
     })
 

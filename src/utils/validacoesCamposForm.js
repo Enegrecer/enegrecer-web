@@ -1,4 +1,5 @@
 export function campoVazio(valor) {
+  valor = (valor == undefined) ? '' : valor;
   return valor.trim() === '';
 }
 
@@ -82,7 +83,8 @@ function verificarCamposVaziosdaVitima(campos) {
 }
 
 function validarInputsDaVitima(campos) {
-  return validarDataDeNascimento(campos.dataNascimento) &&
+  return !nomeDaVitimaInvalido(campos.nome) &&
+  validarDataDeNascimento(campos.dataNascimento) &&
   validarTelefone(campos.telefone) &&
   validarEmail(campos.email);
 }

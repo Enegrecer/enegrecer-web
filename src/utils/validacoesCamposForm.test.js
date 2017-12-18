@@ -236,6 +236,23 @@ describe('validacoesCamposForm', () => {
       assert.isFalse(validaTamanhoDeCampoString(campos.nome, 40));
     })
 
+    it('O formulário deve ser inválido caso o usuário insira números e/ou caracteres especiais no campo nome', () => {
+      let campos = {
+        nome: 'Izael',
+        genero: '',
+        raca: '',
+        dataNascimento: '',
+        endereco: '',
+        estado: '',
+        telefone: '',
+        email: '',
+        naturalidade: '',
+        caracteristicasVitima: 'caracteristicasVitima',
+      }
+      let retorno = validacoesCamposForm.nomeDaVitimaInvalido(campos.nome);
+      assert.isFalse(retorno);
+    })
+
     it('O formulário deve ser inválido se o campo genero possuir mais de 15 caracteres', () => {
       let campos = {
         nome: '',

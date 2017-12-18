@@ -2,6 +2,20 @@ export function campoVazio(valor) {
   return valor.trim() === '';
 }
 
+function nomeDaVitimaInvalido(valor) {
+  return temNumero(valor) || temCaractereEspecial(valor);
+}
+
+function temCaractereEspecial(valor) {
+  const format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/; 
+  return format.test(valor);
+}
+
+function temNumero(valor) {
+  const format = /\d/;
+  return format.test(valor);
+}
+
 function tamanhoTelefoneValido(valor) {
   return valor.length === 10 || valor.length === 11;
 }

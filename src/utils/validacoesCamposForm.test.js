@@ -1,6 +1,6 @@
 import * as sinon from 'sinon';
 import { assert } from 'chai';
-import * as validaCamposForm from './validacoesCamposForm';
+import * as validacoesCamposForm from './validacoesCamposForm';
 import moment from 'moment';
 
 describe('validacoesCamposForm', () => {
@@ -34,12 +34,12 @@ describe('validacoesCamposForm', () => {
         naturalidade: 'naturalidade',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      let retorno = validaCamposForm.validaCamposForm(campos);
+      let retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isTrue(retorno);
     })
 
     it('O formulário deve ser inválido caso o usuário não tenha inserido dados', () => {
-      let retorno = validaCamposForm.validaCamposForm(null);
+      let retorno = validacoesCamposForm.validaCamposForm(null);
       assert.isFalse(retorno);
     });
 
@@ -57,7 +57,7 @@ describe('validacoesCamposForm', () => {
         naturalidade: '',
         caracteristicasVitima: '',
       }
-      let retorno = validaCamposForm.validaCamposForm(campos);
+      let retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
@@ -74,7 +74,7 @@ describe('validacoesCamposForm', () => {
         naturalidade: 'naturalidade',
         caracteristicasVitima: '',
       }
-      let retorno = validaCamposForm.validaCamposForm(campos);
+      let retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
@@ -93,7 +93,7 @@ describe('validacoesCamposForm', () => {
         caracteristicasVitima: 'caracteristicasVitima',
       }
       windowConfirmStub.returns(true);
-      let retorno = validaCamposForm.validaCamposForm(campos);
+      let retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isTrue(retorno);
     })
 
@@ -112,7 +112,7 @@ describe('validacoesCamposForm', () => {
         caracteristicasVitima: 'caracteristicasVitima',
       }
       windowConfirmStub.returns(false);
-      let retorno = validaCamposForm.validaCamposForm(campos);
+      let retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
@@ -129,7 +129,7 @@ describe('validacoesCamposForm', () => {
         naturalidade: '',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      let retorno = validaCamposForm.validaCamposForm(campos);
+      let retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
@@ -147,7 +147,7 @@ describe('validacoesCamposForm', () => {
         naturalidade: '',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      let retorno = validaCamposForm.validaCamposForm(campos);
+      let retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
@@ -164,7 +164,7 @@ describe('validacoesCamposForm', () => {
         naturalidade: '',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      let retorno = validaCamposForm.validaCamposForm(campos);
+      let retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
@@ -181,7 +181,7 @@ describe('validacoesCamposForm', () => {
         naturalidade: '',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      let retorno = validaCamposForm.validaCamposForm(campos);
+      let retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
@@ -198,7 +198,7 @@ describe('validacoesCamposForm', () => {
         naturalidade: '',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      let retorno = validaCamposForm.validaCamposForm(campos);
+      let retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
@@ -215,7 +215,7 @@ describe('validacoesCamposForm', () => {
         naturalidade: '',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      let retorno = validaCamposForm.validaCamposForm(campos);
+      let retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 

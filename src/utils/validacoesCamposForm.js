@@ -8,7 +8,7 @@ function nomeDaVitimaInvalido(valor) {
 }
 
 function temCaractereEspecial(valor) {
-  const format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/; 
+  const format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
   return format.test(valor);
 }
 

@@ -5,7 +5,6 @@ import * as validacoesCamposForm from './validacoesCamposForm';
 
 describe('validacoesCamposForm', () => {
   describe('validaCamposForm chamadas', () => {
-
     let windowConfirmStub;
     let dataHoraDeAmanha;
     let dataDeHoje;
@@ -238,6 +237,57 @@ describe('validacoesCamposForm', () => {
       assert.isFalse(validacoesCamposForm.validaTamanhoDeCampoString(campos.nome, 40));
     })
 
+    it('O formulário deve ser inválido caso o usuário insira números no campo nome', () => {
+      const campos = {
+        nome: 'Izael123',
+        genero: '',
+        raca: '',
+        dataNascimento: '',
+        endereco: '',
+        estado: '',
+        telefone: '',
+        email: '',
+        naturalidade: '',
+        caracteristicasVitima: 'caracteristicasVitima',
+      }
+      const retorno = validacoesCamposForm.validaCamposForm(campos.nome);
+      assert.isFalse(retorno);
+    })
+
+    it('O formulário deve ser inválido caso o usuário insira caracteres especiais no campo nome', () => {
+      const campos = {
+        nome: 'Izael!',
+        genero: '',
+        raca: '',
+        dataNascimento: '',
+        endereco: '',
+        estado: '',
+        telefone: '',
+        email: '',
+        naturalidade: '',
+        caracteristicasVitima: 'caracteristicasVitima',
+      }
+      const retorno = validacoesCamposForm.validaCamposForm(campos.nome);
+      assert.isFalse(retorno);
+    })
+
+    it('O formulário deve ser inválido caso o usuário insira acentos no campo nome', () => {
+      const campos = {
+        nome: 'Izáel',
+        genero: '',
+        raca: '',
+        dataNascimento: '',
+        endereco: '',
+        estado: '',
+        telefone: '',
+        email: '',
+        naturalidade: '',
+        caracteristicasVitima: 'caracteristicasVitima',
+      }
+      const retorno = validacoesCamposForm.validaCamposForm(campos.nome);
+      assert.isFalse(retorno);
+    })
+
     it('O formulário deve ser inválido se o campo genero possuir mais de 15 caracteres', () => {
       const campos = {
         nome: '',
@@ -302,7 +352,9 @@ describe('validacoesCamposForm', () => {
         '89012345678901234567890123456789012345678901234567890123456789012345678901234567' +
         '890123456789012345678901234567890123456',
       }
-      assert.isFalse(validacoesCamposForm.validaTamanhoDeCampoString(campos.caracteristicasVitima, 255));
+      assert.isFalse(
+        validacoesCamposForm.validaTamanhoDeCampoString(campos.caracteristicasVitima, 255)
+      );
     })
   })
 });

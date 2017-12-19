@@ -32,6 +32,7 @@
     "rules": {
         "semi": 0, // disallow use of semicolons
         "comma-dangle": 0,
+        "padded-blocks": "warn",
         "no-unused-vars": "warn",
         "import/prefer-default-export": 0,
         "react/jsx-uses-react": "error",

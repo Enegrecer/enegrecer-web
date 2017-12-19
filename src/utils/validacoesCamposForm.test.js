@@ -1,10 +1,11 @@
 import * as sinon from 'sinon';
 import { assert } from 'chai';
-import * as validaCamposForm from './validacoesCamposForm';
 import moment from 'moment';
+import * as validacoesCamposForm from './validacoesCamposForm';
 
 describe('validacoesCamposForm', () => {
   describe('validaCamposForm chamadas', () => {
+
     let windowConfirmStub;
     let dataHoraDeAmanha;
     let dataDeHoje;
@@ -22,7 +23,7 @@ describe('validacoesCamposForm', () => {
     })
 
     it('O formulário deve ser válido se todos os campos forem preenchidos e estiverem todos corretos', () => {
-      let campos = {
+      const campos = {
         nome: 'nome',
         genero: 'genero',
         raca: 'raca',
@@ -34,18 +35,19 @@ describe('validacoesCamposForm', () => {
         naturalidade: 'naturalidade',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      let retorno = validaCamposForm.validaCamposForm(campos);
+
+      const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isTrue(retorno);
     })
 
     it('O formulário deve ser inválido caso o usuário não tenha inserido dados', () => {
-      let retorno = validaCamposForm.validaCamposForm(null);
+      const retorno = validacoesCamposForm.validaCamposForm(null);
       assert.isFalse(retorno);
     });
 
     it('O formulário deve ser inválido se todos os campos opcionais' +
-    ' e o campo obrigatório estejam vazios', () => {
-      let campos = {
+      ' e o campo obrigatório estejam vazios', () => {
+      const campos = {
         nome: '',
         genero: '',
         raca: '',
@@ -57,12 +59,12 @@ describe('validacoesCamposForm', () => {
         naturalidade: '',
         caracteristicasVitima: '',
       }
-      let retorno = validaCamposForm.validaCamposForm(campos);
+      const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
     it('O formulário deve ser inválido se apenas o campo obrigatório está vazio', () => {
-      let campos = {
+      const campos = {
         nome: 'nome',
         genero: 'genero',
         raca: 'raca',
@@ -74,13 +76,13 @@ describe('validacoesCamposForm', () => {
         naturalidade: 'naturalidade',
         caracteristicasVitima: '',
       }
-      let retorno = validaCamposForm.validaCamposForm(campos);
+      const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
     it('O formulário deve ser inválido se apenas o campo obrigatório esteja preenchido' +
-    ' e o usuário optou por enviar mesmo assim', () => {
-      let campos = {
+      ' e o usuário optou por enviar mesmo assim', () => {
+      const campos = {
         nome: '',
         genero: '',
         raca: '',
@@ -93,13 +95,13 @@ describe('validacoesCamposForm', () => {
         caracteristicasVitima: 'caracteristicasVitima',
       }
       windowConfirmStub.returns(true);
-      let retorno = validaCamposForm.validaCamposForm(campos);
+      const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isTrue(retorno);
     })
 
     it('O formulário deve ser inválido se apenas o campo obrigatório esteja preenchido' +
-    ' e o usuário optou por não enviar', () => {
-      let campos = {
+      ' e o usuário optou por não enviar', () => {
+      const campos = {
         nome: '',
         genero: '',
         raca: '',
@@ -112,12 +114,12 @@ describe('validacoesCamposForm', () => {
         caracteristicasVitima: 'caracteristicasVitima',
       }
       windowConfirmStub.returns(false);
-      let retorno = validaCamposForm.validaCamposForm(campos);
+      const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
     it('O formulário deve ser inválido se o campo dataNascimento for menor que 1900', () => {
-      let campos = {
+      const campos = {
         nome: '',
         genero: '',
         raca: '',
@@ -129,13 +131,13 @@ describe('validacoesCamposForm', () => {
         naturalidade: '',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      let retorno = validaCamposForm.validaCamposForm(campos);
+      const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
 
     it('O formulário deve ser inválido se o campo dataNascimento for igual que a data atual', () => {
-      let campos = {
+      const campos = {
         nome: '',
         genero: '',
         raca: '',
@@ -147,12 +149,12 @@ describe('validacoesCamposForm', () => {
         naturalidade: '',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      let retorno = validaCamposForm.validaCamposForm(campos);
+      const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
     it('O formulário deve ser inválido se o campo dataNascimento for maior que a data atual', () => {
-      let campos = {
+      const campos = {
         nome: '',
         genero: '',
         raca: '',
@@ -164,12 +166,12 @@ describe('validacoesCamposForm', () => {
         naturalidade: '',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      let retorno = validaCamposForm.validaCamposForm(campos);
+      const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
     it('O formulário deve ser inválido se o campo telefone for maior que 11', () => {
-      let campos = {
+      const campos = {
         nome: '',
         genero: '',
         raca: '',
@@ -181,12 +183,12 @@ describe('validacoesCamposForm', () => {
         naturalidade: '',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      let retorno = validaCamposForm.validaCamposForm(campos);
+      const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
     it('O formulário deve ser inválido se o campo telefone for menor que 10', () => {
-      let campos = {
+      const campos = {
         nome: '',
         genero: '',
         raca: '',
@@ -198,12 +200,12 @@ describe('validacoesCamposForm', () => {
         naturalidade: '',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      let retorno = validaCamposForm.validaCamposForm(campos);
+      const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
     it('O formulário deve ser inválido se o campo email não estiver no padrão: email@email.com', () => {
-      let campos = {
+      const campos = {
         nome: '',
         genero: '',
         raca: '',
@@ -215,13 +217,13 @@ describe('validacoesCamposForm', () => {
         naturalidade: '',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      let retorno = validaCamposForm.validaCamposForm(campos);
+      const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
 
     it('O formulário deve ser inválido se o campo nome possuir mais de 40 caracteres', () => {
-      let campos = {
+      const campos = {
         nome: '12345678901234567890123456789012345678901',
         genero: '',
         raca: '',
@@ -233,11 +235,11 @@ describe('validacoesCamposForm', () => {
         naturalidade: '',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      assert.isFalse(validaTamanhoDeCampoString(campos.nome, 40));
+      assert.isFalse(validacoesCamposForm.validaTamanhoDeCampoString(campos.nome, 40));
     })
 
     it('O formulário deve ser inválido se o campo genero possuir mais de 15 caracteres', () => {
-      let campos = {
+      const campos = {
         nome: '',
         genero: '1234567890123456',
         raca: '',
@@ -249,11 +251,11 @@ describe('validacoesCamposForm', () => {
         naturalidade: '',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      assert.isFalse(validaTamanhoDeCampoString(campos.genero, 15));
+      assert.isFalse(validacoesCamposForm.validaTamanhoDeCampoString(campos.genero, 15));
     })
 
     it('O formulário deve ser inválido se o campo endereco possuir mais de 255 caracteres', () => {
-      let campos = {
+      const campos = {
         nome: '',
         genero: '',
         raca: '',
@@ -265,11 +267,11 @@ describe('validacoesCamposForm', () => {
         naturalidade: '',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      assert.isFalse(validaTamanhoDeCampoString(campos.endereco, 255));
+      assert.isFalse(validacoesCamposForm.validaTamanhoDeCampoString(campos.endereco, 255));
     })
 
     it('O formulário deve ser inválido se o campo naturalidade possuir mais de 40 caracteres', () => {
-      let campos = {
+      const campos = {
         nome: '',
         genero: '',
         raca: '',
@@ -281,11 +283,11 @@ describe('validacoesCamposForm', () => {
         naturalidade: '12345678901234567890123456789012345678901',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      assert.isFalse(validaTamanhoDeCampoString(campos.naturalidade, 40));
+      assert.isFalse(validacoesCamposForm.validaTamanhoDeCampoString(campos.naturalidade, 40));
     })
 
     it('O formulário deve ser inválido se o campo caracteristicasVitima possuir mais de 255 caracteres', () => {
-      let campos = {
+      const campos = {
         nome: '',
         genero: '',
         raca: '',
@@ -295,26 +297,12 @@ describe('validacoesCamposForm', () => {
         telefone: '',
         email: '',
         naturalidade: '',
-        caracteristicasVitima: '1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456',
+        caracteristicasVitima: '123456789012345678901234567890123456789012345678901234567' +
+        '89012345678901234567890123456789012345678901234567890123456789012345678901234567' +
+        '89012345678901234567890123456789012345678901234567890123456789012345678901234567' +
+        '890123456789012345678901234567890123456',
       }
-      assert.isFalse(validaTamanhoDeCampoString(campos.caracteristicasVitima, 255));
+      assert.isFalse(validacoesCamposForm.validaTamanhoDeCampoString(campos.caracteristicasVitima, 255));
     })
-
-    function validaTamanhoDeCampoString(string, tamanho){
-       if(string.length === tamanho){
-          return true;
-       }
-       return false;
-    }
-
-    // it('campos == null deve alertar caso os campos obrigatorios nao foram preenchidos' +
-    // 'chamar o campoVazio(campos.caracteristicasVitima) alertaDeCamposObrigatorios', () => {
-    //   const campos = null;
-    //   console.log(validacoes)
-    //   validacoes.validaCamposForm(campos)
-    //   assert(alertaDeCamposObrigatoriosSpy.called)
-    //   expect(alertaDeCamposObrigatoriosSpy.called).toBeTruthy()
-    //   expect(validacoes.alertaDeCamposObrigatorios).toBeCalled()
-    // })
   })
 });

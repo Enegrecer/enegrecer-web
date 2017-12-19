@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { Button } from 'reactstrap';
 import React, { Component } from 'react';
 import NovaVitimaForm from './vitima/NovaVitimaForm';
+import NovaTestemunhaForm from './testemunha/NovaTestemunhaForm';
 import DetalhamentoDenuncia from './DetalhamentoDenuncia';
 
 export default class NovaDenunciaForm extends Component {
@@ -48,6 +49,8 @@ export default class NovaDenunciaForm extends Component {
         <DetalhamentoDenuncia handleChange={this.handleChange} />
 
         <NovaVitimaForm handleChange={this.handleChange} />
+
+        <NovaTestemunhaForm />
 
         <Button name="salvarDenuncia" type="submit" id="btn-salvar-denuncia" >
           Salvar

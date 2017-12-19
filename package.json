@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
+    "chai-enzyme": "^0.8.0",
     "codeceptjs": "^1.0.3",
     "codeclimate": "0.0.32",
     "firebase": "^4.0.0",

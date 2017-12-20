@@ -11,6 +11,7 @@
     "history": "^4.7.2",
     "jest-cli": "^21.2.1",
     "material-ui": "^0.18.5",
+    "moment": "^2.19.4",
     "node-sass-chokidar": "^0.0.3",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",

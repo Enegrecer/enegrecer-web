@@ -14,7 +14,11 @@ describe('NovaDenunciaForm Component', () => {
 
     expect(wrapper.find('NovaVitimaForm')).toHaveLength(1)
   });
+  it('deve renderizar o componente NovaTestemunhaForm.js', () => {
+    const wrapper = shallow(<NovaDenunciaForm salvarDenuncia={mock()} />);
 
+    expect(wrapper.find('NovaTestemunhaForm')).toHaveLength(1)
+  });
   it('deve renderizar o componente DetalhamentoDenuncia', () => {
     const wrapper = shallow(<NovaDenunciaForm salvarDenuncia={mock()} />);
 

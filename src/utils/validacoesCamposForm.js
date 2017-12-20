@@ -1,5 +1,20 @@
 export function campoVazio(valor) {
-  return valor.trim() === '';
+  const novoValor = (valor === undefined) ? '' : valor
+  return novoValor.trim() === '';
+}
+
+function temCaractereEspecial(valor) {
+  const format = /[!@#$%^&*()_+-=[\]{};':"\\|,.<>/?]+/;
+  return format.test(valor);
+}
+
+function temNumero(valor) {
+  const format = /\d/;
+  return format.test(valor);
+}
+
+function nomeDaVitimaInvalido(valor) {
+  return temNumero(valor) || temCaractereEspecial(valor);
 }
 
 function tamanhoTelefoneValido(valor) {
@@ -47,29 +62,24 @@ function focoNoCampo(idCampo) {
   }
 }
 
-function alertaDeCamposObrigatorios() {
+export function alertaDeCamposObrigatorios() {
   alert('Você não inseriu informações sobre a vítima. ' +
   'Precisamos que você complemente inserindo ao menos uma descrição informal sobre a pessoa.');
   focoNoCampo('caracteristicasVitima');
   return false
 }
 
-function verificarCamposVaziosdaVitima(campos) {
-  return campos != null &&
-        campoVazio(campos.nome) &&
-        campoVazio(campos.genero) &&
-        campoVazio(campos.raca) &&
-        campoVazio(campos.dataNascimento) &&
-        campoVazio(campos.endereco) &&
-        campoVazio(campos.estado) &&
-        campoVazio(campos.telefone) &&
-        campoVazio(campos.email) &&
-        campoVazio(campos.naturalidade) &&
-        campoVazio(campos.caracteristicaVitima);
+export function verificarCamposVaziosdaVitima(campos) {
+  const getCamposValidos = attr => typeof campos[attr] === 'string' && attr !== 'caracteristicasVitima';
+
+  const attrs = Object.keys(campos).filter(getCamposValidos)
+
+  return campos != null && attrs.every(attr => campoVazio(campos[attr]));
 }
 
 function validarInputsDaVitima(campos) {
-  return validarDataDeNascimento(campos.dataNascimento) &&
+  return !nomeDaVitimaInvalido(campos.nome) &&
+  validarDataDeNascimento(campos.dataNascimento) &&
   validarTelefone(campos.telefone) &&
   validarEmail(campos.email);
 }
@@ -80,12 +90,17 @@ function alertaCamposNaoPreenchidosCorretamente() {
   return false
 }
 
-export function validaCamposForm(campos) {
-  if (campos === null || campoVazio(campos.caracteristicasVitima)) {
-    return alertaDeCamposObrigatorios();
+export function validaTamanhoDeCampoString(string, tamanho) {
+  if (string.length === tamanho) {
+    return true;
   }
+  return false;
+}
 
-  if (verificarCamposVaziosdaVitima(campos)) {
+export function validaCamposForm(campos, camposObgs = ['caracteristicasVitima']) {
+  if (campos === null || camposObgs.every(attr => campoVazio(campos[attr]))) {
+    return alertaDeCamposObrigatorios();
+  } else if (verificarCamposVaziosdaVitima(campos)) {
     return alertaDeCamposNaoPreenchidos();
   } else if (!validarInputsDaVitima(campos)) {
     return alertaCamposNaoPreenchidosCorretamente();
@@ -93,4 +108,3 @@ export function validaCamposForm(campos) {
 
   return true;
 }
-

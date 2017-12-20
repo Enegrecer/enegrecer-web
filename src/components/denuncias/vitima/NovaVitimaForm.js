@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { FormGroup, Label, Input } from 'reactstrap';
-import { EstadoFormGroup } from '../../FormGroups'
-
+import { EstadoFormGroup, TelefoneFormGroup } from '../../FormGroups';
 
 export default class NovaVitimaForm extends Component {
   constructor(props) {
@@ -43,7 +42,7 @@ export default class NovaVitimaForm extends Component {
     );
   }
 
-  renderCampo(name, maxLength, placeholder = '', type = '') {
+  renderCampo(name, maxLength, placeholder = '', type = '', mascara = '') {
     return (
       <Input
         id={name}
@@ -53,6 +52,7 @@ export default class NovaVitimaForm extends Component {
         onChange={event => this.alterarCampo(event.target.value, name, maxLength)}
         placeholder={placeholder}
         autoComplete="off"
+        pattern={mascara}
       />
     );
   }
@@ -128,11 +128,11 @@ export default class NovaVitimaForm extends Component {
           estado={this.state.estado}
           handleChange={event => this.alterarCampo(event.target.value, 'estado')}
         />
-
-        <FormGroup>
-          <Label for="telefone">Telefone</Label>
-          {this.renderCampo('telefone')}
-        </FormGroup>
+        <TelefoneFormGroup
+          id="telefone"
+          value={this.state.telefone}
+          handleChange={event => this.alterarCampo(event.target.value, 'telefone')}
+        />
         <FormGroup>
           <Label for="email">Email</Label>
           {this.renderCampo('email')}

@@ -42,7 +42,7 @@ export default class NovaVitimaForm extends Component {
     );
   }
 
-  renderCampo(name, maxLength, placeholder = '', type = '', mascara = '') {
+  renderCampo(name, maxLength, placeholder = '', type = '') {
     return (
       <Input
         id={name}
@@ -52,7 +52,6 @@ export default class NovaVitimaForm extends Component {
         onChange={event => this.alterarCampo(event.target.value, name, maxLength)}
         placeholder={placeholder}
         autoComplete="off"
-        pattern={mascara}
       />
     );
   }

@@ -63,8 +63,7 @@ function focoNoCampo(idCampo) {
 }
 
 export function alertaDeCamposObrigatorios() {
-  alert('Você não inseriu informações sobre a vítima. ' +
-  'Precisamos que você complemente inserindo ao menos uma descrição informal sobre a pessoa.');
+  alert('Atenção! Para completar o envio da denúncia, precisamos do preenchimento do seguinte campo: "Por favor, descreva aqui as características da vítima:"')
   focoNoCampo('caracteristicasVitima');
   return false
 }

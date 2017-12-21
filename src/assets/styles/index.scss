@@ -83,4 +83,20 @@ body {
 
 form[name="form-denuncia"] {
   margin: 10px 30px
+
+  ::-webkit-input-placeholder {
+    color: #C0C0C0;  
+    }
+
+  :-moz-placeholder { /* Firefox 18- */
+    color: #C0C0C0  
+    }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+    color: #C0C0C0;  
+    }
+
+  :-ms-input-placeholder {  
+    color: #C0C0C0;  
+    }
 }

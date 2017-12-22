@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { Button } from 'reactstrap';
 import React, { Component } from 'react';
 import NovaVitimaForm from './vitima/NovaVitimaForm';
 import NovaTestemunhaForm from './testemunha/NovaTestemunhaForm';
@@ -52,15 +51,18 @@ export default class NovaDenunciaForm extends Component {
 
         <NovaTestemunhaForm />
 
-        <Button name="salvarDenuncia" type="submit" id="btn-salvar-denuncia" >
-          Salvar
-        </Button>
+        <br />
+        <button name="salvarDenuncia" type="submit" id="btn-salvar-denuncia" >
+          Enviar Denúncia
+        </button>
       </form>);
   }
 }
-NovaVitimaForm.defaultProps = {
+
+NovaDenunciaForm.defaultProps = {
   alterarDenunciaForm: () => {}
-}
+};
+
 NovaDenunciaForm.propTypes = {
   salvarDenuncia: PropTypes.func.isRequired,
   alterarDenunciaForm: PropTypes.func

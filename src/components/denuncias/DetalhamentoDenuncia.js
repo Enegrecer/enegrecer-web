@@ -1,12 +1,14 @@
 import PropTypes from 'prop-types'
-import { FormGroup, Label, Input } from 'reactstrap';
 import React, { Component } from 'react';
+import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
+import TextField from 'material-ui/TextField'
+import * as helpers from '../../helpers';
 import { EstadoFormGroup } from '../FormGroups';
 
 export default class DetalhamentoDenuncia extends Component {
   constructor(props) {
     super(props);
-    this.alterarCampo = this.alterarCampo.bind(this);
+    this.handleChange = this.handleChange.bind(this);
 
     this.state = {
       detalhamento: '',
@@ -18,89 +20,69 @@ export default class DetalhamentoDenuncia extends Component {
     };
   }
 
-  alterarCampo(event, property) {
+  handleChange(value, property) {
     this.setState(
-      { [property]: event.target.value },
+      { [property]: value },
       () => this.props.handleChange(this.state)
     );
   }
 
-  renderCampoTexto(name) {
+  renderTextField(id, label, maxLen = '', placeholder = '', type = '') {
     return (
-      <Input
-        type="textarea"
-        id={name}
-        name={name}
-        value={this.state[name]}
-        onChange={event => this.alterarCampo(event, name)}
-      />
-    );
+      <div>
+        <label htmlFor={id}>{`${label}`}</label>
+        <TextField
+          id={id}
+          value={this.state[id]}
+          type={type || 'text'}
+          maxLength={maxLen}
+          placeholder={placeholder}
+          autoComplete="off"
+          fullWidth
+          multiLine={type === 'textarea'}
+          onChange={(e) => {
+            const value = helpers.cortarPalavra(e.target.value, maxLen);
+            this.handleChange(value, id)
+          }}
+        />
+        <br />
+      </div>
+    )
   }
 
   render() {
     return (
       <div>
+        <br />
         <h1>Nova Denúncia</h1>
+        <br />
 
-        <FormGroup>
-          <Label for="detalhamento">Detalhamento*</Label>
-          {this.renderCampoTexto('detalhamento')}
-        </FormGroup>
+        { this.renderTextField('detalhamento', '* Detalhamento', '255', '', 'textarea')}
 
-        <FormGroup>
-          <Label for="dataOcorrencia">Data do ocorrido</Label>
-          <Input
-            type="date"
-            name="dataOcorrencia"
-            id="dataOcorrencia"
-            placeholder="date placeholder"
-            onChange={event => this.alterarCampo(event, 'dataOcorrencia')}
-          />
-        </FormGroup>
+        { this.renderTextField('dataOcorrencia', 'Data do ocorrido', '', '', 'date') }
 
+        { this.renderTextField('horaOcorrencia', 'Hora do ocorrido', '', '', 'time') }
+        <br />
 
-        <FormGroup>
-          <Label for="horaOcorrencia">Hora do ocorrido</Label>
-          <Input
-            type="time"
-            name="horaOcorrencia"
-            id="horaOcorrencia"
-            placeholder="time placeholder"
-            onChange={event => this.alterarCampo(event, 'horaOcorrencia')}
-          />
-        </FormGroup>
-        <FormGroup check>
-          <Label check>
-            <Input
-              type="radio"
-              name="idCategoria"
-              value="injuria"
-              onChange={event => this.alterarCampo(event, 'idCategoria')}
-            /> {' Injúria'}
-
-          </Label>
-          <Label check>
-            <Input
-              type="radio"
-              name="idCategoria"
-              value="racismo"
-              onChange={event => this.alterarCampo(event, 'idCategoria')}
-            /> {' Racismo'}
-          </Label>
-        </FormGroup>
+        <RadioButtonGroup
+          name={'idCategoria'}
+          onChange={e => this.handleChange(e.target.checked, 'idCategoria')}
+          defaultSelected={this.state.idCategoria}
+        >
+          <RadioButton className="inch-button" value="injuria" label="Injúria" />
+          <RadioButton className="half-button" value="racismo" label="Racismo" />
+        </RadioButtonGroup>
+        <br />
 
         <h3>Local do crime</h3>
         <br />
 
-        <FormGroup>
-          <Label for="endereco">Endereço</Label>
-          {this.renderCampoTexto('endereco')}
-        </FormGroup>
+        { this.renderTextField('endereco', 'Endereço', '255', 'Endereco', '', 'textarea')}
 
         <EstadoFormGroup
           id="estado"
-          estado={this.state.estado}
-          handleChange={this.alterarCampo}
+          value={this.state.estado}
+          handleChange={this.handleChange}
         />
       </div>
     )
@@ -111,5 +93,5 @@ DetalhamentoDenuncia.defaultProps = { handleChange: () => {} };
 
 DetalhamentoDenuncia.propTypes = {
   handleChange: PropTypes.func
-}
+};
 

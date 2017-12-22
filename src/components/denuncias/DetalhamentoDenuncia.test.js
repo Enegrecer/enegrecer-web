@@ -25,7 +25,8 @@ describe('DetalhamentoDenuncia Component', () => {
 
     it('deve renderizar sem erro o campo de idCategoria do componente', () => {
       const wrapper = shallow(<DetalhamentoDenuncia />);
-      expect(wrapper.find('[name="idCategoria"]').length).toEqual(2);
+      expect(wrapper.find('[value="injuria"]').length).toEqual(1);
+      expect(wrapper.find('[value="racismo"]').length).toEqual(1);
     });
 
     it('deve renderizar sem erro o campo de endereco do componente', () => {

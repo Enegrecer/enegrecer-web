@@ -26,7 +26,7 @@ class Painel extends React.Component {
       <div>
         <AppBar
           title="Enegrecer"
-          onLeftIconButtonTouchTap={this.handleToggle}
+          onLeftIconButtonClick={this.handleToggle}
         />
 
         <Drawer
@@ -37,7 +37,7 @@ class Painel extends React.Component {
           <AppBar
             iconElementLeft={<IconButton><NavigationClose /></IconButton>}
             title="Enegrecer"
-            onLeftIconButtonTouchTap={this.handleToggle}
+            onLeftIconButtonClick={this.handleToggle}
           />
           <Link to="/"><MenuItem>Home</MenuItem></Link>
           <Link to="/painel/categorias"><MenuItem>Categorias</MenuItem></Link>

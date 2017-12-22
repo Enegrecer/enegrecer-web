@@ -82,11 +82,12 @@ body {
 }
 
 form[name="form-denuncia"] {
-  margin: 10px 30px
+  margin: 15px auto;
+  width: 960px;
 
   ::-webkit-input-placeholder {
     color: #C0C0C0;
-    }
+  }
 
   :-moz-placeholder { /* Firefox 18- */
     color: #C0C0C0
@@ -100,13 +101,21 @@ form[name="form-denuncia"] {
     color: #C0C0C0;
   }
 
-   input:focus::-webkit-input-placeholder {
-        color: transparent;
-   }
+  input:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
 
-   textarea:focus::-webkit-input-placeholder {
-        color: transparent;
-   }
+  textarea:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+
+  label {
+    color: rgba(0, 188, 212, .5)
+  }
+
+  input {
+    margin-bottom: 10px;
+  }
 }
 
 

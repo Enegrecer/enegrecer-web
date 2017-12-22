@@ -16,12 +16,12 @@ describe('NovaVitimaForm Component', () => {
     it('altera o valor correspondente no estado', () => {
       const eventMock = {
         target: {
-          value: 'valordetalhamentodetalhamentovalordetalhamento valordetalhamentodetalhamentovalordetalhamento',
+          value: 'Coletivo nacional de Juventude Enegrecer é uma expressão do movimento social',
         },
       };
 
       wrapper.find('#nome').simulate('change', eventMock);
-      expect(wrapper.state().nome).toEqual('valordetalhamentodetalhamentovalordetalh');
+      expect(wrapper.state().nome).toEqual('Coletivo nacional de Juventude Enegrecer');
     });
   });
 })

@@ -8,7 +8,7 @@ describe('App', () => {
 
   it('tem um componente de Rotas', () => {
     wrapper.setState({ loading: false });
-    expect(wrapper.find('Rotas').exists()).toBeTruthy();
+    expect(wrapper.find('Routes').exists()).toBeTruthy();
   });
   it('nao atualiza o status de authed', () => {
     wrapper.instance().componentDidMount();

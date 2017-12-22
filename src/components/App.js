@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Rotas from './Rotas';
+import Routes from './../routes/Routes';
 import { firebaseAuth } from '../utils/firebaseUtils';
 
 export default class App extends Component {
@@ -36,7 +36,7 @@ export default class App extends Component {
   render() {
     return this.state.loading === true ? <h1>Loading...</h1> : (
       <div>
-        <Rotas authed={this.state.authed} currentUserUID={this.state.currentUserUID} />
+        <Routes authed={this.state.authed} currentUserUID={this.state.currentUserUID} />
       </div>
     );
   }

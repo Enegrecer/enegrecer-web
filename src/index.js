@@ -15,7 +15,7 @@ import reducers from './reducers';
 import rootSaga from './sagas';
 import './assets/styles/index.css';
 
-import Routes from './routes/Routes'
+import App from './components/App'
 
 
 const sagaMiddleware = createSagaMiddleware();
@@ -30,7 +30,7 @@ injectTapEventPlugin();
 ReactDOM.render(
   <Provider store={store}>
     <MuiThemeProvider>
-      <Routes />
+      <App />
     </MuiThemeProvider>
   </Provider>
   ,

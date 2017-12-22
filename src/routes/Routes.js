@@ -33,19 +33,19 @@ function PublicRoute({ component: Component, authed, ...rest }) {
 /* eslint-enable */
 const Routes = props => (
   <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Painel>
-          <PublicRoute authed={props.authed} path="/painel/login" component={Login} />
-          <PrivateRoute
-            currentUserUID={props.currentUserUID}
-            authed={props.authed}
-            path="/painel/denuncias/nova"
-            component={NovaDenuncia}
-          />
-        </Painel>
-      </Switch>
-   </BrowserRouter>
+    <Switch>
+      <Route exact path="/" component={HomePage} />
+      <Painel>
+        <PublicRoute authed={props.authed} path="/painel/login" component={Login} />
+        <PrivateRoute
+          currentUserUID={props.currentUserUID}
+          authed={props.authed}
+          path="/painel/denuncias/nova"
+          component={NovaDenuncia}
+        />
+      </Painel>
+    </Switch>
+  </BrowserRouter>
 );
 
 Routes.propTypes = {

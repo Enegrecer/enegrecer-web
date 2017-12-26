@@ -81,9 +81,9 @@ export default class NovaVitimaForm extends Component {
 
         { this.renderCheckbox('souAVitima', 'Sou a Vítima') }
 
-        { this.renderTextField('nome', 'Nome', '40') }
+        { this.renderTextField('nome', 'Nome (máximo de 40 caracteres)', '40') }
 
-        { this.renderTextField('genero', 'Gênero', '15', 'Ex.: Feminino, Masculino, Não Binário...') }
+        { this.renderTextField('genero', 'Gênero (máximo de 15 caracteres)', '15', 'Ex.: Feminino, Masculino, Não Binário...') }
 
 
         <RacaFormGroup
@@ -94,9 +94,9 @@ export default class NovaVitimaForm extends Component {
 
         { this.renderTextField('dataNascimento', 'Data de Nascimento', '', 'Data de Nascimento', 'date') }
 
-        { this.renderTextField('endereco', 'Endereço', '255', 'Endereco')}
+        { this.renderTextField('endereco', 'Endereço (máximo de 255 caracteres)', '255', 'Endereco')}
 
-        { this.renderTextField('naturalidade', 'Naturalidade', '40')}
+        { this.renderTextField('naturalidade', 'Naturalidade (máximo de 40 caracteres)', '40')}
 
         <EstadoFormGroup
           id={'estadoVitima'}
@@ -114,7 +114,7 @@ export default class NovaVitimaForm extends Component {
 
         { this.renderTextField(
           'caracteristicasVitima',
-          '* Por favor, descreva aqui as características da vítima',
+          '* Por favor, descreva aqui as características da vítima (máximo de 255 caracteres)',
           '255',
           'Era uma mulher negra, com aproximadamente 40 anos, magra, alta com cabelo curto...',
           'textarea')

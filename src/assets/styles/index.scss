@@ -83,7 +83,7 @@ body {
 
 form[name="form-denuncia"] {
   margin: 15px auto;
-  width: 960px;
+  max-width: 960px;
 
   ::-webkit-input-placeholder {
     color: #C0C0C0;

@@ -15,6 +15,7 @@ export class NovaDenunciaContainer extends Component {
     this.state = {
       vitima: null,
       denunciante: null,
+      testemunha: null,
       userId: this.props.currentUserUID,
     };
   }

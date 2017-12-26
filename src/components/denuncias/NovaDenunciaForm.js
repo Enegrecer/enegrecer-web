@@ -49,7 +49,7 @@ export default class NovaDenunciaForm extends Component {
 
         <NovaVitimaForm handleChange={this.handleChange} />
 
-        <NovaTestemunhaForm />
+        <NovaTestemunhaForm handleChange={this.handleChange} />
 
         <br />
         <button name="salvarDenuncia" type="submit" id="btn-salvar-denuncia" >

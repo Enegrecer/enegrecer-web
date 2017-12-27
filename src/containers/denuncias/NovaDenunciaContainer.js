@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
 import { criarDenunciaRequisicao } from '../../actions';
 import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
 import { validaCamposForm } from '../../utils/validacoesCamposForm';
+import { withRouter } from 'react-router-dom';
 
 export class NovaDenunciaContainer extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ export class NovaDenunciaContainer extends Component {
     if (validaCamposForm(this.state.vitima)) {
       this.props.criarDenunciaRequisicao({
         ...this.state,
-        onSuccess: push('/'),
+        onSuccess: () => {this.props.history.push('/')  },
       });
     }
   }
@@ -60,9 +60,9 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   criarDenunciaRequisicao,
 }, dispatch);
 
-const reduxNovaDenuncia = connect(
+const reduxNovaDenuncia = withRouter(connect(
   mapStateToProps,
   mapDispatchToProps,
-)(NovaDenunciaContainer);
+)(NovaDenunciaContainer));
 
 export default reduxNovaDenuncia;

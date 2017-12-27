@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { criarDenunciaRequisicao } from '../../actions';
 import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
 import { validaCamposForm } from '../../utils/validacoesCamposForm';
-import { withRouter } from 'react-router-dom';
+
 
 export class NovaDenunciaContainer extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ export class NovaDenunciaContainer extends Component {
     if (validaCamposForm(this.state.vitima)) {
       this.props.criarDenunciaRequisicao({
         ...this.state,
-        onSuccess: () => {this.props.history.push('/')  },
+        onSuccess: () => { this.props.history.push('/') },
       });
     }
   }
@@ -50,6 +50,7 @@ export class NovaDenunciaContainer extends Component {
 NovaDenunciaContainer.propTypes = {
   currentUserUID: PropTypes.string.isRequired,
   criarDenunciaRequisicao: PropTypes.func.isRequired,
+  history: PropTypes.node
 };
 
 const mapStateToProps = state => ({
@@ -60,9 +61,9 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   criarDenunciaRequisicao,
 }, dispatch);
 
-const reduxNovaDenuncia = withRouter(connect(
+const reduxNovaDenuncia = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(NovaDenunciaContainer));
+)(NovaDenunciaContainer);
 
 export default reduxNovaDenuncia;

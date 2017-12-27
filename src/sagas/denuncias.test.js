@@ -13,7 +13,7 @@ describe('Saga de Denúncias', () => {
         idCategoria: 'injuria',
         detalhamento: 'teste',
         onSuccess() {
-          method: 'Redirect to page'
+          'Redirect to page'
         },
       },
     };

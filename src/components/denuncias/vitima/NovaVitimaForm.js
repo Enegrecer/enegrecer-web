@@ -38,24 +38,22 @@ export default class NovaVitimaForm extends Component {
 
   renderTextField(id, label, maxLen = '', placeholder = '', type = '') {
     return (
-      <div>
-        <label htmlFor={id}>{`${label}`}</label>
-        <TextField
-          id={id}
-          value={this.state[id]}
-          type={type || 'text'}
-          maxLength={maxLen}
-          placeholder={placeholder}
-          autoComplete="off"
-          fullWidth
-          multiLine={type === 'textarea'}
-          onChange={(e) => {
-            const value = helpers.cortarPalavra(e.target.value, maxLen);
-            this.handleChange(value, id)
-          }}
-        />
-        <br />
-      </div>
+      <TextField
+        id={id}
+        value={this.state[id]}
+        type={type || 'text'}
+        maxLength={maxLen}
+        hintText={placeholder}
+        floatingLabelText={label}
+        floatingLabelFixed
+        autoComplete="off"
+        fullWidth
+        multiLine={type === 'textarea'}
+        onChange={(e) => {
+          const value = helpers.cortarPalavra(e.target.value, maxLen);
+          this.handleChange(value, id)
+        }}
+      />
     )
   }
 
@@ -92,9 +90,9 @@ export default class NovaVitimaForm extends Component {
           handleChange={this.handleChange}
         />
 
-        { this.renderTextField('dataNascimento', 'Data de Nascimento', '', 'Data de Nascimento', 'date') }
+        { this.renderTextField('dataNascimento', 'Data de Nascimento', '', '', 'date') }
 
-        { this.renderTextField('endereco', 'Endereço (máximo de 255 caracteres)', '255', 'Endereco')}
+        { this.renderTextField('endereco', 'Endereço (máximo de 255 caracteres)', '255', '')}
 
         { this.renderTextField('naturalidade', 'Naturalidade (máximo de 40 caracteres)', '40')}
 

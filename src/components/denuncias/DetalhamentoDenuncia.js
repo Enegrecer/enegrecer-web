@@ -27,26 +27,24 @@ export default class DetalhamentoDenuncia extends Component {
     );
   }
 
-  renderTextField(id, label, maxLen = '', placeholder = '', type = '') {
+  renderTextField(id, label, maxLen = '', placeholder = '', type = 'text') {
     return (
-      <div>
-        <label htmlFor={id}>{`${label}`}</label>
-        <TextField
-          id={id}
-          value={this.state[id]}
-          type={type || 'text'}
-          maxLength={maxLen}
-          placeholder={placeholder}
-          autoComplete="off"
-          fullWidth
-          multiLine={type === 'textarea'}
-          onChange={(e) => {
-            const value = helpers.cortarPalavra(e.target.value, maxLen);
-            this.handleChange(value, id)
-          }}
-        />
-        <br />
-      </div>
+      <TextField
+        id={`${id}`}
+        value={this.state[id]}
+        type={type}
+        maxLength={maxLen}
+        hintText={placeholder}
+        floatingLabelText={label}
+        floatingLabelFixed
+        autoComplete="off"
+        fullWidth
+        multiLine={type === 'textarea'}
+        onChange={(e) => {
+          const value = helpers.cortarPalavra(e.target.value, maxLen);
+          this.handleChange(value, id)
+        }}
+      />
     )
   }
 

@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField'
-import * as helpers from '../../../helpers';
+import { cortarPalavra } from '../../../helpers';
+
 import { RacaFormGroup, TelefoneFormGroup } from '../../FormGroups'
 
 export default class NovaTestemunhaForm extends Component {
@@ -15,7 +16,7 @@ export default class NovaTestemunhaForm extends Component {
       raca: '',
       dataNascimento: '',
       telefone: '',
-      caracteristicasTestemunha: '',
+      caracteristicas: '',
     }
   }
 
@@ -27,24 +28,21 @@ export default class NovaTestemunhaForm extends Component {
 
   renderTextField(id, label, maxLen = '', placeholder = '', type = '') {
     return (
-      <div>
-        <label htmlFor={id}>{`${label}`}</label>
-        <TextField
-          id={id}
-          value={this.state[id]}
-          type={type || 'text'}
-          maxLength={maxLen}
-          placeholder={placeholder}
-          autoComplete="off"
-          fullWidth
-          multiLine={type === 'textarea'}
-          onChange={(e) => {
-            const value = helpers.cortarPalavra(e.target.value, maxLen);
-            this.handleChange(value, id)
-          }}
-        />
-        <br />
-      </div>
+      <TextField
+        id={`${id}-testemunha`}
+        value={this.state[id]}
+        type={type}
+        maxLength={maxLen}
+        hintText={placeholder}
+        floatingLabelText={label}
+        floatingLabelFixed
+        autoComplete="off"
+        fullWidth
+        multiLine={type === 'textarea'}
+        onChange={(e) => {
+          this.handleChange(cortarPalavra(e.target.value, maxLen), id)
+        }}
+      />
     )
   }
 
@@ -54,9 +52,9 @@ export default class NovaTestemunhaForm extends Component {
         <h3>Informacões da Testemunha</h3>
         <br />
 
-        { this.renderTextField('nome', 'Nome') }
+        { this.renderTextField('nome', 'Nome (máximo de 40 caracteres)', '40') }
 
-        { this.renderTextField('genero', 'Gênero') }
+        { this.renderTextField('genero', 'Gênero (máximo de 15 caracteres)', '15', 'Ex.: Feminino, Masculino, Não Binário...') }
 
         <RacaFormGroup
           id={'raca'}
@@ -70,10 +68,12 @@ export default class NovaTestemunhaForm extends Component {
           handleChange={this.handleChange}
         />
 
+        { this.renderTextField('telefone', 'Telefone (máximo de 10 caracteres)', '10', '', '') }
+
         { this.renderTextField('dataNascimento', 'Data de Nascimento', '', '', 'date') }
 
         { this.renderTextField(
-          'caracteristicasTestemunha',
+          'caracteristicas',
           '* Por favor, descreva aqui as características da testemunha',
           '255',
           'Era uma mulher negra, com aproximadamente 40 anos, magra, alta com cabelo curto...',

@@ -81,7 +81,7 @@ body {
   }
 }
 
-form[name="form-denuncia"] {
+form#form-nova-denuncia {
   margin: 15px auto;
   max-width: 960px;
 
@@ -107,10 +107,6 @@ form[name="form-denuncia"] {
 
   textarea:focus::-webkit-input-placeholder {
     color: transparent;
-  }
-
-  label {
-    color: rgba(0, 188, 212, .5)
   }
 
   input {

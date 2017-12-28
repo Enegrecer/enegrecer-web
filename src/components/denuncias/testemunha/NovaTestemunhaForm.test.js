@@ -13,9 +13,24 @@ describe('validacoesCamposTestemunha', () => {
         raca: '',
         dataNascimento: '',
         telefone: '',
-        caracteristicasTestemunha: '',
-      }
+        caracteristicas: '',
+      };
       expect(wrapper.instance().state).toEqual(expectedState)
+    });
+  });
+
+  describe('quando o valor do campo for alterado', () => {
+    const wrapper = shallow(<NovaTestemunhaForm />);
+
+    it('deve cortar o nome se tiver mais de 40 caracteres', () => {
+      const eventMock = {
+        target: {
+          value: 'Coletivo nacional de Juventude Enegrecer é uma expressão do movimento social',
+        },
+      };
+
+      wrapper.find('#nome-testemunha').simulate('change', eventMock);
+      expect(wrapper.state().nome).toEqual('Coletivo nacional de Juventude Enegrecer');
     });
   });
 });

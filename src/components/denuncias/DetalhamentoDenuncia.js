@@ -70,12 +70,10 @@ export default class DetalhamentoDenuncia extends Component {
           <RadioButton className="inch-button" value="injuria" label="Injúria" />
           <RadioButton className="half-button" value="racismo" label="Racismo" />
         </RadioButtonGroup>
-        <br />
 
-        <h3>Local do crime</h3>
-        <br />
+        <h4>Local do crime</h4>
 
-        { this.renderTextField('endereco', 'Endereço', '255', 'Endereco', '', 'textarea')}
+        { this.renderTextField('endereco', 'Endereço', '255', '', '', 'textarea')}
 
         <EstadoFormGroup
           id="estado"

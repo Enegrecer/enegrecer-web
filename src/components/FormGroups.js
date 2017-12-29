@@ -5,16 +5,15 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import { ESTADOS } from '../constants';
 
-export function EstadoFormGroup(props) {
+export function EstadoFormGroup({ handleChange, ...rest }) {
   return (
     <SelectField
-      id={props.id}
-      value={props.value}
+      {...rest}
       hintText="Escolha uma opção"
       floatingLabelText="Estado"
       floatingLabelFixed
       fullWidth
-      onChange={(_, __, v) => props.handleChange(v, 'estado')}
+      onChange={(_, __, v) => handleChange(v, 'estado')}
     >
       {
         ESTADOS.map(
@@ -25,16 +24,14 @@ export function EstadoFormGroup(props) {
   )
 }
 
-export function TelefoneFormGroup(props) {
+export function TelefoneFormGroup({ handleChange, ...props }) {
   return (
     <div>
       <label htmlFor={props.id}>Telefone</label>
       <InputMask
+        {...props}
         type="text"
-        name={props.id}
-        id={props.id}
-        onChange={e => props.handleChange(e.target.value, 'telefone')}
-        value={props.value}
+        onChange={e => handleChange(e.target.value, 'telefone')}
         mask="(99) 9 9999-9999"
         maskChar=" "
       />
@@ -42,16 +39,15 @@ export function TelefoneFormGroup(props) {
   )
 }
 
-export function RacaFormGroup(props) {
+export function RacaFormGroup({ handleChange, ...rest }) {
   return (
     <SelectField
-      id={props.id}
-      value={props.value}
+      {...rest}
       hintText="Escolha uma opção"
       floatingLabelText={'Cor ou Raca'}
       floatingLabelFixed
       fullWidth
-      onChange={(_, $_, v) => props.handleChange(v, 'raca')}
+      onChange={(_, $_, v) => handleChange(v, 'raca')}
     >
       <MenuItem value={'preta'} primaryText="Preta" />
       <MenuItem value={'parda'} primaryText="Parda" />
@@ -59,20 +55,14 @@ export function RacaFormGroup(props) {
   )
 }
 
-EstadoFormGroup.propTypes = {
+const formGroupPropTypes = {
   id: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired
 };
 
-TelefoneFormGroup.propTypes = {
-  id: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  handleChange: PropTypes.func.isRequired
-};
+EstadoFormGroup.propTypes = { ...formGroupPropTypes };
 
-RacaFormGroup.propTypes = {
-  id: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  handleChange: PropTypes.func.isRequired
-};
+TelefoneFormGroup.propTypes = { ...formGroupPropTypes };
+
+RacaFormGroup.propTypes = { ...formGroupPropTypes };

@@ -20,7 +20,7 @@ describe('NovaVitimaForm Component', () => {
         },
       };
 
-      wrapper.find('#nome').simulate('change', eventMock);
+      wrapper.find('#nome-vitima').simulate('change', eventMock);
       expect(wrapper.state().nome).toEqual('Coletivo nacional de Juventude Enegrecer');
     });
   });

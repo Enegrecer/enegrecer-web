@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { mock } from 'sinon';
-import { EstadoFormGroup } from './FormGroups';
+import { EstadoFormGroup, RacaFormGroup } from './FormGroups';
 
 
 describe('EstadoFormGroup', () => {
@@ -20,7 +20,7 @@ describe('EstadoFormGroup', () => {
 describe('RacaFormGroup', () => {
   it('renderiza o componente sem erros', () => {
     const wrapper = shallow(
-      <EstadoFormGroup
+      <RacaFormGroup
         id={'raca'}
         value={''}
         handleChange={mock()}

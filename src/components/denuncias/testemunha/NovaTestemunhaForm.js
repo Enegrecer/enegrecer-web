@@ -50,7 +50,6 @@ export default class NovaTestemunhaForm extends Component {
     return (
       <div>
         <h3>Informacões da Testemunha</h3>
-        <br />
 
         { this.renderTextField('nome', 'Nome (máximo de 40 caracteres)', '40') }
 
@@ -62,19 +61,17 @@ export default class NovaTestemunhaForm extends Component {
           handleChange={this.handleChange}
         />
 
+        { this.renderTextField('dataNascimento', 'Data de Nascimento', '', '', 'date') }
+
         <TelefoneFormGroup
           id={'telefone'}
           value={this.state.telefone}
           handleChange={this.handleChange}
         />
 
-        { this.renderTextField('telefone', 'Telefone (máximo de 10 caracteres)', '10', '', '') }
-
-        { this.renderTextField('dataNascimento', 'Data de Nascimento', '', '', 'date') }
-
         { this.renderTextField(
           'caracteristicas',
-          '* Por favor, descreva aqui as características da testemunha',
+          '* Por favor, descreva aqui as características da testemunha (máximo de 255 caracteres)',
           '255',
           'Era uma mulher negra, com aproximadamente 40 anos, magra, alta com cabelo curto...',
           'textarea')

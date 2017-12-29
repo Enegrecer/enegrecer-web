@@ -39,7 +39,7 @@ export default class NovaVitimaForm extends Component {
   renderTextField(id, label, maxLen = '', placeholder = '', type = '') {
     return (
       <TextField
-        id={id}
+        id={`${id}-vitima`}
         value={this.state[id]}
         type={type || 'text'}
         maxLength={maxLen}

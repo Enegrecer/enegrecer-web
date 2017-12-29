@@ -64,7 +64,7 @@ function focoNoCampo(idCampo) {
 
 export function alertaDeCamposObrigatorios() {
   alert('Atenção! Para completar o envio da denúncia, precisamos do preenchimento do seguinte campo: "Por favor, descreva aqui as características da vítima:"')
-  focoNoCampo('caracteristicasVitima');
+  focoNoCampo('caracteristicasVitima-vitima');
   return false
 }
 
@@ -96,8 +96,8 @@ export function validaTamanhoDeCampoString(string, tamanho) {
   return false;
 }
 
-export function validaCamposForm(campos, camposObgs = ['caracteristicasVitima']) {
-  if (campos === null || camposObgs.every(attr => campoVazio(campos[attr]))) {
+export function validaCamposForm(campos, camposObrigatorios = ['caracteristicasVitima']) {
+  if (campos === null || camposObrigatorios.every(attr => campoVazio(campos[attr]))) {
     return alertaDeCamposObrigatorios();
   } else if (verificarCamposVaziosdaVitima(campos)) {
     return alertaDeCamposNaoPreenchidos();

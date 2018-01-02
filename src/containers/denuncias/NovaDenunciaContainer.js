@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
 import { criarDenunciaRequisicao } from '../../actions';
 import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
 import { validaCamposForm } from '../../utils/validacoesCamposForm';
@@ -17,6 +17,7 @@ export class NovaDenunciaContainer extends Component {
       denunciante: null,
       testemunha: null,
       userId: this.props.currentUserUID,
+      cadastroComSucesso: false
     };
   }
 
@@ -24,7 +25,7 @@ export class NovaDenunciaContainer extends Component {
     if (validaCamposForm(this.state.vitima)) {
       this.props.criarDenunciaRequisicao({
         ...this.state,
-        onSuccess: push('/'),
+        onSuccess: () => { this.setState(() => ({ cadastroComSucesso: true })) },
       });
     }
   }
@@ -39,6 +40,12 @@ export class NovaDenunciaContainer extends Component {
   }
 
   render() {
+    const { cadastroComSucesso } = this.state;
+    if (cadastroComSucesso) {
+      return (
+        <Redirect to="/" />
+      );
+    }
     return (
       <NovaDenunciaForm
         salvarDenuncia={this.onPressSaveButton}

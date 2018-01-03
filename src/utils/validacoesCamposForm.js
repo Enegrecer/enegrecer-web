@@ -68,6 +68,12 @@ export function alertaDeCamposObrigatorios() {
   return false
 }
 
+export function verificarCamposObrigatoriosVazios(campos, obrigatorios = []) {
+  return campos === null ||
+    (obrigatorios.length > 0 &&
+      obrigatorios.every(attr => campoVazio(campos[attr])))
+}
+
 export function verificarCamposVaziosdaVitima(campos) {
   const getCamposValidos = attr => typeof campos[attr] === 'string' && attr !== 'caracteristicasVitima';
 
@@ -96,8 +102,8 @@ export function validaTamanhoDeCampoString(string, tamanho) {
   return false;
 }
 
-export function validaCamposForm(campos, camposObrigatorios = ['caracteristicasVitima']) {
-  if (campos === null || camposObrigatorios.every(attr => campoVazio(campos[attr]))) {
+export function validaCamposForm(campos, obrigatorios = []) {
+  if (verificarCamposObrigatoriosVazios(campos, obrigatorios)) {
     return alertaDeCamposObrigatorios();
   } else if (verificarCamposVaziosdaVitima(campos)) {
     return alertaDeCamposNaoPreenchidos();

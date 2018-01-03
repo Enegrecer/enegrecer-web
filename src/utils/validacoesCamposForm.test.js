@@ -39,18 +39,18 @@ describe('validacoesCamposForm', () => {
     afterEach(() => {})
 
     it('O formulário deve ser válido se todos os campos forem preenchidos e estiverem todos corretos', () => {
-      const retorno = validacoesCamposForm.validaCamposForm(camposPreenchidosVitima);
+      const retorno = validacoesCamposForm.validaCamposForm(camposPreenchidosVitima, ['caracteristicasVitima']);
       assert.isTrue(retorno);
     })
 
     it('O formulário deve ser inválido caso o usuário não tenha inserido dados', () => {
-      const retorno = validacoesCamposForm.validaCamposForm(null);
+      const retorno = validacoesCamposForm.validaCamposForm(null, ['caracteristicasVitima']);
       assert.isFalse(retorno);
     });
 
     it('O formulário deve ser inválido se todos os campos opcionais' +
       ' e o campo obrigatório estejam vazios', () => {
-      const retorno = validacoesCamposForm.validaCamposForm(camposVaziosVitima);
+      const retorno = validacoesCamposForm.validaCamposForm(camposVaziosVitima, ['caracteristicasVitima']);
       assert.isFalse(retorno);
     })
 
@@ -59,7 +59,7 @@ describe('validacoesCamposForm', () => {
         ...camposPreenchidosVitima,
         caracteristicasVitima: '',
       }
-      const retorno = validacoesCamposForm.validaCamposForm(campos);
+      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
     })
 
@@ -70,7 +70,7 @@ describe('validacoesCamposForm', () => {
         caracteristicasVitima: 'caracteristicasVitima',
       }
       sinon.stub(window, 'confirm').returns(true);
-      const retorno = validacoesCamposForm.validaCamposForm(campos);
+      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isTrue(retorno);
       window.confirm.restore();
     })
@@ -82,7 +82,7 @@ describe('validacoesCamposForm', () => {
         caracteristicasVitima: 'caracteristicasVitima',
       }
       sinon.stub(window, 'confirm').returns(false);
-      const retorno = validacoesCamposForm.validaCamposForm(campos);
+      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
       window.confirm.restore();
     })
@@ -93,7 +93,7 @@ describe('validacoesCamposForm', () => {
         dataNascimento: '01/01/1900',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      const retorno = validacoesCamposForm.validaCamposForm(campos);
+      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
     })
 
@@ -105,7 +105,7 @@ describe('validacoesCamposForm', () => {
         dataNascimento: dataDeHoje,
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      const retorno = validacoesCamposForm.validaCamposForm(campos);
+      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
     })
 
@@ -117,7 +117,7 @@ describe('validacoesCamposForm', () => {
         dataNascimento: dataDeAmanha,
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      const retorno = validacoesCamposForm.validaCamposForm(campos);
+      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
     })
 
@@ -127,7 +127,7 @@ describe('validacoesCamposForm', () => {
         telefone: '123456789012',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      const retorno = validacoesCamposForm.validaCamposForm(campos);
+      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
     })
 
@@ -137,7 +137,7 @@ describe('validacoesCamposForm', () => {
         telefone: '123456789',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      const retorno = validacoesCamposForm.validaCamposForm(campos);
+      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
     })
 
@@ -147,25 +147,25 @@ describe('validacoesCamposForm', () => {
         email: 'email1234',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      const retorno = validacoesCamposForm.validaCamposForm(campos);
+      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
     })
 
     it('O formulário deve ser inválido caso o usuário insira números no campo nome', () => {
       const nomeEsperado = 'Izael123'
-      const retorno = validacoesCamposForm.validaCamposForm(nomeEsperado);
+      const retorno = validacoesCamposForm.validaCamposForm(nomeEsperado, ['caracteristicasVitima']);
       assert.isFalse(retorno);
     })
 
     it('O formulário deve ser inválido caso o usuário insira caracteres especiais no campo nome', () => {
       const nomeEsperado = 'Izael'
-      const retorno = validacoesCamposForm.validaCamposForm(nomeEsperado);
+      const retorno = validacoesCamposForm.validaCamposForm(nomeEsperado, ['caracteristicasVitima']);
       assert.isFalse(retorno);
     })
 
     it('O formulário deve ser inválido caso o usuário insira acentos no campo nome', () => {
       const nomeEsperado = 'Izáel'
-      const retorno = validacoesCamposForm.validaCamposForm(nomeEsperado);
+      const retorno = validacoesCamposForm.validaCamposForm(nomeEsperado, ['caracteristicasVitima']);
       assert.isFalse(retorno);
     })
 

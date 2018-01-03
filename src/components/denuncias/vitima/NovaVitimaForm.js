@@ -29,12 +29,15 @@ export default class NovaVitimaForm extends Component {
     };
   }
 
+  componentDidMount() {
+    this.props.handleChange({ vitima: this.state })
+  }
+
   handleChange(value, property) {
     this.setState({ [property]: value },
       () => this.props.handleChange({ vitima: this.state })
     );
   }
-
 
   renderTextField(id, label, maxLen = '', placeholder = '', type = '') {
     return (

@@ -20,11 +20,14 @@ export default class NovaTestemunhaForm extends Component {
     }
   }
 
+  componentDidMount() {
+    this.props.handleChange({ testemunha: this.state })
+  }
+
   handleChange(value, property) {
     this.setState({ [property]: value },
       () => this.props.handleChange({ testemunha: this.state }));
   }
-
 
   renderTextField(id, label, maxLen = '', placeholder = '', type = '') {
     return (

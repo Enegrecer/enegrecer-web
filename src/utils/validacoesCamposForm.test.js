@@ -29,7 +29,7 @@ describe('validacoesCamposForm', () => {
         dataNascimento: '01/01/2000',
         endereco: 'endereco',
         estado: 'estado',
-        telefone: '12345678901',
+        telefone: '(81) 12345-4321',
         email: 'email@email.com',
         naturalidade: 'naturalidade',
         caracteristicasVitima: 'caracteristicasVitima',
@@ -121,20 +121,20 @@ describe('validacoesCamposForm', () => {
       assert.isFalse(retorno);
     })
 
-    it('O formulário deve ser inválido se o campo telefone for maior que 11', () => {
+    it('O formulário deve ser inválido se o campo telefone for maior que 15', () => {
       const campos = {
         ...camposVaziosVitima,
-        telefone: '123456789012',
+        telefone: '(81) 99999-99999',
         caracteristicasVitima: 'caracteristicasVitima',
       }
       const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
-    it('O formulário deve ser inválido se o campo telefone for menor que 10', () => {
+    it('O formulário deve ser inválido se o campo telefone for menor que 14', () => {
       const campos = {
         ...camposVaziosVitima,
-        telefone: '123456789',
+        telefone: '(81) 99999-99',
         caracteristicasVitima: 'caracteristicasVitima',
       }
       const retorno = validacoesCamposForm.validaCamposForm(campos);

@@ -36,7 +36,7 @@ export function TelefoneFormGroup(props) {
         id={props.id}
         onChange={e => props.handleChange(e.target.value, 'telefone')}
         value={props.value}
-        mask="(99) 9 9999-9999"
+        mask="(99) 99999-9999"
         maskChar=" "
       />
     </dib>

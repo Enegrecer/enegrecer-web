@@ -18,12 +18,14 @@ function nomeDaVitimaInvalido(valor) {
 }
 
 function tamanhoTelefoneValido(valor) {
-  return valor.length === 10 || valor.length === 11;
+  return valor.length === 14 || valor.length === 15;
 }
 
-function ehNumeroValido(valor) {
-  const reg = new RegExp('^[0-9]+$');
-  return (reg.test(valor));
+function formatoDeTelefoneValido(valor) {
+  console.log(valor);
+  const reg = new RegExp(/^\([1-9]{2}\) [2-9][0-9]{3,4}\-[0-9]{3,4}$/);
+  console.log(reg.test(valor));
+  return reg.test(valor);
 }
 
 function ehEmailValido(valor) {
@@ -35,7 +37,7 @@ function validarEmail(valor) {
 }
 
 function validarTelefone(valor) {
-  return (!isNaN(valor) && ehNumeroValido(valor) && tamanhoTelefoneValido(valor)) || (valor === '');
+  return (formatoDeTelefoneValido(valor) && tamanhoTelefoneValido(valor)) || (valor === '');
 }
 
 function validarDataDeNascimento(valor) {

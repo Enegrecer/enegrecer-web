@@ -40,6 +40,7 @@ describe('validacoesCamposForm', () => {
 
     it('O formulário deve ser válido se todos os campos forem preenchidos e estiverem todos corretos', () => {
       const retorno = validacoesCamposForm.validaCamposForm(camposPreenchidosVitima);
+      console.log(retorno);
       assert.isTrue(retorno);
     })
 

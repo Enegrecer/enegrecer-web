@@ -22,7 +22,7 @@ export class NovaDenunciaContainer extends Component {
 
   onPressSaveButton() {
     if (validaCamposForm(this.state.vitima, ['caracteristicasVitima']) &&
-      verificarCamposObrigatoriosVazios(this.state.testemunha)) {
+      verificarCamposObrigatoriosVazios(this.state.testemunha,['caracteristicasTestemunha'] )) {
       this.props.criarDenunciaRequisicao({
         ...this.state,
         onSuccess: push('/'),

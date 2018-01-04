@@ -29,7 +29,7 @@ describe('validacoesCamposForm', () => {
         dataNascimento: '01/01/2000',
         endereco: 'endereco',
         estado: 'estado',
-        telefone: '12345678901',
+        telefone: '(81) 12345-4321',
         email: 'email@email.com',
         naturalidade: 'naturalidade',
         caracteristicasVitima: 'caracteristicasVitima',
@@ -39,12 +39,12 @@ describe('validacoesCamposForm', () => {
     afterEach(() => {})
 
     it('O formulário deve ser válido se todos os campos forem preenchidos e estiverem todos corretos', () => {
-      const retorno = validacoesCamposForm.validaCamposForm(camposPreenchidosVitima, ['caracteristicasVitima']);
+      const retorno = validacoesCamposForm.validaCamposForm(camposPreenchidosVitima);
       assert.isTrue(retorno);
     })
 
     it('O formulário deve ser inválido caso o usuário não tenha inserido dados', () => {
-      const retorno = validacoesCamposForm.validaCamposForm(null, ['caracteristicasVitima']);
+      const retorno = validacoesCamposForm.validaCamposForm(null);
       assert.isFalse(retorno);
     });
 
@@ -70,7 +70,7 @@ describe('validacoesCamposForm', () => {
         caracteristicasVitima: 'caracteristicasVitima',
       }
       sinon.stub(window, 'confirm').returns(true);
-      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
+      const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isTrue(retorno);
       window.confirm.restore();
     })
@@ -82,7 +82,7 @@ describe('validacoesCamposForm', () => {
         caracteristicasVitima: 'caracteristicasVitima',
       }
       sinon.stub(window, 'confirm').returns(false);
-      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
+      const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
       window.confirm.restore();
     })
@@ -93,7 +93,7 @@ describe('validacoesCamposForm', () => {
         dataNascimento: '01/01/1900',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
+      const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
@@ -105,7 +105,7 @@ describe('validacoesCamposForm', () => {
         dataNascimento: dataDeHoje,
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
+      const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
@@ -117,27 +117,27 @@ describe('validacoesCamposForm', () => {
         dataNascimento: dataDeAmanha,
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
+      const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
-    it('O formulário deve ser inválido se o campo telefone for maior que 11', () => {
+    it('O formulário deve ser inválido se o campo telefone for maior que 15', () => {
       const campos = {
         ...camposVaziosVitima,
-        telefone: '123456789012',
+        telefone: '(81) 99999-99999',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
+      const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
-    it('O formulário deve ser inválido se o campo telefone for menor que 10', () => {
+    it('O formulário deve ser inválido se o campo telefone for menor que 14', () => {
       const campos = {
         ...camposVaziosVitima,
-        telefone: '123456789',
+        telefone: '(81) 99999-99',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
+      const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
@@ -147,25 +147,37 @@ describe('validacoesCamposForm', () => {
         email: 'email1234',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
+      const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
     })
 
     it('O formulário deve ser inválido caso o usuário insira números no campo nome', () => {
-      const nomeEsperado = 'Izael123'
-      const retorno = validacoesCamposForm.validaCamposForm(nomeEsperado, ['caracteristicasVitima']);
+      const campos = {
+        ...camposVaziosVitima,
+        nome: 'Izael123',
+        caracteristicasVitima: 'caracteristicasVitima',
+      }      
+      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
     })
 
     it('O formulário deve ser inválido caso o usuário insira caracteres especiais no campo nome', () => {
-      const nomeEsperado = 'Izael'
-      const retorno = validacoesCamposForm.validaCamposForm(nomeEsperado, ['caracteristicasVitima']);
+      const campos = {
+        ...camposVaziosVitima,
+        nome: 'Izael!_',
+        caracteristicasVitima: 'caracteristicasVitima',
+      }
+      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
     })
 
     it('O formulário deve ser inválido caso o usuário insira acentos no campo nome', () => {
-      const nomeEsperado = 'Izáel'
-      const retorno = validacoesCamposForm.validaCamposForm(nomeEsperado, ['caracteristicasVitima']);
+      const campos = {
+        ...camposVaziosVitima,
+        nome: 'Mae^',
+        caracteristicasVitima: 'caracteristicasVitima',
+      }
+      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
     })
 

@@ -8,6 +8,11 @@ function temCaractereEspecial(valor) {
   return format.test(valor);
 }
 
+function temAcentuacao(valor) {
+  const format = /[\wÀ-ú]/;
+  return format.test(valor)
+}
+
 function temNumero(valor) {
   const format = /\d/;
   return format.test(valor);
@@ -18,12 +23,12 @@ function nomeDaVitimaInvalido(valor) {
 }
 
 function tamanhoTelefoneValido(valor) {
-  return valor.length === 10 || valor.length === 11;
+  return valor.length === 14 || valor.length === 15;
 }
 
-function ehNumeroValido(valor) {
-  const reg = new RegExp('^[0-9]+$');
-  return (reg.test(valor));
+function formatoDeTelefoneValido(valor) {
+  const reg = new RegExp(/^\([1-9]{2}\) [0-9][0-9]{3,4}\-[0-9]{3,4}$/);
+  return reg.test(valor);
 }
 
 function ehEmailValido(valor) {
@@ -35,7 +40,7 @@ function validarEmail(valor) {
 }
 
 function validarTelefone(valor) {
-  return (!isNaN(valor) && ehNumeroValido(valor) && tamanhoTelefoneValido(valor)) || (valor === '');
+  return (formatoDeTelefoneValido(valor) && tamanhoTelefoneValido(valor)) || (valor === '');
 }
 
 function validarDataDeNascimento(valor) {

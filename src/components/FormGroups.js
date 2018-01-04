@@ -31,7 +31,10 @@ export function TelefoneFormGroup({ handleChange, ...props }) {
       <InputMask
         {...props}
         type="text"
-        onChange={e => handleChange(e.target.value, 'telefone')}
+        name={props.id}
+        id={props.id}
+        onChange={e => props.handleChange(e.target.value, 'telefone')}
+        value={props.value} 
         mask="(99) 99999-9999"
         maskChar=" "
       />

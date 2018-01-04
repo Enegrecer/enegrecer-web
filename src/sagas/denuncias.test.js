@@ -12,8 +12,8 @@ describe('Saga de Denúncias', () => {
       payload: {
         idCategoria: 'injuria',
         detalhamento: 'teste',
-        onSuccess: {
-          type: 'TESTE_CRIAR_DENUNCIA',
+        onSuccess() {
+          'Redirect to page'
         },
       },
     };
@@ -35,7 +35,7 @@ describe('Saga de Denúncias', () => {
 
     it('deve despachar a ação de onSuccess', () => {
       expect(saga.next().value)
-        .toEqual(put(mockDaAcaoDeCriarDenuncia.payload.onSuccess));
+        .toEqual(call(mockDaAcaoDeCriarDenuncia.payload.onSuccess));
     });
   });
 });

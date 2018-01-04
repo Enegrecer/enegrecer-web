@@ -1,16 +1,16 @@
 
 import {
-    CRIAR_DENUNCIA_SUCESSO
+  CRIAR_DENUNCIA_SUCESSO
 } from '../actions';
 
 const initialState = {
-   denunciaCadastradaComSucesso: false
+  denunciaCadastradaComSucesso: false
 };
 
-export default function projects(state = initialState, action) {
-  switch(action.type) {
+export default function denuncias(state = initialState, action) {
+  switch (action.type) {
     case CRIAR_DENUNCIA_SUCESSO:
-      return Object.assign({}, state, { denunciaCadastradaComSucesso: true});
+      return Object.assign({}, state, { denunciaCadastradaComSucesso: true });
     default:
       return state;
   }

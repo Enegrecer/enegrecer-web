@@ -40,7 +40,6 @@ describe('validacoesCamposForm', () => {
 
     it('O formulário deve ser válido se todos os campos forem preenchidos e estiverem todos corretos', () => {
       const retorno = validacoesCamposForm.validaCamposForm(camposPreenchidosVitima);
-      console.log(retorno);
       assert.isTrue(retorno);
     })
 
@@ -51,7 +50,7 @@ describe('validacoesCamposForm', () => {
 
     it('O formulário deve ser inválido se todos os campos opcionais' +
       ' e o campo obrigatório estejam vazios', () => {
-      const retorno = validacoesCamposForm.validaCamposForm(camposVaziosVitima);
+      const retorno = validacoesCamposForm.validaCamposForm(camposVaziosVitima, ['caracteristicasVitima']);
       assert.isFalse(retorno);
     })
 
@@ -60,7 +59,7 @@ describe('validacoesCamposForm', () => {
         ...camposPreenchidosVitima,
         caracteristicasVitima: '',
       }
-      const retorno = validacoesCamposForm.validaCamposForm(campos);
+      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
     })
 
@@ -153,20 +152,32 @@ describe('validacoesCamposForm', () => {
     })
 
     it('O formulário deve ser inválido caso o usuário insira números no campo nome', () => {
-      const nomeEsperado = 'Izael123'
-      const retorno = validacoesCamposForm.validaCamposForm(nomeEsperado);
+      const campos = {
+        ...camposVaziosVitima,
+        nome: 'Izael123',
+        caracteristicasVitima: 'caracteristicasVitima',
+      }      
+      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
     })
 
     it('O formulário deve ser inválido caso o usuário insira caracteres especiais no campo nome', () => {
-      const nomeEsperado = 'Izael'
-      const retorno = validacoesCamposForm.validaCamposForm(nomeEsperado);
+      const campos = {
+        ...camposVaziosVitima,
+        nome: 'Izael!_',
+        caracteristicasVitima: 'caracteristicasVitima',
+      }
+      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
     })
 
     it('O formulário deve ser inválido caso o usuário insira acentos no campo nome', () => {
-      const nomeEsperado = 'Izáel'
-      const retorno = validacoesCamposForm.validaCamposForm(nomeEsperado);
+      const campos = {
+        ...camposVaziosVitima,
+        nome: 'Mae^',
+        caracteristicasVitima: 'caracteristicasVitima',
+      }
+      const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
     })
 

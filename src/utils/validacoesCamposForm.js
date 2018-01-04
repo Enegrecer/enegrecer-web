@@ -8,6 +8,11 @@ function temCaractereEspecial(valor) {
   return format.test(valor);
 }
 
+function temAcentuacao(valor) {
+  const format = /[\wÀ-ú]/;
+  return format.test(valor)
+}
+
 function temNumero(valor) {
   const format = /\d/;
   return format.test(valor);
@@ -22,7 +27,7 @@ function tamanhoTelefoneValido(valor) {
 }
 
 function formatoDeTelefoneValido(valor) {
-  const reg = new RegExp(/^\([1-9]{2}\) [2-9][0-9]{3,4}\-[0-9]{3,4}$/);
+  const reg = new RegExp(/^\([1-9]{2}\) [0-9][0-9]{3,4}\-[0-9]{3,4}$/);
   return reg.test(valor);
 }
 
@@ -64,8 +69,14 @@ function focoNoCampo(idCampo) {
 
 export function alertaDeCamposObrigatorios() {
   alert('Atenção! Para completar o envio da denúncia, precisamos do preenchimento do seguinte campo: "Por favor, descreva aqui as características da vítima:"')
-  focoNoCampo('caracteristicasVitima');
+  focoNoCampo('caracteristicasVitima-vitima');
   return false
+}
+
+export function verificarCamposObrigatoriosVazios(campos, obrigatorios = []) {
+  return campos === null ||
+    (obrigatorios.length > 0 &&
+      obrigatorios.every(attr => campoVazio(campos[attr])))
 }
 
 export function verificarCamposVaziosdaVitima(campos) {
@@ -96,8 +107,8 @@ export function validaTamanhoDeCampoString(string, tamanho) {
   return false;
 }
 
-export function validaCamposForm(campos, camposObgs = ['caracteristicasVitima']) {
-  if (campos === null || camposObgs.every(attr => campoVazio(campos[attr]))) {
+export function validaCamposForm(campos, obrigatorios = []) {
+  if (verificarCamposObrigatoriosVazios(campos, obrigatorios)) {
     return alertaDeCamposObrigatorios();
   } else if (verificarCamposVaziosdaVitima(campos)) {
     return alertaDeCamposNaoPreenchidos();

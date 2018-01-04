@@ -5,32 +5,31 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import { ESTADOS } from '../constants';
 
-export function EstadoFormGroup(props) {
+export function EstadoFormGroup({ handleChange, ...rest }) {
   return (
-    <div>
-      <label htmlFor={props.id}>Estado</label>
-      <SelectField
-        id={props.id}
-        value={props.value}
-        floatingLabelText="Escolha uma opção"
-        fullWidth
-        onChange={(_, __, v) => props.handleChange(v, 'estado')}
-      >
-        {
-          ESTADOS.map(
-            val => <MenuItem key={val} value={val} primaryText={val} />
-          )
-        }
-      </SelectField>
-    </div>
+    <SelectField
+      {...rest}
+      hintText="Escolha uma opção"
+      floatingLabelText="Estado"
+      floatingLabelFixed
+      fullWidth
+      onChange={(_, __, v) => handleChange(v, 'estado')}
+    >
+      {
+        ESTADOS.map(
+          val => <MenuItem key={val} value={val} primaryText={val} />
+        )
+      }
+    </SelectField>
   )
 }
 
-export function TelefoneFormGroup(props) {
+export function TelefoneFormGroup({ handleChange, ...props }) {
   return (
-    <dib>
+    <div>
       <label htmlFor={props.id}>Telefone</label>
       <InputMask
+        {...props}
         type="text"
         name={props.id}
         id={props.id}
@@ -39,42 +38,34 @@ export function TelefoneFormGroup(props) {
         mask="(99) 99999-9999"
         maskChar=" "
       />
-    </dib>
-  )
-}
-
-export function RacaFormGroup(props) {
-  return (
-    <div>
-      <label htmlFor={props.id}>Cor ou Raca</label>
-      <SelectField
-        id={props.id}
-        value={props.value}
-        floatingLabelText="Escolha uma opção"
-        fullWidth
-        onChange={(_, $_, v) => props.handleChange(v, 'raca')}
-      >
-        <MenuItem value={'preta'} primaryText="Preta" />
-        <MenuItem value={'parda'} primaryText="Parda" />
-      </SelectField>
     </div>
   )
 }
 
-EstadoFormGroup.propTypes = {
+export function RacaFormGroup({ handleChange, ...rest }) {
+  return (
+    <SelectField
+      {...rest}
+      hintText="Escolha uma opção"
+      floatingLabelText={'Cor ou Raca'}
+      floatingLabelFixed
+      fullWidth
+      onChange={(_, $_, v) => handleChange(v, 'raca')}
+    >
+      <MenuItem value={'preta'} primaryText="Preta" />
+      <MenuItem value={'parda'} primaryText="Parda" />
+    </SelectField>
+  )
+}
+
+const formGroupPropTypes = {
   id: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired
 };
 
-TelefoneFormGroup.propTypes = {
-  id: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  handleChange: PropTypes.func.isRequired
-};
+EstadoFormGroup.propTypes = { ...formGroupPropTypes };
 
-RacaFormGroup.propTypes = {
-  id: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  handleChange: PropTypes.func.isRequired
-};
+TelefoneFormGroup.propTypes = { ...formGroupPropTypes };
+
+RacaFormGroup.propTypes = { ...formGroupPropTypes };

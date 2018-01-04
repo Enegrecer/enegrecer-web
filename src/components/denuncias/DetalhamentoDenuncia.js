@@ -27,26 +27,24 @@ export default class DetalhamentoDenuncia extends Component {
     );
   }
 
-  renderTextField(id, label, maxLen = '', placeholder = '', type = '') {
+  renderTextField(id, label, maxLen = '', placeholder = '', type = 'text') {
     return (
-      <div>
-        <label htmlFor={id}>{`${label}`}</label>
-        <TextField
-          id={id}
-          value={this.state[id]}
-          type={type || 'text'}
-          maxLength={maxLen}
-          placeholder={placeholder}
-          autoComplete="off"
-          fullWidth
-          multiLine={type === 'textarea'}
-          onChange={(e) => {
-            const value = helpers.cortarPalavra(e.target.value, maxLen);
-            this.handleChange(value, id)
-          }}
-        />
-        <br />
-      </div>
+      <TextField
+        id={`${id}`}
+        value={this.state[id]}
+        type={type}
+        maxLength={maxLen}
+        hintText={placeholder}
+        floatingLabelText={label}
+        floatingLabelFixed
+        autoComplete="off"
+        fullWidth
+        multiLine={type === 'textarea'}
+        onChange={(e) => {
+          const value = helpers.cortarPalavra(e.target.value, maxLen);
+          this.handleChange(value, id)
+        }}
+      />
     )
   }
 
@@ -72,12 +70,10 @@ export default class DetalhamentoDenuncia extends Component {
           <RadioButton className="inch-button" value="injuria" label="Injúria" />
           <RadioButton className="half-button" value="racismo" label="Racismo" />
         </RadioButtonGroup>
-        <br />
 
-        <h3>Local do crime</h3>
-        <br />
+        <h4>Local do crime</h4>
 
-        { this.renderTextField('endereco', 'Endereço', '255', 'Endereco', '', 'textarea')}
+        { this.renderTextField('endereco', 'Endereço', '255', '', '', 'textarea')}
 
         <EstadoFormGroup
           id="estado"

@@ -35,7 +35,6 @@ export class NovaDenunciaContainer extends Component {
       ...denuncia,
     }, () => {
       // console.clear()
-      console.log(this.state)
     });
   }
 

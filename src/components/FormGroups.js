@@ -32,7 +32,7 @@ export function TelefoneFormGroup({ handleChange, ...props }) {
         {...props}
         type="text"
         onChange={e => handleChange(e.target.value, 'telefone')}
-        mask="(99) 9 9999-9999"
+        mask="(99) 99999-9999"
         maskChar=" "
       />
     </div>

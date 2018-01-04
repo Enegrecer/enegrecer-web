@@ -13,10 +13,9 @@
     "moment": "^2.19.4",
     "node-sass-chokidar": "^0.0.3",
     "prop-types": "^15.5.10",
-    "react": "^15.6.1",
     "react-addons-css-transition-group": "^15.6.0",
     "react-addons-transition-group": "^15.6.0",
-    "react-dom": "^15.6.1",
+    "react-input-mask": "^1.1.0",
     "react-location-picker": "^1.0.1",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
@@ -27,8 +26,7 @@
     "redux-actions": "^2.2.1",
     "redux-saga": "^0.15.6",
     "selenium-standalone": "6.11.0",
-    "selenium-webdriver": "^3.4.0",
-    "react-input-mask": "1.1.0"
+    "selenium-webdriver": "^3.4.0"
   },
   "scripts": {
     "start": "yarn build-css && react-scripts start",
@@ -56,8 +54,22 @@
     "eslint-plugin-react": "^7.1.0",
     "eslint-plugin-standard": "^3.0.1",
     "eslint-watch": "^3.1.2",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
     "react-test-renderer": "^15.6.1",
     "sinon": "^4.1.3",
     "yarn": "^1.3.2"
-  }
+  },
+  "description": "[![Build Status](https://travis-ci.org/Enegrecer/enegrecer-web.svg?branch=master)](https://travis-ci.org/Enegrecer/enegrecer-web) [![Test Coverage](https://codeclimate.com/github/Enegrecer/enegrecer-web/badges/coverage.svg)](https://codeclimate.com/github/Enegrecer/enegrecer-web/coverage) [![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/Enegrecer/enegrecer-web)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Enegrecer/enegrecer-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Enegrecer/enegrecer-web/issues"
+  },
+  "homepage": "https://github.com/Enegrecer/enegrecer-web#readme"
 }

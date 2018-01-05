@@ -16,3 +16,5 @@ engines:
 exclude_paths:
  - "**.test.*"
  - "testeFuncional/"
+ - "src/components/login/Login.test.js"
+ 

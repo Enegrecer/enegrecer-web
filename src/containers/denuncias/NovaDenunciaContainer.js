@@ -2,10 +2,9 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
 import { criarDenunciaRequisicao } from '../../actions';
 import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
-import { validaCamposForm } from '../../utils/validacoesCamposForm';
+import { validaCamposForm, verificarCamposObrigatoriosVazios } from '../../utils/validacoesCamposForm';
 
 export class NovaDenunciaContainer extends Component {
   constructor(props) {
@@ -15,15 +14,17 @@ export class NovaDenunciaContainer extends Component {
     this.state = {
       vitima: null,
       denunciante: null,
+      testemunha: null,
       userId: this.props.currentUserUID,
     };
   }
 
   onPressSaveButton() {
-    if (validaCamposForm(this.state.vitima)) {
+    if (validaCamposForm(this.state.vitima, ['caracteristicasVitima']) &&
+      verificarCamposObrigatoriosVazios(this.state.testemunha, ['caracteristicasTestemunha'])) {
       this.props.criarDenunciaRequisicao({
         ...this.state,
-        onSuccess: push('/'),
+        onSuccess: () => { this.props.history.push('/') },
       });
     }
   }
@@ -32,7 +33,7 @@ export class NovaDenunciaContainer extends Component {
     this.setState({
       ...denuncia,
     }, () => {
-      console.clear()
+      // console.clear()
       console.log(this.state)
     });
   }
@@ -50,6 +51,7 @@ export class NovaDenunciaContainer extends Component {
 NovaDenunciaContainer.propTypes = {
   currentUserUID: PropTypes.string.isRequired,
   criarDenunciaRequisicao: PropTypes.func.isRequired,
+  history: PropTypes.node,
 };
 
 const mapStateToProps = state => ({

@@ -63,10 +63,15 @@ function focoNoCampo(idCampo) {
 }
 
 export function alertaDeCamposObrigatorios() {
-  alert('Você não inseriu informações sobre a vítima. ' +
-  'Precisamos que você complemente inserindo ao menos uma descrição informal sobre a pessoa.');
-  focoNoCampo('caracteristicasVitima');
+  alert('Atenção! Para completar o envio da denúncia, precisamos do preenchimento do seguinte campo: "Por favor, descreva aqui as características da vítima:"')
+  focoNoCampo('caracteristicasVitima-vitima');
   return false
+}
+
+export function verificarCamposObrigatoriosVazios(campos, obrigatorios = []) {
+  return campos === null ||
+    (obrigatorios.length > 0 &&
+      obrigatorios.every(attr => campoVazio(campos[attr])))
 }
 
 export function verificarCamposVaziosdaVitima(campos) {
@@ -97,8 +102,8 @@ export function validaTamanhoDeCampoString(string, tamanho) {
   return false;
 }
 
-export function validaCamposForm(campos, camposObgs = ['caracteristicasVitima']) {
-  if (campos === null || camposObgs.every(attr => campoVazio(campos[attr]))) {
+export function validaCamposForm(campos, obrigatorios = []) {
+  if (verificarCamposObrigatoriosVazios(campos, obrigatorios)) {
     return alertaDeCamposObrigatorios();
   } else if (verificarCamposVaziosdaVitima(campos)) {
     return alertaDeCamposNaoPreenchidos();

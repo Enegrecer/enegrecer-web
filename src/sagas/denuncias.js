@@ -48,20 +48,29 @@ export function criarDenuncia(acao) {
         estado: acao.payload.vitima.estado,
       },
     },
-    testemunhas: { },
+    testemunha: {
+      nome: acao.payload.testemunha.nome,
+      raca: acao.payload.testemunha.raca,
+      dataNascimento: acao.payload.testemunha.dataNascimento,
+      genero: acao.payload.testemunha.genero,
+      caracteristicas: acao.payload.testemunha.caracteristicas,
+      informacoesContato: {
+        telefone: acao.payload.testemunha.telefone
+      }
+    },
     autores: { },
   });
 
   return idDenuncia;
 }
 
+
 export function* handleCriarDenunciaRequisicao() {
   while (true) {
     const acao = yield take(CRIAR_DENUNCIA_REQUISICAO);
     const idDenuncia = yield call(criarDenuncia, acao);
-
     yield put(criarDenunciaSucesso(idDenuncia));
-    yield put(acao.payload.onSuccess);
+     
   }
 }
 

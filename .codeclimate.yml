@@ -14,5 +14,5 @@ engines:
       languages:
       - javascript:
 exclude_paths:
-- "**.test.*"
-- "testeFuncional/"
+ - "**.test.*"
+ - "testeFuncional/"

@@ -14,7 +14,7 @@ engines:
       languages:
       - javascript:
 exclude_paths:
- - "*.*.test.*"
+ - "*.test.*"
  - "**/node_modules/"
  - "testeFuncional/"
  - "src/components/login/Login.test.js"

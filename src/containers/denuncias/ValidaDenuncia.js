@@ -1,4 +1,17 @@
-export function campoVazio(valor) {
+
+export function validaCamposDaDenuncia(campos, camposObgs = ['caracteristicasVitima']) {
+  if (campos === null || camposObgs.every(attr => campoVazio(campos[attr]))) {
+    return alertaDeCamposObrigatorios();
+  } else if (verificarCamposVaziosdaVitima(campos)) {
+    return alertaDeCamposNaoPreenchidos();
+  } else if (!validarInputsDaVitima(campos)) {
+    return alertaCamposNaoPreenchidosCorretamente();
+  }
+
+  return true;
+}
+
+function campoVazio(valor) {
   const novoValor = (valor === undefined) ? '' : valor
   return novoValor.trim() === '';
 }
@@ -62,14 +75,14 @@ function focoNoCampo(idCampo) {
   }
 }
 
-export function alertaDeCamposObrigatorios() {
+function alertaDeCamposObrigatorios() {
   alert('Você não inseriu informações sobre a vítima. ' +
   'Precisamos que você complemente inserindo ao menos uma descrição informal sobre a pessoa.');
   focoNoCampo('caracteristicasVitima');
   return false
 }
 
-export function verificarCamposVaziosdaVitima(campos) {
+function verificarCamposVaziosdaVitima(campos) {
   const getCamposValidos = attr => typeof campos[attr] === 'string' && attr !== 'caracteristicasVitima';
 
   const attrs = Object.keys(campos).filter(getCamposValidos)
@@ -88,16 +101,4 @@ function alertaCamposNaoPreenchidosCorretamente() {
   alert('Existem campos que foram preenchidos de forma incorreta. \n ' +
   'Favor verificar os seguintes campos: Data de nascimento da vítima, Telefone da vítima e/ou E-mail da vítima.')
   return false
-}
-
-export function validaCamposDaDenuncia(campos, camposObgs = ['caracteristicasVitima']) {
-  if (campos === null || camposObgs.every(attr => campoVazio(campos[attr]))) {
-    return alertaDeCamposObrigatorios();
-  } else if (verificarCamposVaziosdaVitima(campos)) {
-    return alertaDeCamposNaoPreenchidos();
-  } else if (!validarInputsDaVitima(campos)) {
-    return alertaCamposNaoPreenchidosCorretamente();
-  }
-
-  return true;
 }

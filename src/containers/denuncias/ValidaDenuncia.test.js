@@ -168,7 +168,7 @@ describe('validaCamposDaDenuncia', () => {
     })
 
     it('O formulário deve ser inválido caso o usuário insira caracteres especiais no campo nome', () => {
-      const nomeEsperado = 'Izael'
+      const nomeEsperado = '?Izael'
       const retorno = validacoesCamposForm.validaCamposDaDenuncia(nomeEsperado);
       assert.isFalse(retorno);
     })

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { criarDenunciaRequisicao } from '../../actions';
 import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
-import { validaCamposForm } from '../../utils/validacoesCamposForm';
+import { validaCamposDaDenuncia }  from './ValidaDenuncia';
 
 export class NovaDenunciaContainer extends Component {
   constructor(props) {
@@ -20,7 +20,7 @@ export class NovaDenunciaContainer extends Component {
   }
 
   onPressSaveButton() {
-    if (validaCamposForm(this.state.vitima)) {
+    if (validaCamposDaDenuncia(this.state.vitima)) {
       this.props.criarDenunciaRequisicao({
         ...this.state,
         onSuccess: push('/'),

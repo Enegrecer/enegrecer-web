@@ -90,13 +90,6 @@ function alertaCamposNaoPreenchidosCorretamente() {
   return false
 }
 
-export function validaTamanhoDeCampoString(string, tamanho) {
-  if (string.length === tamanho) {
-    return true;
-  }
-  return false;
-}
-
 export function validaCamposDaDenuncia(campos, camposObgs = ['caracteristicasVitima']) {
   if (campos === null || camposObgs.every(attr => campoVazio(campos[attr]))) {
     return alertaDeCamposObrigatorios();

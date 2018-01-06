@@ -158,7 +158,7 @@ describe('validaCamposDaDenuncia', () => {
         nome: '12345678901234567890123456789012345678901',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-      assert.isFalse(validacoesCamposForm.validaTamanhoDeCampoString(campos.nome, 40));
+      assert.isFalse(validaTamanhoDeCampoString(campos.nome, 40));
     })
 
     it('O formulário deve ser inválido caso o usuário insira números no campo nome', () => {
@@ -181,7 +181,7 @@ describe('validaCamposDaDenuncia', () => {
 
     it('O formulário deve ser inválido se o campo genero possuir mais de 15 caracteres', () => {
       const generoEsperado = '1234567890123456'
-      assert.isFalse(validacoesCamposForm.validaTamanhoDeCampoString(generoEsperado, 15));
+      assert.isFalse(validaTamanhoDeCampoString(generoEsperado, 15));
     })
 
     it('O formulário deve ser inválido se o campo endereco possuir mais de 255 caracteres', () => {
@@ -190,12 +190,12 @@ describe('validaCamposDaDenuncia', () => {
         '345678901234567890123456789012345678901234567890123456789012345678' +
         '90123456789012345678901234567890123456789012345678901234567890123456'
 
-      assert.isFalse(validacoesCamposForm.validaTamanhoDeCampoString(enderecoEsperado, 255));
+      assert.isFalse(validaTamanhoDeCampoString(enderecoEsperado, 255));
     })
 
     it('O formulário deve ser inválido se o campo naturalidade possuir mais de 40 caracteres', () => {
       const naturalidadeEsperada = '12345678901234567890123456789012345678901'
-      assert.isFalse(validacoesCamposForm.validaTamanhoDeCampoString(naturalidadeEsperada, 40));
+      assert.isFalse(validaTamanhoDeCampoString(naturalidadeEsperada, 40));
     })
 
     it('O formulário deve ser inválido se o campo caracteristicasVitima possuir mais de 255 caracteres', () => {
@@ -203,9 +203,15 @@ describe('validaCamposDaDenuncia', () => {
         '89012345678901234567890123456789012345678901234567890123456789012345678901234567' +
         '89012345678901234567890123456789012345678901234567890123456789012345678901234567' +
         '890123456789012345678901234567890123456'
-      assert.isFalse(
-        validacoesCamposForm.validaTamanhoDeCampoString(caracteristicasVitima, 255)
+      assert.isFalse(validaTamanhoDeCampoString(caracteristicasVitima, 255)
       );
     })
   })
 });
+
+function validaTamanhoDeCampoString(string, tamanho) {
+  if (string.length === tamanho) {
+    return true;
+  }
+  return false;
+}

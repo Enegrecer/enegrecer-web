@@ -1,16 +1,3 @@
-
-export function validaCamposDaDenuncia(campos, camposObgs = ['caracteristicasVitima']) {
-  if (campos === null || camposObgs.every(attr => campoVazio(campos[attr]))) {
-    return alertaDeCamposObrigatorios();
-  } else if (verificarCamposVaziosdaVitima(campos)) {
-    return alertaDeCamposNaoPreenchidos();
-  } else if (!validarInputsDaVitima(campos)) {
-    return alertaCamposNaoPreenchidosCorretamente();
-  }
-
-  return true;
-}
-
 function campoVazio(valor) {
   const novoValor = (valor === undefined) ? '' : valor
   return novoValor.trim() === '';
@@ -101,4 +88,16 @@ function alertaCamposNaoPreenchidosCorretamente() {
   alert('Existem campos que foram preenchidos de forma incorreta. \n ' +
   'Favor verificar os seguintes campos: Data de nascimento da vítima, Telefone da vítima e/ou E-mail da vítima.')
   return false
+}
+
+export function validaCamposDaDenuncia(campos, camposObgs = ['caracteristicasVitima']) {
+  if (campos === null || camposObgs.every(attr => campoVazio(campos[attr]))) {
+    return alertaDeCamposObrigatorios();
+  } else if (verificarCamposVaziosdaVitima(campos)) {
+    return alertaDeCamposNaoPreenchidos();
+  } else if (!validarInputsDaVitima(campos)) {
+    return alertaCamposNaoPreenchidosCorretamente();
+  }
+
+  return true;
 }

@@ -38,6 +38,13 @@ describe('validaCamposDaDenuncia', () => {
 
     afterEach(() => {})
 
+    function validaTamanhoDeCampoString(string, tamanho) {
+      if (string.length === tamanho) {
+        return true;
+      }
+      return false;
+    }
+
     it('O formulário deve ser válido se todos os campos forem preenchidos e estiverem todos corretos', () => {
       const retorno = validacoesCamposForm.validaCamposDaDenuncia(camposPreenchidosVitima);
       assert.isTrue(retorno);
@@ -208,10 +215,3 @@ describe('validaCamposDaDenuncia', () => {
     })
   })
 });
-
-function validaTamanhoDeCampoString(string, tamanho) {
-  if (string.length === tamanho) {
-    return true;
-  }
-  return false;
-}

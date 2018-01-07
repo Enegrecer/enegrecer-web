@@ -24,7 +24,7 @@ export default class NovaVitimaForm extends Component {
       telefone: '',
       email: '',
       naturalidade: '',
-      caracteristicaVitima: '',
+      caracteristicasVitima: '',
       camposNaoPreenchidos: '',
     };
   }
@@ -155,4 +155,3 @@ NovaVitimaForm.defaultProps = { handleChange: () => {} }
 NovaVitimaForm.propTypes = {
   handleChange: PropTypes.func,
 };
-

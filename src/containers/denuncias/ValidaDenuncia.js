@@ -1,12 +1,18 @@
+function caracteristicasVitimaEhVazia(caracteristicasVitima){
+  if(caracteristicasVitima == ''){
+    return 'Por favor, descreva as características da vítima.';
+  }
+}
+
+function temTamanhoDeCaracteresMaiorQue(nomeDoCampo, campo, tamanho) {
+  if(campo.length > tamanho){
+    return 'A descrição do campo ' + nomeDoCampo + ' está muito grande. Deve ter menos de '+ tamanho + ' caracteres.';
+  }
+}
 
 function validaCaracteriscaVitima(caracteristicasVitima){
-    if(caracteristicasVitima == ''){
-      return 'Por favor, descreva as características da vítima.';
-    }
-
-    if(caracteristicasVitima.length > 255){
-      return 'A descrição das características da vítima está muito grande. Deve ter menos de 255 caracteres.';
-    }
+    return caracteristicasVitimaEhVazia(caracteristicasVitima) ||
+           temTamanhoDeCaracteresMaiorQue('caracteristicas da vitima', caracteristicasVitima, 255);
 }
 
 function temNumeroNoNome(nome) {
@@ -23,23 +29,15 @@ function temCaractereEspecialNoNome(nome) {
   }
 }
 
-function temTamanhoDeCaracteresMaiorQue40NoNome(nome) {
-  if(nome.length > 40) {
-    return 'Por favor, preencha o campo nome com menos de 40 caracteres.';
-  }
-}
-
 function validaNome(nome){
   return temNumeroNoNome(nome) ||
          temCaractereEspecialNoNome(nome) ||
-         temTamanhoDeCaracteresMaiorQue40NoNome(nome);
+         temTamanhoDeCaracteresMaiorQue('Nome', nome, 40);
 }
 
 function validaGenero(genero) {
-  if(genero.length > 15) {
-    return 'Por favor, preencha o campo genero com no máximo 15 caracteres.';
+    return temTamanhoDeCaracteresMaiorQue('Gênero', genero, 15);
   }
-}
 
 function validaDataDeNascimento(dataNascimento){
   if (dataNascimento.trim() !== '') {
@@ -54,9 +52,7 @@ function validaDataDeNascimento(dataNascimento){
 }
 
 function validaEndereco(endereco) {
-  if(endereco.length > 255) {
-    return 'Por favor, preencha o campo endereço com no máximo 255 caracteres.';
-  }
+  return temTamanhoDeCaracteresMaiorQue('Endereço', endereco, 255);
 }
 
 function telefoneValido(telefone) {
@@ -81,9 +77,7 @@ function validaEmail(email){
 }
 
 function validaNaturalidade(naturalidade) {
-  if(naturalidade.length > 40) {
-    return 'Por favor, preencha o campo naturalidade com no máximo 40 caracteres.';
-  }
+  return temTamanhoDeCaracteresMaiorQue('Naturalidade', naturalidade, 40);
 }
 
 export function validaDenuncia(campos){

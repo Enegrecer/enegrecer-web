@@ -69,7 +69,7 @@ describe('validaDenuncia', () => {
 
       var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
-      assert.equal('A descrição das características da vítima está muito grande. Deve ter menos de 255 caracteres.', mensagem);
+      assert.equal('A descrição do campo caracteristicas da vitima está muito grande. Deve ter menos de 255 caracteres.', mensagem);
     })
 
     it('Deve retornar mensagem de erro quando o campo nome tiver mais de 40 caracteres', () => {
@@ -78,7 +78,7 @@ describe('validaDenuncia', () => {
 
       var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
-      assert.equal('Por favor, preencha o campo nome com menos de 40 caracteres.', mensagem);
+      assert.equal('A descrição do campo Nome está muito grande. Deve ter menos de 40 caracteres.', mensagem);
     })
 
     it('Deve retornar mensagem de erro quando o campo nome tiver número', () => {
@@ -105,7 +105,7 @@ describe('validaDenuncia', () => {
 
       var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
-      assert.equal('Por favor, preencha o campo genero com no máximo 15 caracteres.', mensagem);
+      assert.equal('A descrição do campo Gênero está muito grande. Deve ter menos de 15 caracteres.', mensagem);
     })
 
     it('Deve retornar mensagem de erro quando a data de nascimento for igual a data atual', () => {
@@ -144,7 +144,7 @@ describe('validaDenuncia', () => {
 
       var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
-      assert.equal('Por favor, preencha o campo endereço com no máximo 255 caracteres.', mensagem);
+      assert.equal('A descrição do campo Endereço está muito grande. Deve ter menos de 255 caracteres.', mensagem);
     })
 
     it('Deve retornar mensagem de erro quando o campo de telefone conter letras', () => {
@@ -189,7 +189,7 @@ describe('validaDenuncia', () => {
 
       var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
-      assert.equal('Por favor, preencha o campo naturalidade com no máximo 40 caracteres.', mensagem);
+      assert.equal('A descrição do campo Naturalidade está muito grande. Deve ter menos de 40 caracteres.', mensagem);
     })
   })
 });

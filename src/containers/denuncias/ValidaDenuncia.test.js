@@ -15,7 +15,7 @@ describe('validaDenuncia', () => {
         telefone: '12345678901',
         email: 'email@email.com',
         naturalidade: 'naturalidade',
-        caracteristicasVitima: 'caracteristicasVitima',
+        caracteristicaDaVitima: 'caracteristicasVitima',
       }
     }
 
@@ -42,13 +42,13 @@ describe('validaDenuncia', () => {
         telefone: '',
         email: '',
         naturalidade: '',
-        caracteristicasVitima: 'campo obrigatorio',
+        caracteristicaDaVitima: 'campo obrigatorio',
       }
     }
 
     it('Deve retornar mensagem de erro quando o campo caracteristicasVitima é vazio', () => {
       const camposDaDanuncia = camposDaDenunciaVazio();
-      camposDaDanuncia.caracteristicasVitima = '';
+      camposDaDanuncia.caracteristicaDaVitima = '';
 
       const mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
@@ -57,7 +57,7 @@ describe('validaDenuncia', () => {
 
     it('Deve retornar mensagem de erro quando o campo caracteristicasVitima possuir mais de 255 caracteres', () => {
       const camposDaDanuncia = camposDaDenunciaVazio();
-      camposDaDanuncia.caracteristicasVitima = '12345678901234567890123456789012345678901234567890123456' +
+      camposDaDanuncia.caracteristicaDaVitima = '12345678901234567890123456789012345678901234567890123456' +
         '789012345678901234567890123456789012345678901234567890123456789012' +
         '345678901234567890123456789012345678901234567890123456789012345678' +
         '90123456789012345678901234567890123456789012345678901234567890123456';

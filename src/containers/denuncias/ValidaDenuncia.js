@@ -15,16 +15,23 @@ function temTamanhoDeCaracteresMaiorQue(nomeDoCampo, campo, tamanho) {
   return undefined;
 }
 
+function validaCamposVaziosOrNulos(campos) {
+  if (campos === null || campos === '') {
+    return 'Por favor, preencha a denúncia.';
+  }
+  return undefined;
+}
+
 function caracteristicasVitimaEhVazia(caracteristicasVitima) {
-  if (caracteristicasVitima === '') {
+  if (caracteristicasVitima === '' || caracteristicasVitima === null || caracteristicasVitima === undefined ) {
     return 'Por favor, descreva as características da vítima.';
   }
   return undefined;
 }
 
 function validaCaracteriscaVitima(caracteristicasVitima) {
-  return caracteristicasVitimaEhVazia(caracteristicasVitima) ||
-         temTamanhoDeCaracteresMaiorQue('caracteristicas da vitima', caracteristicasVitima, 255);
+  return (caracteristicasVitimaEhVazia(caracteristicasVitima) ||
+         temTamanhoDeCaracteresMaiorQue('caracteristicas da vitima', caracteristicasVitima, 255));
 }
 
 function temNumeroNoNome(nome) {
@@ -102,7 +109,8 @@ function validaNaturalidade(naturalidade) {
 }
 
 export function validaDenuncia(campos) {
-  return validaCaracteriscaVitima(campos.caracteristicaDaVitima) ||
+  return validaCamposVaziosOrNulos(campos) ||
+         validaCaracteriscaVitima(campos.caracteristicaDaVitima) ||
          validaNome(campos.nome) ||
          validaGenero(campos.genero) ||
          validaDataDeNascimento(campos.dataNascimento) ||

@@ -20,13 +20,7 @@ export class NovaDenunciaContainer extends Component {
   }
 
   onPressSaveButton() {
-
-    if(this.state.vitima === null) {
-      alert('Preenche essa porra!!!');
-    }
-else {
     const mensagemError = validaDenuncia(this.state.vitima);
-
     if (mensagemError === undefined) {
       this.props.criarDenunciaRequisicao({
         ...this.state,
@@ -35,8 +29,6 @@ else {
     } else {
       alert(mensagemError);
     }
-
-  }
   }
 
   adicionarDenunciaNoForm(denuncia) {

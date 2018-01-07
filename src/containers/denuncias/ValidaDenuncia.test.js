@@ -46,6 +46,13 @@ describe('validaDenuncia', () => {
       }
     }
 
+    it('Deve retornar mensagem de erro quando nenhum campo foi preenchido', () => {
+
+      const mensagem = validaDenuncia.validaDenuncia(null);
+
+      assert.equal('Por favor, preencha a denúncia.', mensagem);
+    })
+
     it('Deve retornar mensagem de erro quando o campo caracteristicasVitima é vazio', () => {
       const camposDaDanuncia = camposDaDenunciaVazio();
       camposDaDanuncia.caracteristicaDaVitima = '';

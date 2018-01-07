@@ -12,12 +12,14 @@ function temTamanhoDeCaracteresMaiorQue(nomeDoCampo, campo, tamanho) {
   if (campo.length > tamanho) {
     return `A descrição do campo ${nomeDoCampo} está muito grande. Deve ter menos de ${tamanho} caracteres.`;
   }
+  return undefined;
 }
 
 function caracteristicasVitimaEhVazia(caracteristicasVitima) {
   if (caracteristicasVitima === '') {
     return 'Por favor, descreva as características da vítima.';
   }
+  return undefined;
 }
 
 function validaCaracteriscaVitima(caracteristicasVitima) {
@@ -29,12 +31,14 @@ function temNumeroNoNome(nome) {
   if (temNumero(nome)) {
     return 'Por favor, preencha o campo nome sem números.'
   }
+  return undefined;
 }
 
 function temCaractereEspecialNoNome(nome) {
   if (temCaractereEspecial(nome)) {
     return 'Por favor, preencha o campo nome sem caractere especial.'
   }
+  return undefined;
 }
 
 function validaNome(nome) {
@@ -64,6 +68,7 @@ function validaDataDeNascimento(dataNascimento) {
       return 'Por favor, preencha o campo data de nascimento com uma data válida.'
     }
   }
+  return undefined;
 }
 
 function validaEndereco(endereco) {
@@ -78,6 +83,7 @@ function validaTelefone(telefone) {
   if (telefone !== '' && !ehTelefoneValido(telefone)) {
     return 'Por favor, preencha o campo telefone com um número válido.';
   }
+  return undefined;
 }
 
 function ehEmailValido(valor) {
@@ -88,6 +94,7 @@ function validaEmail(email) {
   if (email !== '' && !ehEmailValido(email)) {
     return 'Por favor, preencha com um email válido.';
   }
+  return undefined;
 }
 
 function validaNaturalidade(naturalidade) {

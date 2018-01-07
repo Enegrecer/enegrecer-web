@@ -23,7 +23,7 @@ function validaCamposVaziosOrNulos(campos) {
 }
 
 function caracteristicasVitimaEhVazia(caracteristicasVitima) {
-  if (caracteristicasVitima === '' || caracteristicasVitima === null || caracteristicasVitima === undefined ) {
+  if (caracteristicasVitima === '' || caracteristicasVitima === null || caracteristicasVitima === undefined) {
     return 'Por favor, descreva as características da vítima.';
   }
   return undefined;

@@ -1,3 +1,18 @@
+function focoNoCampo() {
+  const campoHtml = document.getElementById('caracteristicaDaVitima');
+  if (campoHtml) {
+    campoHtml.focus();
+    campoHtml.style.borderColor = 'red';
+  }
+}
+
+function desfocaCampo() {
+  const campoHtml = document.getElementById('caracteristicaDaVitima');
+  if (campoHtml) {
+    campoHtml.style.borderColor = null;
+  }
+}
+
 function temNumero(campo) {
   const format = /\d/;
   return format.test(campo);
@@ -24,6 +39,7 @@ function validaCamposVaziosOrNulos(campos) {
 
 function caracteristicasVitimaEhVazia(caracteristicasVitima) {
   if (caracteristicasVitima === '' || caracteristicasVitima === null || caracteristicasVitima === undefined) {
+    focoNoCampo();
     return 'Por favor, descreva as características da vítima.';
   }
   return undefined;
@@ -109,6 +125,7 @@ function validaNaturalidade(naturalidade) {
 }
 
 export function validaDenuncia(campos) {
+  desfocaCampo();
   return validaCamposVaziosOrNulos(campos) ||
          validaCaracteriscaVitima(campos.caracteristicaDaVitima) ||
          validaNome(campos.nome) ||

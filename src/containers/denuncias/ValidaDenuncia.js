@@ -1,43 +1,43 @@
 
 function validaCaracteriscaVitima(caracteristicasVitima){
     if(caracteristicasVitima == ''){
-      return 'Preencha com a descrição da vítima.';
+      return 'Por favor, descreva as características da vítima.';
     }
 
     if(caracteristicasVitima.length > 255){
-      return 'Preencha o campo caracteristicasVitima com no máximo 255 caracteres.';
+      return 'A descrição das características da vítima está muito grande. Deve ter menos de 255 caracteres.';
     }
 }
 
-function temNumero(valor) {
+function temNumeroNoNome(nome) {
   const format = /\d/;
-  if(format.test(valor)){
-    return 'Preencha o campo nome sem números.'
+  if(format.test(nome)){
+    return 'Por favor, preencha o campo nome sem números.'
   }
 }
 
-function temCaractereEspecial(valor) {
+function temCaractereEspecialNoNome(nome) {
   const format = /[!@#$%^&*()_+-=[\]{};':"\\|,.<>/?]+/;
-  if(format.test(valor)){
-    return 'Preencha o campo nome sem caractere especial.'
+  if(format.test(nome)){
+    return 'Por favor, preencha o campo nome sem caractere especial.'
   }
 }
 
-function temTamanhoDeCaracteresMaiorQue40(nome) {
+function temTamanhoDeCaracteresMaiorQue40NoNome(nome) {
   if(nome.length > 40) {
-    return 'Preencha o campo nome com menos de 40 caracteres.';
+    return 'Por favor, preencha o campo nome com menos de 40 caracteres.';
   }
 }
 
 function validaNome(nome){
-  return temNumero(nome) ||
-         temCaractereEspecial(nome) ||
-         temTamanhoDeCaracteresMaiorQue40(nome);
+  return temNumeroNoNome(nome) ||
+         temCaractereEspecialNoNome(nome) ||
+         temTamanhoDeCaracteresMaiorQue40NoNome(nome);
 }
 
 function validaGenero(genero) {
   if(genero.length > 15) {
-    return 'Preencha o campo genero com no máximo 15 caracteres.';
+    return 'Por favor, preencha o campo genero com no máximo 15 caracteres.';
   }
 }
 
@@ -48,14 +48,14 @@ function validaDataDeNascimento(dataNascimento){
     const primeiraDataValida = new Date('01/01/1900').toJSON().slice(0, 10);
 
     if ((dataNascimentoFormatada >= dataHojeFormatada || dataNascimentoFormatada < primeiraDataValida)){
-        return 'Preencha o campo data de nascimento com uma data válida.'
+        return 'Por favor, preencha o campo data de nascimento com uma data válida.'
     }
   }
 }
 
 function validaEndereco(endereco) {
   if(endereco.length > 255) {
-    return 'Preencha o campo endereço com no máximo 255 caracteres.';
+    return 'Por favor, preencha o campo endereço com no máximo 255 caracteres.';
   }
 }
 
@@ -66,7 +66,7 @@ function telefoneValido(telefone) {
 
 function validaTelefone(telefone) {
   if(telefone != '' && !telefoneValido(telefone)) {
-    return 'Preencha o campo telefone com um número válido.';
+    return 'Por favor, preencha o campo telefone com um número válido.';
   }
 }
 
@@ -76,13 +76,13 @@ function ehEmailValido(valor) {
 
 function validaEmail(email){
   if(email != '' && !ehEmailValido(email)){
-    return 'Preencha com um email válido.';
+    return 'Por favor, preencha com um email válido.';
   }
 }
 
 function validaNaturalidade(naturalidade) {
   if(naturalidade.length > 40) {
-    return 'Preencha o campo naturalidade com no máximo 40 caracteres.';
+    return 'Por favor, preencha o campo naturalidade com no máximo 40 caracteres.';
   }
 }
 

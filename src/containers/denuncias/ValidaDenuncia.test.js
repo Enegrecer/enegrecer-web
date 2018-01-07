@@ -57,7 +57,7 @@ describe('validaDenuncia', () => {
 
       var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
-      assert.equal('Preencha com a descrição da vítima.', mensagem);
+      assert.equal('Por favor, descreva as características da vítima.', mensagem);
     })
 
     it('Deve retornar mensagem de erro quando o campo caracteristicasVitima possuir mais de 255 caracteres', () => {
@@ -69,7 +69,7 @@ describe('validaDenuncia', () => {
 
       var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
-      assert.equal('Preencha o campo caracteristicasVitima com no máximo 255 caracteres.', mensagem);
+      assert.equal('A descrição das características da vítima está muito grande. Deve ter menos de 255 caracteres.', mensagem);
     })
 
     it('Deve retornar mensagem de erro quando o campo nome tiver mais de 40 caracteres', () => {
@@ -78,7 +78,7 @@ describe('validaDenuncia', () => {
 
       var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
-      assert.equal('Preencha o campo nome com menos de 40 caracteres.', mensagem);
+      assert.equal('Por favor, preencha o campo nome com menos de 40 caracteres.', mensagem);
     })
 
     it('Deve retornar mensagem de erro quando o campo nome tiver número', () => {
@@ -87,7 +87,7 @@ describe('validaDenuncia', () => {
 
       var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
-      assert.equal('Preencha o campo nome sem números.', mensagem);
+      assert.equal('Por favor, preencha o campo nome sem números.', mensagem);
     })
 
     it('Deve retornar mensagem de erro quando o campo nome tiver caracter especial', () => {
@@ -96,7 +96,7 @@ describe('validaDenuncia', () => {
 
       var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
-      assert.equal('Preencha o campo nome sem caractere especial.', mensagem);
+      assert.equal('Por favor, preencha o campo nome sem caractere especial.', mensagem);
     })
 
     it('Deve retornar mensagem de erro quando o campo genero tiver mais de 15 caracteres', () => {
@@ -105,7 +105,7 @@ describe('validaDenuncia', () => {
 
       var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
-      assert.equal('Preencha o campo genero com no máximo 15 caracteres.', mensagem);
+      assert.equal('Por favor, preencha o campo genero com no máximo 15 caracteres.', mensagem);
     })
 
     it('Deve retornar mensagem de erro quando a data de nascimento for igual a data atual', () => {
@@ -114,7 +114,7 @@ describe('validaDenuncia', () => {
 
       var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
-      assert.equal('Preencha o campo data de nascimento com uma data válida.', mensagem);
+      assert.equal('Por favor, preencha o campo data de nascimento com uma data válida.', mensagem);
     })
 
     it('Deve retornar mensagem de erro quando a data de nascimento for maior que a data atual', () => {
@@ -123,7 +123,7 @@ describe('validaDenuncia', () => {
 
       var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
-      assert.equal('Preencha o campo data de nascimento com uma data válida.', mensagem);
+      assert.equal('Por favor, preencha o campo data de nascimento com uma data válida.', mensagem);
     })
 
     it('Deve retornar mensagem de erro quando o ano da data de nascimento for menor que 1900', () => {
@@ -132,7 +132,7 @@ describe('validaDenuncia', () => {
 
       var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
-      assert.equal('Preencha o campo data de nascimento com uma data válida.', mensagem);
+      assert.equal('Por favor, preencha o campo data de nascimento com uma data válida.', mensagem);
     })
 
     it('Deve retornar mensagem de erro quando o campo endereco possuir mais de 255 caracteres', () => {
@@ -144,7 +144,7 @@ describe('validaDenuncia', () => {
 
       var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
-      assert.equal('Preencha o campo endereço com no máximo 255 caracteres.', mensagem);
+      assert.equal('Por favor, preencha o campo endereço com no máximo 255 caracteres.', mensagem);
     })
 
     it('Deve retornar mensagem de erro quando o campo de telefone conter letras', () => {
@@ -153,7 +153,7 @@ describe('validaDenuncia', () => {
 
       var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
-      assert.equal('Preencha o campo telefone com um número válido.', mensagem);
+      assert.equal('Por favor, preencha o campo telefone com um número válido.', mensagem);
     })
 
     it('Deve retornar mensagem de erro quando o tamanho do campo de telefone menor que 10', () => {
@@ -162,7 +162,7 @@ describe('validaDenuncia', () => {
 
       var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
-      assert.equal('Preencha o campo telefone com um número válido.', mensagem);
+      assert.equal('Por favor, preencha o campo telefone com um número válido.', mensagem);
     })
 
     it('Deve retornar mensagem de erro quando o tamanho do campo de telefone maior que 11', () => {
@@ -171,7 +171,7 @@ describe('validaDenuncia', () => {
 
       var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
-      assert.equal('Preencha o campo telefone com um número válido.', mensagem);
+      assert.equal('Por favor, preencha o campo telefone com um número válido.', mensagem);
     })
 
     it('Deve retornar mensagem de erro quando o campo email é inválido', () => {
@@ -180,7 +180,7 @@ describe('validaDenuncia', () => {
 
       var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
-      assert.equal('Preencha com um email válido.', mensagem);
+      assert.equal('Por favor, preencha com um email válido.', mensagem);
     })
 
     it('Deve retornar mensagem de erro quando o campo naturalidade tiver mais de 40 caracteres', () => {
@@ -189,7 +189,7 @@ describe('validaDenuncia', () => {
 
       var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
-      assert.equal('Preencha o campo naturalidade com no máximo 40 caracteres.', mensagem);
+      assert.equal('Por favor, preencha o campo naturalidade com no máximo 40 caracteres.', mensagem);
     })
   })
 });

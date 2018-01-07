@@ -1,12 +1,22 @@
-function caracteristicasVitimaEhVazia(caracteristicasVitima){
-  if(caracteristicasVitima == ''){
-    return 'Por favor, descreva as características da vítima.';
-  }
+function temNumero(campo) {
+  const format = /\d/;
+  return format.test(campo);
+}
+
+function temCaractereEspecial(campo) {
+  const format = /[!@#$%^&*()_+-=[\]{};':"\\|,.<>/?]+/;
+  return format.test(campo);
 }
 
 function temTamanhoDeCaracteresMaiorQue(nomeDoCampo, campo, tamanho) {
   if(campo.length > tamanho){
     return 'A descrição do campo ' + nomeDoCampo + ' está muito grande. Deve ter menos de '+ tamanho + ' caracteres.';
+  }
+}
+
+function caracteristicasVitimaEhVazia(caracteristicasVitima){
+  if(caracteristicasVitima == ''){
+    return 'Por favor, descreva as características da vítima.';
   }
 }
 
@@ -16,15 +26,13 @@ function validaCaracteriscaVitima(caracteristicasVitima){
 }
 
 function temNumeroNoNome(nome) {
-  const format = /\d/;
-  if(format.test(nome)){
+  if(temNumero(nome)){
     return 'Por favor, preencha o campo nome sem números.'
   }
 }
 
 function temCaractereEspecialNoNome(nome) {
-  const format = /[!@#$%^&*()_+-=[\]{};':"\\|,.<>/?]+/;
-  if(format.test(nome)){
+  if(temCaractereEspecial(nome)){
     return 'Por favor, preencha o campo nome sem caractere especial.'
   }
 }
@@ -55,13 +63,12 @@ function validaEndereco(endereco) {
   return temTamanhoDeCaracteresMaiorQue('Endereço', endereco, 255);
 }
 
-function telefoneValido(telefone) {
-  const reg = new RegExp('^[0-9]{10,11}$');
-  return (reg.test(telefone));
+function ehTelefoneValido(telefone) {
+  return (new RegExp('^[0-9]{10,11}$').test(telefone));
 }
 
 function validaTelefone(telefone) {
-  if(telefone != '' && !telefoneValido(telefone)) {
+  if(telefone != '' && !ehTelefoneValido(telefone)) {
     return 'Por favor, preencha o campo telefone com um número válido.';
   }
 }

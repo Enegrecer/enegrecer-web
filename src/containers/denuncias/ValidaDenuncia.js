@@ -1,6 +1,6 @@
 
 function validaCaracteriscaVitima(caracteristicasVitima){
-    if(caracteristicasVitima == null){
+    if(caracteristicasVitima == ''){
       return 'Preencha com a descrição da vítima.';
     }
 

@@ -26,10 +26,26 @@ describe('NovaDenunciaContainer', () => {
         criarDenunciaRequisicao={criarDenunciaRequisicaoMock}
       />);
 
-
     it('não deve chamar o método criarDenunciaRequisicao quando o form estiver inválido', () => {
+      wrapper.setState({
+        vitima: {
+          pessoaIdentificada: false,
+          nome: 'dsaklkadlaksdlkasldkalskdlaskdasldkalskdalskdlaskdlaskdlksdasdlsak',
+          genero: 'feminino',
+          raca: 'parda',
+          dataNascimento: '1900-01-02',
+          endereco: 'Av. teste',
+          estado: 'AM',
+          telefone: '99999999999',
+          email: 'tt.com',
+          naturalidade: 'naturalidade',
+          caracteristicasVitima: 'caracteristicasVitima',
+        }
+      },
+      () => {
       wrapper.instance().onPressSaveButton();
       expect(criarDenunciaRequisicaoMock).not.toHaveBeenCalled();
+      })
     });
 
     it('deve chamar o método criarDenunciaRequisicao quando o form estiver válido', () => {

@@ -1,28 +1,14 @@
 import * as sinon from 'sinon';
 import { assert } from 'chai';
 import moment from 'moment';
-import * as validacoesCamposForm from './ValidaDenuncia';
+import * as validaDenuncia from './ValidaDenuncia';
 
-describe('validaCamposDaDenuncia', () => {
-  describe('valida os campos das denuncias chamadas', () => {
-    let camposVaziosVitima
+describe('validaDenuncia', () => {
+  describe('valida uma denuncia preenchida corretamente', () => {
     let camposPreenchidosVitima
 
-    beforeEach(() => {
-      camposVaziosVitima = {
-        nome: '',
-        genero: '',
-        raca: '',
-        dataNascimento: '',
-        endereco: '',
-        estado: '',
-        telefone: '',
-        email: '',
-        naturalidade: '',
-        caracteristicasVitima: '',
-      }
-
-      camposPreenchidosVitima = {
+  function camposDaDenunciaPreenchidoCorretamente(){
+      return {
         nome: 'nome',
         genero: 'genero',
         raca: 'raca',
@@ -34,184 +20,176 @@ describe('validaCamposDaDenuncia', () => {
         naturalidade: 'naturalidade',
         caracteristicasVitima: 'caracteristicasVitima',
       }
-    })
-
-    afterEach(() => {})
-
-    function validaTamanhoDeCampoString(string, tamanho) {
-      if (string.length === tamanho) {
-        return true;
-      }
-      return false;
     }
 
-    it('O formulário deve ser válido se todos os campos forem preenchidos e estiverem todos corretos', () => {
-      const retorno = validacoesCamposForm.validaCamposDaDenuncia(camposPreenchidosVitima);
-      assert.isTrue(retorno);
+    it('Não deve retornar mensagem de erro para formulario preenchido corretamente', () => {
+      var camposPreenchidoCorretamente = camposDaDenunciaPreenchidoCorretamente();
+
+      var mensagem = validaDenuncia.validaDenuncia(camposPreenchidoCorretamente);
+
+      assert.equal(undefined, mensagem);
     })
 
-    it('O formulário deve ser inválido caso o usuário não tenha inserido dados', () => {
-      const retorno = validacoesCamposForm.validaCamposDaDenuncia(null);
-      assert.isFalse(retorno);
-    });
+  })
+});
 
-    it('O formulário deve ser inválido se todos os campos opcionais' +
-      ' e o campo obrigatório estejam vazios', () => {
-      const retorno = validacoesCamposForm.validaCamposDaDenuncia(camposVaziosVitima);
-      assert.isFalse(retorno);
-    })
+describe('validaDenuncia', () => {
+  describe('valida denuncia preenchida incorretamente', () => {
 
-    it('O formulário deve ser inválido se apenas o campo obrigatório está vazio', () => {
-      const campos = {
-        ...camposPreenchidosVitima,
-        caracteristicasVitima: '',
+    function camposDaDenunciaVazio(){
+      return {
+        nome: '',
+        genero: '',
+        raca: '',
+        dataNascimento: '',
+        endereco: '',
+        estado: '',
+        telefone: '',
+        email: '',
+        naturalidade: '',
+        caracteristicasVitima: 'campo obrigatorio',
       }
-      const retorno = validacoesCamposForm.validaCamposDaDenuncia(campos);
-      assert.isFalse(retorno);
+    }
+
+    it('Deve retornar mensagem de erro quando o campo caracteristicasVitima é vazio', () => {
+      let camposDaDanuncia = camposDaDenunciaVazio();
+      camposDaDanuncia.caracteristicasVitima = '';
+
+      var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
+
+      assert.equal('Preencha com a descrição da vítima.', mensagem);
     })
 
-    it('O formulário deve ser inválido se apenas o campo obrigatório esteja preenchido' +
-      ' e o usuário optou por enviar mesmo assim', () => {
-      const campos = {
-        ...camposVaziosVitima,
-        caracteristicasVitima: 'caracteristicasVitima',
-      }
-      sinon.stub(window, 'confirm').returns(true);
-      const retorno = validacoesCamposForm.validaCamposDaDenuncia(campos);
-      assert.isTrue(retorno);
-      window.confirm.restore();
-    })
-
-    it('O formulário deve ser inválido se apenas o campo obrigatório esteja preenchido' +
-      ' e o usuário optou por não enviar', () => {
-      const campos = {
-        ...camposVaziosVitima,
-        caracteristicasVitima: 'caracteristicasVitima',
-      }
-      sinon.stub(window, 'confirm').returns(false);
-      const retorno = validacoesCamposForm.validaCamposDaDenuncia(campos);
-      assert.isFalse(retorno);
-      window.confirm.restore();
-    })
-
-    it('O formulário deve ser inválido se o campo dataNascimento for menor que 1900', () => {
-      const campos = {
-        ...camposVaziosVitima,
-        dataNascimento: '01/01/1900',
-        caracteristicasVitima: 'caracteristicasVitima',
-      }
-      const retorno = validacoesCamposForm.validaCamposDaDenuncia(campos);
-      assert.isFalse(retorno);
-    })
-
-
-    it('O formulário deve ser inválido se o campo dataNascimento for igual que a data atual', () => {
-      const dataDeHoje = new Date().toJSON().slice(0, 10);
-      const campos = {
-        ...camposVaziosVitima,
-        dataNascimento: dataDeHoje,
-        caracteristicasVitima: 'caracteristicasVitima',
-      }
-      const retorno = validacoesCamposForm.validaCamposDaDenuncia(campos);
-      assert.isFalse(retorno);
-    })
-
-    it('O formulário deve ser inválido se o campo dataNascimento for maior que a data atual', () => {
-      const dataHoraDeAmanha = moment().add(1, 'days');
-      const dataDeAmanha = dataHoraDeAmanha.toJSON().slice(0, 10);
-      const campos = {
-        ...camposVaziosVitima,
-        dataNascimento: dataDeAmanha,
-        caracteristicasVitima: 'caracteristicasVitima',
-      }
-      const retorno = validacoesCamposForm.validaCamposDaDenuncia(campos);
-      assert.isFalse(retorno);
-    })
-
-    it('O formulário deve ser inválido se o campo telefone for maior que 11', () => {
-      const campos = {
-        ...camposVaziosVitima,
-        telefone: '123456789012',
-        caracteristicasVitima: 'caracteristicasVitima',
-      }
-      const retorno = validacoesCamposForm.validaCamposDaDenuncia(campos);
-      assert.isFalse(retorno);
-    })
-
-    it('O formulário deve ser inválido se o campo telefone for menor que 10', () => {
-      const campos = {
-        ...camposVaziosVitima,
-        telefone: '123456789',
-        caracteristicasVitima: 'caracteristicasVitima',
-      }
-      const retorno = validacoesCamposForm.validaCamposDaDenuncia(campos);
-      assert.isFalse(retorno);
-    })
-
-    it('O formulário deve ser inválido se o campo email não estiver no padrão: email@email.com', () => {
-      const campos = {
-        ...camposVaziosVitima,
-        email: 'email1234',
-        caracteristicasVitima: 'caracteristicasVitima',
-      }
-      const retorno = validacoesCamposForm.validaCamposDaDenuncia(campos);
-      assert.isFalse(retorno);
-    })
-
-
-    it('O formulário deve ser inválido se o campo nome possuir mais de 40 caracteres', () => {
-      const campos = {
-        ...camposVaziosVitima,
-        nome: '12345678901234567890123456789012345678901',
-        caracteristicasVitima: 'caracteristicasVitima',
-      }
-      assert.isFalse(validaTamanhoDeCampoString(campos.nome, 40));
-    })
-
-    it('O formulário deve ser inválido caso o usuário insira números no campo nome', () => {
-      const nomeEsperado = 'Izael123'
-      const retorno = validacoesCamposForm.validaCamposDaDenuncia(nomeEsperado);
-      assert.isFalse(retorno);
-    })
-
-    it('O formulário deve ser inválido caso o usuário insira caracteres especiais no campo nome', () => {
-      const nomeEsperado = '?Izael'
-      const retorno = validacoesCamposForm.validaCamposDaDenuncia(nomeEsperado);
-      assert.isFalse(retorno);
-    })
-
-    it('O formulário deve ser inválido caso o usuário insira acentos no campo nome', () => {
-      const nomeEsperado = 'Izáel'
-      const retorno = validacoesCamposForm.validaCamposDaDenuncia(nomeEsperado);
-      assert.isFalse(retorno);
-    })
-
-    it('O formulário deve ser inválido se o campo genero possuir mais de 15 caracteres', () => {
-      const generoEsperado = '1234567890123456'
-      assert.isFalse(validaTamanhoDeCampoString(generoEsperado, 15));
-    })
-
-    it('O formulário deve ser inválido se o campo endereco possuir mais de 255 caracteres', () => {
-      const enderecoEsperado = '12345678901234567890123456789012345678901234567890123456' +
+    it('Deve retornar mensagem de erro quando o campo caracteristicasVitima possuir mais de 255 caracteres', () => {
+      let camposDaDanuncia = camposDaDenunciaVazio();
+      camposDaDanuncia.caracteristicasVitima = '12345678901234567890123456789012345678901234567890123456' +
         '789012345678901234567890123456789012345678901234567890123456789012' +
         '345678901234567890123456789012345678901234567890123456789012345678' +
-        '90123456789012345678901234567890123456789012345678901234567890123456'
+        '90123456789012345678901234567890123456789012345678901234567890123456';
 
-      assert.isFalse(validaTamanhoDeCampoString(enderecoEsperado, 255));
+      var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
+
+      assert.equal('Preencha o campo caracteristicasVitima com no máximo 255 caracteres.', mensagem);
     })
 
-    it('O formulário deve ser inválido se o campo naturalidade possuir mais de 40 caracteres', () => {
-      const naturalidadeEsperada = '12345678901234567890123456789012345678901'
-      assert.isFalse(validaTamanhoDeCampoString(naturalidadeEsperada, 40));
+    it('Deve retornar mensagem de erro quando o campo nome tiver mais de 40 caracteres', () => {
+      let camposDaDanuncia = camposDaDenunciaVazio();
+      camposDaDanuncia.nome = 'abcdedfdfadsfladksfalsdfkalsdkfalsdfkasdfasdf';
+
+      var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
+
+      assert.equal('Preencha o campo nome com menos de 40 caracteres.', mensagem);
     })
 
-    it('O formulário deve ser inválido se o campo caracteristicasVitima possuir mais de 255 caracteres', () => {
-      const caracteristicasVitima = '123456789012345678901234567890123456789012345678901234567' +
-        '89012345678901234567890123456789012345678901234567890123456789012345678901234567' +
-        '89012345678901234567890123456789012345678901234567890123456789012345678901234567' +
-        '890123456789012345678901234567890123456'
-      assert.isFalse(validaTamanhoDeCampoString(caracteristicasVitima, 255)
-      );
+    it('Deve retornar mensagem de erro quando o campo nome tiver número', () => {
+      let camposDaDanuncia = camposDaDenunciaVazio();
+      camposDaDanuncia.nome = 'Joao123';
+
+      var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
+
+      assert.equal('Preencha o campo nome sem números.', mensagem);
+    })
+
+    it('Deve retornar mensagem de erro quando o campo nome tiver caracter especial', () => {
+      let camposDaDanuncia = camposDaDenunciaVazio();
+      camposDaDanuncia.nome = 'Joao?';
+
+      var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
+
+      assert.equal('Preencha o campo nome sem caractere especial.', mensagem);
+    })
+
+    it('Deve retornar mensagem de erro quando o campo genero tiver mais de 15 caracteres', () => {
+      let camposDaDanuncia = camposDaDenunciaVazio();
+      camposDaDanuncia.genero = 'Joaaaaaaaaaaaooooooo';
+
+      var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
+
+      assert.equal('Preencha o campo genero com no máximo 15 caracteres.', mensagem);
+    })
+
+    it('Deve retornar mensagem de erro quando a data de nascimento for igual a data atual', () => {
+      let camposDaDanuncia = camposDaDenunciaVazio();
+      camposDaDanuncia.dataNascimento = moment().toJSON().slice(0, 10);
+
+      var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
+
+      assert.equal('Preencha o campo data de nascimento com uma data válida.', mensagem);
+    })
+
+    it('Deve retornar mensagem de erro quando a data de nascimento for maior que a data atual', () => {
+      let camposDaDanuncia = camposDaDenunciaVazio();
+      camposDaDanuncia.dataNascimento = moment().add(1, 'days').toJSON().slice(0, 10);
+
+      var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
+
+      assert.equal('Preencha o campo data de nascimento com uma data válida.', mensagem);
+    })
+
+    it('Deve retornar mensagem de erro quando o ano da data de nascimento for menor que 1900', () => {
+      let camposDaDanuncia = camposDaDenunciaVazio();
+      camposDaDanuncia.dataNascimento = new Date('01/01/1889').toJSON().slice(0, 10);
+
+      var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
+
+      assert.equal('Preencha o campo data de nascimento com uma data válida.', mensagem);
+    })
+
+    it('Deve retornar mensagem de erro quando o campo endereco possuir mais de 255 caracteres', () => {
+      let camposDaDanuncia = camposDaDenunciaVazio();
+      camposDaDanuncia.endereco = '12345678901234567890123456789012345678901234567890123456' +
+        '789012345678901234567890123456789012345678901234567890123456789012' +
+        '345678901234567890123456789012345678901234567890123456789012345678' +
+        '90123456789012345678901234567890123456789012345678901234567890123456';
+
+      var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
+
+      assert.equal('Preencha o campo endereço com no máximo 255 caracteres.', mensagem);
+    })
+
+    it('Deve retornar mensagem de erro quando o campo de telefone conter letras', () => {
+      let camposDaDanuncia = camposDaDenunciaVazio();
+      camposDaDanuncia.telefone = '12345mmm';
+
+      var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
+
+      assert.equal('Preencha o campo telefone com um número válido.', mensagem);
+    })
+
+    it('Deve retornar mensagem de erro quando o tamanho do campo de telefone menor que 10', () => {
+      let camposDaDanuncia = camposDaDenunciaVazio();
+      camposDaDanuncia.telefone = '123456789';
+
+      var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
+
+      assert.equal('Preencha o campo telefone com um número válido.', mensagem);
+    })
+
+    it('Deve retornar mensagem de erro quando o tamanho do campo de telefone maior que 11', () => {
+      let camposDaDanuncia = camposDaDenunciaVazio();
+      camposDaDanuncia.telefone = '123456789012';
+
+      var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
+
+      assert.equal('Preencha o campo telefone com um número válido.', mensagem);
+    })
+
+    it('Deve retornar mensagem de erro quando o campo email é inválido', () => {
+      let camposDaDanuncia = camposDaDenunciaVazio();
+      camposDaDanuncia.email = 'joao123...';
+
+      var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
+
+      assert.equal('Preencha com um email válido.', mensagem);
+    })
+
+    it('Deve retornar mensagem de erro quando o campo naturalidade tiver mais de 40 caracteres', () => {
+      let camposDaDanuncia = camposDaDenunciaVazio();
+      camposDaDanuncia.naturalidade = 'ajkshdakshdjashdjashkdjahakshakjhdsjdkdsjkahds';
+
+      var mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
+
+      assert.equal('Preencha o campo naturalidade com no máximo 40 caracteres.', mensagem);
     })
   })
 });

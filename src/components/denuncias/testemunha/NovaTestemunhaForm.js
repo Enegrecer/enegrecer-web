@@ -10,7 +10,7 @@ export default class NovaTestemunhaForm extends Component {
       raca: '',
       dataNascimento: '',
       telefone: '',
-      caracteristicaDaVitima: '',
+      caracteristicas: '',
     }
   }
 

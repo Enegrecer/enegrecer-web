@@ -13,7 +13,7 @@ describe('validacoesCamposTestemunha', () => {
         raca: '',
         dataNascimento: '',
         telefone: '',
-        caracteristicaDaVitima: '',
+        caracteristicas: '',
       }
       expect(wrapper.instance().state).toEqual(expectedState)
     });

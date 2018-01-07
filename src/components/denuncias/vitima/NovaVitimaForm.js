@@ -144,7 +144,7 @@ export default class NovaVitimaForm extends Component {
           { this.renderCampo(
             'caracteristicaDaVitima',
             '255',
-            'Era uma mulher negra, com aproximadamente 40 anos, magra, alta com cabelo curto...',
+            'Ex.: Era uma mulher negra, com aproximadamente 40 anos, magra, alta com cabelo curto...',
             'textarea')}
         </FormGroup>
         <br />

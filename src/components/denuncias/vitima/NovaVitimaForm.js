@@ -24,7 +24,7 @@ export default class NovaVitimaForm extends Component {
       telefone: '',
       email: '',
       naturalidade: '',
-      caracteristicaVitima: '',
+      caracteristicaDaVitima: '',
       camposNaoPreenchidos: '',
     };
   }
@@ -138,11 +138,11 @@ export default class NovaVitimaForm extends Component {
           {this.renderCampo('email')}
         </FormGroup>
         <FormGroup>
-          <Label for="caracteristicasVitima">
+          <Label for="caracteristicaDaVitima">
             Por favor, descreva aqui as características da vítima:*
           </Label>
           { this.renderCampo(
-            'caracteristicasVitima',
+            'caracteristicaDaVitima',
             '255',
             'Era uma mulher negra, com aproximadamente 40 anos, magra, alta com cabelo curto...',
             'textarea')}
@@ -155,4 +155,3 @@ NovaVitimaForm.defaultProps = { handleChange: () => {} }
 NovaVitimaForm.propTypes = {
   handleChange: PropTypes.func,
 };
-

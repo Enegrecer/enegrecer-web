@@ -102,7 +102,7 @@ function validaNaturalidade(naturalidade) {
 }
 
 export function validaDenuncia(campos) {
-  return validaCaracteriscaVitima(campos.caracteristicasVitima) ||
+  return validaCaracteriscaVitima(campos.caracteristicaDaVitima) ||
          validaNome(campos.nome) ||
          validaGenero(campos.genero) ||
          validaDataDeNascimento(campos.dataNascimento) ||

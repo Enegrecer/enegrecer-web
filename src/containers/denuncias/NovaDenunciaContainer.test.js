@@ -39,7 +39,7 @@ describe('NovaDenunciaContainer', () => {
           telefone: '99999999999',
           email: 'tt.com',
           naturalidade: 'naturalidade',
-          caracteristicasVitima: 'caracteristicasVitima',
+          caracteristicaDaVitima: 'caracteristicasVitima',
         }
       },
       () => {
@@ -61,7 +61,7 @@ describe('NovaDenunciaContainer', () => {
           telefone: '99999999999',
           email: 't@t.com',
           naturalidade: 'naturalidade',
-          caracteristicasVitima: 'caracteristicasVitima',
+          caracteristicaDaVitima: 'caracteristicasVitima',
         }
       },
       () => {

@@ -43,8 +43,8 @@ describe('NovaDenunciaContainer', () => {
         }
       },
       () => {
-      wrapper.instance().onPressSaveButton();
-      expect(criarDenunciaRequisicaoMock).not.toHaveBeenCalled();
+        wrapper.instance().onPressSaveButton();
+        expect(criarDenunciaRequisicaoMock).not.toHaveBeenCalled();
       })
     });
 

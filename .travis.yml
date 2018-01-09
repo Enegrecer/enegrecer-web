@@ -12,7 +12,8 @@ stages:
     if: type = pull_request 
   - name: test-with-coverage 
     if: (NOT (type = pull_request ))
-  - deploy   
+  - name: deploy  
+    if: branch = master 
 
 jobs:
   include:

@@ -8,11 +8,12 @@ function temCaractereEspecial(valor) {
   return format.test(valor);
 }
 
+/*
 function temAcentuacao(valor) {
   const format = /[\wÀ-ú]/;
   return format.test(valor)
 }
-
+*/
 function temNumero(valor) {
   const format = /\d/;
   return format.test(valor);

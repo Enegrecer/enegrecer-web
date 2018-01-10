@@ -156,7 +156,7 @@ describe('validacoesCamposForm', () => {
         ...camposVaziosVitima,
         nome: 'Izael123',
         caracteristicasVitima: 'caracteristicasVitima',
-      }      
+      }
       const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
     })

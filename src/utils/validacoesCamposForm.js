@@ -8,11 +8,12 @@ function temCaractereEspecial(valor) {
   return format.test(valor);
 }
 
+/*
 function temAcentuacao(valor) {
   const format = /[\wÀ-ú]/;
   return format.test(valor)
 }
-
+*/
 function temNumero(valor) {
   const format = /\d/;
   return format.test(valor);
@@ -27,7 +28,7 @@ function tamanhoTelefoneValido(valor) {
 }
 
 function formatoDeTelefoneValido(valor) {
-  const reg = new RegExp(/^\([1-9]{2}\) [0-9][0-9]{3,4}\-[0-9]{3,4}$/);
+  const reg = new RegExp(/^\([1-9]{2}\) [0-9][0-9]{3,4}-[0-9]{3,4}$/);
   return reg.test(valor);
 }
 

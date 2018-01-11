@@ -37,17 +37,17 @@ function validaCamposVaziosOrNulos(campos) {
   return undefined;
 }
 
-function caracteristicasVitimaEhVazia(caracteristicasVitima) {
-  if (caracteristicasVitima === '' || caracteristicasVitima === null || caracteristicasVitima === undefined) {
+function caracteristicasVitimaEhVazia(caracteristicasDaVitima) {
+  if (caracteristicasDaVitima === '' || caracteristicasDaVitima === null || caracteristicasDaVitima === undefined) {
     focoNoCampo();
     return 'Por favor, descreva as características da vítima.';
   }
   return undefined;
 }
 
-function validaCaracteriscaVitima(caracteristicasVitima) {
-  return (caracteristicasVitimaEhVazia(caracteristicasVitima) ||
-         temTamanhoDeCaracteresMaiorQue('caracteristicas da vitima', caracteristicasVitima, 255));
+function validaCaracteriscaVitima(caracteristicasDaVitima) {
+  return (caracteristicasVitimaEhVazia(caracteristicasDaVitima) ||
+         temTamanhoDeCaracteresMaiorQue('caracteristicas da vitima', caracteristicasDaVitima, 255));
 }
 
 function temNumeroNoNome(nome) {

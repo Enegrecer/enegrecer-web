@@ -15,7 +15,7 @@ describe('validaDenuncia', () => {
         telefone: '12345678901',
         email: 'email@email.com',
         naturalidade: 'naturalidade',
-        caracteristicaDaVitima: 'caracteristicasVitima',
+        caracteristicaDaVitima: 'caracteristicasDaVitima',
       }
     }
 
@@ -53,7 +53,7 @@ describe('validaDenuncia', () => {
       assert.equal('Por favor, preencha a denúncia.', mensagem);
     })
 
-    it('Deve retornar mensagem de erro quando o campo caracteristicasVitima é vazio', () => {
+    it('Deve retornar mensagem de erro quando o campo Da é vazio', () => {
       const camposDaDanuncia = camposDaDenunciaVazio();
       camposDaDanuncia.caracteristicaDaVitima = '';
 
@@ -62,7 +62,7 @@ describe('validaDenuncia', () => {
       assert.equal('Por favor, descreva as características da vítima.', mensagem);
     })
 
-    it('Deve retornar mensagem de erro quando o campo caracteristicasVitima possuir mais de 255 caracteres', () => {
+    it('Deve retornar mensagem de erro quando o campo Da possuir mais de 255 caracteres', () => {
       const camposDaDanuncia = camposDaDenunciaVazio();
       camposDaDanuncia.caracteristicaDaVitima = '12345678901234567890123456789012345678901234567890123456' +
         '789012345678901234567890123456789012345678901234567890123456789012' +

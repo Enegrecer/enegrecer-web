@@ -25,7 +25,7 @@ export default class NovaVitimaForm extends Component {
       telefone: '',
       email: '',
       naturalidade: '',
-      caracteristicasVitima: '',
+      caracteristicasDaVitima: '',
     };
   }
 
@@ -114,13 +114,17 @@ export default class NovaVitimaForm extends Component {
         { this.renderTextField('email', 'Email', '') }
 
         { this.renderTextField(
-          'caracteristicasVitima',
+          'caracteristicasDaVitima',
           '* Por favor, descreva aqui as características da vítima (máximo de 255 caracteres)',
           '255',
-          'Era uma mulher negra, com aproximadamente 40 anos, magra, alta com cabelo curto...',
+          'Ex.: Era uma mulher negra, com aproximadamente 40 anos, magra, alta com cabelo curto...',
           'textarea')
         }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6bd157b2892750730c330a7c5acad72c27c08a22
         <br />
       </div>);
   }

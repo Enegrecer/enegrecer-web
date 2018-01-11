@@ -1,39 +1,14 @@
 export function campoVazio(valor) {
-<<<<<<< HEAD
-  return valor.trim() === '';
-=======
-  const novoValor = (valor === undefined) ? '' : valor
-  return novoValor.trim() === '';
-}
-
-function temCaractereEspecial(valor) {
-  const format = /[!@#$%^&*()_+-=[\]{};':"\\|,.<>/?]+/;
-  return format.test(valor);
-}
-
-/*
-function temAcentuacao(valor) {
-  const format = /[\wÀ-ú]/;
-  return format.test(valor)
-}
-*/
-function temNumero(valor) {
-  const format = /\d/;
-  return format.test(valor);
-}
-
-function nomeDaVitimaInvalido(valor) {
-  return temNumero(valor) || temCaractereEspecial(valor);
->>>>>>> 6bd157b2892750730c330a7c5acad72c27c08a22
+ return valor.trim() === '';
 }
 
 function tamanhoTelefoneValido(valor) {
-  return valor.length === 14 || valor.length === 15;
+  return valor.length === 10 || valor.length === 11;
 }
 
-function formatoDeTelefoneValido(valor) {
-  const reg = new RegExp(/^\([1-9]{2}\) [0-9][0-9]{3,4}-[0-9]{3,4}$/);
-  return reg.test(valor);
+function ehNumeroValido(valor) {
+  const reg = new RegExp('^[0-9]+$');
+  return (reg.test(valor));
 }
 
 function ehEmailValido(valor) {
@@ -45,7 +20,7 @@ function validarEmail(valor) {
 }
 
 function validarTelefone(valor) {
-  return (formatoDeTelefoneValido(valor) && tamanhoTelefoneValido(valor)) || (valor === '');
+  return (!isNaN(valor) && ehNumeroValido(valor) && tamanhoTelefoneValido(valor)) || (valor === '');
 }
 
 function validarDataDeNascimento(valor) {
@@ -81,7 +56,6 @@ function focoNoCampo(idCampo) {
   }
 }
 
-<<<<<<< HEAD
 function verificarCamposVaziosdaVitima(campos){
   return  campos != null &&
           campoVazio(campos.nome) &&
@@ -98,31 +72,6 @@ function verificarCamposVaziosdaVitima(campos){
 
 function validarInputsDaVitima(campos){
   return validarDataDeNascimento(campos.dataNascimento) &&
-=======
-export function alertaDeCamposObrigatorios() {
-  alert('Atenção! Para completar o envio da denúncia, precisamos do preenchimento do seguinte campo: "Por favor, descreva aqui as características da vítima:"')
-  focoNoCampo('caracteristicasVitima-vitima');
-  return false
-}
-
-export function verificarCamposObrigatoriosVazios(campos, obrigatorios = []) {
-  return campos === null ||
-    (obrigatorios.length > 0 &&
-      obrigatorios.every(attr => campoVazio(campos[attr])))
-}
-
-export function verificarCamposVaziosdaVitima(campos) {
-  const getCamposValidos = attr => typeof campos[attr] === 'string' && attr !== 'caracteristicasVitima';
-
-  const attrs = Object.keys(campos).filter(getCamposValidos)
-
-  return campos != null && attrs.every(attr => campoVazio(campos[attr]));
-}
-
-function validarInputsDaVitima(campos) {
-  return !nomeDaVitimaInvalido(campos.nome) &&
-  validarDataDeNascimento(campos.dataNascimento) &&
->>>>>>> 6bd157b2892750730c330a7c5acad72c27c08a22
   validarTelefone(campos.telefone) &&
   validarEmail(campos.email);
 }
@@ -133,7 +82,6 @@ function alertaCamposNaoPreenchidosCorretamente() {
 
 export function validaCamposForm(campos) {
 
-<<<<<<< HEAD
   if (campos === null || campoVazio(campos.informacoesComplementares)) {
     alertaDeCamposObrigatorios();
     return false;
@@ -147,14 +95,5 @@ export function validaCamposForm(campos) {
       alertaCamposNaoPreenchidosCorretamente();
       return false;
     }
-=======
-export function validaCamposForm(campos, obrigatorios = []) {
-  if (verificarCamposObrigatoriosVazios(campos, obrigatorios)) {
-    return alertaDeCamposObrigatorios();
-  } else if (verificarCamposVaziosdaVitima(campos)) {
-    return alertaDeCamposNaoPreenchidos();
-  } else if (!validarInputsDaVitima(campos)) {
-    return alertaCamposNaoPreenchidosCorretamente();
->>>>>>> 6bd157b2892750730c330a7c5acad72c27c08a22
   }
 }

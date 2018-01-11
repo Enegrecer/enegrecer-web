@@ -22,11 +22,18 @@ export class NovaDenunciaContainer extends Component {
 
   onPressSaveButton() {
     if (validaCamposForm(this.state.vitima, ['caracteristicasVitima']) &&
-      verificarCamposObrigatoriosVazios(this.state.testemunha)) {
+      verificarCamposObrigatoriosVazios(this.state.testemunha, ['caracteristicasVitima'])) {
       this.props.criarDenunciaRequisicao({
         ...this.state,
         onSuccess: push('/'),
       });
+    }else{
+       if(!validaCamposForm(this.state.vitima, ['caracteristicasVitima'])){
+         console.log("validaCamposForm não funciona");
+       }
+       if(!verificarCamposObrigatoriosVazios(this.state.testemunha)){
+         console.log("verificarCamposObrigatoriosVazios não funciona");
+       }
     }
   }
 

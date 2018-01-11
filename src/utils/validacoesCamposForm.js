@@ -1,4 +1,7 @@
 export function campoVazio(valor) {
+<<<<<<< HEAD
+  return valor.trim() === '';
+=======
   const novoValor = (valor === undefined) ? '' : valor
   return novoValor.trim() === '';
 }
@@ -21,6 +24,7 @@ function temNumero(valor) {
 
 function nomeDaVitimaInvalido(valor) {
   return temNumero(valor) || temCaractereEspecial(valor);
+>>>>>>> 6bd157b2892750730c330a7c5acad72c27c08a22
 }
 
 function tamanhoTelefoneValido(valor) {
@@ -48,16 +52,25 @@ function validarDataDeNascimento(valor) {
   if (valor.trim() === '') {
     return true;
   }
-  const data = new Date(valor).toJSON().slice(0, 10);
-  const dataDeHoje = new Date().toJSON().slice(0, 10);
-  const primeiraDataValida = new Date('01/01/1900').toJSON().slice(0, 10);
+  var data = new Date(valor);
+  var dataDeHoje = new Date();
+  var primeiraDataValida = new Date('01/01/1900');
+
+  data = data.toJSON().slice(0,10);
+  dataDeHoje = dataDeHoje.toJSON().slice(0,10);
+  primeiraDataValida = primeiraDataValida.toJSON().slice(0,10);
 
   return (data > primeiraDataValida) && (data < dataDeHoje);
 }
 
-function alertaDeCamposNaoPreenchidos() {
-  return window.confirm('Você não inseriu alguma(s) informação(s) sobre a vítima? ' +
-  'Isso é algo importante, você pode cancelar e complementar.');
+function alertaDeCamposNaoPreenchidos(campos) {
+  var dialog  =  window.confirm('Você não inseriu alguma(s) informação(s) sobre a vítima? Isso é algo importante, você pode cancelar e complementar.');
+  return dialog;
+}
+
+function alertaDeCamposObrigatorios() {
+  alert('Você não inseriu informações sobre a vítima. Precisamos que você complemente inserindo ao menos uma descrição informal sobre a pessoa.');
+  focoNoCampo('informacoesComplementares');
 }
 
 function focoNoCampo(idCampo) {
@@ -68,6 +81,24 @@ function focoNoCampo(idCampo) {
   }
 }
 
+<<<<<<< HEAD
+function verificarCamposVaziosdaVitima(campos){
+  return  campos != null &&
+          campoVazio(campos.nome) &&
+          campoVazio(campos.genero) &&
+          campoVazio(campos.raca) &&
+          campoVazio(campos.dataNascimento) &&
+          campoVazio(campos.endereco) &&
+          campoVazio(campos.estado) &&
+          campoVazio(campos.telefone) &&
+          campoVazio(campos.email) &&
+          campoVazio(campos.naturalidade) &&
+          campoVazio(campos.caracteristicaVitima);
+}
+
+function validarInputsDaVitima(campos){
+  return validarDataDeNascimento(campos.dataNascimento) &&
+=======
 export function alertaDeCamposObrigatorios() {
   alert('Atenção! Para completar o envio da denúncia, precisamos do preenchimento do seguinte campo: "Por favor, descreva aqui as características da vítima:"')
   focoNoCampo('caracteristicasVitima-vitima');
@@ -91,23 +122,32 @@ export function verificarCamposVaziosdaVitima(campos) {
 function validarInputsDaVitima(campos) {
   return !nomeDaVitimaInvalido(campos.nome) &&
   validarDataDeNascimento(campos.dataNascimento) &&
+>>>>>>> 6bd157b2892750730c330a7c5acad72c27c08a22
   validarTelefone(campos.telefone) &&
   validarEmail(campos.email);
 }
 
 function alertaCamposNaoPreenchidosCorretamente() {
-  alert('Existem campos que foram preenchidos de forma incorreta. \n ' +
-  'Favor verificar os seguintes campos: Data de nascimento da vítima, Telefone da vítima e/ou E-mail da vítima.')
-  return false
+  alert('Existem campos que foram preenchidos de forma incorreta. \n Favor verificar os seguintes campos: Data de nascimento da vítima, Telefone da vítima e/ou E-mail da vítima.')
 }
 
-export function validaTamanhoDeCampoString(string, tamanho) {
-  if (string.length === tamanho) {
-    return true;
+export function validaCamposForm(campos) {
+
+<<<<<<< HEAD
+  if (campos === null || campoVazio(campos.informacoesComplementares)) {
+    alertaDeCamposObrigatorios();
+    return false;
   }
-  return false;
-}
-
+  if (campos === null || verificarCamposVaziosdaVitima(campos)){
+    return alertaDeCamposNaoPreenchidos(campos);
+  } else {
+    if (validarInputsDaVitima(campos)){
+      return true;
+    } else {
+      alertaCamposNaoPreenchidosCorretamente();
+      return false;
+    }
+=======
 export function validaCamposForm(campos, obrigatorios = []) {
   if (verificarCamposObrigatoriosVazios(campos, obrigatorios)) {
     return alertaDeCamposObrigatorios();
@@ -115,7 +155,6 @@ export function validaCamposForm(campos, obrigatorios = []) {
     return alertaDeCamposNaoPreenchidos();
   } else if (!validarInputsDaVitima(campos)) {
     return alertaCamposNaoPreenchidosCorretamente();
+>>>>>>> 6bd157b2892750730c330a7c5acad72c27c08a22
   }
-
-  return true;
 }

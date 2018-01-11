@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { criarDenunciaRequisicao } from '../../actions';
 import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
-import { validaCamposForm, verificarCamposObrigatoriosVazios } from '../../utils/validacoesCamposForm';
+import { validaDenuncia } from './ValidaDenuncia';
 
 export class NovaDenunciaContainer extends Component {
   constructor(props) {
@@ -21,19 +21,15 @@ export class NovaDenunciaContainer extends Component {
   }
 
   onPressSaveButton() {
-    if (validaCamposForm(this.state.vitima, ['caracteristicasVitima']) &&
-      verificarCamposObrigatoriosVazios(this.state.testemunha, ['caracteristicasVitima'])) {
+
+    const mensagemError = validaDenuncia(this.state.vitima);
+    if (mensagemError === undefined) {
       this.props.criarDenunciaRequisicao({
         ...this.state,
         onSuccess: push('/'),
-      });
-    }else{
-       if(!validaCamposForm(this.state.vitima, ['caracteristicasVitima'])){
-         console.log("validaCamposForm não funciona");
-       }
-       if(!verificarCamposObrigatoriosVazios(this.state.testemunha)){
-         console.log("verificarCamposObrigatoriosVazios não funciona");
-       }
+      }); 
+    } else {
+      alert(mensagemError);
     }
   }
 

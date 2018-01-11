@@ -25,7 +25,7 @@ describe('NovaVitimaForm Component', () => {
       telefone: '',
       email: '',
       naturalidade: '',
-      caracteristicasVitima: '',
+      caracteristicasDaVitima: '',
     };
     expect(wrapper.instance().state).toEqual(expectedState)
   });

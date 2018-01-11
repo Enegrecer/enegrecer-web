@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Rotas from './Rotas';
-import HomePage from './home/Home';
-import Login from './login/Login';
+import Routes from './Routes';
+import HomePage from '../components/home/Home';
+import Login from '../components/login/Login';
 import NovaDenuncia from '../containers/denuncias/NovaDenunciaContainer';
 
 function possuiRotaComComponente(rotas, rota, componente) {
@@ -12,12 +12,12 @@ function possuiRotaComComponente(rotas, rota, componente) {
   });
 }
 
-describe('Rotas', () => {
+describe('Routes', () => {
   const authed = true;
   const uid = '123456';
-  const rotas = shallow(<Rotas authed={authed} currentUserUID={uid} />);
-  possuiRotaComComponente(rotas, '/', HomePage);
-  possuiRotaComComponente(rotas, '/painel/login', Login);
-  possuiRotaComComponente(rotas, '/painel/denuncias/nova', NovaDenuncia);
+  const routes = shallow(<Routes authed={authed} currentUserUID={uid} />);
+  possuiRotaComComponente(routes, '/', HomePage);
+  possuiRotaComComponente(routes, '/painel/login', Login);
+  possuiRotaComComponente(routes, '/painel/denuncias/nova', NovaDenuncia);
 });
 

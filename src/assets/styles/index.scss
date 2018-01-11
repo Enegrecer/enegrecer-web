@@ -81,6 +81,43 @@ body {
   }
 }
 
-form[name="form-denuncia"] {
-  margin: 10px 30px
+h3 {
+  margin: 30px 0 10px;
+}
+
+h4 {
+  margin: 20px 0 10px;
+}
+
+form#form-nova-denuncia {
+  margin: 15px auto;
+  max-width: 960px;
+
+  ::-webkit-input-placeholder {
+    color: #C0C0C0;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+    color: #C0C0C0
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+    color: #C0C0C0;
+  }
+
+  :-ms-input-placeholder {
+    color: #C0C0C0;
+  }
+
+  input:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+
+  textarea:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+
+  input {
+    margin-bottom: 10px;
+  }
 }

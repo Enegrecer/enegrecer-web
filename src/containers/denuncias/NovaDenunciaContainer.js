@@ -15,6 +15,7 @@ export class NovaDenunciaContainer extends Component {
     this.state = {
       vitima: null,
       denunciante: null,
+      testemunha: null,
       userId: this.props.currentUserUID,
     };
   }
@@ -34,10 +35,7 @@ export class NovaDenunciaContainer extends Component {
   adicionarDenunciaNoForm(denuncia) {
     this.setState({
       ...denuncia,
-    }, () => {
-      console.clear()
-      console.log(this.state)
-    });
+    })
   }
 
   render() {

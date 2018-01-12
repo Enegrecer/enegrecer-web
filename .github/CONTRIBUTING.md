@@ -1,10 +1,9 @@
-# Como contribuir no ***Verdade Seja Dita***
-
+# Como contribuir no **Verdade Seja Dita**
 
 :+1::tada: Antes de tudo, obrigada por contribuir no nosso projeto! :tada::+1:
 
 
-Aqui você vai encontrar uma série de guias para contribuir no site **Verdade Seja Dita**, que está hosteado no Github.
+Aqui você vai encontrar uma série de guias para contribuir no projeto **Verdade Seja Dita**, que está hosteado no Github.
 Veja essas linhas mais como guias do que regras.
 Use seu melhor julgamento, e sinta se livre para propor mudancas neste documento em um Pull Request.
 
@@ -19,19 +18,19 @@ Use seu melhor julgamento, e sinta se livre para propor mudancas neste documento
   * [Pull Requests](#pull-requests)
 
 [Guias de Estilo](#styleguides)
-  * [Guia de Estilo para Messagens de Commit](#guia-de-estilo-para-mensagens-de-commit)
+  * [Guia de Estilo para Mensagens de Commit](#guia-de-estilo-para-mensagens-de-commit)
   * [Guia de Estilo para JavaScript/React](#guia-de-estilo-para-javascript)
   * [Guia de Estilo para Testes](#guia-de-estilo-de-testes)
 
 ## Código de Conduta
 
-Esse projeto e todos os participantes são governados pelo [Código de conduta - Verdade Seja Dita](CODE_OF_CONDUCT.md). Se deseja participar, é esperado que você concorde com o Código.
+Esse projeto e todos os participantes são guiados pelo [código de conduta do projeto **Verdade Seja dita**](CODE_OF_CONDUCT.md). Se deseja participar, significa que você está de acordo com o nosso código de conduta.
 
 ## Como eu posso Contribuir?
 
 ### Reportando Bugs
 
-Esta seção guiará a pessoa que deseja contribuir reportando bugs do Site Verdade Seja Dita. Seguindo esse guia você ajudará os mantenedores e a comunidade a entender o seu reporte :pencil:, reproduzir o comportamento :computer: :computer:, e encontrar reportes relacionados :mag_right:.   
+Esta seção guiará a pessoa que deseja contribuir reportando bugs do Site Verdade Seja Dita. Seguindo esse guia você ajudará as pessoas que mantém o projeto e a comunidade a entender o seu reporte :pencil:, reproduzir o comportamento :computer: :computer:, e encontrar reportes relacionados :mag_right:.   
 
 Antes de reportar bugs, por favor dê uma olhada [nessa lista](#antes-de-reportar-um-bug) pra checar se você realmente precisa reportar o bug. Quando você estiver reportando um bug, por favor [inclua o máximo de detalhes possível](#como-fazer-um-bom-report-de-bug). Preencha o [template](ISSUE_TEMPLATE.md), as informações pedidas nos ajudam a resolver rápido os problemas.
 
@@ -39,7 +38,7 @@ Antes de reportar bugs, por favor dê uma olhada [nessa lista](#antes-de-reporta
 
 #### Antes de Reportar um Bug
 
-* **Execute uma [pesquisa rápida](https://github.com/search?q=+is%3Aissue+user%3Aatom)** para ver se o problema já foi relatado. Se o issue foi relatado e **ainda estiver aberto **, adicione um comentário no issue existente em vez de abrir um novo.
+* **Execute uma [pesquisa rápida](https://github.com/search?q=+is%3Aissue+user%3Aatom)** para ver se o problema já foi relatado. Se o Issue foi relatado e **ainda estiver aberto**, adicione um comentário no issue existente em vez de abrir um novo.
 * **Limpe a cache do seu navegador**
 * **Tente reproduzir o comportamento em outros navegadores**
 
@@ -47,7 +46,7 @@ Antes de reportar bugs, por favor dê uma olhada [nessa lista](#antes-de-reporta
 
 Bugs são acompanhados através de [issues do GitHub](https://guides.github.com/features/issues/). Forneça as seguintes informações preenchendo [o template](ISSUE_TEMPLATE.md).
 
-Explique o problema e inclua detalhes adicionais para ajudar os mantenedores a reproduzir o problema:
+Explique o problema e inclua detalhes adicionais para ajudar as pessoas que mantém o projeto a reproduzir o problema:
 
 * **Use um título claro e descritivo** para a questão para identificar o problema.
 * **Descreva os passos exatos que reproduzem o problema** em tantos detalhes quanto possível. Por exemplo, comece explicando como você iniciou o Verdade Seja Dita, p.Ex. através de um link ou digitando o endereço no browser. Ao listar as etapas, **não apenas diga o que fez, mas explique como você fez isso**. Por exemplo, se você moveu o cursor para um campo do form, explique se você usou o mouse, ou um atalho de teclado, em caso afirmativo, qual deles?
@@ -73,7 +72,7 @@ Inclua detalhes sobre sua configuração e ambiente:
 
 ### Sugerindo Melhorias
 
-Esta seção visa guiar você a submeter uma sugestão de melhoria para o Site Verdade Seja Dita, incluindo novas funcionalidades e pequenas melhorias a existentes. Ao seguir essas diretrizes você ajudará os mantenedores e a comunidade a entender sua sugestão :pencil: e encontrar sugestões relacionadas :mag_right:
+Esta seção visa guiar você a submeter uma sugestão de melhoria para o Site Verdade Seja Dita, incluindo novas funcionalidades e pequenas melhorias às existentes. Ao seguir essas diretrizes você ajudará as pessoas que mantém o projeto e a comunidade a entender sua sugestão :pencil: e encontrar sugestões relacionadas :mag_right:
 
 Antes de criar suas sugestões de melhorias, por favor de uma olhada [nessa lista](#antes-de-submeter-uma-sugestao-de-melhoria) pra checar se você realmente precisa criar uma. Quando você tiver sugerindo algo, por favor [inclua o máximo de detalhes possível](#como-fazer-um-bom-report-de-bug). Preencha o [template](ISSUE_TEMPLATE.md), incluindo os passos que você imaginaria tomar se a funcionalidade que está pedindo já existisse.
 
@@ -96,13 +95,17 @@ Melhorias são acompanhadas através de [issues do GitHub](https://guides.github
 
 #### Desenvolvimento local
 
+O código mais atual em desenvolvimento é acompanhado através da branch **development**. Idealmente, os pedidos de alteração de código devem ser feitos a partir dessa branch, salvo em casos de HotFix ou Documentação.
+
 ### Pull Requests
 
-* Preencha [o modelo necessário](PULL_REQUEST_TEMPLATE.md)
+* Crie um Fork do projeto e suba as alterações para branch **development** do seu fork
+* Abra um Pull request comparando as branchs development (repo original versus seu fork)
+* Preencha [o modelo guia](PULL_REQUEST_TEMPLATE.md)
 * Não inclua números de Issues no título do PR
 * Inclua capturas de tela e GIFs animados em seus PRs sempre que possível.
 * Siga o guia de estilo [JavaScript](#javascript-styleguide).
-* Os testes unitários seguem a especificacao [Jasmine](https://jasmine.github.io/). Veja o [Guia de Estilo para Testes](#specs-styleguide) abaixo.
+* Os testes unitários seguem a especificação do [Jasmine](https://jasmine.github.io/). Veja o [Guia de Estilo para Testes](#specs-styleguide).
 * Finalize todos os arquivos com uma nova linha
 * Evite o código dependente de um(a) browser/plataforma específico(a)
 * Coloque os imports na seguinte ordem:
@@ -113,34 +116,32 @@ Melhorias são acompanhadas através de [issues do GitHub](https://guides.github
 
 ## Guias de Estilo
 
-
-### Guia de Estilo para Messagens de Commit
+### Guia de Estilo para Mensagens de Commit
 
 * Use o tempo presente ("Adicionar recurso" não "Função adicionada")
 * Use o modo imperativo ("Mover o cursor para ..." não "Move o cursor para ...")
 * Limite a primeira linha a 72 caracteres ou menos
 * Referencie Issues e PRs livremente depois da primeira linha
-* Quando apenas alterar a documentação, inclua `[ci skip]` na descrição do Commit
+* Quando apenas alterar a documentação, inclua a tag `[skip ci]` na descrição do Commit, para que o serviço de CI não seja executado
 * Considere começar a mensagem de Commit com um emoji aplicável:
     * :art: `:art:` quando melhorar o formato/estrutura do código
     * :racehorse: `:racehorse:` quando melhorar o desempenho
-    * :non-potable_water: `:non-potable_water:` when plugging memory leaks
     * :memo: `:memo:` ao escrever documentos
     * :bug: `:bug:` quando corrigir um bug
     * :fire: `:fire:` quando remover códigos ou arquivos
-    * :green_heart: `:green_heart:` quando corrigir a CI-Build
+    * :green_heart: `:green_heart:` quando corrigir a build da CI
     * :white_check_mark: `:white_check_mark:` ao adicionar testes
     * :lock: `:lock:` quando se trata de segurança
     * :arrow_up: `:arrow_up:` ao atualizar dependências
     * :arrow_down: `:arrow_down:` ao diminuir dependências
-    * :shirt: `:shirt:` ao remover avisos de linter
+    * :shirt: `:shirt:` ao remover avisos de linter/eslint/..
 
 
 ### Guia de Estilo para JavaScript
 
 Todo o código Javascript deve aderir ao [JavaScript Standard Style](https://standardjs.com/).
 
-* Prefira o spread operador do objeto (`{...anotherObj}`) ao inves de `Object.assign()`
+* Prefira o spread operador do objeto (`{...anotherObj}`) ao invés de `Object.assign()`
 * Coloque o `export` na mesma linha da delaracão sempre que possível
   ```js
   // Use isso:
@@ -157,7 +158,7 @@ Todo o código Javascript deve aderir ao [JavaScript Standard Style](https://sta
 
 ### Guia de Estilo para Testes
 
-- Os testes unitários seguem a especificacao [Jasmine](https://jasmine.github.io/) e geralmente estão na mesma pasta do arquivo que você pretende testar com a extensão `<arquivo>.test.js`.
+- Os testes unitários seguem a especificação do [Jasmine](https://jasmine.github.io/) e geralmente estão na mesma pasta do arquivo que você pretende testar com a extensão `<arquivo>.test.js`.
 - Trate `describe` como um substantivo ou situação.
 - Trate `it` como uma declaração sobre o estado ou como uma operação muda de estado.
 
@@ -167,7 +168,7 @@ Todo o código Javascript deve aderir ao [JavaScript Standard Style](https://sta
 describe('um cachorro', () =>
  it('late', () =>
  // teste aqui
- describe( 'quando o cachorro está feliz', () =>
+ describe('quando o cachorro está feliz', () =>
   it('abana o rabo', () =>
   // teste aqui
 ```

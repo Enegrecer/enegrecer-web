@@ -13,6 +13,6 @@ engines:
     config:
       languages:
       - javascript:
-exclude_paths:
-- "**.test.*"
-- "testeFuncional/"
+exclude_patterns:
+- "**/testeFuncional/"
+- "src/**/*.test.js"

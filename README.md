@@ -105,6 +105,10 @@ Na nossa stack temos:
 * [Travis-CI](https://travis-ci.org/) para criar nosso CI, executar testes e build automaticamente
 * [Code Climate](https://codeclimate.com/github/Enegrecer/enegrecer-web) para cobertura de código e análise estática
 
+## Como Contribuir
+
+Para contribuir no projeto dê uma espiada no nosso [Guia de Contribuição](docs/CONTRIBUTING.md).
+
 ## Mais Informações
 
 [Para mais informações, acesse a nossa wiki :)](https://github.com/Enegrecer/enegrecer-web/wiki).

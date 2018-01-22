@@ -32,7 +32,6 @@ describe('Saga de Denúncias', () => {
       expect(saga.next('idDaDenuncia').value)
         .toEqual(put(criarDenunciaSucesso('idDaDenuncia')));
     });
-
   });
 });
 

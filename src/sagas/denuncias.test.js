@@ -33,10 +33,6 @@ describe('Saga de Denúncias', () => {
         .toEqual(put(criarDenunciaSucesso('idDaDenuncia')));
     });
 
-    it('deve despachar a ação de onSuccess', () => {
-      expect(saga.next().value)
-        .toEqual(put(mockDaAcaoDeCriarDenuncia.payload.onSuccess));
-    });
   });
 });
 

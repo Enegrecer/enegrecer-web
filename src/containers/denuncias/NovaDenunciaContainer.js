@@ -24,8 +24,7 @@ export class NovaDenunciaContainer extends Component {
     if (validaCamposForm(this.state.vitima, ['caracteristicasVitima']) &&
       verificarCamposObrigatoriosVazios(this.state.testemunha)) {
       this.props.criarDenunciaRequisicao({
-        ...this.state,
-        onSuccess: push('/'),
+        ...this.state
       });
     }
   }

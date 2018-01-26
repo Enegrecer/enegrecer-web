@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React from 'react';
 import TextField from 'material-ui/TextField'
 import { cortarPalavra } from '../../../helpers';
 
 import { RacaFormGroup, TelefoneFormGroup } from '../../FormGroups'
 
-export default class NovaTestemunhaForm extends Component {
+export default class NovaTestemunhaForm extends React.Component {
   constructor(props) {
     super(props)
     this.handleChange = this.handleChange.bind(this)

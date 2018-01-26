@@ -19,7 +19,7 @@ describe('validacoesCamposForm', () => {
         telefone: '',
         email: '',
         naturalidade: '',
-        caracteristicasVitima: '',
+        caracteristicasDaVitima: '',
       }
 
       camposPreenchidosVitima = {
@@ -32,7 +32,7 @@ describe('validacoesCamposForm', () => {
         telefone: '(81) 12345-4321',
         email: 'email@email.com',
         naturalidade: 'naturalidade',
-        caracteristicasVitima: 'caracteristicasVitima',
+        caracteristicasDaVitima: 'caracteristicasVitima',
       }
     })
 
@@ -57,7 +57,7 @@ describe('validacoesCamposForm', () => {
     it('O formulário deve ser inválido se apenas o campo obrigatório está vazio', () => {
       const campos = {
         ...camposPreenchidosVitima,
-        caracteristicasVitima: '',
+        caracteristicasDaVitima: '',
       }
       const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
@@ -67,7 +67,7 @@ describe('validacoesCamposForm', () => {
       ' e o usuário optou por enviar mesmo assim', () => {
       const campos = {
         ...camposVaziosVitima,
-        caracteristicasVitima: 'caracteristicasVitima',
+        caracteristicasDaVitima: 'caracteristicasVitima',
       }
       sinon.stub(window, 'confirm').returns(true);
       const retorno = validacoesCamposForm.validaCamposForm(campos);
@@ -79,7 +79,7 @@ describe('validacoesCamposForm', () => {
       ' e o usuário optou por não enviar', () => {
       const campos = {
         ...camposVaziosVitima,
-        caracteristicasVitima: 'caracteristicasVitima',
+        caracteristicasDaVitima: 'caracteristicasDaVitima',
       }
       sinon.stub(window, 'confirm').returns(false);
       const retorno = validacoesCamposForm.validaCamposForm(campos);
@@ -91,7 +91,7 @@ describe('validacoesCamposForm', () => {
       const campos = {
         ...camposVaziosVitima,
         dataNascimento: '01/01/1900',
-        caracteristicasVitima: 'caracteristicasVitima',
+        caracteristicasDaVitima: 'caracteristicasVitima',
       }
       const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
@@ -103,7 +103,7 @@ describe('validacoesCamposForm', () => {
       const campos = {
         ...camposVaziosVitima,
         dataNascimento: dataDeHoje,
-        caracteristicasVitima: 'caracteristicasVitima',
+        caracteristicasDaVitima: 'caracteristicasVitima',
       }
       const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
@@ -115,7 +115,7 @@ describe('validacoesCamposForm', () => {
       const campos = {
         ...camposVaziosVitima,
         dataNascimento: dataDeAmanha,
-        caracteristicasVitima: 'caracteristicasVitima',
+        caracteristicasDaVitima: 'caracteristicasVitima',
       }
       const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
@@ -125,7 +125,7 @@ describe('validacoesCamposForm', () => {
       const campos = {
         ...camposVaziosVitima,
         telefone: '(81) 99999-99999',
-        caracteristicasVitima: 'caracteristicasVitima',
+        caracteristicasDaVitima: 'caracteristicasVitima',
       }
       const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
@@ -135,7 +135,7 @@ describe('validacoesCamposForm', () => {
       const campos = {
         ...camposVaziosVitima,
         telefone: '(81) 99999-99',
-        caracteristicasVitima: 'caracteristicasVitima',
+        caracteristicasDaVitima: 'caracteristicasVitima',
       }
       const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
@@ -145,7 +145,7 @@ describe('validacoesCamposForm', () => {
       const campos = {
         ...camposVaziosVitima,
         email: 'email1234',
-        caracteristicasVitima: 'caracteristicasVitima',
+        caracteristicasDaVitima: 'caracteristicasVitima',
       }
       const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
@@ -155,7 +155,7 @@ describe('validacoesCamposForm', () => {
       const campos = {
         ...camposVaziosVitima,
         nome: 'Izael123',
-        caracteristicasVitima: 'caracteristicasVitima',
+        caracteristicasDaVitima: 'caracteristicasVitima',
       }
       const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
@@ -165,7 +165,7 @@ describe('validacoesCamposForm', () => {
       const campos = {
         ...camposVaziosVitima,
         nome: 'Izael!_',
-        caracteristicasVitima: 'caracteristicasVitima',
+        caracteristicasDaVitima: 'caracteristicasVitima',
       }
       const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
@@ -175,7 +175,7 @@ describe('validacoesCamposForm', () => {
       const campos = {
         ...camposVaziosVitima,
         nome: 'Mae^',
-        caracteristicasVitima: 'caracteristicasVitima',
+        caracteristicasDaVitima: 'caracteristicasVitima',
       }
       const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
@@ -206,12 +206,12 @@ describe('validacoesCamposForm', () => {
     })
 
     it('O formulário deve ser inválido se o campo caracteristicasVitima possuir mais de 255 caracteres', () => {
-      const caracteristicasVitima = '123456789012345678901234567890123456789012345678901234567' +
+      const caracteristicasDaVitima = '123456789012345678901234567890123456789012345678901234567' +
         '89012345678901234567890123456789012345678901234567890123456789012345678901234567' +
         '89012345678901234567890123456789012345678901234567890123456789012345678901234567' +
         '890123456789012345678901234567890123456'
       assert.isFalse(
-        validacoesCamposForm.validaTamanhoDeCampoString(caracteristicasVitima, 255)
+        validacoesCamposForm.validaTamanhoDeCampoString(caracteristicasDaVitima, 255)
       );
     })
   })

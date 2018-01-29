@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { mock } from 'sinon';
 import SignUp from './SignUp';
+import NovaDenunciaForm from '../denuncias/NovaDenunciaForm';
 import * as firebase from '../../utils/firebaseUtils';
 import { setProperty } from '../../modules/auth';
-import { mock } from 'sinon'
-import NovaDenunciaForm from '../denuncias/NovaDenunciaForm';
 
 jest.mock('../../utils/firebaseUtils');
 
@@ -96,20 +96,19 @@ describe('SignUp component', () => {
   });
 
 
-    describe("Testes de funcionalidade para o registro de usuários", () => {
-      it('Deveria redirecionar para a página de denúncia quando um usário for cadastrado com sucesso', () => {
-        const wrapper = shallow(<SignUp />);
-        wrapper.setState({
-          firstName: 'firstName',
-          lastName: 'lastName',
-          login: 'b@b.com',
-          password: 'senhaComMaisDe6Caracteres',
-          logged: false,
-        });
-        wrapper.instance().onPressRegisterButton();
-        const tela = shallow(<NovaDenunciaForm salvarDenuncia={mock()} />);
-        expect(tela.find('NovaTestemunhaForm')).toHaveLength(1)
+  describe('Testes de funcionalidade para o registro de usuários', () => {
+    it('Deveria redirecionar para a página de denúncia quando um usário for cadastrado com sucesso', () => {
+      const wrapper = shallow(<SignUp />);
+      wrapper.setState({
+        firstName: 'firstName',
+        lastName: 'lastName',
+        login: 'b@b.com',
+        password: 'senhaComMaisDe6Caracteres',
+        logged: false,
       });
+      wrapper.instance().onPressRegisterButton();
+      const tela = shallow(<NovaDenunciaForm salvarDenuncia={mock()} />);
+      expect(tela.find('NovaTestemunhaForm')).toHaveLength(1)
     });
-
+  });
 });

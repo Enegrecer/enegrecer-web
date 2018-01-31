@@ -2,7 +2,7 @@ import * as sinon from 'sinon';
 import { assert } from 'chai';
 import moment from 'moment';
 import * as validacoesCamposForm from './validacoesCamposForm';
-
+import { validaDenuncia } from '../containers/denuncias/ValidaDenuncia';
 describe('validacoesCamposForm', () => {
   describe('validaCamposForm chamadas', () => {
     let camposVaziosVitima
@@ -29,7 +29,7 @@ describe('validacoesCamposForm', () => {
         dataNascimento: '01/01/2000',
         endereco: 'endereco',
         estado: 'estado',
-        telefone: '(81) 12345-4321',
+        telefone: '99999999999',
         email: 'email@email.com',
         naturalidade: 'naturalidade',
         caracteristicasDaVitima: 'caracteristicasVitima',
@@ -39,6 +39,7 @@ describe('validacoesCamposForm', () => {
     afterEach(() => {})
 
     it('O formulário deve ser válido se todos os campos forem preenchidos e estiverem todos corretos', () => {
+      console.log("Oioi"+validaDenuncia(camposPreenchidosVitima)); 
       const retorno = validacoesCamposForm.validaCamposForm(camposPreenchidosVitima);
       assert.isTrue(retorno);
     })
@@ -125,11 +126,7 @@ describe('validacoesCamposForm', () => {
       const campos = {
         ...camposVaziosVitima,
         telefone: '(81) 99999-99999',
-<<<<<<< HEAD
-        caracteristicasVitima: 'caracteristicasVitima',
-=======
-        caracteristicasDaVitima: 'caracteristicasVitima',
->>>>>>> 6bd157b2892750730c330a7c5acad72c27c08a22
+        caracteristicasDaVitima: 'caracteristicasDaVitima'
       }
       const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
@@ -139,11 +136,7 @@ describe('validacoesCamposForm', () => {
       const campos = {
         ...camposVaziosVitima,
         telefone: '(81) 99999-99',
-<<<<<<< HEAD
-        caracteristicasVitima: 'caracteristicasVitima',
-=======
         caracteristicasDaVitima: 'caracteristicasVitima',
->>>>>>> 6bd157b2892750730c330a7c5acad72c27c08a22
       }
       const retorno = validacoesCamposForm.validaCamposForm(campos);
       assert.isFalse(retorno);
@@ -163,11 +156,7 @@ describe('validacoesCamposForm', () => {
       const campos = {
         ...camposVaziosVitima,
         nome: 'Izael123',
-<<<<<<< HEAD
-        caracteristicasVitima: 'caracteristicasVitima',
-=======
         caracteristicasDaVitima: 'caracteristicasVitima',
->>>>>>> 6bd157b2892750730c330a7c5acad72c27c08a22
       }
       const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
@@ -177,11 +166,7 @@ describe('validacoesCamposForm', () => {
       const campos = {
         ...camposVaziosVitima,
         nome: 'Izael!_',
-<<<<<<< HEAD
-        caracteristicasVitima: 'caracteristicasVitima',
-=======
         caracteristicasDaVitima: 'caracteristicasVitima',
->>>>>>> 6bd157b2892750730c330a7c5acad72c27c08a22
       }
       const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);
@@ -191,11 +176,7 @@ describe('validacoesCamposForm', () => {
       const campos = {
         ...camposVaziosVitima,
         nome: 'Mae^',
-<<<<<<< HEAD
-        caracteristicasVitima: 'caracteristicasVitima',
-=======
         caracteristicasDaVitima: 'caracteristicasVitima',
->>>>>>> 6bd157b2892750730c330a7c5acad72c27c08a22
       }
       const retorno = validacoesCamposForm.validaCamposForm(campos, ['caracteristicasVitima']);
       assert.isFalse(retorno);

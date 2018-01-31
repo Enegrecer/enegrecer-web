@@ -1,6 +1,16 @@
 export function campoVazio(valor) {
- return valor.trim() === '';
+ return valor === undefined || valor.trim() === '';
 }
+
+export function validaTamanhoDeCampoString(texto, tamanhoMaximo){
+      if(texto === undefined || tamanhoMaximo === undefined){
+        return false;
+      }else{
+        return texto.length <= tamanhoMaximo;
+      }
+
+}
+
 
 function tamanhoTelefoneValido(valor) {
   return valor.length === 10 || valor.length === 11;
@@ -24,7 +34,7 @@ function validarTelefone(valor) {
 }
 
 function validarDataDeNascimento(valor) {
-  if (valor.trim() === '') {
+  if (this.campoVazio(valor)) {
     return true;
   }
   var data = new Date(valor);

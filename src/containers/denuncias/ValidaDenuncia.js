@@ -127,7 +127,7 @@ function validaNaturalidade(naturalidade) {
 export function validaDenuncia(campos) {
   desfocaCampo();
   return validaCamposVaziosOrNulos(campos) ||
-         validaCaracteriscaVitima(campos.caracteristicaDaVitima) ||
+         validaCaracteriscaVitima(campos.caracteristicasDaVitima) ||
          validaNome(campos.nome) ||
          validaGenero(campos.genero) ||
          validaDataDeNascimento(campos.dataNascimento) ||

@@ -29,14 +29,11 @@ export class NovaDenunciaContainer extends Component {
         onSuccess: push('/'),
       });
     } else {
-      customAlert(mensagemError);
+      alert(mensagemError);
     }
   }
 
-  function foo() {
-    var alert = myCustomLib.customAlert;
-    alert();
-  }
+  
 
   adicionarDenunciaNoForm(denuncia) {
     this.setState({

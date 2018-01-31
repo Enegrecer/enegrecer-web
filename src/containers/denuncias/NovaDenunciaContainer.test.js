@@ -2,6 +2,7 @@ import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { shallow, mount } from 'enzyme';
 import { NovaDenunciaContainer } from './NovaDenunciaContainer';
+import { validaDenuncia } from './ValidaDenuncia';
 
 
 describe('NovaDenunciaContainer', () => {
@@ -58,7 +59,7 @@ describe('NovaDenunciaContainer', () => {
           dataNascimento: '1900-01-02',
           endereco: 'Av. teste',
           estado: 'AM',
-          telefone: '(81) 99999-9999',
+          telefone: '31999999999',
           email: 't@t.com',
           naturalidade: 'naturalidade',
           caracteristicasDaVitima: 'caracteristicasDaVitima',

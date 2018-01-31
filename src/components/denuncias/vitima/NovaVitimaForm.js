@@ -121,10 +121,6 @@ export default class NovaVitimaForm extends Component {
           'textarea')
         }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 6bd157b2892750730c330a7c5acad72c27c08a22
         <br />
       </div>);
   }

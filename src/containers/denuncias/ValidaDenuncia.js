@@ -1,13 +1,15 @@
+const CAMPO_CARACTERISTICA_DA_VITIMA = "caracteristicaDaVitima-vitima";
+
 function focoNoCampo() {
-  const campoHtml = document.getElementById('caracteristicaDaVitima');
+  const campoHtml = document.getElementById(CAMPO_CARACTERISTICA_DA_VITIMA);
   if (campoHtml) {
     campoHtml.focus();
-    campoHtml.style.borderColor = 'red';
+    campoHtml.errorText = 'Campo obrigatório';
   }
 }
 
 function desfocaCampo() {
-  const campoHtml = document.getElementById('caracteristicaDaVitima');
+  const campoHtml = document.getElementById(CAMPO_CARACTERISTICA_DA_VITIMA);
   if (campoHtml) {
     campoHtml.style.borderColor = null;
   }

@@ -2,7 +2,6 @@ import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { shallow, mount } from 'enzyme';
 import { NovaDenunciaContainer } from './NovaDenunciaContainer';
-import { validaDenuncia } from './ValidaDenuncia';
 
 
 describe('NovaDenunciaContainer', () => {

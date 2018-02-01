@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
-import { criarDenunciaRequisicao } from '../../actions';
+import { criarDenunciaRequisicao } from '../../actions/criarDenunciaActions';
 import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
 import { validaCamposForm, verificarCamposObrigatoriosVazios } from '../../utils/validacoesCamposForm';
 

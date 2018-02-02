@@ -75,7 +75,8 @@ function ehDataAntes1900(data) {
 function validaDataDeNascimento(dataNascimento) {
   if (dataNascimento && dataNascimento.trim() !== '') {
     const dataNascimentoFormatada = new Date(dataNascimento).toJSON().slice(0, 10);
-    if (ehDataIgualOuMaiorQueAtual(dataNascimentoFormatada) || ehDataAntes1900(dataNascimentoFormatada)) {
+    if (ehDataIgualOuMaiorQueAtual(dataNascimentoFormatada) ||
+               ehDataAntes1900(dataNascimentoFormatada)) {
       return 'Por favor, preencha o campo data de nascimento com uma data válida.'
     }
   }
@@ -88,9 +89,9 @@ function validaEndereco(endereco) {
 
 function ehTelefoneValido(telefone) {
   let telefoneValido = false;
-  if(!telefone){
+  if (!telefone) {
     telefoneValido = true
-  }else{
+  } else {
     telefoneValido = new RegExp('^[0-9]{10,11}$').test(telefone);
   }
   return telefoneValido;
@@ -105,10 +106,10 @@ function validaTelefone(telefone) {
 
 function ehEmailValido(email) {
   let emailValido = false;
-  if(!email){
+  if (!email) {
     emailValido = true;
-  }else{
-    emailValido =  (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) 
+  } else {
+    emailValido = (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email))
   }
   return emailValido;
 }

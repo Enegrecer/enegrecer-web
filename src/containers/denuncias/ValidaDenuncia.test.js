@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 import moment from 'moment';
-import * as validaDenuncia from './ValidaDenuncia';
+import * as validaDenuncia from './validaDenuncia';
 
 describe('validaDenuncia', () => {
   describe('valida uma denuncia preenchida corretamente', () => {

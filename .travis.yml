@@ -6,9 +6,7 @@ cache:
 node_js: '8'
 
 stages:
-  - lint
-  - name: test
-    if: type = pull_request
+  - name: test + lint
   - name: test-with-coverage
     if: (NOT (type = pull_request ))
   - security-tests
@@ -23,13 +21,9 @@ before_script:
 
 jobs:
   include:
-    - stage: test
-    - 
+    - stage: test + lint
       script: yarn lint
-    - 
-      script: yarn test
-    - stage: lint
-      script: yarn lint
+    - script: yarn test
     - stage: test-with-coverage
       script: yarn test-coverage
     - stage: security-tests

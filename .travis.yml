@@ -25,13 +25,15 @@ jobs:
   include:
     - &test
       stage: test
-      script: skip
+      before_install: skip
       install: skip
+      before_script: skip
+      cache.yarn: skip
     - <<: *test
-      name: lint
+      stage: lint-test
       script: yarn lint
     - <<: *test
-      name: test
+      stage: test-test
       script: yarn test
     - stage: lint
       script: yarn lint

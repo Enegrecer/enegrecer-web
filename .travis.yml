@@ -12,7 +12,7 @@ stages:
   - name: test-with-coverage
     if: (NOT (type = pull_request ))
   - security-tests
-  - deploy
+  - name: deploy
     if: (NOT (type = pull_request ))
 
 jobs:

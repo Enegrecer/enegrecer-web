@@ -2,7 +2,7 @@ language: node_js
 cache:
   yarn: true
   directories:
-  - "node_modules"
+    - "node_modules"
 node_js: '8'
 
 stages:
@@ -17,9 +17,8 @@ stages:
 jobs:
   include:
   - stage: lint
-    script:
-      - yarn run build-css
-      - yarn lint
+    script: yarn run build-css
+    script: yarn lint
   - stage: test-with-coverage
     script: yarn test-coverage
   - stage: test

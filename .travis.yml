@@ -13,6 +13,7 @@ stages:
     if: (NOT (type = pull_request ))
   - security-tests
   - deploy
+    if: (NOT (type = pull_request ))
 
 jobs:
   include:

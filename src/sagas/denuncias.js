@@ -4,7 +4,7 @@ import firebaseApp from '../utils/firebaseUtils';
 
 import {
   CRIAR_DENUNCIA_REQUISICAO, criarDenunciaSucesso,
-} from '../actions';
+} from '../actions/criarDenunciaActions';
 
 export function criarDenuncia(acao) {
   const ref = firebaseApp.database().ref();

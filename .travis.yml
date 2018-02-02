@@ -6,10 +6,9 @@ cache:
 node_js: '8'
 
 stages:
-  - name: test + lint
+  - name: lint + test + security-tests
   - name: test-with-coverage
     if: (NOT (type = pull_request ))
-  - security-tests
   - name: deploy
     if: (NOT (type = pull_request ))
 
@@ -21,17 +20,17 @@ before_script:
 
 jobs:
   include:
-    - stage: test + lint
+    - stage: lint + test + security-tests
       script: yarn lint
     - script: yarn test
-    - stage: test-with-coverage
-      script: yarn test-coverage
-    - stage: security-tests
+    - 
       install: skip
       before_script: skip
       services:
         - docker
       script: bash ci/security-checks.sh
+    - stage: test-with-coverage
+      script: yarn test-coverage
     - stage: deploy
       before_script:
         - yarn build

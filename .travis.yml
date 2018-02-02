@@ -15,12 +15,14 @@ stages:
   - name: deploy
     if: (NOT (type = pull_request ))
 
+before_script:
+  - yarn install
+  - yarn run build-css
+
 jobs:
   include:
   - stage: lint
-    script:
-      - yarn run build-css
-      - yarn lint
+    script: yarn lint
   - stage: test-with-coverage
     script: yarn test-coverage
   - stage: test

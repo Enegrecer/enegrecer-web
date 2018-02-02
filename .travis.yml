@@ -15,30 +15,38 @@ stages:
   - name: deploy
     if: (NOT (type = pull_request ))
 
+install:
+  - yarn install
+
 before_script:
   - yarn run build-css
 
 jobs:
   include:
-  - stage: lint
-    script: yarn lint
-  - stage: test-with-coverage
-    script: yarn test-coverage
-  - stage: test
-    script: yarn test
-  - stage: security-tests
-    services:
-      - docker
-    script: bash ci/security-checks.sh
-  - stage: deploy
-    before_script:
-      - yarn run build-css
-      - yarn build
-    deploy:
-      provider: firebase
-      skip_cleanup: true
-      on:
-        branch: master
+    - &test
+      stage: test
+    - <<: *test
+      script: yarn lint
+    - <<: *test
+      script: yarn test
+    - stage: lint
+      script: yarn lint
+    - stage: test-with-coverage
+      script: yarn test-coverage
+    - stage: security-tests
+      install: skip
+      services:
+        - docker
+      script: bash ci/security-checks.sh
+    - stage: deploy
+      before_script:
+        - yarn build
+      deploy:
+        provider: firebase
+        skip_cleanup: true
+        on:
+          branch: master
+
 notifications:
   webhooks:
     urls:

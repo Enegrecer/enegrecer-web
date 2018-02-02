@@ -58,7 +58,7 @@ describe('NovaDenunciaContainer', () => {
           dataNascimento: '1900-01-02',
           endereco: 'Av. teste',
           estado: 'AM',
-          telefone: '(81) 99999-9999',
+          telefone: '31999999999',
           email: 't@t.com',
           naturalidade: 'naturalidade',
           caracteristicasDaVitima: 'caracteristicasDaVitima',

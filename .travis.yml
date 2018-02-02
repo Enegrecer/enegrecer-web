@@ -8,11 +8,11 @@ node_js: '8'
 stages:
   - lint
   - name: test
-    if: type = pull_request 
-  - name: test-with-coverage 
+    if: type = pull_request
+  - name: test-with-coverage
     if: (NOT (type = pull_request ))
-  - deploy  
-    
+  - security-tests
+  - deploy
 
 jobs:
   include:
@@ -20,13 +20,17 @@ jobs:
     script:
       - yarn run build-css
       - yarn lint
-  - stage: test-with-coverage 
+  - stage: test-with-coverage
     script: yarn test-coverage
-  - stage: test 
+  - stage: test
     script: yarn test
+  - stage: security-tests
+    services:
+      - docker
+    script: bash ci/security-checks.sh
   - stage: deploy
     before_script:
-      - yarn run build-css 
+      - yarn run build-css
       - yarn build
     deploy:
       provider: firebase

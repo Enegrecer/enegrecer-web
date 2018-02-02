@@ -87,35 +87,30 @@ function validaEndereco(endereco) {
   return temTamanhoDeCaracteresMaiorQue('Endereço', endereco, 255);
 }
 
+function preencheuCampo(campo) {
+  const campoPreenchido = (!!campo);
+  return campoPreenchido;
+}
+
 function ehTelefoneValido(telefone) {
-  let telefoneValido = false;
-  if (!telefone) {
-    telefoneValido = true
-  } else {
-    telefoneValido = new RegExp('^[0-9]{10,11}$').test(telefone);
-  }
+  const telefoneValido = new RegExp('^[0-9]{10,11}$').test(telefone);
   return telefoneValido;
 }
 
 function validaTelefone(telefone) {
-  if (!ehTelefoneValido(telefone)) {
+  if (preencheuCampo(telefone) && !ehTelefoneValido(telefone)) {
     return 'Por favor, preencha o campo telefone com um número válido.';
   }
   return undefined;
 }
 
 function ehEmailValido(email) {
-  let emailValido = false;
-  if (!email) {
-    emailValido = true;
-  } else {
-    emailValido = (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email))
-  }
+  const emailValido = (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email));
   return emailValido;
 }
 
 function validaEmail(email) {
-  if (!ehEmailValido(email)) {
+  if (preencheuCampo(email) && !ehEmailValido(email)) {
     return 'Por favor, preencha com um email válido.';
   }
   return undefined;

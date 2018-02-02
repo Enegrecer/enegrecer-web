@@ -1,0 +1,1 @@
+Antes de abrir um Issue, por favor, reveja o nosso [guia de contribuição][CONTRIBUTING.md].

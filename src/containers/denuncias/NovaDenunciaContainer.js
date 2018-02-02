@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { criarDenunciaRequisicao } from '../../actions';
 import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
-import { validaDenuncia } from './ValidaDenuncia';
+import { validaDenuncia } from './validaDenuncia';
 
 export class NovaDenunciaContainer extends Component {
   constructor(props) {

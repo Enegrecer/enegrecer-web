@@ -33,6 +33,7 @@ jobs:
       script: yarn test-coverage
     - stage: deploy
       before_script:
+        - yarn run build-css
         - yarn build
       deploy:
         provider: firebase

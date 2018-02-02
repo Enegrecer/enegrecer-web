@@ -1,11 +1,7 @@
 engines:
   eslint:
-    enabled: true
-    channel: "stable"
-    checks:
-      import/extensions:
-        enabled: false
-
+    enabled: false
+    
   csslint:
     enabled: true
   duplication:

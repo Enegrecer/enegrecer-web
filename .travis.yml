@@ -2,41 +2,44 @@ language: node_js
 cache:
   yarn: true
   directories:
-  - "node_modules"
+    - "node_modules"
 node_js: '8'
 
 stages:
-  - lint
-  - name: test
-    if: type = pull_request
+  - name: lint + test + security-tests
   - name: test-with-coverage
     if: (NOT (type = pull_request ))
-  - security-tests
-  - deploy
+  - name: deploy
+    if: (NOT (type = pull_request ))
+
+install:
+  - yarn install
+
+before_script:
+  - yarn run build-css
 
 jobs:
   include:
-  - stage: lint
-    script:
-      - yarn run build-css
-      - yarn lint
-  - stage: test-with-coverage
-    script: yarn test-coverage
-  - stage: test
-    script: yarn test
-  - stage: security-tests
-    services:
-      - docker
-    script: bash ci/security-checks.sh
-  - stage: deploy
-    before_script:
-      - yarn run build-css
-      - yarn build
-    deploy:
-      provider: firebase
-      skip_cleanup: true
-      on:
-        branch: master
+    - stage: lint + test + security-tests
+      script: yarn lint
+    - script: yarn test
+    - 
+      install: skip
+      before_script: skip
+      services:
+        - docker
+      script: bash ci/security-checks.sh
+    - stage: test-with-coverage
+      script: yarn test-coverage
+    - stage: deploy
+      before_script:
+        - yarn build
+      deploy:
+        provider: firebase
+        skip_cleanup: true
+        on:
+          branch: master
+
 notifications:
   webhooks:
     urls:

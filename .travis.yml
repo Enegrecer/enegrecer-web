@@ -17,8 +17,9 @@ stages:
 jobs:
   include:
   - stage: lint
-    script: yarn run build-css
-    script: yarn lint
+    script:
+      - yarn run build-css
+      - yarn lint
   - stage: test-with-coverage
     script: yarn test-coverage
   - stage: test

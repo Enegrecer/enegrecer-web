@@ -25,9 +25,13 @@ jobs:
   include:
     - &test
       stage: test
+      script: skip
+      install: skip
     - <<: *test
+      name: lint
       script: yarn lint
     - <<: *test
+      name: test
       script: yarn test
     - stage: lint
       script: yarn lint
@@ -35,6 +39,7 @@ jobs:
       script: yarn test-coverage
     - stage: security-tests
       install: skip
+      before_script: skip
       services:
         - docker
       script: bash ci/security-checks.sh

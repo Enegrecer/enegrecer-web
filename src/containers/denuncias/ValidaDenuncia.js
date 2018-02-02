@@ -12,7 +12,7 @@ function temCaractereEspecial(campo) {
 }
 
 function temTamanhoDeCaracteresMaiorQue(nomeDoCampo, campo, tamanho) {
-  if (campo.length > tamanho) {
+  if (campo && campo.length > tamanho) {
     return `A descrição do campo ${nomeDoCampo} está muito grande. Deve ter menos de ${tamanho} caracteres.`;
   }
   return undefined;

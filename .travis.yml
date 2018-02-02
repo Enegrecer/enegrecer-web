@@ -16,7 +16,6 @@ stages:
     if: (NOT (type = pull_request ))
 
 before_script:
-  - yarn install
   - yarn run build-css
 
 jobs:

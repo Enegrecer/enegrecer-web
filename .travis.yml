@@ -10,7 +10,7 @@ stages:
   - name: test-with-coverage
     if: (NOT (type = pull_request ))
   - name: deploy
-    if: (NOT (type = pull_request ))
+    if: (branch = master AND NOT (type = pull_request ))
 
 install:
   - yarn install

@@ -10,7 +10,7 @@ stages:
   - name: test-with-coverage
     if: (NOT (type = pull_request ))
   - name: deploy
-    if: (NOT (type = pull_request ))
+    if: (branch = master AND NOT (type = pull_request ))
 
 install:
   - yarn install
@@ -33,6 +33,7 @@ jobs:
       script: yarn test-coverage
     - stage: deploy
       before_script:
+        - yarn run build-css
         - yarn build
       deploy:
         provider: firebase

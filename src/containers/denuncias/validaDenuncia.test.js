@@ -12,7 +12,7 @@ describe('validaDenuncia', () => {
         dataNascimento: '01/01/2000',
         endereco: 'endereco',
         estado: 'estado',
-        telefone: '12345678901',
+        telefone: '(81) 99722-7867',
         email: 'email@email.com',
         naturalidade: 'naturalidade',
         caracteristicasDaVitima: 'caracteristicasDaVitima',

@@ -93,7 +93,7 @@ function preencheuCampo(campo) {
 }
 
 function ehTelefoneValido(telefone) {
-  const telefoneValido = new RegExp('^[0-9]{10,11}$').test(telefone);
+  const telefoneValido = new RegExp('[(][1-9]{1}\\d[)][ ][2-9]\\d{3,4}-\\d{4}').test(telefone);
   return telefoneValido;
 }
 

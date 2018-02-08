@@ -52,8 +52,28 @@ export function RacaFormGroup({ handleChange, ...rest }) {
       fullWidth
       onChange={(_, $_, v) => handleChange(v, 'raca')}
     >
-      <MenuItem value={'preta'} primaryText="Preta" />
       <MenuItem value={'parda'} primaryText="Parda" />
+      <MenuItem value={'preta'} primaryText="Preta" />
+    </SelectField>
+  )
+}
+
+export function RacaTodasFormGroup({ handleChange, ...rest }) {
+  return (
+    <SelectField
+      {...rest}
+      hintText="Escolha uma opção"
+      floatingLabelText={'Cor ou Raca'}
+      floatingLabelFixed
+      fullWidth
+      onChange={(_, $_, v) => handleChange(v, 'raca')}
+    >
+      <MenuItem value={'amarela'} primaryText="Amarela" />
+      <MenuItem value={'branca'} primaryText="Branco" />
+      <MenuItem value={'indigena'} primaryText="Índigena" />
+      <MenuItem value={'parda'} primaryText="Parda" />
+      <MenuItem value={'preta'} primaryText="Preta" />
+
     </SelectField>
   )
 }
@@ -69,3 +89,5 @@ EstadoFormGroup.propTypes = { ...formGroupPropTypes };
 TelefoneFormGroup.propTypes = { ...formGroupPropTypes };
 
 RacaFormGroup.propTypes = { ...formGroupPropTypes };
+
+RacaTodasFormGroup.propTypes = { ...formGroupPropTypes };

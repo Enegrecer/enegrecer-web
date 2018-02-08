@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import TextField from 'material-ui/TextField'
 import { cortarPalavra } from '../../../helpers';
-
 import { RacaFormGroup, TelefoneFormGroup } from '../../FormGroups'
 
 export default class NovaTestemunhaForm extends React.Component {

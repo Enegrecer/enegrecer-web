@@ -1,11 +1,7 @@
 engines:
   eslint:
-    enabled: true
-    channel: "stable"
-    checks:
-      import/extensions:
-        enabled: false
-
+    enabled: false
+    
   csslint:
     enabled: true
   duplication:
@@ -13,6 +9,6 @@ engines:
     config:
       languages:
       - javascript:
-exclude_paths:
-- "**.test.*"
-- "testeFuncional/"
+exclude_patterns:
+- "**/testeFuncional/"
+- "src/**/*.test.js"

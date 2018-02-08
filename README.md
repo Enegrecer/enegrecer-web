@@ -107,7 +107,7 @@ Na nossa stack temos:
 
 ## Como Contribuir
 
-Para contribuir no projeto dê uma espiada no nosso [Guia de Contribuição](docs/CONTRIBUTING.md).
+Para contribuir no projeto dê uma espiada no nosso [Guia de Contribuição](.github/CONTRIBUTING.md).
 
 ## Mais Informações
 

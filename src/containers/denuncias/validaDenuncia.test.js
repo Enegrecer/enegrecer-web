@@ -1,6 +1,6 @@
 import { assert } from 'chai';
 import moment from 'moment';
-import * as validaDenuncia from './ValidaDenuncia';
+import * as validaDenuncia from './validaDenuncia';
 
 describe('validaDenuncia', () => {
   describe('valida uma denuncia preenchida corretamente', () => {
@@ -12,10 +12,10 @@ describe('validaDenuncia', () => {
         dataNascimento: '01/01/2000',
         endereco: 'endereco',
         estado: 'estado',
-        telefone: '12345678901',
+        telefone: '(81) 99722-7867',
         email: 'email@email.com',
         naturalidade: 'naturalidade',
-        caracteristicaDaVitima: 'caracteristicasDaVitima',
+        caracteristicasDaVitima: 'caracteristicasDaVitima',
       }
     }
 
@@ -42,12 +42,11 @@ describe('validaDenuncia', () => {
         telefone: '',
         email: '',
         naturalidade: '',
-        caracteristicaDaVitima: 'campo obrigatorio',
+        caracteristicasDaVitima: 'campo obrigatorio',
       }
     }
 
     it('Deve retornar mensagem de erro quando nenhum campo foi preenchido', () => {
-
       const mensagem = validaDenuncia.validaDenuncia(null);
 
       assert.equal('Por favor, preencha a denúncia.', mensagem);
@@ -55,7 +54,7 @@ describe('validaDenuncia', () => {
 
     it('Deve retornar mensagem de erro quando o campo Da é vazio', () => {
       const camposDaDanuncia = camposDaDenunciaVazio();
-      camposDaDanuncia.caracteristicaDaVitima = '';
+      camposDaDanuncia.caracteristicasDaVitima = '';
 
       const mensagem = validaDenuncia.validaDenuncia(camposDaDanuncia);
 
@@ -64,7 +63,7 @@ describe('validaDenuncia', () => {
 
     it('Deve retornar mensagem de erro quando o campo Da possuir mais de 255 caracteres', () => {
       const camposDaDanuncia = camposDaDenunciaVazio();
-      camposDaDanuncia.caracteristicaDaVitima = '12345678901234567890123456789012345678901234567890123456' +
+      camposDaDanuncia.caracteristicasDaVitima = '12345678901234567890123456789012345678901234567890123456' +
         '789012345678901234567890123456789012345678901234567890123456789012' +
         '345678901234567890123456789012345678901234567890123456789012345678' +
         '90123456789012345678901234567890123456789012345678901234567890123456';

@@ -1,6 +1,6 @@
 import { fork, call, put, take } from 'redux-saga/effects';
 import rootSaga, { handleCriarDenunciaRequisicao, criarDenuncia } from './denuncias';
-import { CRIAR_DENUNCIA_REQUISICAO, criarDenunciaSucesso } from '../actions';
+import { CRIAR_DENUNCIA_REQUISICAO, criarDenunciaSucesso } from '../actions/criarDenunciaActions';
 
 jest.mock('../utils/firebaseUtils');
 

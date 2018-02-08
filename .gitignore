@@ -22,7 +22,6 @@ yarn-debug.log*
 yarn-error.log*
 enegrecer-web.iml
 
-yarn.lock
 package-lock.json
 
 .idea/

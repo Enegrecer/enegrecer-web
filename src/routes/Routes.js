@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { Redirect, Route, Switch, BrowserRouter } from 'react-router-dom';
 import HomePage from '../components/home/Home';
 import Login from '../components/login/Login';
+import ProximosPassos from '../components/proximosPassos/ProximosPassos';
 import Painel from '../components/layouts/Painel';
 import NovaDenuncia from '../containers/denuncias/NovaDenunciaContainer';
 
 /* eslint-disable */
 function PrivateRoute({ component: Component, authed, ...rest }) {
-  console.log("private");
   return (
     <Route
       {...rest}
@@ -30,7 +30,6 @@ function PublicRoute({ component: Component, authed, ...rest }) {
   );
 }
 
-/* eslint-enable */
 const Routes = props => (
   <BrowserRouter>
     <Switch>
@@ -42,6 +41,12 @@ const Routes = props => (
           authed={props.authed}
           path="/painel/denuncias/nova"
           component={NovaDenuncia}
+        />
+        <PrivateRoute
+          currentUserUID={props.currentUserUID}
+          authed={props.authed}
+          path="/painel/proximosPassos"
+          component={ProximosPassos}
         />
       </Painel>
     </Switch>

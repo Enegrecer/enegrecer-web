@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import Routes from './Routes';
 import HomePage from '../components/home/Home';
 import Login from '../components/login/Login';
+import ProximosPassos from '../components/proximosPassos/ProximosPassos';
 import NovaDenuncia from '../containers/denuncias/NovaDenunciaContainer';
 
 function possuiRotaComComponente(rotas, rota, componente) {
@@ -19,5 +20,5 @@ describe('Routes', () => {
   possuiRotaComComponente(routes, '/', HomePage);
   possuiRotaComComponente(routes, '/painel/login', Login);
   possuiRotaComComponente(routes, '/painel/denuncias/nova', NovaDenuncia);
+  possuiRotaComComponente(routes, '/painel/proximosPassos', ProximosPassos);
 });
-

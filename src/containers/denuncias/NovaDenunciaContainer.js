@@ -25,7 +25,7 @@ export class NovaDenunciaContainer extends Component {
     if (mensagemError === undefined) {
       this.props.criarDenunciaRequisicao({
         ...this.state,
-        onSuccess: push('/'),
+        onSuccess: push('./proximosPassos'),
       });
     } else {
       alert(mensagemError);

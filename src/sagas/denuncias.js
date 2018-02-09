@@ -70,7 +70,6 @@ export function* handleCriarDenunciaRequisicao() {
     const idDenuncia = yield call(criarDenuncia, acao);
 
     yield put(criarDenunciaSucesso(idDenuncia));
-    yield put(acao.payload.onSuccess);
   }
 }
 

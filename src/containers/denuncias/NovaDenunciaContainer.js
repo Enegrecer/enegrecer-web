@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
 import { criarDenunciaRequisicao } from '../../actions/criarDenunciaActions';
 import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
 import { validaDenuncia } from './validaDenuncia';
@@ -24,8 +24,7 @@ export class NovaDenunciaContainer extends Component {
     const mensagemError = validaDenuncia(this.state.vitima);
     if (mensagemError === undefined) {
       this.props.criarDenunciaRequisicao({
-        ...this.state,
-        onSuccess: push('./proximosPassos'),
+        ...this.state
       });
     } else {
       alert(mensagemError);
@@ -40,7 +39,10 @@ export class NovaDenunciaContainer extends Component {
   }
 
   render() {
-    return (
+    const denunciaCadastradaComSucesso = this.props.denunciaCadastradaComSucesso;
+    if (denunciaCadastradaComSucesso) {
+      return <Redirect to="/painel/proximosPassos" />;
+    } return (
       <NovaDenunciaForm
         salvarDenuncia={this.onPressSaveButton}
         alterarDenunciaForm={this.adicionarDenunciaNoForm}
@@ -52,10 +54,17 @@ export class NovaDenunciaContainer extends Component {
 NovaDenunciaContainer.propTypes = {
   currentUserUID: PropTypes.string.isRequired,
   criarDenunciaRequisicao: PropTypes.func.isRequired,
+  denunciaCadastradaComSucesso: PropTypes.bool.is
 };
+
+NovaDenunciaContainer.defaultProps = {
+  denunciaCadastradaComSucesso: false
+};
+
 
 const mapStateToProps = state => ({
   denunciante: state.auth ? state.auth.user.uid : undefined,
+  denunciaCadastradaComSucesso: state.denunciaComSucessoReducer.denunciaCadastradaComSucesso
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({

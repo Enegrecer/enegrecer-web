@@ -129,7 +129,7 @@ export function CampoTexto(props) {
       autoComplete="off"
       fullWidth
       multiLine={props.type === 'textarea'}
-      onChange = {props.onChange}
+      onChange={props.onChange}
     />
   );
 }
@@ -140,6 +140,7 @@ CampoTexto.propTypes = {
   maxLen: PropTypes.number,
   placeholder: PropTypes.string,
   label: PropTypes.string,
+  onChange: PropTypes.func
 };
 
 CampoTexto.defaultProps = {
@@ -148,6 +149,7 @@ CampoTexto.defaultProps = {
   maxLen: '',
   placeholder: '',
   label: '',
+  onChange: () => {}
 };
 
 const formGroupPropTypes = {

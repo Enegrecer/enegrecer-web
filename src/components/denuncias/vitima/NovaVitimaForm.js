@@ -29,7 +29,7 @@ export default class NovaVitimaForm extends Component {
   componentDidMount() {
     this.props.handleChange({ vitima: this.state })
   }
-  
+
 
   handleChange(value, property) {
     this.setState({ [property]: value },
@@ -45,11 +45,14 @@ export default class NovaVitimaForm extends Component {
 
         <CheckBox id={'conhecoAVitima'} label={'Conheço a Vítima'} onClick={e => this.handleChange(e.target.checked, 'conhecoAVitima')} />
         <CheckBox id={'souAVitima'} label={'Sou a Vítima'} onClick={e => this.handleChange(e.target.checked, 'souAVitima')} />
-        <CampoTexto id={'nome-vitima'}
-                    label={'Nome (máximo de 100 caracteres)'}
-                     maxLen={100} placeholder={''} 
-                     type={'text'} 
-                     onChange={e => this.handleChange(e.target.value, 'nome')}/>
+        <CampoTexto
+          id={'nome-vitima'}
+          label={'Nome (máximo de 100 caracteres)'}
+          maxLen={100}
+          placeholder={''}
+          type={'text'}
+          onChange={e => this.handleChange(e.target.value, 'nome')}
+        />
 
         <CampoTexto id={'vitima-genero'} label={'Gênero (máximo de 15 caracteres)'} maxLen={15} placeholder={''} type={'text'} />
         <RacaFormGroup id={'raca'} value={this.state.raca} handleChange={this.handleChange} />

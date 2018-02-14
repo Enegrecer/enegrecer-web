@@ -40,7 +40,7 @@ describe('NovaVitimaForm Component', () => {
           value: 'Coletivo nacional de Juventude Enegrecer é uma expressão do movimento social',
         },
       };
-      
+
       wrapper.find('#nome-vitima').simulate('change', eventMock);
       expect(wrapper.state().nome).toEqual('Coletivo nacional de Juventude Enegrecer é uma expressão do movimento social');
     });

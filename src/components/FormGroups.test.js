@@ -32,7 +32,7 @@ describe('RacaFormGroup', () => {
 
 describe('CampoTexto', () => {
   it('renderiza o componente sem erros', () => {
-    shallow(<CampoTexto maxLen={35}/>);
+    shallow(<CampoTexto maxLen={35} />);
   });
 });
 

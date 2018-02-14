@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import InputMask from 'react-input-mask';
 import SelectField from 'material-ui/SelectField';
+import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
 import TextField from 'material-ui/TextField'
 import MenuItem from 'material-ui/MenuItem';
 import { ESTADOS } from '../constants';
@@ -58,6 +59,40 @@ export function RacaFormGroup({ handleChange, ...rest }) {
     </SelectField>
   )
 }
+
+export function RadioGrupoBotoes(props) {
+  return (
+    <RadioButtonGroup
+      name={props.id}
+      defaultSelected={props.valorPadrao}
+    >
+      { props.botoes.map(
+        val =>
+          (<RadioButton
+            className="inch-button"
+            name={val.valor}
+            key={val.valor}
+            value={val.valor}
+            label={val.label}
+          />)
+      )
+      }
+    </RadioButtonGroup>
+  )
+}
+
+RadioGrupoBotoes.propTypes = {
+  id: PropTypes.string,
+  valorPadrao: PropTypes.string,
+  botoes: PropTypes.arrayOf(PropTypes.object)
+};
+
+RadioGrupoBotoes.defaultProps = {
+  id: '',
+  valorPadrao: '',
+  botoes: []
+};
+
 
 export function CampoTexto(props) {
   return (

@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react';
-import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
-import TextField from 'material-ui/TextField'
 import * as helpers from '../../helpers';
-import { EstadoFormGroup, CampoTexto } from '../FormGroups';
+import { EstadoFormGroup, CampoTexto, RadioGrupoBotoes } from '../FormGroups';
 
 export default class DetalhamentoDenuncia extends Component {
   constructor(props) {
@@ -40,22 +38,23 @@ export default class DetalhamentoDenuncia extends Component {
         <br />
         <h1>Nova Denúncia</h1>
         <br />
-        <CampoTexto  id={'detalhamento'} label={'* Detalhamento'} maxLen={255} type={'textarea'}
+        <CampoTexto
+          id={'detalhamento'}
+          label={'* Detalhamento'}
+          maxLen={255}
+          type={'textarea'}
           onChange={e => this.onChangeCampoTexto('detalhamento', e, 255)}
         />
-        <CampoTexto id={'dataOcorrencia'} label={'Data do ocorrido'} maxLen={''} placeholder={''} type={'date'} />
-        <CampoTexto id={'horaOcorrencia'} label={'Hora do ocorrido'} maxLen={''} placeholder={''} type={'time'} />
+        <CampoTexto id={'dataOcorrencia'} label={'Data do ocorrido'} maxLen={255} placeholder={''} type={'date'} />
+        <CampoTexto id={'horaOcorrencia'} label={'Hora do ocorrido'} maxLen={255} placeholder={''} type={'time'} />
         <br />
 
-        <RadioButtonGroup
-          name={'idCategoria'}
+        <RadioGrupoBotoes
+          id={'idCategoria'}
           onChange={e => this.handleChange(e.target.checked, 'idCategoria')}
-          defaultSelected={this.state.idCategoria}
-        >
-          <RadioButton className="inch-button" value="injuria" label="Injúria" />
-          <RadioButton className="half-button" value="racismo" label="Racismo" />
-        </RadioButtonGroup>
-
+          botoes={[{ valor: 'injuria', label: 'Injúria' },
+            { valor: 'racismo', label: 'Racismo' }]}
+        />
         <h4>Local do crime</h4>
 
         <CampoTexto
@@ -76,7 +75,7 @@ export default class DetalhamentoDenuncia extends Component {
   }
 }
 
-DetalhamentoDenuncia.defaultProps = { handleChange: () => {} };
+DetalhamentoDenuncia.defaultProps = { handleChange: () => { } };
 
 DetalhamentoDenuncia.propTypes = {
   handleChange: PropTypes.func

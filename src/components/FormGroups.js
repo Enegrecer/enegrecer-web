@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import InputMask from 'react-input-mask';
 import SelectField from 'material-ui/SelectField';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
+import Checkbox from 'material-ui/Checkbox'
 import TextField from 'material-ui/TextField'
 import MenuItem from 'material-ui/MenuItem';
 import { ESTADOS } from '../constants';
@@ -93,6 +94,28 @@ RadioGrupoBotoes.defaultProps = {
   botoes: []
 };
 
+export function CheckBox(props) {
+  return (
+    <Checkbox
+      id={props.id}
+      name={props.name}
+      label={props.label}
+    />
+  );
+}
+
+CheckBox.propTypes = {
+  id: PropTypes.string,
+  label: PropTypes.string,
+  name: PropTypes.string
+};
+
+CheckBox.defaultProps = {
+  id: '',
+  label: '',
+  name: ''
+}
+
 
 export function CampoTexto(props) {
   return (
@@ -106,6 +129,7 @@ export function CampoTexto(props) {
       autoComplete="off"
       fullWidth
       multiLine={props.type === 'textarea'}
+      onChange = {props.onChange}
     />
   );
 }

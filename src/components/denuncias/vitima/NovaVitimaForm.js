@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { EstadoFormGroup, RacaFormGroup, TelefoneFormGroup, CampoTexto, Checkbox } from '../../FormGroups'
+import { EstadoFormGroup, RacaFormGroup, TelefoneFormGroup, CampoTexto, CheckBox } from '../../FormGroups'
 
 
 export default class NovaVitimaForm extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
-    //this.renderTextField = this.renderTextField.bind(this);
+    // this.renderTextField = this.renderTextField.bind(this);
 
     this.state = {
       pessoaIdentificada: false,
@@ -29,6 +29,7 @@ export default class NovaVitimaForm extends Component {
   componentDidMount() {
     this.props.handleChange({ vitima: this.state })
   }
+  
 
   handleChange(value, property) {
     this.setState({ [property]: value },
@@ -42,12 +43,17 @@ export default class NovaVitimaForm extends Component {
         <h3>Informacões da Vítima</h3>
         <br />
 
-        <Checkbox id={'conhecoAVitima'} label={'Conheço a Vítima'} onClick={e => this.handleChange(e.target.checked, 'conhecoAVitima')} />
-        <Checkbox id={'souAVitima'} label={'Sou a Vítima'} onClick={e => this.handleChange(e.target.checked, 'souAVitima')} />
-        <CampoTexto id={'vitima-nome'} label={'Nome (máximo de 100 caracteres)'} maxLen={100} placeholder={''} type={'text'} />
+        <CheckBox id={'conhecoAVitima'} label={'Conheço a Vítima'} onClick={e => this.handleChange(e.target.checked, 'conhecoAVitima')} />
+        <CheckBox id={'souAVitima'} label={'Sou a Vítima'} onClick={e => this.handleChange(e.target.checked, 'souAVitima')} />
+        <CampoTexto id={'nome-vitima'}
+                    label={'Nome (máximo de 100 caracteres)'}
+                     maxLen={100} placeholder={''} 
+                     type={'text'} 
+                     onChange={e => this.handleChange(e.target.value, 'nome')}/>
+
         <CampoTexto id={'vitima-genero'} label={'Gênero (máximo de 15 caracteres)'} maxLen={15} placeholder={''} type={'text'} />
         <RacaFormGroup id={'raca'} value={this.state.raca} handleChange={this.handleChange} />
-        <CampoTexto id={'dataNascimento-vitima'} label={'Data de Nascimento'} type={'date'} />
+        <CampoTexto id={'dataNascimento-vitima'} label={'Data de Nascimento'} maxLen={8} type={'date'} />
         <CampoTexto id={'endereco-vitima'} label={'Endereço (máximo de 255 caracteres)'} maxLen={255} type={'textarea'} />
         <CampoTexto id={'naturalidade-vitima'} label={'Naturalidade (máximo de 40 caracteres)'} maxLen={40} type={'text'} />
 

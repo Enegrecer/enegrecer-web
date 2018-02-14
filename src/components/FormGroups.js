@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import InputMask from 'react-input-mask';
 import SelectField from 'material-ui/SelectField';
+import TextField from 'material-ui/TextField'
 import MenuItem from 'material-ui/MenuItem';
 import { ESTADOS } from '../constants';
 
@@ -57,6 +58,38 @@ export function RacaFormGroup({ handleChange, ...rest }) {
     </SelectField>
   )
 }
+
+export function CampoTexto(props) {
+  return (
+    <TextField
+      id={props.id}
+      type={props.type}
+      maxLength={props.maxLen}
+      hintText={props.placeholder}
+      floatingLabelText={props.label}
+      floatingLabelFixed
+      autoComplete="off"
+      fullWidth
+      multiLine={props.type === 'textarea'}
+    />
+  );
+}
+
+CampoTexto.propTypes = {
+  id: PropTypes.string,
+  type: PropTypes.string,
+  maxLen: PropTypes.number,
+  placeholder: PropTypes.string,
+  label: PropTypes.string,
+};
+
+CampoTexto.defaultProps = {
+  id: '',
+  type: '',
+  maxLen: '',
+  placeholder: '',
+  label: '',
+};
 
 const formGroupPropTypes = {
   id: PropTypes.string.isRequired,

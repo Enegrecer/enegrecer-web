@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { mock } from 'sinon';
-import { EstadoFormGroup, RacaFormGroup } from './FormGroups';
+import { EstadoFormGroup, RacaFormGroup, CampoTexto } from './FormGroups';
 
 
 describe('EstadoFormGroup', () => {
@@ -27,6 +27,12 @@ describe('RacaFormGroup', () => {
       />);
     expect(wrapper.exists()).toBe(true);
     expect(wrapper.find('#raca')).toHaveLength(1)
+  });
+});
+
+describe('CampoTexto', () => {
+  it('renderiza o componente sem erros', () => {
+    shallow(<CampoTexto />);
   });
 });
 

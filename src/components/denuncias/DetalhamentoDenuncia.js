@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
 import TextField from 'material-ui/TextField'
 import * as helpers from '../../helpers';
-import { EstadoFormGroup } from '../FormGroups';
+import { EstadoFormGroup, CampoTexto } from '../FormGroups';
 
 export default class DetalhamentoDenuncia extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
+    this.onChangeCampoTexto = this.onChangeCampoTexto.bind(this);
 
     this.state = {
       detalhamento: '',
@@ -20,32 +21,17 @@ export default class DetalhamentoDenuncia extends Component {
     };
   }
 
+
+  onChangeCampoTexto(id, e, maxLen) {
+    const value = helpers.cortarPalavra(e.target.value, maxLen);
+    this.handleChange(value, id)
+  }
+
   handleChange(value, property) {
     this.setState(
       { [property]: value },
       () => this.props.handleChange(this.state)
     );
-  }
-
-  renderTextField(id, label, maxLen = '', placeholder = '', type = 'text') {
-    return (
-      <TextField
-        id={`${id}`}
-        value={this.state[id]}
-        type={type}
-        maxLength={maxLen}
-        hintText={placeholder}
-        floatingLabelText={label}
-        floatingLabelFixed
-        autoComplete="off"
-        fullWidth
-        multiLine={type === 'textarea'}
-        onChange={(e) => {
-          const value = helpers.cortarPalavra(e.target.value, maxLen);
-          this.handleChange(value, id)
-        }}
-      />
-    )
   }
 
   render() {
@@ -54,12 +40,11 @@ export default class DetalhamentoDenuncia extends Component {
         <br />
         <h1>Nova Denúncia</h1>
         <br />
-
-        { this.renderTextField('detalhamento', '* Detalhamento', '255', '', 'textarea')}
-
-        { this.renderTextField('dataOcorrencia', 'Data do ocorrido', '', '', 'date') }
-
-        { this.renderTextField('horaOcorrencia', 'Hora do ocorrido', '', '', 'time') }
+        <CampoTexto  id={'detalhamento'} label={'* Detalhamento'} maxLen={255} type={'textarea'}
+          onChange={e => this.onChangeCampoTexto('detalhamento', e, 255)}
+        />
+        <CampoTexto id={'dataOcorrencia'} label={'Data do ocorrido'} maxLen={''} placeholder={''} type={'date'} />
+        <CampoTexto id={'horaOcorrencia'} label={'Hora do ocorrido'} maxLen={''} placeholder={''} type={'time'} />
         <br />
 
         <RadioButtonGroup
@@ -73,7 +58,13 @@ export default class DetalhamentoDenuncia extends Component {
 
         <h4>Local do crime</h4>
 
-        { this.renderTextField('endereco', 'Endereço', '255', '', '', 'textarea')}
+        <CampoTexto
+          id={'endereco'}
+          label={'Endereço'}
+          maxLen={255}
+          type={'textarea'}
+          onChange={e => this.onChangeCampoTexto('endereco', e, 255)}
+        />
 
         <EstadoFormGroup
           id="estado"

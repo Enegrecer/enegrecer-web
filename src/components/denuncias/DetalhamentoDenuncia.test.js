@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { shallow, mount } from 'enzyme';
 import DetalhamentoDenuncia from './DetalhamentoDenuncia';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import PropTypes from 'prop-types'
+
 
 describe('DetalhamentoDenuncia Component', () => {
   it('deve renderizar o componente sem erros', () => {

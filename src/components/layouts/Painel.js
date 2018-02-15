@@ -50,7 +50,7 @@ class Painel extends React.Component {
 }
 
 Painel.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.element.isRequired
 };
 
 export default Painel;

@@ -7,11 +7,10 @@ describe('Painel', () => {
   const wrapper = shallow(
     <Painel>
       <span />
-      <span />
     </Painel>,
   );
 
   it('renderiza os filhos', () => {
-    expect(wrapper.find('span')).toHaveLength(2);
+    expect(wrapper.find('span')).toHaveLength(1);
   });
 });

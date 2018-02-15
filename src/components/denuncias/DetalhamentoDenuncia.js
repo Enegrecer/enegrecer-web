@@ -1,14 +1,12 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react';
-import * as helpers from '../../helpers';
+import { cortarPalavra } from '../../helpers';
 import { EstadoFormGroup, CampoTexto, RadioGrupoBotoes } from '../FormGroups';
 
 export default class DetalhamentoDenuncia extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
-    this.onChangeCampoTexto = this.onChangeCampoTexto.bind(this);
-
     this.state = {
       detalhamento: '',
       dataOcorrencia: '',
@@ -17,12 +15,6 @@ export default class DetalhamentoDenuncia extends Component {
       endereco: '',
       estado: ''
     };
-  }
-
-
-  onChangeCampoTexto(id, e, maxLen) {
-    const value = helpers.cortarPalavra(e.target.value, maxLen);
-    this.handleChange(value, id)
   }
 
   handleChange(value, property) {
@@ -43,10 +35,22 @@ export default class DetalhamentoDenuncia extends Component {
           label={'* Detalhamento'}
           maxLen={255}
           type={'textarea'}
-          onChange={e => this.onChangeCampoTexto('detalhamento', e, 255)}
+          onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 255), 'detalhamento') }}
         />
-        <CampoTexto id={'dataOcorrencia'} label={'Data do ocorrido'} maxLen={255} placeholder={''} type={'date'} />
-        <CampoTexto id={'horaOcorrencia'} label={'Hora do ocorrido'} maxLen={255} placeholder={''} type={'time'} />
+        <CampoTexto
+          id={'dataOcorrencia'}
+          label={'Data do ocorrido'}
+          maxLen={0}
+          type={'date'}
+          onChange={(e) => { this.handleChange(e.target.value, 'dataOcorrencia') }}
+        />
+        <CampoTexto
+          id={'horaOcorrencia'}
+          label={'Hora do ocorrido'}
+          maxLen={0}
+          type={'time'}
+          onChange={(e) => { this.handleChange(e.target.value, 'horaOcorrencia') }}
+        />
         <br />
 
         <RadioGrupoBotoes
@@ -62,7 +66,7 @@ export default class DetalhamentoDenuncia extends Component {
           label={'Endereço'}
           maxLen={255}
           type={'textarea'}
-          onChange={e => this.onChangeCampoTexto('endereco', e, 255)}
+          onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 255), 'endereco') }}
         />
 
         <EstadoFormGroup

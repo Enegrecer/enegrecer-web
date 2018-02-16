@@ -35,6 +35,7 @@
         "comma-dangle": 0,
         "padded-blocks": "warn",
         "no-unused-vars": "warn",
+        "import/no-extraneous-dependencies": 0,
         "import/prefer-default-export": 0,
         "react/jsx-uses-react": "error",
         "react/jsx-wrap-multilines": "warn",

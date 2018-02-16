@@ -21,14 +21,4 @@ describe('Nav', () => {
   it('tem o link de sobre', () => {
     expect(wrapper.find('[href="/sobre"]').exists()).toBeTruthy();
   });
-
-  describe('quando clicar no botão de registrar/entrar', () => {
-    beforeEach(() => {
-      wrapper.find('Botao[outline]').simulate('click');
-    });
-
-    it('deve chamar a função push com /painel/login', () => {
-      expect(historyMock.push).toBeCalledWith('/painel/login');
-    });
-  });
 });

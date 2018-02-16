@@ -35,8 +35,8 @@ describe('DetalhamentoDenuncia Component', () => {
           muiTheme: PropTypes.object.isRequired,
         },
       });
-      expect(wrapper.find('#injuria').length).toEqual(1);
-      expect(wrapper.find('#racismo').length).toEqual(1);
+      expect(wrapper.find('input#radioInjuria').length).toEqual(1);
+      expect(wrapper.find('input#radioRacismo').length).toEqual(1);
     });
 
     it('deve renderizar sem erro o campo de endereco do componente', () => {

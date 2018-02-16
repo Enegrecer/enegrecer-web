@@ -56,8 +56,8 @@ export default class DetalhamentoDenuncia extends Component {
         <RadioGrupoBotoes
           id={'idCategoria'}
           onChange={e => this.handleChange(e.target.checked, 'idCategoria')}
-          botoes={[{ valor: 'injuria', label: 'Injúria' },
-            { valor: 'racismo', label: 'Racismo' }]}
+          botoes={[{ id:'radioInjuria', valor: 'injuria', label: 'Injúria' },
+                   { id:'radioRacismo', valor: 'racismo', label: 'Racismo' }]}
         />
         <h4>Local do crime</h4>
 

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import TextField from 'material-ui/TextField'
 import { cortarPalavra } from '../../../helpers';
-import { RacaFormGroup, TelefoneFormGroup } from '../../FormGroups'
+import { RacaTodasFormGroup, TelefoneFormGroup } from '../../FormGroups'
 
 export default class NovaTestemunhaForm extends React.Component {
   constructor(props) {
@@ -57,7 +57,7 @@ export default class NovaTestemunhaForm extends React.Component {
 
         { this.renderTextField('genero', 'Gênero (máximo de 15 caracteres)', '15', 'Ex.: Feminino, Masculino, Não Binário...') }
 
-        <RacaFormGroup
+        <RacaTodasFormGroup
           id={'raca'}
           value={this.state.raca}
           handleChange={this.handleChange}

@@ -11,14 +11,5 @@ exports[`Nav possui a mesma estrutura 1`] = `
   >
     Sobre
   </a>
-  <Botao
-    colored={false}
-    name="Registrar / Entrar"
-    onClick={[Function]}
-    outline={true}
-    primary={true}
-  >
-    Registrar / Entrar
-  </Botao>
 </nav>
 `;

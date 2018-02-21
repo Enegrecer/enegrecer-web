@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import AppBar from 'material-ui/AppBar';
 import { IconButton, Drawer, MenuItem } from 'material-ui';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
-import { logout } from '../../modules/auth';
 
 class Painel extends React.Component {
   constructor(props) {
@@ -42,14 +41,8 @@ class Painel extends React.Component {
           <Link to="/"><MenuItem>Home</MenuItem></Link>
           <Link to="/painel/categorias"><MenuItem>Categorias</MenuItem></Link>
           <Link to="/painel/denuncias/nova"><MenuItem>Criar Denúncia</MenuItem></Link>
-          <Link to="/painel/proximosPassos"><MenuItem>Próximos Passos</MenuItem></Link>
-
-          {
-            this.props.children[0].props.authed
-              ? <Link to="#" onClick={logout}><MenuItem>Logout</MenuItem></Link>
-              : <Link to="/painel/login"><MenuItem>Login</MenuItem></Link>
-          }
-        </Drawer>
+           <Link to="/painel/proximosPassos"><MenuItem>Próximos Passos</MenuItem></Link>
+     </Drawer>
 
         {this.props.children}
       </div>

@@ -54,7 +54,7 @@ export class NovaDenunciaContainer extends Component {
 NovaDenunciaContainer.propTypes = {
   currentUserUID: PropTypes.string.isRequired,
   criarDenunciaRequisicao: PropTypes.func.isRequired,
-  denunciaCadastradaComSucesso: PropTypes.bool.is
+  denunciaCadastradaComSucesso: PropTypes.bool.isRequired
 };
 
 NovaDenunciaContainer.defaultProps = {

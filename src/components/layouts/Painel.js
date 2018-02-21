@@ -41,8 +41,8 @@ class Painel extends React.Component {
           <Link to="/"><MenuItem>Home</MenuItem></Link>
           <Link to="/painel/categorias"><MenuItem>Categorias</MenuItem></Link>
           <Link to="/painel/denuncias/nova"><MenuItem>Criar Denúncia</MenuItem></Link>
-           <Link to="/painel/proximosPassos"><MenuItem>Próximos Passos</MenuItem></Link>
-     </Drawer>
+          <Link to="/painel/proximosPassos"><MenuItem>Próximos Passos</MenuItem></Link>
+        </Drawer>
 
         {this.props.children}
       </div>

@@ -18,7 +18,8 @@
     "react-scripts": "1.1.1",
     "redux": "^3.7.2",
     "redux-actions": "^2.2.1",
-    "redux-saga": "^0.15.6"
+    "redux-saga": "^0.15.6",
+    "materialize-css": "^0.100.2"
   },
   "scripts": {
     "start": "yarn build-css && react-scripts start",

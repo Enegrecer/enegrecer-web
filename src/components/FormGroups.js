@@ -119,6 +119,9 @@ CheckBox.defaultProps = {
 
 export function CampoTexto(props) {
   return (
+     <div> {props.label} <input id={props.id}  type={props.type}  maxLength={props.maxLen}  
+      placeholder={props.placeholder} onChange={props.onChange} autoComplete="off"  /></div>
+    /*
     <TextField
       id={props.id}
       type={props.type}
@@ -131,6 +134,7 @@ export function CampoTexto(props) {
       multiLine={props.type === 'textarea'}
       onChange={props.onChange}
     />
+    */
   );
 }
 

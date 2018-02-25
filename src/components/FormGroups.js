@@ -7,26 +7,6 @@ import Checkbox from 'material-ui/Checkbox'
 import MenuItem from 'material-ui/MenuItem';
 import { ESTADOS } from '../constants';
 
-export function EstadoFormGroup({ handleChange, ...rest }) {
-  return (
-    <div className="input-field col s12">
-      <SelectField
-        {...rest}
-        hintText="Escolha uma opção"
-        floatingLabelText="Estado"
-        floatingLabelFixed
-        fullWidth
-        onChange={(_, __, v) => handleChange(v, 'estado')}
-      >
-        {
-          ESTADOS.map(
-            val => <MenuItem key={val} value={val} primaryText={val} />
-          )
-        }
-      </SelectField>
-    </div>  
-  )
-}
 
 export function TelefoneFormGroup({ handleChange, ...props }) {
   return (
@@ -117,20 +97,55 @@ CheckBox.defaultProps = {
   name: ''
 }
 
-export function Combobox(props) {
+export function EstadoFormGroup({ handleChange, ...rest }) {
   return (
     <div className="input-field col s12">
-    <select>
-      <option value="" >Choose your option</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+      <SelectField
+        {...rest}
+        hintText="Escolha uma opção"
+        floatingLabelText="Estado"
+        floatingLabelFixed
+        fullWidth
+        onChange={(_, __, v) => handleChange(v, 'estado')}
+      >
+        {
+          ESTADOS.map(
+            val => <MenuItem key={val} value={val} primaryText={val} />
+          )
+        }
+      </SelectField>
+    </div>  
+  )
+}
+
+ 
+
+export function Combobox(props) {
+  return (
+    <div className={props.divClasse}>
+    <select id={props.id}>
+      <option value="" >{props.valorPadrao}</option>
+      {
+        props.itens.map(
+          val => <option key={val} value={val}> {val} </option>
+        )
+      }
     </select>
-    <label>Materialize Select</label>
+    <label for={props.id}>{props.label}</label>
   </div>
   );
 }
 
+Combobox.propTypes = {
+  id: PropTypes.string,
+  type: PropTypes.string,
+  maxLen: PropTypes.number,
+  placeholder: PropTypes.string,
+  label: PropTypes.string,
+  onChange: PropTypes.func,
+  divClasse: PropTypes.string,
+  inputClasse: PropTypes.string
+};
 
 export function CampoTexto(props) {
   return (

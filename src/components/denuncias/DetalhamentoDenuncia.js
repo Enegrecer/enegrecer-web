@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import { cortarPalavra } from '../../helpers';
 import { EstadoFormGroup, CampoTexto, RadioGrupoBotoes, Combobox } from '../FormGroups';
+import { estados } from '../../dados'
 import * as ConstantesCSS from '../layouts/ConstantesCss'
 
 
@@ -19,7 +20,7 @@ export default class DetalhamentoDenuncia extends Component {
       estado: ''
     };
   }
-  
+
   componentDidMount() {
     $(document).ready(function() {
       $('select').material_select();
@@ -97,7 +98,15 @@ export default class DetalhamentoDenuncia extends Component {
           onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 255), 'endereco') }}
         />
       </div>   
-       <Combobox />
+      <Combobox id={'estado'} value={this.state.estado} 
+        handleChange={this.handleChange}
+        itens={estados} 
+        divClasse={ConstantesCSS.CLASSES_DIV_INPUT + ' col s12'}
+        label={'Selecione o Estado:'}
+        valorPadrao={"Selecione"}
+      />
+
+
       <div className="row">
         <EstadoFormGroup
           id="estado"

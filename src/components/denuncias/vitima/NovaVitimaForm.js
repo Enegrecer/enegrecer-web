@@ -1,16 +1,14 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import Checkbox from 'material-ui/Checkbox'
-import TextField from 'material-ui/TextField'
-import * as helpers from '../../../helpers';
-import { EstadoFormGroup, RacaFormGroup, TelefoneFormGroup } from '../../FormGroups'
+import { EstadoFormGroup, RacaFormGroup, TelefoneFormGroup, CampoTexto, CheckBox } from '../../FormGroups'
+import { cortarPalavra } from '../../../helpers';
+
 
 export default class NovaVitimaForm extends Component {
   constructor(props) {
     super(props);
-
     this.handleChange = this.handleChange.bind(this);
-    this.renderTextField = this.renderTextField.bind(this);
+    // this.renderTextField = this.renderTextField.bind(this);
 
     this.state = {
       pessoaIdentificada: false,
@@ -33,43 +31,11 @@ export default class NovaVitimaForm extends Component {
     this.props.handleChange({ vitima: this.state })
   }
 
+
   handleChange(value, property) {
     this.setState({ [property]: value },
       () => this.props.handleChange({ vitima: this.state })
     );
-  }
-
-  renderTextField(id, label, maxLen = '', placeholder = '', type = '') {
-    return (
-      <TextField
-        id={`${id}-vitima`}
-        value={this.state[id]}
-        type={type || 'text'}
-        maxLength={maxLen}
-        hintText={placeholder}
-        floatingLabelText={label}
-        floatingLabelFixed
-        autoComplete="off"
-        fullWidth
-        multiLine={type === 'textarea'}
-        onChange={(e) => {
-          const value = helpers.cortarPalavra(e.target.value, maxLen);
-          this.handleChange(value, id)
-        }}
-      />
-    )
-  }
-
-  renderCheckbox(id, label) {
-    return (
-      <Checkbox
-        id={id}
-        name={id}
-        checked={this.state[id]}
-        label={label}
-        onClick={e => this.handleChange(e.target.checked, id)}
-      />
-    )
   }
 
   render() {
@@ -78,26 +44,50 @@ export default class NovaVitimaForm extends Component {
         <h3>Informacões da Vítima</h3>
         <br />
 
-        { this.renderCheckbox('conhecoAVitima', 'Conheço a Vítima') }
-
-        { this.renderCheckbox('souAVitima', 'Sou a Vítima') }
-
-        { this.renderTextField('nome', 'Nome (máximo de 40 caracteres)', '40') }
-
-        { this.renderTextField('genero', 'Gênero (máximo de 15 caracteres)', '15', 'Ex.: Feminino, Masculino, Não Binário...') }
-
-
-        <RacaFormGroup
-          id={'raca'}
-          value={this.state.raca}
-          handleChange={this.handleChange}
+        <CheckBox id={'conhecoAVitima'} label={'Conheço a Vítima'} onClick={e => this.handleChange(e.target.checked, 'conhecoAVitima')} />
+        <CheckBox id={'souAVitima'} label={'Sou a Vítima'} onClick={e => this.handleChange(e.target.checked, 'souAVitima')} />
+        <CampoTexto
+          id={'nome-vitima'}
+          label={'Nome (máximo de 40 caracteres)'}
+          maxLen={40}
+          placeholder={''}
+          type={'text'}
+          onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'nome')}
         />
 
-        { this.renderTextField('dataNascimento', 'Data de Nascimento', '', '', 'date') }
+        <CampoTexto
+          id={'vitima-genero'}
+          label={'Gênero (máximo de 15 caracteres)'}
+          maxLen={15}
+          onChange={e => this.handleChange(cortarPalavra(e.target.value, 15), 'genero')}
+          type={'text'}
+        />
 
-        { this.renderTextField('endereco', 'Endereço (máximo de 255 caracteres)', '255', '')}
+        <RacaFormGroup id={'raca'} value={this.state.raca} handleChange={this.handleChange} />
 
-        { this.renderTextField('naturalidade', 'Naturalidade (máximo de 40 caracteres)', '40')}
+        <CampoTexto
+          id={'dataNascimento-vitima'}
+          label={'Data de Nascimento'}
+          onChange={e => this.handleChange(e.target.value, 'dataNascimento')}
+          maxLen={8}
+          type={'date'}
+        />
+
+        <CampoTexto
+          id={'endereco-vitima'}
+          label={'Endereço (máximo de 255 caracteres)'}
+          onChange={e => this.handleChange(cortarPalavra(e.target.value, 255), 'endereco')}
+          maxLen={255}
+          type={'textarea'}
+        />
+
+        <CampoTexto
+          id={'naturalidade-vitima'}
+          label={'Naturalidade (máximo de 40 caracteres)'}
+          onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'naturalidade')}
+          maxLen={40}
+          type={'text'}
+        />
 
         <EstadoFormGroup
           id={'estadoVitima'}
@@ -111,16 +101,22 @@ export default class NovaVitimaForm extends Component {
           handleChange={this.handleChange}
         />
 
-        { this.renderTextField('email', 'Email', '') }
+        <CampoTexto
+          id={'email-vitima'}
+          label={'Email'}
+          maxLen={40}
+          type={'text'}
+          onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'email')}
+        />
 
-        { this.renderTextField(
-          'caracteristicasDaVitima',
-          '* Por favor, descreva aqui as características da vítima (máximo de 255 caracteres)',
-          '255',
-          'Ex.: Era uma mulher negra, com aproximadamente 40 anos, magra, alta com cabelo curto...',
-          'textarea')
-        }
-
+        <CampoTexto
+          id={'caracteristicasDaVitima'}
+          label={'* Por favor, descreva aqui as características da vítima (máximo de 255 caracteres)'}
+          maxLen={255}
+          type={'textarea'}
+          placeholder={'Ex.: Era uma mulher negra, com aproximadamente 40 anos, magra, alta com cabelo curto...'}
+          onChange={e => this.handleChange(cortarPalavra(e.target.value, 255), 'caracteristicasDaVitima')}
+        />
         <br />
       </div>);
   }

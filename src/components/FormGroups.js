@@ -68,13 +68,13 @@ export function RadioGrupoBotoes(props) {
       defaultSelected={props.valorPadrao}
     >
       { props.botoes.map(
-        val =>
+        botaoRadio =>
           (<RadioButton
             className="inch-button"
-            id={val.valor}
-            key={val.valor}
-            value={val.valor}
-            label={val.label}
+            id={botaoRadio.id}
+            key={botaoRadio.id}
+            value={botaoRadio.valor}
+            label={botaoRadio.label}
           />)
       )
       }

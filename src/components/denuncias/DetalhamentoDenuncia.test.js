@@ -1,6 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import PropTypes from 'prop-types';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import { shallow, mount } from 'enzyme';
 import DetalhamentoDenuncia from './DetalhamentoDenuncia';
+
 
 describe('DetalhamentoDenuncia Component', () => {
   it('deve renderizar o componente sem erros', () => {
@@ -24,9 +27,16 @@ describe('DetalhamentoDenuncia Component', () => {
     });
 
     it('deve renderizar sem erro o campo de idCategoria do componente', () => {
-      const wrapper = shallow(<DetalhamentoDenuncia />);
-      expect(wrapper.find('[value="injuria"]').length).toEqual(1);
-      expect(wrapper.find('[value="racismo"]').length).toEqual(1);
+      const wrapper = mount(<DetalhamentoDenuncia />, {
+        context: {
+          muiTheme: getMuiTheme(),
+        },
+        childContextTypes: {
+          muiTheme: PropTypes.object.isRequired,
+        },
+      });
+      expect(wrapper.find('input#radioInjuria').length).toEqual(1);
+      expect(wrapper.find('input#radioRacismo').length).toEqual(1);
     });
 
     it('deve renderizar sem erro o campo de endereco do componente', () => {

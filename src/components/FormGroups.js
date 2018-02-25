@@ -10,18 +10,18 @@ import { ESTADOS } from '../constants';
 
 export function TelefoneFormGroup({ handleChange, ...props }) {
   return (
-    <div>
-      <label htmlFor={props.id}>Telefone</label>
-      <InputMask
-        {...props}
-        type="text"
-        name={props.id}
-        id={props.id}
-        onChange={e => handleChange(e.target.value, 'telefone')}
-        value={props.value}
-        mask="(99) 99999-9999"
-        maskChar=" "
-      />
+    <div className="input-field col s6">
+       <InputMask
+       {...props}
+       type="text"
+       name={props.id}
+       id={props.id}
+       onChange={e => handleChange(e.target.value, 'telefone')}
+       value={props.value}
+       mask="(99) 99999-9999"
+       maskChar=" "
+     />
+     <label for={props.id}>{props.label}</label>
     </div>
   )
 }

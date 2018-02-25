@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react';
+import $ from 'jquery';
 import { cortarPalavra } from '../../helpers';
-import { EstadoFormGroup, CampoTexto, RadioGrupoBotoes } from '../FormGroups';
+import { EstadoFormGroup, CampoTexto, RadioGrupoBotoes, Combobox } from '../FormGroups';
 import * as ConstantesCSS from '../layouts/ConstantesCss'
+
 
 export default class DetalhamentoDenuncia extends Component {
   constructor(props) {
@@ -16,6 +18,12 @@ export default class DetalhamentoDenuncia extends Component {
       endereco: '',
       estado: ''
     };
+  }
+  
+  componentDidMount() {
+    $(document).ready(function() {
+      $('select').material_select();
+    });
   }
 
   handleChange(value, property) {
@@ -89,7 +97,7 @@ export default class DetalhamentoDenuncia extends Component {
           onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 255), 'endereco') }}
         />
       </div>   
-       
+       <Combobox />
       <div className="row">
         <EstadoFormGroup
           id="estado"

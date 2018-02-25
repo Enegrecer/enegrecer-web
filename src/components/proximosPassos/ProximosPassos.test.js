@@ -6,14 +6,13 @@ import toJson from 'enzyme-to-json';
 import ProximosPassos from './ProximosPassos'
 
 describe('ProximosPassos', () => {
-  
   const wrapper = shallow(<ProximosPassos />);
 
   it('deve possuir a mesma estrutura', () => {
     const tree = toJson(wrapper);
     expect(tree).toMatchSnapshot();
   });
-  
+
   /*
   it('tem um topbar', () => {
     expect(wrapper.find('Topbar').exists()).toBeTruthy();

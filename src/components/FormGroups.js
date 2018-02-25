@@ -4,26 +4,27 @@ import InputMask from 'react-input-mask';
 import SelectField from 'material-ui/SelectField';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
 import Checkbox from 'material-ui/Checkbox'
-import TextField from 'material-ui/TextField'
 import MenuItem from 'material-ui/MenuItem';
 import { ESTADOS } from '../constants';
 
 export function EstadoFormGroup({ handleChange, ...rest }) {
   return (
-    <SelectField
-      {...rest}
-      hintText="Escolha uma opção"
-      floatingLabelText="Estado"
-      floatingLabelFixed
-      fullWidth
-      onChange={(_, __, v) => handleChange(v, 'estado')}
-    >
-      {
-        ESTADOS.map(
-          val => <MenuItem key={val} value={val} primaryText={val} />
-        )
-      }
-    </SelectField>
+    <div className="input-field col s12">
+      <SelectField
+        {...rest}
+        hintText="Escolha uma opção"
+        floatingLabelText="Estado"
+        floatingLabelFixed
+        fullWidth
+        onChange={(_, __, v) => handleChange(v, 'estado')}
+      >
+        {
+          ESTADOS.map(
+            val => <MenuItem key={val} value={val} primaryText={val} />
+          )
+        }
+      </SelectField>
+    </div>  
   )
 }
 
@@ -119,26 +120,10 @@ CheckBox.defaultProps = {
 
 export function CampoTexto(props) {
   return (
-     <div className="input-field col s6" >  
-      
-      <input id={props.id}  type="text"  maxLength={props.maxLen}  
-       placeholder={props.placeholder} onChange={props.onChange} autoComplete="off"  />
-      <label for={props.id} > {props.label} </label>
+    <div className={props.divClasse}>
+      <input  id={props.id} type={props.type} className={props.inputClasse} />
+      <label className="active" for={props.id}>{props.label}</label>
     </div>
-    /*
-    <TextField
-      id={props.id}
-      type={props.type}
-      maxLength={props.maxLen}
-      hintText={props.placeholder}
-      floatingLabelText={props.label}
-      floatingLabelFixed
-      autoComplete="off"
-      fullWidth
-      multiLine={props.type === 'textarea'}
-      onChange={props.onChange}
-    />
-    */
   );
 }
 
@@ -148,7 +133,10 @@ CampoTexto.propTypes = {
   maxLen: PropTypes.number,
   placeholder: PropTypes.string,
   label: PropTypes.string,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  divClasse: PropTypes.string,
+  inputClasse: PropTypes.string
+
 };
 
 CampoTexto.defaultProps = {
@@ -157,7 +145,9 @@ CampoTexto.defaultProps = {
   maxLen: '',
   placeholder: '',
   label: '',
-  onChange: () => {}
+  onChange: () => {},
+  divClasse: '',
+  inputClasse: ''
 };
 
 const formGroupPropTypes = {

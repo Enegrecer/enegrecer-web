@@ -4,6 +4,7 @@ import HomePage from '../components/home/Home';
 import Painel from '../components/layouts/Painel';
 import NovaDenuncia from '../containers/denuncias/NovaDenunciaContainer';
 import 'materialize-css/dist/css/materialize.css';
+import 'materialize-css/dist/js/materialize.min.js';
 
 const Routes = () => (
   <BrowserRouter>

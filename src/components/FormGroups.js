@@ -77,11 +77,10 @@ RadioGrupoBotoes.defaultProps = {
 
 export function CheckBox(props) {
   return (
-    <Checkbox
-      id={props.id}
-      name={props.name}
-      label={props.label}
-    />
+   <p>
+     <input type="checkbox" id={props.id} />
+     <label for={props.id}>{props.label}</label>
+   </p>
   );
 }
 

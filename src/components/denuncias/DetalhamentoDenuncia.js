@@ -55,14 +55,13 @@ export default class DetalhamentoDenuncia extends Component {
       </div>  
       
       <div className="row">
-
         <RadioGrupoBotoes
         id={'idCategoria'}
         onChange={e => this.handleChange(e.target.checked, 'idCategoria')}
         botoes={[{ id: 'radioInjuria', valor: 'injuria', label: 'Injúria' },
           { id: 'radioRacismo', valor: 'racismo', label: 'Racismo' }]}
         />
-         
+     
         <CampoTexto
           id={'dataOcorrencia'}
           label={'Data do ocorrido'}
@@ -98,23 +97,15 @@ export default class DetalhamentoDenuncia extends Component {
           onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 255), 'endereco') }}
         />
       </div>   
-      <Combobox id={'estado'} value={this.state.estado} 
-        handleChange={this.handleChange}
-        itens={estados} 
-        divClasse={ConstantesCSS.CLASSES_DIV_INPUT + ' col s12'}
-        label={'Selecione o Estado:'}
-        valorPadrao={"Selecione"}
-      />
-
-
       <div className="row">
-        <EstadoFormGroup
-          id="estado"
-          value={this.state.estado}
-          divClasse={ConstantesCSS.CLASSES_DIV_INPUT + ' col s12'}
+        <Combobox id={'estado'} value={this.state.estado} 
           handleChange={this.handleChange}
+          itens={estados} 
+          divClasse={ConstantesCSS.CLASSES_DIV_INPUT + ' col s12'}
+          label={'Selecione o Estado:'}
+          valorPadrao={"Selecione"}
         />
-      </div>  
+      </div>
       </div>
     )
   }

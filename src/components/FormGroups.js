@@ -72,7 +72,7 @@ export function RadioGrupoBotoes(props) {
           (<RadioButton
             className="inch-button"
             id={botaoRadio.id}
-            key={botaoRadio.valor}
+            key={botaoRadio.id}
             value={botaoRadio.valor}
             label={botaoRadio.label}
           />)

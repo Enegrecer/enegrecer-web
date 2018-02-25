@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { criarDenunciaRequisicao } from '../../actions/criarDenunciaActions';
+import { criarDenunciaRequisicao, limpaEstadoUltimaDencunciaCadastrada } from '../../actions/criarDenunciaActions';
 import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
 import { validaDenuncia } from './validaDenuncia';
 
@@ -19,6 +19,12 @@ export class NovaDenunciaContainer extends Component {
     };
   }
 
+  componentWillUnmount() {
+    if (this.props.denunciaCadastradaComSucesso) {
+      this.props.limpaEstadoUltimaDencunciaCadastrada();
+    }
+  }
+
   onPressSaveButton() {
     const mensagemError = validaDenuncia(this.state.vitima);
     if (mensagemError === undefined) {
@@ -29,7 +35,6 @@ export class NovaDenunciaContainer extends Component {
       alert(mensagemError);
     }
   }
-
 
   adicionarDenunciaNoForm(denuncia) {
     this.setState({
@@ -52,6 +57,7 @@ export class NovaDenunciaContainer extends Component {
 
 NovaDenunciaContainer.propTypes = {
   criarDenunciaRequisicao: PropTypes.func.isRequired,
+  limpaEstadoUltimaDencunciaCadastrada: PropTypes.func.isRequired,
   denunciaCadastradaComSucesso: PropTypes.bool.isRequired
 };
 
@@ -67,6 +73,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   criarDenunciaRequisicao,
+  limpaEstadoUltimaDencunciaCadastrada
 }, dispatch);
 
 const reduxNovaDenuncia = connect(

@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import denunciaCadastradaComSucesso from './denunciaComSucessoReducer';
 import {
-  criarDenunciaRequisicao, criarDenunciaSucesso,
+  criarDenunciaRequisicao, criarDenunciaSucesso, limpaEstadoUltimaDencunciaCadastrada
 } from '../actions/criarDenunciaActions';
 
 describe('denunciaCadastradaComSucessoReducer', () => {
@@ -19,6 +19,14 @@ describe('denunciaCadastradaComSucessoReducer', () => {
       const actionDenunciaCadastradaComSucesso = criarDenunciaSucesso(1);
       const estado = denunciaCadastradaComSucesso({}, actionDenunciaCadastradaComSucesso);
       expect(estado.denunciaCadastradaComSucesso).equal(true);
+    });
+  });
+
+  describe('quando a action é do tipo de limpa dados da última denuncia cadastrada', () => {
+    it('o estado deve ser alterado com a propriedade denunciaCadastradaComSucesso igual a false  ', () => {
+      const limpaDados = limpaEstadoUltimaDencunciaCadastrada();
+      const estado = denunciaCadastradaComSucesso({}, limpaDados);
+      expect(estado.denunciaCadastradaComSucesso).equal(false);
     });
   });
 });

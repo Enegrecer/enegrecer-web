@@ -119,8 +119,12 @@ CheckBox.defaultProps = {
 
 export function CampoTexto(props) {
   return (
-     <div> {props.label} <input id={props.id}  type={props.type}  maxLength={props.maxLen}  
-      placeholder={props.placeholder} onChange={props.onChange} autoComplete="off"  /></div>
+     <div className="input-field col s6" >  
+      
+      <input id={props.id}  type="text"  maxLength={props.maxLen}  
+       placeholder={props.placeholder} onChange={props.onChange} autoComplete="off"  />
+      <label for={props.id} > {props.label} </label>
+    </div>
     /*
     <TextField
       id={props.id}

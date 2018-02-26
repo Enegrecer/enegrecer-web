@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cortarPalavra } from '../../../helpers';
-import { RacaFormGroup, TelefoneFormGroup, CampoTexto, Combobox } from '../../FormGroups'
+import { TelefoneFormGroup, CampoTexto, Combobox } from '../../FormGroups'
 import * as ConstantesCSS from '../../../components/layouts/ConstantesCss';
-import { estados, racasVitima } from '../../../dados';
+import { racasVitima } from '../../../dados';
 
 export default class NovaTestemunhaForm extends React.Component {
   constructor(props) {

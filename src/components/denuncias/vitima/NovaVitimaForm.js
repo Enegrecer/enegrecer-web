@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { EstadoFormGroup, RacaFormGroup, TelefoneFormGroup, CampoTexto, CheckBox,
-  Combobox } from '../../FormGroups'
+import { TelefoneFormGroup, CampoTexto, CheckBox, Combobox } from '../../FormGroups'
 import { cortarPalavra } from '../../../helpers';
 import * as ConstantesCSS from '../../../components/layouts/ConstantesCss'
 import { estados, racasVitima } from '../../../dados'
@@ -11,8 +10,6 @@ export default class NovaVitimaForm extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
-    // this.renderTextField = this.renderTextField.bind(this);
-
     this.state = {
       pessoaIdentificada: false,
       souAVitima: false,

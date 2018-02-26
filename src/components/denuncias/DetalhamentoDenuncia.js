@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react';
 import $ from 'jquery';
 import { cortarPalavra } from '../../helpers';
-import { EstadoFormGroup, CampoTexto, RadioGrupoBotoes, Combobox } from '../FormGroups';
+import { CampoTexto, RadioGrupoBotoes, Combobox } from '../FormGroups';
 import { estados } from '../../dados'
 import * as ConstantesCSS from '../layouts/ConstantesCss'
 

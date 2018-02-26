@@ -46,7 +46,7 @@ export function RadioGrupoBotoes(props) {
       { props.botoes.map(
         botaoRadio =>
           (<p key={botaoRadio.id}>
-            <input name={props.id}  type="radio" id={botaoRadio.id} />
+            <input name={props.id} type="radio" id={botaoRadio.id} />
             <label htmlFor={botaoRadio.id}>{botaoRadio.valor}</label>
           </p>
           )
@@ -114,7 +114,7 @@ export function EstadoFormGroup({ handleChange, ...rest }) {
 export function Combobox(props) {
   return (
     <div className={props.divClasse}>
-      <select id={props.id}>
+      <select id={props.id} onChange={props.onChange}>
         <option value="" >{props.valorPadrao}</option>
         {
           props.itens.map(
@@ -129,19 +129,24 @@ export function Combobox(props) {
 
 Combobox.propTypes = {
   id: PropTypes.string,
-  type: PropTypes.string,
-  maxLen: PropTypes.number,
-  placeholder: PropTypes.string,
   label: PropTypes.string,
   onChange: PropTypes.func,
   divClasse: PropTypes.string,
-  inputClasse: PropTypes.string
+  itens: PropTypes.array
 };
 
 export function CampoTexto(props) {
+
   return (
     <div className={props.divClasse}>
-      <input id={props.id} type={props.type} className={props.inputClasse} />
+      <input
+        id={props.id}
+        type={props.type}
+        onChange={props.onChange}
+        className={props.inputClasse}
+        maxLength={props.maxLen}
+        placeholder={props.placeholder? props.placeholder: undefined }
+      />
       <label className="active" htmlFor={props.id}>{props.label}</label>
     </div>
   );

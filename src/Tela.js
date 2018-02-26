@@ -11,6 +11,6 @@ export const iniciaCamposMaterialize = () => {
 }
 
 export const initHummer = (elementId) => {
-  var element = document.getElementById(elementId);
-  new Hammer(element);
+  const element = document.getElementById(elementId);
+  Hammer(element);
 }

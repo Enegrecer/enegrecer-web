@@ -1,9 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import InputMask from 'react-input-mask';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
-import { ESTADOS } from '../constants';
 
 
 export function TelefoneFormGroup({ handleChange, ...props }) {
@@ -24,21 +21,6 @@ export function TelefoneFormGroup({ handleChange, ...props }) {
   )
 }
 
-export function RacaFormGroup({ handleChange, ...rest }) {
-  return (
-    <SelectField
-      {...rest}
-      hintText="Escolha uma opção"
-      floatingLabelText={'Cor ou Raca'}
-      floatingLabelFixed
-      fullWidth
-      onChange={(_, $_, v) => handleChange(v, 'raca')}
-    >
-      <MenuItem value={'preta'} primaryText="Preta" />
-      <MenuItem value={'parda'} primaryText="Parda" />
-    </SelectField>
-  )
-}
 
 export function RadioGrupoBotoes(props) {
   return (
@@ -83,27 +65,6 @@ CheckBox.propTypes = {
 CheckBox.defaultProps = {
   id: '',
   label: ''
-}
-
-export function EstadoFormGroup({ handleChange, ...rest }) {
-  return (
-    <div className="input-field col s12">
-      <SelectField
-        {...rest}
-        hintText="Escolha uma opção"
-        floatingLabelText="Estado"
-        floatingLabelFixed
-        fullWidth
-        onChange={(_, __, v) => handleChange(v, 'estado')}
-      >
-        {
-          ESTADOS.map(
-            val => <MenuItem key={val} value={val} primaryText={val} />
-          )
-        }
-      </SelectField>
-    </div>
-  )
 }
 
 
@@ -187,8 +148,6 @@ const formGroupPropTypes = {
   handleChange: PropTypes.func.isRequired
 };
 
-EstadoFormGroup.propTypes = { ...formGroupPropTypes };
 
 TelefoneFormGroup.propTypes = { ...formGroupPropTypes };
 
-RacaFormGroup.propTypes = { ...formGroupPropTypes };

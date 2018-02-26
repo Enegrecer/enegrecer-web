@@ -10,11 +10,11 @@ class Painel extends React.Component {
 
   render() {
     return (
-      <div> 
+      <div>
         <nav>
           <div className="nav-wrapper">
             <ul id="nav-mobile" className="left hide-on-med-and-down">
-              <li> <Link to="/">Home</Link>Home</li>
+              <li> <Link to="/">Home</Link></li>
               <li> <Link to="/painel/denuncias/nova">Criar Denúncia</Link></li>
             </ul>
           </div>

@@ -2,8 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import InputMask from 'react-input-mask';
 import SelectField from 'material-ui/SelectField';
-import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
-import Checkbox from 'material-ui/Checkbox'
 import MenuItem from 'material-ui/MenuItem';
 import { ESTADOS } from '../constants';
 
@@ -11,17 +9,17 @@ import { ESTADOS } from '../constants';
 export function TelefoneFormGroup({ handleChange, ...props }) {
   return (
     <div className="input-field col s6">
-       <InputMask
-       {...props}
-       type="text"
-       name={props.id}
-       id={props.id}
-       onChange={e => handleChange(e.target.value, 'telefone')}
-       value={props.value}
-       mask="(99) 99999-9999"
-       maskChar=" "
-     />
-     <label for={props.id}>{props.label}</label>
+      <InputMask
+        {...props}
+        type="text"
+        name={props.id}
+        id={props.id}
+        onChange={e => handleChange(e.target.value, 'telefone')}
+        value={props.value}
+        mask="(99) 99999-9999"
+        maskChar=" "
+      />
+      <label htmlFor={props.id}>{props.label}</label>
     </div>
   )
 }
@@ -47,10 +45,10 @@ export function RadioGrupoBotoes(props) {
     <div >
       { props.botoes.map(
         botaoRadio =>
-          (<p>
-            <input name={props.id} type="radio" id={botaoRadio.id}/>
-            <label for={botaoRadio.id}>{botaoRadio.valor}</label>
-           </p> 
+          (<p key={botaoRadio.id}>
+            <input name={props.id}  type="radio" id={botaoRadio.id} />
+            <label htmlFor={botaoRadio.id}>{botaoRadio.valor}</label>
+          </p>
           )
       )
       }
@@ -72,10 +70,10 @@ RadioGrupoBotoes.defaultProps = {
 
 export function CheckBox(props) {
   return (
-   <p>
-     <input type="checkbox" id={props.id} />
-     <label for={props.id}>{props.label}</label>
-   </p>
+    <p>
+      <input type="checkbox" id={props.id} />
+      <label htmlFor={props.id}>{props.label}</label>
+    </p>
   );
 }
 
@@ -108,25 +106,24 @@ export function EstadoFormGroup({ handleChange, ...rest }) {
           )
         }
       </SelectField>
-    </div>  
+    </div>
   )
 }
 
- 
 
 export function Combobox(props) {
   return (
     <div className={props.divClasse}>
-    <select id={props.id}>
-      <option value="" >{props.valorPadrao}</option>
-      {
-        props.itens.map(
-          val => <option key={val} value={val}> {val} </option>
-        )
-      }
-    </select>
-    <label for={props.id}>{props.label}</label>
-  </div>
+      <select id={props.id}>
+        <option value="" >{props.valorPadrao}</option>
+        {
+          props.itens.map(
+            val => <option key={val} value={val}> {val} </option>
+          )
+        }
+      </select>
+      <label htmlFor={props.id}>{props.label}</label>
+    </div>
   );
 }
 
@@ -144,8 +141,8 @@ Combobox.propTypes = {
 export function CampoTexto(props) {
   return (
     <div className={props.divClasse}>
-      <input  id={props.id} type={props.type} className={props.inputClasse} />
-      <label className="active" for={props.id}>{props.label}</label>
+      <input id={props.id} type={props.type} className={props.inputClasse} />
+      <label className="active" htmlFor={props.id}>{props.label}</label>
     </div>
   );
 }

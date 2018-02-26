@@ -52,7 +52,7 @@ export default class NovaDenunciaForm extends Component {
         <NovaTestemunhaForm handleChange={this.handleChange} />
 
         <br />
-        <button class="btn waves-effect waves-light" type="submit" name="action">
+        <button className="btn waves-effect waves-light" type="submit" name="action">
             Enviar Denúncia
         </button>
       </form>);

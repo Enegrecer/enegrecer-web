@@ -58,13 +58,11 @@ export function RadioGrupoBotoes(props) {
 
 RadioGrupoBotoes.propTypes = {
   id: PropTypes.string,
-  valorPadrao: PropTypes.string,
   botoes: PropTypes.arrayOf(PropTypes.object)
 };
 
 RadioGrupoBotoes.defaultProps = {
   id: '',
-  valorPadrao: '',
   botoes: []
 };
 
@@ -79,14 +77,12 @@ export function CheckBox(props) {
 
 CheckBox.propTypes = {
   id: PropTypes.string,
-  label: PropTypes.string,
-  name: PropTypes.string
+  label: PropTypes.string
 };
 
 CheckBox.defaultProps = {
   id: '',
-  label: '',
-  name: ''
+  label: ''
 }
 
 export function EstadoFormGroup({ handleChange, ...rest }) {
@@ -132,11 +128,21 @@ Combobox.propTypes = {
   label: PropTypes.string,
   onChange: PropTypes.func,
   divClasse: PropTypes.string,
-  itens: PropTypes.array
+  itens: PropTypes.arrayOf(PropTypes.string),
+  valorPadrao: PropTypes.string
 };
 
-export function CampoTexto(props) {
+Combobox.defaultProps = {
+  id: '',
+  label: '',
+  onChange: () => {},
+  divClasse: '',
+  itens: [],
+  valorPadrao: ''
+};
 
+
+export function CampoTexto(props) {
   return (
     <div className={props.divClasse}>
       <input
@@ -145,7 +151,7 @@ export function CampoTexto(props) {
         onChange={props.onChange}
         className={props.inputClasse}
         maxLength={props.maxLen}
-        placeholder={props.placeholder? props.placeholder: undefined }
+        placeholder={props.placeholder ? props.placeholder : undefined}
       />
       <label className="active" htmlFor={props.id}>{props.label}</label>
     </div>

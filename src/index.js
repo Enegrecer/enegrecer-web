@@ -1,4 +1,5 @@
 import React from 'react';
+import 'materialize-css/dist/css/materialize.css';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
@@ -11,6 +12,7 @@ import registerServiceWorker from './utils/registerServiceWorker';
 
 import './assets/styles/index.css';
 import './css/principal.css';
+import 'materialize-css';
 
 
 const store = configureStore();

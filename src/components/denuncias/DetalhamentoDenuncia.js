@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react';
-import $ from 'jquery';
 import { cortarPalavra } from '../../helpers';
 import { CampoTexto, RadioGrupoBotoes, Combobox } from '../FormGroups';
 import { estados } from '../../dados'
@@ -21,12 +20,6 @@ export default class DetalhamentoDenuncia extends Component {
     };
   }
 
-  componentDidMount() {
-    $(document).ready(() => {
-      $('select').material_select();
-    });
-  }
-
   handleChange(value, property) {
     this.setState(
       { [property]: value },
@@ -37,8 +30,8 @@ export default class DetalhamentoDenuncia extends Component {
   render() {
     return (
       <div>
-        <h4>Nova Denúncia</h4>
-        
+        <h1>Nova Denúncia</h1>
+
         <div className="row">
           <CampoTexto
             id={'detalhamento'}
@@ -79,7 +72,7 @@ export default class DetalhamentoDenuncia extends Component {
             onChange={(e) => { this.handleChange(e.target.value, 'horaOcorrencia') }}
           />
         </div>
-        
+
         <h4>Local do crime</h4>
         <div className="row">
           <CampoTexto

@@ -9,10 +9,12 @@ import 'font-awesome/css/font-awesome.css';
 import configureStore from './store';
 import Rotas from './routes/Routes'
 import registerServiceWorker from './utils/registerServiceWorker';
+import  * as Tela  from '../Tela';
+
 
 import './assets/styles/index.css';
 import './css/principal.css';
-import 'materialize-css';
+
 
 
 const store = configureStore();

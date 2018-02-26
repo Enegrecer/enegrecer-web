@@ -1,9 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Routes from './Routes';
 import HomePage from '../components/home/Home';
 import NovaDenuncia from '../containers/denuncias/NovaDenunciaContainer';
-import 'materialize-css';
+import $ from 'jquery';
+
 
 function possuiRotaComComponente(rotas, rota, componente) {
   it(`possui rota "${rota}" com componente correto`, () => {

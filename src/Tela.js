@@ -1,3 +1,4 @@
+import Hammer from 'hammerjs/hammer'
 import Materialize  from 'materialize-css';
 import $ from 'jquery';
 

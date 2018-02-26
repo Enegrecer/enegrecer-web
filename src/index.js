@@ -12,6 +12,7 @@ import registerServiceWorker from './utils/registerServiceWorker';
 
 import './assets/styles/index.css';
 
+
 const store = configureStore();
 
 ReactDOM.render(

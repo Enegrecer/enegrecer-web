@@ -44,22 +44,17 @@ export function RacaFormGroup({ handleChange, ...rest }) {
 
 export function RadioGrupoBotoes(props) {
   return (
-    <RadioButtonGroup
-      name={props.id}
-      defaultSelected={props.valorPadrao}
-    >
+    <div >
       { props.botoes.map(
         botaoRadio =>
-          (<RadioButton
-            className="inch-button"
-            id={botaoRadio.id}
-            key={botaoRadio.valor}
-            value={botaoRadio.valor}
-            label={botaoRadio.label}
-          />)
+          (<p>
+            <input name={props.id} type="radio" id={botaoRadio.id}/>
+            <label for={botaoRadio.id}>{botaoRadio.valor}</label>
+           </p> 
+          )
       )
       }
-    </RadioButtonGroup>
+    </div>
   )
 }
 

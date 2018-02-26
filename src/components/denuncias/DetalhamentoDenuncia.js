@@ -37,7 +37,8 @@ export default class DetalhamentoDenuncia extends Component {
   render() {
     return (
       <div>
-        <h1>Nova Denúncia</h1>
+        <h4>Nova Denúncia</h4>
+        
         <div className="row">
           <CampoTexto
             id={'detalhamento'}
@@ -78,10 +79,8 @@ export default class DetalhamentoDenuncia extends Component {
             onChange={(e) => { this.handleChange(e.target.value, 'horaOcorrencia') }}
           />
         </div>
-
+        
         <h4>Local do crime</h4>
-        <br />
-
         <div className="row">
           <CampoTexto
             id={'endereco'}

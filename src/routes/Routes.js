@@ -4,6 +4,7 @@ import HomePage from '../components/home/Home';
 import Painel from '../components/layouts/Painel';
 import NovaDenuncia from '../containers/denuncias/NovaDenunciaContainer';
 
+
 const Routes = () => (
   <BrowserRouter>
     <Switch>

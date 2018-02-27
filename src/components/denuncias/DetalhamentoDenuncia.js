@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react';
-import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
-import TextField from 'material-ui/TextField'
-import * as helpers from '../../helpers';
-import { EstadoFormGroup } from '../FormGroups';
+import { cortarPalavra } from '../../helpers';
+import { CampoTexto, RadioGrupoBotoes, Combobox } from '../FormGroups';
+import { estados } from '../../dados'
+import * as ConstantesCSS from '../layouts/ConstantesCss'
+
 
 export default class DetalhamentoDenuncia extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
-
     this.state = {
       detalhamento: '',
       dataOcorrencia: '',
@@ -27,65 +27,81 @@ export default class DetalhamentoDenuncia extends Component {
     );
   }
 
-  renderTextField(id, label, maxLen = '', placeholder = '', type = 'text') {
-    return (
-      <TextField
-        id={`${id}`}
-        value={this.state[id]}
-        type={type}
-        maxLength={maxLen}
-        hintText={placeholder}
-        floatingLabelText={label}
-        floatingLabelFixed
-        autoComplete="off"
-        fullWidth
-        multiLine={type === 'textarea'}
-        onChange={(e) => {
-          const value = helpers.cortarPalavra(e.target.value, maxLen);
-          this.handleChange(value, id)
-        }}
-      />
-    )
-  }
-
   render() {
     return (
       <div>
-        <br />
         <h1>Nova Denúncia</h1>
-        <br />
 
-        { this.renderTextField('detalhamento', '* Detalhamento', '255', '', 'textarea')}
+        <div className="row">
+          <CampoTexto
+            id={'detalhamento'}
+            label={'* Detalhamento'}
+            maxLen={255}
+            type={'text'}
+            inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 255), 'detalhamento') }}
+          />
+        </div>
 
-        { this.renderTextField('dataOcorrencia', 'Data do ocorrido', '', '', 'date') }
+        <div className="row">
+          <RadioGrupoBotoes
+            id={'idCategoria'}
+            onChange={e => this.handleChange(e.target.checked, 'idCategoria')}
+            botoes={[{ id: 'radioInjuria', valor: 'injuria', label: 'Injúria' },
+              { id: 'radioRacismo', valor: 'racismo', label: 'Racismo' }]}
+          />
 
-        { this.renderTextField('horaOcorrencia', 'Hora do ocorrido', '', '', 'time') }
-        <br />
+          <CampoTexto
+            id={'dataOcorrencia'}
+            label={'Data do ocorrido'}
+            inputClasse={ConstantesCSS.CLASSES_INPUT}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            maxLen={0}
+            type={'date'}
+            onChange={(e) => { this.handleChange(e.target.value, 'dataOcorrencia') }}
+          />
 
-        <RadioButtonGroup
-          name={'idCategoria'}
-          onChange={e => this.handleChange(e.target.checked, 'idCategoria')}
-          defaultSelected={this.state.idCategoria}
-        >
-          <RadioButton className="inch-button" value="injuria" label="Injúria" />
-          <RadioButton className="half-button" value="racismo" label="Racismo" />
-        </RadioButtonGroup>
+          <CampoTexto
+            id={'horaOcorrencia'}
+            label={'Hora do ocorrido'}
+            maxLen={0}
+            type={'time'}
+            inputClasse={ConstantesCSS.CLASSES_INPUT}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s10`}
+            onChange={(e) => { this.handleChange(e.target.value, 'horaOcorrencia') }}
+          />
+        </div>
 
         <h4>Local do crime</h4>
-
-        { this.renderTextField('endereco', 'Endereço', '255', '', '', 'textarea')}
-
-        <EstadoFormGroup
-          id="estado"
-          value={this.state.estado}
-          handleChange={this.handleChange}
-        />
+        <div className="row">
+          <CampoTexto
+            id={'endereco'}
+            label={'Endereço'}
+            maxLen={255}
+            type={'text'}
+            inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
+            onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 255), 'endereco') }}
+          />
+        </div>
+        <div className="row">
+          <Combobox
+            id={'estado'}
+            value={this.state.estado}
+            handleChange={this.handleChange}
+            itens={estados}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
+            label={'Selecione o Estado:'}
+            valorPadrao={'Selecione'}
+          />
+        </div>
       </div>
     )
   }
 }
 
-DetalhamentoDenuncia.defaultProps = { handleChange: () => {} };
+DetalhamentoDenuncia.defaultProps = { handleChange: () => { } };
 
 DetalhamentoDenuncia.propTypes = {
   handleChange: PropTypes.func

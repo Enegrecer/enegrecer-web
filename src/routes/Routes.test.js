@@ -4,6 +4,7 @@ import Routes from './Routes';
 import HomePage from '../components/home/Home';
 import NovaDenuncia from '../containers/denuncias/NovaDenunciaContainer';
 
+
 function possuiRotaComComponente(rotas, rota, componente) {
   it(`possui rota "${rota}" com componente correto`, () => {
     const seletor = `[path="${rota}"]`;

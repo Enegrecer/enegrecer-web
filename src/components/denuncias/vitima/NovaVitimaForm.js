@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import { TelefoneFormGroup, CampoTexto, CheckBox, Combobox } from '../../FormGroups'
 import { cortarPalavra } from '../../../helpers';
 import * as ConstantesCSS from '../../../components/layouts/ConstantesCss'
-import { estados, racasVitima } from '../../../dados'
+import { estados, racasVitima } from '../../../dados';
+import * as Tela from '../../../Tela';
 
 
 export default class NovaVitimaForm extends Component {
@@ -27,8 +28,19 @@ export default class NovaVitimaForm extends Component {
     };
   }
 
+
   componentDidMount() {
-    this.props.handleChange({ vitima: this.state })
+    this.props.handleChange({ vitima: this.state });
+    
+    let raca = Tela.getElementoPorId("raca");
+	  raca.on('change', (e) => {
+        this.handleChange(e.target.value, "raca");
+    });
+
+    let comboEstado = Tela.getElementoPorId("estadoVitima");
+	  comboEstado.on('change', (e) => {
+        this.handleChange(e.target.value, "estado");
+    });
   }
 
 

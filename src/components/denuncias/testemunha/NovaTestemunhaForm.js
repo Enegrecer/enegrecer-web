@@ -4,6 +4,7 @@ import { cortarPalavra } from '../../../helpers';
 import { TelefoneFormGroup, CampoTexto, Combobox } from '../../FormGroups'
 import * as ConstantesCSS from '../../../components/layouts/ConstantesCss';
 import { racasVitima } from '../../../dados';
+import * as Tela from '../../../Tela';
 
 export default class NovaTestemunhaForm extends React.Component {
   constructor(props) {
@@ -21,12 +22,17 @@ export default class NovaTestemunhaForm extends React.Component {
   }
 
   componentDidMount() {
-    this.props.handleChange({ testemunha: this.state })
+    this.props.handleChange({ testemunha: this.state }); 
+    let racaTestemunha = Tela.getElementoPorId("raca-testemenunha");
+	  racaTestemunha.on('change', (e) => {
+        this.handleChange(e.target.value, "raca");
+    });    
   }
 
   handleChange(value, property) {
     this.setState({ [property]: value },
       () => this.props.handleChange({ testemunha: this.state }));
+    
   }
 
   render() {
@@ -59,7 +65,7 @@ export default class NovaTestemunhaForm extends React.Component {
           />
 
           <Combobox
-            id={'raca'}
+            id={'raca-testemenunha'}
             value={this.state.raca}
             handleChange={this.handleChange}
             itens={racasVitima}

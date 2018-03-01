@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react';
-import $ from 'jquery';
 import { cortarPalavra } from '../../helpers';
 import { CampoTexto, RadioGrupoBotoes, Combobox } from '../FormGroups';
 import { estados } from '../../dados'
 import * as ConstantesCSS from '../layouts/ConstantesCss'
+import * as Tela from '../../Tela'
 
 
 export default class DetalhamentoDenuncia extends Component {
@@ -20,9 +20,10 @@ export default class DetalhamentoDenuncia extends Component {
       estado: ''
     };
   }
-  componentDidMount(){	  
-	  $('select').on('change', (e) => {
-      this.handleChange(e.target.value, "estado");
+  componentDidMount(){	
+    let comboEstado = Tela.getElementoPorId("estado");
+	  comboEstado.on('change', (e) => {
+        this.handleChange(e.target.value, "estado");
     });
   }
 

@@ -73,7 +73,7 @@ CheckBox.defaultProps = {
 export function Combobox(props) {
   return (
     <div className={props.divClasse}>
-      <select id={props.id} onChange={props.onChange}>
+      <select id={props.id} onChange={props.onChange} >
         <option value="" >{props.valorPadrao}</option>
         {
           props.itens.map(

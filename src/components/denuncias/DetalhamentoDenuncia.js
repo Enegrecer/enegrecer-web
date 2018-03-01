@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react';
+import $ from 'jquery';
 import { cortarPalavra } from '../../helpers';
 import { CampoTexto, RadioGrupoBotoes, Combobox } from '../FormGroups';
 import { estados } from '../../dados'
@@ -18,6 +19,11 @@ export default class DetalhamentoDenuncia extends Component {
       endereco: '',
       estado: ''
     };
+  }
+  componentDidMount(){	  
+	  $('select').on('change', (e) => {
+      this.handleChange(e.target.value, "estado");
+    });
   }
 
   handleChange(value, property) {
@@ -92,7 +98,7 @@ export default class DetalhamentoDenuncia extends Component {
           <Combobox
             id={'estado'}
             value={this.state.estado}
-            handleChange={this.handleChange}
+            onChange={(e) => { alert("Olá mundo") }}
             itens={estados}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
             label={'Selecione o Estado:'}

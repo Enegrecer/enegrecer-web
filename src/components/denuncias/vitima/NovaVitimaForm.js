@@ -54,7 +54,7 @@ export default class NovaVitimaForm extends Component {
             maxLen={40}
             placeholder={''}
             type={'text'}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
             onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'nome')}
           />
         </div>
@@ -64,7 +64,7 @@ export default class NovaVitimaForm extends Component {
             id={'vitima-genero'}
             label={'Gênero (máximo de 15 caracteres)'}
             maxLen={15}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
             onChange={e => this.handleChange(cortarPalavra(e.target.value, 15), 'genero')}
             type={'text'}
           />
@@ -74,7 +74,7 @@ export default class NovaVitimaForm extends Component {
             value={this.state.raca}
             handleChange={this.handleChange}
             itens={racasVitima}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
             label={'Selecione a Raça:'}
             valorPadrao={'Selecione a Raça:'}
           />
@@ -83,7 +83,7 @@ export default class NovaVitimaForm extends Component {
             id={'dataNascimento-vitima'}
             label={'Data de Nascimento'}
             inputClasse={ConstantesCSS.CLASSES_INPUT}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
             onChange={e => this.handleChange(e.target.value, 'dataNascimento')}
             maxLen={8}
             type={'date'}
@@ -118,14 +118,13 @@ export default class NovaVitimaForm extends Component {
             value={this.state.estado}
             handleChange={this.handleChange}
             itens={estados}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
             label={'Selecione o Estado:'}
             valorPadrao={'Selecione'}
           />
         </div>
 
         <div className="row">
-
           <CampoTexto
             id={'email-vitima'}
             label={'Email'}

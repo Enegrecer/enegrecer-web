@@ -3,7 +3,7 @@ import 'materialize-css/dist/css/materialize.css';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 
 import configureStore from './store';

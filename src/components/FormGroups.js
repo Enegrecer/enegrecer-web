@@ -24,7 +24,7 @@ export function TelefoneFormGroup({ handleChange, ...props }) {
 
 export function RadioGrupoBotoes(props) {
   return (
-    <div >
+    <div className={props.classes}>
       { props.botoes.map(
         botaoRadio =>
           (<p key={botaoRadio.id}>
@@ -39,11 +39,13 @@ export function RadioGrupoBotoes(props) {
 }
 
 RadioGrupoBotoes.propTypes = {
+  classes: PropTypes.string,
   id: PropTypes.string,
   botoes: PropTypes.arrayOf(PropTypes.object)
 };
 
 RadioGrupoBotoes.defaultProps = {
+  classes: '',
   id: '',
   botoes: []
 };

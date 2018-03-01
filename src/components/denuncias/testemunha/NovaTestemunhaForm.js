@@ -33,13 +33,14 @@ export default class NovaTestemunhaForm extends React.Component {
     return (
       <div>
         <h3>Informacões da Testemunha</h3>
+        <br />
 
         <div className="row">
           <CampoTexto
             id={'nome-testemunha'}
             label={'Nome (máximo de 40 caracteres)'}
             maxLen={40}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
             onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 40), 'nome') }}
             type={'text'}
           />
@@ -50,7 +51,7 @@ export default class NovaTestemunhaForm extends React.Component {
             id={'genero-testemunha'}
             label={'Gênero (máximo de 15 caracteres)'}
             maxLen={15}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
             inputClasse={ConstantesCSS.CLASSES_INPUT}
             onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 15), 'genero') }}
             placeholder={'Ex.: Feminino, Masculino, Não Binário...'}
@@ -62,7 +63,7 @@ export default class NovaTestemunhaForm extends React.Component {
             value={this.state.raca}
             handleChange={this.handleChange}
             itens={racasVitima}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
             label={'Selecione a Raça:'}
             valorPadrao={'Selecione a Raça:'}
           />

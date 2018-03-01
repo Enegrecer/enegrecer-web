@@ -22,17 +22,16 @@ export default class NovaTestemunhaForm extends React.Component {
   }
 
   componentDidMount() {
-    this.props.handleChange({ testemunha: this.state }); 
-    let racaTestemunha = Tela.getElementoPorId("raca-testemenunha");
-	  racaTestemunha.on('change', (e) => {
-        this.handleChange(e.target.value, "raca");
-    });    
+    this.props.handleChange({ testemunha: this.state });
+    const racaTestemunha = Tela.getElementoPorId('raca-testemenunha');
+    racaTestemunha.on('change', (e) => {
+      this.handleChange(e.target.value, 'raca');
+    });
   }
 
   handleChange(value, property) {
     this.setState({ [property]: value },
       () => this.props.handleChange({ testemunha: this.state }));
-    
   }
 
   render() {

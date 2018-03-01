@@ -31,15 +31,15 @@ export default class NovaVitimaForm extends Component {
 
   componentDidMount() {
     this.props.handleChange({ vitima: this.state });
-    
-    let raca = Tela.getElementoPorId("raca");
-	  raca.on('change', (e) => {
-        this.handleChange(e.target.value, "raca");
+
+    const raca = Tela.getElementoPorId('raca');
+    raca.on('change', (e) => {
+      this.handleChange(e.target.value, 'raca');
     });
 
-    let comboEstado = Tela.getElementoPorId("estadoVitima");
-	  comboEstado.on('change', (e) => {
-        this.handleChange(e.target.value, "estado");
+    const comboEstado = Tela.getElementoPorId('estadoVitima');
+    comboEstado.on('change', (e) => {
+      this.handleChange(e.target.value, 'estado');
     });
   }
 

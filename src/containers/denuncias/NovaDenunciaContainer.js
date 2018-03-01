@@ -19,7 +19,7 @@ export class NovaDenunciaContainer extends Component {
       testemunha: null
     };
   }
-   
+
   componentDidMount() {
     Tela.iniciaCamposMaterialize();
   }

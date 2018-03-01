@@ -20,10 +20,10 @@ export default class DetalhamentoDenuncia extends Component {
       estado: ''
     };
   }
-  componentDidMount(){	
-    let comboEstado = Tela.getElementoPorId("estado");
-	  comboEstado.on('change', (e) => {
-        this.handleChange(e.target.value, "estado");
+  componentDidMount() {
+    const comboEstado = Tela.getElementoPorId('estado');
+    comboEstado.on('change', (e) => {
+      this.handleChange(e.target.value, 'estado');
     });
   }
 
@@ -99,7 +99,7 @@ export default class DetalhamentoDenuncia extends Component {
           <Combobox
             id={'estado'}
             value={this.state.estado}
-            onChange={(e) => { alert("Olá mundo") }}
+            onChange={this.handleChange}
             itens={estados}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
             label={'Selecione o Estado:'}

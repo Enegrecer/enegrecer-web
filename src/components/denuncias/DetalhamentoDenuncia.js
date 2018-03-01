@@ -4,6 +4,7 @@ import { cortarPalavra } from '../../helpers';
 import { CampoTexto, RadioGrupoBotoes, Combobox } from '../FormGroups';
 import { estados } from '../../dados'
 import * as ConstantesCSS from '../layouts/ConstantesCss'
+import * as Tela from '../../Tela'
 
 
 export default class DetalhamentoDenuncia extends Component {
@@ -18,6 +19,12 @@ export default class DetalhamentoDenuncia extends Component {
       endereco: '',
       estado: ''
     };
+  }
+  componentDidMount() {
+    const comboEstado = Tela.getElementoPorId('estado');
+    comboEstado.on('change', (e) => {
+      this.handleChange(e.target.value, 'estado');
+    });
   }
 
   handleChange(value, property) {
@@ -39,13 +46,16 @@ export default class DetalhamentoDenuncia extends Component {
             maxLen={255}
             type={'text'}
             inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
             onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 255), 'detalhamento') }}
           />
         </div>
 
+
         <div className="row">
+
           <RadioGrupoBotoes
+            classes={'col s3'}
             id={'idCategoria'}
             onChange={e => this.handleChange(e.target.checked, 'idCategoria')}
             botoes={[{ id: 'radioInjuria', valor: 'injuria', label: 'Injúria' },
@@ -56,7 +66,7 @@ export default class DetalhamentoDenuncia extends Component {
             id={'dataOcorrencia'}
             label={'Data do ocorrido'}
             inputClasse={ConstantesCSS.CLASSES_INPUT}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
             maxLen={0}
             type={'date'}
             onChange={(e) => { this.handleChange(e.target.value, 'dataOcorrencia') }}
@@ -68,7 +78,7 @@ export default class DetalhamentoDenuncia extends Component {
             maxLen={0}
             type={'time'}
             inputClasse={ConstantesCSS.CLASSES_INPUT}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s10`}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s5`}
             onChange={(e) => { this.handleChange(e.target.value, 'horaOcorrencia') }}
           />
         </div>
@@ -89,7 +99,7 @@ export default class DetalhamentoDenuncia extends Component {
           <Combobox
             id={'estado'}
             value={this.state.estado}
-            handleChange={this.handleChange}
+            onChange={this.handleChange}
             itens={estados}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
             label={'Selecione o Estado:'}

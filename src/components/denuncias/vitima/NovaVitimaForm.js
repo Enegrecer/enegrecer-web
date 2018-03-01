@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import { TelefoneFormGroup, CampoTexto, CheckBox, Combobox } from '../../FormGroups'
 import { cortarPalavra } from '../../../helpers';
 import * as ConstantesCSS from '../../../components/layouts/ConstantesCss'
-import { estados, racasVitima } from '../../../dados'
+import { estados, racasVitima } from '../../../dados';
+import * as Tela from '../../../Tela';
 
 
 export default class NovaVitimaForm extends Component {
@@ -27,8 +28,19 @@ export default class NovaVitimaForm extends Component {
     };
   }
 
+
   componentDidMount() {
-    this.props.handleChange({ vitima: this.state })
+    this.props.handleChange({ vitima: this.state });
+
+    const raca = Tela.getElementoPorId('raca');
+    raca.on('change', (e) => {
+      this.handleChange(e.target.value, 'raca');
+    });
+
+    const comboEstado = Tela.getElementoPorId('estadoVitima');
+    comboEstado.on('change', (e) => {
+      this.handleChange(e.target.value, 'estado');
+    });
   }
 
 
@@ -54,7 +66,7 @@ export default class NovaVitimaForm extends Component {
             maxLen={40}
             placeholder={''}
             type={'text'}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
             onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'nome')}
           />
         </div>
@@ -64,7 +76,7 @@ export default class NovaVitimaForm extends Component {
             id={'vitima-genero'}
             label={'Gênero (máximo de 15 caracteres)'}
             maxLen={15}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
             onChange={e => this.handleChange(cortarPalavra(e.target.value, 15), 'genero')}
             type={'text'}
           />
@@ -74,7 +86,7 @@ export default class NovaVitimaForm extends Component {
             value={this.state.raca}
             handleChange={this.handleChange}
             itens={racasVitima}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
             label={'Selecione a Raça:'}
             valorPadrao={'Selecione a Raça:'}
           />
@@ -83,7 +95,7 @@ export default class NovaVitimaForm extends Component {
             id={'dataNascimento-vitima'}
             label={'Data de Nascimento'}
             inputClasse={ConstantesCSS.CLASSES_INPUT}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
             onChange={e => this.handleChange(e.target.value, 'dataNascimento')}
             maxLen={8}
             type={'date'}
@@ -118,14 +130,13 @@ export default class NovaVitimaForm extends Component {
             value={this.state.estado}
             handleChange={this.handleChange}
             itens={estados}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
             label={'Selecione o Estado:'}
             valorPadrao={'Selecione'}
           />
         </div>
 
         <div className="row">
-
           <CampoTexto
             id={'email-vitima'}
             label={'Email'}

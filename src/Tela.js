@@ -10,6 +10,9 @@ export const iniciaCamposMaterialize = () => {
   });
 }
 
+export const getElementoPorId = elementoId => $(`#${elementoId}`)
+
+
 export const initHummer = (elementId) => {
   const element = document.getElementById(elementId);
   Hammer(element);

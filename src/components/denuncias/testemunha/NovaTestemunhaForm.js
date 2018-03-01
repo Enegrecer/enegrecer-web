@@ -4,6 +4,7 @@ import { cortarPalavra } from '../../../helpers';
 import { TelefoneFormGroup, CampoTexto, Combobox } from '../../FormGroups'
 import * as ConstantesCSS from '../../../components/layouts/ConstantesCss';
 import { racasVitima } from '../../../dados';
+import * as Tela from '../../../Tela';
 
 export default class NovaTestemunhaForm extends React.Component {
   constructor(props) {
@@ -21,7 +22,11 @@ export default class NovaTestemunhaForm extends React.Component {
   }
 
   componentDidMount() {
-    this.props.handleChange({ testemunha: this.state })
+    this.props.handleChange({ testemunha: this.state });
+    const racaTestemunha = Tela.getElementoPorId('raca-testemenunha');
+    racaTestemunha.on('change', (e) => {
+      this.handleChange(e.target.value, 'raca');
+    });
   }
 
   handleChange(value, property) {
@@ -33,13 +38,14 @@ export default class NovaTestemunhaForm extends React.Component {
     return (
       <div>
         <h3>Informacões da Testemunha</h3>
+        <br />
 
         <div className="row">
           <CampoTexto
             id={'nome-testemunha'}
             label={'Nome (máximo de 40 caracteres)'}
             maxLen={40}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
             onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 40), 'nome') }}
             type={'text'}
           />
@@ -50,7 +56,7 @@ export default class NovaTestemunhaForm extends React.Component {
             id={'genero-testemunha'}
             label={'Gênero (máximo de 15 caracteres)'}
             maxLen={15}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
             inputClasse={ConstantesCSS.CLASSES_INPUT}
             onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 15), 'genero') }}
             placeholder={'Ex.: Feminino, Masculino, Não Binário...'}
@@ -58,11 +64,11 @@ export default class NovaTestemunhaForm extends React.Component {
           />
 
           <Combobox
-            id={'raca'}
+            id={'raca-testemenunha'}
             value={this.state.raca}
             handleChange={this.handleChange}
             itens={racasVitima}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
             label={'Selecione a Raça:'}
             valorPadrao={'Selecione a Raça:'}
           />

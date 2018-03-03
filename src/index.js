@@ -11,7 +11,6 @@ import registerServiceWorker from './utils/registerServiceWorker';
 
 
 import './assets/styles/index.css';
-import './css/principal.css';
 
 
 const store = configureStore();

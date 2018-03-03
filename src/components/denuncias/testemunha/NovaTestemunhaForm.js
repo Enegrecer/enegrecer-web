@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { cortarPalavra } from '../../../helpers';
+import { cortarPalavra } from '../../../utils/helpers';
 import { TelefoneFormGroup, CampoTexto, Combobox } from '../../FormGroups'
 import * as ConstantesCSS from '../../../components/layouts/ConstantesCss';
-import { racasVitima } from '../../../dados';
-import * as Tela from '../../../Tela';
+import { racasVitima } from '../racas';
+import * as Tela from '../../../utils/materializeCSS';
 
 export default class NovaTestemunhaForm extends React.Component {
   constructor(props) {

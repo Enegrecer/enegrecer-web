@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react';
-import { cortarPalavra } from '../../helpers';
+import { cortarPalavra } from '../../utils/helpers';
 import { CampoTexto, RadioGrupoBotoes, Combobox } from '../FormGroups';
-import { estados } from '../../dados'
+import { estados } from './estados'
 import * as ConstantesCSS from '../layouts/ConstantesCss'
-import * as Tela from '../../Tela'
+import * as Tela from '../../utils/materializeCSS'
 
 
 export default class DetalhamentoDenuncia extends Component {
@@ -116,4 +116,3 @@ DetalhamentoDenuncia.defaultProps = { handleChange: () => { } };
 DetalhamentoDenuncia.propTypes = {
   handleChange: PropTypes.func
 };
-

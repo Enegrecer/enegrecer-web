@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { mock } from 'sinon';
-import { EstadoFormGroup, RacaFormGroup } from './FormGroups';
+import { CampoTexto, Combobox } from './FormGroups';
 
 
-describe('EstadoFormGroup', () => {
+describe('Combobox', () => {
   it('renderiza o componente sem erros', () => {
     const wrapper = shallow(
-      <EstadoFormGroup
+      <Combobox
         id={'estado'}
         value={''}
         handleChange={mock()}
@@ -17,16 +17,10 @@ describe('EstadoFormGroup', () => {
   });
 });
 
-describe('RacaFormGroup', () => {
+
+describe('CampoTexto', () => {
   it('renderiza o componente sem erros', () => {
-    const wrapper = shallow(
-      <RacaFormGroup
-        id={'raca'}
-        value={''}
-        handleChange={mock()}
-      />);
-    expect(wrapper.exists()).toBe(true);
-    expect(wrapper.find('#raca')).toHaveLength(1)
+    shallow(<CampoTexto maxLen={35} />);
   });
 });
 

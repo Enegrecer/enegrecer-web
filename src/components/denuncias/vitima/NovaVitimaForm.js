@@ -1,17 +1,16 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import Checkbox from 'material-ui/Checkbox'
-import TextField from 'material-ui/TextField'
-import * as helpers from '../../../helpers';
-import { EstadoFormGroup, RacaFormGroup, TelefoneFormGroup } from '../../FormGroups'
+import { TelefoneFormGroup, CampoTexto, CheckBox, Combobox } from '../../FormGroups'
+import { cortarPalavra } from '../../../helpers';
+import * as ConstantesCSS from '../../../components/layouts/ConstantesCss'
+import { estados, racasVitima } from '../../../dados';
+import * as Tela from '../../../Tela';
+
 
 export default class NovaVitimaForm extends Component {
   constructor(props) {
     super(props);
-
     this.handleChange = this.handleChange.bind(this);
-    this.renderTextField = this.renderTextField.bind(this);
-
     this.state = {
       pessoaIdentificada: false,
       souAVitima: false,
@@ -29,47 +28,26 @@ export default class NovaVitimaForm extends Component {
     };
   }
 
+
   componentDidMount() {
-    this.props.handleChange({ vitima: this.state })
+    this.props.handleChange({ vitima: this.state });
+
+    const raca = Tela.getElementoPorId('raca');
+    raca.on('change', (e) => {
+      this.handleChange(e.target.value, 'raca');
+    });
+
+    const comboEstado = Tela.getElementoPorId('estadoVitima');
+    comboEstado.on('change', (e) => {
+      this.handleChange(e.target.value, 'estado');
+    });
   }
+
 
   handleChange(value, property) {
     this.setState({ [property]: value },
       () => this.props.handleChange({ vitima: this.state })
     );
-  }
-
-  renderTextField(id, label, maxLen = '', placeholder = '', type = '') {
-    return (
-      <TextField
-        id={`${id}-vitima`}
-        value={this.state[id]}
-        type={type || 'text'}
-        maxLength={maxLen}
-        hintText={placeholder}
-        floatingLabelText={label}
-        floatingLabelFixed
-        autoComplete="off"
-        fullWidth
-        multiLine={type === 'textarea'}
-        onChange={(e) => {
-          const value = helpers.cortarPalavra(e.target.value, maxLen);
-          this.handleChange(value, id)
-        }}
-      />
-    )
-  }
-
-  renderCheckbox(id, label) {
-    return (
-      <Checkbox
-        id={id}
-        name={id}
-        checked={this.state[id]}
-        label={label}
-        onClick={e => this.handleChange(e.target.checked, id)}
-      />
-    )
   }
 
   render() {
@@ -78,50 +56,117 @@ export default class NovaVitimaForm extends Component {
         <h3>Informacões da Vítima</h3>
         <br />
 
-        { this.renderCheckbox('conhecoAVitima', 'Conheço a Vítima') }
+        <CheckBox id={'conhecoAVitima'} label={'Conheço a Vítima'} onClick={e => this.handleChange(e.target.checked, 'conhecoAVitima')} />
+        <CheckBox id={'souAVitima'} label={'Sou a Vítima'} onClick={e => this.handleChange(e.target.checked, 'souAVitima')} />
 
-        { this.renderCheckbox('souAVitima', 'Sou a Vítima') }
+        <div className="row">
+          <CampoTexto
+            id={'nome-vitima'}
+            label={'Nome (máximo de 40 caracteres)'}
+            maxLen={40}
+            placeholder={''}
+            type={'text'}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
+            onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'nome')}
+          />
+        </div>
 
-        { this.renderTextField('nome', 'Nome (máximo de 40 caracteres)', '40') }
+        <div className="row">
+          <CampoTexto
+            id={'vitima-genero'}
+            label={'Gênero (máximo de 15 caracteres)'}
+            maxLen={15}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
+            onChange={e => this.handleChange(cortarPalavra(e.target.value, 15), 'genero')}
+            type={'text'}
+          />
 
-        { this.renderTextField('genero', 'Gênero (máximo de 15 caracteres)', '15', 'Ex.: Feminino, Masculino, Não Binário...') }
+          <Combobox
+            id={'raca'}
+            value={this.state.raca}
+            handleChange={this.handleChange}
+            itens={racasVitima}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
+            label={'Selecione a Raça:'}
+            valorPadrao={'Selecione a Raça:'}
+          />
 
+          <CampoTexto
+            id={'dataNascimento-vitima'}
+            label={'Data de Nascimento'}
+            inputClasse={ConstantesCSS.CLASSES_INPUT}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
+            onChange={e => this.handleChange(e.target.value, 'dataNascimento')}
+            maxLen={8}
+            type={'date'}
+          />
 
-        <RacaFormGroup
-          id={'raca'}
-          value={this.state.raca}
-          handleChange={this.handleChange}
-        />
+        </div>
 
-        { this.renderTextField('dataNascimento', 'Data de Nascimento', '', '', 'date') }
+        <div className="row">
+          <CampoTexto
+            id={'endereco-vitima'}
+            label={'Endereço (máximo de 255 caracteres)'}
+            onChange={e => this.handleChange(cortarPalavra(e.target.value, 255), 'endereco')}
+            maxLen={255}
+            inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
+            type={'text'}
+          />
+        </div>
 
-        { this.renderTextField('endereco', 'Endereço (máximo de 255 caracteres)', '255', '')}
+        <div className="row">
+          <CampoTexto
+            id={'naturalidade-vitima'}
+            label={'Naturalidade (máximo de 40 caracteres)'}
+            onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'naturalidade')}
+            maxLen={40}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            type={'text'}
+          />
 
-        { this.renderTextField('naturalidade', 'Naturalidade (máximo de 40 caracteres)', '40')}
+          <Combobox
+            id={'estadoVitima'}
+            value={this.state.estado}
+            handleChange={this.handleChange}
+            itens={estados}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            label={'Selecione o Estado:'}
+            valorPadrao={'Selecione'}
+          />
+        </div>
 
-        <EstadoFormGroup
-          id={'estadoVitima'}
-          value={this.state.estado}
-          handleChange={this.handleChange}
-        />
+        <div className="row">
+          <CampoTexto
+            id={'email-vitima'}
+            label={'Email'}
+            maxLen={40}
+            type={'text'}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'email')}
+          />
 
-        <TelefoneFormGroup
-          id="telefone"
-          value={this.state.telefone}
-          handleChange={this.handleChange}
-        />
+          <TelefoneFormGroup
+            id="telefone"
+            value={this.state.telefone}
+            handleChange={this.handleChange}
+            label={'Telefone'}
+          />
 
-        { this.renderTextField('email', 'Email', '') }
+        </div>
 
-        { this.renderTextField(
-          'caracteristicasDaVitima',
-          '* Por favor, descreva aqui as características da vítima (máximo de 255 caracteres)',
-          '255',
-          'Ex.: Era uma mulher negra, com aproximadamente 40 anos, magra, alta com cabelo curto...',
-          'textarea')
-        }
-
-        <br />
+        <div className="row">
+          <CampoTexto
+            id={'caracteristicasDaVitima'}
+            label={'* Por favor, descreva aqui as características da vítima (máximo de 255 caracteres)'}
+            maxLen={255}
+            type={'text'}
+            inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
+            placeholder={'Ex.: Era uma mulher negra, com aproximadamente 40 anos, magra, alta com cabelo curto...'}
+            onChange={e => this.handleChange(cortarPalavra(e.target.value, 255), 'caracteristicasDaVitima')}
+          />
+        </div>
       </div>);
   }
 }

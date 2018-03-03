@@ -104,6 +104,7 @@ Na nossa stack temos:
 * [Firebase](https://firebase.google.com/) Como hosting e back-end mantendo controle de dados, usuários, etc
 * [Travis-CI](https://travis-ci.org/) para criar nosso CI, executar testes e build automaticamente
 * [Code Climate](https://codeclimate.com/github/Enegrecer/enegrecer-web) para cobertura de código e análise estática
+* [Materialize](http://materializecss.com/) Como framework CSS responsivo
 
 ## Como Contribuir
 

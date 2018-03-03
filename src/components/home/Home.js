@@ -6,6 +6,7 @@ import Botao from './../Botao';
 import Footer from './../Footer';
 import Social from './../Social';
 import { withHistoryPropTypes } from './../sharedPropTypes';
+import './css/home.css';
 
 
 const networks = [

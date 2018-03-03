@@ -9,10 +9,6 @@ import configureStore from './store';
 import Rotas from './routes/Routes'
 import registerServiceWorker from './utils/registerServiceWorker';
 
-
-import './assets/styles/index.css';
-
-
 const store = configureStore();
 
 ReactDOM.render(

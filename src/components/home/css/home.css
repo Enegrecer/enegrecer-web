@@ -1,0 +1,122 @@
+.en-extra-margin-right {
+  margin-right: 40px; }
+
+.en-logo {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: #ff8100; }
+
+.en-topbar {
+  padding: 34px 0;
+  display: flex;
+  flex-direction: row; }
+  .en-topbar .en-topbar__right {
+    margin-left: auto; }
+
+.en-nav {
+  text-transform: uppercase; }
+  .en-nav > * {
+    margin-left: 20px; }
+  .en-nav a {
+    color: #FFF;
+    font-size: 14px; }
+
+.en-btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 40px;
+  color: #FFF;
+  text-transform: uppercase; }
+  .en-btn.en-btn--primary {
+    background: #ff8100; }
+  .en-btn.en-btn--colored {
+    background-color: #eb5f56; }
+  .en-btn.en-btn--outline {
+    border: 1px solid transparent;
+    background: transparent; }
+    .en-btn.en-btn--outline.en-btn--primary {
+      border-color: #ff8100;
+      color: #ff8100; }
+  .en-btn:hover {
+    text-decoration: none;
+    color: #fff; }
+
+.en-footer {
+  padding: 80px 0; }
+
+.en-social {
+  text-align: center; }
+  .en-social .en-social__title {
+    font-size: 20px;
+    color: #939393;
+    margin-bottom: 20px;
+    display: block; }
+  .en-social .en-social__links a {
+    color: #939393;
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 25px; }
+    .en-social .en-social__links a:last-child {
+      margin-right: 0; }
+
+* {
+  font-family: 'Roboto', sans-serif; }
+
+body {
+  background: #f2f3f5; }
+
+.en-text--light {
+  color: #fff;
+  font-size: 17px;
+  line-height: 1.4; }
+
+.en-subtitle--primary {
+  font-size: 25px;
+  text-transform: uppercase;
+  color: #ff8100;
+  font-weight: 700;
+  margin-bottom: 5px; }
+
+.en-title {
+  font-size: 50px;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px; }
+  .en-title.en-title--light {
+    color: #fff; }
+  .en-title.en-title--marker::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 6px;
+    background: #ff8100;
+    margin-top: 10px;
+    margin-left: 2px; }
+
+#banner {
+  height: 600px;
+  background: url("./../images/face.jpg") no-repeat center top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border-left: 86px solid #ff8100;
+  position: relative; }
+  #banner #banner__blur {
+    height: 100%;
+    width: 20%;
+    max-width: 0px;
+    opacity: 0.84;
+    position: absolute; }
+  #banner .container > .row {
+    margin: 30px -15px; }
+  #banner #en-banner__description {
+    margin-bottom: 33px; }
+
+h3 {
+  margin: 30px 0 10px; }
+
+h4 {
+  margin: 20px 0 10px; }

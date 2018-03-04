@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import HomePage from '../components/home/Home';
-import Painel from '../components/layouts/Painel';
+import Painel from './Painel';
 import NovaDenuncia from '../containers/denuncias/NovaDenunciaContainer';
 
 

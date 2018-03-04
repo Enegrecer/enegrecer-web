@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { cortarPalavra } from '../../../utils/helpers';
 import { TelefoneFormGroup, CampoTexto, Combobox } from '../../FormGroups'
-import * as ConstantesCSS from '../../../components/layouts/ConstantesCss';
+import * as ConstantesCSS from '../ConstantesCss';
 import { racasVitima } from '../racas';
 import * as Tela from '../../../utils/materializeCSS';
 

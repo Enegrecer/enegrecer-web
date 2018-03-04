@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { cortarPalavra } from '../../utils/helpers';
 import { CampoTexto, RadioGrupoBotoes, Combobox } from '../FormGroups';
 import { estados } from './estados'
-import * as ConstantesCSS from '../layouts/ConstantesCss'
+import * as ConstantesCSS from './ConstantesCss'
 import * as Tela from '../../utils/materializeCSS'
 
 

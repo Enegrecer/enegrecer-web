@@ -14,8 +14,8 @@ describe('Nav', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('tem a classe en-nav', () => {
-    expect(wrapper.hasClass('en-nav')).toBeTruthy();
+  it('tem a classe right hide-on-med-and-down', () => {
+    expect(wrapper.hasClass('right hide-on-med-and-down')).toBeTruthy();
   });
 
   it('tem o link de sobre', () => {

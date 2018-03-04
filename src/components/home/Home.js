@@ -20,11 +20,11 @@ const Home = props => (
         leftComponent={<Logo />}
         rightComponent={<Nav history={props.history} />} // eslint-disable-line react/prop-types
     />
-    <div className="btn-denuncia">
-      <Botao name="denuncia"
-        onClick={() => props.history.push('/painel/denuncias/nova')} // eslint-disable-line react/prop-types
-          colored>Denunciar Racismo</Botao>
-    </div>
+
+    <Botao name="denuncia"
+      onClick={() => props.history.push('/painel/denuncias/nova')} // eslint-disable-line react/prop-types
+      colored>Denunciar Racismo
+    </Botao>
 
     <Footer>
       <Social networks={networks} />

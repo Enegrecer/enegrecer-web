@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { TelefoneFormGroup, CampoTexto, CheckBox, Combobox } from '../../FormGroups'
-import { cortarPalavra } from '../../../helpers';
-import * as ConstantesCSS from '../../../components/layouts/ConstantesCss'
-import { estados, racasVitima } from '../../../dados';
-import * as Tela from '../../../Tela';
+import { cortarPalavra } from '../../../utils/helpers';
+import * as ConstantesCSS from '../ConstantesCss'
+import { estados } from '../estados';
+import { racasVitima } from '../racas';
+import * as Tela from '../../../utils/materializeCSS';
 
 
 export default class NovaVitimaForm extends Component {

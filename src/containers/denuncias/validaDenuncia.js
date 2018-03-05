@@ -1,6 +1,3 @@
-import { focoNoCampo, desfocaCampo } from '../../FocusUtil'
-
-
 function temNumero(campo) {
   const format = /\d/;
   return format.test(campo);
@@ -27,7 +24,6 @@ function validaCamposVaziosOrNulos(campos) {
 
 function caracteristicasVitimaEhVazia(caracteristicasDaVitima) {
   if (!caracteristicasDaVitima) {
-    focoNoCampo();
     return 'Por favor, descreva as características da vítima.';
   }
   return undefined;
@@ -121,7 +117,6 @@ function validaNaturalidade(naturalidade) {
 }
 
 export function validaDenuncia(campos) {
-  desfocaCampo();
   return validaCamposVaziosOrNulos(campos) ||
          validaCaracteriscaVitima(campos.caracteristicasDaVitima) ||
          validaNome(campos.nome) ||

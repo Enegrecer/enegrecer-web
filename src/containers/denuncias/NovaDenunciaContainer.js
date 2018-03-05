@@ -6,7 +6,7 @@ import { push } from 'react-router-redux';
 import { criarDenunciaRequisicao } from '../../actions/criarDenunciaActions';
 import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
 import { validaDenuncia } from './validaDenuncia';
-import * as Tela from '../../Tela'
+import * as Tela from '../../utils/materializeCSS'
 
 export class NovaDenunciaContainer extends Component {
   constructor(props) {

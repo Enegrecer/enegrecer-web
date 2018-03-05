@@ -6,6 +6,7 @@ import * as ConstantesCSS from '../ConstantesCss'
 import { estados } from '../estados';
 import { racasVitima } from '../racas';
 import * as Tela from '../../../utils/materializeCSS';
+import Nome from '../../comum/nome'
 
 
 export default class NovaVitimaForm extends Component {
@@ -61,15 +62,9 @@ export default class NovaVitimaForm extends Component {
         <CheckBox id={'souAVitima'} label={'Sou a Vítima'} onClick={e => this.handleChange(e.target.checked, 'souAVitima')} />
 
         <div className="row">
-          <CampoTexto
-            id={'nome-vitima'}
-            label={'Nome (máximo de 40 caracteres)'}
-            maxLen={40}
-            placeholder={''}
-            type={'text'}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
-            onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'nome')}
-          />
+
+        <Nome id={'nome-vitima'}  onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'nome')} />
+         
         </div>
 
         <div className="row">

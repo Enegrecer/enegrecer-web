@@ -20,5 +20,4 @@ describe('CampoTexto', () => {
       const campoTextoJson = toJson(campoTexto);
       expect(campoTextoJson).toMatchSnapshot();
     }); 
-
 });

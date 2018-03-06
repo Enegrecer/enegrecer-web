@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { TelefoneFormGroup, CampoTexto, CheckBox, Combobox } from '../../FormGroups'
 import { cortarPalavra } from '../../../utils/helpers';
 import * as ConstantesCSS from '../ConstantesCss'
-import { estados } from '../estados';
 import { racasVitima } from '../racas';
+import ComboEstado from '../../comum/comboEstado'
 import * as Tela from '../../../utils/materializeCSS';
 import Nome from '../../comum/nome'
 
@@ -121,15 +121,7 @@ export default class NovaVitimaForm extends Component {
             type={'text'}
           />
 
-          <Combobox
-            id={'estadoVitima'}
-            value={this.state.estado}
-            handleChange={this.handleChange}
-            itens={estados}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
-            label={'Selecione o Estado:'}
-            valorPadrao={'Selecione'}
-          />
+          <ComboEstado id={'estadoVitima'} handleChange={this.handleChange} />
         </div>
 
         <div className="row">

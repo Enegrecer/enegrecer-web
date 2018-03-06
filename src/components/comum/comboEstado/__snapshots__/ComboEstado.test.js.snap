@@ -6,15 +6,15 @@ exports[`Combo Estado não deve possuir estrutura definida  1`] = `
   onChange={[Function]}
 >
   <Combobox
-    divClasse=""
+    divClasse="input-field col s12"
     id="13"
     itens={Array []}
-    label=""
+    label="Selecione o Estado:"
     onChange={[Function]}
-    valorPadrao=""
+    valorPadrao="Selecione"
   >
     <div
-      className=""
+      className="input-field col s12"
     >
       <select
         id="13"
@@ -22,11 +22,15 @@ exports[`Combo Estado não deve possuir estrutura definida  1`] = `
       >
         <option
           value=""
-        />
+        >
+          Selecione
+        </option>
       </select>
       <label
         htmlFor="13"
-      />
+      >
+        Selecione o Estado:
+      </label>
     </div>
   </Combobox>
 </comboEstado>

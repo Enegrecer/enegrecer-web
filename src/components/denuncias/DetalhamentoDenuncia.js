@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react';
 import { cortarPalavra } from '../../utils/helpers';
-import { CampoTexto, RadioGrupoBotoes, Combobox } from '../FormGroups';
-import { estados } from './estados'
+import { CampoTexto, RadioGrupoBotoes } from '../FormGroups';
+import ComboEstado from './../comum/comboEstado'
 import * as ConstantesCSS from './ConstantesCss'
 import * as Tela from '../../utils/materializeCSS'
 
@@ -96,15 +96,7 @@ export default class DetalhamentoDenuncia extends Component {
           />
         </div>
         <div className="row">
-          <Combobox
-            id={'estado'}
-            value={this.state.estado}
-            onChange={this.handleChange}
-            itens={estados}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
-            label={'Selecione o Estado:'}
-            valorPadrao={'Selecione'}
-          />
+          <ComboEstado id={'estado'} onChange={this.handleChange} />
         </div>
       </div>
     )

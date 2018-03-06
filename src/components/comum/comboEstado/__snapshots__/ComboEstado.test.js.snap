@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Combo Estado não deve possuir estrutura definida  1`] = `
+<comboEstado
+  id="13"
+  onChange={[Function]}
+>
+  <Combobox
+    divClasse=""
+    id="13"
+    itens={Array []}
+    label=""
+    onChange={[Function]}
+    valorPadrao=""
+  >
+    <div
+      className=""
+    >
+      <select
+        id="13"
+        onChange={[Function]}
+      >
+        <option
+          value=""
+        />
+      </select>
+      <label
+        htmlFor="13"
+      />
+    </div>
+  </Combobox>
+</comboEstado>
+`;

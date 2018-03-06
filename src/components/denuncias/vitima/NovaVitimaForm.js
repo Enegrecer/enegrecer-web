@@ -63,8 +63,8 @@ export default class NovaVitimaForm extends Component {
 
         <div className="row">
 
-        <Nome id={'nome-vitima'}  onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'nome')} />
-         
+          <Nome id={'nome-vitima'} onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'nome')} />
+
         </div>
 
         <div className="row">

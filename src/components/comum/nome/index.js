@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import CampoTexto from '../CampoTexto'
+import CampoTexto from '../campoTexto'
 
 
 const Nome = ({ id, onChange }) => (<CampoTexto

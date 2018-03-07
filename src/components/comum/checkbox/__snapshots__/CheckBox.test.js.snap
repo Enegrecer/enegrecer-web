@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox deve possuir estrutura definida  1`] = `
+<CheckBox
+  id="souAVitima"
+  label="Sou a Vítima"
+  onClick={[Function]}
+>
+  <p>
+    <input
+      id="souAVitima"
+      type="checkbox"
+    />
+    <label
+      htmlFor="souAVitima"
+    >
+      Sou a Vítima
+    </label>
+  </p>
+</CheckBox>
+`;

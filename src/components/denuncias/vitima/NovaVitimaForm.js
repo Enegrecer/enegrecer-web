@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { TelefoneFormGroup, CampoTexto, CheckBox, Combobox } from '../../FormGroups'
+import { TelefoneFormGroup, CampoTexto, Combobox } from '../../FormGroups'
+import CheckBox from '../../comum/checkbox'
 import { cortarPalavra } from '../../../utils/helpers';
 import * as ConstantesCSS from '../ConstantesCss'
 import { racasVitima } from '../racas';

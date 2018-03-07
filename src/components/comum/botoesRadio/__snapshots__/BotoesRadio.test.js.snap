@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Botões Rádio deve possuir estrutura definida  1`] = `
+<BotoesRadio
+  botoes={
+    Array [
+      Object {
+        "id": "radioInjuria",
+        "label": "Injúria",
+        "valor": "injuria",
+      },
+      Object {
+        "id": "radioRacismo",
+        "label": "Racismo",
+        "valor": "racismo",
+      },
+    ]
+  }
+  classes="col s3"
+  id="id"
+  onChange={[Function]}
+>
+  <div
+    className="col s3"
+  >
+    <p
+      key="radioInjuria"
+    >
+      <input
+        id="radioInjuria"
+        name="id"
+        type="radio"
+      />
+      <label
+        htmlFor="radioInjuria"
+      >
+        injuria
+      </label>
+    </p>
+    <p
+      key="radioRacismo"
+    >
+      <input
+        id="radioRacismo"
+        name="id"
+        type="radio"
+      />
+      <label
+        htmlFor="radioRacismo"
+      >
+        racismo
+      </label>
+    </p>
+  </div>
+</BotoesRadio>
+`;

@@ -10,7 +10,7 @@ export default function Telefone({ handleChange, ...props }) {
         type="text"
         name={props.id}
         id={props.id}
-        onChange={handleChange}
+        onChange={e => handleChange(e.target.value, props.id)}
         value={props.value}
         mask="(99) 99999-9999"
         maskChar=" "

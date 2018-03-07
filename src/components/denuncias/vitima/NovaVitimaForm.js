@@ -121,7 +121,7 @@ export default class NovaVitimaForm extends Component {
             type={'text'}
           />
 
-          <ComboEstado id={'estadoVitima'} handleChange={this.handleChange} />
+          <ComboEstado id={'estadoVitima'} handleChange={this.handleChange} classes={'col s6'}/>
         </div>
 
         <div className="row">

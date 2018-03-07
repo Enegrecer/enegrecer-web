@@ -96,7 +96,7 @@ export default class DetalhamentoDenuncia extends Component {
           />
         </div>
         <div className="row">
-          <ComboEstado id={'estado'} onChange={this.handleChange} />
+          <ComboEstado id={'estado'} onChange={this.handleChange} classes="col s12"/>
         </div>
       </div>
     )

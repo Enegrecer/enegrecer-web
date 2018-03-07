@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import Combobox from '../combo'
+import Combobox from '../combobox'
 import estados from './estados';
 
 
@@ -9,7 +9,7 @@ const comboEstado = ({ id, onChange, classes }) => (
     id={id}
     onChange={onChange}
     itens={estados}
-    divClasse={`input-field ${classes}` }
+    divClasse={`input-field ${classes}`}
     label={'Selecione o Estado:'}
     valorPadrao={'Selecione'}
   />

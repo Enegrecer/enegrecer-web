@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Combo Estado não deve possuir estrutura definida  1`] = `
+exports[`Combo Estado deve possuir estrutura definida  1`] = `
 <comboEstado
   classes="estado"
   id="13"

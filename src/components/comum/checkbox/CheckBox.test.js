@@ -5,13 +5,14 @@ import CheckBox from './../checkbox'
 
 
 describe('Checkbox', () => {
-    it('deve possuir estrutura definida ', () => {
-      const onClick = jest.fn();
-      const checkBox = mount(<CheckBox id={'souAVitima'}
-        label={'Sou a Vítima'} 
-        onClick={onClick} />);
-      const checkBoxTextoJson = toJson(checkBox);
-      expect(checkBoxTextoJson).toMatchSnapshot();
-    });
+  it('deve possuir estrutura definida ', () => {
+    const onClick = jest.fn();
+    const checkBox = mount(<CheckBox
+      id={'souAVitima'}
+      label={'Sou a Vítima'}
+      onClick={onClick}
+    />);
+    const checkBoxTextoJson = toJson(checkBox);
+    expect(checkBoxTextoJson).toMatchSnapshot();
   });
-  
+});

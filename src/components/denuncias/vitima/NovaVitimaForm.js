@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { TelefoneFormGroup, CampoTexto, Combobox } from '../../FormGroups'
 import CheckBox from '../../comum/checkbox'
+import CampoTexto from '../../comum/campoTexto'
+import Combobox from '../../comum/combobox'
 import { cortarPalavra } from '../../../utils/helpers';
 import * as ConstantesCSS from '../ConstantesCss'
 import { racasVitima } from '../racas';
 import ComboEstado from '../../comum/comboEstado'
 import * as Tela from '../../../utils/materializeCSS';
 import Nome from '../../comum/nome'
+import Telefone from '../../comum/telefone'
 
 
 export default class NovaVitimaForm extends Component {
@@ -63,9 +65,7 @@ export default class NovaVitimaForm extends Component {
         <CheckBox id={'souAVitima'} label={'Sou a Vítima'} onClick={e => this.handleChange(e.target.checked, 'souAVitima')} />
 
         <div className="row">
-
           <Nome id={'nome-vitima'} onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'nome')} />
-
         </div>
 
         <div className="row">
@@ -122,7 +122,7 @@ export default class NovaVitimaForm extends Component {
             type={'text'}
           />
 
-          <ComboEstado id={'estadoVitima'} handleChange={this.handleChange} classes={'col s6'}/>
+          <ComboEstado id={'estadoVitima'} handleChange={this.handleChange} classes={'col s6'} />
         </div>
 
         <div className="row">
@@ -135,7 +135,7 @@ export default class NovaVitimaForm extends Component {
             onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'email')}
           />
 
-          <TelefoneFormGroup
+          <Telefone
             id="telefone"
             value={this.state.telefone}
             handleChange={this.handleChange}

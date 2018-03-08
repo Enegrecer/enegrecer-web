@@ -75,10 +75,14 @@ export default class NovaVitimaForm extends Component {
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
             onChange={e => this.handleChange(cortarPalavra(e.target.value, 15), 'genero')}
           />
-          
-          <ComboboxRaca id={'raca'} classes={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`} 
-                           tipo={Tipo.VITIMA} onChange={this.handleChange} />
-    
+
+          <ComboboxRaca
+            id={'raca'}
+            classes={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
+            tipo={Tipo.VITIMA}
+            onChange={this.handleChange}
+          />
+
           <CampoTexto
             id={'dataNascimento-vitima'}
             label={'Data de Nascimento'}
@@ -132,7 +136,7 @@ export default class NovaVitimaForm extends Component {
             handleChange={this.handleChange}
             label={'Telefone'}
           />
-          
+
         </div>
 
         <div className="row">

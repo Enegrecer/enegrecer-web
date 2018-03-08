@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cortarPalavra } from '../../../utils/helpers';
-import { TelefoneFormGroup, CampoTexto, Combobox } from '../../FormGroups'
+import CampoTexto from '../../comum/campoTexto';
+import Telefone from '../../comum/telefone';
+import Combobox from '../../comum/combobox';
 import * as ConstantesCSS from '../ConstantesCss';
 import { racasVitima } from '../racas';
 import * as Tela from '../../../utils/materializeCSS';
@@ -85,7 +87,7 @@ export default class NovaTestemunhaForm extends React.Component {
             type={'date'}
           />
 
-          <TelefoneFormGroup
+          <Telefone
             id={'telefone'}
             value={this.state.telefone}
             handleChange={this.handleChange}

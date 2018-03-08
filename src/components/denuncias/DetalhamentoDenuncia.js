@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react';
 import { cortarPalavra } from '../../utils/helpers';
-import { CampoTexto, RadioGrupoBotoes } from '../FormGroups';
-import ComboEstado from './../comum/comboEstado'
-import * as ConstantesCSS from './ConstantesCss'
-import * as Tela from '../../utils/materializeCSS'
+import ComboEstado from './../comum/comboEstado';
+import CampoTexto from './../comum/campoTexto';
+import BotoesRadio from './../comum/botoesRadio';
+import * as ConstantesCSS from './ConstantesCss';
+import * as Tela from '../../utils/materializeCSS';
 
 
 export default class DetalhamentoDenuncia extends Component {
@@ -54,7 +55,7 @@ export default class DetalhamentoDenuncia extends Component {
 
         <div className="row">
 
-          <RadioGrupoBotoes
+          <BotoesRadio
             classes={'col s3'}
             id={'idCategoria'}
             onChange={e => this.handleChange(e.target.checked, 'idCategoria')}

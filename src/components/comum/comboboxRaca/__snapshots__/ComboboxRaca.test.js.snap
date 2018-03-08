@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Combobox Raça deve possuir estrutura definida quando tipo igual testemunha  1`] = `
+<comboRaca
+  classes="racas"
+  id="raca-testemunha"
+  onChange={[Function]}
+  tipo="testemunha"
+>
+  <Combobox
+    divClasse="racas"
+    id="raca-testemunha"
+    itens={
+      Array [
+        "Amarela",
+        "Branco",
+        "Índigena",
+        "Parda",
+        "Preta",
+      ]
+    }
+    label="testemunha"
+    onChange={[Function]}
+    valorPadrao="Selecione a Raça:"
+  >
+    <div
+      className="racas"
+    >
+      <select
+        id="raca-testemunha"
+        onChange={[Function]}
+      >
+        <option
+          value=""
+        >
+          Selecione a Raça:
+        </option>
+        <option
+          key="Amarela"
+          value="Amarela"
+        >
+           
+          Amarela
+           
+        </option>
+        <option
+          key="Branco"
+          value="Branco"
+        >
+           
+          Branco
+           
+        </option>
+        <option
+          key="Índigena"
+          value="Índigena"
+        >
+           
+          Índigena
+           
+        </option>
+        <option
+          key="Parda"
+          value="Parda"
+        >
+           
+          Parda
+           
+        </option>
+        <option
+          key="Preta"
+          value="Preta"
+        >
+           
+          Preta
+           
+        </option>
+      </select>
+      <label
+        htmlFor="raca-testemunha"
+      >
+        testemunha
+      </label>
+    </div>
+  </Combobox>
+</comboRaca>
+`;
+
+exports[`Combobox Raça deve possuir estrutura definida quando tipo igual vítima  1`] = `
+<comboRaca
+  classes="racas"
+  id="raca-vitma"
+  onChange={[Function]}
+  tipo="vitima"
+>
+  <Combobox
+    divClasse="racas"
+    id="raca-vitma"
+    itens={
+      Array [
+        "Preta",
+        "Parda",
+      ]
+    }
+    label="vitima"
+    onChange={[Function]}
+    valorPadrao="Selecione a Raça:"
+  >
+    <div
+      className="racas"
+    >
+      <select
+        id="raca-vitma"
+        onChange={[Function]}
+      >
+        <option
+          value=""
+        >
+          Selecione a Raça:
+        </option>
+        <option
+          key="Preta"
+          value="Preta"
+        >
+           
+          Preta
+           
+        </option>
+        <option
+          key="Parda"
+          value="Parda"
+        >
+           
+          Parda
+           
+        </option>
+      </select>
+      <label
+        htmlFor="raca-vitma"
+      >
+        vitima
+      </label>
+    </div>
+  </Combobox>
+</comboRaca>
+`;

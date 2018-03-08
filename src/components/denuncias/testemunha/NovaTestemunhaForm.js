@@ -9,6 +9,8 @@ import { racasVitima } from '../racas';
 import * as Tela from '../../../utils/materializeCSS';
 import Genero from '../../comum/genero';
 import Nome  from  '../../comum/nome';
+import Tipo from '../../comum/comboboxRaca/tipos';
+import ComboboxRaca from '../../comum/comboboxRaca'
 
 export default class NovaTestemunhaForm extends React.Component {
   constructor(props) {
@@ -54,16 +56,9 @@ export default class NovaTestemunhaForm extends React.Component {
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
             onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 15), 'genero') }}
           />
+          <ComboboxRaca id={'raca-testemenunha'} classes={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`} 
+           tipo={Tipo.VITIMA} onChange={this.handleChange} /> 
 
-          <Combobox
-            id={'raca-testemenunha'}
-            value={this.state.raca}
-            handleChange={this.handleChange}
-            itens={racasVitima}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
-            label={'Selecione a Raça:'}
-            valorPadrao={'Selecione a Raça:'}
-          />
         </div>
 
         <div className="row">

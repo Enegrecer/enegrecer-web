@@ -13,7 +13,7 @@ const comboRaca = ({ id, onChange, classes, tipo = TIPO.VITIMA  }) => (
     itens={(tipo === TIPO.VITIMA) ? racasVitima : racasTestemunha }
     divClasse={classes}
     onChange={onChange}
-    label={tipo}
+    label={'Selecione a Raça:'}
     valorPadrao={'Selecione a Raça:'}
   />
 );

@@ -2,15 +2,15 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import CheckBox from '../../comum/checkbox'
 import CampoTexto from '../../comum/campoTexto'
-import Combobox from '../../comum/combobox'
 import { cortarPalavra } from '../../../utils/helpers';
 import * as ConstantesCSS from '../ConstantesCss'
-import { racasVitima } from '../racas';
 import ComboEstado from '../../comum/comboboxEstado';
 import * as Tela from '../../../utils/materializeCSS';
 import Nome from '../../comum/nome';
 import Genero from '../../comum/genero';
 import Telefone from '../../comum/telefone';
+import ComboboxRaca from './../../comum/comboboxRaca';
+import Tipo from '../../comum/comboboxRaca/tipos'
 
 
 export default class NovaVitimaForm extends Component {
@@ -75,17 +75,10 @@ export default class NovaVitimaForm extends Component {
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
             onChange={e => this.handleChange(cortarPalavra(e.target.value, 15), 'genero')}
           />
-
-          <Combobox
-            id={'raca'}
-            value={this.state.raca}
-            handleChange={this.handleChange}
-            itens={racasVitima}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
-            label={'Selecione a Raça:'}
-            valorPadrao={'Selecione a Raça:'}
-          />
-
+          
+          <ComboboxRaca id={'raca'} classes={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`} 
+                           tipo={Tipo.VITIMA} onChange={this.handleChange} />
+    
           <CampoTexto
             id={'dataNascimento-vitima'}
             label={'Data de Nascimento'}
@@ -139,7 +132,7 @@ export default class NovaVitimaForm extends Component {
             handleChange={this.handleChange}
             label={'Telefone'}
           />
-
+          
         </div>
 
         <div className="row">

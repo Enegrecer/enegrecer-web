@@ -7,38 +7,34 @@ exports[`Genero deve possuir estrutura definida  1`] = `
   id="13"
   onChange={[Function]}
 >
-  <div
-    className=""
+  <CampoTexto
+    divClasse=""
+    id="13"
+    inputClasse="validate"
+    label="Gênero (máximo de 15 caracteres)"
+    maxLen={15}
+    onChange={[Function]}
+    placeholder="Ex.: Feminino, Masculino, Não Binário..."
+    type="text"
   >
-    <CampoTexto
-      divClasse="input-field col s6"
-      id="13"
-      inputClasse="validate"
-      label="Gênero (máximo de 15 caracteres)"
-      maxLen={15}
-      onChange={[Function]}
-      placeholder="Ex.: Feminino, Masculino, Não Binário..."
-      type="text"
+    <div
+      className=""
     >
-      <div
-        className="input-field col s6"
+      <input
+        className="validate"
+        id="13"
+        maxLength={15}
+        onChange={[Function]}
+        placeholder="Ex.: Feminino, Masculino, Não Binário..."
+        type="text"
+      />
+      <label
+        className="active"
+        htmlFor="13"
       >
-        <input
-          className="validate"
-          id="13"
-          maxLength={15}
-          onChange={[Function]}
-          placeholder="Ex.: Feminino, Masculino, Não Binário..."
-          type="text"
-        />
-        <label
-          className="active"
-          htmlFor="13"
-        >
-          Gênero (máximo de 15 caracteres)
-        </label>
-      </div>
-    </CampoTexto>
-  </div>
+        Gênero (máximo de 15 caracteres)
+      </label>
+    </div>
+  </CampoTexto>
 </Genero>
 `;

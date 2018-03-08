@@ -8,6 +8,7 @@ import * as ConstantesCSS from '../ConstantesCss';
 import { racasVitima } from '../racas';
 import * as Tela from '../../../utils/materializeCSS';
 import Genero from '../../comum/genero';
+import Nome  from  '../../comum/nome';
 
 export default class NovaTestemunhaForm extends React.Component {
   constructor(props) {
@@ -44,14 +45,7 @@ export default class NovaTestemunhaForm extends React.Component {
         <br />
 
         <div className="row">
-          <CampoTexto
-            id={'nome-testemunha'}
-            label={'Nome (máximo de 40 caracteres)'}
-            maxLen={40}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
-            onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 40), 'nome') }}
-            type={'text'}
-          />
+          <Nome id={'nome-testemunha'} onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'nome')} />
         </div>
 
         <div className="row">

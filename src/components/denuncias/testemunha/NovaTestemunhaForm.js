@@ -7,6 +7,7 @@ import Combobox from '../../comum/combobox';
 import * as ConstantesCSS from '../ConstantesCss';
 import { racasVitima } from '../racas';
 import * as Tela from '../../../utils/materializeCSS';
+import Genero from '../../comum/genero';
 
 export default class NovaTestemunhaForm extends React.Component {
   constructor(props) {
@@ -54,15 +55,10 @@ export default class NovaTestemunhaForm extends React.Component {
         </div>
 
         <div className="row">
-          <CampoTexto
+          <Genero
             id={'genero-testemunha'}
-            label={'Gênero (máximo de 15 caracteres)'}
-            maxLen={15}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
-            inputClasse={ConstantesCSS.CLASSES_INPUT}
             onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 15), 'genero') }}
-            placeholder={'Ex.: Feminino, Masculino, Não Binário...'}
-            type={'text'}
           />
 
           <Combobox

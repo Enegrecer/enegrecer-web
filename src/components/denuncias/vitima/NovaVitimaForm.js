@@ -9,6 +9,7 @@ import { racasVitima } from '../racas';
 import ComboEstado from '../../comum/comboboxEstado';
 import * as Tela from '../../../utils/materializeCSS';
 import Nome from '../../comum/nome';
+import Genero from '../../comum/genero';
 import Telefone from '../../comum/telefone';
 
 
@@ -69,13 +70,10 @@ export default class NovaVitimaForm extends Component {
         </div>
 
         <div className="row">
-          <CampoTexto
+          <Genero
             id={'vitima-genero'}
-            label={'Gênero (máximo de 15 caracteres)'}
-            maxLen={15}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
             onChange={e => this.handleChange(cortarPalavra(e.target.value, 15), 'genero')}
-            type={'text'}
           />
 
           <Combobox

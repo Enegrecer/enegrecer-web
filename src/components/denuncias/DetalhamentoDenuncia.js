@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react';
 import { cortarPalavra } from '../../utils/helpers';
-import ComboEstado from './../comum/comboEstado';
+import ComboEstado from './../comum/comboboxEstado';
 import CampoTexto from './../comum/campoTexto';
 import BotoesRadio from './../comum/botoesRadio';
 import * as ConstantesCSS from './ConstantesCss';

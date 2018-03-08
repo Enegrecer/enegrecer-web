@@ -6,10 +6,10 @@ import Combobox from '../../comum/combobox'
 import { cortarPalavra } from '../../../utils/helpers';
 import * as ConstantesCSS from '../ConstantesCss'
 import { racasVitima } from '../racas';
-import ComboEstado from '../../comum/comboEstado'
+import ComboEstado from '../../comum/comboboxEstado';
 import * as Tela from '../../../utils/materializeCSS';
-import Nome from '../../comum/nome'
-import Telefone from '../../comum/telefone'
+import Nome from '../../comum/nome';
+import Telefone from '../../comum/telefone';
 
 
 export default class NovaVitimaForm extends Component {

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Nome deve seguir a estrutura definida  1`] = `
-<Nome
+<nome
   id="3"
   onChange={[Function]}
 >
@@ -33,5 +33,5 @@ exports[`Nome deve seguir a estrutura definida  1`] = `
       </label>
     </div>
   </campoTexto>
-</Nome>
+</nome>
 `;

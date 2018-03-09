@@ -9,6 +9,7 @@ import Genero from '../../comum/genero';
 import Nome from '../../comum/nome';
 import Tipo from '../../comum/comboboxRaca/tipos';
 import ComboboxRaca from '../../comum/comboboxRaca';
+import Caracteristica from '../../comum/caracteristica';
 
 export default class NovaTestemunhaForm extends React.Component {
   constructor(props) {
@@ -83,14 +84,10 @@ export default class NovaTestemunhaForm extends React.Component {
         </div>
 
         <div className="row">
-          <CampoTexto
+          <Caracteristica
             id={'caracteristicas-testemunha'}
             label={'* Por favor, descreva aqui as características da testemunha (máximo de 255 caracteres)'}
-            maxLen={255}
             onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 255), 'caracteristicas') }}
-            type={'text'}
-            inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
           />
         </div>
       </div>

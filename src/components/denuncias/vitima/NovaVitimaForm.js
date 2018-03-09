@@ -10,7 +10,8 @@ import Nome from '../../comum/nome';
 import Genero from '../../comum/genero';
 import Telefone from '../../comum/telefone';
 import ComboboxRaca from './../../comum/comboboxRaca';
-import Tipo from '../../comum/comboboxRaca/tipos'
+import Tipo from '../../comum/comboboxRaca/tipos';
+import Caracteristica from '../../comum/caracteristica';
 
 
 export default class NovaVitimaForm extends Component {
@@ -140,14 +141,9 @@ export default class NovaVitimaForm extends Component {
         </div>
 
         <div className="row">
-          <CampoTexto
+          <Caracteristica
             id={'caracteristicasDaVitima'}
             label={'* Por favor, descreva aqui as características da vítima (máximo de 255 caracteres)'}
-            maxLen={255}
-            type={'text'}
-            inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
-            placeholder={'Ex.: Era uma mulher negra, com aproximadamente 40 anos, magra, alta com cabelo curto...'}
             onChange={e => this.handleChange(cortarPalavra(e.target.value, 255), 'caracteristicasDaVitima')}
           />
         </div>

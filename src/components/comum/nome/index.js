@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import CampoTexto from '../campoTexto'
 
 
-const Nome = ({ id, onChange }) => (<CampoTexto
+const nome = ({ id, onChange }) => (<CampoTexto
   id={id}
   label={'Nome (máximo de 40 caracteres)'}
   maxLen={40}
@@ -13,15 +13,15 @@ const Nome = ({ id, onChange }) => (<CampoTexto
   onChange={onChange}
 />)
 
-Nome.propTypes = {
+nome.propTypes = {
   id: PropTypes.string,
   onChange: PropTypes.func
 };
 
-Nome.defaultProps = {
+nome.defaultProps = {
   id: '',
   onChange: () => {}
 };
 
 
-export default Nome;
+export default nome;

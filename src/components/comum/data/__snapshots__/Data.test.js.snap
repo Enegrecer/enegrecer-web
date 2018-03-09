@@ -11,22 +11,22 @@ exports[`Data deve possuir estrutura definida  1`] = `
   <campoTexto
     divClasse=""
     id="13"
-    inputClasse="validate timepicker"
+    inputClasse="datepicker"
     label="Data"
     maxLen={0}
     onChange={[Function]}
     placeholder=""
-    type="date"
+    type="text"
   >
     <div
       className=""
     >
       <input
-        className="validate timepicker"
+        className="datepicker"
         id="13"
         maxLength={0}
         onChange={[Function]}
-        type="date"
+        type="text"
       />
       <label
         className="active"

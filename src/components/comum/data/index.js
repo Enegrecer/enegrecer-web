@@ -8,10 +8,10 @@ const data = ({ id, label, divClasse, onChange }) => (
     <CampoTexto
         id={id}
         label={label}
-        inputClasse={CLASSES_INPUT + ' timepicker'}
+        inputClasse={'datepicker'}
         divClasse={divClasse}
         maxLen={0}
-        type={'date'}
+        type={'text'}
         onChange={onChange}
     />
 );

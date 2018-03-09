@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default function BotoesRadio({classes, botoes, id}) {
+export default function BotoesRadio({ classes, botoes, id }) {
   return (
     <div className={classes}>
       { botoes.map(

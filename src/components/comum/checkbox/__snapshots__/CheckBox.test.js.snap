@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Checkbox deve possuir estrutura definida  1`] = `
-<CheckBox
+<checkBox
   id="souAVitima"
   label="Sou a Vítima"
   onClick={[Function]}
@@ -17,5 +17,5 @@ exports[`Checkbox deve possuir estrutura definida  1`] = `
       Sou a Vítima
     </label>
   </p>
-</CheckBox>
+</checkBox>
 `;

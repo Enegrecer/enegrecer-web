@@ -7,7 +7,7 @@ exports[`Genero deve possuir estrutura definida  1`] = `
   id="13"
   onChange={[Function]}
 >
-  <CampoTexto
+  <campoTexto
     divClasse=""
     id="13"
     inputClasse="validate"
@@ -35,6 +35,6 @@ exports[`Genero deve possuir estrutura definida  1`] = `
         Gênero (máximo de 15 caracteres)
       </label>
     </div>
-  </CampoTexto>
+  </campoTexto>
 </Genero>
 `;

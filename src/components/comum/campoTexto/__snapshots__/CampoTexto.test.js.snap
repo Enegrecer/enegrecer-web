@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CampoTexto não deve possuir estrutura definida  1`] = `
-<CampoTexto
+<campoTexto
   divClasse=""
   id=""
   inputClasse=""
@@ -26,5 +26,5 @@ exports[`CampoTexto não deve possuir estrutura definida  1`] = `
       htmlFor=""
     />
   </div>
-</CampoTexto>
+</campoTexto>
 `;

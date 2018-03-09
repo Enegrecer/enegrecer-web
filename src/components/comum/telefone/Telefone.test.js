@@ -1,7 +1,7 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
-import Telefone from './../telefone'
+import Telefone from './../telefone';
 
 describe('Telefone', () => {
   it('deve seguir a estrutura definida ', () => {

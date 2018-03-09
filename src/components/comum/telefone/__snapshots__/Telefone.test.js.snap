@@ -6,7 +6,6 @@ exports[`Telefone deve seguir a estrutura definida  1`] = `
 >
   <InputElement
     id="telefone"
-    label="Telefone"
     mask="(99) 99999-9999"
     maskChar=" "
     name="telefone"

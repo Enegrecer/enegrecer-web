@@ -4,18 +4,18 @@ import PropTypes from 'prop-types'
 
 
 const combobox = ({ divClasse, id, onChange, valorPadrao, itens, label }) => (
-    <div className={divClasse}>
-      <select id={id} onChange={onChange} >
-        <option value="" >{valorPadrao}</option>
-        {
-          itens.map(
-            val => <option key={val} value={val}> {val} </option>
-          )
-        }
-      </select>
-      <label htmlFor={id}>{label}</label>
-    </div>
-  );
+  <div className={divClasse}>
+    <select id={id} onChange={onChange} >
+      <option value="" >{valorPadrao}</option>
+      {
+        itens.map(
+          val => <option key={val} value={val}> {val} </option>
+        )
+      }
+    </select>
+    <label htmlFor={id}>{label}</label>
+  </div>
+);
 
 combobox.propTypes = {
   id: PropTypes.string,
@@ -35,4 +35,4 @@ combobox.defaultProps = {
   valorPadrao: ''
 };
 
-export default combobox; 
+export default combobox;

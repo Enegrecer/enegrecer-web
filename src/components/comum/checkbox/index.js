@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 
-const checkBox = ({id, label }) => (
+const checkBox = ({ id, label }) => (
   <p>
     <input type="checkbox" id={id} />
     <label htmlFor={id}>{label}</label>

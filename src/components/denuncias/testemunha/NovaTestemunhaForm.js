@@ -88,6 +88,9 @@ export default class NovaTestemunhaForm extends React.Component {
             id={'caracteristicas-testemunha'}
             label={'* Por favor, descreva aqui as características da testemunha (máximo de 255 caracteres)'}
             onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 255), 'caracteristicas') }}
+            type={'text'}
+            inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
           />
         </div>
       </div>

@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default function BotoesRadio(props) {
+export default function BotoesRadio({classes, botoes, id}) {
   return (
-    <div className={props.classes}>
-      { props.botoes.map(
+    <div className={classes}>
+      { botoes.map(
         botaoRadio =>
           (<p key={botaoRadio.id}>
-            <input name={props.id} type="radio" id={botaoRadio.id} />
+            <input name={id} type="radio" id={botaoRadio.id} />
             <label htmlFor={botaoRadio.id}>{botaoRadio.valor}</label>
           </p>
           )

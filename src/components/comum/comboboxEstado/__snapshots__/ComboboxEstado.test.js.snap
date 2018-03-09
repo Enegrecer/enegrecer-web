@@ -6,7 +6,7 @@ exports[`Combo Estado deve possuir estrutura definida  1`] = `
   id="13"
   onChange={[Function]}
 >
-  <Combobox
+  <combobox
     divClasse="input-field estado"
     id="13"
     itens={
@@ -261,6 +261,6 @@ exports[`Combo Estado deve possuir estrutura definida  1`] = `
         Selecione o Estado:
       </label>
     </div>
-  </Combobox>
+  </combobox>
 </comboEstado>
 `;

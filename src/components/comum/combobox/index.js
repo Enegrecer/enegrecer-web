@@ -3,23 +3,21 @@ import React from 'react';
 import PropTypes from 'prop-types'
 
 
-export default function Combobox(props) {
-  return (
-    <div className={props.divClasse}>
-      <select id={props.id} onChange={props.onChange} >
-        <option value="" >{props.valorPadrao}</option>
+const combobox = ({ divClasse, id, onChange, valorPadrao, itens, label }) => (
+    <div className={divClasse}>
+      <select id={id} onChange={onChange} >
+        <option value="" >{valorPadrao}</option>
         {
-          props.itens.map(
+          itens.map(
             val => <option key={val} value={val}> {val} </option>
           )
         }
       </select>
-      <label htmlFor={props.id}>{props.label}</label>
+      <label htmlFor={id}>{label}</label>
     </div>
   );
-}
 
-Combobox.propTypes = {
+combobox.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string,
   onChange: PropTypes.func,
@@ -28,7 +26,7 @@ Combobox.propTypes = {
   valorPadrao: PropTypes.string
 };
 
-Combobox.defaultProps = {
+combobox.defaultProps = {
   id: '',
   label: '',
   onChange: () => {},
@@ -37,3 +35,4 @@ Combobox.defaultProps = {
   valorPadrao: ''
 };
 
+export default combobox; 

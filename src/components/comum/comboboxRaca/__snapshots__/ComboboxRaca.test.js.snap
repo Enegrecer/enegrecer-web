@@ -7,7 +7,7 @@ exports[`Combobox Raça deve possuir estrutura definida quando tipo igual testem
   onChange={[Function]}
   tipo="testemunha"
 >
-  <Combobox
+  <combobox
     divClasse="racas"
     id="raca-testemunha"
     itens={
@@ -82,7 +82,7 @@ exports[`Combobox Raça deve possuir estrutura definida quando tipo igual testem
         Selecione a Raça:
       </label>
     </div>
-  </Combobox>
+  </combobox>
 </comboRaca>
 `;
 
@@ -93,7 +93,7 @@ exports[`Combobox Raça deve possuir estrutura definida quando tipo igual vítim
   onChange={[Function]}
   tipo="vitima"
 >
-  <Combobox
+  <combobox
     divClasse="racas"
     id="raca-vitma"
     itens={
@@ -141,6 +141,6 @@ exports[`Combobox Raça deve possuir estrutura definida quando tipo igual vítim
         Selecione a Raça:
       </label>
     </div>
-  </Combobox>
+  </combobox>
 </comboRaca>
 `;

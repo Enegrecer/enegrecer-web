@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CampoTexto from '../campoTexto';
-import { CLASSES_INPUT } from
-  '../../../components/denuncias/ConstantesCss';
+import { CLASSES_INPUT } from '../../../components/denuncias/ConstantesCss';
 
 const genero = ({ id, divClasse, onChange }) => (
   <CampoTexto
@@ -26,7 +25,7 @@ genero.propTypes = {
 genero.defaultProps = {
   id: '',
   divClasse: '',
-  onChange: () => {}
+  onChange: () => { }
 };
 
 export default genero;

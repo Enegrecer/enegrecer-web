@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import CheckBox from '../../comum/checkbox'
-import CampoTexto from '../../comum/campoTexto'
+import CheckBox from '../../comum/checkbox';
+import CampoTexto from '../../comum/campoTexto';
 import { cortarPalavra } from '../../../utils/helpers';
-import * as ConstantesCSS from '../ConstantesCss'
+import * as ConstantesCSS from '../ConstantesCss';
 import ComboEstado from '../../comum/comboboxEstado';
 import * as Tela from '../../../utils/materializeCSS';
 import Nome from '../../comum/nome';

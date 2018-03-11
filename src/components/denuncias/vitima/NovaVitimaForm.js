@@ -10,10 +10,8 @@ import Nome from '../../comum/nome';
 import Genero from '../../comum/genero';
 import Telefone from '../../comum/telefone';
 import ComboboxRaca from './../../comum/comboboxRaca';
-import Tipo from '../../comum/comboboxRaca/tipos';
 import Caracteristica from '../../comum/caracteristica';
 import Data from '../../comum/data';
-
 
 export default class NovaVitimaForm extends Component {
   constructor(props) {
@@ -81,7 +79,7 @@ export default class NovaVitimaForm extends Component {
           <ComboboxRaca
             id={'raca'}
             classes={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
-            tipo={Tipo.VITIMA}
+            somenteRacasVitima
             onChange={this.handleChange}
           />
 

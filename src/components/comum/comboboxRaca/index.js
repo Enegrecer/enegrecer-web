@@ -3,13 +3,11 @@ import PropTypes from 'prop-types';
 import Combobox from '../combobox';
 import { racasVitima } from './racasVitima';
 import { racasTestemunha } from './racasTestemunha';
-import TIPO from './tipos';
-
 
 const comboRaca = ({ id, onChange, classes, somenteRacasVitima = true }) => (
   <Combobox
     id={id}
-    itens={( somenteRacasVitima ) ? racasVitima : racasTestemunha}
+    itens={(somenteRacasVitima) ? racasVitima : racasTestemunha}
     divClasse={classes}
     onChange={onChange}
     label={'Selecione a Raça:'}

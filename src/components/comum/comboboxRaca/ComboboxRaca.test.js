@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import ComboboxRaca from '../comboboxRaca';
-import TIPO from '../comboboxRaca/tipos'
+import TIPO from '../comboboxRaca/tipos';
 
 describe('Combobox Raça', () => {
   it('deve possuir estrutura definida quando tipo igual testemunha ', () => {

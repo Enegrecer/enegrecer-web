@@ -1,6 +1,6 @@
 
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 
 const combobox = ({ divClasse, id, onChange, valorPadrao, itens, label }) => (

@@ -1,8 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import BotoesRadio from './index'
-
+import BotoesRadio from './index';
 
 describe('Botões Rádio', () => {
   const botoes = [

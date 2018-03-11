@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import CampoTexto from './index'
+import CampoTexto from './index';
 
 describe('CampoTexto', () => {
   it('não deve possuir estrutura definida ', () => {

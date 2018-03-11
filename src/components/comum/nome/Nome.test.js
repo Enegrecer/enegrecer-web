@@ -1,7 +1,7 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
 import { mount } from 'enzyme';
-import Nome from './index'
+import Nome from './index';
 
 
 describe('Nome', () => {

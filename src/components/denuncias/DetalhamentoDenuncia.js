@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { cortarPalavra } from '../../utils/helpers';
 import ComboEstado from './../comum/comboboxEstado';

@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types'
-import Combobox from '../combobox'
+import PropTypes from 'prop-types';
+import Combobox from '../combobox';
 import estados from './estados';
-
 
 const comboEstado = ({ id, onChange, classes }) => (
   <Combobox
@@ -18,7 +17,7 @@ const comboEstado = ({ id, onChange, classes }) => (
 comboEstado.propTypes = {
   id: PropTypes.string,
   onChange: PropTypes.func,
-  classes: PropTypes.string,
+  classes: PropTypes.string
 };
 
 comboEstado.defaultProps = {

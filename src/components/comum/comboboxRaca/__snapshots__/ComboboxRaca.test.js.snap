@@ -1,11 +1,70 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Combobox Raça deve possuir estrutura definida quando tipo igual testemunha  1`] = `
+exports[`Combobox Raça deve conter somente as raças Pardo e Negro quando somenteRacasVitima é true  1`] = `
+<comboRaca
+  classes="racas"
+  id="raca-vitma"
+  onChange={[Function]}
+  somenteRacasVitima={true}
+>
+  <combobox
+    divClasse="racas"
+    id="raca-vitma"
+    itens={
+      Array [
+        "Preta",
+        "Parda",
+      ]
+    }
+    label="Selecione a Raça:"
+    onChange={[Function]}
+    valorPadrao="Selecione a Raça:"
+  >
+    <div
+      className="racas"
+    >
+      <select
+        id="raca-vitma"
+        onChange={[Function]}
+      >
+        <option
+          value=""
+        >
+          Selecione a Raça:
+        </option>
+        <option
+          key="Preta"
+          value="Preta"
+        >
+           
+          Preta
+           
+        </option>
+        <option
+          key="Parda"
+          value="Parda"
+        >
+           
+          Parda
+           
+        </option>
+      </select>
+      <label
+        htmlFor="raca-vitma"
+      >
+        Selecione a Raça:
+      </label>
+    </div>
+  </combobox>
+</comboRaca>
+`;
+
+exports[`Combobox Raça deve conter todas as raças quando somenteRacasVitima é false  1`] = `
 <comboRaca
   classes="racas"
   id="raca-testemunha"
   onChange={[Function]}
-  tipo="testemunha"
+  somenteRacasVitima={false}
 >
   <combobox
     divClasse="racas"
@@ -78,65 +137,6 @@ exports[`Combobox Raça deve possuir estrutura definida quando tipo igual testem
       </select>
       <label
         htmlFor="raca-testemunha"
-      >
-        Selecione a Raça:
-      </label>
-    </div>
-  </combobox>
-</comboRaca>
-`;
-
-exports[`Combobox Raça deve possuir estrutura definida quando tipo igual vítima  1`] = `
-<comboRaca
-  classes="racas"
-  id="raca-vitma"
-  onChange={[Function]}
-  tipo="vitima"
->
-  <combobox
-    divClasse="racas"
-    id="raca-vitma"
-    itens={
-      Array [
-        "Preta",
-        "Parda",
-      ]
-    }
-    label="Selecione a Raça:"
-    onChange={[Function]}
-    valorPadrao="Selecione a Raça:"
-  >
-    <div
-      className="racas"
-    >
-      <select
-        id="raca-vitma"
-        onChange={[Function]}
-      >
-        <option
-          value=""
-        >
-          Selecione a Raça:
-        </option>
-        <option
-          key="Preta"
-          value="Preta"
-        >
-           
-          Preta
-           
-        </option>
-        <option
-          key="Parda"
-          value="Parda"
-        >
-           
-          Parda
-           
-        </option>
-      </select>
-      <label
-        htmlFor="raca-vitma"
       >
         Selecione a Raça:
       </label>

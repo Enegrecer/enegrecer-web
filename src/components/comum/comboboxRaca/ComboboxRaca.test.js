@@ -5,16 +5,16 @@ import ComboboxRaca from '../comboboxRaca';
 import TIPO from '../comboboxRaca/tipos';
 
 describe('Combobox Raça', () => {
-  it('deve possuir estrutura definida quando tipo igual testemunha ', () => {
+  it('deve conter todas as raças quando somenteRacasVitima é false ', () => {
     const onChange = jest.fn();
-    const comboboxRacaTestemunha = mount(<ComboboxRaca id={'raca-testemunha'} onChange={onChange} classes={'racas'} tipo={TIPO.TESTEMUNHA} />);
+    const comboboxRacaTestemunha = mount(<ComboboxRaca id={'raca-testemunha'} onChange={onChange} classes={'racas'} somenteRacasVitima={false} />);
     const comboboxRacaTestemunhaTextoJson = toJson(comboboxRacaTestemunha);
     expect(comboboxRacaTestemunhaTextoJson).toMatchSnapshot();
   });
 
-  it('deve possuir estrutura definida quando tipo igual vítima ', () => {
+  it('deve conter somente as raças Pardo e Negro quando somenteRacasVitima é true ', () => {
     const onChange = jest.fn();
-    const comboboxRacaVitima = mount(<ComboboxRaca id={'raca-vitma'} onChange={onChange} classes={'racas'} tipo={TIPO.VITIMA} />);
+    const comboboxRacaVitima = mount(<ComboboxRaca id={'raca-vitma'} onChange={onChange} classes={'racas'} somenteRacasVitima={true} />);
     const comboboxRacaVitimaTextoJson = toJson(comboboxRacaVitima);
     expect(comboboxRacaVitimaTextoJson).toMatchSnapshot();
   });

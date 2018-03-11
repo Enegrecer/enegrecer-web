@@ -6,11 +6,10 @@ import { racasTestemunha } from './racasTestemunha';
 import TIPO from './tipos';
 
 
-const comboRaca = ({ id, onChange, classes, tipo = TIPO.VITIMA }) => (
-
+const comboRaca = ({ id, onChange, classes, somenteRacasVitima = true }) => (
   <Combobox
     id={id}
-    itens={(tipo === TIPO.VITIMA) ? racasVitima : racasTestemunha}
+    itens={( somenteRacasVitima ) ? racasVitima : racasTestemunha}
     divClasse={classes}
     onChange={onChange}
     label={'Selecione a Raça:'}
@@ -22,14 +21,14 @@ comboRaca.propTypes = {
   id: PropTypes.string,
   onChange: PropTypes.func,
   classes: PropTypes.string,
-  tipo: PropTypes.string
+  somenteRacasVitima: PropTypes.bool
 };
 
 comboRaca.defaultProps = {
   id: '',
   onChange: () => {},
   classes: '',
-  tipo: TIPO.VITIMA
+  somenteRacasVitima: true
 };
 
 export default comboRaca;

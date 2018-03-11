@@ -9,7 +9,7 @@ class Data extends Component {
     Tela.iniciaCampoData(this.props.id, this.props.onChange);
     const campoData = Tela.getElementoPorId(this.props.id);
     campoData.on('change', (e) => {
-      this.props.onChange(e.target.value, this.props.id);
+      this.props.onChange(e.target.value, this.props.estado);
     });
   }
 
@@ -33,14 +33,16 @@ Data.propTypes = {
   id: PropTypes.string,
   divClasse: PropTypes.string,
   onChange: PropTypes.func,
-  label: PropTypes.string
+  label: PropTypes.string,
+  estado: PropTypes.string
 };
 
 Data.defaultProps = {
   id: '',
   divClasse: '',
   onChange: () => {},
-  label: PropTypes.string
+  label: '',
+  estado: ''
 };
 
 

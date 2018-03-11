@@ -7,7 +7,7 @@ export const iniciaCampoData = (id) => {
   $(`#${id}`).pickadate({
     closeOnSelect: true,
     selectMonths: true,
-    selectYears: 15,
+    selectYears: 80,
     labelMonthNext: 'Proximo Mês',
     labelMonthPrev: 'Mês Anterior',
     labelMonthSelect: 'Selecionar Mês',

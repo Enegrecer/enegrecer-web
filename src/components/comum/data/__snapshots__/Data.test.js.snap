@@ -4,6 +4,7 @@ exports[`Data deve possuir estrutura definida  1`] = `
 <Data
   divClasse=""
   divClasses="estado"
+  estado=""
   id="13"
   label="Data"
   onChange={[Function]}

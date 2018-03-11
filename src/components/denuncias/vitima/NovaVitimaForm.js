@@ -12,6 +12,7 @@ import Telefone from '../../comum/telefone';
 import ComboboxRaca from './../../comum/comboboxRaca';
 import Tipo from '../../comum/comboboxRaca/tipos';
 import Caracteristica from '../../comum/caracteristica';
+import Data from '../../comum/data';
 
 
 export default class NovaVitimaForm extends Component {
@@ -84,14 +85,12 @@ export default class NovaVitimaForm extends Component {
             onChange={this.handleChange}
           />
 
-          <CampoTexto
-            id={'dataNascimento-vitima'}
+          <Data
+            id={'dataNascimento'}
             label={'Data de Nascimento'}
-            inputClasse={ConstantesCSS.CLASSES_INPUT}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
-            onChange={e => this.handleChange(e.target.value, 'dataNascimento')}
-            maxLen={8}
-            type={'date'}
+            onChange={this.handleChange}
+            estado={'dataNascimento'}
           />
 
         </div>

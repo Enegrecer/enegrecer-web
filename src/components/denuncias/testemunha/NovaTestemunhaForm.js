@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cortarPalavra } from '../../../utils/helpers';
-import CampoTexto from '../../comum/campoTexto';
 import Telefone from '../../comum/telefone';
 import * as ConstantesCSS from '../ConstantesCss';
 import * as Tela from '../../../utils/materializeCSS';
@@ -10,6 +9,7 @@ import Nome from '../../comum/nome';
 import Tipo from '../../comum/comboboxRaca/tipos';
 import ComboboxRaca from '../../comum/comboboxRaca';
 import Caracteristica from '../../comum/caracteristica';
+import Data from '../../comum/data';
 
 export default class NovaTestemunhaForm extends React.Component {
   constructor(props) {
@@ -65,14 +65,12 @@ export default class NovaTestemunhaForm extends React.Component {
         </div>
 
         <div className="row">
-          <CampoTexto
+          <Data
             id={'dataNascimento-testemunha'}
             label={'Data de Nascimento'}
-            maxLen={0}
-            onChange={(e) => { this.handleChange(e.target.value, 'dataNascimento') }}
-            inputClasse={ConstantesCSS.CLASSES_INPUT}
+            onChange={this.handleChange}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
-            type={'date'}
+            estado={'dataNascimento'}
           />
 
           <Telefone

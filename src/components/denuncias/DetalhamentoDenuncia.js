@@ -71,6 +71,7 @@ export default class DetalhamentoDenuncia extends Component {
             maxLen={0}
             type={'date'}
             onChange={this.handleChange}
+            estado={'dataOcorrencia'}
           />
 
           <CampoTexto

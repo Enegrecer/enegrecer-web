@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Data deve possuir estrutura definida  1`] = `
-<data
+<Data
   divClasse=""
   divClasses="estado"
   id="13"
@@ -15,7 +15,7 @@ exports[`Data deve possuir estrutura definida  1`] = `
     label="Data"
     maxLen={0}
     onChange={[Function]}
-    placeholder=""
+    placeholder="Data"
     type="text"
   >
     <div
@@ -26,6 +26,7 @@ exports[`Data deve possuir estrutura definida  1`] = `
         id="13"
         maxLength={0}
         onChange={[Function]}
+        placeholder="Data"
         type="text"
       />
       <label
@@ -36,5 +37,5 @@ exports[`Data deve possuir estrutura definida  1`] = `
       </label>
     </div>
   </campoTexto>
-</data>
+</Data>
 `;

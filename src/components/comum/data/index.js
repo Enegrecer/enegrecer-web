@@ -1,35 +1,48 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CampoTexto from '../campoTexto';
-import { CLASSES_INPUT } from
-'../../../components/denuncias/ConstantesCss';
+import * as Tela from '../../../utils/materializeCSS';
 
-const data = ({ id, label, divClasse, onChange }) => (
-    <CampoTexto
-        id={id}
-        label={label}
+
+class Data extends Component {
+  componentDidMount() {
+    Tela.iniciaCampoData(this.props.id, this.props.onChange);
+    const campoData = Tela.getElementoPorId(this.props.id);
+    campoData.on('change', (e) => {
+      this.props.onChange(e.target.value, this.props.id);
+    });
+  }
+
+  render() {
+    return (
+      <CampoTexto
+        id={this.props.id}
+        label={this.props.label}
         inputClasse={'datepicker'}
-        divClasse={divClasse}
+        divClasse={this.props.divClasse}
         maxLen={0}
         type={'text'}
-        onChange={onChange}
-    />
-);
+        placeholder="Data"
+        onChange={this.props.onChange}
+      />
+    );
+  }
+}
 
-data.propTypes = {
-    id: PropTypes.string,
-    divClasse: PropTypes.string,
-    onChange: PropTypes.func,
-    label: PropTypes.string
-  };
-  
-  data.defaultProps = {
-    id: '',
-    divClasse: '',
-    onChange: () => {},
-    label: PropTypes.string
-  };
-  
+Data.propTypes = {
+  id: PropTypes.string,
+  divClasse: PropTypes.string,
+  onChange: PropTypes.func,
+  label: PropTypes.string
+};
+
+Data.defaultProps = {
+  id: '',
+  divClasse: '',
+  onChange: () => {},
+  label: PropTypes.string
+};
 
 
-export default data;
+export default Data;
+

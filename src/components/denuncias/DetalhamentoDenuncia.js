@@ -4,6 +4,7 @@ import { cortarPalavra } from '../../utils/helpers';
 import ComboEstado from './../comum/comboboxEstado';
 import CampoTexto from './../comum/campoTexto';
 import BotoesRadio from './../comum/botoesRadio';
+import Data from './../comum/data';
 import * as ConstantesCSS from './ConstantesCss';
 import * as Tela from '../../utils/materializeCSS';
 
@@ -63,14 +64,13 @@ export default class DetalhamentoDenuncia extends Component {
               { id: 'radioRacismo', valor: 'racismo', label: 'Racismo' }]}
           />
 
-          <CampoTexto
+          <Data
             id={'dataOcorrencia'}
             label={'Data do ocorrido'}
-            inputClasse={ConstantesCSS.CLASSES_INPUT}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
             maxLen={0}
             type={'date'}
-            onChange={(e) => { this.handleChange(e.target.value, 'dataOcorrencia') }}
+            onChange={this.handleChange}
           />
 
           <CampoTexto

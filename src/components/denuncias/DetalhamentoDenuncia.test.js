@@ -39,7 +39,7 @@ describe('DetalhamentoDenuncia Component', () => {
       const wrapper = shallow(<DetalhamentoDenuncia />);
       expect(wrapper.find('#estado').length).toEqual(1);
     });
-  })
+  });
 
   describe('quando o valor do campo for alterado', () => {
     const wrapper = shallow(<DetalhamentoDenuncia />);

@@ -1,4 +1,4 @@
-import Hammer from 'hammerjs/hammer'
+import Hammer from 'hammerjs/hammer';
 import Materialize from 'materialize-css';
 import $ from 'jquery';
 
@@ -22,7 +22,7 @@ export const iniciaCampoData = (id) => {
     close: 'Fechar',
     format: 'dd/mm/yyyy'
   });
-}
+};
 
 
 export const iniciaCamposMaterialize = () => {
@@ -30,12 +30,12 @@ export const iniciaCamposMaterialize = () => {
     $('select').material_select();
     Materialize.updateTextFields();
   });
-}
+};
 
-export const getElementoPorId = elementoId => $(`#${elementoId}`)
+export const getElementoPorId = elementoId => $(`#${elementoId}`);
 
 
 export const initHummer = (elementId) => {
   const element = document.getElementById(elementId);
   Hammer(element);
-}
+};

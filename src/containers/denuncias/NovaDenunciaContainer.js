@@ -8,7 +8,7 @@ import {
 } from '../../actions/criarDenunciaActions';
 import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
 import { validaDenuncia } from './validaDenuncia';
-import * as Tela from '../../utils/materializeCSS'
+import * as Tela from '../../utils/materializeCSS';
 
 export class NovaDenunciaContainer extends Component {
   constructor(props) {
@@ -46,7 +46,7 @@ export class NovaDenunciaContainer extends Component {
   adicionarDenunciaNoForm(denuncia) {
     this.setState({
       ...denuncia,
-    })
+    });
   }
 
   render() {

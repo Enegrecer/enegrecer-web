@@ -11,7 +11,7 @@ describe('NovaVitimaForm Component', () => {
   });
 
   it('deve iniciar o state corretamente', () => {
-    const wrapper = shallow(<NovaVitimaForm />)
+    const wrapper = shallow(<NovaVitimaForm />);
     const expectedState = {
       pessoaIdentificada: false,
       souAVitima: false,
@@ -27,7 +27,7 @@ describe('NovaVitimaForm Component', () => {
       naturalidade: '',
       caracteristicasDaVitima: '',
     };
-    expect(wrapper.instance().state).toEqual(expectedState)
+    expect(wrapper.instance().state).toEqual(expectedState);
   });
 
   describe('quando o valor do campo for alterado', () => {
@@ -46,8 +46,8 @@ describe('NovaVitimaForm Component', () => {
     });
 
     it('deve chamar o handleChange prop quando o component montar', () => {
-      wrapper.instance().componentDidMount()
+      wrapper.instance().componentDidMount();
       expect(handleChangeSpy.called).toBeTruthy();
-    })
+    });
   });
-})
+});

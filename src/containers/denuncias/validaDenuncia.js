@@ -36,14 +36,14 @@ function validaCaracteriscaVitima(caracteristicasDaVitima) {
 
 function temNumeroNoNome(nome) {
   if (temNumero(nome)) {
-    return 'Por favor, preencha o campo nome sem números.'
+    return 'Por favor, preencha o campo nome sem números.';
   }
   return undefined;
 }
 
 function temCaractereEspecialNoNome(nome) {
   if (temCaractereEspecial(nome)) {
-    return 'Por favor, preencha o campo nome sem caractere especial.'
+    return 'Por favor, preencha o campo nome sem caractere especial.';
   }
   return undefined;
 }
@@ -73,7 +73,7 @@ function validaDataDeNascimento(dataNascimento) {
     const dataNascimentoFormatada = new Date(dataNascimento).toJSON().slice(0, 10);
     if (ehDataIgualOuMaiorQueAtual(dataNascimentoFormatada) ||
                ehDataAntes1900(dataNascimentoFormatada)) {
-      return 'Por favor, preencha o campo data de nascimento com uma data válida.'
+      return 'Por favor, preencha o campo data de nascimento com uma data válida.';
     }
   }
   return undefined;

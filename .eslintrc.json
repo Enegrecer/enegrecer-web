@@ -21,7 +21,7 @@
             "version": "16.2" // React version, default to the latest React stable release
         }
     },
-   
+
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true,
@@ -31,7 +31,6 @@
         "ecmaVersion": 8
     },
     "rules": {
-        "semi": 0, // disallow use of semicolons
         "comma-dangle": 0,
         "padded-blocks": "warn",
         "no-unused-vars": "warn",

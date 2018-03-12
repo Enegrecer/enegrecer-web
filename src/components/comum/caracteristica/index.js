@@ -27,3 +27,4 @@ caracteristica.defaultProps = {
 };
 
 export default caracteristica;
+

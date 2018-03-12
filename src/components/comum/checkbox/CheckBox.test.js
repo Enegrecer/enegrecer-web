@@ -15,3 +15,4 @@ describe('Checkbox', () => {
     expect(checkBoxTextoJson).toMatchSnapshot();
   });
 });
+

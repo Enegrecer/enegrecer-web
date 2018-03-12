@@ -8,7 +8,6 @@ import Data from './../comum/data';
 import * as ConstantesCSS from './ConstantesCss';
 import * as Tela from '../../utils/materializeCSS';
 
-
 export default class DetalhamentoDenuncia extends Component {
   constructor(props) {
     super(props);

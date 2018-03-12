@@ -32,6 +32,8 @@
     },
     "rules": {
         "comma-dangle": 0,
+        "quotes": [ 2, "single", "avoid-escape" ],
+        "no-multiple-empty-lines": [ "error", { "max": 1, "maxEOF": 1, "maxBOF": 0 } ],
         "padded-blocks": "warn",
         "no-unused-vars": "warn",
         "import/no-extraneous-dependencies": 0,
@@ -42,7 +44,7 @@
         "react/require-default-props": "warn",
         "react/no-array-index-key": "warn",
         "no-constant-condition": "off",
-  		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+  	  	"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }],
         "prefer-const": "warn"
     }

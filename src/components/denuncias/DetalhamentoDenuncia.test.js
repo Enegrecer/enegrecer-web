@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import DetalhamentoDenuncia from './DetalhamentoDenuncia';
 
-
 describe('DetalhamentoDenuncia Component', () => {
   it('deve renderizar o componente sem erros', () => {
     const wrapper = shallow(<DetalhamentoDenuncia />);

@@ -74,7 +74,6 @@ NovaDenunciaContainer.defaultProps = {
   limpaEstadoUltimaDencunciaCadastrada: () => {},
 };
 
-
 const mapStateToProps = state => ({
   denunciante: state.auth ? state.auth.user.uid : undefined,
   denunciaCadastradaComSucesso: state.denunciaComSucessoReducer.denunciaCadastradaComSucesso

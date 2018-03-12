@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 import { spy } from 'sinon';
 import NovaVitimaForm from './NovaVitimaForm';
 
-
 describe('NovaVitimaForm Component', () => {
   it('renderiza o componente sem erros', () => {
     const wrapper = shallow(<NovaVitimaForm />);

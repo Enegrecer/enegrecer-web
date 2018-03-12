@@ -52,7 +52,6 @@ export default class DetalhamentoDenuncia extends Component {
           />
         </div>
 
-
         <div className="row">
 
           <BotoesRadio

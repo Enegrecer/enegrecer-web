@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { NovaDenunciaContainer } from './NovaDenunciaContainer';
 
-
 describe('NovaDenunciaContainer', () => {
   it('renderiza o container sem erros', () => {
     const wrapper = shallow(

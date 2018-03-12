@@ -2,7 +2,6 @@ import Hammer from 'hammerjs/hammer';
 import Materialize from 'materialize-css';
 import $ from 'jquery';
 
-
 export const iniciaCampoData = (id) => {
   $(`#${id}`).pickadate({
     closeOnSelect: true,
@@ -24,7 +23,6 @@ export const iniciaCampoData = (id) => {
   });
 };
 
-
 export const iniciaCamposMaterialize = () => {
   $(document).ready(() => {
     $('select').material_select();
@@ -33,7 +31,6 @@ export const iniciaCamposMaterialize = () => {
 };
 
 export const getElementoPorId = elementoId => $(`#${elementoId}`);
-
 
 export const initHummer = (elementId) => {
   const element = document.getElementById(elementId);

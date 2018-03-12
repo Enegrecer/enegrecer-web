@@ -38,7 +38,6 @@ describe('NovaDenunciaForm Component', () => {
       idCategoria: 'valor categoria',
     };
 
-
     it('deve ter o state atualizado com os dados corretos', () => {
       wrapper.instance().handleChange(stateMock);
 

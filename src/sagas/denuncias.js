@@ -68,7 +68,6 @@ export function* handleCriarDenunciaRequisicao() {
   while (true) {
     const acao = yield take(CRIAR_DENUNCIA_REQUISICAO);
     const idDenuncia = yield call(criarDenuncia, acao);
-
     yield put(criarDenunciaSucesso(idDenuncia));
   }
 }

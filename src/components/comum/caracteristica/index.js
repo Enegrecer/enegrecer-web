@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CampoTexto from '../campoTexto';
-import { CLASSES_TEXTAREA, CLASSES_DIV_INPUT } from
-  '../../../components/denuncias/ConstantesCss';
+import { CLASSES_TEXTAREA, CLASSES_DIV_INPUT } from '../../../components/denuncias/ConstantesCss';
 
 const caracteristica = ({ id, onChange, label }) => (<CampoTexto
   id={id}

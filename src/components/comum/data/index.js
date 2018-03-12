@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import CampoTexto from '../campoTexto';
 import * as Tela from '../../../utils/materializeCSS';
 
-
 class Data extends Component {
   componentDidMount() {
     Tela.iniciaCampoData(this.props.id, this.props.onChange);

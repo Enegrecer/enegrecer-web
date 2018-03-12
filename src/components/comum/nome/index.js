@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CampoTexto from '../campoTexto';
 
-
 const nome = ({ id, onChange }) => (<CampoTexto
   id={id}
   label={'Nome (máximo de 40 caracteres)'}

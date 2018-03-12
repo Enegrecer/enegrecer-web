@@ -32,11 +32,6 @@ describe('Saga de Denúncias', () => {
       expect(saga.next('idDaDenuncia').value)
         .toEqual(put(criarDenunciaSucesso('idDaDenuncia')));
     });
-
-    it('deve despachar a ação de onSuccess', () => {
-      expect(saga.next().value)
-        .toEqual(put(mockDaAcaoDeCriarDenuncia.payload.onSuccess));
-    });
   });
 });
 

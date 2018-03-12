@@ -2,18 +2,7 @@
 
 exports[`Home possui a mesma estrutura 1`] = `
 <div>
-  <Topbar
-    leftComponent={<Logo />}
-    rightComponent={
-      <Nav
-        history={
-          Object {
-            "push": [Function],
-          }
-        }
-      />
-    }
-  />
+  <Menu />
   <Botao
     colored={true}
     name="denuncia"

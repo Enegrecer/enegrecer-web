@@ -11,8 +11,8 @@ describe('Topbar', () => {
     />,
   );
 
-  it('tem a classe en-topbar', () => {
-    expect(wrapper.hasClass('en-topbar')).toBeTruthy();
+  it('tem a classe black', () => {
+    expect(wrapper.hasClass('black')).toBeTruthy();
   });
 
 });

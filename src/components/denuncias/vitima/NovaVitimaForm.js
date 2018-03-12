@@ -1,17 +1,22 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import Checkbox from 'material-ui/Checkbox'
-import TextField from 'material-ui/TextField'
-import * as helpers from '../../../helpers';
-import { EstadoFormGroup, RacaFormGroup, TelefoneFormGroup } from '../../FormGroups'
+import CheckBox from '../../comum/checkbox';
+import CampoTexto from '../../comum/campoTexto';
+import { cortarPalavra } from '../../../utils/helpers';
+import * as ConstantesCSS from '../ConstantesCss';
+import ComboEstado from '../../comum/comboboxEstado';
+import * as Tela from '../../../utils/materializeCSS';
+import Nome from '../../comum/nome';
+import Genero from '../../comum/genero';
+import Telefone from '../../comum/telefone';
+import ComboboxRaca from './../../comum/comboboxRaca';
+import Caracteristica from '../../comum/caracteristica';
+import Data from '../../comum/data';
 
 export default class NovaVitimaForm extends Component {
   constructor(props) {
     super(props);
-
     this.handleChange = this.handleChange.bind(this);
-    this.renderTextField = this.renderTextField.bind(this);
-
     this.state = {
       pessoaIdentificada: false,
       souAVitima: false,
@@ -29,47 +34,26 @@ export default class NovaVitimaForm extends Component {
     };
   }
 
+
   componentDidMount() {
-    this.props.handleChange({ vitima: this.state })
+    this.props.handleChange({ vitima: this.state });
+
+    const raca = Tela.getElementoPorId('raca');
+    raca.on('change', (e) => {
+      this.handleChange(e.target.value, 'raca');
+    });
+
+    const comboEstado = Tela.getElementoPorId('estadoVitima');
+    comboEstado.on('change', (e) => {
+      this.handleChange(e.target.value, 'estado');
+    });
   }
+
 
   handleChange(value, property) {
     this.setState({ [property]: value },
       () => this.props.handleChange({ vitima: this.state })
     );
-  }
-
-  renderTextField(id, label, maxLen = '', placeholder = '', type = '') {
-    return (
-      <TextField
-        id={`${id}-vitima`}
-        value={this.state[id]}
-        type={type || 'text'}
-        maxLength={maxLen}
-        hintText={placeholder}
-        floatingLabelText={label}
-        floatingLabelFixed
-        autoComplete="off"
-        fullWidth
-        multiLine={type === 'textarea'}
-        onChange={(e) => {
-          const value = helpers.cortarPalavra(e.target.value, maxLen);
-          this.handleChange(value, id)
-        }}
-      />
-    )
-  }
-
-  renderCheckbox(id, label) {
-    return (
-      <Checkbox
-        id={id}
-        name={id}
-        checked={this.state[id]}
-        label={label}
-        onClick={e => this.handleChange(e.target.checked, id)}
-      />
-    )
   }
 
   render() {
@@ -78,50 +62,88 @@ export default class NovaVitimaForm extends Component {
         <h3>Informacões da Vítima</h3>
         <br />
 
-        { this.renderCheckbox('conhecoAVitima', 'Conheço a Vítima') }
+        <CheckBox id={'conhecoAVitima'} label={'Conheço a Vítima'} onClick={e => this.handleChange(e.target.checked, 'conhecoAVitima')} />
+        <CheckBox id={'souAVitima'} label={'Sou a Vítima'} onClick={e => this.handleChange(e.target.checked, 'souAVitima')} />
 
-        { this.renderCheckbox('souAVitima', 'Sou a Vítima') }
+        <div className="row">
+          <Nome id={'nome-vitima'} onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'nome')} />
+        </div>
 
-        { this.renderTextField('nome', 'Nome (máximo de 40 caracteres)', '40') }
+        <div className="row">
+          <Genero
+            id={'vitima-genero'}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
+            onChange={e => this.handleChange(cortarPalavra(e.target.value, 15), 'genero')}
+          />
 
-        { this.renderTextField('genero', 'Gênero (máximo de 15 caracteres)', '15', 'Ex.: Feminino, Masculino, Não Binário...') }
+          <ComboboxRaca
+            id={'raca'}
+            classes={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
+            somenteRacasVitima
+            onChange={this.handleChange}
+          />
 
+          <Data
+            id={'dataNascimento'}
+            label={'Data de Nascimento'}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
+            onChange={this.handleChange}
+            estado={'dataNascimento'}
+          />
 
-        <RacaFormGroup
-          id={'raca'}
-          value={this.state.raca}
-          handleChange={this.handleChange}
-        />
+        </div>
 
-        { this.renderTextField('dataNascimento', 'Data de Nascimento', '', '', 'date') }
+        <div className="row">
+          <CampoTexto
+            id={'endereco-vitima'}
+            label={'Endereço (máximo de 255 caracteres)'}
+            onChange={e => this.handleChange(cortarPalavra(e.target.value, 255), 'endereco')}
+            maxLen={255}
+            inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
+            type={'text'}
+          />
+        </div>
 
-        { this.renderTextField('endereco', 'Endereço (máximo de 255 caracteres)', '255', '')}
+        <div className="row">
+          <CampoTexto
+            id={'naturalidade-vitima'}
+            label={'Naturalidade (máximo de 40 caracteres)'}
+            onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'naturalidade')}
+            maxLen={40}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            type={'text'}
+          />
 
-        { this.renderTextField('naturalidade', 'Naturalidade (máximo de 40 caracteres)', '40')}
+          <ComboEstado id={'estadoVitima'} handleChange={this.handleChange} classes={'col s6'} />
+        </div>
 
-        <EstadoFormGroup
-          id={'estadoVitima'}
-          value={this.state.estado}
-          handleChange={this.handleChange}
-        />
+        <div className="row">
+          <CampoTexto
+            id={'email-vitima'}
+            label={'Email'}
+            maxLen={40}
+            type={'text'}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'email')}
+          />
 
-        <TelefoneFormGroup
-          id="telefone"
-          value={this.state.telefone}
-          handleChange={this.handleChange}
-        />
+          <Telefone
+            id="telefone"
+            value={this.state.telefone}
+            handleChange={this.handleChange}
+            label={'Telefone'}
+          />
 
-        { this.renderTextField('email', 'Email', '') }
+        </div>
 
-        { this.renderTextField(
-          'caracteristicasDaVitima',
-          '* Por favor, descreva aqui as características da vítima (máximo de 255 caracteres)',
-          '255',
-          'Ex.: Era uma mulher negra, com aproximadamente 40 anos, magra, alta com cabelo curto...',
-          'textarea')
-        }
-
-        <br />
+        <div className="row">
+          <Caracteristica
+            id={'caracteristicasDaVitima'}
+            label={'* Por favor, descreva aqui as características da vítima (máximo de 255 caracteres)'}
+            onChange={e => this.handleChange(cortarPalavra(e.target.value, 255), 'caracteristicasDaVitima')}
+          />
+        </div>
       </div>);
   }
 }

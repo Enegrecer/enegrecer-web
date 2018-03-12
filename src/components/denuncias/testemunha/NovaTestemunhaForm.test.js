@@ -1,6 +1,6 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import { spy } from 'sinon'
+import React from 'react';
+import { shallow } from 'enzyme';
+import { spy } from 'sinon';
 import NovaTestemunhaForm from './NovaTestemunhaForm';
 
 describe('validacoesCamposTestemunha', () => {

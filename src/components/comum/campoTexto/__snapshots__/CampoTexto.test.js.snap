@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CampoTexto não deve possuir estrutura definida  1`] = `
+<campoTexto
+  divClasse=""
+  id=""
+  inputClasse=""
+  label=""
+  maxLen={3}
+  onChange={[Function]}
+  placeholder=""
+  type=""
+>
+  <div
+    className=""
+  >
+    <input
+      className=""
+      id=""
+      maxLength={3}
+      onChange={[Function]}
+      type=""
+    />
+    <label
+      className="active"
+      htmlFor=""
+    />
+  </div>
+</campoTexto>
+`;

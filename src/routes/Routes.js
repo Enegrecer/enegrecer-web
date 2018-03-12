@@ -5,7 +5,6 @@ import Painel from './Painel';
 import NovaDenuncia from '../containers/denuncias/NovaDenunciaContainer';
 import ProximosPassos from '../components/proximosPassos/ProximosPassos';
 
-
 const Routes = () => (
   <BrowserRouter>
     <Switch>

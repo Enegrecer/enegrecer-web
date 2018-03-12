@@ -1,62 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import AppBar from 'material-ui/AppBar';
-import { IconButton, Drawer, MenuItem } from 'material-ui';
-import NavigationClose from 'material-ui/svg-icons/navigation/close';
-import { logout } from '../../modules/auth';
 
-class Painel extends React.Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      open: false,
-    };
-
-    this.handleToggle = this.handleToggle.bind(this);
-  }
-
-  handleToggle() {
-    this.setState({ open: !this.state.open });
-  }
-
-  render() {
-    return (
-      <div>
-        <AppBar
-          title="Enegrecer"
-          onLeftIconButtonClick={this.handleToggle}
-        />
-
-        <Drawer
-          docked={false}
-          open={this.state.open}
-          onRequestChange={open => this.setState({ open })}
-        >
-          <AppBar
-            iconElementLeft={<IconButton><NavigationClose /></IconButton>}
-            title="Enegrecer"
-            onLeftIconButtonClick={this.handleToggle}
-          />
-          <Link to="/"><MenuItem>Home</MenuItem></Link>
-          <Link to="/painel/categorias"><MenuItem>Categorias</MenuItem></Link>
-          <Link to="/painel/denuncias/nova"><MenuItem>Criar Denúncia</MenuItem></Link>
-          {
-            this.props.children[0].props.authed
-              ? <Link to="#" onClick={logout}><MenuItem>Logout</MenuItem></Link>
-              : <Link to="/painel/login"><MenuItem>Login</MenuItem></Link>
-          }
-        </Drawer>
-
-        {this.props.children}
+const Painel = props => (
+  <div>
+    <nav>
+      <div className="nav-wrapper">
+        <ul id="nav-mobile" className="left hide-on-med-and-down">
+          <li> <Link to="/">Home</Link></li>
+          <li> <Link to="/painel/denuncias/nova">Criar Denúncia</Link></li>
+        </ul>
       </div>
-    );
-  }
-}
+    </nav>
+    {props.children}
+  </div>
+);
 
 Painel.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  children: PropTypes.element.isRequired
 };
 
 export default Painel;

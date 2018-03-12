@@ -14,21 +14,11 @@ describe('Nav', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('tem a classe en-nav', () => {
-    expect(wrapper.hasClass('en-nav')).toBeTruthy();
+  it('tem a classe right hide-on-med-and-down', () => {
+    expect(wrapper.hasClass('right hide-on-med-and-down')).toBeTruthy();
   });
 
   it('tem o link de sobre', () => {
     expect(wrapper.find('[href="/sobre"]').exists()).toBeTruthy();
-  });
-
-  describe('quando clicar no botão de registrar/entrar', () => {
-    beforeEach(() => {
-      wrapper.find('Botao[outline]').simulate('click');
-    });
-
-    it('deve chamar a função push com /painel/login', () => {
-      expect(historyMock.push).toBeCalledWith('/painel/login');
-    });
   });
 });

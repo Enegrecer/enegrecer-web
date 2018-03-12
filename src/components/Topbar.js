@@ -2,15 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Topbar = props => (
-  <div className="en-topbar">
-    <div className="en-topbar__left">
-      {props.leftComponent}
-    </div>
 
-    <div className="en-topbar__right">
-      {props.rightComponent}
-    </div>
-  </div>
+    <nav className="black">
+      <div className="nav-wrapper">
+        {props.leftComponent}
+        {props.rightComponent}
+      </div>
+    </nav>
+
 );
 
 Topbar.defaultProps = {

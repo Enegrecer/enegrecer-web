@@ -6,6 +6,7 @@ import { push } from 'react-router-redux';
 import { criarDenunciaRequisicao } from '../../actions/criarDenunciaActions';
 import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
 import { validaDenuncia } from './validaDenuncia';
+import * as Tela from '../../utils/materializeCSS'
 
 export class NovaDenunciaContainer extends Component {
   constructor(props) {
@@ -15,11 +16,13 @@ export class NovaDenunciaContainer extends Component {
     this.state = {
       vitima: null,
       denunciante: null,
-      testemunha: null,
-      userId: this.props.currentUserUID,
+      testemunha: null
     };
   }
 
+  componentDidMount() {
+    Tela.iniciaCamposMaterialize();
+  }
   onPressSaveButton() {
     const mensagemError = validaDenuncia(this.state.vitima);
     if (mensagemError === undefined) {
@@ -50,7 +53,6 @@ export class NovaDenunciaContainer extends Component {
 }
 
 NovaDenunciaContainer.propTypes = {
-  currentUserUID: PropTypes.string.isRequired,
   criarDenunciaRequisicao: PropTypes.func.isRequired,
 };
 

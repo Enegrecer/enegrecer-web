@@ -44,6 +44,4 @@ Data.defaultProps = {
   estado: ''
 };
 
-
 export default Data;
-

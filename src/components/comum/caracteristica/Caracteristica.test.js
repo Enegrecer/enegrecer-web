@@ -11,3 +11,4 @@ describe('Caracteristica', () => {
     expect(caracteristicaTextoJson).toMatchSnapshot();
   });
 });
+

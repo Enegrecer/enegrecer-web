@@ -12,3 +12,4 @@ describe('Combobox', () => {
     expect(comboTextoJson).toMatchSnapshot();
   });
 });
+

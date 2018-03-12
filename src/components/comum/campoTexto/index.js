@@ -24,7 +24,6 @@ campoTexto.propTypes = {
   onChange: PropTypes.func,
   divClasse: PropTypes.string,
   inputClasse: PropTypes.string
-
 };
 
 campoTexto.defaultProps = {
@@ -39,3 +38,4 @@ campoTexto.defaultProps = {
 };
 
 export default campoTexto;
+

@@ -15,4 +15,5 @@ describe('Telefone', () => {
     const telefoneJson = toJson(telefone);
     expect(telefoneJson).toMatchSnapshot();
   });
-})
+});
+

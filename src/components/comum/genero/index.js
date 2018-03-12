@@ -29,3 +29,4 @@ genero.defaultProps = {
 };
 
 export default genero;
+

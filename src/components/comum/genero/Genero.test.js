@@ -11,3 +11,4 @@ describe('Genero', () => {
     expect(generoTextoJson).toMatchSnapshot();
   });
 });
+

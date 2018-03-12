@@ -5,3 +5,4 @@ const estados = [
   'SC', 'SE', 'SP', 'TO'];
 
 export default estados;
+

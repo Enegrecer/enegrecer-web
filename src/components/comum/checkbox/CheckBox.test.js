@@ -3,7 +3,6 @@ import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import CheckBox from './../checkbox';
 
-
 describe('Checkbox', () => {
   it('deve possuir estrutura definida ', () => {
     const onClick = jest.fn();

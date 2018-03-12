@@ -32,3 +32,4 @@ telefone.defaultProps = {
 };
 
 export default telefone;
+

@@ -20,3 +20,4 @@ describe('Botões Rádio', () => {
     expect(botoesRadioTextoJson).toMatchSnapshot();
   });
 });
+

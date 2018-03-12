@@ -18,3 +18,4 @@ describe('Combobox Raça', () => {
     expect(comboboxRacaVitimaTextoJson).toMatchSnapshot();
   });
 });
+

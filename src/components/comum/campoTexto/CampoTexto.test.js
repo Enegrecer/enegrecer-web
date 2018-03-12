@@ -11,3 +11,4 @@ describe('CampoTexto', () => {
     expect(campoTextoJson).toMatchSnapshot();
   });
 });
+

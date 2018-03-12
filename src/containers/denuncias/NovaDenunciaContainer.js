@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
 import { Redirect } from 'react-router-dom';
 import {
   criarDenunciaRequisicao, limpaEstadoUltimaDencunciaCadastrada
@@ -37,8 +36,7 @@ export class NovaDenunciaContainer extends Component {
     const mensagemError = validaDenuncia(this.state.vitima);
     if (mensagemError === undefined) {
       this.props.criarDenunciaRequisicao({
-        ...this.state,
-        onSuccess: push('/'),
+        ...this.state
       });
     } else {
       alert(mensagemError);

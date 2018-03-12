@@ -1,11 +1,12 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { cortarPalavra } from '../../utils/helpers';
-import { CampoTexto, RadioGrupoBotoes, Combobox } from '../FormGroups';
-import { estados } from './estados'
-import * as ConstantesCSS from './ConstantesCss'
-import * as Tela from '../../utils/materializeCSS'
-
+import ComboEstado from './../comum/comboboxEstado';
+import CampoTexto from './../comum/campoTexto';
+import BotoesRadio from './../comum/botoesRadio';
+import Data from './../comum/data';
+import * as ConstantesCSS from './ConstantesCss';
+import * as Tela from '../../utils/materializeCSS';
 
 export default class DetalhamentoDenuncia extends Component {
   constructor(props) {
@@ -54,7 +55,7 @@ export default class DetalhamentoDenuncia extends Component {
 
         <div className="row">
 
-          <RadioGrupoBotoes
+          <BotoesRadio
             classes={'col s3'}
             id={'idCategoria'}
             onChange={e => this.handleChange(e.target.checked, 'idCategoria')}
@@ -62,14 +63,14 @@ export default class DetalhamentoDenuncia extends Component {
               { id: 'radioRacismo', valor: 'racismo', label: 'Racismo' }]}
           />
 
-          <CampoTexto
+          <Data
             id={'dataOcorrencia'}
             label={'Data do ocorrido'}
-            inputClasse={ConstantesCSS.CLASSES_INPUT}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
             maxLen={0}
             type={'date'}
-            onChange={(e) => { this.handleChange(e.target.value, 'dataOcorrencia') }}
+            onChange={this.handleChange}
+            estado={'dataOcorrencia'}
           />
 
           <CampoTexto
@@ -96,15 +97,7 @@ export default class DetalhamentoDenuncia extends Component {
           />
         </div>
         <div className="row">
-          <Combobox
-            id={'estado'}
-            value={this.state.estado}
-            onChange={this.handleChange}
-            itens={estados}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
-            label={'Selecione o Estado:'}
-            valorPadrao={'Selecione'}
-          />
+          <ComboEstado id={'estado'} onChange={this.handleChange} classes="col s12" />
         </div>
       </div>
     )

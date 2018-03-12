@@ -1,10 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { cortarPalavra } from '../../../utils/helpers';
-import { TelefoneFormGroup, CampoTexto, Combobox } from '../../FormGroups'
+import Telefone from '../../comum/telefone';
 import * as ConstantesCSS from '../ConstantesCss';
-import { racasVitima } from '../racas';
 import * as Tela from '../../../utils/materializeCSS';
+import Genero from '../../comum/genero';
+import Nome from '../../comum/nome';
+import ComboboxRaca from '../../comum/comboboxRaca';
+import Caracteristica from '../../comum/caracteristica';
+import Data from '../../comum/data';
 
 export default class NovaTestemunhaForm extends React.Component {
   constructor(props) {
@@ -41,51 +45,34 @@ export default class NovaTestemunhaForm extends React.Component {
         <br />
 
         <div className="row">
-          <CampoTexto
-            id={'nome-testemunha'}
-            label={'Nome (máximo de 40 caracteres)'}
-            maxLen={40}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
-            onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 40), 'nome') }}
-            type={'text'}
-          />
+          <Nome id={'nome-testemunha'} onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'nome')} />
         </div>
 
         <div className="row">
-          <CampoTexto
+          <Genero
             id={'genero-testemunha'}
-            label={'Gênero (máximo de 15 caracteres)'}
-            maxLen={15}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
-            inputClasse={ConstantesCSS.CLASSES_INPUT}
             onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 15), 'genero') }}
-            placeholder={'Ex.: Feminino, Masculino, Não Binário...'}
-            type={'text'}
           />
 
-          <Combobox
+          <ComboboxRaca
             id={'raca-testemenunha'}
-            value={this.state.raca}
-            handleChange={this.handleChange}
-            itens={racasVitima}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
-            label={'Selecione a Raça:'}
-            valorPadrao={'Selecione a Raça:'}
+            classes={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            somenteRacasVitima={false}
+            onChange={this.handleChange}
           />
         </div>
 
         <div className="row">
-          <CampoTexto
+          <Data
             id={'dataNascimento-testemunha'}
             label={'Data de Nascimento'}
-            maxLen={0}
-            onChange={(e) => { this.handleChange(e.target.value, 'dataNascimento') }}
-            inputClasse={ConstantesCSS.CLASSES_INPUT}
+            onChange={this.handleChange}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
-            type={'date'}
+            estado={'dataNascimento'}
           />
 
-          <TelefoneFormGroup
+          <Telefone
             id={'telefone'}
             value={this.state.telefone}
             handleChange={this.handleChange}
@@ -94,10 +81,9 @@ export default class NovaTestemunhaForm extends React.Component {
         </div>
 
         <div className="row">
-          <CampoTexto
+          <Caracteristica
             id={'caracteristicas-testemunha'}
             label={'* Por favor, descreva aqui as características da testemunha (máximo de 255 caracteres)'}
-            maxLen={255}
             onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 255), 'caracteristicas') }}
             type={'text'}
             inputClasse={ConstantesCSS.CLASSES_TEXTAREA}

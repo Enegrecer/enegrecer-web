@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu possui a mesma estrutura 1`] = `
+<Topbar
+  leftComponent={<Logo />}
+  rightComponent={
+    <Nav
+      history={
+        Object {
+          "push": [Function],
+        }
+      }
+    />
+  }
+/>
+`;

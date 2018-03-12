@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './home/images/logo.png';
+import logo from './menu/images/logo.png';
 const Logo = () => (
   <div className="en-logo">
     <img src={logo}/>

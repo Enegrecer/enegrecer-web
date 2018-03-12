@@ -45,7 +45,6 @@ export class NovaDenunciaContainer extends Component {
     }
   }
 
-
   adicionarDenunciaNoForm(denuncia) {
     this.setState({
       ...denuncia,

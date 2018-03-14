@@ -2,7 +2,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import CampoTexto from '../campoTexto';
-import Nome  from '../nome';
+import Nome from '../nome';
 
 export const aplicarValidacao = (formulario, nomeFormulario) => (
   reduxForm({
@@ -10,28 +10,26 @@ export const aplicarValidacao = (formulario, nomeFormulario) => (
   })(formulario)
 );
 
-const renderField = ({ input, label, type } ) => (
+const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
   <div>
     <label>{label}</label>
     <div>
+      <input {...input} placeholder={label} type={type} />
+      {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
     </div>
   </div>
 )
 
 export const validaCampo = (campoTexto) => {
   const { type, label, validacoes } = campoTexto;
-  <Field
+  return (<Field
     name={'Teste'}
     type={type}
-    component={campoTexto}
+    component={renderField}
     label={label}
     validate={validacoes}
-  />
+  />)
 }
-
-
-
-
 
 
 /*

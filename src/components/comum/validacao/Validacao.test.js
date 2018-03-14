@@ -18,15 +18,13 @@ describe('Validações', () => {
     };
   });
 
-  it('deve criar campo de validacão',  () => {
+  it('deve criar campo de validacão', () => {
     const onChange = jest.fn();
-    let nome =  mount(<Nome id={'nome-vitima'} name={"teste"} onChange={onChange} />);
-     nome = validaCampo(nome);
-     const nomeToJson = toJson(nome);
-     expect(nomeToJson).toMatchSnapshot();
-
+    let nome = mount(<Nome id={'nome-vitima'} name={'teste'} onChange={onChange} />);
+    nome = mount(validaCampo(nome));
+    const nomeToJson = toJson(nome);
+    expect(nomeToJson).toMatchSnapshot();
   });
-
 
 
   xit('deve possuir mostrar mensagem de erro caso alguma validação de campo falhe ', () => {

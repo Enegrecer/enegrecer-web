@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 import NovaVitimaForm from './vitima/NovaVitimaForm';
 import NovaTestemunhaForm from './testemunha/NovaTestemunhaForm';
 import DetalhamentoDenuncia from './DetalhamentoDenuncia';
+import { adicionaFormAoRedux } from './../comum/validacao';
 import './denuncia.css';
 
-export default class NovaDenunciaForm extends Component {
+class NovaDenunciaForm extends Component {
   constructor(props) {
     super(props);
 
@@ -70,3 +71,7 @@ NovaDenunciaForm.propTypes = {
   salvarDenuncia: PropTypes.func.isRequired,
   alterarDenunciaForm: PropTypes.func
 };
+
+const formDenuncia = adicionaFormAoRedux(NovaDenunciaForm, 'formDenuncia');
+
+export default formDenuncia;

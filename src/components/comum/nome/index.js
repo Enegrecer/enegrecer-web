@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CampoTexto from '../campoTexto';
 import { nomeObrigatorio } from './validacoes';
-import { validaCampo } from '../../comum/validacao'
 
 const nome = ({ id, onChange }) => (<CampoTexto
   id={id}

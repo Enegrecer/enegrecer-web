@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CampoTexto from '../campoTexto';
+import { nomeObrigatorio} from './validacoes';
+import { validaCampo } from '../../comum/validacao'
 
 const nome = ({ id, onChange }) => (<CampoTexto
   id={id}
@@ -10,6 +12,7 @@ const nome = ({ id, onChange }) => (<CampoTexto
   type={'text'}
   divClasse={'input-field col s12'}
   onChange={onChange}
+  validacoes={nomeObrigatorio}
 />)
 
 nome.propTypes = {

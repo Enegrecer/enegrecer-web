@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import NovaVitimaForm from './vitima/NovaVitimaForm';
 import NovaTestemunhaForm from './testemunha/NovaTestemunhaForm';
 import DetalhamentoDenuncia from './DetalhamentoDenuncia';
-import Formulario from './../comum/formulario'
 import './denuncia.css';
 
 export default class NovaDenunciaForm extends Component {
@@ -42,8 +41,7 @@ export default class NovaDenunciaForm extends Component {
 
   render() {
     return (
-      <Formulario onSubmit={event => this.handleSubmit(event)} />
-      /*
+
       <form
         name="form-denuncia"
         id="form-nova-denuncia"
@@ -60,8 +58,7 @@ export default class NovaDenunciaForm extends Component {
             Enviar Denúncia
         </button>
       </form>
-      */
-      );
+    );
   }
 }
 

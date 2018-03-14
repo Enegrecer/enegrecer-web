@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from './menu/images/logo.png';
+import logo from './images/logo.png';
 const Logo = () => (
   <div className="en-logo">
-    <img src={logo}/>
+    <img src={logo} alt="Logo Verdade Seja Dita"/>
   </div>
 );
 

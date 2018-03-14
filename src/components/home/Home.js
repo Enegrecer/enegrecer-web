@@ -1,9 +1,9 @@
 import React from 'react';
 import Menu from './../menu/Menu';
-import Botao from './../Botao';
-import Footer from './../Footer';
-import Social from './../Social';
-import { withHistoryPropTypes } from './../sharedPropTypes';
+import Botao from './Botao';
+import Footer from './Footer';
+import Social from './Social';
+import { withHistoryPropTypes } from './sharedPropTypes';
 import './home.css';
 
 const networks = [

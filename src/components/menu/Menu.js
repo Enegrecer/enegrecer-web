@@ -1,7 +1,7 @@
 import React from 'react';
-import Logo from './../Logo';
-import Nav from './../Nav';
-import Topbar from './../Topbar';
+import Logo from './Logo';
+import Nav from './Nav';
+import Topbar from './Topbar';
 import './menu.css';
 
 const Menu = props => (

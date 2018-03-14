@@ -25,7 +25,7 @@ export const validaCampo = (campoTexto) => {
   return (<Field
     name={'Teste'}
     type={type}
-    component={renderField}
+    component={campoTexto}
     label={label}
     validate={validacoes}
   />)

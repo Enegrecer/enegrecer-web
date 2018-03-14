@@ -1,8 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import TextField from 'material-ui/TextField'
-import { cortarPalavra } from '../../../helpers';
-import { RacaFormGroup, TelefoneFormGroup } from '../../FormGroups'
+import { cortarPalavra } from '../../../utils/helpers';
+import Telefone from '../../comum/telefone';
+import * as ConstantesCSS from '../ConstantesCss';
+import * as Tela from '../../../utils/materializeCSS';
+import Genero from '../../comum/genero';
+import Nome from '../../comum/nome';
+import ComboboxRaca from '../../comum/comboboxRaca';
+import Caracteristica from '../../comum/caracteristica';
+import Data from '../../comum/data';
 
 export default class NovaTestemunhaForm extends React.Component {
   constructor(props) {
@@ -20,7 +26,11 @@ export default class NovaTestemunhaForm extends React.Component {
   }
 
   componentDidMount() {
-    this.props.handleChange({ testemunha: this.state })
+    this.props.handleChange({ testemunha: this.state });
+    const racaTestemunha = Tela.getElementoPorId('raca-testemenunha');
+    racaTestemunha.on('change', (e) => {
+      this.handleChange(e.target.value, 'raca');
+    });
   }
 
   handleChange(value, property) {
@@ -28,56 +38,58 @@ export default class NovaTestemunhaForm extends React.Component {
       () => this.props.handleChange({ testemunha: this.state }));
   }
 
-  renderTextField(id, label, maxLen = '', placeholder = '', type = '') {
-    return (
-      <TextField
-        id={`${id}-testemunha`}
-        value={this.state[id]}
-        type={type}
-        maxLength={maxLen}
-        hintText={placeholder}
-        floatingLabelText={label}
-        floatingLabelFixed
-        autoComplete="off"
-        fullWidth
-        multiLine={type === 'textarea'}
-        onChange={(e) => {
-          this.handleChange(cortarPalavra(e.target.value, maxLen), id)
-        }}
-      />
-    )
-  }
-
   render() {
     return (
       <div>
         <h3>Informacões da Testemunha</h3>
+        <br />
 
-        { this.renderTextField('nome', 'Nome (máximo de 40 caracteres)', '40') }
+        <div className="row">
+          <Nome id={'nome-testemunha'} onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'nome')} />
+        </div>
 
-        { this.renderTextField('genero', 'Gênero (máximo de 15 caracteres)', '15', 'Ex.: Feminino, Masculino, Não Binário...') }
+        <div className="row">
+          <Genero
+            id={'genero-testemunha'}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 15), 'genero') }}
+          />
 
-        <RacaFormGroup
-          id={'raca'}
-          value={this.state.raca}
-          handleChange={this.handleChange}
-        />
+          <ComboboxRaca
+            id={'raca-testemenunha'}
+            classes={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            somenteRacasVitima={false}
+            onChange={this.handleChange}
+          />
+        </div>
 
-        { this.renderTextField('dataNascimento', 'Data de Nascimento', '', '', 'date') }
+        <div className="row">
+          <Data
+            id={'dataNascimento-testemunha'}
+            label={'Data de Nascimento'}
+            onChange={this.handleChange}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            estado={'dataNascimento'}
+          />
 
-        <TelefoneFormGroup
-          id={'telefone'}
-          value={this.state.telefone}
-          handleChange={this.handleChange}
-        />
+          <Telefone
+            id={'telefone'}
+            value={this.state.telefone}
+            handleChange={this.handleChange}
+            label={'Telefone'}
+          />
+        </div>
 
-        { this.renderTextField(
-          'caracteristicas',
-          '* Por favor, descreva aqui as características da testemunha (máximo de 255 caracteres)',
-          '255',
-          'Era uma mulher negra, com aproximadamente 40 anos, magra, alta com cabelo curto...',
-          'textarea')
-        }
+        <div className="row">
+          <Caracteristica
+            id={'caracteristicas-testemunha'}
+            label={'* Por favor, descreva aqui as características da testemunha (máximo de 255 caracteres)'}
+            onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 255), 'caracteristicas') }}
+            type={'text'}
+            inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
+          />
+        </div>
       </div>
     );
   }

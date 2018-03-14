@@ -1,0 +1,266 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Combo Estado deve possuir estrutura definida  1`] = `
+<comboEstado
+  classes="estado"
+  id="13"
+  onChange={[Function]}
+>
+  <combobox
+    divClasse="input-field estado"
+    id="13"
+    itens={
+      Array [
+        "AC",
+        "AL",
+        "AM",
+        "AP",
+        "BA",
+        "CE",
+        "DF",
+        "ES",
+        "GO",
+        "MA",
+        "MG",
+        "MS",
+        "MT",
+        "PA",
+        "PB",
+        "PE",
+        "PI",
+        "RN",
+        "PR",
+        "RJ",
+        "RR",
+        "SC",
+        "SE",
+        "SP",
+        "TO",
+      ]
+    }
+    label="Selecione o Estado:"
+    onChange={[Function]}
+    valorPadrao="Selecione"
+  >
+    <div
+      className="input-field estado"
+    >
+      <select
+        id="13"
+        onChange={[Function]}
+      >
+        <option
+          value=""
+        >
+          Selecione
+        </option>
+        <option
+          key="AC"
+          value="AC"
+        >
+           
+          AC
+           
+        </option>
+        <option
+          key="AL"
+          value="AL"
+        >
+           
+          AL
+           
+        </option>
+        <option
+          key="AM"
+          value="AM"
+        >
+           
+          AM
+           
+        </option>
+        <option
+          key="AP"
+          value="AP"
+        >
+           
+          AP
+           
+        </option>
+        <option
+          key="BA"
+          value="BA"
+        >
+           
+          BA
+           
+        </option>
+        <option
+          key="CE"
+          value="CE"
+        >
+           
+          CE
+           
+        </option>
+        <option
+          key="DF"
+          value="DF"
+        >
+           
+          DF
+           
+        </option>
+        <option
+          key="ES"
+          value="ES"
+        >
+           
+          ES
+           
+        </option>
+        <option
+          key="GO"
+          value="GO"
+        >
+           
+          GO
+           
+        </option>
+        <option
+          key="MA"
+          value="MA"
+        >
+           
+          MA
+           
+        </option>
+        <option
+          key="MG"
+          value="MG"
+        >
+           
+          MG
+           
+        </option>
+        <option
+          key="MS"
+          value="MS"
+        >
+           
+          MS
+           
+        </option>
+        <option
+          key="MT"
+          value="MT"
+        >
+           
+          MT
+           
+        </option>
+        <option
+          key="PA"
+          value="PA"
+        >
+           
+          PA
+           
+        </option>
+        <option
+          key="PB"
+          value="PB"
+        >
+           
+          PB
+           
+        </option>
+        <option
+          key="PE"
+          value="PE"
+        >
+           
+          PE
+           
+        </option>
+        <option
+          key="PI"
+          value="PI"
+        >
+           
+          PI
+           
+        </option>
+        <option
+          key="RN"
+          value="RN"
+        >
+           
+          RN
+           
+        </option>
+        <option
+          key="PR"
+          value="PR"
+        >
+           
+          PR
+           
+        </option>
+        <option
+          key="RJ"
+          value="RJ"
+        >
+           
+          RJ
+           
+        </option>
+        <option
+          key="RR"
+          value="RR"
+        >
+           
+          RR
+           
+        </option>
+        <option
+          key="SC"
+          value="SC"
+        >
+           
+          SC
+           
+        </option>
+        <option
+          key="SE"
+          value="SE"
+        >
+           
+          SE
+           
+        </option>
+        <option
+          key="SP"
+          value="SP"
+        >
+           
+          SP
+           
+        </option>
+        <option
+          key="TO"
+          value="TO"
+        >
+           
+          TO
+           
+        </option>
+      </select>
+      <label
+        htmlFor="13"
+      >
+        Selecione o Estado:
+      </label>
+    </div>
+  </combobox>
+</comboEstado>
+`;

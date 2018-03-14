@@ -1,0 +1,31 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: #fff;
+}
+
+.en-btn--colored {
+  background: #000;
+  padding: 10px;
+  margin: 10px;
+}
+
+.en-footer {
+  padding: 80px 0; }
+
+.en-social {
+  text-align: center; }
+  .en-social .en-social__title {
+    font-size: 20px;
+    color: #939393;
+    margin-bottom: 20px;
+    display: block; }
+  .en-social .en-social__links a {
+    color: #939393;
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 25px; }
+    .en-social .en-social__links a:last-child {
+      margin-right: 0; }

@@ -54,7 +54,6 @@ export default class DetalhamentoDenuncia extends Component {
 
 
         <div className="row">
-
           <BotoesRadio
             classes={'col s3'}
             id={'idCategoria'}

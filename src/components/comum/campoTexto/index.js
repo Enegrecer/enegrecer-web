@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Field } from 'redux-form';
 
-const campoTexto = ({ divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label }) => (
-  <div className={divClasse}>
+export const renderField = function({ divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label, meta: { touched, error }}) {
+  return (
+    <div className={divClasse}>
     <input
       id={id}
       type={type}
@@ -13,6 +15,24 @@ const campoTexto = ({ divClasse, id, type, onChange, inputClasse, maxLen, placeh
     />
     <label className="active" htmlFor={id}>{label}</label>
   </div>
+  );
+}
+
+const campoTexto = ({ divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label, state }) => (
+  <Field
+    name="name"
+    divClasse={divClasse}
+    id={id}
+    type={type}
+    onChange={onChange}
+    inputClasse={inputClasse}
+    maxLen={maxLen}
+    placeholder={placeholder}
+    label={label}
+    component={renderField}
+    //validate={validateName}
+    value="helloooo"
+  />
 );
 
 campoTexto.propTypes = {

@@ -49,7 +49,7 @@ class NovaDenunciaForm extends Component {
         onSubmit={event => this.handleSubmit(event)}
       >
 
-       <DetalhamentoDenuncia handleChange={this.handleChange} />
+        <DetalhamentoDenuncia handleChange={this.handleChange} />
 
         <NovaVitimaForm handleChange={this.handleChange} />
 

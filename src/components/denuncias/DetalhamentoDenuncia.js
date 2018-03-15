@@ -48,7 +48,7 @@ export default class DetalhamentoDenuncia extends Component {
             type={'text'}
             inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
-            onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 255), 'detalhamento') }}
+            state={'detalhamento'}
           />
         </div>
 

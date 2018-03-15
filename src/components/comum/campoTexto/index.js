@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'redux-form';
 
-export const renderField = function({ divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label, meta: { touched, error }}) {
+
+export const renderCampoTexto = ({  divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label, state, meta: { touched, error }}) => {
   return (
     <div className={divClasse}>
     <input
@@ -14,26 +15,31 @@ export const renderField = function({ divClasse, id, type, onChange, inputClasse
       placeholder={placeholder || undefined}
     />
     <label className="active" htmlFor={id}>{label}</label>
+    {state && touched && error && <span>{error}</span>}
   </div>
   );
 }
 
-const campoTexto = ({ divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label, state }) => (
-  <Field
-    name="name"
-    divClasse={divClasse}
-    id={id}
-    type={type}
-    onChange={onChange}
-    inputClasse={inputClasse}
-    maxLen={maxLen}
-    placeholder={placeholder}
-    label={label}
-    component={renderField}
+const campoTexto = ({ divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label, state}) => {
+  if (state) {
+    return <Field
+      name={state}
+      state={state}
+      divClasse={divClasse}
+      id={id}
+      type={type}
+      onChange={onChange}
+      inputClasse={inputClasse}
+      maxLen={maxLen}
+      placeholder={placeholder}
+      label={label}
+      component={renderCampoTexto}
     //validate={validateName}
-    value="helloooo"
-  />
-);
+    />
+  }else{
+    return renderCampoTexto({divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label, state, meta: {} });
+  }
+};
 
 campoTexto.propTypes = {
   id: PropTypes.string,

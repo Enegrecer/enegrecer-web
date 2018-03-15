@@ -7,6 +7,7 @@ import BotoesRadio from './../comum/botoesRadio';
 import Data from './../comum/data';
 import * as ConstantesCSS from './ConstantesCss';
 import * as Tela from '../../utils/materializeCSS';
+import { campoObrigatorio } from './../comum/validacoes';
 
 export default class DetalhamentoDenuncia extends Component {
   constructor(props) {
@@ -49,6 +50,7 @@ export default class DetalhamentoDenuncia extends Component {
             inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
             state={'detalhamento'}
+            //validacoes={campoObrigatorio}
           />
         </div>
 

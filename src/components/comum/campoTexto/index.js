@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 import { Field } from 'redux-form';
 
 
-export const renderCampoTexto = ({ divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label, state, meta: { touched, error } }) => (
+export const renderCampoTexto = ({ input, divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label, state, meta: { touched, error } }) => (
   <div className={divClasse}>
     <input
       id={id}
       {...input}
       type={type}
-      onChange={onChange}
       className={inputClasse}
       maxLength={maxLen}
       placeholder={placeholder || undefined}
@@ -19,7 +18,7 @@ export const renderCampoTexto = ({ divClasse, id, type, onChange, inputClasse, m
   </div>
 )
 
-const campoTexto = ({ divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label, state }) => {
+const campoTexto = ({ divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label, state, validacoes }) => {
   if (state) {
     return (<Field
       name={state}
@@ -33,7 +32,7 @@ const campoTexto = ({ divClasse, id, type, onChange, inputClasse, maxLen, placeh
       placeholder={placeholder}
       label={label}
       component={renderCampoTexto}
-    // validate={validateName}
+      validate={validacoes}
     />)
   }
   return renderCampoTexto({ divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label, state, meta: {}, });

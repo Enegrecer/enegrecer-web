@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import NovaVitimaForm from './vitima/NovaVitimaForm';
 import NovaTestemunhaForm from './testemunha/NovaTestemunhaForm';
 import DetalhamentoDenuncia from './DetalhamentoDenuncia';
-import { adicionaFormAoRedux } from './../comum/validacao';
+import { adicionaFormAoRedux } from './../comum/formControle';
 import './denuncia.css';
 
 class NovaDenunciaForm extends Component {

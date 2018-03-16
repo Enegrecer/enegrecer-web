@@ -46,8 +46,10 @@ class NovaDenunciaContainer extends React.Component {
     }
     return (
       <div className="container">
-      <h3 className="jumbotron">Redux Form Validation</h3>
-      <FormCode onSubmit={this.onPressSaveButton} />
+      <NovaDenunciaForm
+        onSubmit={this.onPressSaveButton}
+        alterarDenunciaForm={this.adicionarDenunciaNoForm}
+      />
     </div>
     );
   }

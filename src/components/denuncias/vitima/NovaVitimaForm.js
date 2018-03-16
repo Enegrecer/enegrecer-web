@@ -12,6 +12,7 @@ import Telefone from '../../comum/telefone';
 import ComboboxRaca from './../../comum/comboboxRaca';
 import Caracteristica from '../../comum/caracteristica';
 import Data from '../../comum/data';
+import { campoObrigatorio } from '../../comum/validacoes';
 
 export default class NovaVitimaForm extends Component {
   constructor(props) {
@@ -142,6 +143,8 @@ export default class NovaVitimaForm extends Component {
             id={'caracteristicasDaVitima'}
             label={'* Por favor, descreva aqui as características da vítima (máximo de 255 caracteres)'}
             onChange={e => this.handleChange(cortarPalavra(e.target.value, 255), 'caracteristicasDaVitima')}
+            validacoes={[campoObrigatorio]}
+            state={'caracteristica-vitima'}
           />
         </div>
       </div>);

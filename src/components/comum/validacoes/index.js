@@ -1,2 +1,2 @@
 
-const campoObrigatorio = (value) => (value ? undefined : 'Campo Obrigatório')
+export const campoObrigatorio = (value) => (value ? undefined : 'Campo Obrigatório')

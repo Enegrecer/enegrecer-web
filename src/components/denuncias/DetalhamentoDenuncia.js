@@ -50,7 +50,7 @@ export default class DetalhamentoDenuncia extends Component {
             inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
             state={'detalhamento'}
-            //validacoes={campoObrigatorio}
+            validacoes={[campoObrigatorio]}
           />
         </div>
 

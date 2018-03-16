@@ -19,8 +19,8 @@ const renderCampoTexto = ({
     placeholder={placeholder || undefined}
   />
   <label className="active" htmlFor={id}>{label}</label>
-  {touched && error && <span>{error}</span>}
-  </div>
+  { touched && error && <span>{error}</span>}
+</div>
 )
 
 

@@ -2,8 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'redux-form';
 
+const renderCampoTexto = ({
+  input,
+  label,
+  type,
+  meta: { touched, error, warning },
+  divClasse, id, onChange, inputClasse, maxLen, placeholder
+}) => (
+  <div className={divClasse}>
+  <input
+    id={id}
+    {...input}
+    type={type}
+    className={inputClasse}
+    maxLength={maxLen}
+    placeholder={placeholder || undefined}
+  />
+  <label className="active" htmlFor={id}>{label}</label>
+  {touched && error && <span>{error}</span>}
+  </div>
+)
 
-export const renderCampoTexto = ({ input, divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label, state, meta: { touched, error } }) => (
+
+
+/*
+export const renderCampoTexto = ({ input, divClasse, id, type, onChange, inputClasse, maxLen,
+  placeholder, label, state, meta: { touched, error, warning } }) => (
   <div className={divClasse}>
     <input
       id={id}
@@ -17,6 +41,26 @@ export const renderCampoTexto = ({ input, divClasse, id, type, onChange, inputCl
     {state && touched && error && <span>{error}</span>}
   </div>
 )
+*/
+const renderField = ({
+  input,
+  label,
+  type,
+  meta: { touched, error, warning }
+}) => (
+  <div>
+    <label>{label}</label>
+    <div>
+      <input {...input} placeholder={label} type={type} />
+      {touched &&
+        ((error && <span>{error}</span>) ||
+          (warning && <span>{warning}</span>))}
+    </div>
+  </div>
+)
+
+
+
 
 const campoTexto = ({ divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label, state, validacoes }) => {
   if (state) {

@@ -8,20 +8,21 @@ const renderCampoTexto = ({
   type,
   meta: { touched, error, warning },
   divClasse, id, onChange, inputClasse, maxLen, placeholder
-}) => (
-  <div className={divClasse}>
-  <input
-    id={id}
-    {...input}
-    type={type}
-    className={inputClasse}
-    maxLength={maxLen}
-    placeholder={placeholder || undefined}
-  />
-  <label className="active" htmlFor={id}>{label}</label>
-  { touched && error && <span>{error}</span>}
-</div>
-)
+}) => {
+  const existeErroDeValidacao = touched && error;
+  return (
+    <div className={divClasse}>
+    <input
+      id={id}
+      {...input}
+      type={type}
+      className={ !existeErroDeValidacao? inputClasse :inputClasse+' '+'invalid'}
+      maxLength={maxLen}
+      placeholder={placeholder || undefined}
+    />
+    <label className="active" data-error={error} data-success="right" htmlFor={id}>{label}</label>
+  </div>)
+}
 
 
 

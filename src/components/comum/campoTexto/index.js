@@ -12,58 +12,21 @@ const renderCampoTexto = ({
   const existeErroDeValidacao = touched && error;
   return (
     <div className={divClasse}>
-    <input
-      id={id}
-      {...input}
-      type={type}
-      className={ !existeErroDeValidacao? inputClasse :inputClasse+' '+'invalid'}
-      maxLength={maxLen}
-      placeholder={placeholder || undefined}
-    />
-    <label className="active" data-error={error} data-success="right" htmlFor={id}>{label}</label>
-  </div>)
+      <input
+        id={id}
+        {...input}
+        type={type}
+        className={!existeErroDeValidacao ? inputClasse : `${inputClasse} invalid`}
+        maxLength={maxLen}
+        placeholder={placeholder || undefined}
+      />
+      <label className="active" data-error={error} data-success="right" htmlFor={id}>{label}</label>
+    </div>
+  )
 }
 
-
-
-/*
-export const renderCampoTexto = ({ input, divClasse, id, type, onChange, inputClasse, maxLen,
-  placeholder, label, state, meta: { touched, error, warning } }) => (
-  <div className={divClasse}>
-    <input
-      id={id}
-      {...input}
-      type={type}
-      className={inputClasse}
-      maxLength={maxLen}
-      placeholder={placeholder || undefined}
-    />
-    <label className="active" htmlFor={id}>{label}</label>
-    {state && touched && error && <span>{error}</span>}
-  </div>
-)
-*/
-const renderField = ({
-  input,
-  label,
-  type,
-  meta: { touched, error, warning }
-}) => (
-  <div>
-    <label>{label}</label>
-    <div>
-      <input {...input} placeholder={label} type={type} />
-      {touched &&
-        ((error && <span>{error}</span>) ||
-          (warning && <span>{warning}</span>))}
-    </div>
-  </div>
-)
-
-
-
-
-const campoTexto = ({ divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label, state, validacoes }) => {
+const campoTexto = ({ divClasse, id, type, onChange,
+  inputClasse, maxLen, placeholder, label, state, validacoes }) => {
   if (state) {
     return (<Field
       name={state}
@@ -80,7 +43,8 @@ const campoTexto = ({ divClasse, id, type, onChange, inputClasse, maxLen, placeh
       validate={validacoes}
     />)
   }
-  return renderCampoTexto({ divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label, state, meta: {}, });
+  return renderCampoTexto(
+    { divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label, state, meta: {}, });
 };
 
 renderCampoTexto.propTypes = {
@@ -106,4 +70,3 @@ renderCampoTexto.defaultProps = {
 };
 
 export default campoTexto;
-

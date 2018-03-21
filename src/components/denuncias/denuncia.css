@@ -23,3 +23,9 @@ form#form-nova-denuncia {
     color: transparent; }
   form#form-nova-denuncia input {
     margin-bottom: 10px; }
+
+  select {
+    display: inline !important;
+  }
+
+

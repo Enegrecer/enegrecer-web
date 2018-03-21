@@ -2,7 +2,7 @@
 
 exports[`Combo Estado deve possuir estrutura definida  1`] = `
 <combobox
-  divClasse="input-field "
+  divClasse=""
   id="13"
   itens={
     Array [

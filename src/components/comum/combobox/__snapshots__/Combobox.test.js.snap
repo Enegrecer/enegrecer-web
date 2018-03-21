@@ -4,6 +4,9 @@ exports[`Combobox deve possuir estrutura definida  1`] = `
 <div
   className=""
 >
+  <label
+    htmlFor=""
+  />
   <Field
     component="select"
     id=""
@@ -45,8 +48,5 @@ exports[`Combobox deve possuir estrutura definida  1`] = `
        
     </option>
   </Field>
-  <label
-    htmlFor=""
-  />
 </div>
 `;

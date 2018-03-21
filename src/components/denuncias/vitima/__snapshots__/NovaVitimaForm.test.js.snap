@@ -9,12 +9,12 @@ exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
   <checkBox
     id="conhecoAVitima"
     label="Conheço a Vítima"
-    onClick={[Function]}
+    state="conhecoAVitima"
   />
   <checkBox
     id="souAVitima"
     label="Sou a Vítima"
-    onClick={[Function]}
+    state="souAVitima"
   />
   <div
     className="row"

@@ -19,7 +19,7 @@ Data.propTypes = {
   id: PropTypes.string,
   divClasse: PropTypes.string,
   label: PropTypes.string,
-  onChange: PropTypes.func,
+  onChange: PropTypes.func
 };
 
 Data.defaultProps = {

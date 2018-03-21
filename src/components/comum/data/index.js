@@ -26,7 +26,6 @@ Data.defaultProps = {
   id: '',
   divClasse: '',
   label: '',
-  state: '',
   onChange: () => {}
 };
 

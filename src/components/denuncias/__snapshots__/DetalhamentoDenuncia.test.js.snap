@@ -21,12 +21,10 @@ exports[`DetalhamentoDenuncia Component deve possuir estrutura definida  1`] = `
       botoes={
         Array [
           Object {
-            "id": "radioInjuria",
             "label": "Injúria",
             "valor": "injuria",
           },
           Object {
-            "id": "radioRacismo",
             "label": "Racismo",
             "valor": "racismo",
           },
@@ -48,8 +46,32 @@ exports[`DetalhamentoDenuncia Component deve possuir estrutura definida  1`] = `
       inputClasse="validate"
       label="Hora do ocorrido"
       maxLen={0}
-      onChange={[Function]}
       type="time"
+    />
+  </div>
+  <h4>
+    Local do crime
+  </h4>
+  <div
+    className="row"
+  >
+    <campoTexto
+      divClasse="input-field col s12"
+      id="endereco"
+      inputClasse="materialize-textarea"
+      label="Endereço"
+      maxLen={255}
+      state="endereco"
+      type="text"
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <comboEstado
+      classes="col s12"
+      id="estado"
+      state="estado"
     />
   </div>
 </div>

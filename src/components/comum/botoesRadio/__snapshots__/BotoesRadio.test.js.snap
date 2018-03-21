@@ -9,7 +9,7 @@ exports[`Botões Rádio deve possuir estrutura definida  1`] = `
   >
     <Field
       component="input"
-      id="radioInjuria"
+      id="injuria"
       name="idOcorrencia"
       type="radio"
       value="injuria"
@@ -25,7 +25,7 @@ exports[`Botões Rádio deve possuir estrutura definida  1`] = `
   >
     <Field
       component="input"
-      id="radioRacismo"
+      id="racismo"
       name="idOcorrencia"
       type="radio"
       value="racismo"

@@ -1,146 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Combobox Raça deve conter somente as raças Pardo e Negro quando somenteRacasVitima é true  1`] = `
-<comboRaca
-  classes="racas"
+<combobox
+  divClasse="racas"
   id="raca-vitma"
-  onChange={[Function]}
-  somenteRacasVitima={true}
->
-  <combobox
-    divClasse="racas"
-    id="raca-vitma"
-    itens={
-      Array [
-        "Preta",
-        "Parda",
-      ]
-    }
-    label="Selecione a Raça:"
-    onChange={[Function]}
-    valorPadrao="Selecione a Raça:"
-  >
-    <div
-      className="racas"
-    >
-      <select
-        id="raca-vitma"
-        onChange={[Function]}
-      >
-        <option
-          value=""
-        >
-          Selecione a Raça:
-        </option>
-        <option
-          key="Preta"
-          value="Preta"
-        >
-           
-          Preta
-           
-        </option>
-        <option
-          key="Parda"
-          value="Parda"
-        >
-           
-          Parda
-           
-        </option>
-      </select>
-      <label
-        htmlFor="raca-vitma"
-      >
-        Selecione a Raça:
-      </label>
-    </div>
-  </combobox>
-</comboRaca>
+  itens={
+    Array [
+      "Preta",
+      "Parda",
+    ]
+  }
+  label="Selecione a Raça:"
+  state=""
+  valorPadrao="Selecione a Raça:"
+/>
 `;
 
 exports[`Combobox Raça deve conter todas as raças quando somenteRacasVitima é false  1`] = `
-<comboRaca
-  classes="racas"
+<combobox
+  divClasse="racas"
   id="raca-testemunha"
-  onChange={[Function]}
-  somenteRacasVitima={false}
->
-  <combobox
-    divClasse="racas"
-    id="raca-testemunha"
-    itens={
-      Array [
-        "Amarela",
-        "Branco",
-        "Índigena",
-        "Parda",
-        "Preta",
-      ]
-    }
-    label="Selecione a Raça:"
-    onChange={[Function]}
-    valorPadrao="Selecione a Raça:"
-  >
-    <div
-      className="racas"
-    >
-      <select
-        id="raca-testemunha"
-        onChange={[Function]}
-      >
-        <option
-          value=""
-        >
-          Selecione a Raça:
-        </option>
-        <option
-          key="Amarela"
-          value="Amarela"
-        >
-           
-          Amarela
-           
-        </option>
-        <option
-          key="Branco"
-          value="Branco"
-        >
-           
-          Branco
-           
-        </option>
-        <option
-          key="Índigena"
-          value="Índigena"
-        >
-           
-          Índigena
-           
-        </option>
-        <option
-          key="Parda"
-          value="Parda"
-        >
-           
-          Parda
-           
-        </option>
-        <option
-          key="Preta"
-          value="Preta"
-        >
-           
-          Preta
-           
-        </option>
-      </select>
-      <label
-        htmlFor="raca-testemunha"
-      >
-        Selecione a Raça:
-      </label>
-    </div>
-  </combobox>
-</comboRaca>
+  itens={
+    Array [
+      "Amarela",
+      "Branco",
+      "Índigena",
+      "Parda",
+      "Preta",
+    ]
+  }
+  label="Selecione a Raça:"
+  state=""
+  valorPadrao="Selecione a Raça:"
+/>
 `;

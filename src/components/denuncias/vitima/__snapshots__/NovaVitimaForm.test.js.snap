@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
+<div>
+  <h3>
+    Informacões da Vítima
+  </h3>
+  <br />
+  <checkBox
+    id="conhecoAVitima"
+    label="Conheço a Vítima"
+    onClick={[Function]}
+  />
+  <checkBox
+    id="souAVitima"
+    label="Sou a Vítima"
+    onClick={[Function]}
+  />
+  <div
+    className="row"
+  >
+    <nome
+      id="nome-vitima"
+      onChange={[Function]}
+      state=""
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <genero
+      divClasse="input-field col s4"
+      id="vitima-genero"
+      onChange={[Function]}
+    />
+    <comboRaca
+      classes="input-field col s4"
+      id="raca"
+      onChange={[Function]}
+      somenteRacasVitima={true}
+      state=""
+    />
+    <Data
+      divClasse="input-field col s4"
+      estado="dataNascimento"
+      id="dataNascimento"
+      label="Data de Nascimento"
+      onChange={[Function]}
+      state=""
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <campoTexto
+      divClasse="input-field col s12"
+      id="endereco-vitima"
+      inputClasse="materialize-textarea"
+      label="Endereço (máximo de 255 caracteres)"
+      maxLen={255}
+      onChange={[Function]}
+      type="text"
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <campoTexto
+      divClasse="input-field col s6"
+      id="naturalidade-vitima"
+      label="Naturalidade (máximo de 40 caracteres)"
+      maxLen={40}
+      onChange={[Function]}
+      type="text"
+    />
+    <comboEstado
+      classes="col s6"
+      handleChange={[Function]}
+      id="estadoVitima"
+      state=""
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <campoTexto
+      divClasse="input-field col s6"
+      id="email-vitima"
+      label="Email"
+      maxLen={40}
+      onChange={[Function]}
+      type="text"
+    />
+    <telefone
+      handleChange={[Function]}
+      id="telefone"
+      label="Telefone"
+      value=""
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <caracteristica
+      id="caracteristicasDaVitima"
+      label="* Por favor, descreva aqui as características da vítima (máximo de 255 caracteres)"
+      onChange={[Function]}
+      state="caracteristica-vitima"
+      validacoes={
+        Array [
+          [Function],
+        ]
+      }
+    />
+  </div>
+</div>
+`;

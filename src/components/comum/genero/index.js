@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CampoTexto from '../campoTexto';
 import { CLASSES_INPUT } from '../../../components/denuncias/ConstantesCss';
-import { generoNaoPodeSerQue15Caracteres } from './validacoes'
 
 const genero = ({ id, divClasse, onChange }) => (
   <CampoTexto
@@ -14,7 +13,6 @@ const genero = ({ id, divClasse, onChange }) => (
     onChange={onChange}
     placeholder={'Ex.: Feminino, Masculino, Não Binário...'}
     type={'text'}
-    validacoes={[generoNaoPodeSerQue15Caracteres]}
   />
 );
 

@@ -6,4 +6,9 @@ export const campoMaiorQue255Caracteres = (campo) => {
     return 'O limite deste campo é 255 caracteres.';
   }
   return undefined;
-}
+  }
+
+  export const temNumeroNoNome =  nome => {
+    const format = /\d/;
+    return format.test(nome);
+  }

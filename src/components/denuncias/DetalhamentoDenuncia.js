@@ -1,7 +1,4 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import { Field } from 'redux-form';
-import { cortarPalavra } from '../../utils/helpers';
+import React from 'react';
 import ComboEstado from './../comum/comboboxEstado';
 import CampoTexto from './../comum/campoTexto';
 import BotoesRadio from './../comum/botoesRadio';

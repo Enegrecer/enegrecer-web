@@ -32,10 +32,10 @@ describe('Validacoes: Campo obrigatório', () => {
     assert.equal('Campo Obrigatório', mensagem);
 })
 
-  it('deve retornar undefined quando o campo é preenchido', () => {
-    let texto = 'Teste';
-    let mensagem = campoObrigatorio(texto);
-    assert.equal(undefined, mensagem);
-  })
+it('deve retornar undefined quando o campo é preenchido', () => {
+  let texto = 'Teste';
+  let mensagem = campoObrigatorio(texto);
+  assert.equal(undefined, mensagem);
+})
 
 });

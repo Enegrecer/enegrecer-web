@@ -8,7 +8,3 @@ export const campoMaiorQue255Caracteres = (campo) => {
   return undefined;
   }
 
-  export const temNumeroNoNome =  nome => {
-    const format = /\d/;
-    return format.test(nome);
-  }

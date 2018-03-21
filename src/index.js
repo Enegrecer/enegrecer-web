@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import 'font-awesome/css/font-awesome.css';
 
 import configureStore from './store';
-import Rotas from './routes/Routes'
+import Rotas from './routes/Routes';
 import registerServiceWorker from './utils/registerServiceWorker';
 
 const store = configureStore();

@@ -34,7 +34,6 @@ export default class NovaVitimaForm extends Component {
     };
   }
 
-
   componentDidMount() {
     this.props.handleChange({ vitima: this.state });
 
@@ -48,7 +47,6 @@ export default class NovaVitimaForm extends Component {
       this.handleChange(e.target.value, 'estado');
     });
   }
-
 
   handleChange(value, property) {
     this.setState({ [property]: value },

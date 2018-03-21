@@ -12,8 +12,8 @@ import Data from '../../comum/data';
 
 export default class NovaTestemunhaForm extends React.Component {
   constructor(props) {
-    super(props)
-    this.handleChange = this.handleChange.bind(this)
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
 
     this.state = {
       nome: '',
@@ -22,7 +22,7 @@ export default class NovaTestemunhaForm extends React.Component {
       dataNascimento: '',
       telefone: '',
       caracteristicas: '',
-    }
+    };
   }
 
   componentDidMount() {
@@ -52,7 +52,7 @@ export default class NovaTestemunhaForm extends React.Component {
           <Genero
             id={'genero-testemunha'}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
-            onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 15), 'genero') }}
+            onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 15), 'genero'); }}
           />
 
           <ComboboxRaca
@@ -83,7 +83,7 @@ export default class NovaTestemunhaForm extends React.Component {
           <Caracteristica
             id={'caracteristicas-testemunha'}
             label={'* Por favor, descreva aqui as características da testemunha (máximo de 255 caracteres)'}
-            onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 255), 'caracteristicas') }}
+            onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 255), 'caracteristicas'); }}
             type={'text'}
             inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
@@ -94,7 +94,7 @@ export default class NovaTestemunhaForm extends React.Component {
   }
 }
 
-NovaTestemunhaForm.defaultProps = { handleChange: () => {} }
+NovaTestemunhaForm.defaultProps = { handleChange: () => {} };
 NovaTestemunhaForm.propTypes = {
   handleChange: PropTypes.func,
 };

@@ -10,7 +10,7 @@ const nome = ({ id, onChange }) => (<CampoTexto
   type={'text'}
   divClasse={'input-field col s12'}
   onChange={onChange}
-/>)
+/>);
 
 nome.propTypes = {
   id: PropTypes.string,

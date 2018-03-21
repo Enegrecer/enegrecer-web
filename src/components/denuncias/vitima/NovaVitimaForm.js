@@ -87,8 +87,8 @@ export default class NovaVitimaForm extends Component {
             id={'dataNascimento'}
             label={'Data de Nascimento'}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
-            onChange={this.handleChange}
-            estado={'dataNascimento'}
+            onChange={e => this.handleChange(e.target.value, 'dataNascimento')}
+
           />
 
         </div>

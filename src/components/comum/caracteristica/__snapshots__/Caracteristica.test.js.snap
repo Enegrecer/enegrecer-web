@@ -23,12 +23,12 @@ exports[`Caracteristica deve possuir estrutura definida  1`] = `
         className="materialize-textarea"
         id="1"
         maxLength={255}
-        onChange={[Function]}
         placeholder="Ex.: Era uma mulher negra, com aproximadamente 40 anos, magra, alta com cabelo curto..."
         type="text"
       />
       <label
         className="active"
+        data-success="right"
         htmlFor="1"
       >
         Característica da Vítima

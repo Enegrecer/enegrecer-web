@@ -23,34 +23,22 @@ exports[`Botões Rádio deve possuir estrutura definida  1`] = `
   <div
     className="col s3"
   >
-    <p
-      key="radioInjuria"
-    >
-      <input
-        id="radioInjuria"
-        name="id"
-        type="radio"
-      />
-      <label
-        htmlFor="radioInjuria"
-      >
-        injuria
-      </label>
-    </p>
-    <p
-      key="radioRacismo"
-    >
-      <input
-        id="radioRacismo"
-        name="id"
-        type="radio"
-      />
-      <label
-        htmlFor="radioRacismo"
-      >
-        racismo
-      </label>
-    </p>
+    <div>
+      <p>
+        <input
+          type="radio"
+        />
+        <label />
+      </p>
+    </div>
+    <div>
+      <p>
+        <input
+          type="radio"
+        />
+        <label />
+      </p>
+    </div>
   </div>
 </botoesRadio>
 `;

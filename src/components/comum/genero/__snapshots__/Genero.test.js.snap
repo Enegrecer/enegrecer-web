@@ -24,12 +24,12 @@ exports[`Genero deve possuir estrutura definida  1`] = `
         className="validate"
         id="13"
         maxLength={15}
-        onChange={[Function]}
         placeholder="Ex.: Feminino, Masculino, Não Binário..."
         type="text"
       />
       <label
         className="active"
+        data-success="right"
         htmlFor="13"
       >
         Gênero (máximo de 15 caracteres)

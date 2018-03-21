@@ -2,36 +2,30 @@
 
 exports[`Data deve possuir estrutura definida  1`] = `
 <Data
-  divClasse=""
   divClasses="estado"
-  estado=""
   id="13"
   label="Data"
   onChange={[Function]}
 >
   <campoTexto
-    divClasse=""
     id="13"
     inputClasse="datepicker"
     label="Data"
     maxLen={0}
-    onChange={[Function]}
     placeholder="Data"
-    type="text"
+    type="date"
   >
-    <div
-      className=""
-    >
+    <div>
       <input
         className="datepicker"
         id="13"
         maxLength={0}
-        onChange={[Function]}
         placeholder="Data"
-        type="text"
+        type="date"
       />
       <label
         className="active"
+        data-success="right"
         htmlFor="13"
       >
         Data

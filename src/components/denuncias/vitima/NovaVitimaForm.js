@@ -63,8 +63,8 @@ export default class NovaVitimaForm extends Component {
         <h3>Informacões da Vítima</h3>
         <br />
 
-        <CheckBox id={'conhecoAVitima'} label={'Conheço a Vítima'} onClick={e => this.handleChange(e.target.checked, 'conhecoAVitima')} />
-        <CheckBox id={'souAVitima'} label={'Sou a Vítima'} onClick={e => this.handleChange(e.target.checked, 'souAVitima')} />
+        <CheckBox state={'conhecoAVitima'} id={'conhecoAVitima'} label={'Conheço a Vítima'} />
+        <CheckBox state={'souAVitima'} id={'souAVitima'} label={'Sou a Vítima'} />
 
         <div className="row">
           <Nome id={'nome-vitima'} onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'nome')} />

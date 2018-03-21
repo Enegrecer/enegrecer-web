@@ -21,8 +21,8 @@ const DetalhamentoDenuncia = () => (
       <BotoesRadio
         classes={'col s3'}
         state={'idCategoria'}
-        botoes={[{ valor: 'injuria', label: 'Injúria' },
-          { valor: 'racismo', label: 'Racismo' }]}
+        botoes={[{ id: 'radioInjuria', valor: 'injuria', label: 'Injúria' },
+          { id: 'radioRacismo', valor: 'racismo', label: 'Racismo' }]}
       />
 
       <Data

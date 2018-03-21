@@ -18,7 +18,7 @@ const botoesRadio = ({ classes, botoes, state }) => {
         {botoes.map(botaoRadio => (
           <p key={botaoRadio.valor}>
             <Field
-              id={botaoRadio.valor}
+              id={botaoRadio.id}
               name={state}
               component="input"
               type="radio"

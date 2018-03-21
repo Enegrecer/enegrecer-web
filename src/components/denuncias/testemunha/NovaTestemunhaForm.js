@@ -67,7 +67,7 @@ export default class NovaTestemunhaForm extends React.Component {
           <Data
             id={'dataNascimento-testemunha'}
             label={'Data de Nascimento'}
-            onChange={(e) => { this.handleChange(e.target.value, 'dataNascimento') }}
+            onChange={(e) => { this.handleChange(e.target.value, 'dataNascimento'); }}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
           />
 

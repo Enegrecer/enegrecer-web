@@ -7,7 +7,6 @@ exports[`Data deve possuir estrutura definida  1`] = `
   id="13"
   label="Data"
   onChange={[Function]}
-  state=""
 >
   <campoTexto
     divClasse=""

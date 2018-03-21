@@ -13,7 +13,7 @@ const Data = ({ id, divClasse, label, onChange }) => (
     placeholder="Data"
     onChange={onChange}
   />
-)
+);
 
 Data.propTypes = {
   id: PropTypes.string,

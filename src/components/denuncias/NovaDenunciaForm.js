@@ -21,14 +21,14 @@ export default class NovaDenunciaForm extends Component {
       estado: '',
       vitima: {},
       testemunha: {}
-    }
+    };
   }
 
   handleChange(dados) {
     this.setState({
       ...dados,
     }, () => {
-      this.props.alterarDenunciaForm(this.state)
+      this.props.alterarDenunciaForm(this.state);
     });
   }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { mock } from 'sinon'
+import { mock } from 'sinon';
 import NovaDenunciaForm from './NovaDenunciaForm';
 
 describe('NovaDenunciaForm Component', () => {
@@ -12,17 +12,17 @@ describe('NovaDenunciaForm Component', () => {
   it('deve renderizar o componente NovaVitimaForm', () => {
     const wrapper = shallow(<NovaDenunciaForm salvarDenuncia={mock()} />);
 
-    expect(wrapper.find('NovaVitimaForm')).toHaveLength(1)
+    expect(wrapper.find('NovaVitimaForm')).toHaveLength(1);
   });
   it('deve renderizar o componente NovaTestemunhaForm.js', () => {
     const wrapper = shallow(<NovaDenunciaForm salvarDenuncia={mock()} />);
 
-    expect(wrapper.find('NovaTestemunhaForm')).toHaveLength(1)
+    expect(wrapper.find('NovaTestemunhaForm')).toHaveLength(1);
   });
   it('deve renderizar o componente DetalhamentoDenuncia', () => {
     const wrapper = shallow(<NovaDenunciaForm salvarDenuncia={mock()} />);
 
-    expect(wrapper.find('DetalhamentoDenuncia')).toHaveLength(1)
+    expect(wrapper.find('DetalhamentoDenuncia')).toHaveLength(1);
   });
 
   describe('quando o form for submetido', () => {
@@ -37,7 +37,6 @@ describe('NovaDenunciaForm Component', () => {
       detalhamento: 'valor detalhamento',
       idCategoria: 'valor categoria',
     };
-
 
     it('deve ter o state atualizado com os dados corretos', () => {
       wrapper.instance().handleChange(stateMock);

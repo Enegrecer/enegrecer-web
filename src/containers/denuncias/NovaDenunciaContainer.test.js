@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { NovaDenunciaContainer } from './NovaDenunciaContainer';
 
-
 describe('NovaDenunciaContainer', () => {
   it('renderiza o container sem erros', () => {
     const wrapper = shallow(
@@ -46,7 +45,7 @@ describe('NovaDenunciaContainer', () => {
       () => {
         wrapper.instance().onPressSaveButton();
         expect(criarDenunciaRequisicaoMock).not.toHaveBeenCalled();
-      })
+      });
     });
 
     it('deve chamar o método criarDenunciaRequisicao quando o form estiver válido', () => {
@@ -68,7 +67,7 @@ describe('NovaDenunciaContainer', () => {
       () => {
         wrapper.instance().onPressSaveButton();
         expect(criarDenunciaRequisicaoMock).toHaveBeenCalled();
-      })
-    })
+      });
+    });
   });
 });

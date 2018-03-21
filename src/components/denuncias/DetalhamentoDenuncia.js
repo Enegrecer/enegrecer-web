@@ -48,10 +48,9 @@ export default class DetalhamentoDenuncia extends Component {
             type={'text'}
             inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
-            onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 255), 'detalhamento') }}
+            onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 255), 'detalhamento'); }}
           />
         </div>
-
 
         <div className="row">
 
@@ -80,7 +79,7 @@ export default class DetalhamentoDenuncia extends Component {
             type={'time'}
             inputClasse={ConstantesCSS.CLASSES_INPUT}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s5`}
-            onChange={(e) => { this.handleChange(e.target.value, 'horaOcorrencia') }}
+            onChange={(e) => { this.handleChange(e.target.value, 'horaOcorrencia'); }}
           />
         </div>
 
@@ -93,14 +92,14 @@ export default class DetalhamentoDenuncia extends Component {
             type={'text'}
             inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
-            onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 255), 'endereco') }}
+            onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 255), 'endereco'); }}
           />
         </div>
         <div className="row">
           <ComboEstado id={'estado'} onChange={this.handleChange} classes="col s12" />
         </div>
       </div>
-    )
+    );
   }
 }
 

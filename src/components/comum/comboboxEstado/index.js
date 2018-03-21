@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import Combobox from '../combobox';
 import estados from './estados';
 
-const comboEstado = ({ id, onChange, classes }) => (
+const comboEstado = ({ id, classes, state }) => (
   <Combobox
+    state={state}
     id={id}
-    onChange={onChange}
     itens={estados}
     divClasse={`input-field ${classes}`}
     label={'Selecione o Estado:'}
@@ -16,13 +16,13 @@ const comboEstado = ({ id, onChange, classes }) => (
 
 comboEstado.propTypes = {
   id: PropTypes.string,
-  onChange: PropTypes.func,
+  state: PropTypes.string,
   classes: PropTypes.string
 };
 
 comboEstado.defaultProps = {
   id: '',
-  onChange: () => {},
+  state: '',
   classes: ''
 };
 

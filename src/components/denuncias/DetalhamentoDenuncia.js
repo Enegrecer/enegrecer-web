@@ -21,8 +21,8 @@ const DetalhamentoDenuncia = () => (
       <BotoesRadio
         classes={'col s3'}
         state={'idCategoria'}
-        botoes={[{ id: 'radioInjuria', valor: 'injuria', label: 'Injúria' },
-          { id: 'radioRacismo', valor: 'racismo', label: 'Racismo' }]}
+        botoes={[{ valor: 'injuria', label: 'Injúria' },
+          { valor: 'racismo', label: 'Racismo' }]}
       />
 
       <Data
@@ -39,25 +39,25 @@ const DetalhamentoDenuncia = () => (
         type={'time'}
         inputClasse={ConstantesCSS.CLASSES_INPUT}
         divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s5`}
-        onChange={(e) => { this.handleChange(e.target.value, 'horaOcorrencia') }}
       />
     </div>
 
-    {/* <h4>Local do crime</h4> */}
-    {/* <div className="row">
+    <h4>Local do crime</h4>
+    <div className="row">
       <CampoTexto
+        state={'endereco'}
         id={'endereco'}
         label={'Endereço'}
         maxLen={255}
         type={'text'}
         inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
         divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
-        onChange={(e) => { this.handleChange(cortarPalavra(e.target.value, 255), 'endereco') }}
       />
-    </div> */}
-    {/* <div className="row">
-      <ComboEstado id={'estado'} onChange={this.handleChange} classes="col s12" />
-    </div> */}
+    </div>
+
+    <div className="row">
+      <ComboEstado state={'estado'} id={'estado'} classes="col s12" />
+    </div>
   </div>
 )
 export default DetalhamentoDenuncia;

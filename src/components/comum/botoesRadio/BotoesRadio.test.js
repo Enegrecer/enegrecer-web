@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import BotoesRadio from './index';
 
@@ -10,7 +10,7 @@ describe('Botões Rádio', () => {
 
   it('deve possuir estrutura definida ', () => {
     const onChange = jest.fn();
-    const botoesRadio = mount(<BotoesRadio
+    const botoesRadio = shallow(<BotoesRadio
       state={'idOcorrencia'}
       classes={'col s3'}
       id={'id'}

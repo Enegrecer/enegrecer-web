@@ -4,6 +4,7 @@ exports[`Nome deve seguir a estrutura definida  1`] = `
 <nome
   id="3"
   onChange={[Function]}
+  state=""
 >
   <campoTexto
     divClasse="input-field col s12"
@@ -12,6 +13,7 @@ exports[`Nome deve seguir a estrutura definida  1`] = `
     maxLen={40}
     onChange={[Function]}
     placeholder="Nome (máximo de 40 caracteres)"
+    state=""
     type="text"
     validacoes={
       Array [

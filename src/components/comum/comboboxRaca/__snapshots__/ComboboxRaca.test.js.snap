@@ -11,7 +11,7 @@ exports[`Combobox Raça deve conter somente as raças Pardo e Negro quando somen
     ]
   }
   label="Selecione a Raça:"
-  state=""
+  state="raca-testemunha"
   valorPadrao="Selecione a Raça:"
 />
 `;
@@ -30,7 +30,7 @@ exports[`Combobox Raça deve conter todas as raças quando somenteRacasVitima é
     ]
   }
   label="Selecione a Raça:"
-  state=""
+  state="raca-testemunha"
   valorPadrao="Selecione a Raça:"
 />
 `;

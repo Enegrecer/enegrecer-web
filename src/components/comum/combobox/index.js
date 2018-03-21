@@ -5,6 +5,7 @@ import { Field } from 'redux-form';
 
 const combobox = ({ divClasse, id, state, valorPadrao, itens, label }) => (
   <div className={divClasse}>
+    <label htmlFor={id}>{label}</label>
     <Field id={id} name={state} component="select">
       <option value="">{valorPadrao}</option>
       {
@@ -13,9 +14,7 @@ const combobox = ({ divClasse, id, state, valorPadrao, itens, label }) => (
         )
       }
     </Field>
-    <label htmlFor={id}>{label}</label>
-  </div>
-);
+  </div>)
 
 combobox.propTypes = {
   id: PropTypes.string,

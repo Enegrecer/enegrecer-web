@@ -27,8 +27,8 @@ export const iniciaCampoData = (id) => {
 
 export const iniciaCamposMaterialize = () => {
   $(document).ready(() => {
-    $('select').material_select();
-    Materialize.updateTextFields();
+    // $('select').material_select();
+    // Materialize.updateTextFields();
   });
 }
 

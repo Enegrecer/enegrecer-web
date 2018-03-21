@@ -8,7 +8,7 @@ const comboEstado = ({ id, classes, state }) => (
     state={state}
     id={id}
     itens={estados}
-    divClasse={`input-field ${classes}`}
+    divClasse={classes}
     label={'Selecione o Estado:'}
     valorPadrao={'Selecione'}
   />

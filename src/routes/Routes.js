@@ -3,7 +3,7 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import HomePage from '../components/home/Home';
 import Painel from './Painel';
 import NovaDenuncia from '../containers/denuncias/NovaDenunciaContainer';
-import ProximosPassos from '../components/proximosPassos/ProximosPassos';
+import ProximosPassos from '../components/denuncias/proximosPassos';
 
 const Routes = () => (
   <BrowserRouter>

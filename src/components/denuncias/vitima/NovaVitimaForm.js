@@ -1,11 +1,8 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React from 'react';
 import CheckBox from '../../comum/checkbox';
 import CampoTexto from '../../comum/campoTexto';
-import { cortarPalavra } from '../../../utils/helpers';
 import * as ConstantesCSS from '../ConstantesCss';
 import ComboEstado from '../../comum/comboboxEstado';
-import * as Tela from '../../../utils/materializeCSS';
 import Nome from '../../comum/nome';
 import Genero from '../../comum/genero';
 import Telefone from '../../comum/telefone';
@@ -14,145 +11,92 @@ import Caracteristica from '../../comum/caracteristica';
 import Data from '../../comum/data';
 import { campoObrigatorio } from '../../comum/validacoes';
 
-export default class NovaVitimaForm extends Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.state = {
-      pessoaIdentificada: false,
-      souAVitima: false,
-      conhecoAVitima: false,
-      nome: '',
-      genero: '',
-      raca: '',
-      dataNascimento: '',
-      endereco: '',
-      estado: '',
-      telefone: '',
-      email: '',
-      naturalidade: '',
-      caracteristicasDaVitima: '',
-    };
-  }
+const NovaVitimaForm = () => (
+  <div>
+    <h3>Informacões da Vítima</h3>
+    <br />
+    <CheckBox state={'conhecoAVitima'} id={'conhecoAVitima'} label={'Conheço a Vítima'} />
+    <CheckBox state={'souAVitima'} id={'souAVitima'} label={'Sou a Vítima'} />
 
+    <div className="row">
+      <Nome id={'nome-vitima'} state={'nomeVitima'} />
+    </div>
 
-  componentDidMount() {
-    this.props.handleChange({ vitima: this.state });
+    <div className="row">
+      <Genero
+        state={'vitimaGenero'}
+        id={'vitima-genero'}
+        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
+      />
 
-    const raca = Tela.getElementoPorId('raca');
-    raca.on('change', (e) => {
-      this.handleChange(e.target.value, 'raca');
-    });
+      <ComboboxRaca
+        state={'raca'}
+        id={'raca'}
+        classes="col s4"
+        somenteRacasVitima
+      />
 
-    const comboEstado = Tela.getElementoPorId('estadoVitima');
-    comboEstado.on('change', (e) => {
-      this.handleChange(e.target.value, 'estado');
-    });
-  }
+      <Data
+        state={'dataNascimento'}
+        id={'dataNascimento'}
+        label={'Data de Nascimento'}
+        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
+      />
 
+    </div>
 
-  handleChange(value, property) {
-    this.setState({ [property]: value },
-      () => this.props.handleChange({ vitima: this.state })
-    );
-  }
+    <div className="row">
+      <CampoTexto
+        state={'enderecoVitima'}
+        id={'endereco-vitima'}
+        label={'Endereço (máximo de 255 caracteres)'}
+        maxLen={255}
+        inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
+        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
+        type={'text'}
+      />
+    </div>
 
-  render() {
-    return (
-      <div>
-        <h3>Informacões da Vítima</h3>
-        <br />
+    <div className="row">
+      <CampoTexto
+        state={'naturalidadeVitima'}
+        id={'naturalidade-vitima'}
+        label={'Naturalidade (máximo de 40 caracteres)'}
+        maxLen={40}
+        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+        type={'text'}
+      />
+      <ComboEstado state={'estadoVitima'} id={'estadoVitima'} classes={'col s6'} />
+    </div>
 
-        <CheckBox state={'conhecoAVitima'} id={'conhecoAVitima'} label={'Conheço a Vítima'} />
-        <CheckBox state={'souAVitima'} id={'souAVitima'} label={'Sou a Vítima'} />
+    <div className="row">
+      <CampoTexto
+        state={'emailVitima'}
+        id={'email-vitima'}
+        label={'Email'}
+        maxLen={40}
+        type={'text'}
+        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+      />
 
-        <div className="row">
-          <Nome id={'nome-vitima'} onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'nome')} />
-        </div>
+      <Telefone
+        divClasse={'input-field col s6'}
+        id="telefone"
+        state={'telefone'}
+        label={'Telefone'}
+      />
 
-        <div className="row">
-          <Genero
-            id={'vitima-genero'}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
-            onChange={e => this.handleChange(cortarPalavra(e.target.value, 15), 'genero')}
-          />
+    </div>
 
-          <ComboboxRaca
-            id={'raca'}
-            classes={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
-            somenteRacasVitima
-            onChange={this.handleChange}
-          />
+    <div className="row">
+      <Caracteristica
+        id={'caracteristicasDaVitima'}
+        label={'* Por favor, descreva aqui as características da vítima (máximo de 255 caracteres)'}
+        validacoes={[campoObrigatorio]}
+        state={'caracteristicasDaVitima'}
+      />
+    </div>
+  </div>
+)
 
-          <Data
-            id={'dataNascimento'}
-            label={'Data de Nascimento'}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
-            onChange={this.handleChange}
-            estado={'dataNascimento'}
-          />
-
-        </div>
-
-        <div className="row">
-          <CampoTexto
-            id={'endereco-vitima'}
-            label={'Endereço (máximo de 255 caracteres)'}
-            onChange={e => this.handleChange(cortarPalavra(e.target.value, 255), 'endereco')}
-            maxLen={255}
-            inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
-            type={'text'}
-          />
-        </div>
-
-        <div className="row">
-          <CampoTexto
-            id={'naturalidade-vitima'}
-            label={'Naturalidade (máximo de 40 caracteres)'}
-            onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'naturalidade')}
-            maxLen={40}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
-            type={'text'}
-          />
-
-          <ComboEstado id={'estadoVitima'} handleChange={this.handleChange} classes={'col s6'} />
-        </div>
-
-        <div className="row">
-          <CampoTexto
-            id={'email-vitima'}
-            label={'Email'}
-            maxLen={40}
-            type={'text'}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
-            onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'email')}
-          />
-
-          <Telefone
-            id="telefone"
-            value={this.state.telefone}
-            handleChange={this.handleChange}
-            label={'Telefone'}
-          />
-
-        </div>
-
-        <div className="row">
-          <Caracteristica
-            id={'caracteristicasDaVitima'}
-            label={'* Por favor, descreva aqui as características da vítima (máximo de 255 caracteres)'}
-            onChange={e => this.handleChange(cortarPalavra(e.target.value, 255), 'caracteristicasDaVitima')}
-            validacoes={[campoObrigatorio]}
-            state={'caracteristica-vitima'}
-          />
-        </div>
-      </div>);
-  }
-}
-
-NovaVitimaForm.defaultProps = { handleChange: () => {} };
-
-NovaVitimaForm.propTypes = {
-  handleChange: PropTypes.func,
-};
+export default NovaVitimaForm;

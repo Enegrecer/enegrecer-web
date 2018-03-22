@@ -39,7 +39,7 @@ const telefone = ({ divClasse, id, state, label }) => (
     label={label}
     placeholder={'__ - ____ - ____'}
     normalize={normalizePhone}
-    maxLen={13}
+    maxLen={17}
   />
 );
 

@@ -1,6 +1,6 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import { spy } from 'sinon'
+import React from 'react';
+import { shallow } from 'enzyme';
+import { spy } from 'sinon';
 import NovaTestemunhaForm from './NovaTestemunhaForm';
 
 describe('validacoesCamposTestemunha', () => {
@@ -10,7 +10,7 @@ describe('validacoesCamposTestemunha', () => {
   });
 
   it('deve iniciar o state corretamente', () => {
-    const wrapper = shallow(<NovaTestemunhaForm />)
+    const wrapper = shallow(<NovaTestemunhaForm />);
     const expectedState = {
       nome: '',
       genero: '',
@@ -19,7 +19,7 @@ describe('validacoesCamposTestemunha', () => {
       telefone: '',
       caracteristicas: '',
     };
-    expect(wrapper.instance().state).toEqual(expectedState)
+    expect(wrapper.instance().state).toEqual(expectedState);
   });
 
   describe('quando o valor do campo for alterado', () => {
@@ -60,8 +60,8 @@ describe('validacoesCamposTestemunha', () => {
     });
 
     it('deve chamar o handleChange prop quando o component montar', () => {
-      wrapper.instance().componentDidMount()
+      wrapper.instance().componentDidMount();
       expect(handleChangeSpy.called).toBeTruthy();
-    })
+    });
   });
 });

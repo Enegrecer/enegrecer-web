@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Data deve possuir estrutura definida  1`] = `
+<Data
+  divClasse=""
+  divClasses="estado"
+  id="13"
+  label="Data"
+  onChange={[Function]}
+>
+  <campoTexto
+    divClasse=""
+    id="13"
+    inputClasse="datepicker"
+    label="Data"
+    maxLen={0}
+    onChange={[Function]}
+    placeholder="Data"
+    type="date"
+  >
+    <div
+      className=""
+    >
+      <input
+        className="datepicker"
+        id="13"
+        maxLength={0}
+        onChange={[Function]}
+        placeholder="Data"
+        type="date"
+      />
+      <label
+        className="active"
+        htmlFor="13"
+      >
+        Data
+      </label>
+    </div>
+  </campoTexto>
+</Data>
+`;

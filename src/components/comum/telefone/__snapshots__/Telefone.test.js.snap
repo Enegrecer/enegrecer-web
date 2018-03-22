@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Telefone deve seguir a estrutura definida  1`] = `
+<div
+  className="input-field col s6"
+>
+  <InputElement
+    id="telefone"
+    mask="(99) 99999-9999"
+    maskChar=" "
+    name="telefone"
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+  <label
+    htmlFor="telefone"
+  >
+    Telefone
+  </label>
+</div>
+`;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import DetalhamentoDenuncia from './DetalhamentoDenuncia';
 
 describe('DetalhamentoDenuncia Component', () => {
@@ -24,9 +24,9 @@ describe('DetalhamentoDenuncia Component', () => {
     });
 
     it('deve renderizar sem erro o campo de idCategoria do componente', () => {
-      const wrapper = shallow(<DetalhamentoDenuncia />);
-      expect(wrapper.find('[value="injuria"]').length).toEqual(1);
-      expect(wrapper.find('[value="racismo"]').length).toEqual(1);
+      const wrapper = mount(<DetalhamentoDenuncia />);
+      expect(wrapper.find('input#radioInjuria').length).toEqual(1);
+      expect(wrapper.find('input#radioRacismo').length).toEqual(1);
     });
 
     it('deve renderizar sem erro o campo de endereco do componente', () => {
@@ -38,7 +38,7 @@ describe('DetalhamentoDenuncia Component', () => {
       const wrapper = shallow(<DetalhamentoDenuncia />);
       expect(wrapper.find('#estado').length).toEqual(1);
     });
-  })
+  });
 
   describe('quando o valor do campo for alterado', () => {
     const wrapper = shallow(<DetalhamentoDenuncia />);

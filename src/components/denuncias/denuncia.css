@@ -1,0 +1,25 @@
+.nav-wrapper {
+    background-color: #26a69a !important;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+form#form-nova-denuncia {
+  margin: 15px auto;
+  max-width: 960px; }
+  form#form-nova-denuncia ::-webkit-input-placeholder {
+    color: #C0C0C0; }
+  form#form-nova-denuncia :-moz-placeholder {
+    /* Firefox 18- */
+    color: #C0C0C0; }
+  form#form-nova-denuncia ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #C0C0C0; }
+  form#form-nova-denuncia :-ms-input-placeholder {
+    color: #C0C0C0; }
+  form#form-nova-denuncia input:focus::-webkit-input-placeholder {
+    color: transparent; }
+  form#form-nova-denuncia textarea:focus::-webkit-input-placeholder {
+    color: transparent; }
+  form#form-nova-denuncia input {
+    margin-bottom: 10px; }

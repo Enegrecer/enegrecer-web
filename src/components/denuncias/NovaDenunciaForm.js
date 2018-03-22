@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import NovaVitimaForm from './vitima/NovaVitimaForm';
 import NovaTestemunhaForm from './testemunha/NovaTestemunhaForm';
 import DetalhamentoDenuncia from './DetalhamentoDenuncia';
+import './denuncia.css';
 
 export default class NovaDenunciaForm extends Component {
   constructor(props) {
@@ -20,14 +21,14 @@ export default class NovaDenunciaForm extends Component {
       estado: '',
       vitima: {},
       testemunha: {}
-    }
+    };
   }
 
   handleChange(dados) {
     this.setState({
       ...dados,
     }, () => {
-      this.props.alterarDenunciaForm(this.state)
+      this.props.alterarDenunciaForm(this.state);
     });
   }
 
@@ -52,8 +53,8 @@ export default class NovaDenunciaForm extends Component {
         <NovaTestemunhaForm handleChange={this.handleChange} />
 
         <br />
-        <button name="salvarDenuncia" type="submit" id="btn-salvar-denuncia" >
-          Enviar Denúncia
+        <button className="btn waves-effect waves-light" type="submit" name="action">
+            Enviar Denúncia
         </button>
       </form>);
   }

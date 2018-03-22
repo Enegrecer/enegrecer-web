@@ -68,8 +68,7 @@ export default class DetalhamentoDenuncia extends Component {
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s4`}
             maxLen={0}
             type={'date'}
-            onChange={this.handleChange}
-            estado={'dataOcorrencia'}
+            onChange={(e) => { this.handleChange(e.target.value, 'dataOcorrencia'); }}
           />
 
           <CampoTexto

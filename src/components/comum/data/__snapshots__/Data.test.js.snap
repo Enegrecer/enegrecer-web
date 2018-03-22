@@ -4,7 +4,6 @@ exports[`Data deve possuir estrutura definida  1`] = `
 <Data
   divClasse=""
   divClasses="estado"
-  estado=""
   id="13"
   label="Data"
   onChange={[Function]}
@@ -17,7 +16,7 @@ exports[`Data deve possuir estrutura definida  1`] = `
     maxLen={0}
     onChange={[Function]}
     placeholder="Data"
-    type="text"
+    type="date"
   >
     <div
       className=""
@@ -28,7 +27,7 @@ exports[`Data deve possuir estrutura definida  1`] = `
         maxLength={0}
         onChange={[Function]}
         placeholder="Data"
-        type="text"
+        type="date"
       />
       <label
         className="active"

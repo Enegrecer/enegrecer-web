@@ -26,7 +26,7 @@ const renderCampoTexto = ({
 }
 
 const campoTexto = ({ divClasse, id, type, onChange,
-  inputClasse, maxLen, placeholder, label, state, validacoes }) => {
+  inputClasse, maxLen, placeholder, label, state, validacoes, normalize }) => {
   if (state) {
     return (<Field
       name={state}
@@ -41,6 +41,7 @@ const campoTexto = ({ divClasse, id, type, onChange,
       label={label}
       component={renderCampoTexto}
       validate={validacoes}
+      normalize={normalize}
     />)
   }
   return renderCampoTexto(

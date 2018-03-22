@@ -10,7 +10,7 @@ stages:
   - name: test-with-coverage
     if: (NOT (type = pull_request ))
   - name: deploy
-    if: (branch = master AND NOT (type = pull_request ))
+    if: (branch = master)
 
 install:
   - yarn install
@@ -23,7 +23,7 @@ jobs:
     - stage: lint + test + security-tests
       script: yarn lint
     - script: yarn test
-    - 
+    -
       install: skip
       before_script: skip
       services:

@@ -22,7 +22,7 @@ exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
     <nome
       id="nome-vitima"
       onChange={[Function]}
-      state=""
+      state="nomeVitima"
     />
   </div>
   <div
@@ -31,22 +31,19 @@ exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
     <genero
       divClasse="input-field col s4"
       id="vitima-genero"
-      onChange={[Function]}
+      state="vitimaGenero"
     />
     <comboRaca
-      classes="input-field col s4"
+      classes="col s4"
       id="raca"
-      onChange={[Function]}
       somenteRacasVitima={true}
-      state=""
+      state="raca"
     />
     <Data
       divClasse="input-field col s4"
-      estado="dataNascimento"
       id="dataNascimento"
       label="Data de Nascimento"
-      onChange={[Function]}
-      state=""
+      state="dataNascimento"
     />
   </div>
   <div
@@ -58,7 +55,7 @@ exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
       inputClasse="materialize-textarea"
       label="Endereço (máximo de 255 caracteres)"
       maxLen={255}
-      onChange={[Function]}
+      state="enderecoVitima"
       type="text"
     />
   </div>
@@ -70,14 +67,13 @@ exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
       id="naturalidade-vitima"
       label="Naturalidade (máximo de 40 caracteres)"
       maxLen={40}
-      onChange={[Function]}
+      state="naturalidadeVitima"
       type="text"
     />
     <comboEstado
       classes="col s6"
-      handleChange={[Function]}
       id="estadoVitima"
-      state=""
+      state="estadoVitima"
     />
   </div>
   <div
@@ -88,14 +84,14 @@ exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
       id="email-vitima"
       label="Email"
       maxLen={40}
-      onChange={[Function]}
+      state="emailVitima"
       type="text"
     />
     <telefone
-      handleChange={[Function]}
+      divClasse="input-field col s6"
       id="telefone"
       label="Telefone"
-      value=""
+      state="telefone"
     />
   </div>
   <div
@@ -104,8 +100,7 @@ exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
     <caracteristica
       id="caracteristicasDaVitima"
       label="* Por favor, descreva aqui as características da vítima (máximo de 255 caracteres)"
-      onChange={[Function]}
-      state="caracteristica-vitima"
+      state="caracteristicasDaVitima"
       validacoes={
         Array [
           [Function],

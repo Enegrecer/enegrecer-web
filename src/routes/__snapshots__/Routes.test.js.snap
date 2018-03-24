@@ -19,6 +19,10 @@ exports[`Routes deve construir a pagina corretamente  1`] = `
         path="/coletivo-enegrecer"
       />
     </Switch>
+    <Route
+      component={[Function]}
+      path="/"
+    />
   </div>
 </BrowserRouter>
 `;

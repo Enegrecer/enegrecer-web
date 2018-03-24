@@ -13,7 +13,7 @@ describe('Sobre', () => {
     },
   };
 
-  const wrapper = shallow(<Sobre colaboradores={ colaboradoresStub } />);
+  const wrapper = shallow(<Sobre colaboradores={colaboradoresStub} />);
 
   it('possui a mesma estrutura', () => {
     const tree = toJson(wrapper);

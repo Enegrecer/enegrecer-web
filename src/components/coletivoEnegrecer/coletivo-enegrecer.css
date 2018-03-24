@@ -1,0 +1,48 @@
+.coletivo-enegrecer {
+  display: flex;
+}
+
+.coletivo-enegrecer .conteudo {
+  display: flex;
+  flex-direction: column;
+  width: 53%;
+  padding: 0 2.5% 0 5%;
+}
+
+.coletivo-enegrecer .conteudo h1 {
+  font-family: Roboto;
+  font-size: 48px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.06;
+  letter-spacing: normal;
+  color: #000000;
+  width: 38%;
+}
+
+.coletivo-enegrecer .conteudo p {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.31;
+  letter-spacing: normal;
+  color: #4e4e4e;
+}
+
+.coletivo-enegrecer .titulo {
+  display: flex;
+  align-items: center;
+}
+
+.coletivo-enegrecer img {
+  width: 47%;
+}
+
+.retangular-bloco {
+  height: 11px;
+  width: 69px;
+  background-color: #ff0336;
+}

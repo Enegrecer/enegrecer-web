@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Routes não deve possuir estrutura definida  1`] = `
+exports[`Routes deve construir a pagina corretamente  1`] = `
 <BrowserRouter>
   <div>
     <Route
@@ -19,6 +19,10 @@ exports[`Routes não deve possuir estrutura definida  1`] = `
         path="/coletivo-enegrecer"
       />
     </Switch>
+    <Route
+      component={[Function]}
+      path="/"
+    />
   </div>
 </BrowserRouter>
 `;

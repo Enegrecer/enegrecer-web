@@ -4,9 +4,9 @@ import toJson from 'enzyme-to-json';
 import Routes from './Routes';
 
 describe('Routes', () => {
-  it('não deve possuir estrutura definida ', () => {
+  it('deve construir a pagina corretamente ', () => {
     const routes = shallow(<Routes />);
-    const campoTextoJson = toJson(routes);
-    expect(campoTextoJson).toMatchSnapshot();
+    const routesJson = toJson(routes);
+    expect(routesJson).toMatchSnapshot();
   });
 });

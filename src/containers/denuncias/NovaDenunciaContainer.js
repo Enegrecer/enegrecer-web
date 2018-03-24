@@ -12,7 +12,7 @@ import * as Tela from '../../utils/materializeCSS'
 
 class NovaDenunciaContainer extends React.Component {
   componentDidMount() {
-    Tela.iniciaCamposMaterialize();
+    // Tela.iniciaCamposMaterialize();
   }
 
   componentWillUnmount() {

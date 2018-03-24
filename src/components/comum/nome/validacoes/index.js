@@ -1,11 +1,10 @@
 
-export const temNumeroNoNome =  nome => {
+export const temNumeroNoNome = (nome) => {
   const format = /\d/;
-  if(format.test(nome)) {
-    return  "Não pode haver números no nome";
-  }else{
-    return undefined;
+  if (format.test(nome)) {
+    return 'Não pode haver números no nome';
   }
+  return undefined;
 }
 
 export const nomeMaiorQue40Caracteres = (nome) => {
@@ -17,9 +16,8 @@ export const nomeMaiorQue40Caracteres = (nome) => {
 
 export const nomeNaoPodeTerCaracterEspecial = (nome) => {
   const format = /[!@#$%^&*()_+-=[\]{};':"\\|,.<>/?]+/;
-  if(format.test(nome)){
-     return 'Nome não pode ter caracteres especiais';
-  }else{
-     return undefined;
+  if (format.test(nome)) {
+    return 'Nome não pode ter caracteres especiais';
   }
+  return undefined;
 }

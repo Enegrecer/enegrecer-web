@@ -19,7 +19,6 @@ const normalizePhone = (value, previousValue) => {
     if (onlyNums.length === 7) {
       return `${onlyNums.slice(0, 2)} - ${onlyNums.slice(2)} -`
     }
-
   }
   if (onlyNums.length <= 2) {
     return onlyNums

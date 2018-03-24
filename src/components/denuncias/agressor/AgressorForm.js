@@ -17,8 +17,9 @@ const AgressorForm = () => (
     </p>
 
     <div className="row">
-      <Nome id={'nome-agressor'} />
+      <Nome state={'nomeAgressor'} id={'nome-agressor'} />
       <CampoTexto
+        state={'cidadeAgressor'}
         id={'cidade-agressor'}
         label={'Cidade'}
         maxLen={40}
@@ -30,11 +31,13 @@ const AgressorForm = () => (
 
     <div className="row">
       <Genero
+        state={'generoAgressor'}
         id={'genero-agressor'}
-        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+        divClasse={'col s6'}
       />
 
       <Data
+        state={'dataNascimentoAgressor'}
         id={'data-nascimento-agressor'}
         label={'Data de Nascimento'}
         divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
@@ -42,11 +45,12 @@ const AgressorForm = () => (
     </div>
 
     <div className="row">
-      <Raca id={'raca-agressor'} somenteRacasVitima={false} />
+      <Raca id={'raca-agressor'} state={'racaAgressor'} divClasse={'col s6'} somenteRacasVitima={false} />
     </div>
 
     <div className="row">
       <CampoTexto
+        state={'descricaoAgressor'}
         id={'descricao-agressor'}
         label={'Descrição do agressor'}
         maxLen={100}

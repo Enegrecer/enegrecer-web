@@ -9,10 +9,10 @@ const nome = ({ id, state, onChange }) => (<CampoTexto
   maxLen={40}
   placeholder={'Nome (máximo de 40 caracteres)'}
   type={'text'}
-  divClasse={'input-field col s12'}
+  divClasse={'input-field col s6'}
   onChange={onChange}
   state={state}
-  validacoes={[temNumeroNoNome,nomeMaiorQue40Caracteres, nomeNaoPodeTerCaracterEspecial]}
+  validacoes={[temNumeroNoNome, nomeMaiorQue40Caracteres, nomeNaoPodeTerCaracterEspecial]}
 />)
 
 nome.propTypes = {

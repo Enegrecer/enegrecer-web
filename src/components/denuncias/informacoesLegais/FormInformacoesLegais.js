@@ -15,6 +15,7 @@ const FormInformacoesLegais = () => (
 
     <div className="row">
       <CampoTexto
+        state={'numeroBoletim'}
         id={'numero-boletim'}
         label={'Número do Boletim de ocorrência'}
         maxLen={40}
@@ -23,6 +24,7 @@ const FormInformacoesLegais = () => (
       />
 
       <CampoTexto
+        state={'categoriaCrime'}
         id={'categoria-crime-boletim'}
         label={'Categoria do crime no BO'}
         type={'text'}
@@ -33,6 +35,7 @@ const FormInformacoesLegais = () => (
 
     <div className="row">
       <CampoTexto
+        state={'numeroProcesso'}
         id={'numero-processo'}
         label={'Número do Processo'}
         type={'text'}
@@ -41,6 +44,7 @@ const FormInformacoesLegais = () => (
       />
 
       <CampoTexto
+        state={'orgao'}
         id={'orgao'}
         label={'Órgão'}
         type={'text'}

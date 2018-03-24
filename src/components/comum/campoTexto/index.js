@@ -6,8 +6,8 @@ const renderCampoTexto = ({
   input,
   label,
   type,
-  meta: { touched, error, warning },
-  divClasse, id, onChange, inputClasse, maxLen, placeholder
+  meta: { touched, error },
+  divClasse, id, inputClasse, maxLen, placeholder
 }) => {
   const existeErroDeValidacao = touched && error;
   return (
@@ -56,7 +56,9 @@ renderCampoTexto.propTypes = {
   label: PropTypes.string,
   onChange: PropTypes.func,
   divClasse: PropTypes.string,
-  inputClasse: PropTypes.string
+  inputClasse: PropTypes.string,
+  input: PropTypes.string,
+  meta: PropTypes.string
 };
 
 renderCampoTexto.defaultProps = {
@@ -67,7 +69,10 @@ renderCampoTexto.defaultProps = {
   label: '',
   onChange: () => {},
   divClasse: '',
-  inputClasse: ''
+  inputClasse: '',
+  input: '',
+  meta: {}
+
 };
 
 export default campoTexto;

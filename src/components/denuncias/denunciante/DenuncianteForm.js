@@ -9,6 +9,7 @@ import Nome from '../../comum/nome';
 import Genero from '../../comum/genero';
 import Telefone from '../../comum/telefone';
 import ComboboxRaca from './../../comum/comboboxRaca';
+import Combobox from './../../comum/combobox';
 import Data from '../../comum/data';
 
 export default class DenuncianteForm extends Component {
@@ -63,53 +64,55 @@ export default class DenuncianteForm extends Component {
           futuramente darmos um retorno das medidas que estão sendo tomadas
           contra esse agressor. </p>
         <div className="row">
-          <Nome id={'nome-vitima'} onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'nome')} />
-
+          <Nome id={'nome-vitima'} state={'nomeDenunciante'} />
           <CampoTexto
-            id={'email-vitima'}
+            state={'emailDenunciante'}
+            id={'email-denunciante'}
             label={'Email'}
             maxLen={40}
             type={'text'}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
-            onChange={e => this.handleChange(cortarPalavra(e.target.value, 40), 'email')}
           />
         </div>
 
         <div className="row">
-
           <Telefone
-            id="telefone"
-            value={this.state.telefone}
-            handleChange={this.handleChange}
+            state={'telefoneDenunciante'}
+            id="telefone-denunciante"
             label={'Telefone'}
+            divClasse={'col s6'}
           />
-
-          <ComboEstado id={'estadoVitima'} handleChange={this.handleChange} classes={'col s6'} />
-
+          <Combobox
+            id={'cidade-denunciante'}
+            state={'cidadeDenunciante'}
+            itens={['Belo Horizonte']}
+            divClasse={'col s6'}
+            label={'Cidade *'}
+          />
         </div>
 
         <div className="row">
           <Genero
-            id={'vitima-genero'}
-            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
-            onChange={e => this.handleChange(cortarPalavra(e.target.value, 15), 'genero')}
+            id={'genero-denunciante'}
+            state={'generoDenunciante'}
+            divClasse={'col s6'}
           />
 
           <Data
-            id={'dataNascimento'}
+            id={'data-nascimento-denunciante'}
             label={'Data de Nascimento'}
+            state={'dataNascimentoDenunciante'}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
-            onChange={e => this.handleChange(e.target.value, 'dataNascimento')}
           />
         </div>
 
         <div className="row">
 
           <ComboboxRaca
-            id={'raca'}
-            classes={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+            state={'racaDenunciante'}
+            id={'raca-denunciante'}
+            classes={'col s6'}
             somenteRacasVitima
-            onChange={this.handleChange}
           />
         </div>
       </div>);

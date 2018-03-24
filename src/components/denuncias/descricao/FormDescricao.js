@@ -18,13 +18,15 @@ const descricao = () => (
     <div className="row">
 
       <Combobox
+        state={'periodoAgressao'}
         id={'periodo'}
         itens={[' ', 'Manhã', 'Tarde', 'Noite']}
-        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+        divClasse={'col s6'}
         label={'Período*'}
       />
 
       <Data
+        state={'dataAgressao'}
         id={'data-agressao'}
         label={'Data de Agressão'}
         divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
@@ -33,11 +35,13 @@ const descricao = () => (
 
     <div className="row">
       <ComboboxEstado
+        state={'estadoAgressor'}
         id={'descricao-estado'}
         classes={' col s6'}
       />
 
       <CampoTexto
+        state={'cidadeAgressao'}
         id={'cidade-descricao'}
         label={'Cidade*'}
         maxLen={40}
@@ -49,6 +53,7 @@ const descricao = () => (
 
     <div className="row">
       <CampoTexto
+        state={'bairroAgressor'}
         id={'bairro-descricao'}
         label={'Bairro*'}
         maxLen={40}
@@ -58,6 +63,7 @@ const descricao = () => (
       />
 
       <CampoTexto
+        state={'enderecoAgressor'}
         id={'endereco-descricao'}
         label={'Endereço'}
         maxLen={40}
@@ -68,18 +74,16 @@ const descricao = () => (
     </div>
 
     <div className="row">
-    <CampoTexto
-      id={'descricao-denuncia'}
-      label={'Descrição da denúncia'}
-      maxLen={255}
-      type={'text'}
-      inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
-      divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
-    />
-  </div>
-
-
-
+      <CampoTexto
+        state={'descricaoDenuncia'}
+        id={'descricao-denuncia'}
+        label={'Descrição da denúncia'}
+        maxLen={255}
+        type={'text'}
+        inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
+        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
+      />
+    </div>
   </div>
 );
 

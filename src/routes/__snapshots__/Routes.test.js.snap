@@ -16,6 +16,11 @@ exports[`Routes deve construir a pagina corretamente  1`] = `
       <Route
         component={[Function]}
         exact={true}
+        path="/sobre"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
         path="/coletivo-enegrecer"
       />
     </Switch>

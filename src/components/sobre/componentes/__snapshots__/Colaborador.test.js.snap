@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Colaborador possui a mesma estrutura 1`] = `
+<div
+  className="colaborador"
+>
+  <span>
+    http://google.com
+  </span>
+  <span>
+    Pessoa Colaboradora
+  </span>
+  <span>
+    Trabalhadora
+  </span>
+</div>
+`;

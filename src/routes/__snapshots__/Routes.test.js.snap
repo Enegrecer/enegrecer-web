@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Routes não deve possuir estrutura definida  1`] = `
+<BrowserRouter>
+  <div>
+    <Route
+      component={[Function]}
+      path="/"
+    />
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/coletivo-enegrecer"
+      />
+    </Switch>
+  </div>
+</BrowserRouter>
+`;

@@ -2,10 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Colaborador = props => (
-  <div className="colaborador">
-    <span>{ props.foto }</span>
-    <span>{ props.nome }</span>
-    <span>{ props.papel }</span>
+  <div className="col s4 person">
+    <div className="content">
+      <img src={ props.foto } />
+      <div>
+        <h5>{ props.nome }</h5>
+        <p>{ props.papel }</p>
+      </div>
+    </div>
   </div>
 );
 

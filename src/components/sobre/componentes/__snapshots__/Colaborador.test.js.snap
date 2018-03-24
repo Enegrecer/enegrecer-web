@@ -2,16 +2,22 @@
 
 exports[`Colaborador possui a mesma estrutura 1`] = `
 <div
-  className="colaborador"
+  className="col s4 person"
 >
-  <span>
-    http://google.com
-  </span>
-  <span>
-    Pessoa Colaboradora
-  </span>
-  <span>
-    Trabalhadora
-  </span>
+  <div
+    className="content"
+  >
+    <img
+      src="http://google.com"
+    />
+    <div>
+      <h5>
+        Pessoa Colaboradora
+      </h5>
+      <p>
+        Trabalhadora
+      </p>
+    </div>
+  </div>
 </div>
 `;

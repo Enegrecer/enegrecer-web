@@ -1,0 +1,60 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+.about_img {
+
+}
+
+.about_section {
+	background-color: #fff;
+	padding: 38px 51px 33px 51px;
+}
+
+.about_section h1 {
+	font-weight: bold;
+	margin: 0;
+}
+
+.volunteer_section {
+	margin: 39px 36px 43px 36px;
+}
+
+.volunteer_section .description {
+	margin: 39px 36px 43px 36px;
+	display: flex;
+	align-items: flex-end;
+}
+
+.volunteer_section h1 {
+	font-weight: bold;
+	margin: 0;
+}
+
+.volunteer_section .person {
+	padding: 12px;
+}
+
+.volunteer_section .person .content {
+  height: 112px;
+  display: flex;
+	align-items: center;
+  background-color: #fff;
+  border: solid 1px #f0f0f0;
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.volunteer_section .person img {
+	margin: 21px;
+	height: 70px;
+	width: 70px;
+    border-radius: 50%;
+}
+
+.volunteer_section .person h5 {
+	font-size: 16px;
+	font-weight: bolder;
+	margin: 0 0	9px 0;
+}
+
+.volunteer_section .person p {
+	margin: 0;
+}

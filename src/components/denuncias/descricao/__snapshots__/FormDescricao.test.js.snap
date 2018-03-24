@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form Descrição deve seguir a estrutura definida  1`] = `
+<div>
+  <br />
+  <p>
+    Descrição da agressão
+  </p>
+  <br />
+  <h4>
+     Compreendemos o quanto é difícil externalizar a agressão em palavras.
+  </h4>
+  <p>
+    Mas, é importante para que futuramente consigamos trabalhar para que essas agressões tenham um fim. 
+  </p>
+  <div
+    className="row"
+  >
+    <combobox
+      divClasse="input-field col s6"
+      id="periodo"
+      itens={
+        Array [
+          " ",
+          "Manhã",
+          "Tarde",
+          "Noite",
+        ]
+      }
+      label="Período*"
+      state=""
+      valorPadrao=""
+    />
+    <Data
+      divClasse="input-field col s6"
+      id="data-agressao"
+      label="Data de Agressão"
+      state=""
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <comboEstado
+      classes=" col s6"
+      id="descricao-estado"
+      state=""
+    />
+    <campoTexto
+      divClasse="input-field col s6"
+      id="cidade-descricao"
+      label="Cidade*"
+      maxLen={40}
+      placeholder=""
+      type="text"
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <campoTexto
+      divClasse="input-field col s6"
+      id="bairro-descricao"
+      label="Bairro*"
+      maxLen={40}
+      placeholder=""
+      type="text"
+    />
+    <campoTexto
+      divClasse="input-field col s6"
+      id="endereco-descricao"
+      label="Endereço"
+      maxLen={40}
+      placeholder=""
+      type="text"
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <campoTexto
+      divClasse="input-field col s12"
+      id="descricao-denuncia"
+      inputClasse="materialize-textarea"
+      label="Descrição da denúncia"
+      maxLen={255}
+      type="text"
+    />
+  </div>
+</div>
+`;

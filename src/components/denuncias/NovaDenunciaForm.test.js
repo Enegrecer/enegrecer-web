@@ -33,9 +33,7 @@ describe('NovaDenunciaForm Component', () => {
   it('deve renderizar o componente NovaTestemunhaForm.js', () => {
     expect(subject.find('NovaTestemunhaForm')).toHaveLength(1)
   });
-  it('deve renderizar o componente DetalhamentoDenuncia', () => {
-    expect(subject.find('DetalhamentoDenuncia')).toHaveLength(1)
-  });
+
 
   /* describe('quando o form for submetido', () => {
     const salvarDenunciaSpy = jest.fn();

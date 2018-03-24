@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
+<div>
+  <br />
+  <h4>
+    Você poderia nos passar algumas informações suas?
+  </h4>
+  <br />
+  <p>
+     Não se preocupe sua identidade será mantida em sigilo. Essas informações são importantes para futuramente darmos um retorno das medidas que estão sendo tomadas contra esse agressor. 
+  </p>
+  <div
+    className="row"
+  >
+    <nome
+      id="nome-vitima"
+      onChange={[Function]}
+      state=""
+    />
+    <campoTexto
+      divClasse="input-field col s6"
+      id="email-vitima"
+      label="Email"
+      maxLen={40}
+      onChange={[Function]}
+      type="text"
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <telefone
+      divClasse=""
+      handleChange={[Function]}
+      id="telefone"
+      label="Telefone"
+      state=""
+      value=""
+    />
+    <comboEstado
+      classes="col s6"
+      handleChange={[Function]}
+      id="estadoVitima"
+      state=""
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <genero
+      divClasse="input-field col s6"
+      id="vitima-genero"
+      onChange={[Function]}
+      state=""
+    />
+    <Data
+      divClasse="input-field col s6"
+      id="dataNascimento"
+      label="Data de Nascimento"
+      onChange={[Function]}
+      state=""
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <comboRaca
+      classes="input-field col s6"
+      id="raca"
+      onChange={[Function]}
+      somenteRacasVitima={true}
+      state=""
+    />
+  </div>
+</div>
+`;

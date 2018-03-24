@@ -18,6 +18,8 @@ exports[`Nome deve seguir a estrutura definida  1`] = `
     validacoes={
       Array [
         [Function],
+        [Function],
+        [Function],
       ]
     }
   >

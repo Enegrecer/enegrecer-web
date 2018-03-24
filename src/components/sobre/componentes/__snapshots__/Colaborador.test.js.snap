@@ -8,6 +8,7 @@ exports[`Colaborador possui a mesma estrutura 1`] = `
     className="content"
   >
     <img
+      alt="Foto de Pessoa Colaboradora"
       src="http://google.com"
     />
     <div>

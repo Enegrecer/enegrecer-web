@@ -4,16 +4,16 @@ import HomePage from '../components/home/Home';
 import Painel from './Painel';
 import NovaDenuncia from '../containers/denuncias/NovaDenunciaContainer';
 import ProximosPassos from '../components/denuncias/proximosPassos';
+import Menu from '../components/menu/Menu';
 
 const Routes = () => (
   <BrowserRouter>
-    <Switch>
-      <Route exact path="/" component={HomePage} />
-      <Painel>
-        <Route path="/painel/denuncias/nova" component={NovaDenuncia} />
-        <Route path="/painel/proximosPassos" component={ProximosPassos} />
-      </Painel>
-    </Switch>
+    <div>
+      <Route path="/" component={Menu} />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+      </Switch>
+    </div>
   </BrowserRouter>
 );
 

@@ -7,7 +7,7 @@ exports[`Nome deve seguir a estrutura definida  1`] = `
   state=""
 >
   <campoTexto
-    divClasse="input-field col s12"
+    divClasse="input-field col s6"
     id="3"
     label="Nome (máximo de 40 caracteres)"
     maxLen={40}
@@ -24,7 +24,7 @@ exports[`Nome deve seguir a estrutura definida  1`] = `
     }
   >
     <div
-      className="input-field col s12"
+      className="input-field col s6"
     >
       <input
         id="3"

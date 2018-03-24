@@ -14,7 +14,7 @@ exports[`AgressorForm deve seguir a estrutura definida  1`] = `
     <nome
       id="nome-agressor"
       onChange={[Function]}
-      state=""
+      state="nomeAgressor"
     />
     <campoTexto
       divClasse="input-field col s6"
@@ -22,6 +22,7 @@ exports[`AgressorForm deve seguir a estrutura definida  1`] = `
       label="Cidade"
       maxLen={40}
       placeholder=""
+      state="cidadeAgressor"
       type="text"
     />
   </div>
@@ -29,25 +30,25 @@ exports[`AgressorForm deve seguir a estrutura definida  1`] = `
     className="row"
   >
     <genero
-      divClasse="input-field col s6"
+      divClasse="col s6"
       id="genero-agressor"
-      state=""
+      state="generoAgressor"
     />
     <Data
       divClasse="input-field col s6"
       id="data-nascimento-agressor"
       label="Data de Nascimento"
-      state=""
+      state="dataNascimentoAgressor"
     />
   </div>
   <div
     className="row"
   >
     <comboRaca
-      classes=""
+      divClasse="col s6"
       id="raca-agressor"
       somenteRacasVitima={false}
-      state=""
+      state="racaAgressor"
     />
   </div>
   <div
@@ -59,6 +60,7 @@ exports[`AgressorForm deve seguir a estrutura definida  1`] = `
       label="Descrição do agressor"
       maxLen={100}
       placeholder=""
+      state="descricaoAgressor"
       type="text"
     />
   </div>

@@ -21,6 +21,7 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
       id="numero-boletim"
       label="Número do Boletim de ocorrência"
       maxLen={40}
+      state="numeroBoletim"
       type="text"
     />
     <campoTexto
@@ -28,6 +29,7 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
       id="categoria-crime-boletim"
       label="Categoria do crime no BO"
       maxLen={40}
+      state="categoriaCrime"
       type="text"
     />
   </div>
@@ -39,6 +41,7 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
       id="numero-processo"
       label="Número do Processo"
       maxLen={40}
+      state="numeroProcesso"
       type="text"
     />
     <campoTexto
@@ -46,6 +49,7 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
       id="orgao"
       label="Órgão"
       maxLen={40}
+      state="orgao"
       type="text"
     />
   </div>

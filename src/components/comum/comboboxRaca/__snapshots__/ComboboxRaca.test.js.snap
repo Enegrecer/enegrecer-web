@@ -2,7 +2,7 @@
 
 exports[`Combobox Raça deve conter somente as raças Pardo e Negro quando somenteRacasVitima é true  1`] = `
 <combobox
-  divClasse="racas"
+  divClasse=""
   id="raca-vitma"
   itens={
     Array [
@@ -18,7 +18,7 @@ exports[`Combobox Raça deve conter somente as raças Pardo e Negro quando somen
 
 exports[`Combobox Raça deve conter todas as raças quando somenteRacasVitima é false  1`] = `
 <combobox
-  divClasse="racas"
+  divClasse=""
   id="raca-testemunha"
   itens={
     Array [

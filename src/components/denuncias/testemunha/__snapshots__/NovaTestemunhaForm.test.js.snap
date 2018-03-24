@@ -25,6 +25,7 @@ exports[`validacoesCamposTestemunha renderiza o componente sem erros 1`] = `
     />
     <comboRaca
       classes="col s6"
+      divClasse=""
       id="raca-testemunha"
       somenteRacasVitima={false}
       state="racaTestemunha"

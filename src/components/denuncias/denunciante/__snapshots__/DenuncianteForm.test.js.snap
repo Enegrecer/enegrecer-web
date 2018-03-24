@@ -16,14 +16,14 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
     <nome
       id="nome-vitima"
       onChange={[Function]}
-      state=""
+      state="nomeDenunciante"
     />
     <campoTexto
       divClasse="input-field col s6"
-      id="email-vitima"
+      id="email-denunciante"
       label="Email"
       maxLen={40}
-      onChange={[Function]}
+      state="emailDenunciante"
       type="text"
     />
   </div>
@@ -31,46 +31,48 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
     className="row"
   >
     <telefone
-      divClasse=""
-      handleChange={[Function]}
-      id="telefone"
+      divClasse="col s6"
+      id="telefone-denunciante"
       label="Telefone"
-      state=""
-      value=""
+      state="telefoneDenunciante"
     />
-    <comboEstado
-      classes="col s6"
-      handleChange={[Function]}
-      id="estadoVitima"
-      state=""
+    <combobox
+      divClasse="col s6"
+      id="cidade-denunciante"
+      itens={
+        Array [
+          "Belo Horizonte",
+        ]
+      }
+      label="Cidade *"
+      state="cidadeDenunciante"
+      valorPadrao=""
     />
   </div>
   <div
     className="row"
   >
     <genero
-      divClasse="input-field col s6"
-      id="vitima-genero"
-      onChange={[Function]}
-      state=""
+      divClasse="col s6"
+      id="genero-denunciante"
+      state="generoDenunciante"
     />
     <Data
       divClasse="input-field col s6"
-      id="dataNascimento"
+      id="data-nascimento-denunciante"
       label="Data de Nascimento"
-      onChange={[Function]}
-      state=""
+      state="dataNascimentoDenunciante"
     />
   </div>
   <div
     className="row"
   >
     <comboRaca
-      classes="input-field col s6"
-      id="raca"
-      onChange={[Function]}
+      classes="col s6"
+      divClasse=""
+      id="raca-denunciante"
       somenteRacasVitima={true}
-      state=""
+      state="racaDenunciante"
     />
   </div>
 </div>

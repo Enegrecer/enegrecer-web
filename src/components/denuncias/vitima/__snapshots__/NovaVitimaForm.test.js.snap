@@ -3,17 +3,12 @@
 exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
 <div>
   <h3>
-    Informacões da Vítima
+    Me conte um pouco sobre a vítima
   </h3>
   <br />
   <checkBox
-    id="conhecoAVitima"
-    label="Conheço a Vítima"
-    state="conhecoAVitima"
-  />
-  <checkBox
     id="souAVitima"
-    label="Sou a Vítima"
+    label="Marque se você é a vítima"
     state="souAVitima"
   />
   <div
@@ -24,88 +19,48 @@ exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
       onChange={[Function]}
       state="nomeVitima"
     />
+    <Data
+      divClasse="input-field col s6"
+      id="dataNascimento"
+      label="Data de Nascimento"
+      state="dataNascimentoVitima"
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <telefone
+      divClasse="input-field col s6"
+      id="telefone"
+      label="Telefone"
+      state="telefoneVitima"
+    />
+    <combobox
+      divClasse="col s6"
+      id="cidade-vitima"
+      itens={
+        Array [
+          "Belo Horizonte",
+        ]
+      }
+      label="Cidade *"
+      state="cidadeVitima"
+      valorPadrao=""
+    />
   </div>
   <div
     className="row"
   >
     <genero
-      divClasse="input-field col s4"
+      divClasse="col s6"
       id="vitima-genero"
       state="vitimaGenero"
     />
     <comboRaca
-      classes="col s4"
+      divClasse="col s6"
       id="raca"
       somenteRacasVitima={true}
       state="raca"
-    />
-    <Data
-      divClasse="input-field col s4"
-      id="dataNascimento"
-      label="Data de Nascimento"
-      state="dataNascimento"
-    />
-  </div>
-  <div
-    className="row"
-  >
-    <campoTexto
-      divClasse="input-field col s12"
-      id="endereco-vitima"
-      inputClasse="materialize-textarea"
-      label="Endereço (máximo de 255 caracteres)"
-      maxLen={255}
-      state="enderecoVitima"
-      type="text"
-    />
-  </div>
-  <div
-    className="row"
-  >
-    <campoTexto
-      divClasse="input-field col s6"
-      id="naturalidade-vitima"
-      label="Naturalidade (máximo de 40 caracteres)"
-      maxLen={40}
-      state="naturalidadeVitima"
-      type="text"
-    />
-    <comboEstado
-      classes="col s6"
-      id="estadoVitima"
-      state="estadoVitima"
-    />
-  </div>
-  <div
-    className="row"
-  >
-    <campoTexto
-      divClasse="input-field col s6"
-      id="email-vitima"
-      label="Email"
-      maxLen={40}
-      state="emailVitima"
-      type="text"
-    />
-    <telefone
-      divClasse="input-field col s6"
-      id="telefone"
-      label="Telefone"
-      state="telefone"
-    />
-  </div>
-  <div
-    className="row"
-  >
-    <caracteristica
-      id="caracteristicasDaVitima"
-      label="* Por favor, descreva aqui as características da vítima (máximo de 255 caracteres)"
-      state="caracteristicasDaVitima"
-      validacoes={
-        Array [
-          [Function],
-        ]
-      }
     />
   </div>
 </div>

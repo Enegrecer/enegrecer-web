@@ -71,7 +71,7 @@ renderCampoTexto.defaultProps = {
   divClasse: '',
   inputClasse: '',
   input: '',
-  meta: {}
+  meta: ''
 
 };
 

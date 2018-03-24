@@ -8,7 +8,7 @@ import {
 } from '../../actions/criarDenunciaActions';
 import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
 import { validaDenuncia } from './validaDenuncia';
-import * as Tela from '../../utils/materializeCSS'
+import * as Tela from '../../utils/materializeCSS';
 
 class NovaDenunciaContainer extends React.Component {
   componentDidMount() {
@@ -58,7 +58,6 @@ NovaDenunciaContainer.defaultProps = {
   denunciaCadastradaComSucesso: false,
   limpaEstadoUltimaDencunciaCadastrada: () => {},
 };
-
 
 const mapStateToProps = state => ({
   denunciante: state.auth ? state.auth.user.uid : undefined,

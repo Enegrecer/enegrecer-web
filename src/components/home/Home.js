@@ -8,7 +8,6 @@ import Social from './Social';
 import { withHistoryPropTypes } from './sharedPropTypes';
 import './css/home.css';
 
-
 const networks = [
   { title: 'Facebook', href: '#', icon: 'facebook-square' },
   { title: 'Twitter', href: '#', icon: 'twitter' },

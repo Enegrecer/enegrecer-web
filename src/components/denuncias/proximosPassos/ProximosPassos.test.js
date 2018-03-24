@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import ProximosPassos from './ProximosPassos'
+import ProximosPassos from './index';
 
 describe('ProximosPassos', () => {
   const wrapper = shallow(<ProximosPassos />);

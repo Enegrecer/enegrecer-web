@@ -54,7 +54,7 @@ describe('NovaDenunciaContainer', () => {
       () => {
         wrapper.instance().onPressSaveButton();
         expect(criarDenunciaRequisicaoMock).not.toHaveBeenCalled();
-      })
+      });
     });
 
     xit('deve chamar o método criarDenunciaRequisicao quando o form estiver válido', () => {

@@ -21,15 +21,19 @@ class NovaDenunciaContainer extends React.Component {
     }
   }
 
-  onPressSaveButton() {
-    const mensagemError = validaDenuncia(this.state.vitima);
-    if (mensagemError === undefined) {
-      this.props.criarDenunciaRequisicao({
-        ...this.state
-      });
-    } else {
-      alert(mensagemError);
-    }
+  onPressSaveButton = () => {
+    // const mensagemError = validaDenuncia(this.state.vitima);
+    // if (mensagemError === undefined) {
+    //   this.props.criarDenunciaRequisicao({
+    //     ...this.state
+    //   });
+    // } else {
+    //   alert(mensagemError);
+    // }
+    console.log(this.props.formDenuncia.values)
+    this.props.criarDenunciaRequisicao(
+      this.props.formDenuncia.values
+    );
   }
 
   render() {
@@ -61,7 +65,8 @@ NovaDenunciaContainer.defaultProps = {
 
 const mapStateToProps = state => ({
   denunciante: state.auth ? state.auth.user.uid : undefined,
-  denunciaCadastradaComSucesso: state.denunciaComSucessoReducer.denunciaCadastradaComSucesso
+  denunciaCadastradaComSucesso: state.denunciaComSucessoReducer.denunciaCadastradaComSucesso,
+  formDenuncia: state.form.formDenuncia,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({

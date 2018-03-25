@@ -42,19 +42,19 @@ const NovaVitimaForm = () => (
 
     <div className="row">
       <Genero
-        state={'vitimaGenero'}
+        state={'generoVitima'}
         id={'vitima-genero'}
         divClasse={'col s6'}
       />
 
       <ComboboxRaca
-        state={'raca'}
+        state={'racaVitima'}
         id={'raca'}
         divClasse={'col s6'}
         somenteRacasVitima
       />
     </div>
   </div>
-)
+);
 
 export default NovaVitimaForm;

@@ -35,7 +35,7 @@ const descricao = () => (
 
     <div className="row">
       <ComboboxEstado
-        state={'estadoAgressor'}
+        state={'estadoAgressao'}
         id={'descricao-estado'}
         classes={' col s6'}
       />
@@ -53,7 +53,7 @@ const descricao = () => (
 
     <div className="row">
       <CampoTexto
-        state={'bairroAgressor'}
+        state={'bairroAgressao'}
         id={'bairro-descricao'}
         label={'Bairro*'}
         maxLen={40}
@@ -63,7 +63,7 @@ const descricao = () => (
       />
 
       <CampoTexto
-        state={'enderecoAgressor'}
+        state={'enderecoAgressao'}
         id={'endereco-descricao'}
         label={'Endereço'}
         maxLen={40}
@@ -75,7 +75,7 @@ const descricao = () => (
 
     <div className="row">
       <CampoTexto
-        state={'descricaoDenuncia'}
+        state={'descricaoAgressao'}
         id={'descricao-denuncia'}
         label={'Descrição da denúncia'}
         maxLen={255}

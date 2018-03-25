@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AgressorForm deve seguir a estrutura definida  1`] = `
+<div>
+  <div
+    className="row"
+  >
+    <nome
+      id="nome-agressor"
+      onChange={[Function]}
+      state="nomeAgressor"
+    />
+    <campoTexto
+      divClasse="input-field col s6"
+      id="cidade-agressor"
+      label="Cidade"
+      maxLen={40}
+      placeholder=""
+      state="cidadeAgressor"
+      type="text"
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <genero
+      divClasse="col s6"
+      id="genero-agressor"
+      state="generoAgressor"
+    />
+    <Data
+      divClasse="input-field col s6"
+      id="data-nascimento-agressor"
+      label="Data de Nascimento"
+      state="dataNascimentoAgressor"
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <comboRaca
+      divClasse="col s6"
+      id="raca-agressor"
+      somenteRacasVitima={false}
+      state="racaAgressor"
+    />
+    <campoTexto
+      divClasse="input-field col s6"
+      id="bairro-agressor"
+      label="Bairro"
+      maxLen={100}
+      placeholder=""
+      state="bairroAgressor"
+      type="text"
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <campoTexto
+      divClasse="input-field col s12"
+      id="descricao-agressor"
+      label="Descrição do agressor"
+      maxLen={100}
+      placeholder=""
+      state="descricaoAgressor"
+      type="text"
+    />
+    <comboEstado
+      classes="col s6"
+      id="estado-agressor"
+      state="estadoAgressor"
+    />
+  </div>
+</div>
+`;

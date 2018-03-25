@@ -1,32 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CampoTexto from '../campoTexto';
-import { CLASSES_INPUT } from '../../../components/denuncias/ConstantesCss';
+import Combobox from '../combobox';
 
-const genero = ({ id, divClasse, onChange }) => (
-  <CampoTexto
+const genero = ({ id, divClasse, state }) => (
+  <Combobox
+    state={state}
     id={id}
-    label={'Gênero (máximo de 15 caracteres)'}
-    maxLen={15}
+    label={'Gênero'}
     divClasse={divClasse}
-    inputClasse={CLASSES_INPUT}
-    onChange={onChange}
-    placeholder={'Ex.: Feminino, Masculino, Não Binário...'}
-    type={'text'}
+    itens={['Feminino', 'Masculino']}
+    valorPadrao={'Selecione seu gênero'}
   />
 );
 
 genero.propTypes = {
   id: PropTypes.string,
   divClasse: PropTypes.string,
-  onChange: PropTypes.func
+  state: PropTypes.string
 };
 
 genero.defaultProps = {
   id: '',
   divClasse: '',
-  onChange: () => { }
+  state: ''
 };
 
 export default genero;
-

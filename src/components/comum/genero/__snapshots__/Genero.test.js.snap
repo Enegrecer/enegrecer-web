@@ -1,40 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Genero deve possuir estrutura definida  1`] = `
-<genero
+<combobox
   divClasse=""
-  divClasses="estado"
   id="13"
-  onChange={[Function]}
->
-  <campoTexto
-    divClasse=""
-    id="13"
-    inputClasse="validate"
-    label="Gênero (máximo de 15 caracteres)"
-    maxLen={15}
-    onChange={[Function]}
-    placeholder="Ex.: Feminino, Masculino, Não Binário..."
-    type="text"
-  >
-    <div
-      className=""
-    >
-      <input
-        className="validate"
-        id="13"
-        maxLength={15}
-        onChange={[Function]}
-        placeholder="Ex.: Feminino, Masculino, Não Binário..."
-        type="text"
-      />
-      <label
-        className="active"
-        htmlFor="13"
-      >
-        Gênero (máximo de 15 caracteres)
-      </label>
-    </div>
-  </campoTexto>
-</genero>
+  itens={
+    Array [
+      "Feminino",
+      "Masculino",
+    ]
+  }
+  label="Gênero"
+  state="genero"
+  valorPadrao="Selecione seu gênero"
+/>
 `;

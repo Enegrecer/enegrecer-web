@@ -1,20 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import Routes from './Routes';
-import HomePage from '../components/home/Home';
-import NovaDenuncia from '../containers/denuncias/NovaDenunciaContainer';
-import ProximosPassos from '../components/denuncias/proximosPassos';
-
-function possuiRotaComComponente(rotas, rota, componente) {
-  it(`possui rota "${rota}" com componente correto`, () => {
-    const seletor = `[path="${rota}"]`;
-    expect(rotas.find(seletor).prop('component')).toEqual(componente);
-  });
-}
 
 describe('Routes', () => {
-  const routes = shallow(<Routes />);
-  possuiRotaComComponente(routes, '/', HomePage);
-  possuiRotaComComponente(routes, '/painel/denuncias/nova', NovaDenuncia);
-  possuiRotaComComponente(routes, '/painel/proximosPassos', ProximosPassos);
+  it('deve construir a pagina corretamente ', () => {
+    const routes = shallow(<Routes />);
+    const routesJson = toJson(routes);
+    expect(routesJson).toMatchSnapshot();
+  });
 });

@@ -4,15 +4,6 @@ import * as ConstantesCSS from '../ConstantesCss';
 
 const FormInformacoesLegais = () => (
   <div>
-    <br />
-    <p>Informaçoes Legais</p>
-    <br />
-    <h4> Você conseguiu realizar um boletim de ocorrência? Ou tem informações caso
-    você não seja a vítima? </h4>
-
-    <p>Essas informações são importantes para conseguirmos identificar a quantidade de vítimas que
-    conseguem reportar esse crime. </p>
-
     <div className="row">
       <CampoTexto
         state={'numeroBoletim'}

@@ -9,14 +9,6 @@ import Raca from '../../comum/comboboxRaca';
 
 const AgressorForm = () => (
   <div>
-    <h3>Você se sente confortável em dividir conosco informações sobre o agressor?</h3>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Nunc nisl mi, egestas ac ipsum sit amet,
-      blandit posuere metus. Donec imperdiet ut mi sed posuere.
-      Pellentesque et varius sapien.
-    </p>
-
     <div className="row">
       <Nome state={'nomeAgressor'} id={'nome-agressor'} />
       <CampoTexto

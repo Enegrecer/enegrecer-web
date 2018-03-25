@@ -70,8 +70,8 @@ renderCampoTexto.defaultProps = {
   onChange: () => {},
   divClasse: '',
   inputClasse: '',
-  input: {},
-  meta: {}
+  input: '',
+  meta: ''
 
 };
 

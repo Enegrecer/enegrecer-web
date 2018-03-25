@@ -7,16 +7,7 @@ import ComboboxEstado from '../../comum/comboboxEstado';
 
 const descricao = () => (
   <div>
-    <br />
-    <p>Descrição da agressão</p>
-    <br />
-    <h4> Compreendemos o quanto é difícil externalizar a agressão em palavras.</h4>
-
-    <p>Mas, é importante para que futuramente consigamos trabalhar para que essas agressões
-    tenham um fim. </p>
-
     <div className="row">
-
       <Combobox
         state={'periodoAgressao'}
         id={'periodo'}

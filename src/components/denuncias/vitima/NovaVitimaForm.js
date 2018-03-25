@@ -10,10 +10,9 @@ import Data from '../../comum/data';
 
 const NovaVitimaForm = () => (
   <div>
-    <h3>Me conte um pouco sobre a vítima</h3>
-    <br />
-    <CheckBox state={'souAVitima'} id={'souAVitima'} label={'Marque se você é a vítima'} />
-
+    <div className="row">
+      <CheckBox state={'souAVitima'} id={'souAVitima'} label={'Marque se você é a vítima'} />
+    </div>
     <div className="row">
       <Nome id={'nome-vitima'} state={'nomeVitima'} />
       <Data

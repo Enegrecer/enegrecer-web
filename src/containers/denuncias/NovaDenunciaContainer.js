@@ -15,7 +15,7 @@ class NovaDenunciaContainer extends React.Component {
     }
   }
 
-  onPressSaveButton() {
+  onPressSaveButton =() => {
     this.props.criarDenunciaRequisicao(
       this.props.formDenuncia.values
     );

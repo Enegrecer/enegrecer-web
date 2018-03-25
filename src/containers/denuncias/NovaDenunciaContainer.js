@@ -53,7 +53,7 @@ class NovaDenunciaContainer extends React.Component {
         <div className="column col s10 no-padding">
           <div className="form-title-bar" />
           <div className="form-sections-container">
-            <NovaDenunciaForm />
+            <NovaDenunciaForm handleSubmit={this.onPressSaveButton} />
           </div>
         </div>
       </div>

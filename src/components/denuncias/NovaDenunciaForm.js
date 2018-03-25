@@ -1,70 +1,34 @@
+import React from 'react';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
 import NovaVitimaForm from './vitima/NovaVitimaForm';
-import NovaTestemunhaForm from './testemunha/NovaTestemunhaForm';
-import DetalhamentoDenuncia from './DetalhamentoDenuncia';
+import FormInformacoesLegais from './informacoesLegais/FormInformacoesLegais';
+import { adicionaFormAoRedux } from './../comum/formControle';
+import Denunciante from './denunciante/DenuncianteForm';
+import Descricao from './descricao/FormDescricao';
+import AgressorForm from './agressor/AgressorForm';
 import './denuncia.css';
 
-export default class NovaDenunciaForm extends Component {
-  constructor(props) {
-    super(props);
+const FormDenuncia = props => (
+  <form id="form-nova-denuncia" onSubmit={props.handleSubmit} className="page-bar">
+    <Denunciante />
+    <NovaVitimaForm />
+    <FormInformacoesLegais />
+    <AgressorForm />
+    <Descricao />
+    <br />
+    <button className="btn waves-effect waves-light" type="submit" name="action">
+          Enviar Denúncia
+    </button>
+  </form>
+);
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-
-    this.state = {
-      detalhamento: '',
-      dataOcorrencia: '',
-      horaOcorrencia: '',
-      idCategoria: '',
-      endereco: '',
-      estado: '',
-      vitima: {},
-      testemunha: {}
-    };
-  }
-
-  handleChange(dados) {
-    this.setState({
-      ...dados,
-    }, () => {
-      this.props.alterarDenunciaForm(this.state);
-    });
-  }
-
-  handleSubmit(event) {
-    if (event) {
-      event.preventDefault();
-    }
-    this.props.salvarDenuncia();
-  }
-
-  render() {
-    return (
-      <form
-        name="form-denuncia"
-        id="form-nova-denuncia"
-        onSubmit={event => this.handleSubmit(event)}
-      >
-        <DetalhamentoDenuncia handleChange={this.handleChange} />
-
-        <NovaVitimaForm handleChange={this.handleChange} />
-
-        <NovaTestemunhaForm handleChange={this.handleChange} />
-
-        <br />
-        <button className="btn waves-effect waves-light" type="submit" name="action">
-            Enviar Denúncia
-        </button>
-      </form>);
-  }
-}
-
-NovaDenunciaForm.defaultProps = {
-  alterarDenunciaForm: () => {}
+FormDenuncia.propTypes = {
+  handleSubmit: PropTypes.func,
 };
 
-NovaDenunciaForm.propTypes = {
-  salvarDenuncia: PropTypes.func.isRequired,
-  alterarDenunciaForm: PropTypes.func
+FormDenuncia.defaultProps = {
+  handleSubmit: () => {}
 };
+
+export default adicionaFormAoRedux(FormDenuncia, 'formDenuncia');
+

@@ -7,6 +7,7 @@ exports[`Data deve possuir estrutura definida  1`] = `
   id="13"
   label="Data"
   onChange={[Function]}
+  state=""
 >
   <campoTexto
     divClasse=""
@@ -14,8 +15,8 @@ exports[`Data deve possuir estrutura definida  1`] = `
     inputClasse="datepicker"
     label="Data"
     maxLen={0}
-    onChange={[Function]}
     placeholder="Data"
+    state=""
     type="date"
   >
     <div
@@ -25,12 +26,12 @@ exports[`Data deve possuir estrutura definida  1`] = `
         className="datepicker"
         id="13"
         maxLength={0}
-        onChange={[Function]}
         placeholder="Data"
         type="date"
       />
       <label
         className="active"
+        data-success="right"
         htmlFor="13"
       >
         Data

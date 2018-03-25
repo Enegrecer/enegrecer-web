@@ -23,6 +23,11 @@ exports[`Routes deve construir a pagina corretamente  1`] = `
         exact={true}
         path="/coletivo-enegrecer"
       />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/painel/denuncias/nova"
+      />
     </Switch>
     <Route
       component={[Function]}

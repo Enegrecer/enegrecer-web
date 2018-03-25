@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetalhamentoDenuncia Component deve possuir estrutura definida  1`] = `
+<div>
+  <h1>
+    Nova Denúncia
+  </h1>
+  <div
+    className="row"
+  >
+    <nome
+      id="detalhamento"
+      onChange={[Function]}
+      state="detalhamento"
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <botoesRadio
+      botoes={
+        Array [
+          Object {
+            "label": "Injúria",
+            "valor": "injuria",
+          },
+          Object {
+            "label": "Racismo",
+            "valor": "racismo",
+          },
+        ]
+      }
+      classes="col s3"
+      id=""
+      state="idCategoria"
+    />
+    <Data
+      divClasse="input-field col s4"
+      id="dataOcorrencia"
+      label="Data do ocorrido"
+      state="dataOcorrencia"
+    />
+    <campoTexto
+      divClasse="input-field col s5"
+      id="horaOcorrencia"
+      inputClasse="validate"
+      label="Hora do ocorrido"
+      maxLen={0}
+      type="time"
+    />
+  </div>
+  <h4>
+    Local do crime
+  </h4>
+  <div
+    className="row"
+  >
+    <campoTexto
+      divClasse="input-field col s12"
+      id="endereco"
+      inputClasse="materialize-textarea"
+      label="Endereço"
+      maxLen={255}
+      state="endereco"
+      type="text"
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <comboEstado
+      classes="col s12"
+      id="estado"
+      state="estado"
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NovaDenunciaContainer renderiza sem erros o formulário de denúncias dentro do container 1`] = `
+<Connect(NovaDenunciaContainer)
+  denunciaCadastradaComSucesso={false}
+/>
+`;

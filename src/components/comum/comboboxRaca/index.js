@@ -4,12 +4,12 @@ import Combobox from '../combobox';
 import { racasVitima } from './racasVitima';
 import { racasTestemunha } from './racasTestemunha';
 
-const comboRaca = ({ id, onChange, classes, somenteRacasVitima = true }) => (
+const comboRaca = ({ id, state, divClasse, somenteRacasVitima = true }) => (
   <Combobox
+    state={state}
     id={id}
     itens={(somenteRacasVitima) ? racasVitima : racasTestemunha}
-    divClasse={classes}
-    onChange={onChange}
+    divClasse={divClasse}
     label={'Selecione a Raça:'}
     valorPadrao={'Selecione a Raça:'}
   />
@@ -17,15 +17,15 @@ const comboRaca = ({ id, onChange, classes, somenteRacasVitima = true }) => (
 
 comboRaca.propTypes = {
   id: PropTypes.string,
-  onChange: PropTypes.func,
-  classes: PropTypes.string,
+  state: PropTypes.string,
+  divClasse: PropTypes.string,
   somenteRacasVitima: PropTypes.bool
 };
 
 comboRaca.defaultProps = {
   id: '',
-  onChange: () => {},
-  classes: '',
+  divClasse: '',
+  state: '',
   somenteRacasVitima: true
 };
 

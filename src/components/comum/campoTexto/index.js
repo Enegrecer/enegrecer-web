@@ -1,21 +1,54 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Field } from 'redux-form';
 
-const campoTexto = ({ divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label }) => (
-  <div className={divClasse}>
-    <input
+const renderCampoTexto = ({
+  input,
+  label,
+  type,
+  meta: { touched, error },
+  divClasse, id, inputClasse, maxLen, placeholder
+}) => {
+  const existeErroDeValidacao = touched && error;
+  return (
+    <div className={divClasse}>
+      <input
+        id={id}
+        {...input}
+        type={type}
+        className={!existeErroDeValidacao ? inputClasse : `${inputClasse} invalid`}
+        maxLength={maxLen}
+        placeholder={placeholder || undefined}
+      />
+      <label className="active" data-error={error} data-success="right" htmlFor={id}>{label}</label>
+    </div>
+  );
+};
+
+const campoTexto = ({ divClasse, id, type, onChange,
+  inputClasse, maxLen, placeholder, label, state, validacoes, normalize }) => {
+  if (state) {
+    return (<Field
+      name={state}
+      state={state}
+      divClasse={divClasse}
       id={id}
       type={type}
       onChange={onChange}
-      className={inputClasse}
-      maxLength={maxLen}
-      placeholder={placeholder || undefined}
-    />
-    <label className="active" htmlFor={id}>{label}</label>
-  </div>
-);
+      inputClasse={inputClasse}
+      maxLen={maxLen}
+      placeholder={placeholder}
+      label={label}
+      component={renderCampoTexto}
+      validate={validacoes}
+      normalize={normalize}
+    />);
+  }
+  return renderCampoTexto(
+    { divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label, state, meta: {}, });
+};
 
-campoTexto.propTypes = {
+renderCampoTexto.propTypes = {
   id: PropTypes.string,
   type: PropTypes.string,
   maxLen: PropTypes.number,
@@ -23,10 +56,12 @@ campoTexto.propTypes = {
   label: PropTypes.string,
   onChange: PropTypes.func,
   divClasse: PropTypes.string,
-  inputClasse: PropTypes.string
+  inputClasse: PropTypes.string,
+  input: PropTypes.string,
+  meta: PropTypes.string
 };
 
-campoTexto.defaultProps = {
+renderCampoTexto.defaultProps = {
   id: '',
   type: '',
   maxLen: '',
@@ -34,8 +69,10 @@ campoTexto.defaultProps = {
   label: '',
   onChange: () => {},
   divClasse: '',
-  inputClasse: ''
+  inputClasse: '',
+  input: {},
+  meta: {}
+
 };
 
 export default campoTexto;
-

@@ -1,8 +1,9 @@
+// import 'react-datepicker/dist/react-datepicker.css';
 import React from 'react';
 import PropTypes from 'prop-types';
 import CampoTexto from '../campoTexto';
 
-const Data = ({ id, divClasse, label, onChange }) => (
+const Data = ({ id, state, divClasse, label }) => (
   <CampoTexto
     id={id}
     label={label}
@@ -11,7 +12,7 @@ const Data = ({ id, divClasse, label, onChange }) => (
     divClasse={divClasse}
     type={'date'}
     placeholder="Data"
-    onChange={onChange}
+    state={state}
   />
 );
 
@@ -19,14 +20,14 @@ Data.propTypes = {
   id: PropTypes.string,
   divClasse: PropTypes.string,
   label: PropTypes.string,
-  onChange: PropTypes.func
+  state: PropTypes.string,
 };
 
 Data.defaultProps = {
   id: '',
   divClasse: '',
   label: '',
-  onChange: () => {}
+  state: ''
 };
 
 export default Data;

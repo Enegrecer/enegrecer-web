@@ -50,6 +50,15 @@ exports[`AgressorForm deve seguir a estrutura definida  1`] = `
       somenteRacasVitima={false}
       state="racaAgressor"
     />
+    <campoTexto
+      divClasse="input-field col s6"
+      id="bairro-agressor"
+      label="Bairro"
+      maxLen={100}
+      placeholder=""
+      state="bairroAgressor"
+      type="text"
+    />
   </div>
   <div
     className="row"
@@ -62,6 +71,11 @@ exports[`AgressorForm deve seguir a estrutura definida  1`] = `
       placeholder=""
       state="descricaoAgressor"
       type="text"
+    />
+    <comboEstado
+      classes="col s6"
+      id="estado-agressor"
+      state="estadoAgressor"
     />
   </div>
 </div>

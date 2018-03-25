@@ -54,13 +54,13 @@ exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
     <genero
       divClasse="col s6"
       id="vitima-genero"
-      state="vitimaGenero"
+      state="generoVitima"
     />
     <comboRaca
       divClasse="col s6"
       id="raca"
       somenteRacasVitima={true}
-      state="raca"
+      state="racaVitima"
     />
   </div>
 </div>

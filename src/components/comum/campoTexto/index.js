@@ -57,8 +57,8 @@ renderCampoTexto.propTypes = {
   onChange: PropTypes.func,
   divClasse: PropTypes.string,
   inputClasse: PropTypes.string,
-  input: PropTypes.object,
-  meta: PropTypes.object
+  input: PropTypes.string,
+  meta: PropTypes.string
 };
 
 renderCampoTexto.defaultProps = {

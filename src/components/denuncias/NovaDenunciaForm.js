@@ -9,7 +9,7 @@ import AgressorForm from './agressor/AgressorForm';
 import './denuncia.css';
 
 const FormDenuncia = props => (
-  <form id="form-nova-denuncia" onSubmit={props.handleSubmit}>
+  <form id="form-nova-denuncia" onSubmit={props.handleSubmit} className="page-bar">
     <Denunciante />
     <NovaVitimaForm />
     <FormInformacoesLegais />

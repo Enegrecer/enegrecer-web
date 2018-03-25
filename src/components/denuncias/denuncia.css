@@ -1,31 +1,98 @@
-.nav-wrapper {
-    background-color: #26a69a !important;
-    font-size: 14px;
-    font-weight: bold;
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+body {
+	font-family: Roboto;
+	background-color: #f8f8f8;
 }
 
-form#form-nova-denuncia {
-  margin: 15px auto;
-  max-width: 960px; }
-  form#form-nova-denuncia ::-webkit-input-placeholder {
-    color: #C0C0C0; }
-  form#form-nova-denuncia :-moz-placeholder {
-    /* Firefox 18- */
-    color: #C0C0C0; }
-  form#form-nova-denuncia ::-moz-placeholder {
-    /* Firefox 19+ */
-    color: #C0C0C0; }
-  form#form-nova-denuncia :-ms-input-placeholder {
-    color: #C0C0C0; }
-  form#form-nova-denuncia input:focus::-webkit-input-placeholder {
-    color: transparent; }
-  form#form-nova-denuncia textarea:focus::-webkit-input-placeholder {
-    color: transparent; }
-  form#form-nova-denuncia input {
-    margin-bottom: 10px; }
+.nav-bar {
+	height: 100px;
+	width: 100%;
+	background-color: #000;
+}
 
-  select {
-    display: inline !important;
-  }
+/* Menu */
 
+.colspan-ignore-padding {
+	padding: 0 !important;
+}
 
+.left-menu {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	z-index: -100;
+}
+
+.page-bar {
+	height: 93px;
+	width: 100%;
+	padding: 20px 35px 0 35px;
+	background-color: #000;
+}
+
+.page-bar h5 {
+	margin: 0;
+	color: #9e9e9e;
+}
+
+.menu-items {
+	position: fixed;
+	margin-top: 37px;
+	width: 98%;
+	margin-left: 2%;
+}
+
+.menu-items li {
+	height: 54px;
+	display: flex;
+	align-items: center;
+	margin-bottom: 30px;
+	padding-left: 25px;
+	color: #9b9b9b;
+}
+
+.menu-items li:hover {
+	color: #5c5c5c;
+	font-weight: bold;
+	border-left: solid 3px #20a14f;
+}
+
+/* Formularios */
+
+.form-section {
+	width: 98%;
+	background-color: #fff;
+	margin-bottom: 15px;
+	border-radius: 3px;
+	box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.form-section h6 {
+	color: #5c5c5c;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.form-section .title-body {
+	height: 93px;
+	padding: 26px;
+	display: flex;
+	align-items: center;
+	border-bottom: solid 1px #f0f0f0;
+}
+
+.form-section h3 {
+	font-size: 16px;
+  color: #838383;
+  margin: 0;
+}
+
+.form-section .form-body {
+	padding: 26px;
+	color: #838383;
+}
+
+select {
+  display: block;
+}

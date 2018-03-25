@@ -2,15 +2,15 @@
 
 exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
 <div>
-  <h3>
-    Me conte um pouco sobre a vítima
-  </h3>
-  <br />
-  <checkBox
-    id="souAVitima"
-    label="Marque se você é a vítima"
-    state="souAVitima"
-  />
+  <div
+    className="row"
+  >
+    <checkBox
+      id="souAVitima"
+      label="Marque se você é a vítima"
+      state="souAVitima"
+    />
+  </div>
   <div
     className="row"
   >

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
@@ -7,30 +7,15 @@ import {
   criarDenunciaRequisicao, limpaEstadoUltimaDencunciaCadastrada
 } from '../../actions/criarDenunciaActions';
 import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
-import { validaDenuncia } from './validaDenuncia';
-import * as Tela from '../../utils/materializeCSS';
 
 class NovaDenunciaContainer extends React.Component {
-  componentDidMount() {
-    // Tela.iniciaCamposMaterialize();
-  }
-
   componentWillUnmount() {
     if (this.props.denunciaCadastradaComSucesso) {
       this.props.limpaEstadoUltimaDencunciaCadastrada();
     }
   }
 
-  onPressSaveButton = () => {
-    // const mensagemError = validaDenuncia(this.state.vitima);
-    // if (mensagemError === undefined) {
-    //   this.props.criarDenunciaRequisicao({
-    //     ...this.state
-    //   });
-    // } else {
-    //   alert(mensagemError);
-    // }
-    console.log(this.props.formDenuncia.values)
+  onPressSaveButton() {
     this.props.criarDenunciaRequisicao(
       this.props.formDenuncia.values
     );

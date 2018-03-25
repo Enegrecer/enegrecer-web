@@ -13,7 +13,7 @@ const nome = ({ id, state, onChange }) => (<CampoTexto
   onChange={onChange}
   state={state}
   validacoes={[temNumeroNoNome, nomeMaiorQue40Caracteres, nomeNaoPodeTerCaracterEspecial]}
-/>)
+/>);
 
 nome.propTypes = {
   id: PropTypes.string,

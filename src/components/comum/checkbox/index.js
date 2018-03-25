@@ -19,7 +19,7 @@ checkBox.defaultProps = {
   id: '',
   label: '',
   state: ''
-}
+};
 
 export default checkBox;
 

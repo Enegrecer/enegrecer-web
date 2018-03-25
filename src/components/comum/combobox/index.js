@@ -13,7 +13,7 @@ const combobox = ({ divClasse, id, state, valorPadrao, itens, label }) => (
         )
       }
     </Field>
-  </div>)
+  </div>);
 
 combobox.propTypes = {
   id: PropTypes.string,

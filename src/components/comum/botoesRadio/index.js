@@ -9,7 +9,7 @@ const renderizaInputComum = ({ classes, id, valor }) => (
       <label htmlFor={id}>{valor}</label>
     </p>
   </div>
-)
+);
 
 const botoesRadio = ({ classes, botoes, state }) => {
   if (state) {
@@ -28,14 +28,14 @@ const botoesRadio = ({ classes, botoes, state }) => {
           </p>
         ))}
       </div>
-    )
+    );
   }
   return (
     <div className={classes}>
       {botoes.map(botaoRadio => (renderizaInputComum(classes, botaoRadio.id, botaoRadio.valor)))}
     </div>
-  )
-}
+  );
+};
 
 botoesRadio.propTypes = {
   classes: PropTypes.string,
@@ -54,12 +54,12 @@ renderizaInputComum.propTypes = {
   classes: PropTypes.string,
   valor: PropTypes.string,
   id: PropTypes.string
-}
+};
 
 renderizaInputComum.defaultProps = {
   classes: '',
   id: '',
   valor: ''
-}
+};
 
 export default botoesRadio;

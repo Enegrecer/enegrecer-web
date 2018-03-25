@@ -1,4 +1,3 @@
-
 export const campoObrigatorio = campo => (campo ? undefined : 'Campo Obrigatório');
 
 export const campoMaiorQue255Caracteres = (campo) => {
@@ -6,5 +5,5 @@ export const campoMaiorQue255Caracteres = (campo) => {
     return 'O limite deste campo é 255 caracteres.';
   }
   return undefined;
-}
+};
 

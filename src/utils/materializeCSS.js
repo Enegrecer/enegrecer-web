@@ -1,5 +1,4 @@
 import Hammer from 'hammerjs/hammer';
-import Materialize from 'materialize-css';
 import $ from 'jquery';
 
 export const iniciaCampoData = (id) => {
@@ -20,13 +19,6 @@ export const iniciaCampoData = (id) => {
     clear: 'Limpar',
     close: 'Fechar',
     format: 'dd/mm/yyyy'
-  });
-};
-
-export const iniciaCamposMaterialize = () => {
-  $(document).ready(() => {
-    // $('select').material_select();
-    // Materialize.updateTextFields();
   });
 };
 

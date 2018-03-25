@@ -56,5 +56,5 @@ const DetalhamentoDenuncia = () => (
       <ComboEstado state={'estado'} id={'estado'} classes="col s12" />
     </div>
   </div>
-)
+);
 export default DetalhamentoDenuncia;

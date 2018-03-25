@@ -1,5 +1,4 @@
 import { fork, call, put, take } from 'redux-saga/effects';
-import * as firebase from 'firebase';
 import firebaseApp from '../utils/firebaseUtils';
 
 import {
@@ -7,7 +6,7 @@ import {
 } from '../actions/criarDenunciaActions';
 
 const denunciaInicial = {
-  bairroAgressao:'',
+  bairroAgressao: '',
   cidadeAgressao: '',
   dataAgressao: '',
   descricaoAgressao: '',

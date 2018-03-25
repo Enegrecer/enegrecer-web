@@ -15,12 +15,14 @@ const genero = ({ id, divClasse, state }) => (
 
 genero.propTypes = {
   id: PropTypes.string,
-  divClasse: PropTypes.string
+  divClasse: PropTypes.string,
+  state: PropTypes.string
 };
 
 genero.defaultProps = {
   id: '',
-  divClasse: ''
+  divClasse: '',
+  state: ''
 };
 
 export default genero;

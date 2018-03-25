@@ -9,4 +9,4 @@ describe('NovaVitimaForm Component', () => {
     const detalhamentoDenunciaJson = toJson(detalhamentoDenuncia);
     expect(detalhamentoDenunciaJson).toMatchSnapshot();
   });
-})
+});

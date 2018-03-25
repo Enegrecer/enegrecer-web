@@ -22,8 +22,8 @@ const renderCampoTexto = ({
       />
       <label className="active" data-error={error} data-success="right" htmlFor={id}>{label}</label>
     </div>
-  )
-}
+  );
+};
 
 const campoTexto = ({ divClasse, id, type, onChange,
   inputClasse, maxLen, placeholder, label, state, validacoes, normalize }) => {
@@ -42,7 +42,7 @@ const campoTexto = ({ divClasse, id, type, onChange,
       component={renderCampoTexto}
       validate={validacoes}
       normalize={normalize}
-    />)
+    />);
   }
   return renderCampoTexto(
     { divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label, state, meta: {}, });

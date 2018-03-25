@@ -8,26 +8,26 @@ import CampoTexto from '../campoTexto';
  */
 const normalizePhone = (value, previousValue) => {
   if (!value) {
-    return value
+    return value;
   }
-  const onlyNums = value.replace(/[^\d]/g, '')
+  const onlyNums = value.replace(/[^\d]/g, '');
   if (!previousValue || value.length > previousValue.length) {
     // typing forward
     if (onlyNums.length === 2) {
-      return `${onlyNums} -`
+      return `${onlyNums} -`;
     }
     if (onlyNums.length === 7) {
-      return `${onlyNums.slice(0, 2)} - ${onlyNums.slice(2)} -`
+      return `${onlyNums.slice(0, 2)} - ${onlyNums.slice(2)} -`;
     }
   }
   if (onlyNums.length <= 2) {
-    return onlyNums
+    return onlyNums;
   }
   if (onlyNums.length <= 7) {
-    return `${onlyNums.slice(0, 2)} - ${onlyNums.slice(2)}`
+    return `${onlyNums.slice(0, 2)} - ${onlyNums.slice(2)}`;
   }
-  return `${onlyNums.slice(0, 2)} - ${onlyNums.slice(2, 7)} - ${onlyNums.slice(7, 11)}`
-}
+  return `${onlyNums.slice(0, 2)} - ${onlyNums.slice(2, 7)} - ${onlyNums.slice(7, 11)}`;
+};
 
 const telefone = ({ divClasse, id, state, label }) => (
   <CampoTexto

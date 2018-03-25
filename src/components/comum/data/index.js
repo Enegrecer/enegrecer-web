@@ -14,7 +14,7 @@ const Data = ({ id, state, divClasse, label }) => (
     placeholder="Data"
     state={state}
   />
-)
+);
 
 Data.propTypes = {
   id: PropTypes.string,

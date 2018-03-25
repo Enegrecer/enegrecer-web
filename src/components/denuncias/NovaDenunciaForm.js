@@ -52,7 +52,7 @@ const formSections = [
 ];
 
 const FormDenuncia = props => (
-  <form id="form-nova-denuncia" onSubmit={props.handleSubmit} className="page-bar">
+  <form id="form-nova-denuncia" onSubmit={props.handleSubmit}>
     {formSections.map(formSection => (
       <FormSection
         title={formSection.title}

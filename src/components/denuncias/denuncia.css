@@ -4,14 +4,14 @@ body {
 	font-family: Roboto;
 	background-color: #f8f8f8;
 }
-
+/*
 .nav-bar {
 	height: 100px;
 	width: 100%;
 	background-color: #000;
 }
 
-/* Menu */
+/* Menu
 
 .colspan-ignore-padding {
 	padding: 0 !important;
@@ -58,10 +58,84 @@ body {
 	border-left: solid 3px #20a14f;
 }
 
-/* Formularios */
+/* Formularios
+
+ */
+
+.form-denuncia-container {
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  background: #f8f8f8;
+}
+
+.form-title-bar {
+  background: #000;
+  height: 93px;
+  color: #9e9e9e;
+  padding-left: 25px;
+}
+
+.red-bar {
+  width: 38px;
+  height: 6px;
+  background-color: #ff0336;
+  margin-left: 10px;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.side-menu-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 25px;
+  font-weight: 500;
+  /* padding: 35px; */
+}
+
+.side-menu > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.form-sections-container {
+  margin-top: -93px;
+  margin-right: 40px;
+  border-radius: 3px;
+}
+
+.menu-items {
+	/* position: fixed; */
+	/* margin-top: 37px; */
+	margin-left: 10%;
+}
+
+.menu-items li {
+	height: 54px;
+	margin-bottom: 30px;
+	padding-left: 25px;
+  color: #9b9b9b;
+  margin-top: 35px;
+  font-size: 16px;
+  text-align: left;
+}
+
+.menu-items li:hover {
+	color: #5c5c5c;
+	font-weight: bold;
+	border-left: solid 3px #20a14f;
+}
 
 .form-section {
-	width: 98%;
 	background-color: #fff;
 	margin-bottom: 15px;
 	border-radius: 3px;
@@ -96,3 +170,4 @@ body {
 select {
   display: block;
 }
+

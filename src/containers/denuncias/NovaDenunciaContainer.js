@@ -30,25 +30,31 @@ class NovaDenunciaContainer extends React.Component {
       return <Redirect to="/painel/proximosPassos" />;
     }
     return (
-      <div className="row">
-        <div className="col s2 colspan-ignore-padding">
-          <div className="left-menu">
-            <div className="page-bar">
-              <h5>Formulário de Denúncia</h5>
+      <div className="row form-denuncia-container">
+        <div className="col s2 no-padding side-menu-container">
+          <div className="form-title-bar side-menu">
+            <span>Formulário de</span>
+            <div>
+              <span>denúncia</span>
+              <span className="red-bar" />
             </div>
-            <div className="menu-items">
-              <ul>
-                <li>Dados do Denunciante</li>
-              </ul>
-            </div>
+          </div>
+          <div className="menu-items">
+            <ul>
+              <li>Dados do <br /> denunciante</li>
+              <li>Dados da <br /> vítima</li>
+              <li>Informações <br /> Legais</li>
+              <li>Dados do <br /> agressor</li>
+              <li>Descrição da <br />agressão</li>
+            </ul>
           </div>
         </div>
 
-        <div className="col s10 colspan-ignore-padding">
-          <NovaDenunciaForm
-            onSubmit={this.onPressSaveButton}
-            alterarDenunciaForm={this.adicionarDenunciaNoForm}
-          />
+        <div className="column col s10 no-padding">
+          <div className="form-title-bar" />
+          <div className="form-sections-container">
+            <NovaDenunciaForm />
+          </div>
         </div>
       </div>
     );
@@ -59,14 +65,14 @@ NovaDenunciaContainer.propTypes = {
   criarDenunciaRequisicao: PropTypes.func.isRequired,
   limpaEstadoUltimaDencunciaCadastrada: PropTypes.func.isRequired,
   denunciaCadastradaComSucesso: PropTypes.bool.isRequired,
-  formDenuncia: PropTypes.string
+  formDenuncia: PropTypes.string.isRequired
 };
 
 NovaDenunciaContainer.defaultProps = {
   criarDenunciaRequisicao: () => {},
   denunciaCadastradaComSucesso: false,
   limpaEstadoUltimaDencunciaCadastrada: () => {},
-  formDenuncia: ''
+  formDenuncia: {}
 };
 
 const mapStateToProps = state => ({

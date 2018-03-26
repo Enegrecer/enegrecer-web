@@ -3,7 +3,11 @@
 exports[`Home possui a mesma estrutura 1`] = `
 <div>
   <div
-    className="row"
-  />
+    id="banner"
+  >
+    <div
+      id="banner__blur"
+    />
+  </div>
 </div>
 `;

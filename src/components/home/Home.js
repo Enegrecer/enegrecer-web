@@ -4,8 +4,9 @@ import './css/home.css';
 
 const Home = props => (
   <div>
-      <div className="row">
-      </div>
+    <div id="banner">
+      <div id="banner__blur" />
+    </div>
   </div>
 );
 

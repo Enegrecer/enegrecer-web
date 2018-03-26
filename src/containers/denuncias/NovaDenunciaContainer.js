@@ -11,7 +11,7 @@ import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
 class NovaDenunciaContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.onPressSaveButton = this.onPressSaveButton.bind(this);
+    this.submeteFormulario = this.submeteFormulario.bind(this);
   }
   componentWillUnmount() {
     if (this.props.denunciaCadastradaComSucesso) {
@@ -19,7 +19,7 @@ class NovaDenunciaContainer extends React.Component {
     }
   }
 
-  onPressSaveButton() {
+  submeteFormulario() {
     this.props.criarDenunciaRequisicao(
       this.props.formDenuncia.values
     );
@@ -53,7 +53,7 @@ class NovaDenunciaContainer extends React.Component {
         <div className="column col s10 no-padding">
           <div className="form-title-bar" />
           <div className="form-sections-container">
-            <NovaDenunciaForm handleSubmit={this.onPressSaveButton} />
+            <NovaDenunciaForm submeteFormulario={this.submeteFormulario} />
           </div>
         </div>
       </div>

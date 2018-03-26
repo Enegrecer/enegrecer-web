@@ -6,62 +6,62 @@ import { adicionaFormAoRedux } from './../comum/formControle';
 import Denunciante from './denunciante/DenuncianteForm';
 import Descricao from './descricao/FormDescricao';
 import AgressorForm from './agressor/AgressorForm';
-import FormSection from './FormSection';
 import './denuncia.css';
+import SecaoForm from './SecaoForm';
 
-const formSections = [
+const secoesForm = [
   {
-    title: 'Dados do denunciante',
-    subtitle: 'Você poderia nos passar algumas informações suas?',
-    text: `Não se preocupe sua identidade será mantida em sigilo.
+    titulo: 'Dados do denunciante',
+    subtitulo: 'Você poderia nos passar algumas informações suas?',
+    texto: `Não se preocupe sua identidade será mantida em sigilo.
     Essas informações são importantes para futuramente darmos um retorno das
     medidas que estão sendo tomadas contra esse agressor.`,
-    component: <Denunciante />
+    formulario: <Denunciante />
   },
   {
-    title: 'Dados da vítima',
-    subtitle: 'Me conte um pouco sobre a vítima',
-    text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisl mi, egestas
+    titulo: 'Dados da vítima',
+    subtitulo: 'Me conte um pouco sobre a vítima',
+    texto: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisl mi, egestas
     ac ipsum sit amet, blandit posuere metus. Donec imperdiet ut mi sed posuere. Pellentesque
     et varius sapien.`,
-    component: <NovaVitimaForm />
+    formulario: <NovaVitimaForm />
   },
   {
-    title: 'Informações Legais',
-    subtitle: `Você conseguiu realizar um boletim de ocorrência? Ou tem informações caso
+    titulo: 'Informações Legais',
+    subtitulo: `Você conseguiu realizar um boletim de ocorrência? Ou tem informações caso
     você não seja a vítima?`,
-    text: `Essas informações são importantes para conseguirmos identificar a quantidade de
+    texto: `Essas informações são importantes para conseguirmos identificar a quantidade de
     vítimas que conseguem reportar esse crime.`,
-    component: <FormInformacoesLegais />
+    formulario: <FormInformacoesLegais />
   },
   {
-    title: 'Dados do Agressor',
-    subtitle: 'Você se sente confortável em dividir conosco informações sobre o agressor?',
-    text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisl mi, egestas
+    titulo: 'Dados do Agressor',
+    subtitulo: 'Você se sente confortável em dividir conosco informações sobre o agressor?',
+    texto: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisl mi, egestas
     ac ipsum sit amet, blandit posuere metus. Donec imperdiet ut mi sed posuere.
     Pellentesque et varius sapien.`,
-    component: <AgressorForm />
+    formulario: <AgressorForm />
   },
   {
-    title: 'Descrição da agressão',
-    subtitle: 'Compreendemos o quanto é difícil externalizar a agressão em palavras.',
-    text: `Mas, é importante para que futuramente consigamos trabalhar para que essas agressões
+    titulo: 'Descrição da agressão',
+    subtitulo: 'Compreendemos o quanto é difícil externalizar a agressão em palavras.',
+    texto: `Mas, é importante para que futuramente consigamos trabalhar para que essas agressões
     tenham um fim.`,
-    component: <Descricao />
+    formulario: <Descricao />
   }
 ];
 
 const FormDenuncia = props => (
-  <form id="form-nova-denuncia" onSubmit={props.handleSubmit}>
-    {formSections.map(formSection => (
-      <FormSection
-        key={formSection.title}
-        title={formSection.title}
-        subtitle={formSection.subtitle}
-        text={formSection.text}
+  <form id="form-nova-denuncia" onSubmit={props.submeteFormulario}>
+    {secoesForm.map(formSection => (
+      <SecaoForm
+        key={formSection.titulo}
+        titulo={formSection.titulo}
+        subtitulo={formSection.subtitulo}
+        texto={formSection.texto}
       >
-        {formSection.component}
-      </FormSection>
+        {formSection.formulario}
+      </SecaoForm>
     ))}
 
     <br />
@@ -72,11 +72,7 @@ const FormDenuncia = props => (
 );
 
 FormDenuncia.propTypes = {
-  handleSubmit: PropTypes.func,
-};
-
-FormDenuncia.defaultProps = {
-  handleSubmit: () => {}
+  submeteFormulario: PropTypes.func.isRequired,
 };
 
 export default adicionaFormAoRedux(FormDenuncia, 'formDenuncia');

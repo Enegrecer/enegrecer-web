@@ -19,7 +19,7 @@ export default class Menu extends Component {
           <Link to="/sobre">SOBRE</Link>
           <Link to="/depoisdenuncia">E DEPOIS DA DENÚNCIA?</Link>
           <Link to="/coletivo-enegrecer">O COLETIVO ENEGRECER</Link>
-          <Link to="/denunciar">DENUNCIAR</Link>
+          <Link to="/painel/denuncias/nova">DENUNCIAR</Link>
         </div>
       </div>
     );

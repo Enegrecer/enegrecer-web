@@ -13,6 +13,7 @@ class NovaDenunciaContainer extends React.Component {
     super(props);
     this.submeteFormulario = this.submeteFormulario.bind(this);
   }
+
   componentWillUnmount() {
     if (this.props.denunciaCadastradaComSucesso) {
       this.props.limpaEstadoUltimaDencunciaCadastrada();
@@ -65,7 +66,12 @@ NovaDenunciaContainer.propTypes = {
   criarDenunciaRequisicao: PropTypes.func.isRequired,
   limpaEstadoUltimaDencunciaCadastrada: PropTypes.func.isRequired,
   denunciaCadastradaComSucesso: PropTypes.bool.isRequired,
-  formDenuncia: PropTypes.string.isRequired
+  formDenuncia: PropTypes.shape({
+    registeredFields: PropTypes.object,
+    fields: PropTypes.object,
+    values: PropTypes.object,
+    anyTouched: PropTypes.bool
+  })
 };
 
 NovaDenunciaContainer.defaultProps = {

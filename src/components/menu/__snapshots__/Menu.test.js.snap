@@ -40,7 +40,7 @@ exports[`Menu deve construir a pagina corretamente  1`] = `
     </Link>
     <Link
       replace={false}
-      to="/denunciar"
+      to="/painel/denuncias/nova"
     >
       DENUNCIAR
     </Link>

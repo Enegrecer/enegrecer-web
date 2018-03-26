@@ -77,7 +77,7 @@ exports[`Sobre possui a mesma estrutura 1`] = `
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
           key="Ayrton Araújo"
           nome="Ayrton Araújo"
-          papel="Desenvolvedor"
+          papel="DEV"
         />
         <Colaborador
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
@@ -95,73 +95,103 @@ exports[`Sobre possui a mesma estrutura 1`] = `
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
           key="Caique Peixoto"
           nome="Caique Peixoto"
-          papel="Desenvolvedor"
+          papel="DEV"
         />
         <Colaborador
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
           key="Daniel Faria"
           nome="Daniel Faria"
-          papel="Desenvolvedor"
+          papel="DEV"
         />
         <Colaborador
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
           key="Débora Beda"
           nome="Débora Beda"
-          papel="Desenvolvedora"
+          papel="DEVa"
         />
         <Colaborador
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
           key="Edlaine Zamora"
           nome="Edlaine Zamora"
-          papel="Desenvolvedora"
+          papel="DEVa"
+        />
+        <Colaborador
+          foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
+          key="Egileu Trajano"
+          nome="Egileu Trajano"
+          papel="QA"
         />
         <Colaborador
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
           key="Erika Silva"
           nome="Erika Silva"
-          papel="Desenvolvedora"
+          papel="DEVa"
         />
         <Colaborador
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
           key="Gabriel Pereira"
           nome="Gabriel Pereira"
-          papel="Desenvolvedor"
+          papel="DEV"
         />
         <Colaborador
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
           key="Gabriella Matos"
           nome="Gabriella Matos"
-          papel="Desenvolvedora"
+          papel="DEVa"
+        />
+        <Colaborador
+          foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
+          key="Izael Effemberg"
+          nome="Izael Effemberg"
+          papel="DEV"
         />
         <Colaborador
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
           key="João Moreira"
           nome="João Moreira"
-          papel="Desenvolvedor"
+          papel="DEV"
+        />
+        <Colaborador
+          foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
+          key="Kamila Serafim"
+          nome="Kamila Serafim"
+          papel="QA"
+        />
+        <Colaborador
+          foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
+          key="Karla Falcão"
+          nome="Karla Falcão"
+          papel="DEVa"
         />
         <Colaborador
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
           key="Laura de Bella"
           nome="Laura de Bella"
-          papel="Desenvolvedora"
+          papel="DEVa"
         />
         <Colaborador
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
           key="Leandro Vicente"
           nome="Leandro Vicente"
-          papel="Desenvolvedor"
+          papel="DEV"
         />
         <Colaborador
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
           key="Lorena Souza"
           nome="Lorena Souza"
-          papel="Desenvolvedora"
+          papel="DEVa"
+        />
+        <Colaborador
+          foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
+          key="Luciana Montenegro"
+          nome="Luciana Montenegro"
+          papel="DEVa"
         />
         <Colaborador
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
           key="Marcella Souza"
           nome="Marcella Souza"
-          papel="Desenvolvedora"
+          papel="DEVa"
         />
         <Colaborador
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
@@ -171,21 +201,39 @@ exports[`Sobre possui a mesma estrutura 1`] = `
         />
         <Colaborador
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
+          key="Mila Orrico"
+          nome="Mila Orrico"
+          papel="BA"
+        />
+        <Colaborador
+          foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
           key="Nayara Souza"
           nome="Nayara Souza"
-          papel="Desenvolvedora"
+          papel="DEVa"
         />
         <Colaborador
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
           key="Paulo Gama"
           nome="Paulo Gama"
-          papel="Desenvolvedor"
+          papel="DEV"
         />
         <Colaborador
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
           key="Priscila Rocha"
           nome="Priscila Rocha"
           papel="PM"
+        />
+        <Colaborador
+          foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
+          key="Rosana Mendes"
+          nome="Rosana Mendes"
+          papel="DEVa"
+        />
+        <Colaborador
+          foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
+          key="Roselma Mendes"
+          nome="Roselma Mendes"
+          papel="DEVa"
         />
         <Colaborador
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
@@ -197,7 +245,7 @@ exports[`Sobre possui a mesma estrutura 1`] = `
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
           key="Thais Lopes"
           nome="Thais Lopes"
-          papel="Desenvolvedora"
+          papel="DEVa"
         />
         <Colaborador
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"

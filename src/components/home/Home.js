@@ -1,12 +1,12 @@
 import React from 'react';
-import Logo from './../Logo';
-import Nav from './../Nav';
-import Topbar from './../Topbar';
-import Botao from './../Botao';
-import Footer from './../Footer';
-import Social from './../Social';
-import { withHistoryPropTypes } from './../sharedPropTypes';
-
+import Logo from './Logo';
+import Nav from './Nav';
+import Topbar from './Topbar';
+import Botao from './Botao';
+import Footer from './Footer';
+import Social from './Social';
+import { withHistoryPropTypes } from './sharedPropTypes';
+import './css/home.css';
 
 const networks = [
   { title: 'Facebook', href: '#', icon: 'facebook-square' },

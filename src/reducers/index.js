@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
+import { reducer as formReducer } from 'redux-form';
+import denunciaComSucessoReducer from './denunciaComSucessoReducer';
 
 export default combineReducers({
-  router: routerReducer,
+  denunciaComSucessoReducer,
+  form: formReducer
 });

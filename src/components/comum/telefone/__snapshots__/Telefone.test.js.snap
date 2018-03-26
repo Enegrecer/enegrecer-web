@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Telefone deve seguir a estrutura definida  1`] = `
+<campoTexto
+  divClasse=""
+  id="telefone"
+  label="Telefone"
+  maxLen={17}
+  normalize={[Function]}
+  placeholder="__ - ____ - ____"
+  state=""
+  type="text"
+/>
+`;

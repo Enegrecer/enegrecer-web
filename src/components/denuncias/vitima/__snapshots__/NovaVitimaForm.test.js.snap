@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
+<div>
+  <div
+    className="row"
+  >
+    <checkBox
+      id="souAVitima"
+      label="Marque se você é a vítima"
+      state="souAVitima"
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <nome
+      id="nome-vitima"
+      onChange={[Function]}
+      state="nomeVitima"
+    />
+    <Data
+      divClasse="input-field col s6"
+      id="dataNascimento"
+      label="Data de Nascimento"
+      state="dataNascimentoVitima"
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <telefone
+      divClasse="input-field col s6"
+      id="telefone"
+      label="Telefone"
+      state="telefoneVitima"
+    />
+    <combobox
+      divClasse="col s6"
+      id="cidade-vitima"
+      itens={
+        Array [
+          "Belo Horizonte",
+        ]
+      }
+      label="Cidade *"
+      state="cidadeVitima"
+      valorPadrao=""
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <genero
+      divClasse="col s6"
+      id="vitima-genero"
+      state="generoVitima"
+    />
+    <comboRaca
+      divClasse="col s6"
+      id="raca"
+      somenteRacasVitima={true}
+      state="racaVitima"
+    />
+  </div>
+</div>
+`;

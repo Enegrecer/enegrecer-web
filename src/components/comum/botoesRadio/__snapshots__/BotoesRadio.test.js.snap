@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Botões Rádio deve possuir estrutura definida  1`] = `
+<div
+  className="col s3"
+>
+  <p
+    key="injuria"
+  >
+    <Field
+      component="input"
+      id="injuria"
+      name="idOcorrencia"
+      type="radio"
+      value="injuria"
+    />
+    <label
+      htmlFor="injuria"
+    >
+      Injúria
+    </label>
+  </p>
+  <p
+    key="racismo"
+  >
+    <Field
+      component="input"
+      id="racismo"
+      name="idOcorrencia"
+      type="radio"
+      value="racismo"
+    />
+    <label
+      htmlFor="racismo"
+    >
+      Racismo
+    </label>
+  </p>
+</div>
+`;

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Routes deve construir a pagina corretamente  1`] = `
+<BrowserRouter>
+  <div>
+    <Route
+      component={[Function]}
+      path="/"
+    />
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/sobre"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/coletivo-enegrecer"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/painel/denuncias/nova"
+      />
+    </Switch>
+    <Route
+      component={[Function]}
+      path="/"
+    />
+  </div>
+</BrowserRouter>
+`;

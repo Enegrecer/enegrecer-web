@@ -1,0 +1,19 @@
+agressao:
+- bairroAgressao
+- cidadeAgressao
+- dataAgressao
+- descricaoAgressao
+- enderecoAgressao
+- estadoAgressao
+- periodoAgressao
+
+
+vitima:
+- cidadeVitima
+- dataNascimentoVitima
+- generoVitima
+- nomeVitima
+- racaVitima
+- souAVitima
+- telefoneVitima
+

@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Combo Estado deve possuir estrutura definida  1`] = `
+<combobox
+  divClasse=""
+  id="13"
+  itens={
+    Array [
+      "AC",
+      "AL",
+      "AM",
+      "AP",
+      "BA",
+      "CE",
+      "DF",
+      "ES",
+      "GO",
+      "MA",
+      "MG",
+      "MS",
+      "MT",
+      "PA",
+      "PB",
+      "PE",
+      "PI",
+      "RN",
+      "PR",
+      "RJ",
+      "RR",
+      "SC",
+      "SE",
+      "SP",
+      "TO",
+    ]
+  }
+  label="Selecione o Estado:"
+  state="estado"
+  valorPadrao="Selecione"
+/>
+`;

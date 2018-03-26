@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nome deve seguir a estrutura definida  1`] = `
+<nome
+  id="3"
+  onChange={[Function]}
+  state=""
+>
+  <campoTexto
+    divClasse="input-field col s6"
+    id="3"
+    label="Nome (máximo de 40 caracteres)"
+    maxLen={40}
+    onChange={[Function]}
+    placeholder="Nome (máximo de 40 caracteres)"
+    state=""
+    type="text"
+    validacoes={
+      Array [
+        [Function],
+        [Function],
+        [Function],
+      ]
+    }
+  >
+    <div
+      className="input-field col s6"
+    >
+      <input
+        id="3"
+        maxLength={40}
+        placeholder="Nome (máximo de 40 caracteres)"
+        type="text"
+      />
+      <label
+        className="active"
+        data-success="right"
+        htmlFor="3"
+      >
+        Nome (máximo de 40 caracteres)
+      </label>
+    </div>
+  </campoTexto>
+</nome>
+`;

@@ -1,64 +1,98 @@
 import { fork, call, put, take } from 'redux-saga/effects';
-import * as firebase from 'firebase';
 import firebaseApp from '../utils/firebaseUtils';
 
 import {
   CRIAR_DENUNCIA_REQUISICAO, criarDenunciaSucesso,
 } from '../actions/criarDenunciaActions';
 
+const denunciaInicial = {
+  bairroAgressao: '',
+  cidadeAgressao: '',
+  dataAgressao: '',
+  descricaoAgressao: '',
+  enderecoAgressao: '',
+  estadoAgressao: '',
+  periodoAgressao: '',
+  categoriaCrime: '',
+  numeroBoletim: '',
+  numeroProcesso: '',
+  orgao: '',
+  cidadeDenunciante: '',
+  dataNascimentoDenunciante: '',
+  emailDenunciante: '',
+  generoDenunciante: '',
+  nomeDenunciante: '',
+  racaDenunciante: '',
+  telefoneDenunciante: '',
+  cidadeVitima: '',
+  dataNascimentoVitima: '',
+  generoVitima: '',
+  nomeVitima: '',
+  racaVitima: '',
+  souAVitima: '',
+  telefoneVitima: '',
+  dataNascimentoAgressor: '',
+  nomeAgressor: '',
+  racaAgressor: '',
+  generoAgressor: '',
+  bairroAgressor: '',
+  cidadeAgressor: '',
+  descricaoAgressor: '',
+  estadoAgressor: ''
+};
+
 export function criarDenuncia(acao) {
   const ref = firebaseApp.database().ref();
   const refDenuncias = ref.child('denuncias');
+  const dados = Object.assign({}, denunciaInicial, acao.payload);
 
   const idDenuncia = refDenuncias.push({
-    idCategoria: acao.payload.idCategoria,
-    dataHoraCriacao: firebase.database.ServerValue.TIMESTAMP,
-    denunciante: acao.payload.denunciante,
+    agressao: {
+      bairro: dados.bairroAgressao,
+      cidade: dados.cidadeAgressao,
+      data: dados.dataAgressao,
+      descricao: dados.dataAgressao,
+      endereco: dados.enderecoAgressao,
+      periodo: dados.periodoAgressao
+    },
     informacoesLegais: {
-      categoria: 'Agressão Moral',
-      numeroBoletimOcorrencia: '07621/12',
-      numeroProcesso: '12551/76',
-      orgao: 'TJMG',
+      categoria: dados.categoriaCrime,
+      numeroBoletim: dados.numeroBoletim,
+      numeroProcesso: dados.numeroProcesso,
+      orgao: dados.orgao,
     },
-    local: {
-      endereco: acao.payload.endereco,
-      estado: acao.payload.estado,
-    },
-    dataOcorrencia: acao.payload.dataOcorrencia,
-    horaOcorrencia: acao.payload.horaOcorrencia,
-    detalhamento: acao.payload.detalhamento,
-    idStatus: 'nova',
   }).getKey();
 
   const refPessoasEnvolvidas = ref.child('pessoasEnvolvidas').child(idDenuncia);
   refPessoasEnvolvidas.set({
-    vitimas: {
-      naturalidade: acao.payload.vitima.naturalidade,
-      dataNascimento: acao.payload.vitima.dataNascimento,
-      genero: acao.payload.vitima.genero,
-      caracteristicasDaVitima: acao.payload.vitima.caracteristicasDaVitima,
-      souAVitima: acao.payload.vitima.souAVitima,
-      conhecoAVitima: acao.payload.vitima.conhecoAVitima,
-      nome: acao.payload.vitima.nome,
-      raca: acao.payload.vitima.raca,
-      informacoesContato: {
-        email: acao.payload.vitima.email,
-        endereco: acao.payload.vitima.endereco,
-        telefone: acao.payload.vitima.telefone,
-        estado: acao.payload.vitima.estado,
-      },
+    denunciante: {
+      cidade: dados.cidadeDenunciante,
+      dataNascimento: dados.dataNascimentoDenunciante,
+      email: dados.emailDenunciante,
+      genero: dados.generoDenunciante,
+      nome: dados.nomeDenunciante,
+      raca: dados.racaDenunciante,
+      telefone: dados.telefoneDenunciante
     },
-    testemunha: {
-      nome: acao.payload.testemunha.nome,
-      raca: acao.payload.testemunha.raca,
-      dataNascimento: acao.payload.testemunha.dataNascimento,
-      genero: acao.payload.testemunha.genero,
-      caracteristicas: acao.payload.testemunha.caracteristicas,
-      informacoesContato: {
-        telefone: acao.payload.testemunha.telefone
-      }
+    vitima: {
+      cidade: dados.cidadeVitima,
+      dataNascimento: dados.dataNascimentoVitima,
+      genero: dados.generoVitima,
+      nome: dados.nomeVitima,
+      raca: dados.racaVitima,
+      souAVitima: dados.souAVitima,
+      telefone: dados.telefoneVitima
     },
-    autores: { },
+    agressor: {
+      nome: dados.nomeAgressor,
+      raca: dados.racaAgressor,
+      dataNascimento: dados.dataNascimentoAgressor,
+      genero: dados.generoAgressor,
+      descricao: dados.descricaoAgressor,
+      cidade: dados.cidadeAgressor,
+      estado: dados.estadoAgressor,
+      bairro: dados.bairroAgressor
+    }
   });
 
   return idDenuncia;
@@ -68,12 +102,11 @@ export function* handleCriarDenunciaRequisicao() {
   while (true) {
     const acao = yield take(CRIAR_DENUNCIA_REQUISICAO);
     const idDenuncia = yield call(criarDenuncia, acao);
-
     yield put(criarDenunciaSucesso(idDenuncia));
-    yield put(acao.payload.onSuccess);
   }
 }
 
 export default function* rootSaga() {
   yield fork(handleCriarDenunciaRequisicao);
 }
+

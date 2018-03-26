@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox deve possuir estrutura definida  1`] = `
+<div>
+  <Field
+    component="input"
+    id="souAVitima"
+    name="souAVitima"
+    type="checkbox"
+  />
+  <label
+    htmlFor="souAVitima"
+  >
+    Sou a Vítima
+  </label>
+</div>
+`;

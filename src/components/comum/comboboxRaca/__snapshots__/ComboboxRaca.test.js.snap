@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Combobox Raça deve conter somente as raças Pardo e Negro quando somenteRacasVitima é true  1`] = `
+<combobox
+  divClasse=""
+  id="raca-vitma"
+  itens={
+    Array [
+      "Preta",
+      "Parda",
+    ]
+  }
+  label="Selecione a Raça:"
+  state="raca-testemunha"
+  valorPadrao="Selecione a Raça:"
+/>
+`;
+
+exports[`Combobox Raça deve conter todas as raças quando somenteRacasVitima é false  1`] = `
+<combobox
+  divClasse=""
+  id="raca-testemunha"
+  itens={
+    Array [
+      "Amarela",
+      "Branco",
+      "Índigena",
+      "Parda",
+      "Preta",
+    ]
+  }
+  label="Selecione a Raça:"
+  state="raca-testemunha"
+  valorPadrao="Selecione a Raça:"
+/>
+`;

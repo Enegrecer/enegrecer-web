@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Genero deve possuir estrutura definida  1`] = `
+<combobox
+  divClasse=""
+  id="13"
+  itens={
+    Array [
+      "Feminino",
+      "Masculino",
+    ]
+  }
+  label="Gênero"
+  state="genero"
+  valorPadrao="Selecione seu gênero"
+/>
+`;

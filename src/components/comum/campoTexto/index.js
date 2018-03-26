@@ -57,8 +57,19 @@ renderCampoTexto.propTypes = {
   onChange: PropTypes.func,
   divClasse: PropTypes.string,
   inputClasse: PropTypes.string,
-  input: PropTypes.string,
-  meta: PropTypes.string
+  input: PropTypes.shape({
+    name: PropTypes.string,
+    onBlur: PropTypes.func,
+    onChange: PropTypes.func,
+    onDragStart: PropTypes.func,
+    onDrop: PropTypes.func,
+    onFocus: PropTypes.func,
+    value: renderCampoTexto.type
+  }).isRequired,
+  meta: PropTypes.shape({
+    touched: PropTypes.boolean,
+    error: PropTypes.string
+  })
 };
 
 renderCampoTexto.defaultProps = {
@@ -70,9 +81,7 @@ renderCampoTexto.defaultProps = {
   onChange: () => {},
   divClasse: '',
   inputClasse: '',
-  input: '',
-  meta: ''
-
+  meta: {}
 };
 
 export default campoTexto;

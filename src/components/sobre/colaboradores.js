@@ -7,7 +7,7 @@ export function colaboradores() {
     },
     {
       nome: 'Ayrton Araújo',
-      papel: 'Desenvolvedor',
+      papel: 'DEV',
       foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
     },
     {
@@ -22,62 +22,87 @@ export function colaboradores() {
     },
     {
       nome: 'Caique Peixoto',
-      papel: 'Desenvolvedor',
+      papel: 'DEV',
       foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
     },
     {
       nome: 'Daniel Faria',
-      papel: 'Desenvolvedor',
+      papel: 'DEV',
       foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
     },
     {
       nome: 'Débora Beda',
-      papel: 'Desenvolvedora',
+      papel: 'DEVa',
       foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
     },
     {
       nome: 'Edlaine Zamora',
-      papel: 'Desenvolvedora',
+      papel: 'DEVa',
+      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+    },
+    {
+      nome: 'Egileu Trajano',
+      papel: 'QA',
       foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
     },
     {
       nome: 'Erika Silva',
-      papel: 'Desenvolvedora',
+      papel: 'DEVa',
       foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
     },
     {
       nome: 'Gabriel Pereira',
-      papel: 'Desenvolvedor',
+      papel: 'DEV',
       foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
     },
     {
       nome: 'Gabriella Matos',
-      papel: 'Desenvolvedora',
+      papel: 'DEVa',
+      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+    },
+    {
+      nome: 'Izael Effemberg',
+      papel: 'DEV',
       foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
     },
     {
       nome: 'João Moreira',
-      papel: 'Desenvolvedor',
+      papel: 'DEV',
+      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+    },
+    {
+      nome: 'Kamila Serafim',
+      papel: 'QA',
+      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+    },
+    {
+      nome: 'Karla Falcão',
+      papel: 'DEVa',
       foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
     },
     {
       nome: 'Laura de Bella',
-      papel: 'Desenvolvedora',
+      papel: 'DEVa',
       foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
     },
     {
       nome: 'Leandro Vicente',
-      papel: 'Desenvolvedor',
+      papel: 'DEV',
       foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
     },
     {
       nome: 'Lorena Souza',
-      papel: 'Desenvolvedora',
+      papel: 'DEVa',
+      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+    },
+    {
+      nome: 'Luciana Montenegro',
+      papel: 'DEVa',
       foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
     },
     {
       nome: 'Marcella Souza',
-      papel: 'Desenvolvedora',
+      papel: 'DEVa',
       foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
     },
     {
@@ -86,18 +111,33 @@ export function colaboradores() {
       foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
     },
     {
+      nome: 'Mila Orrico',
+      papel: 'BA',
+      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+    },
+    {
       nome: 'Nayara Souza',
-      papel: 'Desenvolvedora',
+      papel: 'DEVa',
       foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
     },
     {
       nome: 'Paulo Gama',
-      papel: 'Desenvolvedor',
+      papel: 'DEV',
       foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
     },
     {
       nome: 'Priscila Rocha',
       papel: 'PM',
+      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+    },
+    {
+      nome: 'Rosana Mendes',
+      papel: 'DEVa',
+      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+    },
+    {
+      nome: 'Roselma Mendes',
+      papel: 'DEVa',
       foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
     },
     {
@@ -107,7 +147,7 @@ export function colaboradores() {
     },
     {
       nome: 'Thais Lopes',
-      papel: 'Desenvolvedora',
+      papel: 'DEVa',
       foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
     },
     {

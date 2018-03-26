@@ -53,20 +53,20 @@ const secoesForm = [
 
 const FormDenuncia = props => (
   <form id="form-nova-denuncia" onSubmit={props.submeteFormulario}>
-    {secoesForm.map(formSection => (
+    {secoesForm.map(secaoForm => (
       <SecaoForm
-        key={formSection.titulo}
-        titulo={formSection.titulo}
-        subtitulo={formSection.subtitulo}
-        texto={formSection.texto}
+        key={secaoForm.titulo}
+        titulo={secaoForm.titulo}
+        subtitulo={secaoForm.subtitulo}
+        texto={secaoForm.texto}
       >
-        {formSection.formulario}
+        {secaoForm.formulario}
       </SecaoForm>
     ))}
 
     <br />
     <button className="btn waves-effect waves-light" type="submit" name="action">
-          Enviar Denúncia
+      Enviar Denúncia
     </button>
   </form>
 );

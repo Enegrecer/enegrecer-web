@@ -12,7 +12,7 @@ describe('NovaDenunciaForm Component', () => {
   beforeEach(() => {
     store = createStore(combineReducers({ form: formReducer }));
     const props = {
-      handleSubmit: () => {}
+      submeteFormulario: () => {}
     };
     subject = mount(
       <Provider store={store}>
@@ -23,9 +23,5 @@ describe('NovaDenunciaForm Component', () => {
 
   it('deve renderizar o componente sem erros', () => {
     expect(subject.exists()).toBe(true);
-  });
-
-  it('deve renderizar o componente NovaVitimaForm', () => {
-    expect(subject.find('NovaVitimaForm')).toHaveLength(1);
   });
 });

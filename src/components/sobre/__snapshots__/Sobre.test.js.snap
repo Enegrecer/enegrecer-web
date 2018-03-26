@@ -68,21 +68,141 @@ exports[`Sobre possui a mesma estrutura 1`] = `
       </div>
       <div>
         <Colaborador
-          foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
-          key="Pessoa Colaboradora"
-          nome="Pessoa Colaboradora"
-          papel="Desenvolvedora"
-        />
-        <Colaborador
-          foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
-          key="Pessoa Colaboradora 2"
-          nome="Pessoa Colaboradora 2"
+          foto="https://jigsaw.thoughtworks.net/consultants/31052/show_picture?style=profile&time_stamp=1492522731"
+          key="Alisson Pereira"
+          nome="Alisson Pereira"
           papel="QA"
         />
         <Colaborador
+          foto="https://thoughtworks-jigsaw-production.s3.amazonaws.com/upload/consultants/images/27703/profile/picture.jpg?AWSAccessKeyId=AKIAIMOCJH4MKJU7VUBA&Expires=1522027068&Signature=dW1cZr64Fj0icN2tnX3tWgEQkig%3D"
+          key="Ayrton Araújo"
+          nome="Ayrton Araújo"
+          papel="Desenvolvedor"
+        />
+        <Colaborador
+          foto="https://jigsaw.thoughtworks.net/consultants/24302/show_picture?style=profile&time_stamp=1450742423"
+          key="Bárbara Sanches"
+          nome="Bárbara Sanches"
+          papel="BA"
+        />
+        <Colaborador
+          foto="https://jigsaw.thoughtworks.net/consultants/30937/show_picture?style=profile&time_stamp=1491333603"
+          key="Bárbara Tomaz"
+          nome="Bárbara Tomaz"
+          papel="XD"
+        />
+        <Colaborador
+          foto="https://jigsaw.thoughtworks.net/consultants/32743/show_picture?style=profile&time_stamp=1505933818"
+          key="Caique Peixoto"
+          nome="Caique Peixoto"
+          papel="Desenvolvedor"
+        />
+        <Colaborador
+          foto="https://jigsaw.thoughtworks.net/consultants/33501/show_picture?style=profile&time_stamp=1513699595"
+          key="Daniel Faria"
+          nome="Daniel Faria"
+          papel="Desenvolvedor"
+        />
+        <Colaborador
+          foto="https://jigsaw.thoughtworks.net/consultants/29630/show_picture?style=profile&time_stamp=1502287327"
+          key="Débora Beda"
+          nome="Débora Beda"
+          papel="Desenvolvedora"
+        />
+        <Colaborador
+          foto="https://jigsaw.thoughtworks.net/consultants/30455/show_picture?style=profile&time_stamp=1489067187"
+          key="Edlaine Zamora"
+          nome="Edlaine Zamora"
+          papel="Desenvolvedora"
+        />
+        <Colaborador
+          foto="https://jigsaw.thoughtworks.net/consultants/34268/show_picture?style=profile&time_stamp=1519065704"
+          key="Erika Silva"
+          nome="Erika Silva"
+          papel="Desenvolvedora"
+        />
+        <Colaborador
+          foto="https://jigsaw.thoughtworks.net/consultants/32485/show_picture?style=profile&time_stamp=1506018097"
+          key="Gabriel Pereira"
+          nome="Gabriel Pereira"
+          papel="Desenvolvedor"
+        />
+        <Colaborador
+          foto="https://jigsaw.thoughtworks.net/consultants/31936/show_picture?style=profile&time_stamp=1522000501"
+          key="Gabriella Matos"
+          nome="Gabriella Matos"
+          papel="Desenvolvedora"
+        />
+        <Colaborador
+          foto="https://jigsaw.thoughtworks.net/consultants/33617/show_picture?style=profile&time_stamp=1512484942"
+          key="João Moreira"
+          nome="João Moreira"
+          papel="Desenvolvedor"
+        />
+        <Colaborador
+          foto="https://jigsaw.thoughtworks.net/consultants/31230/show_picture?style=profile&time_stamp=1495545261"
+          key="Laura de Bella"
+          nome="Laura de Bella"
+          papel="Desenvolvedora"
+        />
+        <Colaborador
+          foto="https://jigsaw.thoughtworks.net/consultants/33641/show_picture?style=profile&time_stamp=1516961941"
+          key="Leandro Vicente"
+          nome="Leandro Vicente"
+          papel="Desenvolvedor"
+        />
+        <Colaborador
+          foto="https://jigsaw.thoughtworks.net/consultants/28118/show_picture?style=profile&time_stamp=1516663545"
+          key="Lorena Souza"
+          nome="Lorena Souza"
+          papel="Desenvolvedora"
+        />
+        <Colaborador
+          foto="https://jigsaw.thoughtworks.net/consultants/32553/show_picture?style=profile&time_stamp=1506463056"
+          key="Marcella Souza"
+          nome="Marcella Souza"
+          papel="Desenvolvedora"
+        />
+        <Colaborador
+          foto="https://jigsaw.thoughtworks.net/consultants/32742/show_picture?style=profile&time_stamp=1505831688"
+          key="Mariane Ferroni"
+          nome="Mariane Ferroni"
+          papel="BA"
+        />
+        <Colaborador
+          foto="https://jigsaw.thoughtworks.net/consultants/31229/show_picture?style=profile&time_stamp=1495554234"
+          key="Nayara Souza"
+          nome="Nayara Souza"
+          papel="Desenvolvedora"
+        />
+        <Colaborador
+          foto="https://jigsaw.thoughtworks.net/consultants/31190/show_picture?style=profile&time_stamp=1512339867"
+          key="Paulo Gama"
+          nome="Paulo Gama"
+          papel="Desenvolvedor"
+        />
+        <Colaborador
+          foto="https://jigsaw.thoughtworks.net/consultants/32750/show_picture?style=profile&time_stamp=1507067309"
+          key="Priscila Rocha"
+          nome="Priscila Rocha"
+          papel="PM"
+        />
+        <Colaborador
+          foto="https://jigsaw.thoughtworks.net/consultants/33619/show_picture?style=profile&time_stamp=1513186224"
+          key="Sérgio Luis"
+          nome="Sérgio Luis"
+          papel="BA"
+        />
+        <Colaborador
           foto="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg"
-          key="Pessoa Colaboradora 3"
-          nome="Pessoa Colaboradora 3"
+          key="Thais Lopes"
+          nome="Thais Lopes"
+          papel="Desenvolvedora"
+        />
+        <Colaborador
+          foto="https://jigsaw.thoughtworks.net/consultants/25842/show_picture?style=profile&time_stamp=1439229217"
+          key="Tiago Megale"
+          nome="Tiago Megale"
           papel="BA"
         />
       </div>

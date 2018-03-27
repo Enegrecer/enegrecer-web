@@ -1,159 +1,163 @@
+function carregarFoto(nomeArquivo) {
+  return require(`../../imagens/pessoas/${nomeArquivo}`);
+}
+
 export function colaboradores() {
   return [
     {
       nome: 'Alisson Pereira',
       papel: 'QA',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('alisson-pereira.jpg'),
     },
     {
       nome: 'Ayrton Araújo',
       papel: 'DEV',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('ayrton-araujo.jpg'),
     },
     {
       nome: 'Bárbara Sanches',
       papel: 'BA',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('barbara-sanches.jpg'),
     },
     {
       nome: 'Bárbara Tomaz',
       papel: 'XD',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('barbara-tomaz.jpg'),
     },
     {
       nome: 'Caique Peixoto',
       papel: 'DEV',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('caique-peixoto.jpeg'),
     },
     {
       nome: 'Daniel Faria',
       papel: 'DEV',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('daniel-faria.png'),
     },
     {
       nome: 'Débora Beda',
       papel: 'DEVa',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('debora-beda.jpg'),
     },
     {
       nome: 'Edlaine Zamora',
       papel: 'DEVa',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('edlaine-zamora.jpeg'),
     },
     {
       nome: 'Egileu Trajano',
       papel: 'QA',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('egileu-trajano.jpg'),
     },
     {
       nome: 'Erika Silva',
       papel: 'DEVa',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('erika-silva.jpg'),
     },
     {
       nome: 'Gabriel Pereira',
       papel: 'DEV',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('gabriel-pereira.jpg'),
     },
     {
-      nome: 'Gabriella Matos',
+      nome: 'Gabriela Matos',
       papel: 'DEVa',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('gabriela-matos.png'),
     },
     {
       nome: 'Izael Effemberg',
       papel: 'DEV',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('izael-effemberg.jpg'),
     },
     {
       nome: 'João Moreira',
       papel: 'DEV',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('joao-moreira.jpeg'),
     },
     {
       nome: 'Kamila Serafim',
       papel: 'QA',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('kamila-serafim.jpg'),
     },
     {
       nome: 'Karla Falcão',
       papel: 'DEVa',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('default.jpg'),
     },
     {
       nome: 'Laura de Bella',
       papel: 'DEVa',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('laura-bella.jpg'),
     },
     {
       nome: 'Leandro Vicente',
       papel: 'DEV',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('leandro-vicente.jpeg'),
     },
     {
       nome: 'Lorena Souza',
       papel: 'DEVa',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('lorena-souza.png'),
     },
     {
       nome: 'Luciana Montenegro',
       papel: 'DEVa',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('luciana-montenegro.jpg'),
     },
     {
       nome: 'Marcella Souza',
       papel: 'DEVa',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('marcella-souza.jpg'),
     },
     {
       nome: 'Mariane Ferroni',
       papel: 'BA',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('mariane-ferroni.jpg'),
     },
     {
       nome: 'Mila Orrico',
       papel: 'BA',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('mila-orrico.jpg'),
     },
     {
       nome: 'Nayara Souza',
       papel: 'DEVa',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('nayara-souza.png'),
     },
     {
       nome: 'Paulo Gama',
       papel: 'DEV',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('paulo-gama.jpg'),
     },
     {
       nome: 'Priscila Rocha',
       papel: 'PM',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('priscila-rocha.jpg'),
     },
     {
-      nome: 'Rosana Mendes',
+      nome: 'Rosangela Mendes',
       papel: 'DEVa',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('rosangela-mendes.jpg'),
     },
     {
       nome: 'Roselma Mendes',
       papel: 'DEVa',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('roselma-mendes.png'),
     },
     {
       nome: 'Sérgio Luis',
       papel: 'BA',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('sergio-luis.jpg'),
     },
     {
       nome: 'Thais Lopes',
       papel: 'DEVa',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('thais-lopes.jpg'),
     },
     {
       nome: 'Tiago Megale',
       papel: 'BA',
-      foto: 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11051832.jpg',
+      foto: carregarFoto('tiago-megale.jpg'),
     }
   ];
 }

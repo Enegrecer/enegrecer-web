@@ -30,6 +30,11 @@ export function colaboradores() {
       foto: carregarFoto('caique-peixoto.jpeg'),
     },
     {
+      nome: 'Carine Monteiro',
+      papel: 'DEVa',
+      foto: carregarFoto('carine-monteiro.jpg'),
+    },
+    {
       nome: 'Daniel Faria',
       papel: 'DEV',
       foto: carregarFoto('daniel-faria.png'),
@@ -60,9 +65,9 @@ export function colaboradores() {
       foto: carregarFoto('gabriel-pereira.jpg'),
     },
     {
-      nome: 'Gabriela Matos',
+      nome: 'Gabriela Mattos',
       papel: 'DEVa',
-      foto: carregarFoto('gabriela-matos.png'),
+      foto: carregarFoto('gabriela-mattos.png'),
     },
     {
       nome: 'Izael Effemberg',
@@ -82,7 +87,7 @@ export function colaboradores() {
     {
       nome: 'Karla Falcão',
       papel: 'DEVa',
-      foto: carregarFoto('default.jpg'),
+      foto: carregarFoto('karla-falcao.jpeg'),
     },
     {
       nome: 'Laura de Bella',
@@ -120,6 +125,11 @@ export function colaboradores() {
       foto: carregarFoto('mila-orrico.jpg'),
     },
     {
+      nome: 'Nathalia Oliveira',
+      papel: 'PM',
+      foto: carregarFoto('nathalia-oliveira.png'),
+    },
+    {
       nome: 'Nayara Souza',
       papel: 'DEVa',
       foto: carregarFoto('nayara-souza.png'),
@@ -133,6 +143,11 @@ export function colaboradores() {
       nome: 'Priscila Rocha',
       papel: 'PM',
       foto: carregarFoto('priscila-rocha.jpg'),
+    },
+    {
+      nome: 'Rafaella Souza',
+      papel: 'DEVa',
+      foto: carregarFoto('rafaella-souza.jpeg')
     },
     {
       nome: 'Rosangela Mendes',

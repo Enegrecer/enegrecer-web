@@ -98,6 +98,12 @@ exports[`Sobre possui a mesma estrutura 1`] = `
           papel="DEV"
         />
         <Colaborador
+          foto="carine-monteiro.jpg"
+          key="Carine Monteiro"
+          nome="Carine Monteiro"
+          papel="DEVa"
+        />
+        <Colaborador
           foto="daniel-faria.png"
           key="Daniel Faria"
           nome="Daniel Faria"
@@ -134,9 +140,9 @@ exports[`Sobre possui a mesma estrutura 1`] = `
           papel="DEV"
         />
         <Colaborador
-          foto="gabriela-matos.png"
-          key="Gabriela Matos"
-          nome="Gabriela Matos"
+          foto="gabriela-mattos.png"
+          key="Gabriela Mattos"
+          nome="Gabriela Mattos"
           papel="DEVa"
         />
         <Colaborador
@@ -158,7 +164,7 @@ exports[`Sobre possui a mesma estrutura 1`] = `
           papel="QA"
         />
         <Colaborador
-          foto="default.jpg"
+          foto="karla-falcao.jpeg"
           key="Karla Falcão"
           nome="Karla Falcão"
           papel="DEVa"
@@ -206,6 +212,12 @@ exports[`Sobre possui a mesma estrutura 1`] = `
           papel="BA"
         />
         <Colaborador
+          foto="nathalia-oliveira.png"
+          key="Nathalia Oliveira"
+          nome="Nathalia Oliveira"
+          papel="PM"
+        />
+        <Colaborador
           foto="nayara-souza.png"
           key="Nayara Souza"
           nome="Nayara Souza"
@@ -222,6 +234,12 @@ exports[`Sobre possui a mesma estrutura 1`] = `
           key="Priscila Rocha"
           nome="Priscila Rocha"
           papel="PM"
+        />
+        <Colaborador
+          foto="rafaella-souza.jpeg"
+          key="Rafaella Souza"
+          nome="Rafaella Souza"
+          papel="DEVa"
         />
         <Colaborador
           foto="rosangela-mendes.jpg"

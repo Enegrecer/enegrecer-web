@@ -9,6 +9,7 @@ exports[`AgressorForm deve seguir a estrutura definida  1`] = `
       id="nome-agressor"
       onChange={[Function]}
       state="nomeAgressor"
+      validacoes={Array []}
     />
     <campoTexto
       divClasse="input-field col s6"
@@ -68,6 +69,7 @@ exports[`AgressorForm deve seguir a estrutura definida  1`] = `
     />
     <comboEstado
       classes="col s6"
+      divClasse=""
       id="estado-agressor"
       state="estadoAgressor"
     />

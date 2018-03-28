@@ -9,14 +9,26 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
       id="nome-vitima"
       onChange={[Function]}
       state="nomeDenunciante"
+      validacoes={
+        Array [
+          [Function],
+        ]
+      }
     />
     <campoTexto
       divClasse="input-field col s6"
       id="email-denunciante"
       label="Email"
       maxLen={40}
+      placeholder="E-mail"
       state="emailDenunciante"
       type="text"
+      validacoes={
+        Array [
+          [Function],
+          [Function],
+        ]
+      }
     />
   </div>
   <div
@@ -28,6 +40,20 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
       label="Telefone"
       state="telefoneDenunciante"
     />
+    <genero
+      divClasse="col s6"
+      id="genero-denunciante"
+      state="generoDenunciante"
+    />
+  </div>
+  <div
+    className="row"
+  >
+    <comboEstado
+      divClasse="col s6"
+      id="estado-denunciante"
+      state="estadoDenunciante"
+    />
     <combobox
       divClasse="col s6"
       id="cidade-denunciante"
@@ -36,7 +62,7 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
           "Belo Horizonte",
         ]
       }
-      label="Cidade *"
+      label="Cidade"
       state="cidadeDenunciante"
       valorPadrao=""
     />
@@ -60,8 +86,7 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
     className="row"
   >
     <comboRaca
-      classes="col s6"
-      divClasse=""
+      divClasse="col s6"
       id="raca-denunciante"
       somenteRacasVitima={true}
       state="racaDenunciante"

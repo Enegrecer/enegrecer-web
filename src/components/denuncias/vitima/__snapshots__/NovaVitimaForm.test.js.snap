@@ -18,6 +18,7 @@ exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
       id="nome-vitima"
       onChange={[Function]}
       state="nomeVitima"
+      validacoes={Array []}
     />
     <Data
       divClasse="input-field col s6"

@@ -10,14 +10,14 @@ import NovaDenunciaContainer from '../containers/denuncias/NovaDenunciaContainer
 const Routes = () => (
   <BrowserRouter>
     <div>
-      <Route path="/" component={Menu} />
+      <Menu />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/sobre" component={Sobre} />
         <Route exact path="/coletivo-enegrecer" component={ColetivoEnegrecer} />
         <Route exact path="/painel/denuncias/nova" component={NovaDenunciaContainer} />
       </Switch>
-      <Route path="/" component={Rodape} />
+      <Rodape />
     </div>
   </BrowserRouter>
 );

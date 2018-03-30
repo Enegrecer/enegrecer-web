@@ -2,48 +2,52 @@
 
 exports[`Menu deve construir a pagina corretamente  1`] = `
 <div
-  className="menu"
+  id="banner"
 >
   <div
-    className="logo"
+    className="menu"
   >
-    <Link
-      replace={false}
-      to="/"
+    <div
+      className="logo"
     >
-      <img
-        alt="Logo Verdade Seja Dita"
-        src="logo.svg"
-      />
-    </Link>
-  </div>
-  <div
-    className="links"
-  >
-    <Link
-      replace={false}
-      to="/sobre"
+      <Link
+        replace={false}
+        to="/"
+      >
+        <img
+          alt="Logo Verdade Seja Dita"
+          src="logo.svg"
+        />
+      </Link>
+    </div>
+    <div
+      className="links"
     >
-      SOBRE
-    </Link>
-    <Link
-      replace={false}
-      to="/depoisdenuncia"
-    >
-      E DEPOIS DA DENÚNCIA?
-    </Link>
-    <Link
-      replace={false}
-      to="/coletivo-enegrecer"
-    >
-      O COLETIVO ENEGRECER
-    </Link>
-    <Link
-      replace={false}
-      to="/painel/denuncias/nova"
-    >
-      DENUNCIAR
-    </Link>
+      <Link
+        replace={false}
+        to="/sobre"
+      >
+        SOBRE
+      </Link>
+      <Link
+        replace={false}
+        to="/depoisdenuncia"
+      >
+        E DEPOIS DA DENÚNCIA?
+      </Link>
+      <Link
+        replace={false}
+        to="/coletivo-enegrecer"
+      >
+        O COLETIVO ENEGRECER
+      </Link>
+      <Link
+        replace={false}
+        to="/painel/denuncias/nova"
+      >
+        DENUNCIAR
+      </Link>
+    </div>
   </div>
 </div>
 `;

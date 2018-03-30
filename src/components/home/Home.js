@@ -3,11 +3,7 @@ import { withHistoryPropTypes } from './sharedPropTypes';
 import './css/home.css';
 
 const Home = () => (
-  <div>
-    <div id="banner">
-      <div id="banner__blur" />
-    </div>
-  </div>
+  <div />
 );
 
 Home.propTypes = withHistoryPropTypes();

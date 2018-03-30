@@ -4,6 +4,7 @@
   background-color: #000000;
   display: flex;
   align-items: center;
+  opacity: 0.5;
 }
 
 .logo {

@@ -1,3 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home possui a mesma estrutura 1`] = `<div />`;
+exports[`Home possui a mesma estrutura 1`] = `
+<div
+  id="banner"
+>
+  <div
+    class="AT-QUANDO-VOC-VAI"
+  >
+    Até quando você vai se esconder?
+  </div>
+</div>
+`;

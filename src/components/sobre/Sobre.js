@@ -5,7 +5,7 @@ import imagem from '../../imagens/sobre.jpg';
 import './css/sobre.css';
 
 const Sobre = () => (
-  <div>
+  <div id="about">
     <div className="row about_section">
       <div className="col s6 colspan_ignore_padding">
         <img alt="Foto ilustrativa do Verdade Seja Dita" src={imagem} />

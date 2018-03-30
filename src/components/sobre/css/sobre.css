@@ -1,10 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
+#about {
+	background-color: #f8f8f8;
+}
+
 .about_section {
-	background-color: #fff;
 	height: 523px;
 	padding: 0;
 	margin: 0;
+	background-color: #f8f8f8;
 }
 
 .about_section .colspan_ignore_padding {

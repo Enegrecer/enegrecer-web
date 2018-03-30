@@ -9,7 +9,6 @@ export default class Menu extends Component {
 
   render() {
     return (
-      <div id="banner">
         <div className="menu">
           <div className="logo">
             <Link to="/">
@@ -23,7 +22,6 @@ export default class Menu extends Component {
             <Link to="/painel/denuncias/nova">DENUNCIAR</Link>
           </div>
         </div>
-      </div>
     );
   }
 }

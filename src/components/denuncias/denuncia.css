@@ -2,7 +2,6 @@
 
 body {
 	font-family: Roboto;
-	background-color: #f8f8f8;
 }
 /*
 .nav-bar {
@@ -66,7 +65,7 @@ body {
   height: 100%;
   overflow: auto;
   display: flex;
-  background: #f8f8f8;
+	background-color: #f8f8f8;
 }
 
 .form-title-bar {
@@ -170,4 +169,3 @@ body {
 select {
   display: block;
 }
-

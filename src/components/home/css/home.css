@@ -62,10 +62,11 @@
 
 * {
   font-family: 'Roboto', sans-serif;
-  background: #000000;
  }
 
-body { }
+body {
+  background: #000000;
+}
 
 .en-text--light {
   color: #fff;
@@ -112,3 +113,19 @@ h3 {
 
 h4 {
   margin: 20px 0 10px; }
+
+.AT-QUANDO-VOC-VAI {
+  width: 354px;
+  height: 196px;
+  font-family: Roboto;
+  font-size: 48px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.98;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+  float: right;
+  margin: 20%;
+}

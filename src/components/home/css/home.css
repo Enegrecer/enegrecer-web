@@ -102,7 +102,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  border-left: 86px solid #ff8100;
+  border-left: 86px solid #000000;
   position: relative; }
   #banner #banner__blur {
     height: 100%;

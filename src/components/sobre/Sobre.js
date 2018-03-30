@@ -25,7 +25,7 @@ const Sobre = () => (
           se expressam em prejuízos para as negras e negros. O racista brasileiro
           não tem nada de cordial e amistoso como muitos imaginam e sustentam. Pelo
           contrário. Nosso objetivo é criar e aplicar novas tecnologias para a
-          luta políticas dos negros e negras contra o racismo; produzindo sobre o
+          luta política dos negros e negras contra o racismo; produzindo sobre o
           contexto atual das questões envolvendo os nossos direitos.
         </p>
       </div>

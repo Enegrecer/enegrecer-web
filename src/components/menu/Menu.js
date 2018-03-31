@@ -9,7 +9,7 @@ export default class Menu extends Component {
 
   render() {
     return (
-      <div className="menu">
+      <div className="col s12 menu">
         <div className="logo">
           <Link to="/">
             <img src={logo} alt="Logo Verdade Seja Dita" />

@@ -1,0 +1,23 @@
+.camposTitulo {
+  color: #838383;
+  font-family: Roboto;
+  font-size: 16px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.camposDescricao {
+  color: #1d1d1d;
+  font-family: Roboto;
+  font-size: 16px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: left;
+}

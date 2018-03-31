@@ -1,0 +1,50 @@
+.receptaculo {
+  align-items: flex-start;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  padding-left: 3.5%;
+  padding-right: 3.5%;
+  width: 100%;
+}
+
+.titulo {
+  align-content: center;
+  color: #1d1d1d;
+  font-family: Roboto;
+  font-size: 20px;
+  padding-bottom: 30px;
+  padding-top: 25px;
+  width: 100%;
+}
+
+.detalhes {
+  background-color: #ffffff;
+  border: solid 1px #f0f0f0;
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 31px;
+  padding-top: 25px;
+  width: 100%;
+}
+
+.classificacao {
+  background-color: #ffffff;
+  border: solid 1px #f0f0f0;
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.15);
+  padding-bottom: 29px;
+  padding-top: 24px;
+  width: 100%;
+}
+
+.campos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.grade {
+  display: flex;
+}

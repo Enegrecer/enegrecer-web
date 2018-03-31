@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Depois da denuncia possui a mesma estrutura 1`] = `
+<div>
+  <SecaoDaPagina
+    imagemSecao="depois-denuncia-1.jpg"
+    ladoTexto="esquerdo"
+    nomeFoto="maos de pessoas negras"
+    textoDoBloco="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget lectus eget ex viverra laoreet. Sed vitae massa vitae tortor pretium rutrum. Fusce in mattis urna, a lobortis elit. Suspendisse id maximus neque, non tincidunt ex. Mauris justo neque, finibus eget posuere at, pharetra a lectus. Etiam at risus sit amet nunc commodo ullamcorper vel non enim. Ut placerat scelerisque fermentum. Etiam fermentum convallis ipsum eget dapibus. Cras ut libero et dolor eleifend bibendum. Phasellus maximus nibh in sem congue cursus. Fusce vitae mi quis magna rutrum ultricies. Aenean ullamcorper dapibus lacinia. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget lectus eget ex viverra laoreet. Sed vitae massa vitae tortor pretium rutrum. Fusce in mattis urna, a lobortis elit."
+    tituloDaSecao1="E depois"
+    tituloDaSecao2="da denúncia?"
+    tracoVermelho="bloco_retangular"
+  />
+  <SecaoDaPagina
+    imagemSecao="depois-denuncia-2.jpg"
+    ladoTexto="direito"
+    nomeDaClasse="segundo__bloco-proximos-passos"
+    nomeFoto="homem negro"
+    textoDoBloco="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget lectus eget ex viverra laoreet. Sed vitae massa vitae tortor pretium rutrum. Fusce in mattis urna, a lobortis elit. Suspendisse id maximus neque, non tincidunt ex. Mauris justo neque, finibus eget posuere at, pharetra a lectus. Etiam at risus sit amet nunc commodo ullamcorper vel non enim. Ut placerat scelerisque fermentum. Etiam fermentum convallis ipsum eget dapibus. Cras ut libero et dolor eleifend bibendum. Phasellus maximus nibh in sem congue cursus. Fusce vitae mi quis magna rutrum ultricies. Aenean ullamcorper dapibus lacinia. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget lectus eget ex viverra laoreet. Sed vitae massa vitae tortor pretium rutrum. Fusce in mattis urna, a lobortis elit."
+    tituloDaSecao1=""
+    tituloDaSecao2=""
+    tracoVermelho=""
+  />
+  <SecaoDaPagina
+    imagemSecao="depois-denuncia-3.jpg"
+    ladoTexto="esquerdo"
+    nomeDaClasse="terceiro__bloco-proximos-passos"
+    nomeFoto="mulher negra"
+    textoDoBloco="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget lectus eget ex viverra laoreet. Sed vitae massa vitae tortor pretium rutrum. Fusce in mattis urna, a lobortis elit. Suspendisse id maximus neque, non tincidunt ex. Mauris justo neque, finibus eget posuere at, pharetra a lectus. Etiam at risus sit amet nunc commodo ullamcorper vel non enim. Ut placerat scelerisque fermentum. Etiam fermentum convallis ipsum eget dapibus. Cras ut libero et dolor eleifend bibendum. Phasellus maximus nibh in sem congue cursus. Fusce vitae mi quis magna rutrum ultricies. Aenean ullamcorper dapibus lacinia. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget lectus eget ex viverra laoreet. Sed vitae massa vitae tortor pretium rutrum. Fusce in mattis urna, a lobortis elit."
+    tituloDaSecao1="E depois"
+    tituloDaSecao2="da denúncia?"
+    tracoVermelho="bloco_retangular"
+  />
+</div>
+`;

@@ -6,8 +6,11 @@ exports[`Home possui a mesma estrutura 1`] = `
     id="banner"
   >
     <div
-      id="banner__blur"
-    />
+      className="AT-QUANDO-VOC-VAI"
+    >
+      Até quando você vai se esconder?
+    </div>
   </div>
+  <Estatistica />
 </div>
 `;

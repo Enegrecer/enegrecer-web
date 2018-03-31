@@ -17,9 +17,9 @@ export default class Menu extends Component {
         </div>
         <div className="links">
           <Link to="/sobre">SOBRE</Link>
-          <Link to="/depoisdenuncia">E DEPOIS DA DENÚNCIA?</Link>
+          <Link to="/depois-denuncia">E DEPOIS DA DENÚNCIA?</Link>
           <Link to="/coletivo-enegrecer">O COLETIVO ENEGRECER</Link>
-          <Link to="/painel/denuncias/nova">DENUNCIAR</Link>
+          <Link to="/denunciar">DENUNCIAR</Link>
         </div>
       </div>
     );

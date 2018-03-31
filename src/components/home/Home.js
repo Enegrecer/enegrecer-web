@@ -6,12 +6,12 @@ import './css/home.css';
 const Home = () => (
   <div>
     <div id="banner">
-    <div class="AT-QUANDO-VOC-VAI">
+      <div className="AT-QUANDO-VOC-VAI">
       Até quando você vai se esconder?
-    </div>
+      </div>
     </div>
     <Estatistica />
-</div>
+  </div>
 );
 
 Home.propTypes = withHistoryPropTypes();

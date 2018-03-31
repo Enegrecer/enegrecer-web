@@ -28,7 +28,7 @@ exports[`Routes deve construir a pagina corretamente  1`] = `
       <Route
         component={[Function]}
         exact={true}
-        path="/depoisdadenuncia"
+        path="/depoisdenuncia"
       />
     </Switch>
     <Rodape />

@@ -42,7 +42,7 @@ exports[`ColetivoEnegrecer deve construir a pagina corretamente 1`] = `
   </div>
   <img
     alt=""
-    src="Enegrecer.jpg"
+    src="coletivo-enegrecer.jpg"
   />
 </section>
 `;

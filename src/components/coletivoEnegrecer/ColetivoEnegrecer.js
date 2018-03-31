@@ -1,6 +1,6 @@
 import React from 'react';
 import './coletivo-enegrecer.css';
-import imagem from '../../imagens/Enegrecer.jpg';
+import imagem from '../../imagens/coletivo-enegrecer.jpg';
 
 const coletivoEnegrecer = () => (
   <section className="coletivo-enegrecer">
@@ -27,7 +27,9 @@ const coletivoEnegrecer = () => (
           resistência negra ao regime escravocrata chamado de movimento negro brasileiro.</p>
       <p>Para mais informações acesse: <a href="https://coletivoenegrecer.wordpress.com/quem-somos/" target="blank" >Quem Somos</a>.</p>
     </div>
-    <img src={imagem} alt="" />
+
+      <img src={imagem} alt="Imagem de pessoas negras segurando a bandeira do Coletivo Enegrecer" />
+
   </section>);
 
 export default coletivoEnegrecer;

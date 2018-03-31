@@ -1,0 +1,57 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+.depois_denuncia_secao {
+	background-color: #fff;
+	font-family: Roboto;
+	margin: 0;
+}
+
+.depois_denuncia_secao .imagem_secao {
+	padding: 0 !important;
+	margin: 0;
+}
+
+img {
+	max-width:100%;
+	max-height:100%;
+}
+
+.depois_denuncia_secao .conteudo .texto_secao {
+  font-weight: bold;
+  font-size: 16px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.31;
+  letter-spacing: normal;
+  text-align: left;
+  color: #4e4e4e;
+}
+
+.depois_denuncia_secao .conteudo_direito {
+	padding: 38px 51px 33px 51px;
+	float: right;
+}
+
+.depois_denuncia_secao .conteudo_esquerdo {
+	padding: 38px 51px 33px 51px;
+}
+
+
+
+.depois_denuncia_secao h1 {
+	font-weight: bold;
+	margin: 0;
+	font-size: 48px;
+}
+
+.depois_denuncia_secao .detalhe_titulo {
+	display: flex;
+	align-items: center;
+}
+
+.bloco_retangular {
+	margin-left: 20px;
+	height: 11px;
+  width: 69px;
+  background-color: #ff0336;
+}

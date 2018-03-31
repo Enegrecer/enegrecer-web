@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Secao da pagina depois da denuncia possui a mesma estrutura 1`] = `
+<div
+  className="row depois_denuncia_secao"
+>
+  <div
+    className="col s12 m6 conteudo_lado-teste"
+  >
+    <div
+      className="detalhe_titulo"
+    >
+      <h1 />
+      <div
+        className=""
+      />
+    </div>
+    <h1 />
+    <div
+      className="texto_secao"
+    >
+      <p>
+        texto-teste
+      </p>
+    </div>
+  </div>
+  <div
+    className="col s12 m6 imagem_secao"
+  >
+    <img
+      alt="Imagem de nome-teste"
+      src="imagem-teste"
+    />
+  </div>
+</div>
+`;

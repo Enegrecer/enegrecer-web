@@ -28,7 +28,7 @@ exports[`Menu deve construir a pagina corretamente  1`] = `
     </Link>
     <Link
       replace={false}
-      to="/depoisdenuncia"
+      to="/depois-denuncia"
     >
       E DEPOIS DA DENÚNCIA?
     </Link>
@@ -40,7 +40,7 @@ exports[`Menu deve construir a pagina corretamente  1`] = `
     </Link>
     <Link
       replace={false}
-      to="/painel/denuncias/nova"
+      to="/denunciar"
     >
       DENUNCIAR
     </Link>

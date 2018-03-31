@@ -28,7 +28,7 @@ class NovaDenunciaContainer extends React.Component {
 
   render() {
     if (this.props.denunciaCadastradaComSucesso) {
-      return <Redirect to="/depoisdenuncia" />;
+      return <Redirect to="/depois-denuncia" />;
     }
     return (
       <div className="row form-denuncia-container">

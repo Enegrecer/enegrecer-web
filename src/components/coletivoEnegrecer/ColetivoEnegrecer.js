@@ -28,7 +28,7 @@ const coletivoEnegrecer = () => (
       <p>Para mais informações acesse: <a href="https://coletivoenegrecer.wordpress.com/quem-somos/" target="blank" >Quem Somos</a>.</p>
     </div>
 
-      <img src={imagem} alt="Imagem de pessoas negras segurando a bandeira do Coletivo Enegrecer" />
+    <img src={imagem} alt="Imagem de pessoas negras segurando a bandeira do Coletivo Enegrecer" />
 
   </section>);
 

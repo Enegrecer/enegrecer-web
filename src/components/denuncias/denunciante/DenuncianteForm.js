@@ -13,7 +13,11 @@ import Estado from '../../comum/comboboxEstado';
 const DenuncianteForm = () => (
   <div>
     <div className="row">
-      <Nome id={'nome-vitima'} state={'nomeDenunciante'} validacoes={[campoObrigatorio]} />
+      <Nome
+        id={'nome-vitima'}
+        state={'nomeDenunciante'}
+        validacoes={[campoObrigatorio]}
+      />
       <CampoTexto
         state={'emailDenunciante'}
         id={'email-denunciante'}
@@ -22,7 +26,7 @@ const DenuncianteForm = () => (
         type={'text'}
         placeholder={'E-mail'}
         validacoes={[campoObrigatorio, emailInvalido]}
-        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
       />
     </div>
 
@@ -31,12 +35,12 @@ const DenuncianteForm = () => (
         state={'telefoneDenunciante'}
         id="telefone-denunciante"
         label={'Telefone'}
-        divClasse={'col s6'}
+        divClasse={'col s12 m6 l6'}
       />
       <Genero
         id={'genero-denunciante'}
         state={'generoDenunciante'}
-        divClasse={'col s6'}
+        divClasse={'col s12 m6 l6'}
       />
     </div>
 
@@ -44,13 +48,13 @@ const DenuncianteForm = () => (
       <Estado
         id={'estado-denunciante'}
         state={'estadoDenunciante'}
-        divClasse={'col s6'}
+        divClasse={'col s12 m6 l6'}
       />
       <Combobox
         id={'cidade-denunciante'}
         state={'cidadeDenunciante'}
         itens={['Belo Horizonte']}
-        divClasse={'col s6'}
+        divClasse={'col s12 m6 l6'}
         label={'Cidade'}
       />
     </div>
@@ -59,13 +63,13 @@ const DenuncianteForm = () => (
       <Genero
         id={'genero-denunciante'}
         state={'generoDenunciante'}
-        divClasse={'col s6'}
+        divClasse={'col s12 m6 l6'}
       />
       <Data
         id={'data-nascimento-denunciante'}
         label={'Data de Nascimento'}
         state={'dataNascimentoDenunciante'}
-        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
       />
     </div>
 
@@ -73,7 +77,7 @@ const DenuncianteForm = () => (
       <ComboboxRaca
         state={'racaDenunciante'}
         id={'raca-denunciante'}
-        divClasse={'col s6'}
+        divClasse={'col s12 m6 l6'}
         somenteRacasVitima
       />
     </div>

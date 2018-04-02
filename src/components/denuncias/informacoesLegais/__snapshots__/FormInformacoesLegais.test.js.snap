@@ -6,7 +6,7 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
     className="row"
   >
     <campoTexto
-      divClasse="input-field col s6"
+      divClasse="input-field col s12 m6 l6"
       id="numero-boletim"
       label="Número do Boletim de ocorrência"
       maxLen={40}
@@ -14,7 +14,7 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
       type="text"
     />
     <campoTexto
-      divClasse="input-field col s6"
+      divClasse="input-field col s12 m6 l6"
       id="categoria-crime-boletim"
       label="Categoria do crime no BO"
       maxLen={40}
@@ -26,7 +26,7 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
     className="row"
   >
     <campoTexto
-      divClasse="input-field col s6"
+      divClasse="input-field col s12 m6 l6"
       id="numero-processo"
       label="Número do Processo"
       maxLen={40}
@@ -34,7 +34,7 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
       type="text"
     />
     <campoTexto
-      divClasse="input-field col s6"
+      divClasse="input-field col s12 m6 l6"
       id="orgao"
       label="Órgão"
       maxLen={40}

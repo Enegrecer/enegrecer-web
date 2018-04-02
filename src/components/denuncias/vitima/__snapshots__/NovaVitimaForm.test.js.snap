@@ -6,7 +6,7 @@ exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
     className="row"
   >
     <checkBox
-      divClasse="col s6"
+      divClasse="col s12 m6 l6"
       id="souAVitima"
       label="Marque se você é a vítima"
       state="souAVitima"
@@ -16,13 +16,14 @@ exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
     className="row"
   >
     <nome
+      divClasse="col s12 m6 l6"
       id="nome-vitima"
       onChange={[Function]}
       state="nomeVitima"
       validacoes={Array []}
     />
     <Data
-      divClasse="input-field col s6"
+      divClasse="input-field col s12 m6 l6"
       id="dataNascimento"
       label="Data de Nascimento"
       state="dataNascimentoVitima"
@@ -32,13 +33,13 @@ exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
     className="row"
   >
     <telefone
-      divClasse="input-field col s6"
+      divClasse="input-field col s12 m6 l6"
       id="telefone"
       label="Telefone"
       state="telefoneVitima"
     />
     <combobox
-      divClasse="col s6"
+      divClasse="col s12 m6 l6"
       id="cidade-vitima"
       itens={
         Array [
@@ -54,12 +55,12 @@ exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
     className="row"
   >
     <genero
-      divClasse="col s6"
+      divClasse="col s12 m6 l6"
       id="vitima-genero"
       state="generoVitima"
     />
     <comboRaca
-      divClasse="col s6"
+      divClasse="col s12 m6 l6"
       id="raca"
       somenteRacasVitima={true}
       state="racaVitima"

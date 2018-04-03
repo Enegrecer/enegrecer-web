@@ -1,94 +1,91 @@
   #estatistica {
     width: 100%;
-    height: 500px;
-    border: 40px solid #000;
-    display: table;
+    padding: 30px;
+    height: 600px;
   }
 
   #nosso-objetivo {
-    width: 29.3%;
-    height: 275px;
-    border: 30px solid #ffffff;
+    height: 55%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
     background-color: #ffffff;
     float: left;
     position:relative;
-    margin-top: 16.5%;
-    margin-left: 8%;
+    margin-top: 14.5%;
+    margin-left: 2%;
   }
 
   #rectangle1 {
-    width: 15%;
-    height: 500px;
+    height: 92%;
     background-color: #ff0336;
-    border: 30px solid #ff0336;
+    padding: 30px;
     position: relative;
-    margin-left: 1.5%;
+    margin-left: 2%;
     float: left;
   }
 
   #rectangle2 {
-    width: 500px;
-    height: 375px;
+    width: 350px;
+    height: 92%;
     border: 2px solid;
     position: relative;
-    margin-left: 55.0%;
-    margin-top: 9.0%;
+    margin-left: 2%;
+    float: left;
+    padding-top: 10%;
   }
 
   #rectangle21 {
-    width: 200px;
-    height: 375px;
+    width: 50%;
+    height: 100%;
     border: 2px solid;
     position: relative;
     float: left;
   }
 
   #rectangle22 {
-    width: 250px;
-    height: 375px;
+    width: 50%;
+    height: 100%;
     border: 2px solid;
-    margin-left: 38%;
+    float: left;
   }
 
   #rectangle2 #amarelo {
-    width: 215px;
-    height: 200px;
+    width: 110%;
+    height: 50%;
     background-color: #ffbb00;
     position: relative;
     padding: 5%;
-    margin-bottom: 8%;
   }
 
 
   #rectangle2 #verde {
-    width: 178px;
-    height: 160px;
+    width: 95%;
+    height: 50%;
     background-color: #20a14f;
     position: relative;
     padding: 5%;
-    margin-top: 2%;
+    margin-top: 6%;
   }
 
   #rectangle2 #cinza {
-    width: 240px;
-    height: 199px;
+    width: 110%;
+    height: 50%;
     background-color: #575757;
     position: relative;
-    padding: 10%;
+    padding: 5%;
     margin-left: 16%;
     margin-bottom: 6%;
   }
 
 
   #rectangle2 #cinzaClaro {
-    width: 274px;
-    height: 162px;
+    width: 125%;
+    height: 50%;
     background-color: #eeeeee;
     position: relative;
     padding: 5%;
-    margin-top: 2%;
     color: #4e4e4e;
-    margin-left: 1%;
   }
 
   #rectangle2 #cinzaClaro .numero, #rectangle2 #cinzaClaro .categoria {

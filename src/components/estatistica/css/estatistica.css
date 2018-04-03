@@ -2,6 +2,7 @@
     width: 100%;
     padding: 30px;
     height: 600px;
+    padding-left: 13%;
   }
 
   #nosso-objetivo {
@@ -12,8 +13,9 @@
     background-color: #ffffff;
     float: left;
     position:relative;
-    margin-top: 14.5%;
+    margin-top: 17%;
     margin-left: 2%;
+    margin-bottom: 12%;
   }
 
   #rectangle1 {
@@ -23,6 +25,7 @@
     position: relative;
     margin-left: 2%;
     float: left;
+    margin-top: 0.5%;
   }
 
   #rectangle2 {

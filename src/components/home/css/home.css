@@ -99,12 +99,13 @@ body {
 
 #banner {
   height: 650px;
+  width: 100%;
   background: url("./../images/face.jpg") no-repeat center top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   /* background-size: cover; */
-  border: 0px solid #c71111;
+  border: 1px solid #000;
   position: relative;
 }
 
@@ -116,7 +117,6 @@ h4 {
 
 .AT-QUANDO-VOC-VAI {
   width: 354px;
-  height: 50px;
   font-family: Roboto;
   font-size: 48px;
   font-weight: 900;
@@ -126,6 +126,6 @@ h4 {
   letter-spacing: normal;
   text-align: left;
   color: #ffffff;
-  float: right;
   margin: 20%;
+  margin-left: 50%;
 }

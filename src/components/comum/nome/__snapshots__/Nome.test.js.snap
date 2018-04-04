@@ -2,13 +2,14 @@
 
 exports[`Nome deve seguir a estrutura definida  1`] = `
 <nome
+  divClasse="col s12 m6 l6"
   id="3"
   onChange={[Function]}
   state=""
   validacoes={Array []}
 >
   <campoTexto
-    divClasse="input-field col s6"
+    divClasse="input-field col s12 m6 l6"
     id="3"
     label="Nome (máximo de 40 caracteres)"
     maxLen={40}
@@ -25,7 +26,7 @@ exports[`Nome deve seguir a estrutura definida  1`] = `
     }
   >
     <div
-      className="input-field col s6"
+      className="input-field col s12 m6 l6"
     >
       <input
         id="3"

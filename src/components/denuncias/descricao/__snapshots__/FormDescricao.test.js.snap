@@ -6,7 +6,7 @@ exports[`Form Descrição deve seguir a estrutura definida  1`] = `
     className="row"
   >
     <combobox
-      divClasse="col s6"
+      divClasse="col s12 m6 l6"
       id="periodo"
       itens={
         Array [
@@ -21,7 +21,7 @@ exports[`Form Descrição deve seguir a estrutura definida  1`] = `
       valorPadrao=""
     />
     <Data
-      divClasse="input-field col s6"
+      divClasse="input-field col s12 m6 l6"
       id="data-agressao"
       label="Data de Agressão"
       state="dataAgressao"
@@ -31,13 +31,12 @@ exports[`Form Descrição deve seguir a estrutura definida  1`] = `
     className="row"
   >
     <comboEstado
-      classes=" col s6"
-      divClasse=""
+      divClasse="col s12 m6 l6"
       id="descricao-estado"
       state="estadoAgressao"
     />
     <campoTexto
-      divClasse="input-field col s6"
+      divClasse="input-field col s12 m6 l6"
       id="cidade-descricao"
       label="Cidade*"
       maxLen={40}
@@ -50,7 +49,7 @@ exports[`Form Descrição deve seguir a estrutura definida  1`] = `
     className="row"
   >
     <campoTexto
-      divClasse="input-field col s6"
+      divClasse="input-field col s12 m6 l6"
       id="bairro-descricao"
       label="Bairro*"
       maxLen={40}
@@ -59,7 +58,7 @@ exports[`Form Descrição deve seguir a estrutura definida  1`] = `
       type="text"
     />
     <campoTexto
-      divClasse="input-field col s6"
+      divClasse="input-field col s12 m6 l6"
       id="endereco-descricao"
       label="Endereço"
       maxLen={40}
@@ -72,7 +71,7 @@ exports[`Form Descrição deve seguir a estrutura definida  1`] = `
     className="row"
   >
     <campoTexto
-      divClasse="input-field col s12"
+      divClasse="input-field col s12 m6 l6"
       id="descricao-denuncia"
       inputClasse="materialize-textarea"
       label="Descrição da denúncia"

@@ -31,7 +31,7 @@ export default class Menu extends Component {
       this.setState({ mobileNavVisible: false });
     }
   }
-
+/* eslint-disable */
   navigationLinks() {
     return [
       <ul>
@@ -42,6 +42,7 @@ export default class Menu extends Component {
       </ul>
     ];
   }
+    /* eslint-enable */
 
   renderMobileNav() {
     if (this.state.mobileNavVisible) {
@@ -73,7 +74,7 @@ export default class Menu extends Component {
 
   render() {
     return (
-      <div className="menu">
+      <div className="col s12 m6 menu">
         <div className="logo">
           <Link to="/"><img src={logo} alt="Logo Verdade Seja Dita" /></Link>
         </div>

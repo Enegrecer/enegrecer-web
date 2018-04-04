@@ -2,7 +2,7 @@
 
 exports[`Menu deve construir a pagina corretamente  1`] = `
 <div
-  className="menu"
+  className="col s12 m6 menu"
 >
   <div
     className="logo"

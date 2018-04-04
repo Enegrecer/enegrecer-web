@@ -28,7 +28,7 @@ class NovaDenunciaContainer extends React.Component {
 
   render() {
     if (this.props.denunciaCadastradaComSucesso) {
-      return <Redirect to="/painel/proximosPassos" />;
+      return <Redirect to="/depois-denuncia" />;
     }
     return (
       <div className="row form-denuncia-container">
@@ -54,7 +54,7 @@ class NovaDenunciaContainer extends React.Component {
         <div className="column col s10 no-padding">
           <div className="form-title-bar" />
           <div className="form-sections-container">
-            <NovaDenunciaForm submeteFormulario={this.submeteFormulario} />
+            <NovaDenunciaForm onSubmit={this.submeteFormulario} />
           </div>
         </div>
       </div>
@@ -78,7 +78,7 @@ NovaDenunciaContainer.defaultProps = {
   criarDenunciaRequisicao: () => {},
   denunciaCadastradaComSucesso: false,
   limpaEstadoUltimaDencunciaCadastrada: () => {},
-  formDenuncia: {}
+  formDenuncia: {},
 };
 
 const mapStateToProps = state => ({

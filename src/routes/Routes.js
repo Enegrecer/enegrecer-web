@@ -6,18 +6,20 @@ import Rodape from '../components/rodape/Rodape';
 import Sobre from '../components/sobre/Sobre';
 import ColetivoEnegrecer from '../components/coletivoEnegrecer/ColetivoEnegrecer';
 import NovaDenunciaContainer from '../containers/denuncias/NovaDenunciaContainer';
+import DepoisDaDenuncia from '../components/depoisdadenuncia/DepoisDaDenuncia';
 
 const Routes = () => (
   <BrowserRouter>
     <div>
-      <Route path="/" component={Menu} />
+      <Menu />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/sobre" component={Sobre} />
         <Route exact path="/coletivo-enegrecer" component={ColetivoEnegrecer} />
-        <Route exact path="/painel/denuncias/nova" component={NovaDenunciaContainer} />
+        <Route exact path="/denunciar" component={NovaDenunciaContainer} />
+        <Route exact path="/depois-denuncia" component={DepoisDaDenuncia} />
       </Switch>
-      <Route path="/" component={Rodape} />
+      <Rodape />
     </div>
   </BrowserRouter>
 );

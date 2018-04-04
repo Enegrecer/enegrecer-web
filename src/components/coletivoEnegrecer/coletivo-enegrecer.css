@@ -1,5 +1,6 @@
 .coletivo-enegrecer {
   display: flex;
+  background-color: #f8f8f8;
 }
 
 .coletivo-enegrecer .conteudo {
@@ -38,7 +39,9 @@
 }
 
 .coletivo-enegrecer img {
-  width: 47%;
+  width: 50%;
+  height: 50%;
+  margin-top: 10%;
 }
 
 .retangular-bloco {

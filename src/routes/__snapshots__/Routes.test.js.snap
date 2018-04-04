@@ -3,10 +3,7 @@
 exports[`Routes deve construir a pagina corretamente  1`] = `
 <BrowserRouter>
   <div>
-    <Route
-      component={[Function]}
-      path="/"
-    />
+    <Menu />
     <Switch>
       <Route
         component={[Function]}
@@ -26,13 +23,15 @@ exports[`Routes deve construir a pagina corretamente  1`] = `
       <Route
         component={[Function]}
         exact={true}
-        path="/painel/denuncias/nova"
+        path="/denunciar"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/depois-denuncia"
       />
     </Switch>
-    <Route
-      component={[Function]}
-      path="/"
-    />
+    <Rodape />
   </div>
 </BrowserRouter>
 `;

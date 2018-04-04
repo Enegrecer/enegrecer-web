@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import Combobox from '../combobox';
 import estados from './estados';
 
-const comboEstado = ({ id, classes, state }) => (
+const comboEstado = ({ id, divClasse, state }) => (
   <Combobox
     state={state}
     id={id}
     itens={estados}
-    divClasse={classes}
+    divClasse={divClasse}
     label={'Selecione o Estado:'}
     valorPadrao={'Selecione'}
   />
@@ -17,13 +17,13 @@ const comboEstado = ({ id, classes, state }) => (
 comboEstado.propTypes = {
   id: PropTypes.string,
   state: PropTypes.string,
-  classes: PropTypes.string
+  divClasse: PropTypes.string
 };
 
 comboEstado.defaultProps = {
   id: '',
   state: '',
-  classes: ''
+  divClasse: ''
 };
 
 export default comboEstado;

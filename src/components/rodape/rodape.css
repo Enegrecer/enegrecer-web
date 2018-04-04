@@ -24,8 +24,7 @@
   .facebook {
     width: 11px;
     height: 20px;
-    object-fit: contain;
-    padding-right: 30px;
+    margin-right: 30px;
   }
 
   .instagram img {

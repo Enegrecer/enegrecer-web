@@ -7,17 +7,21 @@ import Telefone from '../../comum/telefone';
 import ComboboxRaca from './../../comum/comboboxRaca';
 import Combobox from './../../comum/combobox';
 import Data from '../../comum/data';
+import { campoObrigatorio, emailInvalido } from '../../comum/validacoes';
+import Estado from '../../comum/comboboxEstado';
 
 const DenuncianteForm = () => (
   <div>
     <div className="row">
-      <Nome id={'nome-vitima'} state={'nomeDenunciante'} />
+      <Nome id={'nome-vitima'} state={'nomeDenunciante'} validacoes={[campoObrigatorio]} />
       <CampoTexto
         state={'emailDenunciante'}
         id={'email-denunciante'}
         label={'Email'}
         maxLen={40}
         type={'text'}
+        placeholder={'E-mail'}
+        validacoes={[campoObrigatorio, emailInvalido]}
         divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
       />
     </div>
@@ -29,12 +33,25 @@ const DenuncianteForm = () => (
         label={'Telefone'}
         divClasse={'col s6'}
       />
+      <Genero
+        id={'genero-denunciante'}
+        state={'generoDenunciante'}
+        divClasse={'col s6'}
+      />
+    </div>
+
+    <div className="row">
+      <Estado
+        id={'estado-denunciante'}
+        state={'estadoDenunciante'}
+        divClasse={'col s6'}
+      />
       <Combobox
         id={'cidade-denunciante'}
         state={'cidadeDenunciante'}
         itens={['Belo Horizonte']}
         divClasse={'col s6'}
-        label={'Cidade *'}
+        label={'Cidade'}
       />
     </div>
 
@@ -44,7 +61,6 @@ const DenuncianteForm = () => (
         state={'generoDenunciante'}
         divClasse={'col s6'}
       />
-
       <Data
         id={'data-nascimento-denunciante'}
         label={'Data de Nascimento'}
@@ -54,11 +70,10 @@ const DenuncianteForm = () => (
     </div>
 
     <div className="row">
-
       <ComboboxRaca
         state={'racaDenunciante'}
         id={'raca-denunciante'}
-        classes={'col s6'}
+        divClasse={'col s6'}
         somenteRacasVitima
       />
     </div>

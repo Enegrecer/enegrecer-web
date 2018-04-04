@@ -1,12 +1,16 @@
 import React from 'react';
+import Estatistica from '../estatistica/Estatistica';
 import { withHistoryPropTypes } from './sharedPropTypes';
 import './css/home.css';
 
-const Home = props => (
+const Home = () => (
   <div>
     <div id="banner">
-      <div id="banner__blur" />
+      <div className="AT-QUANDO-VOC-VAI">
+      Até quando você vai se esconder?
+      </div>
     </div>
+    <Estatistica />
   </div>
 );
 

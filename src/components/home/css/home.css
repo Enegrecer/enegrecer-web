@@ -61,10 +61,12 @@
       margin-right: 0; }
 
 * {
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+ }
 
 body {
-  background: #f2f3f5; }
+  background: #000000;
+}
 
 .en-text--light {
   color: #fff;
@@ -96,27 +98,34 @@ body {
     margin-left: 2px; }
 
 #banner {
-  height: 600px;
+  height: 650px;
+  width: 100%;
   background: url("./../images/face.jpg") no-repeat center top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
-  border-left: 86px solid #ff8100;
-  position: relative; }
-  #banner #banner__blur {
-    height: 100%;
-    width: 20%;
-    max-width: 0px;
-    opacity: 0.84;
-    position: absolute; }
-  #banner .container > .row {
-    margin: 30px -15px; }
-  #banner #en-banner__description {
-    margin-bottom: 33px; }
+  /* background-size: cover; */
+  border: 1px solid #000;
+  position: relative;
+}
 
 h3 {
   margin: 30px 0 10px; }
 
 h4 {
   margin: 20px 0 10px; }
+
+.AT-QUANDO-VOC-VAI {
+  width: 354px;
+  font-family: Roboto;
+  font-size: 48px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.98;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
+  margin: 20%;
+  margin-left: 50%;
+}

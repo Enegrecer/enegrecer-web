@@ -17,7 +17,6 @@ const Estatistica = () => (
     </div>
 
     <div id="rectangle2">
-
       <div id="rectangle21">
         <div id="amarelo">
           <h3 className="numero">2345 </h3>

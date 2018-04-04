@@ -52,7 +52,7 @@ const secoesForm = [
 ];
 
 const FormDenuncia = props => (
-  <form id="form-nova-denuncia" onSubmit={props.submeteFormulario}>
+  <form id="form-nova-denuncia" onSubmit={props.handleSubmit}>
     {secoesForm.map(secaoForm => (
       <SecaoForm
         key={secaoForm.titulo}
@@ -72,7 +72,7 @@ const FormDenuncia = props => (
 );
 
 FormDenuncia.propTypes = {
-  submeteFormulario: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
 };
 
 export default adicionaFormAoRedux(FormDenuncia, 'formDenuncia');

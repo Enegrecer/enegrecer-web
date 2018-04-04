@@ -12,6 +12,7 @@ exports[`DetalhamentoDenuncia Component deve possuir estrutura definida  1`] = `
       id="detalhamento"
       onChange={[Function]}
       state="detalhamento"
+      validacoes={Array []}
     />
   </div>
   <div
@@ -70,6 +71,7 @@ exports[`DetalhamentoDenuncia Component deve possuir estrutura definida  1`] = `
   >
     <comboEstado
       classes="col s12"
+      divClasse=""
       id="estado"
       state="estado"
     />

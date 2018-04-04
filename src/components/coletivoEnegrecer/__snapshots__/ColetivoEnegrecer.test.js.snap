@@ -42,7 +42,7 @@ exports[`ColetivoEnegrecer deve construir a pagina corretamente 1`] = `
   </div>
   <img
     alt="Imagem de pessoas negras segurando a bandeira do Coletivo Enegrecer"
-    src="coletivo-enegrecer.jpg"
+    src="https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fcoletivo-enegrecer.jpg?alt=media&token=07a7d2b3-91f4-4633-8551-f7788d668d26"
   />
 </section>
 `;

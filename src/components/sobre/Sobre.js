@@ -1,14 +1,13 @@
 import React from 'react';
 import Colaborador from './componentes/Colaborador';
 import { colaboradores } from './colaboradores';
-import imagem from '../../imagens/sobre.jpg';
 import './css/sobre.css';
 
 const Sobre = () => (
   <div id="about">
     <div className="row about_section">
       <div className="col s6 colspan_ignore_padding">
-        <img alt="Foto ilustrativa do Verdade Seja Dita" src={imagem} />
+        <img alt="Foto ilustrativa do Verdade Seja Dita" src="https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fsobre.jpg?alt=media&token=ff5f0673-a409-4f89-a116-c61549c9f56f" />
       </div>
 
       <div className="col s6 content">

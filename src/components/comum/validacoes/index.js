@@ -7,3 +7,7 @@ export const campoMaiorQue255Caracteres = (campo) => {
   return undefined;
 };
 
+export const emailInvalido = campo =>
+  (campo && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(campo)
+    ? 'Formato de e-mail inválido' : undefined);
+

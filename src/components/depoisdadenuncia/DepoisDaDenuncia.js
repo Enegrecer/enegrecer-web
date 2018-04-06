@@ -1,7 +1,4 @@
 import React from 'react';
-import imagemMaos from '../../imagens/depois-denuncia-1.jpg';
-import imagemHomemNegro from '../../imagens/depois-denuncia-2.jpg';
-import imagemMulherNegra from '../../imagens/depois-denuncia-3.jpg';
 import SecaoDaPagina from './componentes/SecaoDaPagina';
 
 const DepoisDaDenuncia = () => (
@@ -24,7 +21,7 @@ const DepoisDaDenuncia = () => (
             eget ex viverra laoreet. Sed vitae massa vitae tortor pretium
             rutrum. Fusce in mattis urna, a lobortis elit."
       ladoTexto="esquerdo"
-      imagemSecao={imagemMaos}
+      imagemSecao="https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fdepois-denuncia-1.jpg?alt=media&token=66d1b719-80cf-4b08-97e8-88d1b9ccdce9"
       nomeFoto="maos de pessoas negras"
     />
 
@@ -44,7 +41,7 @@ const DepoisDaDenuncia = () => (
             eget ex viverra laoreet. Sed vitae massa vitae tortor pretium
             rutrum. Fusce in mattis urna, a lobortis elit."
       ladoTexto="direito"
-      imagemSecao={imagemHomemNegro}
+      imagemSecao="https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fdepois-denuncia-2.jpg?alt=media&token=7b53de21-63a8-440a-a1a2-ae57121c8034"
       nomeFoto="homem negro"
     />
 
@@ -67,7 +64,7 @@ const DepoisDaDenuncia = () => (
             eget ex viverra laoreet. Sed vitae massa vitae tortor pretium
             rutrum. Fusce in mattis urna, a lobortis elit."
       ladoTexto="esquerdo"
-      imagemSecao={imagemMulherNegra}
+      imagemSecao="https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fdepois-denuncia-3.jpg?alt=media&token=e5d639c9-6dd9-45f6-94b0-847edd65e432"
       nomeFoto="mulher negra"
     />
   </div>

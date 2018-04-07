@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
-#about {
+.about {
 	background-color: #f8f8f8;
 }
 
@@ -22,7 +22,7 @@
 
 .about_section h1 {
 	font-weight: bold;
-	margin: 0;
+	margin: 0 13px 0 0;
 }
 
 .volunteer_section {
@@ -35,7 +35,7 @@
 	align-items: flex-end;
 }
 
-.volunteer_section .title_detail {
+.title_detail {
 	display: flex;
 	align-items: center;
 }

@@ -5,9 +5,6 @@ import instagram from '../../imagens/instagram.svg';
 import './rodape.css';
 
 export default class Rodape extends Component {
-  componentWillMount() {
-  }
-
   render() {
     return (
       <div className="col s12 m6 rodape">

@@ -5,6 +5,7 @@ exports[`Nome deve seguir a estrutura definida  1`] = `
   id="3"
   onChange={[Function]}
   state=""
+  validacoes={Array []}
 >
   <campoTexto
     divClasse="input-field col s6"

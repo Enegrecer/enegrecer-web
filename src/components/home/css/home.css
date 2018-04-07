@@ -99,12 +99,13 @@ body {
 
 #banner {
   height: 650px;
-  background: url("./../images/face.jpg") no-repeat center top;
+  width: 100%;
+  background: url("https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fface.jpg?alt=media&token=6c97f3ad-47c1-440e-9221-9755687cab4b") no-repeat center top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   /* background-size: cover; */
-  border: 0px solid #c71111;
+  border: 1px solid #000;
   position: relative;
 }
 
@@ -116,7 +117,6 @@ h4 {
 
 .AT-QUANDO-VOC-VAI {
   width: 354px;
-  height: 50px;
   font-family: Roboto;
   font-size: 48px;
   font-weight: 900;
@@ -126,6 +126,6 @@ h4 {
   letter-spacing: normal;
   text-align: left;
   color: #ffffff;
-  float: right;
   margin: 20%;
+  margin-left: 50%;
 }

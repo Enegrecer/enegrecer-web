@@ -54,7 +54,7 @@ class NovaDenunciaContainer extends React.Component {
         <div className="column col s10 no-padding">
           <div className="form-title-bar" />
           <div className="form-sections-container">
-            <NovaDenunciaForm submeteFormulario={this.submeteFormulario} />
+            <NovaDenunciaForm onSubmit={this.submeteFormulario} />
           </div>
         </div>
       </div>
@@ -78,7 +78,7 @@ NovaDenunciaContainer.defaultProps = {
   criarDenunciaRequisicao: () => {},
   denunciaCadastradaComSucesso: false,
   limpaEstadoUltimaDencunciaCadastrada: () => {},
-  formDenuncia: {}
+  formDenuncia: {},
 };
 
 const mapStateToProps = state => ({

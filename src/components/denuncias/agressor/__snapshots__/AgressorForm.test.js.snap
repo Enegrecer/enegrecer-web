@@ -9,41 +9,54 @@ exports[`AgressorForm deve seguir a estrutura definida  1`] = `
       id="nome-agressor"
       onChange={[Function]}
       state="nomeAgressor"
+      validacoes={Array []}
     />
-    <campoTexto
-      divClasse="input-field col s6"
-      id="cidade-agressor"
-      label="Cidade"
-      maxLen={40}
-      placeholder=""
-      state="cidadeAgressor"
-      type="text"
-    />
-  </div>
-  <div
-    className="row"
-  >
     <genero
       divClasse="col s6"
       id="genero-agressor"
       state="generoAgressor"
     />
+  </div>
+  <div
+    className="row"
+  >
+    <comboEstado
+      divClasse="col s6"
+      id="estado-agressor"
+      state="estadoAgressor"
+    />
+    <combobox
+      divClasse="col s6"
+      id="cidade-agressor"
+      itens={
+        Array [
+          "Belo Horizonte",
+        ]
+      }
+      label="Cidade *"
+      state="cidadeAgressor"
+      valorPadrao=""
+    />
+  </div>
+  <div
+    className="row"
+  >
     <Data
       divClasse="input-field col s6"
       id="data-nascimento-agressor"
       label="Data de Nascimento"
       state="dataNascimentoAgressor"
     />
-  </div>
-  <div
-    className="row"
-  >
     <comboRaca
       divClasse="col s6"
       id="raca-agressor"
       somenteRacasVitima={false}
       state="racaAgressor"
     />
+  </div>
+  <div
+    className="row"
+  >
     <campoTexto
       divClasse="input-field col s6"
       id="bairro-agressor"
@@ -65,11 +78,11 @@ exports[`AgressorForm deve seguir a estrutura definida  1`] = `
       placeholder=""
       state="descricaoAgressor"
       type="text"
-    />
-    <comboEstado
-      classes="col s6"
-      id="estado-agressor"
-      state="estadoAgressor"
+      validacoes={
+        Array [
+          [Function],
+        ]
+      }
     />
   </div>
 </div>

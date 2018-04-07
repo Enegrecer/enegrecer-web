@@ -2,7 +2,7 @@
 
 exports[`Menu deve construir a pagina corretamente  1`] = `
 <div
-  className="menu"
+  className="col s12 m6 menu"
 >
   <div
     className="logo"
@@ -18,32 +18,20 @@ exports[`Menu deve construir a pagina corretamente  1`] = `
     </Link>
   </div>
   <div
-    className="links"
+    className="mobile_nav"
+    key="7"
   >
-    <Link
-      replace={false}
-      to="/sobre"
+    <a
+      onClick={[Function]}
+      role="button"
+      tabIndex="0"
     >
-      SOBRE
-    </Link>
-    <Link
-      replace={false}
-      to="/depois-denuncia"
-    >
-      E DEPOIS DA DENÚNCIA?
-    </Link>
-    <Link
-      replace={false}
-      to="/coletivo-enegrecer"
-    >
-      O COLETIVO ENEGRECER
-    </Link>
-    <Link
-      replace={false}
-      to="/denunciar"
-    >
-      DENUNCIAR
-    </Link>
+      <i
+        className="material-icons icon-white"
+      >
+        menu
+      </i>
+    </a>
   </div>
 </div>
 `;

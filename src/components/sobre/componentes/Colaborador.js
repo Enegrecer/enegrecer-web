@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Colaborador = props => (
-  <div className="col s4 person">
+  <div className="col s12 m4 person">
     <div className="content">
       <img alt={`Foto de ${props.nome}`} src={props.foto} />
       <div>

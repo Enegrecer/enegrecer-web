@@ -1,56 +1,56 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
-.about {
+.sobre {
 	background-color: #f8f8f8;
 }
 
-.about_section {
+.secao_sobre {
 	padding: 0;
 	margin: 0;
 	background-color: #f8f8f8;
 }
 
-.about_section .colspan_ignore_padding {
+.secao_sobre .foto_sobre {
 	padding: 0 !important;
 }
 
-.about_section .content {
+.secao_sobre .conteudo {
 	height: 100%;
 	padding: 38px 51px 33px 51px;
 }
 
-.about_section h1 {
+.secao_sobre h1 {
 	font-weight: bold;
 	margin: 0 13px 0 0;
 }
 
-.volunteer_section {
+.secao_voluntarios {
 	height: 100%;
 	padding: 38px 51px 33px 51px;
 }
 
-.volunteer_section .content .titulo_voluntarios {
+.secao_voluntarios .conteudo .titulo_voluntarios {
 	height: 100%;
 	padding: 38px 51px 33px 51px;
 }
 
-.volunteer_section .content .texto_voluntarios {
+.secao_voluntarios .conteudo .texto_voluntarios {
 	height: 100%;
 	padding: 38px 51px 33px 51px;
 }
 
-.title_detail {
+.detalhe_titulo {
 	display: flex;
 	align-items: center;
 }
 
-.retangular-bloco {
+.traco-vermelho {
   height: 11px;
   width: 69px;
   background-color: #ff0336;
 }
 
-.volunteer_section h1 {
+.secao_voluntarios h1 {
 	font-weight: bold;
 	margin: 0 13px 0 0;
 }
@@ -59,7 +59,7 @@
 	padding: 12px;
 }
 
-.colaboradores .person .content {
+.colaboradores .person .conteudo {
   height: 112px;
   display: flex;
 	align-items: center;

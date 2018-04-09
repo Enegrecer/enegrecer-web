@@ -1,61 +1,65 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
-#about {
+.sobre {
 	background-color: #f8f8f8;
 }
 
-.about_section {
-	height: 523px;
+.secao_sobre {
 	padding: 0;
 	margin: 0;
 	background-color: #f8f8f8;
 }
 
-.about_section .colspan_ignore_padding {
+.secao_sobre .foto_sobre {
 	padding: 0 !important;
 }
 
-.about_section .content {
+.secao_sobre .conteudo {
 	height: 100%;
 	padding: 38px 51px 33px 51px;
 }
 
-.about_section h1 {
+.secao_sobre h1 {
 	font-weight: bold;
-	margin: 0;
+	margin: 0 13px 0 0;
 }
 
-.volunteer_section {
-	margin: 39px 36px 43px 36px;
+.secao_voluntarios {
+	height: 100%;
+	padding: 38px 51px 33px 51px;
 }
 
-.volunteer_section .description {
-	margin: 39px 36px 43px 36px;
-	display: flex;
-	align-items: flex-end;
+.secao_voluntarios .conteudo .titulo_voluntarios {
+	height: 100%;
+	padding: 38px 51px 33px 51px;
 }
 
-.volunteer_section .title_detail {
+.secao_voluntarios .conteudo .texto_voluntarios {
+	height: 100%;
+	padding: 38px 51px 33px 51px;
+}
+
+.detalhe_titulo {
 	display: flex;
 	align-items: center;
 }
 
-.retangular-bloco {
+.traco-vermelho {
   height: 11px;
   width: 69px;
   background-color: #ff0336;
 }
 
-.volunteer_section h1 {
+.secao_voluntarios h1 {
 	font-weight: bold;
 	margin: 0 13px 0 0;
 }
 
-.volunteer_section .person {
+.colaboradores .person {
 	padding: 12px;
 }
 
-.volunteer_section .person .content {
+.colaboradores .person .conteudo {
   height: 112px;
   display: flex;
 	align-items: center;
@@ -64,19 +68,19 @@
   box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
-.volunteer_section .person img {
+.colaboradores .person img {
 	margin: 21px;
 	height: 70px;
 	width: 70px;
   border-radius: 50%;
 }
 
-.volunteer_section .person h5 {
+.colaboradores .person h5 {
 	font-size: 16px;
 	font-weight: bolder;
 	margin: 0 0	9px 0;
 }
 
-.volunteer_section .person p {
+.colaboradores .person p {
 	margin: 0;
 }

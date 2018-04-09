@@ -1,44 +1,32 @@
 .coletivo-enegrecer {
-  display: flex;
   background-color: #f8f8f8;
 }
 
 .coletivo-enegrecer .conteudo {
-  display: flex;
   flex-direction: column;
-  width: 53%;
   padding: 0 2.5% 0 5%;
 }
 
+.coletivo-enegrecer .conteudo .titulo {
+  padding: 38px 51px 33px 0px;
+}
 .coletivo-enegrecer .conteudo h1 {
   font-family: Roboto;
   font-size: 48px;
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;
-  line-height: 1.06;
   letter-spacing: normal;
   color: #000000;
-  width: 38%;
+  margin: 0 13px 0 0;
 }
 
-.coletivo-enegrecer .conteudo p {
-  font-family: Roboto;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.31;
-  letter-spacing: normal;
-  color: #4e4e4e;
-}
-
-.coletivo-enegrecer .titulo {
+.coletivo-enegrecer .detalhe_titulo {
   display: flex;
   align-items: center;
 }
 
-.coletivo-enegrecer img {
+.coletivo-enegrecer .imagem-coletivo {
   width: 50%;
   height: 50%;
   margin-top: 10%;

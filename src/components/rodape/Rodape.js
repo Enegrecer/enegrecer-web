@@ -10,7 +10,7 @@ export default class Rodape extends Component {
 
   render() {
     return (
-      <div className="col s12 rodape">
+      <div className="col s12 m6 rodape">
         <div>
           <img src={logo} alt="Logo Verdade Seja Dita" />
         </div>

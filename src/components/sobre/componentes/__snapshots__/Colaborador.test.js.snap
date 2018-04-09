@@ -2,10 +2,10 @@
 
 exports[`Colaborador possui a mesma estrutura 1`] = `
 <div
-  className="col s4 person"
+  className="col s12 m4 person"
 >
   <div
-    className="content"
+    className="conteudo"
   >
     <img
       alt="Foto de Pessoa Colaboradora"

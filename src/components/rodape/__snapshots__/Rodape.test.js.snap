@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rodape deve construir a pagina corretamente  1`] = `
+<div
+  className="col s12 m6 rodape"
+>
+  <div>
+    <img
+      alt="Logo Verdade Seja Dita"
+      src="logo-rodape.svg"
+    />
+  </div>
+  <div
+    className="direitos"
+  >
+    <label
+      htmlFor="direitos"
+    >
+      © 2018 - Verdade Seja Dita todos os direitos reservados
+    </label>
+  </div>
+  <div
+    className="redes-sociais"
+  >
+    <div
+      className="facebook"
+    >
+      <a
+        href="https://pt-br.facebook.com/Enegrecer/"
+        target="blank"
+      >
+        <img
+          alt="Logo Facebook"
+          src="facebook.svg"
+        />
+      </a>
+    </div>
+    <div
+      className="instagram"
+    >
+      <a
+        href="https://www.instagram.com/coletivoenegrecer/"
+        target="blank"
+      >
+        <img
+          alt="Logo Instagram"
+          src="instagram.svg"
+        />
+      </a>
+    </div>
+  </div>
+</div>
+`;

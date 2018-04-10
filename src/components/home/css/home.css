@@ -116,9 +116,9 @@ h4 {
   margin: 20px 0 10px; }
 
 .AT-QUANDO-VOC-VAI {
-  width: 354px;
+  width: 244px;
   font-family: Roboto;
-  font-size: 48px;
+  font-size: 3em;
   font-weight: 900;
   font-style: normal;
   font-stretch: normal;
@@ -126,6 +126,7 @@ h4 {
   letter-spacing: normal;
   text-align: left;
   color: #ffffff;
-  margin: 20%;
-  margin-left: 50%;
+  margin-top: 20%;
+  margin-right: 18%;
+  float: right;
 }

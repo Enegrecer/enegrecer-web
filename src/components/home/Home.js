@@ -4,8 +4,8 @@ import { withHistoryPropTypes } from './sharedPropTypes';
 import './css/home.css';
 
 const Home = () => (
-  <div>
-    <div id="banner">
+  <div className="row">
+    <div className="col s12 m6" id="banner">
       <div className="AT-QUANDO-VOC-VAI">
       Até quando você vai se esconder?
       </div>

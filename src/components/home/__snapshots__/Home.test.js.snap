@@ -1,8 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home possui a mesma estrutura 1`] = `
-<div>
+<div
+  className="row"
+>
   <div
+    className="col s12 m6"
     id="banner"
   >
     <div

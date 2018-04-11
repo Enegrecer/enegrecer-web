@@ -1,5 +1,6 @@
 import React from 'react';
 import './css/estatistica.css';
+import TipoDeEstatistica from './TipoDeEstatistica';
 
 const Estatistica = () => (
   <div id="estatistica">
@@ -11,34 +12,16 @@ const Estatistica = () => (
       base de dados acessível, transparente e atualizada. </p>
     </div>
 
-    <div id="rectangle1">
-      <h3 className="numero">2345 </h3>
-      <h6 className="categoria">Racismo </h6>
-    </div>
-
+    <TipoDeEstatistica key="vermelho" id="vermelho" numero="2345" categoria="Racismo" />
     <div id="rectangle2">
       <div id="rectangle21">
-        <div id="amarelo">
-          <h3 className="numero">2345 </h3>
-          <h6 className="categoria">Injúria Racial</h6>
-        </div>
-        <div id="verde">
-          <h3 className="numero">60% </h3>
-          <h6 className="categoria">Vítimas Mulheres</h6>
-        </div>
+        <TipoDeEstatistica key="amarelo" id="amarelo" numero="2345" categoria="Injúria Racial" />
+        <TipoDeEstatistica key="verde" id="verde" numero="60%" categoria="Vítimas Mulheres" />
       </div>
-
       <div id="rectangle22">
-        <div id="cinza">
-          <h3 className="numero">2345 </h3>
-          <h6 className="categoria">Vítima até 26 anos</h6>
-        </div>
-        <div id="cinzaClaro">
-          <h3 className="numero">346 </h3>
-          <h6 className="categoria">Total de Denúncia</h6>
-        </div>
+        <TipoDeEstatistica key="cinza" id="cinza" numero="23" categoria="Vítima até 26 anos" />
+        <TipoDeEstatistica key="cinzaClaro" id="cinzaClaro" numero="346" categoria="Total de Denúncia" />
       </div>
-
     </div>
   </div>
 );

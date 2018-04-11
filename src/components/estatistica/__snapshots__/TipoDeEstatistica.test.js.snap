@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TipoDeEstatistica possui a mesma estrutura 1`] = `
+<div
+  id="vermelho"
+>
+  <h3
+    className="numero"
+  >
+    2345
+     
+  </h3>
+  <h6
+    className="categoria"
+  >
+    Racismo
+     
+  </h6>
+</div>
+`;

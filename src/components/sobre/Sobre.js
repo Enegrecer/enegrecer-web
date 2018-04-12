@@ -7,7 +7,7 @@ const Sobre = () => (
   <div className="row sobre">
     <div className="secao_sobre">
       <div className="col s12 m6 foto_sobre">
-        <img alt="Foto ilustrativa do Verdade Seja Dita" src="https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fsobre.jpg?alt=media&token=ff5f0673-a409-4f89-a116-c61549c9f56f" />
+        <img alt="Foto ilustrativa do Verdade Seja Dita" src="https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fsobre.jpg?alt=media&token=3646a7f1-71af-4443-b1fb-36ec5dfa3b89" />
       </div>
       <div className="col s12 m6 conteudo">
         <div className="detalhe_titulo">

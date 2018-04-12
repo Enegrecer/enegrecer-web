@@ -38,7 +38,7 @@ export default class Menu extends Component {
         <li key={1}><Link to="/sobre">SOBRE</Link></li>
         <li key={2}><Link to="/depois-denuncia">E DEPOIS DA DENÚNCIA?</Link></li>
         <li key={3}><Link to="/coletivo-enegrecer">O COLETIVO ENEGRECER</Link></li>
-        <li key={4}><Link to="/denunciar">DENUNCIAR</Link></li>
+        <li key={4}><Link className="denunciar" to="/denunciar">DENUNCIAR</Link></li>
       </ul>
     ];
   }

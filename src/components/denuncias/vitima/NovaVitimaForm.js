@@ -5,8 +5,8 @@ import Nome from '../../comum/nome';
 import Genero from '../../comum/genero';
 import Telefone from '../../comum/telefone';
 import ComboboxRaca from './../../comum/comboboxRaca';
-import Combobox from '../../comum/combobox';
 import Data from '../../comum/data';
+import Endereco from '../../comum/endereco';
 
 const NovaVitimaForm = () => (
   <div>
@@ -28,19 +28,14 @@ const NovaVitimaForm = () => (
       />
     </div>
 
+    <Endereco estadoState={'estadoVitima'} cidadeState={'cidadeVitima'} />
+
     <div className="row">
       <Telefone
         divClasse={'input-field col s6'}
         id="telefone"
         state={'telefoneVitima'}
         label={'Telefone'}
-      />
-      <Combobox
-        id={'cidade-vitima'}
-        state={'cidadeVitima'}
-        itens={['Belo Horizonte']}
-        divClasse={'col s6'}
-        label={'Cidade *'}
       />
     </div>
 

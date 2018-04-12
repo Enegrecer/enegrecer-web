@@ -5,10 +5,9 @@ import Nome from '../../comum/nome';
 import Genero from '../../comum/genero';
 import Telefone from '../../comum/telefone';
 import ComboboxRaca from './../../comum/comboboxRaca';
-import Combobox from './../../comum/combobox';
 import Data from '../../comum/data';
 import { campoObrigatorio, emailInvalido } from '../../comum/validacoes';
-import Estado from '../../comum/comboboxEstado';
+import Endereco from '../../comum/endereco';
 
 const DenuncianteForm = () => (
   <div>
@@ -40,20 +39,7 @@ const DenuncianteForm = () => (
       />
     </div>
 
-    <div className="row">
-      <Estado
-        id={'estado-denunciante'}
-        state={'estadoDenunciante'}
-        divClasse={'col s6'}
-      />
-      <Combobox
-        id={'cidade-denunciante'}
-        state={'cidadeDenunciante'}
-        itens={['Belo Horizonte']}
-        divClasse={'col s6'}
-        label={'Cidade'}
-      />
-    </div>
+    <Endereco estadoState={'estadoDenunciante'} cidadeState={'cidadeDenunciante'} />
 
     <div className="row">
       <Genero

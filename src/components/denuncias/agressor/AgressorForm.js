@@ -3,11 +3,10 @@ import Nome from '../../comum/nome';
 import CampoTexto from '../../comum/campoTexto';
 import Genero from '../../comum/genero';
 import Data from '../../comum/data';
-import ComboboxEstado from '../../comum/comboboxEstado';
-import Combobox from '../../comum/combobox';
 import * as ConstantesCSS from '../ConstantesCss';
 import Raca from '../../comum/comboboxRaca';
 import { campoObrigatorio } from '../../comum/validacoes';
+import Endereco from '../../comum/endereco';
 
 const AgressorForm = () => (
   <div>
@@ -20,20 +19,7 @@ const AgressorForm = () => (
       />
     </div>
 
-    <div className="row">
-      <ComboboxEstado
-        state={'estadoAgressor'}
-        id={'estado-agressor'}
-        divClasse={'col s6'}
-      />
-      <Combobox
-        id={'cidade-agressor'}
-        state={'cidadeAgressor'}
-        itens={['Belo Horizonte']}
-        divClasse={'col s6'}
-        label={'Cidade *'}
-      />
-    </div>
+    <Endereco estadoState={'estadoAgressor'} cidadeState={'cidadeAgressor'} />
 
     <div className="row">
       <Data

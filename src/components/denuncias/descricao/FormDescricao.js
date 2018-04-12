@@ -3,7 +3,7 @@ import CampoTexto from '../../comum/campoTexto';
 import * as ConstantesCSS from '../ConstantesCss';
 import Data from '../../comum/data';
 import Combobox from '../../comum/combobox';
-import ComboboxEstado from '../../comum/comboboxEstado';
+import Endereco from '../../comum/endereco';
 
 const descricao = () => (
   <div>
@@ -24,23 +24,7 @@ const descricao = () => (
       />
     </div>
 
-    <div className="row">
-      <ComboboxEstado
-        state={'estadoAgressao'}
-        id={'descricao-estado'}
-        classes={' col s6'}
-      />
-
-      <CampoTexto
-        state={'cidadeAgressao'}
-        id={'cidade-descricao'}
-        label={'Cidade*'}
-        maxLen={40}
-        placeholder={''}
-        type={'text'}
-        divClasse={'input-field col s6'}
-      />
-    </div>
+    <Endereco estadoState={'estadoAgressao'} cidadeState={'cidadeAgressao'} />
 
     <div className="row">
       <CampoTexto

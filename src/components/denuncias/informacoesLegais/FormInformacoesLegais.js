@@ -11,7 +11,7 @@ const FormInformacoesLegais = () => (
         label={'Número do Boletim de ocorrência'}
         maxLen={40}
         type={'text'}
-        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
       />
 
       <CampoTexto
@@ -20,7 +20,7 @@ const FormInformacoesLegais = () => (
         label={'Categoria do crime no BO'}
         type={'text'}
         maxLen={40}
-        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
       />
     </div>
 
@@ -31,7 +31,7 @@ const FormInformacoesLegais = () => (
         label={'Número do Processo'}
         type={'text'}
         maxLen={40}
-        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
       />
 
       <CampoTexto
@@ -40,7 +40,7 @@ const FormInformacoesLegais = () => (
         label={'Órgão'}
         type={'text'}
         maxLen={40}
-        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
       />
     </div>
   </div>

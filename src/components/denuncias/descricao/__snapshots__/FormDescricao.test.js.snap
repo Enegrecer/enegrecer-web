@@ -36,7 +36,7 @@ exports[`Form Descrição deve seguir a estrutura definida  1`] = `
     className="row"
   >
     <campoTexto
-      divClasse="input-field col s6"
+      divClasse="input-field col s12 m6 l6"
       id="bairro-descricao"
       label="Bairro*"
       maxLen={40}

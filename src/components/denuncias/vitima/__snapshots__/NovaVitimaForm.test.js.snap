@@ -28,6 +28,10 @@ exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
       state="dataNascimentoVitima"
     />
   </div>
+  <Endereco
+    cidadeState="cidadeVitima"
+    estadoState="estadoVitima"
+  />
   <div
     className="row"
   >
@@ -36,18 +40,6 @@ exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
       id="telefone"
       label="Telefone"
       state="telefoneVitima"
-    />
-    <combobox
-      divClasse="col s6"
-      id="cidade-vitima"
-      itens={
-        Array [
-          "Belo Horizonte",
-        ]
-      }
-      label="Cidade *"
-      state="cidadeVitima"
-      valorPadrao=""
     />
   </div>
   <div

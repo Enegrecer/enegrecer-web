@@ -17,6 +17,7 @@ exports[`Form Descrição deve seguir a estrutura definida  1`] = `
         ]
       }
       label="Período*"
+      onChange={[Function]}
       state="periodoAgressao"
       valorPadrao=""
     />
@@ -27,25 +28,10 @@ exports[`Form Descrição deve seguir a estrutura definida  1`] = `
       state="dataAgressao"
     />
   </div>
-  <div
-    className="row"
-  >
-    <comboEstado
-      classes=" col s6"
-      divClasse=""
-      id="descricao-estado"
-      state="estadoAgressao"
-    />
-    <campoTexto
-      divClasse="input-field col s6"
-      id="cidade-descricao"
-      label="Cidade*"
-      maxLen={40}
-      placeholder=""
-      state="cidadeAgressao"
-      type="text"
-    />
-  </div>
+  <Endereco
+    cidadeState="cidadeAgressao"
+    estadoState="estadoAgressao"
+  />
   <div
     className="row"
   >

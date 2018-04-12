@@ -46,27 +46,10 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
       state="generoDenunciante"
     />
   </div>
-  <div
-    className="row"
-  >
-    <comboEstado
-      divClasse="col s6"
-      id="estado-denunciante"
-      state="estadoDenunciante"
-    />
-    <combobox
-      divClasse="col s6"
-      id="cidade-denunciante"
-      itens={
-        Array [
-          "Belo Horizonte",
-        ]
-      }
-      label="Cidade"
-      state="cidadeDenunciante"
-      valorPadrao=""
-    />
-  </div>
+  <Endereco
+    cidadeState="cidadeDenunciante"
+    estadoState="estadoDenunciante"
+  />
   <div
     className="row"
   >

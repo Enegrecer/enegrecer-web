@@ -11,6 +11,7 @@ exports[`Combobox deve possuir estrutura definida  1`] = `
     component="select"
     id=""
     name=""
+    onChange={[Function]}
   >
     <option
       value=""

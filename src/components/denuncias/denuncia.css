@@ -9,7 +9,6 @@ body {
 .form-denuncia-container {
   height: 100%;
   overflow: auto;
-  display: flex;
 	background-color: #f8f8f8;
 }
 

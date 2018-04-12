@@ -9,6 +9,7 @@ exports[`DetalhamentoDenuncia Component deve possuir estrutura definida  1`] = `
     className="row"
   >
     <nome
+      divClasse="col s12 m6 l6"
       id="detalhamento"
       onChange={[Function]}
       state="detalhamento"
@@ -73,6 +74,7 @@ exports[`DetalhamentoDenuncia Component deve possuir estrutura definida  1`] = `
       classes="col s12"
       divClasse=""
       id="estado"
+      onChange={[Function]}
       state="estado"
     />
   </div>

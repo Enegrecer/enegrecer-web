@@ -3,7 +3,7 @@ import CampoTexto from '../../comum/campoTexto';
 import * as ConstantesCSS from '../ConstantesCss';
 import Data from '../../comum/data';
 import Combobox from '../../comum/combobox';
-import ComboboxEstado from '../../comum/comboboxEstado';
+import Endereco from '../../comum/endereco';
 
 const descricao = () => (
   <div>
@@ -12,7 +12,7 @@ const descricao = () => (
         state={'periodoAgressao'}
         id={'periodo'}
         itens={[' ', 'Manhã', 'Tarde', 'Noite']}
-        divClasse={'col s6'}
+        divClasse={'col s12 m6 l6'}
         label={'Período*'}
       />
 
@@ -20,27 +20,11 @@ const descricao = () => (
         state={'dataAgressao'}
         id={'data-agressao'}
         label={'Data de Agressão'}
-        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s6`}
+        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
       />
     </div>
 
-    <div className="row">
-      <ComboboxEstado
-        state={'estadoAgressao'}
-        id={'descricao-estado'}
-        classes={' col s6'}
-      />
-
-      <CampoTexto
-        state={'cidadeAgressao'}
-        id={'cidade-descricao'}
-        label={'Cidade*'}
-        maxLen={40}
-        placeholder={''}
-        type={'text'}
-        divClasse={'input-field col s6'}
-      />
-    </div>
+    <Endereco estadoState={'estadoAgressao'} cidadeState={'cidadeAgressao'} />
 
     <div className="row">
       <CampoTexto
@@ -50,7 +34,7 @@ const descricao = () => (
         maxLen={40}
         placeholder={''}
         type={'text'}
-        divClasse={'input-field col s6'}
+        divClasse={'input-field col s12 m6 l6'}
       />
 
       <CampoTexto
@@ -60,7 +44,7 @@ const descricao = () => (
         maxLen={40}
         placeholder={''}
         type={'text'}
-        divClasse={'input-field col s6'}
+        divClasse={'input-field col s12 m6 l6'}
       />
     </div>
 
@@ -72,7 +56,7 @@ const descricao = () => (
         maxLen={255}
         type={'text'}
         inputClasse={ConstantesCSS.CLASSES_TEXTAREA}
-        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12`}
+        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
       />
     </div>
   </div>

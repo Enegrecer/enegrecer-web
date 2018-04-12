@@ -6,49 +6,33 @@ exports[`AgressorForm deve seguir a estrutura definida  1`] = `
     className="row"
   >
     <nome
+      divClasse="col s12 m6 l6"
       id="nome-agressor"
       onChange={[Function]}
       state="nomeAgressor"
       validacoes={Array []}
     />
     <genero
-      divClasse="col s6"
+      divClasse="col s12 m6 l6"
       id="genero-agressor"
       state="generoAgressor"
     />
   </div>
-  <div
-    className="row"
-  >
-    <comboEstado
-      divClasse="col s6"
-      id="estado-agressor"
-      state="estadoAgressor"
-    />
-    <combobox
-      divClasse="col s6"
-      id="cidade-agressor"
-      itens={
-        Array [
-          "Belo Horizonte",
-        ]
-      }
-      label="Cidade *"
-      state="cidadeAgressor"
-      valorPadrao=""
-    />
-  </div>
+  <Endereco
+    cidadeState="cidadeAgressor"
+    estadoState="estadoAgressor"
+  />
   <div
     className="row"
   >
     <Data
-      divClasse="input-field col s6"
+      divClasse="input-field col s12 m6 l6"
       id="data-nascimento-agressor"
       label="Data de Nascimento"
       state="dataNascimentoAgressor"
     />
     <comboRaca
-      divClasse="col s6"
+      divClasse="col s12 m6 l6"
       id="raca-agressor"
       somenteRacasVitima={false}
       state="racaAgressor"
@@ -58,7 +42,7 @@ exports[`AgressorForm deve seguir a estrutura definida  1`] = `
     className="row"
   >
     <campoTexto
-      divClasse="input-field col s6"
+      divClasse="input-field col s12 m6 l6"
       id="bairro-agressor"
       label="Bairro"
       maxLen={100}
@@ -71,7 +55,7 @@ exports[`AgressorForm deve seguir a estrutura definida  1`] = `
     className="row"
   >
     <campoTexto
-      divClasse="input-field col s12"
+      divClasse="input-field col s12 m6 l6"
       id="descricao-agressor"
       label="Descrição do agressor"
       maxLen={100}

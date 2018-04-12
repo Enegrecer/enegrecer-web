@@ -23,10 +23,12 @@ exports[`Combo Estado deve possuir estrutura definida  1`] = `
       "PB",
       "PE",
       "PI",
-      "RN",
       "PR",
       "RJ",
+      "RN",
+      "RO",
       "RR",
+      "RS",
       "SC",
       "SE",
       "SP",
@@ -34,6 +36,7 @@ exports[`Combo Estado deve possuir estrutura definida  1`] = `
     ]
   }
   label="Selecione o Estado:"
+  onChange={[Function]}
   state="estado"
   valorPadrao="Selecione"
 />

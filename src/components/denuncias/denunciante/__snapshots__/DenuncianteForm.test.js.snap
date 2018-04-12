@@ -6,6 +6,7 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
     className="row"
   >
     <nome
+      divClasse="col s12 m6 l6"
       id="nome-vitima"
       onChange={[Function]}
       state="nomeDenunciante"
@@ -16,7 +17,7 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
       }
     />
     <campoTexto
-      divClasse="input-field col s6"
+      divClasse="input-field col s12 m6 l6"
       id="email-denunciante"
       label="Email"
       maxLen={40}
@@ -35,48 +36,31 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
     className="row"
   >
     <telefone
-      divClasse="col s6"
+      divClasse="col s12 m6 l6"
       id="telefone-denunciante"
       label="Telefone"
       state="telefoneDenunciante"
     />
     <genero
-      divClasse="col s6"
+      divClasse="col s12 m6 l6"
       id="genero-denunciante"
       state="generoDenunciante"
     />
   </div>
-  <div
-    className="row"
-  >
-    <comboEstado
-      divClasse="col s6"
-      id="estado-denunciante"
-      state="estadoDenunciante"
-    />
-    <combobox
-      divClasse="col s6"
-      id="cidade-denunciante"
-      itens={
-        Array [
-          "Belo Horizonte",
-        ]
-      }
-      label="Cidade"
-      state="cidadeDenunciante"
-      valorPadrao=""
-    />
-  </div>
+  <Endereco
+    cidadeState="cidadeDenunciante"
+    estadoState="estadoDenunciante"
+  />
   <div
     className="row"
   >
     <genero
-      divClasse="col s6"
+      divClasse="col s12 m6 l6"
       id="genero-denunciante"
       state="generoDenunciante"
     />
     <Data
-      divClasse="input-field col s6"
+      divClasse="input-field col s12 m6 l6"
       id="data-nascimento-denunciante"
       label="Data de Nascimento"
       state="dataNascimentoDenunciante"
@@ -86,7 +70,7 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
     className="row"
   >
     <comboRaca
-      divClasse="col s6"
+      divClasse="col s12 m6 l6"
       id="raca-denunciante"
       somenteRacasVitima={true}
       state="racaDenunciante"

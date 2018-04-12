@@ -1,65 +1,23 @@
 import React, { Component } from 'react';
 import './css/estatistica.css';
 import TipoDeEstatistica from './TipoDeEstatistica';
-import firebaseApp from '../../utils/firebaseUtils';
+import * as estatisticaRepositorio from '../../utils/estatisticaRepositorio';
 
 export default class Estatistica extends Component {
   constructor(props) {
     super(props);
-    this.state = { numeroDenunciaPorRacismo: '0',
-      numeroDenunciaPorInjuria: '0',
-      totalDeDenuncia: '0',
-      totalDeVitimasMulheres: '0'
+    this.state = { totalDeDenunciaPorRacismo: '0',
+                   totalDeDenunciaPorInjuria: '0',
+                   totalDeDenuncia: '0',
+                   totalDeVitimasMulheres: '0'
     };
   }
 
   componentDidMount() {
-    const ref = firebaseApp.database().ref();
-    this.totalDenunciaPorRacismo(ref);
-    this.totalDenunciaPorInjuria(ref);
-    this.totalDeDenuncia(ref);
-    this.totalDeVitimasMulheres(ref);
-  }
-
-  totalDenunciaPorRacismo(ref) {
-    ref.child('denuncias').orderByChild('idCategoria').equalTo('racismo')
-      .once('value', (snapshot) => {
-        const denuncias = snapshot.val();
-        const totalDenunciaPorRacismo = Object.keys(denuncias).length;
-        this.setState({ numeroDenunciaPorRacismo: totalDenunciaPorRacismo });
-      });
-  }
-
-  totalDenunciaPorInjuria(ref) {
-    ref.child('denuncias').orderByChild('idCategoria').equalTo('injuria')
-      .once('value', (snapshot) => {
-        const denuncias = snapshot.val();
-        const totalDenunciaPorInjuria = Object.keys(denuncias).length;
-        this.setState({ numeroDenunciaPorInjuria: totalDenunciaPorInjuria });
-      });
-  }
-
-  totalDeDenuncia(ref) {
-    ref.child('denuncias').once('value', (snapshot) => {
-      const denuncias = snapshot.val();
-      const total = Object.keys(denuncias).length;
-      this.setState({ totalDeDenuncia: total });
-    });
-  }
-
-  totalDeVitimasMulheres(ref) {
-    let total = 0;
-    const query = ref.child('pessoasEnvolvidas').orderByKey();
-    query.once('value')
-      .then((snapshot) => {
-        snapshot.forEach((denunciaSnapshot) => {
-          const vitima = denunciaSnapshot.val().vitima;
-          if (vitima && vitima.genero === 'Feminino') {
-            total += 1;
-          }
-        });
-        this.setState({ totalDeVitimasMulheres: total });
-      });
+    this.setState({totalDeDenunciaPorRacismo : estatisticaRepositorio.totalDenunciaPorRacismo()});
+    this.setState({totalDeDenunciaPorInjuria : estatisticaRepositorio.totalDenunciaPorInjuria()});
+    this.setState({totalDeDenuncia : estatisticaRepositorio.totalDeDenuncia()});
+    this.setState({totalDeVitimasMulheres : estatisticaRepositorio.totalDeVitimasMulheres()});
   }
 
   render() {
@@ -74,7 +32,7 @@ export default class Estatistica extends Component {
       <TipoDeEstatistica
         key="vermelho"
         id="vermelho"
-        numero={this.state.numeroDenunciaPorRacismo}
+        numero={this.state.totalDeDenunciaPorRacismo}
         categoria="Racismo"
       />
 
@@ -83,7 +41,7 @@ export default class Estatistica extends Component {
           <TipoDeEstatistica
             key="amarelo"
             id="amarelo"
-            numero={this.state.numeroDenunciaPorInjuria}
+            numero={this.state.totalDeDenunciaPorInjuria}
             categoria="Injúria Racial"
           />
 

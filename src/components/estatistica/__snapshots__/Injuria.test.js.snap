@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Injuria deve construir a pagina corretamente  1`] = `
+<TipoDeEstatistica
+  categoria="Injúria Racial"
+  id="amarelo"
+  numero="0"
+/>
+`;

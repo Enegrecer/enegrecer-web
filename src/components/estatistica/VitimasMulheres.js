@@ -5,29 +5,35 @@ import TipoDeEstatistica from './TipoDeEstatistica';
 export default class VitimasMulheres extends Component {
   constructor(props) {
     super(props);
-    this.state = { totalDeDenunciaPorVitimasMulheres: '0' };
+    this.state = { percentagem: '0' };
   }
 
   componentDidMount() {
     const ref = firebaseApp.database().ref();
-    let total = 0;
+    let totalVitimas = 0;
+    let totalMulheresVitmas = 0;
     const query = ref.child('pessoasEnvolvidas').orderByKey();
     query.once('value')
       .then((snapshot) => {
         snapshot.forEach((denunciaSnapshot) => {
           const vitima = denunciaSnapshot.val().vitima;
-          if (vitima && vitima.genero === 'Feminino') {
-            total += 1;
+          if (vitima) {
+            totalVitimas += 1;
+            if (vitima.genero === 'Feminino') {
+              totalMulheresVitmas += 1;
+            }
           }
         });
-        this.setState({ totalDeDenunciaPorVitimasMulheres: `${total}%` });
+        let percentagem = (totalMulheresVitmas * 100) / totalVitimas;
+        percentagem = parseFloat(percentagem.toFixed(2));
+        this.setState({ percentagem: `${percentagem}%` });
       });
   }
 
   render() {
     return (<TipoDeEstatistica
       id="verde"
-      numero={this.state.totalDeDenunciaPorVitimasMulheres}
+      numero={this.state.percentagem}
       categoria="Vitimas Mulheres"
     />
     );

@@ -1,74 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './css/estatistica.css';
-import TipoDeEstatistica from './TipoDeEstatistica';
-import * as estatisticaRepositorio from '../../utils/estatisticaRepositorio';
+import Racismo from './Racismo';
+import Injuria from './Injuria';
+import VitimasMulheres from './VitimasMulheres';
+import VitimasAte29Anos from './VitimasAte29Anos';
+import TotalDeDenuncia from './TotalDeDenuncia';
 
-export default class Estatistica extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { totalDeDenunciaPorRacismo: '0',
-                   totalDeDenunciaPorInjuria: '0',
-                   totalDeDenuncia: '0',
-                   totalDeVitimasMulheres: '0'
-    };
-  }
-
-  componentDidMount() {
-    this.setState({totalDeDenunciaPorRacismo : estatisticaRepositorio.totalDenunciaPorRacismo()});
-    this.setState({totalDeDenunciaPorInjuria : estatisticaRepositorio.totalDenunciaPorInjuria()});
-    this.setState({totalDeDenuncia : estatisticaRepositorio.totalDeDenuncia()});
-    this.setState({totalDeVitimasMulheres : estatisticaRepositorio.totalDeVitimasMulheres()});
-  }
-
-  render() {
-    return (<div id="estatistica">
-      <div id="nosso-objetivo">
-        <div className="retangular-bloco" />
-        <h6>Nosso Objetivo </h6>
-        <p>Buscamos dar visibilidade para crimes contra negros a partir de uma
+const Estatistica = () => (
+  <div id="estatistica">
+    <div id="nosso-objetivo">
+      <div className="retangular-bloco" />
+      <h6>Nosso Objetivo </h6>
+      <p>Buscamos dar visibilidade para crimes contra negros a partir de uma
       base de dados acessível, transparente e atualizada. </p>
+    </div>
+
+    <Racismo key="racismo" />
+    <div id="rectangle2">
+      <div id="rectangle21">
+        <Injuria key="injuria" />
+        <VitimasMulheres key="vitimasMulheres" />
       </div>
-
-      <TipoDeEstatistica
-        key="vermelho"
-        id="vermelho"
-        numero={this.state.totalDeDenunciaPorRacismo}
-        categoria="Racismo"
-      />
-
-      <div id="rectangle2">
-        <div id="rectangle21">
-          <TipoDeEstatistica
-            key="amarelo"
-            id="amarelo"
-            numero={this.state.totalDeDenunciaPorInjuria}
-            categoria="Injúria Racial"
-          />
-
-          <TipoDeEstatistica
-            key="verde"
-            id="verde"
-            numero={this.state.totalDeVitimasMulheres}
-            categoria="Vítimas Mulheres"
-          />
-        </div>
-        <div id="rectangle22">
-          <TipoDeEstatistica
-            key="cinza"
-            id="cinza"
-            numero="23"
-            categoria="Vítima até 26 anos"
-          />
-
-          <TipoDeEstatistica
-            key="cinzaClaro"
-            id="cinzaClaro"
-            numero={this.state.totalDeDenuncia}
-            categoria="Total de Denúncia"
-          />
-        </div>
+      <div id="rectangle22">
+        <VitimasAte29Anos key="vitimasAte29Anos" />
+        <TotalDeDenuncia key="totalDeDenuncia" />
       </div>
     </div>
-    );
-  }
-}
+  </div>
+);
+
+export default Estatistica;

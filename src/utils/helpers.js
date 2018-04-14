@@ -2,3 +2,18 @@ export function cortarPalavra(value, maxLen) {
   const inputLen = window.parseInt(maxLen);
   return isNaN(inputLen) ? value : value.slice(0, inputLen);
 }
+
+function calculaIdade(dataNascimento) {
+  const today = new Date();
+  const birthDate = new Date(dataNascimento);
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age -= 1;
+  }
+  return age;
+}
+
+export function temMenosDe29Anos(dataNascimento) {
+  return calculaIdade(dataNascimento) <= 29;
+}

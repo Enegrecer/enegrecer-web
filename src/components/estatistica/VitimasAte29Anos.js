@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebaseApp from '../../utils/firebaseUtils';
 import TipoDeEstatistica from './TipoDeEstatistica';
+import * as helpers from '../../utils/helpers';
 
 export default class VitimasAte29Anos extends Component {
   constructor(props) {
@@ -18,31 +19,12 @@ export default class VitimasAte29Anos extends Component {
           const vitima = denunciaSnapshot.val().vitima;
           if (vitima
               && vitima.dataNascimento
-              && this.temMenosDe29Anos(vitima.dataNascimento)) {
+              && helpers.temMenosDe29Anos(vitima.dataNascimento)) {
             total += 1;
           }
         });
         this.setState({ totalDeDenunciaPorVitimasAte29Anos: total });
       });
-  }
-
-  temMenosDe29Anos(dataNascimento) {
-    if(this.calculaIdade(dataNascimento)<=29){
-      return true;
-    }
-    return false;
-  }
-
-  calculaIdade(dataNascimento) {
-    var today = new Date();
-    var birthDate = new Date(dataNascimento);
-    var age = today.getFullYear() - birthDate.getFullYear();
-    var m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate()))
-    {
-        age--;
-    }
-    return age;
   }
 
   render() {

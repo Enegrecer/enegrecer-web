@@ -23,4 +23,10 @@ describe('Helpers functions', () => {
     expect(palavraCortada).toHaveLength(50);
     expect(palavraCortada).toBe(palavraGrande);
   });
+
+  it('deve retornar true se a idade é menor que 29 anos', () => {
+    const temMenosDe29Anos = helpers.temMenosDe29Anos("08/07/1991");
+    expect(temMenosDe29Anos).toBe(true);
+  });
+
 });

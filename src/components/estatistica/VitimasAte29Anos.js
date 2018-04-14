@@ -16,12 +16,33 @@ export default class VitimasAte29Anos extends Component {
       .then((snapshot) => {
         snapshot.forEach((denunciaSnapshot) => {
           const vitima = denunciaSnapshot.val().vitima;
-          if (vitima && vitima.genero === 'Feminino') {
+          if (vitima
+              && vitima.dataNascimento
+              && this.temMenosDe29Anos(vitima.dataNascimento)) {
             total += 1;
           }
         });
-        this.setState({ totalDeDenunciaPorVitimasMulheres: total });
+        this.setState({ totalDeDenunciaPorVitimasAte29Anos: total });
       });
+  }
+
+  temMenosDe29Anos(dataNascimento) {
+    if(this.calculaIdade(dataNascimento)<=29){
+      return true;
+    }
+    return false;
+  }
+
+  calculaIdade(dataNascimento) {
+    var today = new Date();
+    var birthDate = new Date(dataNascimento);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate()))
+    {
+        age--;
+    }
+    return age;
   }
 
   render() {

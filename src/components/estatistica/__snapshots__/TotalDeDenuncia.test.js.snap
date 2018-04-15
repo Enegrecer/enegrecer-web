@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Total De Denuncia deve construir a pagina corretamente  1`] = `
+<TipoDeEstatistica
+  categoria="Total de Denúncia"
+  id="cinzaClaro"
+  numero="0"
+/>
+`;

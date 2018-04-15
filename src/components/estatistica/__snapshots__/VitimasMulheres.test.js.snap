@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Vitimas Mulheres deve construir a pagina corretamente  1`] = `
+<TipoDeEstatistica
+  categoria="Vitimas Mulheres"
+  id="verde"
+  numero="0"
+/>
+`;

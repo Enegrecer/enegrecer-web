@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Vitimas ate 29 Anos deve construir a pagina corretamente  1`] = `
+<TipoDeEstatistica
+  categoria="Vitimas até 29 Anos"
+  id="cinza"
+  numero="0"
+/>
+`;

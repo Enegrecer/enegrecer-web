@@ -154,8 +154,53 @@ h4 {
   float: left;
   position: relative;
   background: #ffffff;
+  padding: 51px;
 }
 
-.parte1 img {
-  float: right;
+
+.parte2 h6 {
+    width: 291px;
+    height: 102px;
+    font-family: Roboto;
+    font-size: 48px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.06;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
+}
+
+.parte2 p {
+    width: 60%;
+    height: 99px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4e4e4e;
+    margin-top: 60px;
+}
+
+.denunciar, .denunciar:hover {
+  width: 132px;
+  height: 35px;
+  border-radius: 3px;
+  background-color: #ff0336;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.15);
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  padding: 10px;
 }

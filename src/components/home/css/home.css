@@ -130,3 +130,10 @@ h4 {
   margin-right: 18%;
   float: right;
 }
+
+.denunciarHome {
+  border: 1px solid #ccc;
+  width: 100px;
+  height: 10px;
+  float: left;
+}

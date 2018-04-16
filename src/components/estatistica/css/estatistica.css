@@ -1,8 +1,9 @@
   #estatistica {
     width: 100%;
     padding: 30px;
-    height: 600px;
+    /* height: 600px; */
     padding-left: 13%;
+    float: left;
   }
 
   #nosso-objetivo {
@@ -13,12 +14,12 @@
     background-color: #ffffff;
     float: left;
     position:relative;
-    margin-top: 17%;
+    margin-top: 12.3%;
     margin-bottom: 12%;
   }
 
   #vermelho {
-    height: 92%;
+    height: 440px;
     background-color: #ff0336;
     padding: 30px;
     position: relative;
@@ -151,7 +152,7 @@
   }
 
   .categoria {
-    width: 82.5px;
+    width: 91.5px;
     height: 42px;
     font-family: Roboto;
     font-size: 18px;

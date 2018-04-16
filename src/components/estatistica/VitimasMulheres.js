@@ -25,7 +25,7 @@ export default class VitimasMulheres extends Component {
             }
           }
         });
-        let percentagem =
+        const percentagem =
         helpers.obtemPorcentagemDeMulheres(totalVitimas, totalMulheresVitmas);
         this.setState({ percentagem: `${percentagem}%` });
       });

@@ -21,5 +21,5 @@ export function temMenosDe29Anos(dataNascimento) {
 export function obtemPorcentagemDeMulheres(total, totalMulheres) {
   let percentagem = (totalMulheres * 100) / total;
   percentagem = parseFloat(percentagem.toFixed(2));
-  return percentagem
+  return percentagem;
 }

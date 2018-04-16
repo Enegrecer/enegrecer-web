@@ -7,7 +7,7 @@ import Sobre from '../components/sobre/Sobre';
 import ColetivoEnegrecer from '../components/coletivoEnegrecer/ColetivoEnegrecer';
 import NovaDenunciaContainer from '../containers/denuncias/NovaDenunciaContainer';
 import DepoisDaDenuncia from '../components/depoisdadenuncia/DepoisDaDenuncia';
-import AdminLogin from '../components/administrador/AdminLogin';
+import AdminLogin from '../components/moderador/ModeradorLogin';
 
 const Routes = () => (
   <BrowserRouter>
@@ -19,7 +19,7 @@ const Routes = () => (
         <Route exact path="/coletivo-enegrecer" component={ColetivoEnegrecer} />
         <Route exact path="/denunciar" component={NovaDenunciaContainer} />
         <Route exact path="/depois-denuncia" component={DepoisDaDenuncia} />
-        <Route exact path="admin/login" component={AdminLogin} />
+        <Route exact path="/moderador/login" component={AdminLogin} />
       </Switch>
       <Rodape />
     </div>

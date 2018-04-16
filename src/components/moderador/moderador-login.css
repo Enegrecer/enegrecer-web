@@ -1,0 +1,17 @@
+.login_moderador {
+    background-color: #f8f8f8;
+}
+
+.formulario_login_moderador {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.row .col.s4{
+    margin-left: 33%;
+}

@@ -174,7 +174,6 @@ h4 {
 
 .parte2 p {
     width: 86%;
-    height: 99px;
     font-family: Roboto;
     font-size: 20px;
     font-weight: 500;
@@ -188,8 +187,13 @@ h4 {
 }
 
 .denunciar, .denunciar:hover {
-  width: 132px;
-  height: 35px;
+
+  color: #ffffff;
+
+}
+.bt_denuncia {
+  width: 50%;
+  height: 47px;
   border-radius: 3px;
   background-color: #ff0336;
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.15);
@@ -201,6 +205,5 @@ h4 {
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
-  color: #ffffff;
-  padding: 10px;
+  padding: 15px;
 }

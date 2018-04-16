@@ -1,8 +1,9 @@
   #estatistica {
     width: 100%;
     padding: 30px;
-    height: 600px;
-    padding-left: 13%;
+    /* height: 600px; */
+    padding-left: 16%;
+    float: left;
   }
 
   #nosso-objetivo {
@@ -13,12 +14,11 @@
     background-color: #ffffff;
     float: left;
     position:relative;
-    margin-top: 17%;
-    margin-bottom: 12%;
+    margin-top: 13%;
   }
 
   #vermelho {
-    height: 92%;
+    height: 440px;
     background-color: #ff0336;
     padding: 30px;
     position: relative;
@@ -34,7 +34,20 @@
     position: relative;
     margin-left: 1%;
     float: left;
-    padding-top: 10%;
+    padding-top: 5%;
+  }
+
+  .nossas-denuncias {
+    width: 90%;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
   }
 
   #rectangle21 {
@@ -54,7 +67,7 @@
 
   #rectangle2 #amarelo {
     width: 100%;
-    height: 50%;
+    height: 44%;
     background-color: #ffbb00;
     position: relative;
     padding: 5%;
@@ -63,7 +76,7 @@
 
   #rectangle2 #verde {
     width: 95%;
-    height: 50%;
+    height: 45%;
     background-color: #20a14f;
     position: relative;
     padding: 5%;
@@ -72,7 +85,7 @@
 
   #rectangle2 #cinza {
     width: 85%;
-    height: 50%;
+    height: 44%;
     background-color: #575757;
     position: relative;
     padding: 5%;
@@ -83,7 +96,7 @@
 
   #rectangle2 #cinzaClaro {
     width: 90%;
-    height: 50%;
+    height: 45%;
     background-color: #eeeeee;
     position: relative;
     padding: 5%;
@@ -138,7 +151,7 @@
   }
 
   .categoria {
-    width: 82.5px;
+    width: 91.5px;
     height: 42px;
     font-family: Roboto;
     font-size: 18px;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebaseApp from '../../utils/firebaseUtils';
 import TipoDeEstatistica from './TipoDeEstatistica';
+import * as helpers from '../../utils/helpers';
 
 export default class VitimasMulheres extends Component {
   constructor(props) {
@@ -24,8 +25,8 @@ export default class VitimasMulheres extends Component {
             }
           }
         });
-        let percentagem = (totalMulheresVitmas * 100) / totalVitimas;
-        percentagem = parseFloat(percentagem.toFixed(2));
+        const percentagem =
+        helpers.obtemPorcentagemDeMulheres(totalVitimas, totalMulheresVitmas);
         this.setState({ percentagem: `${percentagem}%` });
       });
   }

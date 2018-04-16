@@ -1,5 +1,6 @@
 import React from 'react';
 import Estatistica from '../estatistica/Estatistica';
+import DenunciarHome from './DenunciarHome';
 import { withHistoryPropTypes } from './sharedPropTypes';
 import './css/home.css';
 
@@ -11,6 +12,7 @@ const Home = () => (
       </div>
     </div>
     <Estatistica />
+    <DenunciarHome />
   </div>
 );
 

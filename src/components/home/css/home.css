@@ -132,8 +132,30 @@ h4 {
 }
 
 .denunciarHome {
-  border: 1px solid #ccc;
-  width: 100px;
-  height: 10px;
+  border: 1px solid;
+  width: 100%;
   float: left;
+  clear: left;
+}
+
+.denunciarHome .parte1 {
+  height: 402px;
+  border: 1px solid;
+  width: 50%;
+  float: left;
+  position: relative;
+  background: #020517;
+}
+
+.denunciarHome .parte2 {
+  height: 402px;
+  border: 1px solid;
+  width: 50%;
+  float: left;
+  position: relative;
+  background: #ffffff;
+}
+
+.parte1 {
+  float: right;
 }

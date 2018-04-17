@@ -16,7 +16,7 @@ const EstatisticaMobile = () => (
     </div>
     <Racismo id="vermelho" key="racismo" />
     <div id="rectangle2">
-    <div className="nossas-denuncias">NOSSAS DENUNCIAS </div>
+      <div className="nossas-denuncias">NOSSAS DENUNCIAS </div>
       <div id="rectangle21">
         <Injuria key="injuria" />
         <VitimasMulheres key="vitimasMulheres" />

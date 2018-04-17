@@ -3,6 +3,7 @@
 exports[`Racismo deve construir a pagina corretamente  1`] = `
 <TipoDeEstatistica
   categoria="Racismo"
+  id="vermelho"
   numero="0"
 />
 `;

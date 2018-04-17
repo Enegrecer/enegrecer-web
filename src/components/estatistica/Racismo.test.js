@@ -5,7 +5,7 @@ import Racismo from './Racismo';
 
 describe('Racismo', () => {
   it('deve construir a pagina corretamente ', () => {
-    const racismo = shallow(<Racismo />);
+    const racismo = shallow(<Racismo id="vermelho" />);
     const racismoJson = toJson(racismo);
     expect(racismoJson).toMatchSnapshot();
   });

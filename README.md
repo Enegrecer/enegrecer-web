@@ -14,11 +14,11 @@
 * [Tech Stack](#tech-stack)
 * [Mais Informações](#mais-informações)
 
-## O Projeto
+## O Projeto Verdade Seja Dita
 
 O coletivo nacional de Juventude Enegrecer é uma expressão do movimento social negro que luta contra as opressões da sociedade em favor da juventude negra. O projeto se propõe como uma plataforma para registrar denúncias de crimes raciais, a fim de se coletar dados para embasar e guiar ações e políticas antirracismo.
 
-O Web App implementado neste respositório é uma das interfaces para essa plataforma, onde o usuário pode se informar mais a respeito e relatar um crime.
+O Web App, Verdade Seja Dita, implementado neste respositório é uma das interfaces para essa plataforma, onde o usuário pode se informar mais a respeito e relatar um crime de racismos ou injúria.
 
 
 ## Configurações
@@ -43,10 +43,6 @@ yarn start
 ```
 
 Isso irá subir um servidor com o aplicativo rodando em `http://localhost:3000`. Quando os arquivos dentro de `src` são alterados, automaticamente o código é recompilado e o aplicativo recarregado com as alterações.
-
-Ao abrir o caminho `http://localhost:3000`, é normal a página aparecer em branco. Para acessar as opções, vá para `http://localhost:3000/painel`
-
-Após efetuar login, a pessoa usuária ainda não está sendo redirecionada, então aguarde alguns segundos e acesse o menu novamente e escolha a opção desejada por favor.
 
 ### Testes
 

@@ -1,0 +1,161 @@
+  #estatistica-mobile {
+    width: 100%;
+    float: left;
+  }
+
+  #nosso-objetivo-mobile {
+    height: 100%;
+    width: 100%;
+    padding-top: 5%;
+    padding-left: 30px;
+    background-color: #ffffff;
+    float: left;
+    position:relative;
+    margin-top: 13%;
+    margin-bottom: 30px;
+  }
+
+  .nossas-denuncias-mobile {
+    width: 307px;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    margin-left: 35px;
+  }
+
+  #vermelhoMobile {
+    width: 100%;
+    height: 44%;
+    background-color: #ff0336;
+    position: relative;
+    float: left;
+    margin-top: 0.5%;
+    padding-left: 32%;
+  }
+
+#rectangle2-mobile .numero,  #vermelhoMobile .numero {
+   width: 120px;
+   height: 58px;
+   font-family: Roboto;
+   font-size: 50px;
+   font-weight: 900;
+   font-style: normal;
+   font-stretch: normal;
+   line-height: normal;
+   letter-spacing: normal;
+   text-align: center;
+   color: #ffffff;
+  }
+
+  #rectangle2-mobile .categoria, #vermelhoMobile .categoria {
+    width: 120px;
+    height: 42px;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  #rectangle2-mobile {
+    border: 1px sold #ccc;
+    width: 100%;
+    height: 92%;
+    position: relative;
+    float: left;
+    padding-top: 3%;
+  }
+
+  #rectangle21 {
+    width: 50%;
+    height: 100%;
+    border: 2px solid;
+    position: relative;
+    float: left;
+  }
+
+  #rectangle22 {
+    width: 50%;
+    height: 100%;
+    border: 2px solid;
+    float: left;
+  }
+
+  #rectangle2-mobile #amarelo {
+    width: 100%;
+    background-color: #ffbb00;
+    position: relative;
+    padding: 10%;
+    padding-left: 14%;
+  }
+
+  #rectangle2-mobile #verde {
+    width: 96%;
+    height: 45%;
+    background-color: #20a14f;
+    position: relative;
+    padding: 10%;
+    margin-top: 6%;
+  }
+
+  #rectangle2-mobile #cinza {
+    width: 96%;
+    background-color: #575757;
+    position: relative;
+    padding: 10%;
+    margin-left: 4%;
+    margin-bottom: 6%;
+    padding-left: 14%;
+  }
+
+
+  #rectangle2-mobile #cinzaClaro {
+    width: 100%;
+    background-color: #eeeeee;
+    position: relative;
+    padding: 10%;
+    color: #4e4e4e;
+    padding-left: 14%;
+  }
+
+  #rectangle2-mobile #cinzaClaro .numero, #rectangle2-mobile #cinzaClaro .categoria {
+    color: #4e4e4e;
+  }
+
+  #nosso-objetivo-mobile h6 {
+      width: 291px;
+      height: 102px;
+      font-family: Roboto;
+      font-size: 48px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.06;
+      letter-spacing: normal;
+      text-align: left;
+      color: #000000;
+  }
+
+  #nosso-objetivo-mobile p {
+      width: 291px;
+      height: 99px;
+      font-family: Roboto;
+      font-size: 20px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: #4e4e4e;
+  }

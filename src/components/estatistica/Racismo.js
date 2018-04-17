@@ -5,7 +5,7 @@ import TipoDeEstatistica from './TipoDeEstatistica';
 export default class Racismo extends Component {
   constructor(props) {
     super(props);
-    this.state = { totalDeDenunciaPorRacismo: '0' };
+    this.state = {id:props.id, totalDeDenunciaPorRacismo: '0'};
   }
 
   componentDidMount() {
@@ -17,10 +17,9 @@ export default class Racismo extends Component {
   }
 
   render() {
-    return (<TipoDeEstatistica
-      id="vermelho"
-      numero={this.state.totalDeDenunciaPorRacismo}
-      categoria="Racismo"
-    />);
+      return( <TipoDeEstatistica
+                id={this.state.id}
+                numero={this.state.totalDeDenunciaPorRacismo}
+                categoria="Racismo" />);
   }
 }

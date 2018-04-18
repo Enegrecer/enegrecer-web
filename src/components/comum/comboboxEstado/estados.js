@@ -1,8 +1,12 @@
-const estados = [
-  'AC', 'AL', 'AM', 'AP', 'BA', 'CE', 'DF',
-  'ES', 'GO', 'MA', 'MG', 'MS', 'MT', 'PA',
-  'PB', 'PE', 'PI', 'RN', 'PR', 'RJ', 'RR',
-  'SC', 'SE', 'SP', 'TO'];
+import estadosJSON from './estados.json';
 
-export default estados;
-
+export default estadosJSON.map(estado => estado.sigla).sort((a, b) => {
+  if (a < b) {
+    return -1;
+  }
+  if (a > b) {
+    return 1;
+  }
+  // names must be equal
+  return 0;
+});

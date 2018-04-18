@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import firebaseApp from '../../utils/firebaseUtils';
 import TipoDeEstatistica from './TipoDeEstatistica';
 
 export default class Racismo extends Component {
   constructor(props) {
     super(props);
-    this.state = { totalDeDenunciaPorRacismo: '0' };
+    this.state = { id: props.id, totalDeDenunciaPorRacismo: '0' };
   }
 
   componentDidMount() {
@@ -18,9 +19,13 @@ export default class Racismo extends Component {
 
   render() {
     return (<TipoDeEstatistica
-      id="vermelho"
+      id={this.state.id}
       numero={this.state.totalDeDenunciaPorRacismo}
       categoria="Racismo"
     />);
   }
 }
+
+Racismo.propTypes = {
+  id: PropTypes.string.isRequired
+};

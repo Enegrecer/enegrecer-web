@@ -19,7 +19,7 @@ const Routes = () => (
         <Route exact path="/coletivo-enegrecer" component={ColetivoEnegrecer} />
         <Route exact path="/denunciar" component={NovaDenunciaContainer} />
         <Route exact path="/depois-denuncia" component={DepoisDaDenuncia} />
-        <Route exact path="/moderador/login" component={AdminLogin} />
+        <Route exact path="/login" component={AdminLogin} />
       </Switch>
       <Rodape />
     </div>

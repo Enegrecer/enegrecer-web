@@ -14,6 +14,10 @@ class NovaDenunciaContainer extends React.Component {
     this.submeteFormulario = this.submeteFormulario.bind(this);
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   componentWillUnmount() {
     if (this.props.denunciaCadastradaComSucesso) {
       this.props.limpaEstadoUltimaDencunciaCadastrada();

@@ -30,34 +30,21 @@ const DenuncianteForm = () => (
     </div>
 
     <div className="row">
-      <Telefone
-        state={'telefoneDenunciante'}
-        id="telefone-denunciante"
-        label={'Telefone'}
-        divClasse={'col s12 m6 l6'}
-      />
-      <Genero
-        id={'genero-denunciante'}
-        state={'generoDenunciante'}
-        divClasse={'col s12 m6 l6'}
-      />
-    </div>
-
-    <Endereco estadoState={'estadoDenunciante'} cidadeState={'cidadeDenunciante'} />
-
-    <div className="row">
-      <Genero
-        id={'genero-denunciante'}
-        state={'generoDenunciante'}
-        divClasse={'col s12 m6 l6'}
-      />
       <Data
         id={'data-nascimento-denunciante'}
         label={'Data de Nascimento'}
         state={'dataNascimentoDenunciante'}
         divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
       />
+      <Telefone
+        state={'telefoneDenunciante'}
+        id="telefone-denunciante"
+        label={'Telefone'}
+        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
+      />
     </div>
+
+    <Endereco estadoState={'estadoDenunciante'} cidadeState={'cidadeDenunciante'} />
 
     <div className="row">
       <ComboboxRaca
@@ -65,6 +52,11 @@ const DenuncianteForm = () => (
         id={'raca-denunciante'}
         divClasse={'col s12 m6 l6'}
         somenteRacasVitima
+      />
+      <Genero
+        id={'genero-denunciante'}
+        state={'generoDenunciante'}
+        divClasse={'col s12 m6 l6'}
       />
     </div>
   </div>

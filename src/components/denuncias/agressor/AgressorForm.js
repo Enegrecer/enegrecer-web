@@ -34,18 +34,6 @@ const AgressorForm = () => (
 
     <div className="row">
       <CampoTexto
-        state={'bairroAgressor'}
-        id={'bairro-agressor'}
-        label={'Bairro'}
-        maxLen={100}
-        placeholder={''}
-        type={'text'}
-        divClasse={'input-field col s12 m6 l6'}
-      />
-    </div>
-
-    <div className="row">
-      <CampoTexto
         state={'descricaoAgressor'}
         id={'descricao-agressor'}
         label={'Descrição do agressor'}

@@ -43,19 +43,6 @@ exports[`AgressorForm deve seguir a estrutura definida  1`] = `
   >
     <campoTexto
       divClasse="input-field col s12 m6 l6"
-      id="bairro-agressor"
-      label="Bairro"
-      maxLen={100}
-      placeholder=""
-      state="bairroAgressor"
-      type="text"
-    />
-  </div>
-  <div
-    className="row"
-  >
-    <campoTexto
-      divClasse="input-field col s12 m6 l6"
       id="descricao-agressor"
       label="Descrição do agressor"
       maxLen={100}

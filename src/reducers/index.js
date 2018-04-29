@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import denunciaComSucessoReducer from './denuncia/denunciaComSucessoReducer';
-import logadoComSucessoReducer from './login/logadoComSucessoReducer'
+import loginReducer from './login/loginReducer'
 
 export default combineReducers({
-  logadoComSucessoReducer,
+  loginReducer,
   denunciaComSucessoReducer,
   form: formReducer
 });

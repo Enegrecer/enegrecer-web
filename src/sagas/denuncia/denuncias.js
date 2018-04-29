@@ -1,9 +1,9 @@
 import { fork, call, put, take } from 'redux-saga/effects';
-import firebaseApp from '../utils/firebaseUtils';
+import firebaseApp from '../../utils/firebaseUtils';
 
 import {
   CRIAR_DENUNCIA_REQUISICAO, criarDenunciaSucesso,
-} from '../actions/criarDenunciaActions';
+} from '../../actions/criarDenunciaActions';
 
 const denunciaInicial = {
   bairroAgressao: '',

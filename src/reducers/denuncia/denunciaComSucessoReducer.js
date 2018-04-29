@@ -14,4 +14,3 @@ export default function denunciaCriadaComSucesso(state = initialState, action) {
       return state;
   }
 }
-

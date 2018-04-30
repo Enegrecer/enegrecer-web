@@ -1,6 +1,6 @@
 import { fork } from 'redux-saga/effects';
-import complaint from './denuncias';
+import denuncia from './denuncia/denuncias';
 
 export default function* rootSaga() {
-  yield fork(complaint);
+  yield fork(denuncia);
 }

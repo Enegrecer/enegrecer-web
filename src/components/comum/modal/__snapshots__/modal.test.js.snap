@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal deve construir o componente corretamente  1`] = `
+<div
+  className="modal"
+  id=""
+>
+  <div
+    className="modal-content"
+  >
+    <h4 />
+    <p />
+  </div>
+  <div
+    className="modal-footer"
+  >
+    <a
+      className="modal-action modal-close waves-effect waves-green btn-flat"
+      href="#!"
+    />
+  </div>
+</div>
+`;

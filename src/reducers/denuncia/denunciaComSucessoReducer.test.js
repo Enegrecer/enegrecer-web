@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import denunciaCadastradaComSucesso from './denunciaComSucessoReducer';
 import {
   criarDenunciaRequisicao, criarDenunciaSucesso, limpaEstadoUltimaDencunciaCadastrada
-} from '../actions/criarDenunciaActions';
+} from '../../actions/criarDenunciaActions';
 
 describe('denunciaCadastradaComSucessoReducer', () => {
   describe('Quando a action não é do tipo de denuncia cadastrada com sucesso', () => {

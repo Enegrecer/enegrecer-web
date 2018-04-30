@@ -31,14 +31,19 @@ export default class Menu extends Component {
       this.setState({ mobileNavVisible: false });
     }
   }
+
+  escondeMenu () {
+    this.setState({mobileNavVisible: false});
+  }
+
 /* eslint-disable */
   navigationLinks() {
     return [
       <ul>
-        <li key={1}><Link to="/sobre">SOBRE</Link></li>
-        <li key={2}><Link to="/depois-denuncia">E DEPOIS DA DENÚNCIA?</Link></li>
-        <li key={3}><Link to="/coletivo-enegrecer">O COLETIVO ENEGRECER</Link></li>
-        <li key={4}><Link className="denunciar" to="/denunciar">DENUNCIAR</Link></li>
+        <li key={1}><Link to="/sobre" onClick={this.escondeMenu}>SOBRE</Link></li>
+        <li key={2}><Link to="/depois-denuncia" onClick={this.escondeMenu}>E DEPOIS DA DENÚNCIA?</Link></li>
+        <li key={3}><Link to="/coletivo-enegrecer" onClick={this.escondeMenu}>O COLETIVO ENEGRECER</Link></li>
+        <li key={4}><Link className="denunciar" to="/denunciar" onClick={this.escondeMenu}>DENUNCIAR</Link></li>
       </ul>
     ];
   }

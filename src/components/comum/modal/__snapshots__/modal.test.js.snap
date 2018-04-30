@@ -12,10 +12,10 @@ exports[`Modal deve construir o componente corretamente  1`] = `
     <p />
   </div>
   <div
-    class="modal-footer"
+    className="modal-footer"
   >
     <a
-      class="modal-action modal-close waves-effect waves-green btn-flat"
+      className="modal-action modal-close waves-effect waves-green btn-flat"
       href="#!"
     />
   </div>

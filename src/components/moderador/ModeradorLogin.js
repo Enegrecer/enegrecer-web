@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { auth } from '../../utils/firebaseUtils';
-import Modal from '../comum/modal/modal'
+import Modal from '../comum/modal/modal';
 
-import './moderador-login.css'
+import './moderador-login.css';
 
 const updateByPropertyName = (propertyName, value) => () => ({
   [propertyName]: value,
@@ -17,20 +17,14 @@ const ESTADO_INICIAL = {
 export default class ModeradorLogin extends Component {
   constructor(props) {
     super(props);
-    
-    this.state = { ...ESTADO_INICIAL }
+
+    this.state = { ...ESTADO_INICIAL };
   }
 
-  trataMensagemDeErro = (error) => {
-    if(error.code === 'auth/invalid-email') {
-      error.message = 'O email é inválido!'
-    } else if (error.code === 'auth/wrong-password') {
-      error.message = 'A senha está incorreta!'
-    } else if (error.code === 'auth/user-not-found') {
-      error.message = 'Usuário não encontrado!'
-    }
-
-    return error;
+  componentDidMount() {
+    window.$(document).ready(() => {
+      window.$('.modal').modal();
+    });
   }
 
   onSubmit = (event) => {
@@ -41,27 +35,36 @@ export default class ModeradorLogin extends Component {
 
     auth.signInWithEmailAndPassword(email, senha).then(() => {
       this.setState(() => ({ ...ESTADO_INICIAL }));
-      window.location.href = '/moderador/painel'
+      window.location.href = '/moderador/painel';
     })
-    .catch(error => {
-      this.trataMensagemDeErro(error);
-      this.setState(updateByPropertyName('error', error));
-      
-      var element = document.getElementById("confirm-button");
-      element.classList.add("modal-trigger");
-      element.click();
-    
-      var element = document.getElementById("confirm-button");
-      element.classList.remove("modal-trigger");  
-    });
-    
+      .catch((error) => {
+        this.trataMensagemDeErro(error);
+        this.setState(updateByPropertyName('error', error));
+
+        let element = document.getElementById('confirm-button');
+        element.classList.add('modal-trigger');
+        element.click();
+
+        element = document.getElementById('confirm-button');
+        element.classList.remove('modal-trigger');
+      });
+
     event.preventDefault();
   }
-  
-  componentDidMount() {
-    window.$(document).ready(function(){
-      window.$('.modal').modal();
-    });
+
+  /* eslint no-param-reassign:
+    ["error", { "props": true, "ignorePropertyModificationsFor": ["error"] }]
+  */
+  trataMensagemDeErro = (error) => {
+    if (error.code === 'auth/invalid-email') {
+      error.message = 'O email é inválido!';
+    } else if (error.code === 'auth/wrong-password') {
+      error.message = 'A senha está incorreta!';
+    } else if (error.code === 'auth/user-not-found') {
+      error.message = 'Usuário não encontrado!';
+    }
+
+    return error;
   }
 
   render() {
@@ -86,11 +89,11 @@ export default class ModeradorLogin extends Component {
             <input id="senha_moderador" type="password" className="validate" value={senha} onChange={event => this.setState(updateByPropertyName('senha', event.target.value))} />
             <label htmlFor="senha_moderador">Senha Moderador</label>
           </div>
-            <button id="confirm-button" className="waves-effect waves-light btn" data-target="modal_erro" disabled={isInvalid} type="submit" name="action" >
+          <button id="confirm-button" className="waves-effect waves-light btn" data-target="modal_erro" disabled={isInvalid} type="submit" name="action" >
               Entrar
-            </button>
-            
-            <Modal id='modal_erro' tituloModal='Erro ao logar' textoModal={error && error.message} textoBotao="FECHAR" />
+          </button>
+
+          <Modal id="modal_erro" tituloModal="Erro ao logar" textoModal={error && error.message} textoBotao="FECHAR" />
         </form>
       </div>
     );

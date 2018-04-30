@@ -41,7 +41,7 @@ export default class ModeradorLogin extends Component {
     auth.signInWithEmailAndPassword(email, senha).then(() => {
       this.setState(() => ({ ...ESTADO_INICIAL }));
       alert("Logado!");
-      
+      window.location.href = '/moderador/painel'
     })
     .catch(error => {
       this.trataMensagemDeErro(error);

@@ -15,5 +15,6 @@ exports[`Home possui a mesma estrutura 1`] = `
     </div>
   </div>
   <Estatistica />
+  <withRouter() />
 </div>
 `;

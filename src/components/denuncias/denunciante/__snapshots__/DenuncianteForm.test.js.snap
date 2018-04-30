@@ -35,16 +35,17 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
   <div
     className="row"
   >
+    <Data
+      divClasse="input-field col s12 m6 l6"
+      id="data-nascimento-denunciante"
+      label="Data de Nascimento"
+      state="dataNascimentoDenunciante"
+    />
     <telefone
-      divClasse="col s12 m6 l6"
+      divClasse="input-field col s12 m6 l6"
       id="telefone-denunciante"
       label="Telefone"
       state="telefoneDenunciante"
-    />
-    <genero
-      divClasse="col s12 m6 l6"
-      id="genero-denunciante"
-      state="generoDenunciante"
     />
   </div>
   <Endereco
@@ -54,26 +55,16 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
   <div
     className="row"
   >
-    <genero
-      divClasse="col s12 m6 l6"
-      id="genero-denunciante"
-      state="generoDenunciante"
-    />
-    <Data
-      divClasse="input-field col s12 m6 l6"
-      id="data-nascimento-denunciante"
-      label="Data de Nascimento"
-      state="dataNascimentoDenunciante"
-    />
-  </div>
-  <div
-    className="row"
-  >
     <comboRaca
       divClasse="col s12 m6 l6"
       id="raca-denunciante"
       somenteRacasVitima={true}
       state="racaDenunciante"
+    />
+    <genero
+      divClasse="col s12 m6 l6"
+      id="genero-denunciante"
+      state="generoDenunciante"
     />
   </div>
 </div>

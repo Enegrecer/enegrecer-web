@@ -28,4 +28,23 @@ describe('Helpers functions', () => {
     const temMenosDe29Anos = helpers.temMenosDe29Anos('08/07/1991');
     expect(temMenosDe29Anos).toBe(true);
   });
+
+  it('deve retornar false se a idade é maior que 29 anos', () => {
+    const temMenosDe29Anos = helpers.temMenosDe29Anos('08/07/1981');
+    expect(temMenosDe29Anos).toBe(false);
+  });
+
+  it('deve retornar 10 porcentagem de mulheres vitimas', () => {
+    const total = 100;
+    const mulheres = 10;
+    const porcentagem = helpers.obtemPorcentagemDeMulheres(total, mulheres);
+    expect(porcentagem).toBe(10);
+  });
+
+  it('deve retornar porcentagem de mulheres vitimas', () => {
+    const total = 100;
+    const mulheres = 50;
+    const porcentagem = helpers.obtemPorcentagemDeMulheres(total, mulheres);
+    expect(porcentagem).toBe(50);
+  });
 });

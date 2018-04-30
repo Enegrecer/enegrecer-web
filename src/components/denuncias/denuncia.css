@@ -4,8 +4,13 @@ body {
 	font-family: Roboto;
 }
 
-/* Formularios */
+@media (max-width: 992px) {
+  .form-sections-container {
+    margin-right: 0 !important;
+  }
+}
 
+/* Formularios */
 .form-denuncia-container {
   height: 100%;
   overflow: auto;

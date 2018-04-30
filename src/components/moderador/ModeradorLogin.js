@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { auth } from '../../utils/firebaseUtils';
+import Modal from '../comum/modal/modal'
 
 import './moderador-login.css'
 
@@ -46,13 +47,22 @@ export default class ModeradorLogin extends Component {
     .catch(error => {
       this.trataMensagemDeErro(error);
       this.setState(updateByPropertyName('error', error));
+      
+      var element = document.getElementById("confirm-button");
+      element.classList.add("modal-trigger");
+      element.click();
+    
+      var element = document.getElementById("confirm-button");
+      element.classList.remove("modal-trigger");  
     });
-
+    
     event.preventDefault();
   }
   
   componentDidMount() {
-    
+    window.$(document).ready(function(){
+      window.$('.modal').modal();
+    });
   }
 
   render() {
@@ -77,11 +87,11 @@ export default class ModeradorLogin extends Component {
             <input id="senha_moderador" type="password" className="validate" value={senha} onChange={event => this.setState(updateByPropertyName('senha', event.target.value))} />
             <label htmlFor="senha_moderador">Senha Moderador</label>
           </div>
-            <button className="btn waves-effect waves-light" disabled={isInvalid} type="submit" name="action" onClick={this.login}>
+            <button id="confirm-button" className="waves-effect waves-light btn" data-target="modal_erro" disabled={isInvalid} type="submit" name="action" >
               Entrar
             </button>
-
-            {error && <p>{error.message}</p>}
+            
+            <Modal id='modal_erro' tituloModal='Erro ao logar' textoModal={error && error.message} textoBotao="FECHAR" />
         </form>
       </div>
     );

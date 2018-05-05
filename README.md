@@ -70,6 +70,11 @@ Usando Docker localmente:
 docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app -it enegrecer yarn test-local
 ```
 
+Com Docker para executar testes e lint:
+```shell
+docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app -it enegrecer yarn all-tests-local
+```
+
 irá rodar todos os arquivos de teste (arquivos __.test.js__) e entrar em modo de _watch_. De forma que toda vez que arquivos são alterados, sejam eles testes ou não, os testes que possuem qualquer relação com tal arquivo são executados novamente.
 
 Por exemplo, se o componente __Signin__ for alterado, todos os testes de _Signin.test.js_ serão executados, mas também os testes de _Login.test.js_, pois o componente de __Login__ utiliza, ou depende, do componete de __Signin__, e assim por diante. O mesmo é válido para alterações em arquivos de teste.

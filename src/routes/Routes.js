@@ -8,6 +8,7 @@ import ColetivoEnegrecer from '../components/coletivoEnegrecer/ColetivoEnegrecer
 import NovaDenunciaContainer from '../containers/denuncias/NovaDenunciaContainer';
 import DepoisDaDenuncia from '../components/depoisdadenuncia/DepoisDaDenuncia';
 import ModeradorLogin from '../components/moderador/ModeradorLogin';
+import PaginaNaoEncontrada from '../components/paginaNaoEncontrada/PaginaNaoEncontrada';
 
 const Routes = () => (
   <BrowserRouter>
@@ -20,6 +21,7 @@ const Routes = () => (
         <Route exact path="/denunciar" component={NovaDenunciaContainer} />
         <Route exact path="/depois-denuncia" component={DepoisDaDenuncia} />
         <Route exact path="/login" component={ModeradorLogin} />
+        <Route component={PaginaNaoEncontrada} />
       </Switch>
       <Rodape />
     </div>

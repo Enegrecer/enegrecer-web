@@ -6,4 +6,3 @@ export default combineReducers({
   denunciaComSucessoReducer,
   form: formReducer
 });
-;

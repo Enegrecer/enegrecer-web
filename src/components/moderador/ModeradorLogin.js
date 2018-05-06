@@ -22,17 +22,17 @@ export default class ModeradorLogin extends Component {
   }
 
   componentDidMount() {
-    auth.onAuthStateChanged(user => {
+    auth.onAuthStateChanged((user) => {
       if (user.uid.includes('obr3tOVUmgfM0WYf51ftqE4zuqz2')) {
         window.localStorage.setItem(storageKey, user.uid);
       } else {
         window.localStorage.removeItem(storageKey);
       }
     });
-   
+
     window.$(document).ready(() => {
       window.$('.modal').modal();
-    }); 
+    });
   }
 
   onSubmit = (event) => {

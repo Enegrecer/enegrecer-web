@@ -1,0 +1,25 @@
+.paginaNaoEncontrada {
+  border: 1px solid;
+  width: 100%;
+  float: left;
+  clear: left;
+}
+
+.paginaNaoEncontrada .parte1 {
+  height: 402px;
+  border: 1px solid;
+  width: 50%;
+  float: left;
+  position: relative;
+  background: #020517;
+}
+
+.paginaNaoEncontrada .parte2 {
+  height: 402px;
+  border: 1px solid;
+  width: 50%;
+  float: left;
+  position: relative;
+  background: #ffffff;
+  padding: 51px;
+}

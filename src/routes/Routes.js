@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
 import HomePage from '../components/home/Home';
 import Menu from '../components/menu/Menu';
 import Rodape from '../components/rodape/Rodape';
@@ -9,11 +9,20 @@ import NovaDenunciaContainer from '../containers/denuncias/NovaDenunciaContainer
 import DepoisDaDenuncia from '../components/depoisdadenuncia/DepoisDaDenuncia';
 import ModeradorLogin from '../components/moderador/ModeradorLogin';
 import PaginaNaoEncontrada from '../components/paginaNaoEncontrada/PaginaNaoEncontrada';
+import PainelModerador from '../components/moderador/painelModerador';
+import MenuModerador from '../components/moderador/menuModerador';
+import { estaAutenticado } from '../utils/firebaseUtils';
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route {...rest} render={(props) => (
+    estaAutenticado() ? <Component {...props} /> : <Redirect to='/login' />
+  )} />
+)
 
 const Routes = () => (
   <BrowserRouter>
     <div>
-      <Menu />
+     {estaAutenticado() ? <MenuModerador /> : <Menu />}
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/sobre" component={Sobre} />
@@ -22,6 +31,8 @@ const Routes = () => (
         <Route exact path="/depois-denuncia" component={DepoisDaDenuncia} />
         <Route exact path="/login" component={ModeradorLogin} />
         <Route component={PaginaNaoEncontrada} />
+        
+        <PrivateRoute path="/moderador" component={ PainelModerador } />
       </Switch>
       <Rodape />
     </div>

@@ -12,23 +12,23 @@ describe('Routes sem moderador logado', () => {
 });
 
 describe('Routes com moderador logado', () => {
-  var localStorageMock = (function() {
-    var store = {};
+  const localStorageMock = (function callbackMock() {
+    let store = {};
     return {
-      getItem: function(key) {
+      getItem(key) {
         return store[key];
       },
-      setItem: function(key, value) {
+      setItem(key, value) {
         store[key] = value.toString();
       },
-      clear: function() {
+      clear() {
         store = {};
       },
-      removeItem: function(key) {
+      removeItem(key) {
         delete store[key];
       }
     };
-  })();
+  }());
   Object.defineProperty(window, 'localStorage', { value: localStorageMock });
 
   it('deve construir a pagina com menu para moderador', () => {

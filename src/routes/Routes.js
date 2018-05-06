@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import HomePage from '../components/home/Home';
 import Menu from '../components/menu/Menu';
 import Rodape from '../components/rodape/Rodape';
@@ -12,17 +12,12 @@ import PaginaNaoEncontrada from '../components/paginaNaoEncontrada/PaginaNaoEnco
 import PainelModerador from '../components/moderador/painelModerador';
 import MenuModerador from '../components/moderador/menuModerador';
 import { estaAutenticado } from '../utils/firebaseUtils';
-
-const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route {...rest} render={(props) => (
-    estaAutenticado() ? <Component {...props} /> : <Redirect to='/login' />
-  )} />
-)
+import PrivateRoute from './PrivateRoute';
 
 const Routes = () => (
   <BrowserRouter>
     <div>
-     {estaAutenticado() ? <MenuModerador /> : <Menu />}
+      {estaAutenticado() ? <MenuModerador /> : <Menu />}
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/sobre" component={Sobre} />
@@ -32,7 +27,7 @@ const Routes = () => (
         <Route exact path="/login" component={ModeradorLogin} />
         <Route component={PaginaNaoEncontrada} />
         
-        <PrivateRoute path="/moderador" component={ PainelModerador } />
+        <PrivateRoute path="/moderador" component={PainelModerador} />
       </Switch>
       <Rodape />
     </div>

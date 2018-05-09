@@ -17,6 +17,23 @@ const DenuncianteForm = () => (
         state={'nomeDenunciante'}
         validacoes={[campoObrigatorio]}
       />
+      <Data
+        id={'data-nascimento-denunciante'}
+        label={'Data de Nascimento'}
+        state={'dataNascimentoDenunciante'}
+        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
+      />
+    </div>
+
+    <Endereco estadoState={'estadoDenunciante'} cidadeState={'cidadeDenunciante'} />
+
+    <div className="row">
+      <Telefone
+        state={'telefoneDenunciante'}
+        id="telefone-denunciante"
+        label={'Telefone'}
+        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
+      />
       <CampoTexto
         state={'emailDenunciante'}
         id={'email-denunciante'}
@@ -28,23 +45,6 @@ const DenuncianteForm = () => (
         divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
       />
     </div>
-
-    <div className="row">
-      <Data
-        id={'data-nascimento-denunciante'}
-        label={'Data de Nascimento'}
-        state={'dataNascimentoDenunciante'}
-        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
-      />
-      <Telefone
-        state={'telefoneDenunciante'}
-        id="telefone-denunciante"
-        label={'Telefone'}
-        divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
-      />
-    </div>
-
-    <Endereco estadoState={'estadoDenunciante'} cidadeState={'cidadeDenunciante'} />
 
     <div className="row">
       <ComboboxRaca

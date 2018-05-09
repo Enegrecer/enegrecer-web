@@ -8,6 +8,7 @@ exports[`Checkbox deve possuir estrutura definida  1`] = `
     component="input"
     id="souAVitima"
     name="souAVitima"
+    onChange={[Function]}
     type="checkbox"
   />
   <label

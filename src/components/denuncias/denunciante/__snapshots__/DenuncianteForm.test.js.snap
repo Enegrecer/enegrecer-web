@@ -16,6 +16,26 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
         ]
       }
     />
+    <Data
+      divClasse="input-field col s12 m6 l6"
+      id="data-nascimento-denunciante"
+      label="Data de Nascimento"
+      state="dataNascimentoDenunciante"
+    />
+  </div>
+  <Endereco
+    cidadeState="cidadeDenunciante"
+    estadoState="estadoDenunciante"
+  />
+  <div
+    className="row"
+  >
+    <telefone
+      divClasse="input-field col s12 m6 l6"
+      id="telefone-denunciante"
+      label="Telefone"
+      state="telefoneDenunciante"
+    />
     <campoTexto
       divClasse="input-field col s12 m6 l6"
       id="email-denunciante"
@@ -32,26 +52,6 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
       }
     />
   </div>
-  <div
-    className="row"
-  >
-    <Data
-      divClasse="input-field col s12 m6 l6"
-      id="data-nascimento-denunciante"
-      label="Data de Nascimento"
-      state="dataNascimentoDenunciante"
-    />
-    <telefone
-      divClasse="input-field col s12 m6 l6"
-      id="telefone-denunciante"
-      label="Telefone"
-      state="telefoneDenunciante"
-    />
-  </div>
-  <Endereco
-    cidadeState="cidadeDenunciante"
-    estadoState="estadoDenunciante"
-  />
   <div
     className="row"
   >

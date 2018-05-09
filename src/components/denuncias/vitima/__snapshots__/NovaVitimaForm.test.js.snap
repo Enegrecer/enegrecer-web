@@ -9,6 +9,7 @@ exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
       divClasse="col s12 m6 l6"
       id="souAVitima"
       label="Marque se você é a vítima"
+      onChange={[Function]}
       state="souAVitima"
     />
   </div>
@@ -46,16 +47,16 @@ exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
   <div
     className="row"
   >
-    <genero
-      divClasse="col s12 m6 l6"
-      id="vitima-genero"
-      state="generoVitima"
-    />
     <comboRaca
       divClasse="col s12 m6 l6"
       id="raca"
       somenteRacasVitima={true}
       state="racaVitima"
+    />
+    <genero
+      divClasse="col s12 m6 l6"
+      id="vitima-genero"
+      state="generoVitima"
     />
   </div>
 </div>

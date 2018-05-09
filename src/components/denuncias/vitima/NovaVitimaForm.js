@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import CheckBox from '../../comum/checkbox';
 import * as ConstantesCSS from '../ConstantesCss';
 import Nome from '../../comum/nome';
@@ -108,5 +109,25 @@ class NovaVitimaForm extends Component {
     );
   }
 }
+
+NovaVitimaForm.propTypes = {
+  formDenuncia: PropTypes.shape({
+    values: PropTypes.shape({
+      nomeDenunciante: PropTypes.string,
+      telefoneDenunciante: PropTypes.string,
+      estadoDenunciante: PropTypes.string,
+      cidadeDenunciante: PropTypes.string,
+      generoDenunciante: PropTypes.string,
+      dataNascimentoDenunciante: PropTypes.string,
+      racaDenunciante: PropTypes.string
+    })
+  }),
+  changeFieldValue: PropTypes.func
+};
+
+NovaVitimaForm.defaultProps = {
+  formDenuncia: { values: {} },
+  changeFieldValue: () => {}
+};
 
 export default NovaVitimaForm;

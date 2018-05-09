@@ -75,7 +75,6 @@ describe('NovaDenunciaForm Component', () => {
       expect(cidadeVitima).toBe(undefined);
       expect(generoVitima).toBe(undefined);
       expect(racaVitima).toBe(undefined);
-
     });
   });
 });

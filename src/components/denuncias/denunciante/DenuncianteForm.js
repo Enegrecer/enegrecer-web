@@ -31,6 +31,10 @@ class DenuncianteForm extends Component {
       valorDoCampoAtivo && valorDoCampoAtivo !== valorDoCampoDaVitima) {
       this.props.changeFieldValue(campoDaVitimaParaAtualizar, valorDoCampoAtivo);
     }
+
+    if (values.souAVitima && !valorDoCampoAtivo && campoDaVitimaParaAtualizar) {
+      this.props.changeFieldValue(campoDaVitimaParaAtualizar, '');
+    }
   }
 
   render() {

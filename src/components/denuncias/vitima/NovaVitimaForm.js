@@ -30,6 +30,10 @@ class NovaVitimaForm extends Component {
       valorDoCampoAtivo && valorDoCampoAtivo !== valorDoCampoDoDenunciante) {
       this.props.changeFieldValue(campoDoDenuncianteParaAtualizar, valorDoCampoAtivo);
     }
+
+    if (values.souAVitima && !valorDoCampoAtivo && campoDoDenuncianteParaAtualizar) {
+      this.props.changeFieldValue(campoDoDenuncianteParaAtualizar, '');
+    }
   }
 
   geraObjetosParaEspelhar = () => {

@@ -10,6 +10,28 @@ import Data from '../../comum/data';
 import Endereco from '../../comum/endereco';
 
 class NovaVitimaForm extends Component {
+  componentWillReceiveProps(nextProps) {
+    const { values, active } = nextProps.formDenuncia;
+    const mapVitimaParaDenunciante = {
+      nomeVitima: 'nomeDenunciante',
+      dataNascimentoVitima: 'dataNascimentoDenunciante',
+      estadoVitima: 'estadoDenunciante',
+      cidadeVitima: 'cidadeDenunciante',
+      telefoneVitima: 'telefoneDenunciante',
+      racaVitima: 'racaDenunciante',
+      generoVitima: 'generoDenunciante'
+    };
+
+    const campoDoDenuncianteParaAtualizar = mapVitimaParaDenunciante[active];
+    const valorDoCampoAtivo = values[active];
+    const valorDoCampoDoDenunciante = values[campoDoDenuncianteParaAtualizar];
+
+    if (values.souAVitima && campoDoDenuncianteParaAtualizar &&
+      valorDoCampoAtivo && valorDoCampoAtivo !== valorDoCampoDoDenunciante) {
+      this.props.changeFieldValue(campoDoDenuncianteParaAtualizar, valorDoCampoAtivo);
+    }
+  }
+
   geraObjetosParaEspelhar = () => {
     const {
       nomeDenunciante,
@@ -60,6 +82,7 @@ class NovaVitimaForm extends Component {
   }
 
   render() {
+    const { estadoDenunciante } = this.props.formDenuncia.values;
     return (
       <div>
         <div className="row">
@@ -81,7 +104,7 @@ class NovaVitimaForm extends Component {
           />
         </div>
 
-        <Endereco estadoState={'estadoVitima'} cidadeState={'cidadeVitima'} />
+        <Endereco estadoState={'estadoVitima'} estadoInicial={estadoDenunciante} cidadeState={'cidadeVitima'} />
 
         <div className="row">
           <Telefone

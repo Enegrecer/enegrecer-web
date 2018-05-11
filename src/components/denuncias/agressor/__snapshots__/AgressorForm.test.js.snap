@@ -20,6 +20,7 @@ exports[`AgressorForm deve seguir a estrutura definida  1`] = `
   </div>
   <Endereco
     cidadeState="cidadeAgressor"
+    estadoInicial=""
     estadoState="estadoAgressor"
   />
   <div

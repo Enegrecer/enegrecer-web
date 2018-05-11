@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import NovaVitimaForm from './vitima/NovaVitimaForm';
 import FormInformacoesLegais from './informacoesLegais/FormInformacoesLegais';
 import { adicionaFormAoRedux } from './../comum/formControle';
-import Denunciante from './denunciante/DenuncianteForm';
 import Descricao from './descricao/FormDescricao';
 import AgressorForm from './agressor/AgressorForm';
 import './denuncia.css';
 import SecaoForm from './SecaoForm';
+import NovaVitimaContainer from '../../containers/denuncias/vitima/NovaVitimaContainer';
+import DenuncianteContainer from '../../containers/denuncias/denunciante/DenuncianteContainer';
 
 const secoesForm = [
   {
@@ -16,7 +16,7 @@ const secoesForm = [
     texto: `Não se preocupe sua identidade será mantida em sigilo.
     Essas informações são importantes para futuramente darmos um retorno das
     medidas que estão sendo tomadas contra esse agressor.`,
-    formulario: <Denunciante />
+    formulario: <DenuncianteContainer />
   },
   {
     titulo: 'Dados da vítima',
@@ -24,7 +24,7 @@ const secoesForm = [
     texto: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisl mi, egestas
     ac ipsum sit amet, blandit posuere metus. Donec imperdiet ut mi sed posuere. Pellentesque
     et varius sapien.`,
-    formulario: <NovaVitimaForm />
+    formulario: <NovaVitimaContainer />
   },
   {
     titulo: 'Informações Legais',
@@ -75,5 +75,5 @@ FormDenuncia.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
 };
 
-export default adicionaFormAoRedux(FormDenuncia, 'formDenuncia');
+export default adicionaFormAoRedux(FormDenuncia, 'formDenuncia', { souAVitima: false });
 

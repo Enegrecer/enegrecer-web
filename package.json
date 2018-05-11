@@ -8,7 +8,7 @@
     "hammerjs": "^2.0.8",
     "materialize-css": "^0.100.2",
     "moment": "^2.19.4",
-    "node-sass-chokidar": "^0.0.3",
+    "node-sass-chokidar": "^1.2.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-input-mask": "^1.1.0",
@@ -21,7 +21,7 @@
     "redux-saga": "^0.15.6"
   },
   "scripts": {
-    "start": "yarn build-css-local && ../node_modules/.bin/react-scripts start",
+    "start": "yarn build-css-local && ./node_modules/.bin/react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "test-local": "../node_modules/.bin/react-scripts test --env=jsdom",
@@ -30,7 +30,7 @@
     "lint": "./node_modules/.bin/eslint src --fix",
     "all-tests-local": "yarn test-local --coverage && ../node_modules/.bin/eslint src --fix",
     "watch-lint": "esw -w src",
-    "build-css-local": "../node_modules/.bin/node-sass-chokidar src/ -o src/",
+    "build-css-local": "./node_modules/.bin/node-sass-chokidar src/ -o src/",
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
   },

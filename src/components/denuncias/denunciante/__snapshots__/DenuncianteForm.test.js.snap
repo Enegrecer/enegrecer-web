@@ -25,6 +25,7 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
   </div>
   <Endereco
     cidadeState="cidadeDenunciante"
+    estadoInicial=""
     estadoState="estadoDenunciante"
   />
   <div

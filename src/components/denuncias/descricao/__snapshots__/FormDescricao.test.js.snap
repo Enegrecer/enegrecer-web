@@ -30,6 +30,7 @@ exports[`Form Descrição deve seguir a estrutura definida  1`] = `
   </div>
   <Endereco
     cidadeState="cidadeAgressao"
+    estadoInicial=""
     estadoState="estadoAgressao"
   />
   <div

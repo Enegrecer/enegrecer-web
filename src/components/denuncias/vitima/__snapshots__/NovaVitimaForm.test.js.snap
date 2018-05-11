@@ -32,6 +32,7 @@ exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
   </div>
   <Endereco
     cidadeState="cidadeVitima"
+    estadoInicial=""
     estadoState="estadoVitima"
   />
   <div

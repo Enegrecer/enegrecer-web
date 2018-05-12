@@ -9,11 +9,15 @@ import NovaDenunciaContainer from '../containers/denuncias/NovaDenunciaContainer
 import DepoisDaDenuncia from '../components/depoisdadenuncia/DepoisDaDenuncia';
 import ModeradorLogin from '../components/moderador/ModeradorLogin';
 import PaginaNaoEncontrada from '../components/paginaNaoEncontrada/PaginaNaoEncontrada';
+import PainelModerador from '../components/moderador/painelModerador';
+import MenuModerador from '../components/moderador/menuModerador';
+import { estaAutenticado } from '../utils/firebaseUtils';
+import PrivateRoute from './PrivateRoute';
 
 const Routes = () => (
   <BrowserRouter>
     <div>
-      <Menu />
+      {estaAutenticado() ? <MenuModerador /> : <Menu />}
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/sobre" component={Sobre} />
@@ -22,6 +26,8 @@ const Routes = () => (
         <Route exact path="/depois-denuncia" component={DepoisDaDenuncia} />
         <Route exact path="/login" component={ModeradorLogin} />
         <Route component={PaginaNaoEncontrada} />
+        
+        <PrivateRoute path="/moderador" component={PainelModerador} />
       </Switch>
       <Rodape />
     </div>

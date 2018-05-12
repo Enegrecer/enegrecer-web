@@ -14,3 +14,8 @@ export default firebaseApp;
 
 export const auth = firebase.auth();
 export const ref = firebase.database().ref();
+
+export const storageKey = 'KEY_FOR_LOCAL_STORAGE';
+
+export const estaAutenticado = () => !!auth.currentUser || !!localStorage.getItem(storageKey);
+

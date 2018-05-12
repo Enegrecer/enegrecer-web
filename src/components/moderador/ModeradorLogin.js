@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { auth } from '../../utils/firebaseUtils';
+import { auth, storageKey } from '../../utils/firebaseUtils';
 import Modal from '../comum/modal/modal';
 
 import './moderador-login.css';
@@ -22,6 +22,14 @@ export default class ModeradorLogin extends Component {
   }
 
   componentDidMount() {
+    auth.onAuthStateChanged((user) => {
+      if (user.uid.includes('obr3tOVUmgfM0WYf51ftqE4zuqz2')) {
+        window.localStorage.setItem(storageKey, user.uid);
+      } else {
+        window.localStorage.removeItem(storageKey);
+      }
+    });
+
     window.$(document).ready(() => {
       window.$('.modal').modal();
     });
@@ -34,7 +42,6 @@ export default class ModeradorLogin extends Component {
     } = this.state;
 
     auth.signInWithEmailAndPassword(email, senha).then(() => {
-      this.setState(() => ({ ...ESTADO_INICIAL }));
       window.location.href = '/moderador/painel';
     })
       .catch((error) => {

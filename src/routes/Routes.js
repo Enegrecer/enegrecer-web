@@ -25,9 +25,9 @@ const Routes = () => (
         <Route exact path="/denunciar" component={NovaDenunciaContainer} />
         <Route exact path="/depois-denuncia" component={DepoisDaDenuncia} />
         <Route exact path="/login" component={ModeradorLogin} />
-        <Route component={PaginaNaoEncontrada} />
-        
         <PrivateRoute path="/moderador" component={PainelModerador} />
+
+        <Route component={PaginaNaoEncontrada} />
       </Switch>
       <Rodape />
     </div>

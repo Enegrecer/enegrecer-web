@@ -34,12 +34,24 @@ cd enegrecer-web
 yarn install
 ```
 
+Ou você pode usar **Docker** localmente, antes de executar qualquer comando construa a imagem com:
+
+```shell
+docker build -t enegrecer .
+```
+
 ### Rodando o projeto
 
 Para subir um servidor local para desenvolvimento rode
 
 ```shell
 yarn start
+```
+
+Usando Docker localmente:
+
+```shell
+docker run --rm -p 3000:3000 -v "$PWD":/usr/src/app -w /usr/src/app -it enegrecer
 ```
 
 Isso irá subir um servidor com o aplicativo rodando em `http://localhost:3000`. Quando os arquivos dentro de `src` são alterados, automaticamente o código é recompilado e o aplicativo recarregado com as alterações.
@@ -50,6 +62,17 @@ O projeto está configurado para que o desenvolvimento seja feito em TDD, e assi
 
 ```shell
 yarn test
+```
+
+Usando Docker localmente:
+
+```shell
+docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app -it enegrecer yarn test-local
+```
+
+Com Docker para executar testes e lint:
+```shell
+docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app -it enegrecer yarn all-tests-local
 ```
 
 irá rodar todos os arquivos de teste (arquivos __.test.js__) e entrar em modo de _watch_. De forma que toda vez que arquivos são alterados, sejam eles testes ou não, os testes que possuem qualquer relação com tal arquivo são executados novamente.

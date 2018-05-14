@@ -5,8 +5,8 @@ import NovaVitimaForm from './NovaVitimaForm';
 
 describe('NovaVitimaForm Component', () => {
   it('deve possuir estrutura definida ', () => {
-    const detalhamentoDenuncia = shallow(<NovaVitimaForm />);
-    const detalhamentoDenunciaJson = toJson(detalhamentoDenuncia);
-    expect(detalhamentoDenunciaJson).toMatchSnapshot();
+    const novaVitimaFormWrapper = shallow(<NovaVitimaForm />);
+    const novaVitimaFormJSON = toJson(novaVitimaFormWrapper);
+    expect(novaVitimaFormJSON).toMatchSnapshot();
   });
 });

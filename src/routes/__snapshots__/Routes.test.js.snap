@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Routes deve construir a pagina corretamente  1`] = `
+exports[`Routes com moderador logado deve construir a pagina com menu para moderador 1`] = `
 <BrowserRouter>
   <div>
     <Menu />
@@ -34,6 +34,61 @@ exports[`Routes deve construir a pagina corretamente  1`] = `
         component={[Function]}
         exact={true}
         path="/login"
+      />
+      <Route
+        component={[Function]}
+      />
+      <PrivateRoute
+        component={[Function]}
+        path="/moderador"
+      />
+    </Switch>
+    <Rodape />
+  </div>
+</BrowserRouter>
+`;
+
+exports[`Routes sem moderador logado deve construir a pagina com menu da página 1`] = `
+<BrowserRouter>
+  <div>
+    <Menu />
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/sobre"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/coletivo-enegrecer"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/denunciar"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/depois-denuncia"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/login"
+      />
+      <Route
+        component={[Function]}
+      />
+      <PrivateRoute
+        component={[Function]}
+        path="/moderador"
       />
     </Switch>
     <Rodape />

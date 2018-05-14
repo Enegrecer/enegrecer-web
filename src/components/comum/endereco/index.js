@@ -13,6 +13,12 @@ class Endereco extends Component {
     this.listaCidades = this.listaCidades.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.estadoInicial !== this.props.estadoInicial) {
+      this.listaCidades(nextProps.estadoInicial);
+    }
+  }
+
   listaCidades(estado) {
     const cidades = listaCidades(estado);
     this.setState({ cidades });
@@ -43,6 +49,11 @@ class Endereco extends Component {
 Endereco.propTypes = {
   estadoState: PropTypes.string.isRequired,
   cidadeState: PropTypes.string.isRequired,
+  estadoInicial: PropTypes.string
+};
+
+Endereco.defaultProps = {
+  estadoInicial: ''
 };
 
 export default Endereco;

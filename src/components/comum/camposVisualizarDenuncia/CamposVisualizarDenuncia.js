@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './camposVisualizarDenuncia.css';
 
-export const CamposVisualizarDenuncia = ({ titulo, descricao }) => (
+const CamposVisualizarDenuncia = ({ titulo, descricao }) => (
   <div className="campos">
     <div className="camposTitulo">
       {titulo}

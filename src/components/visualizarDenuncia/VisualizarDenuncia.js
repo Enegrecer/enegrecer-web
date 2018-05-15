@@ -1,10 +1,138 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import GradeCampos from '../comum/gradeCampos/GradeCampos';
 import './visualizarDenuncia.css';
-import SeparadorPontilhado from '../comum/separadorPontilhado/SeparadorPontilhado';
-import { CamposVisualizarDenuncia } from '../comum/camposVisualizarDenuncia/CamposVisualizarDenuncia';
+import { buscarDenunciaRequisicao } from '../../actions/criarDenunciaActions';
 
-export default class VisualizarDenuncia extends Component {
+const dadosDenunciante =
+{
+  titulo: 'Dados do denunciante',
+  camposEsquerda: [
+    {
+      titulo: 'Nome denunciante',
+      descricao: 'Beatriz Soare'
+    },
+    {
+      titulo: 'Telefone',
+      descricao: '(31) 9884455-7733'
+    },
+    {
+      titulo: 'Gênero',
+      descricao: 'Feminino CIS'
+    },
+    {
+      titulo: 'Raça / Cor',
+      descricao: 'Parda'
+    }
+  ],
+  camposDireita: [
+    {
+      titulo: 'Email',
+      descricao: 'beatriz-soares@gmail.com'
+    },
+    {
+      titulo: 'Cidade',
+      descricao: 'Belo Horizonte'
+    },
+    {
+      titulo: 'Data de nascimento',
+      descricao: 'Abril 14, 1988'
+    }
+  ]
+};
+
+const dadosVitima =
+{
+  titulo: 'Dados da vítima',
+  camposEsquerda: [
+    {
+      titulo: 'Nome',
+      descricao: 'Beatriz Soares'
+    },
+    {
+      titulo: 'Telefone',
+      descricao: '(31) 9884455-7733'
+    },
+    {
+      titulo: 'Gênero',
+      descricao: 'Feminino CIS'
+    }
+  ],
+  camposDireita: [
+    {
+      titulo: 'Data de nascimento',
+      descricao: 'beatriz-soares@gmail.com'
+    },
+    {
+      titulo: 'Cidade',
+      descricao: 'Belo Horizonte'
+    },
+    {
+      titulo: 'Raça / Cor',
+      descricao: 'Parda'
+    }
+  ]
+};
+
+const dadosInformacoesLegais =
+{
+  titulo: 'Informações legais',
+  camposEsquerda: [
+    {
+      titulo: 'Número do BO',
+      descricao: '123456'
+    },
+    {
+      titulo: 'Número do processo',
+      descricao: '98844557733'
+    }
+  ],
+  camposDireita: [
+    {
+      titulo: 'Categoria do crime no BO',
+      descricao: 'Gbasndiiqdn'
+    },
+    {
+      titulo: 'Orgão',
+      descricao: 'Doamocmsco'
+    }
+  ]
+};
+
+const dadosAgressor =
+{
+  titulo: 'Dados do agressor',
+  camposEsquerda: [
+    {
+      titulo: 'Nome',
+      descricao: 'Beatriz Soares'
+    },
+    {
+      titulo: 'Cidade',
+      descricao: 'Belo Horizonte'
+    },
+    {
+      titulo: 'Raça / Cor',
+      descricao: 'Parda'
+    }
+  ],
+  camposDireita: [
+    {
+      titulo: 'Data de nascimento',
+      descricao: 'Abril 14, 1988'
+    },
+    {
+      titulo: 'Gênero',
+      descricao: 'Feminino CIS'
+    }
+  ]
+};
+
+export class VisualizarDenuncia extends Component {
   componentWillMount() {
+    this.props.buscarDenunciaRequisicao();
   }
 
   render() {
@@ -14,143 +142,30 @@ export default class VisualizarDenuncia extends Component {
           Detahes da denúncia
         </div>
         <div className="detalhes">
-          <div>
-            <div>
-              Dados do denunciante
-              <SeparadorPontilhado />
-              <div className="grade">
-                <div>
-                  <CamposVisualizarDenuncia
-                    titulo={'Nome denunciante'}
-                    descricao={'Beatriz Soares'}
-                  />
-                  <CamposVisualizarDenuncia
-                    titulo={'Telefone'}
-                    descricao={'(31) 9884455-7733'}
-                  />
-                  <CamposVisualizarDenuncia
-                    titulo={'Gênero'}
-                    descricao={'Feminino CIS'}
-                  />
-                  <CamposVisualizarDenuncia
-                    titulo={'Raça / Cor'}
-                    descricao={'Parda'}
-                  />
-                </div>
-                <div>
-                  <CamposVisualizarDenuncia
-                    titulo={'Email'}
-                    descricao={'beatriz-soares@gmail.com'}
-                  />
-                  <CamposVisualizarDenuncia
-                    titulo={'Cidade'}
-                    descricao={'Belo Horizonte'}
-                  />
-                  <CamposVisualizarDenuncia
-                    titulo={'Data de nascimento'}
-                    descricao={'Abril 14, 1988'}
-                  />
-                </div>
-              </div>
-            </div>
-            <div>
-              Informações legais
-              <SeparadorPontilhado />
-              <div className="grade">
-                <div>
-                  <CamposVisualizarDenuncia
-                    titulo={'Número do BO'}
-                    descricao={'123456'}
-                  />
-                  <CamposVisualizarDenuncia
-                    titulo={'Número do processo'}
-                    descricao={'98844557733'}
-                  />
-                </div>
-                <div>
-                  <CamposVisualizarDenuncia
-                    titulo={'Categoria do crime no BO'}
-                    descricao={'Gbasndiiqdn '}
-                  />
-                  <CamposVisualizarDenuncia
-                    titulo={'Orgão'}
-                    descricao={'Doamocmsco'}
-                  />
-                </div>
-              </div>
-            </div>
+          <div className="grade-superior">
+            <GradeCampos dados={dadosDenunciante} />
+            <GradeCampos dados={dadosVitima} />
           </div>
-          <div>
-            <div>
-              Dados da vítima
-              <SeparadorPontilhado />
-              <div className="grade">
-                <div>
-                  <CamposVisualizarDenuncia
-                    titulo={'Nome'}
-                    descricao={'Beatriz Soares'}
-                  />
-                  <CamposVisualizarDenuncia
-                    titulo={'Telefone'}
-                    descricao={'(31) 9884455-7733'}
-                  />
-                  <CamposVisualizarDenuncia
-                    titulo={'Gênero'}
-                    descricao={'Feminino CIS'}
-                  />
-                </div>
-                <div>
-                  <CamposVisualizarDenuncia
-                    titulo={'Data de nascimento'}
-                    descricao={'Abril 14, 1988'}
-                  />
-                  <CamposVisualizarDenuncia
-                    titulo={'Cidade'}
-                    descricao={'Belo Horizonte'}
-                  />
-                  <CamposVisualizarDenuncia
-                    titulo={'Raça / Cor'}
-                    descricao={'Parda'}
-                  />
-                </div>
-              </div>
-            </div>
-            <div>
-              Dados do agressor
-              <SeparadorPontilhado />
-              <div className="grade">
-                <div>
-                  <CamposVisualizarDenuncia
-                    titulo={'Nome'}
-                    descricao={'Beatriz Soares'}
-                  />
-                  <CamposVisualizarDenuncia
-                    titulo={'Cidade'}
-                    descricao={'Belo Horizonte'}
-                  />
-                  <CamposVisualizarDenuncia
-                    titulo={'Raça / Cor'}
-                    descricao={'Parda'}
-                  />
-                </div>
-                <div>
-                  <CamposVisualizarDenuncia
-                    titulo={'Data de nascimento'}
-                    descricao={'Abril 14, 1988'}
-                  />
-                  <CamposVisualizarDenuncia
-                    titulo={'Gênero'}
-                    descricao={'Feminino CIS'}
-                  />
-                </div>
-              </div>
-            </div>
+          <div className="grade-inferior">
+            <GradeCampos dados={dadosInformacoesLegais} />
+            <GradeCampos dados={dadosAgressor} />
           </div>
-        </div>
-        <div className="classificacao">
-          Classifique a denúncia 2
         </div>
       </div>
     );
   }
 }
+
+VisualizarDenuncia.propTypes = {
+  buscarDenunciaRequisicao: PropTypes.func.isRequired
+};
+
+VisualizarDenuncia.defaultProps = {
+  buscarDenunciaRequisicao: () => {}
+};
+
+const mapDispatchToProps = {
+  buscarDenunciaRequisicao
+};
+
+export default connect(null, mapDispatchToProps)(VisualizarDenuncia);

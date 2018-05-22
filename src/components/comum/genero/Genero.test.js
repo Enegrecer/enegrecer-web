@@ -5,7 +5,7 @@ import Genero from '../genero';
 
 describe('Genero', () => {
   it('deve possuir estrutura definida ', () => {
-    const genero = shallow(<Genero state={'genero'} id={'13'} divClasses={'estado'} />);
+    const genero = shallow(<Genero state="genero" id="13" divClasses="estado" />);
     const generoTextoJson = toJson(genero);
     expect(generoTextoJson).toMatchSnapshot();
   });

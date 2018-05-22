@@ -25,11 +25,7 @@ export default class Menu extends Component {
   }
 
   handleNavClick() {
-    if (!this.state.mobileNavVisible) {
-      this.setState({ mobileNavVisible: true });
-    } else {
-      this.setState({ mobileNavVisible: false });
-    }
+    this.setState({ mobileNavVisible: !this.state.mobileNavVisible });
   }
 
   escondeMenu() {
@@ -38,12 +34,22 @@ export default class Menu extends Component {
 
 /* eslint-disable */
   navigationLinks() {
+    const links = [
+      { id: 1, to: '/sobre', label: "SOBRE" },
+      { id: 2, to: '/depois-denuncia', label: "E DEPOIS DA DENÚNCIA?" },
+      { id: 3, to: '/coletivo-enegrecer', label: "O COLETIVO ENEGRECER" },
+      { id: 4, to: '/denunciar', label: "DENUNCIAR", className: "denunciar"}
+    ]
+
     return (
       <ul>
-        <li key={1}><Link to="/sobre" onClick={this.escondeMenu}>SOBRE</Link></li>
+        {links.map(link => (
+          <li key={link.id}><Link className={link.className} to={link.to} onClick={this.escondeMenu} onKeyDown={this.escondeMenu}>{link.label}</Link></li>
+        ))}
+        {/* <li key={1}><Link to="/sobre" onClick={this.escondeMenu} onKeyDown={this.escondeMenu}>SOBRE</Link></li>
         <li key={2}><Link to="/depois-denuncia" onClick={this.escondeMenu}>E DEPOIS DA DENÚNCIA?</Link></li>
         <li key={3}><Link to="/coletivo-enegrecer" onClick={this.escondeMenu}>O COLETIVO ENEGRECER</Link></li>
-        <li key={4}><Link className="denunciar" to="/denunciar" onClick={this.escondeMenu}>DENUNCIAR</Link></li>
+        <li key={4}><Link className="denunciar" to="/denunciar" onClick={this.escondeMenu}>DENUNCIAR</Link></li> */}
       </ul>
     );
   }
@@ -60,12 +66,14 @@ export default class Menu extends Component {
     if (this.state.windowWidth <= 1080) {
       return [
         <div key={7} className="mobile_nav">
-          <a
+          <div
             role="button"
             tabIndex="0"
             onClick={elementClicked => this.handleNavClick(elementClicked)}
+            onKeyDown={elementClicked => this.handleNavClick(elementClicked)}
           >
-            <i className="material-icons icon-white">menu</i></a>
+            <i className="material-icons icon-white">menu</i>
+          </div>
           {this.renderMobileNav()}
         </div>
       ];
@@ -81,7 +89,7 @@ export default class Menu extends Component {
     return (
       <div className="col s12 m6 menu">
         <div className="logo">
-          <Link to="/"><img src={logo} alt="Logo Verdade Seja Dita" /></Link>
+          <Link href="/" to="/"><img src={logo} alt="Logo Verdade Seja Dita" /></Link>
         </div>
         {this.renderNavigation()}
       </div>

@@ -44,7 +44,8 @@ class NovaVitimaForm extends Component {
       cidadeDenunciante,
       generoDenunciante,
       dataNascimentoDenunciante,
-      racaDenunciante } = this.props.formDenuncia.values;
+      racaDenunciante
+    } = this.props.formDenuncia.values;
 
     return [
       {
@@ -92,44 +93,44 @@ class NovaVitimaForm extends Component {
         <div className="row">
           <CheckBox
             onChange={this.changeField}
-            state={'souAVitima'}
-            divClasse={'col s12 m6 l6'}
-            id={'souAVitima'}
-            label={'Marque se você é a vítima'}
+            state="souAVitima"
+            divClasse="col s12 m6 l6"
+            id="souAVitima"
+            label="Marque se você é a vítima"
           />
         </div>
         <div className="row">
-          <Nome id={'nome-vitima'} state={'nomeVitima'} />
+          <Nome id="nome-vitima" state="nomeVitima" />
           <Data
-            state={'dataNascimentoVitima'}
-            id={'dataNascimento'}
-            label={'Data de Nascimento'}
+            state="dataNascimentoVitima"
+            id="dataNascimento"
+            label="Data de Nascimento"
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
           />
         </div>
 
-        <Endereco estadoState={'estadoVitima'} estadoInicial={estadoDenunciante} cidadeState={'cidadeVitima'} />
+        <Endereco estadoState="estadoVitima" estadoInicial={estadoDenunciante} cidadeState="cidadeVitima" />
 
         <div className="row">
           <Telefone
-            divClasse={'input-field col s12 m6 l6'}
+            divClasse="input-field col s12 m6 l6"
             id="telefone"
-            state={'telefoneVitima'}
-            label={'Telefone'}
+            state="telefoneVitima"
+            label="Telefone"
           />
         </div>
 
         <div className="row">
           <ComboboxRaca
-            state={'racaVitima'}
-            id={'raca'}
-            divClasse={'col s12 m6 l6'}
+            state="racaVitima"
+            id="raca"
+            divClasse="col s12 m6 l6"
             somenteRacasVitima
           />
           <Genero
-            state={'generoVitima'}
-            id={'vitima-genero'}
-            divClasse={'col s12 m6 l6'}
+            state="generoVitima"
+            id="vitima-genero"
+            divClasse="col s12 m6 l6"
           />
         </div>
       </div>

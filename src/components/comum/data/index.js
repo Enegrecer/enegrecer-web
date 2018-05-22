@@ -3,14 +3,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CampoTexto from '../campoTexto';
 
-const Data = ({ id, state, divClasse, label }) => (
+const Data = ({
+  id, state, divClasse, label
+}) => (
   <CampoTexto
     id={id}
     label={label}
     maxLen={0}
-    inputClasse={'datepicker'}
+    inputClasse="datepicker"
     divClasse={divClasse}
-    type={'date'}
+    type="date"
     placeholder="Data"
     state={state}
   />

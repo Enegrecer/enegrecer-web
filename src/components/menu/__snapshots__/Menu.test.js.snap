@@ -8,6 +8,7 @@ exports[`Menu deve construir a pagina corretamente  1`] = `
     className="logo"
   >
     <Link
+      href="/"
       replace={false}
       to="/"
     >
@@ -21,8 +22,9 @@ exports[`Menu deve construir a pagina corretamente  1`] = `
     className="mobile_nav"
     key="7"
   >
-    <a
+    <div
       onClick={[Function]}
+      onKeyDown={[Function]}
       role="button"
       tabIndex="0"
     >
@@ -31,7 +33,7 @@ exports[`Menu deve construir a pagina corretamente  1`] = `
       >
         menu
       </i>
-    </a>
+    </div>
   </div>
 </div>
 `;

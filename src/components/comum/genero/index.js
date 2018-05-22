@@ -6,10 +6,10 @@ const genero = ({ id, divClasse, state }) => (
   <Combobox
     state={state}
     id={id}
-    label={'Gênero'}
+    label="Gênero"
     divClasse={divClasse}
     itens={['Feminino', 'Masculino']}
-    valorPadrao={'Selecione seu gênero'}
+    valorPadrao="Selecione seu gênero"
   />
 );
 

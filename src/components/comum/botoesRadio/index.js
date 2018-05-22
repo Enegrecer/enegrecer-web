@@ -45,7 +45,6 @@ botoesRadio.propTypes = {
 
 botoesRadio.defaultProps = {
   classes: '',
-  id: '',
   botoes: [],
   state: undefined
 };

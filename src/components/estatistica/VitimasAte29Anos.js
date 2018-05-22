@@ -16,7 +16,7 @@ export default class VitimasAte29Anos extends Component {
     query.once('value')
       .then((snapshot) => {
         snapshot.forEach((denunciaSnapshot) => {
-          const vitima = denunciaSnapshot.val().vitima;
+          const { vitima } = denunciaSnapshot.val();
           if (vitima
               && vitima.dataNascimento
               && helpers.temMenosDe29Anos(vitima.dataNascimento)) {

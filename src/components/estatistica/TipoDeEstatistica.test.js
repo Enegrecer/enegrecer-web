@@ -19,13 +19,11 @@ describe('TipoDeEstatistica', () => {
   });
 
   it('possibilita a renderização com a propriedade `numero` como valor numérico', () => {
-    const renderWrapper = shallow(
-      <TipoDeEstatistica
-        id="render-com-numero"
-        numero={12345}
-        categoria="Render com número"
-      />
-    );
+    const renderWrapper = shallow(<TipoDeEstatistica
+      id="render-com-numero"
+      numero={12345}
+      categoria="Render com número"
+    />);
 
     const renderAsJson = toJson(renderWrapper);
 

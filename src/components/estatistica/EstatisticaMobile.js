@@ -12,7 +12,8 @@ const EstatisticaMobile = () => (
       <div className="retangular-bloco" />
       <h6>Nosso Objetivo </h6>
       <p>Buscamos dar visibilidade para crimes contra negros a partir de uma
-      base de dados acessível, transparente e atualizada. </p>
+      base de dados acessível, transparente e atualizada.
+      </p>
     </div>
     <div className="nossas-denuncias-mobile">NOSSAS DENUNCIAS </div>
     <Racismo id="vermelhoMobile" key="racismo" />

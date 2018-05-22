@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import CampoTexto from '../campoTexto';
 import { temNumeroNoNome, nomeMaiorQue40Caracteres, nomeNaoPodeTerCaracterEspecial } from './validacoes';
 
-const nome = ({ id, state, onChange, validacoes, divClasse }) => (<CampoTexto
+const nome = ({
+  id, state, onChange, validacoes, divClasse
+}) => (<CampoTexto
   id={id}
-  label={'Nome (máximo de 40 caracteres)'}
+  label="Nome (máximo de 40 caracteres)"
   maxLen={40}
-  placeholder={'Nome (máximo de 40 caracteres)'}
-  type={'text'}
+  placeholder="Nome (máximo de 40 caracteres)"
+  type="text"
   divClasse={`input-field ${divClasse}`}
   onChange={onChange}
   state={state}

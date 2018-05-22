@@ -6,9 +6,9 @@ import CheckBox from './../checkbox';
 describe('Checkbox', () => {
   it('deve possuir estrutura definida ', () => {
     const checkBox = shallow(<CheckBox
-      id={'souAVitima'}
-      state={'souAVitima'}
-      label={'Sou a Vítima'}
+      id="souAVitima"
+      state="souAVitima"
+      label="Sou a Vítima"
     />);
     const checkBoxTextoJson = toJson(checkBox);
     expect(checkBoxTextoJson).toMatchSnapshot();

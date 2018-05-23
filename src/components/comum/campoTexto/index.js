@@ -25,8 +25,10 @@ const renderCampoTexto = ({
   );
 };
 
-const campoTexto = ({ divClasse, id, type, onChange,
-  inputClasse, maxLen, placeholder, label, state, validacoes, normalize }) => {
+const campoTexto = ({
+  divClasse, id, type, onChange,
+  inputClasse, maxLen, placeholder, label, state, validacoes, normalize
+}) => {
   if (state) {
     return (<Field
       name={state}
@@ -44,8 +46,9 @@ const campoTexto = ({ divClasse, id, type, onChange,
       normalize={normalize}
     />);
   }
-  return renderCampoTexto(
-    { divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label, state, meta: {}, });
+  return renderCampoTexto({
+    divClasse, id, type, onChange, inputClasse, maxLen, placeholder, label, state, meta: {},
+  });
 };
 
 renderCampoTexto.propTypes = {
@@ -64,10 +67,10 @@ renderCampoTexto.propTypes = {
     onDragStart: PropTypes.func,
     onDrop: PropTypes.func,
     onFocus: PropTypes.func,
-    value: renderCampoTexto.type
+    value: PropTypes.string
   }).isRequired,
   meta: PropTypes.shape({
-    touched: PropTypes.boolean,
+    touched: PropTypes.bool,
     error: PropTypes.string
   })
 };

@@ -3,14 +3,16 @@ import PropTypes from 'prop-types';
 import Combobox from '../combobox';
 import estados from './estados';
 
-const comboEstado = ({ id, divClasse, state, onChange }) => (
+const comboEstado = ({
+  id, divClasse, state, onChange
+}) => (
   <Combobox
     state={state}
     id={id}
     itens={estados}
     divClasse={divClasse}
-    label={'Selecione o Estado:'}
-    valorPadrao={'Selecione'}
+    label="Selecione o Estado:"
+    valorPadrao="Selecione"
     onChange={onChange}
   />
 );

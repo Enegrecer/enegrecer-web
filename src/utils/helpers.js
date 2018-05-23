@@ -1,6 +1,8 @@
 export function cortarPalavra(value, maxLen) {
   const inputLen = window.parseInt(maxLen);
-  return isNaN(inputLen) ? value : value.slice(0, inputLen);
+  // https://bit.ly/2KIPkBO
+  const isNaN = Number.isNaN(Number(inputLen));
+  return isNaN ? value : value.slice(0, inputLen);
 }
 
 function calculaIdade(dataNascimento) {

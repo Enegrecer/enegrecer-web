@@ -47,7 +47,12 @@
         "no-constant-condition": "off",
   	  	"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }],
-        "prefer-const": "warn"
+        "prefer-const": "warn",
+        "jsx-a11y/label-has-for": {
+          "required": {
+            "some": [ "nesting", "id" ]
+          }
+        }
     }
 
 }

@@ -11,9 +11,9 @@ describe('Botões Rádio', () => {
   it('deve possuir estrutura definida ', () => {
     const onChange = jest.fn();
     const botoesRadio = shallow(<BotoesRadio
-      state={'idOcorrencia'}
-      classes={'col s3'}
-      id={'id'}
+      state="idOcorrencia"
+      classes="col s3"
+      id="id"
       onChange={onChange}
       botoes={botoes}
     />);

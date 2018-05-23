@@ -43,34 +43,34 @@ class DenuncianteForm extends Component {
       <div>
         <div className="row">
           <Nome
-            id={'nome-vitima'}
-            state={'nomeDenunciante'}
+            id="nome-vitima"
+            state="nomeDenunciante"
             validacoes={[campoObrigatorio]}
           />
           <Data
-            id={'data-nascimento-denunciante'}
-            label={'Data de Nascimento'}
-            state={'dataNascimentoDenunciante'}
+            id="data-nascimento-denunciante"
+            label="Data de Nascimento"
+            state="dataNascimentoDenunciante"
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
           />
         </div>
 
-        <Endereco estadoState={'estadoDenunciante'} estadoInicial={estadoDenunciante} cidadeState={'cidadeDenunciante'} />
+        <Endereco estadoState="estadoDenunciante" estadoInicial={estadoDenunciante} cidadeState="cidadeDenunciante" />
 
         <div className="row">
           <Telefone
-            state={'telefoneDenunciante'}
+            state="telefoneDenunciante"
             id="telefone-denunciante"
-            label={'Telefone'}
+            label="Telefone"
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
           />
           <CampoTexto
-            state={'emailDenunciante'}
-            id={'email-denunciante'}
-            label={'Email'}
+            state="emailDenunciante"
+            id="email-denunciante"
+            label="Email"
             maxLen={40}
-            type={'text'}
-            placeholder={'E-mail'}
+            type="text"
+            placeholder="E-mail"
             validacoes={[campoObrigatorio, emailInvalido]}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
           />
@@ -78,15 +78,15 @@ class DenuncianteForm extends Component {
 
         <div className="row">
           <ComboboxRaca
-            state={'racaDenunciante'}
-            id={'raca-denunciante'}
-            divClasse={'col s12 m6 l6'}
+            state="racaDenunciante"
+            id="raca-denunciante"
+            divClasse="col s12 m6 l6"
             somenteRacasVitima
           />
           <Genero
-            id={'genero-denunciante'}
-            state={'generoDenunciante'}
-            divClasse={'col s12 m6 l6'}
+            id="genero-denunciante"
+            state="generoDenunciante"
+            divClasse="col s12 m6 l6"
           />
         </div>
       </div>

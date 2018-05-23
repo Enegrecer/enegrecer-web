@@ -33,7 +33,6 @@ exports[`DetalhamentoDenuncia Component deve possuir estrutura definida  1`] = `
         ]
       }
       classes="col s3"
-      id=""
       state="idCategoria"
     />
     <Data

@@ -9,8 +9,8 @@ describe('Telefone', () => {
     const telefone = shallow(<Telefone
       id="telefone"
       handleChange={handleChange}
-      label={'Telefone'}
-      value={''}
+      label="Telefone"
+      value=""
     />);
     const telefoneJson = toJson(telefone);
     expect(telefoneJson).toMatchSnapshot();

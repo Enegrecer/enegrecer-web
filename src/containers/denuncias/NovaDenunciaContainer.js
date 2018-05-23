@@ -3,9 +3,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import {
-  criarDenunciaRequisicao, limpaEstadoUltimaDencunciaCadastrada
-} from '../../actions/criarDenunciaActions';
+import { criarDenunciaRequisicao, limpaEstadoUltimaDencunciaCadastrada } from '../../actions/criarDenunciaActions';
 import NovaDenunciaForm from '../../components/denuncias/NovaDenunciaForm';
 
 class NovaDenunciaContainer extends React.Component {
@@ -25,9 +23,7 @@ class NovaDenunciaContainer extends React.Component {
   }
 
   submeteFormulario() {
-    this.props.criarDenunciaRequisicao(
-      this.props.formDenuncia.values
-    );
+    this.props.criarDenunciaRequisicao(this.props.formDenuncia.values);
   }
 
   render() {
@@ -79,9 +75,9 @@ NovaDenunciaContainer.propTypes = {
 };
 
 NovaDenunciaContainer.defaultProps = {
-  criarDenunciaRequisicao: () => {},
-  denunciaCadastradaComSucesso: false,
-  limpaEstadoUltimaDencunciaCadastrada: () => {},
+  // criarDenunciaRequisicao: () => {},
+  // denunciaCadastradaComSucesso: false,
+  // limpaEstadoUltimaDencunciaCadastrada: () => {},
   formDenuncia: {},
 };
 

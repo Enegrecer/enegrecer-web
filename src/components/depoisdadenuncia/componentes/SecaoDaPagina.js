@@ -22,9 +22,9 @@ const SecaoDaPagina = props => (
 );
 
 SecaoDaPagina.propTypes = {
-  tituloDaSecao1: PropTypes.string.isRequired,
-  tituloDaSecao2: PropTypes.string.isRequired,
-  tracoVermelho: PropTypes.string.isRequired,
+  tituloDaSecao1: PropTypes.string,
+  tituloDaSecao2: PropTypes.string,
+  tracoVermelho: PropTypes.string,
   ladoTexto: PropTypes.string.isRequired,
   textoDoBloco: PropTypes.string.isRequired,
   imagemSecao: PropTypes.string.isRequired,

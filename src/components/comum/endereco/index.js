@@ -32,14 +32,14 @@ class Endereco extends Component {
           onChange={this.listaCidades}
           id={estadoState}
           state={estadoState}
-          divClasse={'col s6'}
+          divClasse="col s6"
         />
         <Combobox
           id={cidadeState}
           state={cidadeState}
           itens={this.state.cidades}
-          divClasse={'col s6'}
-          label={'Cidade'}
+          divClasse="col s6"
+          label="Cidade"
         />
       </div>
     );

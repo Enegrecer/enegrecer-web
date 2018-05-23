@@ -45,8 +45,8 @@ export default class ModeradorLogin extends Component {
       window.location.href = '/moderador/painel';
     })
       .catch((error) => {
-        this.trataMensagemDeErro(error);
-        this.setState(updateByPropertyName('error', error));
+        const message = this.trataMensagemDeErro(error);
+        this.setState(updateByPropertyName('error', message));
 
         let element = document.getElementById('confirm-button');
         element.classList.add('modal-trigger');
@@ -59,19 +59,15 @@ export default class ModeradorLogin extends Component {
     event.preventDefault();
   }
 
-  /* eslint no-param-reassign:
-    ["error", { "props": true, "ignorePropertyModificationsFor": ["error"] }]
-  */
   trataMensagemDeErro = (error) => {
-    if (error.code === 'auth/invalid-email') {
-      error.message = 'O email é inválido!';
-    } else if (error.code === 'auth/wrong-password') {
-      error.message = 'A senha está incorreta!';
-    } else if (error.code === 'auth/user-not-found') {
-      error.message = 'Usuário não encontrado!';
-    }
+    const errorMap = {
+      'auth/wrong-password': 'Senha errada',
+      'auth/user-not-found': 'Usuário não encontrado',
+      'auth/user-disabled': 'Usuário inativo',
+      'auth/invalid-email': 'Email inválido',
+    };
 
-    return error;
+    return errorMap[error.code];
   }
 
   render() {
@@ -100,7 +96,7 @@ export default class ModeradorLogin extends Component {
               Entrar
           </button>
 
-          <Modal id="modal_erro" tituloModal="Erro ao logar" textoModal={error && error.message} textoBotao="FECHAR" />
+          <Modal id="modal_erro" tituloModal="Erro ao logar" textoModal={error} textoBotao="FECHAR" />
         </form>
       </div>
     );

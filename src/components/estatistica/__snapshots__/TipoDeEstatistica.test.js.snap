@@ -1,5 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`TipoDeEstatistica possibilita a renderização com a propriedade \`numero\` como valor numérico 1`] = `
+<div
+  id="render-com-numero"
+>
+  <h3
+    className="numero"
+  >
+    12345
+     
+  </h3>
+  <h6
+    className="categoria"
+  >
+    Render com número
+     
+  </h6>
+</div>
+`;
+
 exports[`TipoDeEstatistica possui a mesma estrutura 1`] = `
 <div
   id="vermelho"

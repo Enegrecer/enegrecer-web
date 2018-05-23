@@ -17,7 +17,7 @@ export default class VitimasMulheres extends Component {
     query.once('value')
       .then((snapshot) => {
         snapshot.forEach((denunciaSnapshot) => {
-          const vitima = denunciaSnapshot.val().vitima;
+          const { vitima } = denunciaSnapshot.val();
           if (vitima) {
             totalVitimas += 1;
             if (vitima.genero === 'Feminino') {

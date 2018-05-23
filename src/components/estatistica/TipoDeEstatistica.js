@@ -10,7 +10,10 @@ const TipoDeEstatistica = props => (
 
 TipoDeEstatistica.propTypes = {
   id: PropTypes.string.isRequired,
-  numero: PropTypes.string.isRequired,
+  numero: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
   categoria: PropTypes.string.isRequired,
 };
 

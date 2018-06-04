@@ -46,15 +46,9 @@ export default class Menu extends Component {
         {links.map(link => (
           <li key={link.id}><Link className={link.className} to={link.to} onClick={this.escondeMenu} onKeyDown={this.escondeMenu}>{link.label}</Link></li>
         ))}
-        {/* <li key={1}><Link to="/sobre" onClick={this.escondeMenu} onKeyDown={this.escondeMenu}>SOBRE</Link></li>
-        <li key={2}><Link to="/depois-denuncia" onClick={this.escondeMenu}>E DEPOIS DA DENÚNCIA?</Link></li>
-        <li key={3}><Link to="/coletivo-enegrecer" onClick={this.escondeMenu}>O COLETIVO ENEGRECER</Link></li>
-        <li key={4}><Link className="denunciar" to="/denunciar" onClick={this.escondeMenu}>DENUNCIAR</Link></li> */}
       </ul>
     );
   }
-    /* eslint-enable */
-
   renderMobileNav() {
     if (this.state.mobileNavVisible) {
       return this.navigationLinks();

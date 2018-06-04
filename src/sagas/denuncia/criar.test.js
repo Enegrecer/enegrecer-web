@@ -1,5 +1,5 @@
-import { fork, call, put, take } from 'redux-saga/effects';
-import rootSaga, { handleCriarDenunciaRequisicao, criarDenuncia } from './denuncias';
+import { call, put, take } from 'redux-saga/effects';
+import { handleCriarDenunciaRequisicao, criarDenuncia } from './criar';
 import { CRIAR_DENUNCIA_REQUISICAO, criarDenunciaSucesso } from '../../actions/criarDenunciaActions';
 
 jest.mock('../../utils/firebaseUtils');
@@ -32,14 +32,5 @@ describe('Saga de Denúncias', () => {
       expect(saga.next('idDaDenuncia').value)
         .toEqual(put(criarDenunciaSucesso('idDaDenuncia')));
     });
-  });
-});
-
-describe('Root Sagas', () => {
-  it('deve contar o handleCriarDenunciaRequisicao', () => {
-    const saga = rootSaga();
-
-    expect(saga.next().value).toEqual(fork(handleCriarDenunciaRequisicao));
-    expect(saga.next().done).toBe(true);
   });
 });

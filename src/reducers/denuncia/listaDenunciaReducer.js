@@ -1,10 +1,10 @@
-import { FETCH_DENUNCIAS_SUCCESS } from '../../actions/listarDenunciasActions';
+import { LISTA_DENUNCIAS_SUCCESSO } from '../../actions/listarDenunciasActions';
 
 const estadoInicial = { denuncias: [] };
 
 export default function listaDenunciasReducer(state = estadoInicial, action) {
   switch (action.type) {
-    case FETCH_DENUNCIAS_SUCCESS:
+    case LISTA_DENUNCIAS_SUCCESSO:
       return {
         ...state,
         denuncias: action.payload

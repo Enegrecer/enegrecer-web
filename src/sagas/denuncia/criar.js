@@ -1,6 +1,6 @@
-import { fork, call, put, take } from 'redux-saga/effects';
-import firebaseApp from '../../utils/firebaseUtils';
-
+import { call, put, take } from 'redux-saga/effects';
+import { ref } from '../../utils/firebaseUtils';
+import { CLASSIFICACAO_DENUNCIA } from '../../utils/constants';
 import {
   CRIAR_DENUNCIA_REQUISICAO, criarDenunciaSucesso,
 } from '../../actions/criarDenunciaActions';
@@ -42,7 +42,6 @@ const denunciaInicial = {
 };
 
 export function criarDenuncia(acao) {
-  const ref = firebaseApp.database().ref();
   const refDenuncias = ref.child('denuncias');
   const dados = Object.assign({}, denunciaInicial, acao.payload);
 
@@ -53,7 +52,8 @@ export function criarDenuncia(acao) {
       data: dados.dataAgressao,
       descricao: dados.dataAgressao,
       endereco: dados.enderecoAgressao,
-      periodo: dados.periodoAgressao
+      periodo: dados.periodoAgressao,
+      status: CLASSIFICACAO_DENUNCIA.NAO_CLASSIFICADA
     },
     informacoesLegais: {
       categoria: dados.categoriaCrime,
@@ -105,8 +105,3 @@ export function* handleCriarDenunciaRequisicao() {
     yield put(criarDenunciaSucesso(idDenuncia));
   }
 }
-
-export default function* rootSaga() {
-  yield fork(handleCriarDenunciaRequisicao);
-}
-

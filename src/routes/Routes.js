@@ -26,10 +26,10 @@ const Routes = () => (
         <Route exact path="/denunciar" component={NovaDenunciaContainer} />
         <Route exact path="/depois-denuncia" component={DepoisDaDenuncia} />
         <Route exact path="/login" component={ModeradorLogin} />
+        <Route exact path="/visualizar-denuncia" component={VisualizarDenunciaContainer} />
         <PrivateRoute path="/moderador" component={PainelModerador} />
 
         <Route component={PaginaNaoEncontrada} />
-        <Route exact path="/visualizar-denuncia" component={VisualizarDenunciaContainer} />
       </Switch>
       <Rodape />
     </div>

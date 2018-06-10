@@ -1,6 +1,17 @@
 import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Combobox from '../comum/combobox';
+import './painel-moderador.css';
+import { detalhesDenuncia } from '../../actions/visualizarDenunciaActions';
+
+function cliqueDetalhesDenuncia(denuncia) {
+  return () => {
+    denuncia.props.dispatch(
+      detalhesDenuncia({ denuncia: denuncia.props.denuncia })
+    );
+  };
+}
 
 class DenunciaRow extends Component {
   constructor(props) {
@@ -28,7 +39,7 @@ class DenunciaRow extends Component {
           <td>{agressao.cidade}</td>
           <td>{agressao.bairro}</td>
           <td>
-            <input type="button" className="mais-detalhes" value="mais detalhes" />
+            <input type="button" className="mais-detalhes" value="mais detalhes" onClick={cliqueDetalhesDenuncia(this)} />
           </td>
           <td width="50px">
             <input
@@ -112,7 +123,8 @@ DenunciaRow.propTypes = {
     vitima: PropTypes.shape({
       genero: PropTypes.string
     })
-  }).isRequired
+  }).isRequired,
+  dispatch: PropTypes.func.isRequired
 };
 
-export default DenunciaRow;
+export default connect(null)(DenunciaRow);

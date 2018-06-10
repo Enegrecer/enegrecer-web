@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import GradeCampos from '../comum/gradeCampos/GradeCampos';
 import './visualizarDenuncia.css';
-import { buscarDenunciaRequisicao } from '../../actions/criarDenunciaActions';
 
 const dadosDenunciante =
 {
@@ -131,8 +129,10 @@ const dadosAgressor =
 };
 
 export class VisualizarDenuncia extends Component {
-  componentWillMount() {
-    this.props.buscarDenunciaRequisicao();
+  constructor(props) {
+    super(props);
+
+    console.log(props);
   }
 
   render() {
@@ -157,15 +157,13 @@ export class VisualizarDenuncia extends Component {
 }
 
 VisualizarDenuncia.propTypes = {
-  buscarDenunciaRequisicao: PropTypes.func.isRequired
+  detalhesDenuncia: PropTypes.object
 };
 
-VisualizarDenuncia.defaultProps = {
-  buscarDenunciaRequisicao: () => {}
-};
+function mapStateToProps(state) {
+  return {
+    detalhesDenuncia: state.detalhesDenuncia
+  };
+}
 
-const mapDispatchToProps = {
-  buscarDenunciaRequisicao
-};
-
-export default connect(null, mapDispatchToProps)(VisualizarDenuncia);
+export default connect(mapStateToProps)(VisualizarDenuncia);

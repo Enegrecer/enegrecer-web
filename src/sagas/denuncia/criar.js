@@ -2,8 +2,7 @@ import { call, put, take } from 'redux-saga/effects';
 import { ref } from '../../utils/firebaseUtils';
 import { CLASSIFICACAO_DENUNCIA } from '../../utils/constants';
 import {
-  CRIAR_DENUNCIA_REQUISICAO, criarDenunciaSucesso,
-  BUSCAR_DENUNCIA_REQUISICAO
+  CRIAR_DENUNCIA_REQUISICAO, criarDenunciaSucesso
 } from '../../actions/criarDenunciaActions';
 
 const denunciaInicial = {
@@ -105,24 +104,4 @@ export function* handleCriarDenunciaRequisicao() {
     const idDenuncia = yield call(criarDenuncia, acao);
     yield put(criarDenunciaSucesso(idDenuncia));
   }
-}
-
-export function* buscarDenuncia() {
-  while (true) {
-    const acao = yield take(BUSCAR_DENUNCIA_REQUISICAO);
-    const refDenuncias = firebaseApp.database().ref('denuncias');
-    const query = refDenuncias.orderByKey().limitToFirst(1);
-    query.once('value')
-      .then((snapshot) => {
-        snapshot.forEach((denuncia) => {
-          console.log(denuncia.val());
-          // yield put(dadosDenuncia(denuncia.val()));
-        });
-      });
-  }
-}
-
-export default function* rootSaga() {
-  yield fork(handleCriarDenunciaRequisicao);
-  yield fork(buscarDenuncia);
 }

@@ -1,145 +1,145 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import GradeCampos from '../comum/gradeCampos/GradeCampos';
+import Carregamento from '../comum/carregamento/Carregamento';
 import './visualizarDenuncia.css';
+import { buscaDenunciaPorId } from '../../actions/visualizarDenunciaActions';
 
-const dadosDenunciante =
-{
-  titulo: 'Dados do denunciante',
-  camposEsquerda: [
-    {
-      titulo: 'Nome denunciante',
-      descricao: 'Beatriz Soare'
-    },
-    {
-      titulo: 'Telefone',
-      descricao: '(31) 9884455-7733'
-    },
-    {
-      titulo: 'Gênero',
-      descricao: 'Feminino CIS'
-    },
-    {
-      titulo: 'Raça / Cor',
-      descricao: 'Parda'
-    }
-  ],
-  camposDireita: [
-    {
-      titulo: 'Email',
-      descricao: 'beatriz-soares@gmail.com'
-    },
-    {
-      titulo: 'Cidade',
-      descricao: 'Belo Horizonte'
-    },
-    {
-      titulo: 'Data de nascimento',
-      descricao: 'Abril 14, 1988'
-    }
-  ]
-};
+function detalhesOuCarregamento(denuncia) {
+  let componente;
 
-const dadosVitima =
-{
-  titulo: 'Dados da vítima',
-  camposEsquerda: [
+  if (denuncia) {
+    const dadosDenunciante =
     {
-      titulo: 'Nome',
-      descricao: 'Beatriz Soares'
-    },
-    {
-      titulo: 'Telefone',
-      descricao: '(31) 9884455-7733'
-    },
-    {
-      titulo: 'Gênero',
-      descricao: 'Feminino CIS'
-    }
-  ],
-  camposDireita: [
-    {
-      titulo: 'Data de nascimento',
-      descricao: 'beatriz-soares@gmail.com'
-    },
-    {
-      titulo: 'Cidade',
-      descricao: 'Belo Horizonte'
-    },
-    {
-      titulo: 'Raça / Cor',
-      descricao: 'Parda'
-    }
-  ]
-};
+      titulo: 'Dados do denunciante',
+      camposEsquerda: [
+        {
+          titulo: 'Nome denunciante',
+          descricao: denuncia ? `${denuncia.denunciante.nome}` : ''
+        },
+        {
+          titulo: 'Telefone',
+          descricao: denuncia ? `${denuncia.denunciante.telefone}` : ''
+        },
+        {
+          titulo: 'Gênero',
+          descricao: denuncia ? `${denuncia.denunciante.genero}` : ''
+        },
+        {
+          titulo: 'Raça / Cor',
+          descricao: denuncia ? `${denuncia.denunciante.raca}` : ''
+        }
+      ],
+      camposDireita: [
+        {
+          titulo: 'Email',
+          descricao: denuncia ? `${denuncia.denunciante.email}` : ''
+        },
+        {
+          titulo: 'Cidade',
+          descricao: denuncia ? `${denuncia.denunciante.cidade}` : ''
+        },
+        {
+          titulo: 'Data de nascimento',
+          descricao: denuncia ? `${denuncia.denunciante.dataNascimento}` : ''
+        }
+      ]
+    };
 
-const dadosInformacoesLegais =
-{
-  titulo: 'Informações legais',
-  camposEsquerda: [
+    const dadosVitima =
     {
-      titulo: 'Número do BO',
-      descricao: '123456'
-    },
-    {
-      titulo: 'Número do processo',
-      descricao: '98844557733'
-    }
-  ],
-  camposDireita: [
-    {
-      titulo: 'Categoria do crime no BO',
-      descricao: 'Gbasndiiqdn'
-    },
-    {
-      titulo: 'Orgão',
-      descricao: 'Doamocmsco'
-    }
-  ]
-};
+      titulo: 'Dados da vítima',
+      camposEsquerda: [
+        {
+          titulo: 'Nome',
+          descricao: denuncia ? `${denuncia.vitima.nome}` : ''
+        },
+        {
+          titulo: 'Telefone',
+          descricao: denuncia ? `${denuncia.vitima.telefone}` : ''
+        },
+        {
+          titulo: 'Gênero',
+          descricao: denuncia ? `${denuncia.vitima.genero}` : ''
+        }
+      ],
+      camposDireita: [
+        {
+          titulo: 'Data de nascimento',
+          descricao: denuncia ? `${denuncia.vitima.dataNascimento}` : ''
+        },
+        {
+          titulo: 'Cidade',
+          descricao: denuncia ? `${denuncia.vitima.cidade}` : ''
+        },
+        {
+          titulo: 'Raça / Cor',
+          descricao: denuncia ? `${denuncia.vitima.raca}` : ''
+        }
+      ]
+    };
 
-const dadosAgressor =
-{
-  titulo: 'Dados do agressor',
-  camposEsquerda: [
+    const dadosInformacoesLegais =
     {
-      titulo: 'Nome',
-      descricao: 'Beatriz Soares'
-    },
-    {
-      titulo: 'Cidade',
-      descricao: 'Belo Horizonte'
-    },
-    {
-      titulo: 'Raça / Cor',
-      descricao: 'Parda'
-    }
-  ],
-  camposDireita: [
-    {
-      titulo: 'Data de nascimento',
-      descricao: 'Abril 14, 1988'
-    },
-    {
-      titulo: 'Gênero',
-      descricao: 'Feminino CIS'
-    }
-  ]
-};
+      titulo: 'Informações legais',
+      camposEsquerda: [
+        {
+          titulo: 'Número do BO',
+          descricao: denuncia ? `${denuncia.informacoesLegais.numeroBoletim}` : ''
+        },
+        {
+          titulo: 'Número do processo',
+          descricao: denuncia ? `${denuncia.informacoesLegais.numeroProcesso}` : ''
+        }
+      ],
+      camposDireita: [
+        {
+          titulo: 'Categoria do crime no BO',
+          descricao: denuncia ? `${denuncia.informacoesLegais.categoria}` : ''
+        },
+        {
+          titulo: 'Orgão',
+          descricao: denuncia ? `${denuncia.informacoesLegais.orgao}` : ''
+        }
+      ]
+    };
 
-export class VisualizarDenuncia extends Component {
-  constructor(props) {
-    super(props);
+    const dadosAgressor =
+    {
+      titulo: 'Dados do agressor',
+      camposEsquerda: [
+        {
+          titulo: 'Nome',
+          descricao: denuncia ? `${denuncia.agressor.nome}` : ''
+        },
+        {
+          titulo: 'Cidade',
+          descricao: denuncia ? `${denuncia.agressor.cidade}` : ''
+        },
+        {
+          titulo: 'Raça / Cor',
+          descricao: denuncia ? `${denuncia.agressor.raca}` : ''
+        }
+      ],
+      camposDireita: [
+        {
+          titulo: 'Data de nascimento',
+          descricao: denuncia ? `${denuncia.agressor.dataNascimento}` : ''
+        },
+        {
+          titulo: 'Gênero',
+          descricao: denuncia ? `${denuncia.agressor.genero}` : ''
+        }
+      ]
+    };
 
-    console.log(props);
-  }
-
-  render() {
-    return (
-      <div className="receptaculo">
+    componente = (
+      <div>
         <div className="titulo">
-          Detahes da denúncia
+        Detahes da denúncia
         </div>
         <div className="detalhes">
           <div className="grade-superior">
@@ -153,17 +153,58 @@ export class VisualizarDenuncia extends Component {
         </div>
       </div>
     );
+  } else {
+    componente = (<Carregamento />);
+  }
+
+  return componente;
+}
+
+class VisualizarDenuncia extends Component {
+  componentDidMount() {
+    const { denunciaId } = this.props.match.params;
+    this.props.buscaDenunciaPorId(denunciaId);
+  }
+
+  render() {
+    const { denuncia } = this.props;
+
+    return (
+      <div className="receptaculo">
+        {detalhesOuCarregamento(denuncia)}
+      </div>
+    );
   }
 }
 
 VisualizarDenuncia.propTypes = {
-  detalhesDenuncia: PropTypes.object
+  buscaDenunciaPorId: PropTypes.func.isRequired,
+  match: {
+    params: {
+      denunciaId: PropTypes.string
+    }
+  }.isRequired,
+  denuncia: PropTypes.shape({
+    agressao: PropTypes.shape,
+    agressor: PropTypes.shape,
+    denunciante: PropTypes.shape,
+    informacoesLegais: PropTypes.shape,
+    vitima: PropTypes.shape
+  })
 };
+
+VisualizarDenuncia.defaultProps = {
+  denuncia: undefined,
+};
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  buscaDenunciaPorId,
+}, dispatch);
 
 function mapStateToProps(state) {
   return {
-    detalhesDenuncia: state.detalhesDenuncia
+    denuncia: state.visualizarDenunciaReducer.denuncia
   };
 }
 
-export default connect(mapStateToProps)(VisualizarDenuncia);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(VisualizarDenuncia));

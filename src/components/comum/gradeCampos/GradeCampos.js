@@ -35,7 +35,7 @@ const GradeCampos = ({ dados }) => (
 );
 
 GradeCampos.propTypes = {
-  dados: ({
+  dados: PropTypes.shape({
     titulo: PropTypes.string,
     camposEsquerda: PropTypes.array,
     camposDireita: PropTypes.array

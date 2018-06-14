@@ -41,7 +41,7 @@ class PainelModerador extends Component {
           </thead>
           <tbody>
             {denuncias.map(denuncia => (
-              <DenunciaRow denuncia={denuncia} />
+              <DenunciaRow key={denuncia.id} denuncia={denuncia} />
             ))}
           </tbody>
         </table>
@@ -53,7 +53,6 @@ class PainelModerador extends Component {
 PainelModerador.propTypes = {
   listaDenuncias: PropTypes.func.isRequired,
   denuncias: PropTypes.arrayOf.isRequired
-
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
@@ -63,7 +62,10 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 function mapStateToProps(state) {
   return {
     denuncias: Object.keys(state.listaDenunciaReducer.denuncias)
-      .map(key => state.listaDenunciaReducer.denuncias[key])
+      .map(key => ({
+        id: key,
+        ...state.listaDenunciaReducer.denuncias[key]
+      }))
   };
 }
 

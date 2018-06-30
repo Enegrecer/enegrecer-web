@@ -1,9 +1,7 @@
 import React from 'react';
+import logo from '../../imagens/logo.svg';
 import { auth, storageKey } from '../../utils/firebaseUtils';
-
-const divStyle = {
-  backgroundColor: 'white',
-};
+import './menu-moderador.css';
 
 function logout() {
   auth.signOut().then(() => {
@@ -13,9 +11,9 @@ function logout() {
 }
 
 const MenuModerador = () => (
-  <div style={divStyle}>
-    <h1>AQUI SERA CONSTRUIDO O MENU DO MODERADOR</h1>
-    <input type="button" value="Logout" onClick={logout} />
+  <div className="menu-container">
+    <img className src={logo} alt="Logo Verdade Seja Dita" />
+    <input type="button" value="Sair" onClick={logout} />
   </div>
 );
 

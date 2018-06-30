@@ -1,0 +1,32 @@
+.menu-container {
+  background: #000;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.menu-container img {
+  margin-left: 25px;
+}
+
+.menu-container input[type="button"] {
+  align-self: center;
+  margin-right: 25px;
+  width: 68px;
+  height: 35px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.15);
+  background-color: #000000;
+  border: solid 1px #c3c3c3;
+  font-size: 16px;
+  color: #c3c3c3;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+}
+
+

@@ -5,15 +5,26 @@ import { Field } from 'redux-form';
 const combobox = ({
   divClasse, id, state, valorPadrao, itens, label, onChange
 }) => (
-  <div className={divClasse}>
-    <label htmlFor={id}>{label}</label>
-    <Field id={id} name={state} component="select" onChange={e => onChange(e.target.value)}>
-      <option value="">{valorPadrao}</option>
-      {
-        itens.map(val => <option key={val} value={val}> {val} </option>)
-      }
-    </Field>
-  </div>);
+  state ? (
+    <div className={divClasse}>
+      <label htmlFor={id}>{label}</label>
+      <Field id={id} name={state} component="select" onChange={e => onChange(e.target.value)}>
+        <option value="">{valorPadrao}</option>
+        {
+          itens.map(val => <option key={val} value={val}> {val} </option>)
+        }
+      </Field>
+    </div>
+  ) : (
+    <div>
+      <select name="select">
+        {itens.map(item => (
+          <option key={item} value={item}>{item}</option>
+        ))}
+      </select>
+    </div>
+  )
+);
 
 combobox.propTypes = {
   id: PropTypes.string,

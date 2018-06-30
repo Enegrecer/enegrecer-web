@@ -28,13 +28,19 @@ class DenunciaRow extends Component {
           <td>{agressao.cidade}</td>
           <td>{agressao.bairro}</td>
           <td>
-            <input type="button" value="mais detalhes" />
-            <input type="button" value={expanded ? 'menos' : 'mais'} onClick={this.mudaEstado} />
+            <input type="button" className="mais-detalhes" value="mais detalhes" />
+          </td>
+          <td width="50px">
+            <input
+              type="button"
+              className={`botao-expandir-retrair ${expanded ? 'botao-retrair' : 'botao-expandir'}`}
+              onClick={this.mudaEstado}
+            />
           </td>
         </tr>
         {expanded && (
           <Fragment>
-            <tr>
+            <tr className="descricao-denuncia-row">
               <td>
                 <label>Nome do Denunciante</label>
                 <p>{denunciante.nome}</p>
@@ -53,33 +59,37 @@ class DenunciaRow extends Component {
                 <label>Gênero</label>
                 <p>{denunciante.genero}</p>
               </td>
+              <td />
+              <td />
+              <td />
+              <td width="50px" />
             </tr>
 
-            <tr>
-              <td colSpan="7">
+            <tr className="descricao-denuncia-row">
+              <td colSpan="8">
                 <label>Descrição Denúncia</label>
                 <p>{agressao.descricao}</p>
               </td>
             </tr>
 
-            <tr>
-              <td colSpan="7">
+            <tr className="descricao-denuncia-row">
+              <td colSpan="8">
                 <hr />
               </td>
             </tr>
 
-            <tr>
+            <tr className="row-acoes-denuncia">
               <td colSpan="5">
                 <Combobox
                   itens={['Injúria Racial', 'Racismo']}
                 />
               </td>
-              <td>
-                <input type="button" value="Deletar" />
+              <td style={{ textAlign: 'right' }}>
+                <input className="remover-denuncia" type="button" value="Deletar" />
               </td>
 
-              <td>
-                <input type="button" value="aceitar denúncia" onClick={this.aceitarDenuncia} />
+              <td colSpan="2" style={{ textAlign: 'center' }}>
+                <input type="button" className="aceitar-denuncia" value="aceitar denúncia" onClick={this.aceitarDenuncia} />
               </td>
             </tr>
 

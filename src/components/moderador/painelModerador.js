@@ -6,8 +6,6 @@ import { listaDenuncias } from '../../actions/listarDenunciasActions';
 import DenunciaRow from './DenunciaRow';
 import './painel-moderador.css';
 
-// import 'materialize-css';
-
 class PainelModerador extends Component {
   componentDidMount() {
     this.props.listaDenuncias();
@@ -18,6 +16,16 @@ class PainelModerador extends Component {
 
     return (
       <div className="painel-moderador">
+        <div className="cabecalho">
+          <div>
+            <h2>Denúncias recebidas</h2>
+            <h3>Total de denúncias </h3>
+          </div>
+
+          <input type="button" value="Exportar em xls" />
+
+        </div>
+
         <table>
           <thead>
             <tr>
@@ -28,6 +36,7 @@ class PainelModerador extends Component {
               <th style={{ width: '120px' }}>Cidade</th>
               <th style={{ width: '120px' }}>Bairro</th>
               <th style={{ width: '120px' }}>Ações</th>
+              <th style={{ width: '50px' }} />
             </tr>
           </thead>
           <tbody>

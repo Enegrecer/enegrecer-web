@@ -1,6 +1,7 @@
 .painel-moderador {
-  background-color: white;
+  background-color: #f8f8f8;
   height: 100%;
+  padding: 25px;
 }
 
 .painel-moderador table thead tr th {
@@ -12,6 +13,47 @@
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
+}
+
+.painel-moderador .cabecalho {
+  display: flex;
+  justify-content: space-between;
+}
+
+.painel-moderador .cabecalho div {
+  display: flex;
+  flex-direction: column;
+}
+
+.painel-moderador .cabecalho div h2 {
+  font-size: 20px;
+  text-align: left;
+  color: #1d1d1d;
+  margin: 0;
+}
+
+.painel-moderador .cabecalho div h3 {
+  font-size: 16px;
+  text-align: left;
+  color: #838383;
+  margin: 10px 0 0 0;
+}
+
+.painel-moderador .cabecalho input[type="button"] {
+  width: 140px;
+  height: 45px;
+  border-radius: 3px;
+  background-color: #ff0336;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.15);
+  font-size: 15px;
+  color: #fff;
+  font-weight: 500;
+  font-style: normal;
+  cursor: pointer;
+}
+
+.painel-moderador table {
+  margin-top: 20px;
 }
 
 .table-row {
@@ -33,6 +75,71 @@
   text-align: center;
   font-size: 16px;
   color: #1d1d1d;
+  padding: 0;
+}
+
+.table-row .mais-detalhes {
+  width: 122px;
+  height: 35px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  border: solid 1px #20a14f;
+  cursor: pointer;
+  font-size: 16px;
+  color: #20a14f;
+}
+
+.table-row .mais-detalhes:hover {
+  background: rgba(32, 162, 80, 0.16);
+}
+
+.table-row .botao-expandir-retrair {
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  height: 70px;
+  border: solid 1px #f0f0f0;
+  width: 100%;
+  margin-left:0;
+  margin-right:0;
+  padding-left:0;
+  padding-right:0;
+  text-align: center;
+}
+
+.descricao-denuncia-row {
+  background: #fff;
+}
+
+.table-row .botao-retrair {
+  background-image: url(../../imagens/botao-retrair.svg);
+}
+
+.table-row .botao-expandir {
+  background-image: url(../../imagens/botao-expandir.svg);
+}
+
+.row-acoes-denuncia {
+  background: #fff;
+}
+
+.row-acoes-denuncia .aceitar-denuncia {
+  height: 40px;
+  border-radius: 3px;
+  background-color: #dfdfdf;
+}
+
+.row-acoes-denuncia .remover-denuncia {
+  background-repeat: no-repeat;
+  background-position: left;
+  background-image: url(../../imagens/botao-remover-denuncia.svg);
+  padding-left: 25px;
+  text-align: center;
+  font-size: 16px;
+  text-align: left;
+  color: #ff0336;
+  cursor: pointer;
+  border: none;
 }
 
 .mais-informacoes-denuncia-container {

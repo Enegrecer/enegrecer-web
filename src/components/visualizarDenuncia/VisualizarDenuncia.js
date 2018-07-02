@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import GradeCampos from '../comum/gradeCampos/GradeCampos';
 import Carregamento from '../comum/carregamento/Carregamento';
+import Combobox from '../comum/combobox';
 import './visualizarDenuncia.css';
 import { buscaDenunciaPorId } from '../../actions/visualizarDenunciaActions';
 
@@ -149,6 +150,19 @@ function detalhesOuCarregamento(denuncia) {
           <div className="grade-inferior">
             <GradeCampos dados={dadosInformacoesLegais} />
             <GradeCampos dados={dadosAgressor} />
+          </div>
+        </div>
+        <div className="classificar-denuncia">
+          <div className="titulo-classificar-denuncia">
+            Classifique a denúncia
+          </div>
+          <div className="separador" />
+          <div className="detalhes-classificar-denuncia">
+            <Combobox itens={['Injúria Racial', 'Racismo']} className="detalhes-combo-classificar-denuncia" />
+            <div className="detalhes-botoes-classificar-denuncia">
+              <input className="remover-denuncia" type="button" value="Deletar" />
+              <input type="button" className="aceitar-denuncia" value="aceitar denúncia" />
+            </div>
           </div>
         </div>
       </div>

@@ -21,7 +21,6 @@ function* buscaDenunciaPorId(action) {
     const denuncia = yield call(() => recuperaDenunciaPorIdDoFirebase(action.payload));
     yield put(buscaDenunciaPorIdSucesso(denuncia));
   } catch (error) {
-    console.error(error);
     // yield put({ type: LISTA_DENUNCIAS_ERRO });
   }
 }

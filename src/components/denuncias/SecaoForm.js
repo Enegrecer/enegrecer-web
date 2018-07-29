@@ -7,7 +7,7 @@ const SecaoForm = ({
 }) => (
   <div className={ConstantesCSS.FORM_SECTION}>
     <div className="title-body">
-      <a name={titulo}><h3>{titulo}</h3></a>
+      <a name={titulo} href="#none"><h3>{titulo}</h3></a>
     </div>
     <div className="form-body">
       <h6>{subtitulo}</h6>

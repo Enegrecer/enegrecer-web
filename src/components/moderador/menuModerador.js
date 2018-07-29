@@ -1,12 +1,19 @@
 import React from 'react';
+import logo from '../../imagens/logo.svg';
+import { auth, storageKey } from '../../utils/firebaseUtils';
+import './menu-moderador.css';
 
-const divStyle = {
-  backgroundColor: 'white',
-};
+function logout() {
+  auth.signOut().then(() => {
+    window.localStorage.removeItem(storageKey);
+    window.location.href = '/login';
+  });
+}
 
 const MenuModerador = () => (
-  <div style={divStyle}>
-    <h1>AQUI SERA CONSTRUIDO O MENU DO MODERADOR</h1>
+  <div className="menu-container">
+    <img className src={logo} alt="Logo Verdade Seja Dita" />
+    <input type="button" value="Sair" onClick={logout} />
   </div>
 );
 

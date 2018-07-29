@@ -13,6 +13,7 @@ import PainelModerador from '../components/moderador/painelModerador';
 import MenuModerador from '../components/moderador/menuModerador';
 import { estaAutenticado } from '../utils/firebaseUtils';
 import PrivateRoute from './PrivateRoute';
+import VisualizarDenunciaContainer from '../containers/denuncias/VisualizarDenunciaContainer';
 
 const Routes = () => (
   <BrowserRouter>
@@ -25,6 +26,7 @@ const Routes = () => (
         <Route exact path="/denunciar" component={NovaDenunciaContainer} />
         <Route exact path="/depois-denuncia" component={DepoisDaDenuncia} />
         <Route exact path="/login" component={ModeradorLogin} />
+        <Route exact path="/visualizar-denuncia/:denunciaId" component={VisualizarDenunciaContainer} />
         <PrivateRoute path="/moderador" component={PainelModerador} />
 
         <Route component={PaginaNaoEncontrada} />

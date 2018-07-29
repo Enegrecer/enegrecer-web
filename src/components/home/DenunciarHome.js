@@ -11,12 +11,14 @@ const DenunciarHome = withRouter(({ history }) => (
     <div className="parte2 col s12 m6">
       <h6> Nos ajude fazendo uma denúncia</h6>
       <p> Gostaria de reportar uma situação em que
-    foi discriminado ou que presenciou? </p>
+    foi discriminado ou que presenciou?
+      </p>
       <div
         role="button"
         tabIndex="0"
         className="bt_denuncia denunciar"
         onClick={() => history.push('/denunciar')}
+        onKeyDown={() => history.push('/denunciar')}
       >
         DENUNCIAR
       </div>

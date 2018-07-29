@@ -24,10 +24,10 @@ Modal.defaultProps = {
 };
 
 Modal.propTypes = {
-  id: PropTypes.string.isRequired,
-  tituloModal: PropTypes.string.isRequired,
-  textoModal: PropTypes.string.isRequired,
-  textoBotao: PropTypes.string.isRequired,
+  id: PropTypes.string,
+  tituloModal: PropTypes.string,
+  textoModal: PropTypes.string,
+  textoBotao: PropTypes.string,
 };
 
 export default Modal;

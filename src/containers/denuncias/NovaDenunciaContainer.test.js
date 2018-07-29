@@ -15,11 +15,7 @@ describe('NovaDenunciaContainer', () => {
     const props = {
       denunciaCadastradaComSucesso: false
     };
-    subject = shallow(
-      <Provider store={store}>
-        <NovaDenunciaContainer {...props} />
-      </Provider>
-    );
+    subject = shallow(<Provider store={store}><NovaDenunciaContainer {...props} /></Provider>);
   });
 
   it('renderiza sem erros o formulário de denúncias dentro do container', () => {

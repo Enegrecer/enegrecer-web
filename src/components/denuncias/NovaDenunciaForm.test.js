@@ -14,13 +14,9 @@ describe('NovaDenunciaForm Component', () => {
   beforeEach(() => {
     store = createStore(combineReducers({ form: formReducer }));
     const props = {
-      submeteFormulario: () => {}
+      submeteFormulario: () => { }
     };
-    subject = mount(
-      <Provider store={store}>
-        <NovaDenunciaForm {...props} />
-      </Provider>
-    );
+    subject = mount(<Provider store={store}><NovaDenunciaForm {...props} /></Provider>);
   });
 
   it('deve renderizar o componente sem erros', () => {
@@ -50,7 +46,9 @@ describe('NovaDenunciaForm Component', () => {
       const souAVitimaCheckbox = subject.find(NovaVitimaContainer).find(checkBox).find(Field);
       souAVitimaCheckbox.simulate('change', { target: { value: true } });
 
-      const { nomeVitima, telefoneVitima, estadoVitima, cidadeVitima, generoVitima, racaVitima } =
+      const {
+        nomeVitima, telefoneVitima, estadoVitima, cidadeVitima, generoVitima, racaVitima
+      } =
         store.getState().form.formDenuncia.values;
 
       expect(nomeVitima).toBe(nomeDenunciante);
@@ -67,7 +65,9 @@ describe('NovaDenunciaForm Component', () => {
       const souAVitimaCheckbox = subject.find(NovaVitimaContainer).find(checkBox).find(Field);
       souAVitimaCheckbox.simulate('change', { target: { value: false } });
 
-      const { nomeVitima, telefoneVitima, cidadeVitima, generoVitima, racaVitima } =
+      const {
+        nomeVitima, telefoneVitima, cidadeVitima, generoVitima, racaVitima
+      } =
         store.getState().form.formDenuncia.values;
 
       expect(nomeVitima).toBe(undefined);

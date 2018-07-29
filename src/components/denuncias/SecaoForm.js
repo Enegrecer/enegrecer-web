@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as ConstantesCSS from './ConstantesCss';
 
-const SecaoForm = ({ titulo, subtitulo, texto, children }) => (
+const SecaoForm = ({
+  titulo, subtitulo, texto, children
+}) => (
   <div className={ConstantesCSS.FORM_SECTION}>
     <div className="title-body">
       <h3>{titulo}</h3>

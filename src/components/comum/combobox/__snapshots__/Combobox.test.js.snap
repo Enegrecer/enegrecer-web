@@ -1,53 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Combobox deve possuir estrutura definida  1`] = `
-<div
-  className=""
->
-  <label
-    htmlFor=""
-  />
-  <Field
-    component="select"
-    id=""
-    name=""
-    onChange={[Function]}
+<div>
+  <select
+    name="select"
   >
-    <option
-      value=""
-    />
     <option
       key="Item 1"
       value="Item 1"
     >
-       
       Item 1
-       
     </option>
     <option
       key="Item 2"
       value="Item 2"
     >
-       
       Item 2
-       
     </option>
     <option
       key="Item 3"
       value="Item 3"
     >
-       
       Item 3
-       
     </option>
     <option
       key="Item 4"
       value="Item 4"
     >
-       
       Item 4
-       
     </option>
-  </Field>
+  </select>
 </div>
 `;

@@ -5,9 +5,7 @@ import Nav from './Nav';
 
 describe('Nav', () => {
   const historyMock = { push: jest.fn() };
-  const wrapper = shallow(
-    <Nav history={historyMock} />,
-  );
+  const wrapper = shallow(<Nav history={historyMock} />);
 
   it('possui a mesma estrutura', () => {
     const tree = toJson(wrapper);

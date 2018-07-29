@@ -29,14 +29,16 @@ const normalizePhone = (value, previousValue) => {
   return `${onlyNums.slice(0, 2)} - ${onlyNums.slice(2, 7)} - ${onlyNums.slice(7, 11)}`;
 };
 
-const telefone = ({ divClasse, id, state, label }) => (
+const telefone = ({
+  divClasse, id, state, label
+}) => (
   <CampoTexto
     divClasse={divClasse}
     type="text"
     state={state}
     id={id}
     label={label}
-    placeholder={'__ - ____ - ____'}
+    placeholder="__ - ____ - ____"
     normalize={normalizePhone}
     maxLen={17}
   />

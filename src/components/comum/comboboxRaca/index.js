@@ -4,14 +4,16 @@ import Combobox from '../combobox';
 import { racasVitima } from './racasVitima';
 import { racasTestemunha } from './racasTestemunha';
 
-const comboRaca = ({ id, state, divClasse, somenteRacasVitima = true }) => (
+const comboRaca = ({
+  id, state, divClasse, somenteRacasVitima = true
+}) => (
   <Combobox
     state={state}
     id={id}
     itens={(somenteRacasVitima) ? racasVitima : racasTestemunha}
     divClasse={divClasse}
-    label={'Selecione a Raça:'}
-    valorPadrao={'Selecione a Raça:'}
+    label="Selecione a Raça:"
+    valorPadrao="Selecione a Raça:"
   />
 );
 

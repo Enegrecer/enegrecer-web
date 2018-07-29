@@ -78,7 +78,11 @@ body {
 .menu-items li:hover {
 	color: #5c5c5c;
 	font-weight: bold;
-	border-left: solid 3px #20a14f;
+  border-left: solid 3px #20a14f;
+}
+
+.menu-items a {
+  color: inherit;
 }
 
 .form-section {

@@ -42,11 +42,21 @@ class NovaDenunciaContainer extends React.Component {
           </div>
           <div className="menu-items">
             <ul>
-              <li>Dados do <br /> denunciante</li>
-              <li>Dados da <br /> vítima</li>
-              <li>Informações <br /> Legais</li>
-              <li>Dados do <br /> agressor</li>
-              <li>Descrição da <br />agressão</li>
+              <li>
+                <a href="#Dados do Denunciante"> Dados do <br /> denunciante</a>
+              </li>
+              <li>
+                <a href="#Dados da vítima">Dados da <br /> vítima</a>
+              </li>
+              <li>
+                <a href="#Informações Legais"> Informações <br /> Legais</a>
+              </li>
+              <li>
+                <a href="#Dados do agressor">Dados do <br /> agressor</a>
+              </li>
+              <li>
+                <a href="#Descrição da agressão">Descrição da <br />agressão</a>
+              </li>
             </ul>
           </div>
         </div>

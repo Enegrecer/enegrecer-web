@@ -43,7 +43,7 @@ class NovaDenunciaContainer extends React.Component {
           <div className="menu-items">
             <ul>
               <li>
-                <a href="#Dados do Denunciante"> Dados do <br /> denunciante</a>
+                <a href="#Dados do denunciante"> Dados do <br /> denunciante</a>
               </li>
               <li>
                 <a href="#Dados da vítima">Dados da <br /> vítima</a>

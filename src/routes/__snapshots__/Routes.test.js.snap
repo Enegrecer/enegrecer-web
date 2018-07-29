@@ -38,7 +38,7 @@ exports[`Routes com moderador logado deve construir a pagina com menu para moder
       <Route
         component={[Function]}
         exact={true}
-        path="/visualizar-denuncia/:denunciaId"
+        path="/moderador/visualizar-denuncia/:denunciaId"
       />
       <PrivateRoute
         component={[Function]}
@@ -91,7 +91,7 @@ exports[`Routes sem moderador logado deve construir a pagina com menu da página
       <Route
         component={[Function]}
         exact={true}
-        path="/visualizar-denuncia/:denunciaId"
+        path="/moderador/visualizar-denuncia/:denunciaId"
       />
       <PrivateRoute
         component={[Function]}

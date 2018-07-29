@@ -52,7 +52,7 @@ class NovaDenunciaContainer extends React.Component {
                 <a href="#Informações Legais"> Informações <br /> Legais</a>
               </li>
               <li>
-                <a href="#Dados do agressor">Dados do <br /> agressor</a>
+                <a href="#Dados do Agressor">Dados do <br /> agressor</a>
               </li>
               <li>
                 <a href="#Descrição da agressão">Descrição da <br />agressão</a>

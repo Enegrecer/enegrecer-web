@@ -98,7 +98,9 @@ class DenunciaRow extends Component {
               </td>
 
               <td colSpan="2" style={{ textAlign: 'center' }}>
-                <input type="button" className="aceitar-denuncia" value="aceitar denúncia" onClick={this.aceitarDenuncia} />
+                <div className="waves-effect waves-light btn botao-aceitar-denuncia">
+                  <input type="button" className="aceitar-denuncia" value="aceitar denúncia" onClick={this.aceitarDenuncia} />
+                </div>
               </td>
             </tr>
 

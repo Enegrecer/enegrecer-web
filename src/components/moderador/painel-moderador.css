@@ -78,6 +78,10 @@
   padding: 0;
 }
 
+.table-row td a {
+  padding: 8px 11px;
+}
+
 .table-row .mais-detalhes {
   width: 122px;
   height: 35px;
@@ -177,4 +181,8 @@
   letter-spacing: normal;
   text-align: left;
   color: #1d1d1d;
+}
+
+.botao-aceitar-denuncia {
+  background-color: #20a14f;
 }

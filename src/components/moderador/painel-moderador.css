@@ -59,7 +59,6 @@
 .table-row {
   height: 70px;
   box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.15);
-  background-color: #fafafa;
   border: solid 1px #f0f0f0;
   font-size: 16px;
   font-weight: normal;
@@ -75,7 +74,7 @@
   text-align: center;
   font-size: 16px;
   color: #1d1d1d;
-  padding: 0;
+  padding: 0;  
 }
 
 .table-row td a {
@@ -113,6 +112,7 @@
 
 .descricao-denuncia-row {
   background: #fff;
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
 .table-row .botao-retrair {

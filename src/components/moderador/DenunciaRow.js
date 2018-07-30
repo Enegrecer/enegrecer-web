@@ -90,6 +90,7 @@ class DenunciaRow extends Component {
             <tr className="row-acoes-denuncia">
               <td colSpan="5">
                 <Combobox
+                  label="Classifique a denúncia"
                   itens={['Injúria Racial', 'Racismo']}
                 />
               </td>

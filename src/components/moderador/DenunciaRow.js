@@ -39,7 +39,7 @@ class DenunciaRow extends Component {
           <td>
             <Link to={`/visualizar-denuncia/${denuncia.id}`} className="mais-detalhes" onClick={cliqueDetalhesDenuncia(this)}> mais detalhes </Link>
           </td>
-          <td width="50px">
+          <td>
             <input
               type="button"
               className={`botao-expandir-retrair ${expanded ? 'botao-retrair' : 'botao-expandir'}`}

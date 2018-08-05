@@ -56,6 +56,10 @@
   cursor: pointer;
 }
 
+table {
+  table-layout: fixed;
+}
+
 .painel-moderador table {
   margin-top: 20px;
 }
@@ -76,7 +80,7 @@
 .table-row td {
   text-align: center;
   color: #1d1d1d;
-  padding: 0;  
+  padding: 0;
 }
 
 .table-row td a {
@@ -115,6 +119,17 @@
 .descricao-denuncia-row {
   background: #fff;
   box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.descricao-denuncia-row td {
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1d1d1d;
+  padding: 15px 19px;
 }
 
 .table-row .botao-retrair {

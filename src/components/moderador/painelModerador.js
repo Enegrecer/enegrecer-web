@@ -29,7 +29,7 @@ class PainelModerador extends Component {
         <table>
           <thead>
             <tr>
-              <th style={{ width: '60px' }}>Classificação</th>
+              <th style={{ width: '90px' }}>Classificação</th>
               <th style={{ width: '100px' }}>Data</th>
               <th style={{ width: '120px' }}>Gênero</th>
               <th style={{ width: '120px' }}>Estado</th>

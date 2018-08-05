@@ -50,28 +50,24 @@ class DenunciaRow extends Component {
         {expanded && (
           <Fragment>
             <tr className="descricao-denuncia-row">
-              <td>
+              <td colSpan="2">
                 <label>Nome do Denunciante</label>
                 <p>{denunciante.nome}</p>
               </td>
-              <td>
+              <td colSpan="1">
                 <label>E-mail</label>
                 <p>{denunciante.email}</p>
               </td>
 
-              <td>
+              <td colSpan="1">
                 <label>Telefone</label>
                 <p>{denunciante.telefone}</p>
               </td>
 
-              <td>
+              <td colSpan="4">
                 <label>Gênero</label>
                 <p>{denunciante.genero}</p>
               </td>
-              <td />
-              <td />
-              <td />
-              <td width="50px" />
             </tr>
 
             <tr className="descricao-denuncia-row">

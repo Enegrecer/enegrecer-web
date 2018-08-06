@@ -4,9 +4,9 @@ import CampoTexto from '../campoTexto';
 
 const genero = ({ id, divClasse, state }) => (
   <CampoTexto
-    state={state}
     id={id}
     label="Gênero"
+    state={state}
     divClasse={divClasse}
     maxLen={40}
     placeholder="Insira seu gênero ou deixe em branco caso prefira não exibi-lo"

@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Combobox from '../combobox';
+import CampoTexto from '../campoTexto';
 
 const genero = ({ id, divClasse, state }) => (
-  <Combobox
+  <CampoTexto
     state={state}
     id={id}
     label="Gênero"
     divClasse={divClasse}
-    itens={['Feminino', 'Masculino']}
-    valorPadrao="Selecione seu gênero"
+    maxLen={40}
+    placeholder="Insira seu gênero ou deixe em branco caso prefira não exibi-lo"
+    type="text"
   />
 );
 

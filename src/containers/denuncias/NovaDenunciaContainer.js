@@ -85,9 +85,6 @@ NovaDenunciaContainer.propTypes = {
 };
 
 NovaDenunciaContainer.defaultProps = {
-  // criarDenunciaRequisicao: () => {},
-  // denunciaCadastradaComSucesso: false,
-  // limpaEstadoUltimaDencunciaCadastrada: () => {},
   formDenuncia: {},
 };
 

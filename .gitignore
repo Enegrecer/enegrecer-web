@@ -25,3 +25,4 @@ enegrecer-web.iml
 package-lock.json
 
 .idea/
+*.swp

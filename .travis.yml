@@ -23,7 +23,7 @@ jobs:
     - stage: lint + test + security-tests
       script: yarn lint
     - script: yarn test
-    - 
+    -
       install: skip
       before_script: skip
       services:

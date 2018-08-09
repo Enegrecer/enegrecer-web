@@ -56,6 +56,11 @@ export function colaboradores() {
       foto: 'https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fpessoas%2Ferika-silva.jpg?alt=media&token=adf0ebc8-cf6a-4967-b42c-a17a4383d567',
     },
     {
+      nome: 'Fernando Machado',
+      papel: 'DEV',
+      foto: 'https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fpessoas%2Ffernando_machado.jpg?alt=media&token=def29f87-7902-4738-a90d-5d77f764f45a',
+    },
+    {
       nome: 'Gabriel Pereira',
       papel: 'DEV',
       foto: 'https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fpessoas%2Fgabriel-pereira.jpg?alt=media&token=d41141ab-40d8-4789-b193-102825ce55ad',

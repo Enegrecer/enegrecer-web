@@ -76,6 +76,11 @@ export function colaboradores() {
       foto: 'https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fpessoas%2Fhenrique-brighenti.jpg?alt=media&token=5a38dc50-7e6e-436c-bc41-7ab28ff64853',
     },
     {
+      nome: 'Inessa Luerce',
+      papel: 'DEV',
+      foto: 'https://avatars0.githubusercontent.com/u/2906907?s=460&v=4',
+    },
+    {
       nome: 'Izael Effemberg',
       papel: 'DEV',
       foto: 'https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fpessoas%2Fizael-effemberg.jpg?alt=media&token=f6478b20-9702-485b-9282-446eafe5662a',

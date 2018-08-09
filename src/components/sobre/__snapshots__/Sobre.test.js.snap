@@ -173,6 +173,12 @@ exports[`Sobre possui a mesma estrutura 1`] = `
         papel="DEV"
       />
       <Colaborador
+        foto="https://avatars0.githubusercontent.com/u/2906907?s=460&v=4"
+        key="Inessa Luerce"
+        nome="Inessa Luerce"
+        papel="DEV"
+      />
+      <Colaborador
         foto="https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fpessoas%2Fizael-effemberg.jpg?alt=media&token=f6478b20-9702-485b-9282-446eafe5662a"
         key="Izael Effemberg"
         nome="Izael Effemberg"

@@ -13,18 +13,18 @@ const GradeCampos = ({ dados }) => (
     <SeparadorPontilhado />
     <div className="grade">
       <div className="campos-esquerda">
-        {dados.camposEsquerda.map((campoEsquerda, index) => (
+        {dados.camposEsquerda.map(campoEsquerda => (
           <CamposVisualizarDenuncia
-            key={index}
+            key={campoEsquerda.id}
             titulo={campoEsquerda.titulo}
             descricao={campoEsquerda.descricao}
           />
         ))}
       </div>
       <div>
-        {dados.camposDireita.map((campoDireita, index) => (
+        {dados.camposDireita.map(campoDireita => (
           <CamposVisualizarDenuncia
-            key={index}
+            key={campoDireita.id}
             titulo={campoDireita.titulo}
             descricao={campoDireita.descricao}
           />

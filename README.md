@@ -4,7 +4,8 @@
 [![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/Enegrecer/enegrecer-web)
 
 ### Neste Wiki
-* [O Projeto](#o-projeto)
+* [Configure seu ambiente](#configure-seu-ambiente)
+* [O Projeto](#o-projeto-verdade-seja-dita)
 * [Configurações](#configurações)
   * [Rodando o projeto](#rodando-o-projeto)
   * [Testes](#testes)
@@ -13,6 +14,22 @@
 * [Deploy](#deploy)
 * [Tech Stack](#tech-stack)
 * [Mais Informações](#mais-informações)
+
+## Configure seu ambiente
+
+Antes de iniciar o desenvolvimento, você irá precisar configurar o seu ambiente. Abaixo estão os pré-requisitos necessários para desenvolver e/ou executar o projeto.
+
+- [Git](https://git-scm.com/downloads)
+- [Yarn](https://yarnpkg.com/pt-BR/)
+- [Watchman](https://facebook.github.io/watchman/docs/install.html)
+- [Node.js](https://nodejs.org/) versão 9 ou superior
+- NVM (opcional): utilizado para gerênciar diferentes versões do Node e NPM.
+  - [Linux e Mac](https://github.com/creationix/nvm)
+  - [Windows](https://github.com/coreybutler/nvm-windows)
+- [Docker](https://www.docker.com/) (recomendado): utilizado para desenvolver o projeto utilizando conteinerização.
+  - [Mac](https://docs.docker.com/docker-for-mac/install/)
+  - [Linux Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+  - [Windows](https://docs.docker.com/docker-for-windows/install/)
 
 ## O Projeto Verdade Seja Dita
 

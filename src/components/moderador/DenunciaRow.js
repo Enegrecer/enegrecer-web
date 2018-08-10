@@ -37,7 +37,7 @@ class DenunciaRow extends Component {
           <td>{agressao.cidade}</td>
           <td>{agressao.bairro}</td>
           <td>
-            <Link to={`/visualizar-denuncia/${denuncia.id}`} className="mais-detalhes" onClick={cliqueDetalhesDenuncia(this)}> mais detalhes </Link>
+            <Link to={`/moderador/visualizar-denuncia/${denuncia.id}`} className="mais-detalhes" onClick={cliqueDetalhesDenuncia(this)}> mais detalhes </Link>
           </td>
           <td width="50px">
             <input

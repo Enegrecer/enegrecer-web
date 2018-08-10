@@ -78,7 +78,7 @@ export function colaboradores() {
     {
       nome: 'Inessa Luerce',
       papel: 'DEV',
-      foto: 'https://avatars0.githubusercontent.com/u/2906907?s=460&v=4',
+      foto: 'https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fpessoas%2Finessa-luerce.jpg?alt=media&token=b5d2acc7-f856-4056-ac74-6f4cfd25ef01',
     },
     {
       nome: 'Izael Effemberg',

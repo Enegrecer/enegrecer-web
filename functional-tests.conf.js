@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 /*
 Basic configuration to run your cucumber
 feature files and step definitions with protractor.

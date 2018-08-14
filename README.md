@@ -37,36 +37,32 @@ O coletivo nacional de Juventude Enegrecer é uma expressão do movimento social
 
 O Web App, Verdade Seja Dita, implementado neste respositório é uma das interfaces para essa plataforma, onde o usuário pode se informar mais a respeito e relatar um crime de racismos ou injúria.
 
-
 ## Configurações
 
-Primeiro clone o repositório
+Primeiro clone o repositório: 
 ```shell
 git clone https://github.com/Enegrecer/enegrecer-web.git
 ```
 
-em seguida entre na pasta do projeto clonado e rode `yarn install` para baixar todas as dependencias
+Em seguida entre na pasta do projeto clonado e rode `yarn install` para baixar todas as dependencias: 
 ```shell
 cd enegrecer-web
 yarn install
 ```
 
-Ou você pode usar **Docker** localmente, antes de executar qualquer comando construa a imagem com:
-
+Ou você pode usar **Docker** localmente, antes de executar qualquer comando construa a imagem com: 
 ```shell
-docker build -t enegrecer .
+docker build -t enegrecer
 ```
 
 ### Rodando o projeto
 
-Para subir um servidor local para desenvolvimento rode
-
+Para subir um servidor local para desenvolvimento rode: 
 ```shell
 yarn start
 ```
 
-Usando Docker localmente:
-
+Usando Docker localmente: 
 ```shell
 docker run --rm -p 3000:3000 -v "$PWD":/usr/src/app -w /usr/src/app -it enegrecer
 ```
@@ -75,52 +71,61 @@ Isso irá subir um servidor com o aplicativo rodando em `http://localhost:3000`.
 
 ### Testes
 
-O projeto está configurado para que o desenvolvimento seja feito em TDD, e assim o script:
-
+O projeto está configurado para que o desenvolvimento seja feito em TDD, e assim o script: 
 ```shell
 yarn test
 ```
 
-Usando Docker localmente:
-
+Usando Docker localmente: 
 ```shell
 docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app -it enegrecer yarn test-local
 ```
 
-Com Docker para executar testes e lint:
+Com Docker para executar testes e lint: 
 ```shell
 docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app -it enegrecer yarn all-tests-local
 ```
 
-irá rodar todos os arquivos de teste (arquivos __.test.js__) e entrar em modo de _watch_. De forma que toda vez que arquivos são alterados, sejam eles testes ou não, os testes que possuem qualquer relação com tal arquivo são executados novamente.
+Desta forma serão executados todos os arquivos de teste (arquivos __.test.js__) e entrar em modo de _watch_. De forma que toda vez que arquivos são alterados, sejam eles testes ou não, os testes que possuem qualquer relação com tal arquivo são executados novamente.
 
 Por exemplo, se o componente __Signin__ for alterado, todos os testes de _Signin.test.js_ serão executados, mas também os testes de _Login.test.js_, pois o componente de __Login__ utiliza, ou depende, do componete de __Signin__, e assim por diante. O mesmo é válido para alterações em arquivos de teste.
 
 O projeto está utilizando o [Jest](https://facebook.github.io/jest/) como framework de testes. O jest oferece praticamente tudo que é necessário para testes no projeto, definindo a sintaxe de escrita dos mesmos, provendo mocks, e atuando como test runner. Adicionalmente, o [enzyme](http://airbnb.io/enzyme/) é utilizado como facilitador dos testes de componentes do React.
 
+#### Testes Funcionais
+
+Os testes funcionais E2E foram desenvolvidos utilizando Protractor, Page Objects e Cucumber. Para execução é necessário seguir os seguintes passos: 
+
+- Instalar e/ou atualizar o servidor (Selenium server): 
+  ```shell
+  webdriver-manager update
+  ```
+  
+- Iniciar o servidor: 
+  ```shell
+  webdriver-manager start
+  ```
+
+- Executar os testes: 
+  ```shell
+  protractor testes-funcionais.conf.js
+  ```
+
 ### Lint
 
-O [eslint](http://eslint.org/) é utilizado como linter do projeto. É recomendado que um plugin do mesmo seja utilizado em seu editor de preferência durante o desenvolvimento. Além disso é possível executar o lint de todo o projeto rodando o comando:
-
+O [eslint](http://eslint.org/) é utilizado como linter do projeto. É recomendado que um plugin do mesmo seja utilizado em seu editor de preferência durante o desenvolvimento. Além disso é possível executar o lint de todo o projeto rodando o comando: 
 ```shell
 yarn lint
 ```
 
-E existe também o modo de watch que pode ser rodado com:
-
+E existe também o modo de watch que pode ser rodado com: 
 ```shell
 yarn watch-lint
 ```
 
 ### Build
 
-O comando
-
-```shell
-yarn build
-```
-
-roda o script de build, responsável por preparar o projeto para um deploy em produção. Os arquivos passam por um processo de minificação e bundling. Gerando arquivos mais concisos, e mais leves. Todo o resultado do script aparece na pasta build que será gerada dentro do projeto.
+O comando `yarn build` roda o script de build, responsável por preparar o projeto para um deploy em produção. Os arquivos passam por um processo de minificação e bundling. Gerando arquivos mais concisos, e mais leves. Todo o resultado do script aparece na pasta build que será gerada dentro do projeto.
 
 ## Deploy
 
@@ -129,18 +134,20 @@ Atualmente o projeto está rodando em [https://enegrecer-e37b3.firebaseapp.com/]
 ## Tech stack
 
 Na nossa stack temos:
-* [React](https://facebook.github.io/react/) para criação do UI em componentes
-* [Redux](http://redux.js.org/) para controle do estado da aplicação
-* [Redux-Saga](https://redux-saga.js.org/) para gerenciamento de chamadas assíncronas dentro do redux
+* [React](https://facebook.github.io/react/) para criação do UI em componentes.
+* [Redux](http://redux.js.org/) para controle do estado da aplicação.
+* [Redux-Saga](https://redux-saga.js.org/) para gerenciamento de chamadas assíncronas dentro do redux.
 * [Babel](https://babeljs.io/) como transpilador que permite que tais componentes sejam escritos utilizando [ES8](http://www.ecma-international.org/ecma-262/8.0/index.html).
-* [Webpack](https://webpack.github.io/) para servidor local de desenvolvimento, compilação, e bundling do código
-* [Jest](https://facebook.github.io/jest/) como framework de testes
-* [Enzyme](http://airbnb.io/enzyme/) para auxiliar nos testes
-* [Eslint](http://eslint.org/) como ferramenta de linter
-* [Firebase](https://firebase.google.com/) Como hosting e back-end mantendo controle de dados, usuários, etc
-* [Travis-CI](https://travis-ci.org/) para criar nosso CI, executar testes e build automaticamente
-* [Code Climate](https://codeclimate.com/github/Enegrecer/enegrecer-web) para cobertura de código e análise estática
-* [Materialize](http://materializecss.com/) Como framework CSS responsivo
+* [Webpack](https://webpack.github.io/) para servidor local de desenvolvimento, compilação, e bundling do código.
+* [Jest](https://facebook.github.io/jest/) como framework de testes.
+* [Enzyme](http://airbnb.io/enzyme/) para auxiliar nos testes.
+* [Protractor](https://www.protractortest.org/#/) para testes funcionais E2E.
+* [Cucumber](https://cucumber.io/) como framework para suportar o BDD.
+* [Eslint](http://eslint.org/) como ferramenta de linter.
+* [Firebase](https://firebase.google.com/) Como hosting e back-end mantendo controle de dados, usuários, etc.
+* [Travis-CI](https://travis-ci.org/) para criar nosso CI, executar testes e build automaticamente.
+* [Code Climate](https://codeclimate.com/github/Enegrecer/enegrecer-web) para cobertura de código e análise estática.
+* [Materialize](http://materializecss.com/) Como framework CSS responsivo.
 
 ## Como Contribuir
 

@@ -16,9 +16,8 @@ module.exports = {
   },
 
   abrirPagina: () => {
-    const urlPage = 'http://localhost:3000/denunciar';
     console.log(browser.getSession().value_.id_);
-    return browser.get(urlPage);
+    return browser.get('/denunciar');
   },
 
   preencherCampoNomeDenunciante: (string) => {

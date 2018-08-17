@@ -1,6 +1,19 @@
 import { takeEvery, put, call } from 'redux-saga/effects';
+import { assign } from 'lodash';
 import { ref } from '../../utils/firebaseUtils';
 import { LISTA_DENUNCIAS_ERRO, LISTA_DENUNCIAS, listaDenunciasSucesso } from '../../actions/listarDenunciasActions';
+
+function extrairDadosDenuncia(pessoaEnvolvida) {
+  const valoresPadrao = { agressor: {}, denunciante: {}, vitima: {} };
+
+  return assign(valoresPadrao, pessoaEnvolvida.val() || {});
+}
+
+function mapearDadosDenuncia(denuncias, pessoaEnvolvida) {
+  const dadosDenuncia = extrairDadosDenuncia(pessoaEnvolvida);
+
+  return assign(denuncias[pessoaEnvolvida.key], dadosDenuncia);
+}
 
 async function recuperaDenunciasDoFirebase() {
   const denunciasResponse = await ref.child('denuncias').orderByKey().once('value');
@@ -15,9 +28,7 @@ async function recuperaDenunciasDoFirebase() {
   const pessoasEnvolvidas = await Promise.all(promisesPessoasEnvolvidas);
 
   pessoasEnvolvidas.forEach((pessoaEnvolvida) => {
-    denuncias[pessoaEnvolvida.key].agressor = pessoaEnvolvida.val().agressor;
-    denuncias[pessoaEnvolvida.key].denunciante = pessoaEnvolvida.val().denunciante;
-    denuncias[pessoaEnvolvida.key].vitima = pessoaEnvolvida.val().vitima;
+    mapearDadosDenuncia(denuncias, pessoaEnvolvida);
   });
 
   return denuncias;

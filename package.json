@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "chai-as-promised": "^7.1.1",
+    "cucumber": "^4.2.1",
+    "faker": "^4.1.0",
     "firebase": "^5.0.3",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
     "materialize-css": "^0.100.2",
     "moment": "^2.19.4",
     "node-sass-chokidar": "^1.2.2",
+    "protractor-cucumber-framework": "^6.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-input-mask": "^1.1.0",
@@ -20,6 +24,9 @@
     "redux-form": "^7.3.0",
     "redux-saga": "^0.15.6"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "scripts": {
     "start": "yarn build-css-local && ./node_modules/.bin/react-scripts start",
     "build": "react-scripts build",
@@ -48,6 +55,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.1.0",
     "eslint-watch": "^3.1.2",
+    "pre-commit": "^1.2.2",
     "sinon": "^5.0.7",
     "yarn": "^1.3.2"
   },

@@ -52,7 +52,7 @@ yarn install
 
 Ou você pode usar **Docker** localmente, antes de executar qualquer comando construa a imagem com: 
 ```shell
-docker build -t enegrecer
+docker build -t enegrecer .
 ```
 
 ### Rodando o projeto
@@ -98,7 +98,7 @@ Os testes funcionais E2E foram desenvolvidos utilizando Protractor, Page Objects
 
 - Instalar e/ou atualizar o servidor (Selenium server): 
   ```shell
-  webdriver-manager update
+  npm install -g webdriver-manager ou webdriver-manager update
   ```
   
 - Iniciar o servidor: 

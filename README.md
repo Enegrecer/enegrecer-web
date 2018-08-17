@@ -96,9 +96,14 @@ O projeto está utilizando o [Jest](https://facebook.github.io/jest/) como frame
 
 Os testes funcionais E2E foram desenvolvidos utilizando Protractor, Page Objects e Cucumber. Para execução é necessário seguir os seguintes passos: 
 
-- Instalar e/ou atualizar o servidor (Selenium server): 
+- Instalar o protractor global:
   ```shell
-  npm install -g webdriver-manager ou webdriver-manager update
+  yarn global add protractor
+  ```
+
+- Atualizar o servidor (Selenium server): 
+  ```shell
+  webdriver-manager update
   ```
   
 - Iniciar o servidor: 
@@ -108,8 +113,12 @@ Os testes funcionais E2E foram desenvolvidos utilizando Protractor, Page Objects
 
 - Executar os testes: 
   ```shell
-  protractor testes-funcionais.conf.js
+  protractor functional-tests.conf.js
   ```
+  
+**Observações**:
+  - Para executar os testes funcionais a aplicação deve estar rodando local, veja a sessão [Rodando o projeto](#rodando-o-projeto) para mais detalhes.
+  - Ao iniciar o servidor com o comando ```webdriver-manager start``` o terminal ficará bloquado com tal execução, sendo necessário abrir uma nova janela para execução dos testes.
 
 ### Lint
 

@@ -18,32 +18,39 @@ function detalhesOuCarregamento(denuncia) {
       titulo: 'Dados do denunciante',
       camposEsquerda: [
         {
+          id: 1,
           titulo: 'Nome denunciante',
           descricao: denuncia ? `${denuncia.denunciante.nome}` : ''
         },
         {
+          id: 2,
           titulo: 'Telefone',
           descricao: denuncia ? `${denuncia.denunciante.telefone}` : ''
         },
         {
+          id: 3,
           titulo: 'Gênero',
           descricao: denuncia ? `${denuncia.denunciante.genero}` : ''
         },
         {
+          id: 4,
           titulo: 'Raça / Cor',
           descricao: denuncia ? `${denuncia.denunciante.raca}` : ''
         }
       ],
       camposDireita: [
         {
+          id: 1,
           titulo: 'Email',
           descricao: denuncia ? `${denuncia.denunciante.email}` : ''
         },
         {
+          id: 2,
           titulo: 'Cidade',
           descricao: denuncia ? `${denuncia.denunciante.cidade}` : ''
         },
         {
+          id: 3,
           titulo: 'Data de nascimento',
           descricao: denuncia ? `${denuncia.denunciante.dataNascimento}` : ''
         }
@@ -55,28 +62,34 @@ function detalhesOuCarregamento(denuncia) {
       titulo: 'Dados da vítima',
       camposEsquerda: [
         {
+          id: 1,
           titulo: 'Nome',
           descricao: denuncia ? `${denuncia.vitima.nome}` : ''
         },
         {
+          id: 2,
           titulo: 'Telefone',
           descricao: denuncia ? `${denuncia.vitima.telefone}` : ''
         },
         {
+          id: 3,
           titulo: 'Gênero',
           descricao: denuncia ? `${denuncia.vitima.genero}` : ''
         }
       ],
       camposDireita: [
         {
+          id: 1,
           titulo: 'Data de nascimento',
           descricao: denuncia ? `${denuncia.vitima.dataNascimento}` : ''
         },
         {
+          id: 2,
           titulo: 'Cidade',
           descricao: denuncia ? `${denuncia.vitima.cidade}` : ''
         },
         {
+          id: 3,
           titulo: 'Raça / Cor',
           descricao: denuncia ? `${denuncia.vitima.raca}` : ''
         }
@@ -88,20 +101,24 @@ function detalhesOuCarregamento(denuncia) {
       titulo: 'Informações legais',
       camposEsquerda: [
         {
+          id: 1,
           titulo: 'Número do BO',
           descricao: denuncia ? `${denuncia.informacoesLegais.numeroBoletim}` : ''
         },
         {
+          id: 2,
           titulo: 'Número do processo',
           descricao: denuncia ? `${denuncia.informacoesLegais.numeroProcesso}` : ''
         }
       ],
       camposDireita: [
         {
+          id: 1,
           titulo: 'Categoria do crime no BO',
           descricao: denuncia ? `${denuncia.informacoesLegais.categoria}` : ''
         },
         {
+          id: 2,
           titulo: 'Orgão',
           descricao: denuncia ? `${denuncia.informacoesLegais.orgao}` : ''
         }
@@ -113,24 +130,29 @@ function detalhesOuCarregamento(denuncia) {
       titulo: 'Dados do agressor',
       camposEsquerda: [
         {
+          id: 1,
           titulo: 'Nome',
           descricao: denuncia ? `${denuncia.agressor.nome}` : ''
         },
         {
+          id: 2,
           titulo: 'Cidade',
           descricao: denuncia ? `${denuncia.agressor.cidade}` : ''
         },
         {
+          id: 3,
           titulo: 'Raça / Cor',
           descricao: denuncia ? `${denuncia.agressor.raca}` : ''
         }
       ],
       camposDireita: [
         {
+          id: 1,
           titulo: 'Data de nascimento',
           descricao: denuncia ? `${denuncia.agressor.dataNascimento}` : ''
         },
         {
+          id: 2,
           titulo: 'Gênero',
           descricao: denuncia ? `${denuncia.agressor.genero}` : ''
         }

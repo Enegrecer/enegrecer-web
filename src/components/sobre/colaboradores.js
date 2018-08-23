@@ -1,6 +1,11 @@
 export function colaboradores() {
   return [
     {
+      nome: 'Adriana Höher',
+      papel: 'DEVa',
+      foto: 'https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fpessoas%2Fadriana-hoher.jpg?alt=media&token=37628e1b-369c-42ac-9abf-9e73a702bb53',
+    },
+    {
       nome: 'Alisson Pereira',
       papel: 'QA',
       foto: 'https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fpessoas%2Falisson-pereira.jpg?alt=media&token=f317aa99-e343-474b-838f-c3ecae379e17',

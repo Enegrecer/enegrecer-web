@@ -36,26 +36,26 @@ class NovaDenunciaContainer extends React.Component {
           <div className="form-title-bar side-menu">
             <span>Formulário de</span>
             <div>
-              <span>denúncia</span>
+              <span>Denúncia</span>
               <span className="red-bar" />
             </div>
           </div>
           <div className="menu-items">
             <ul>
               <li>
-                <a href="#Dados do denunciante"> Dados do <br /> denunciante</a>
+                <a href="#Dados do Denunciante"> Dados do <br /> Denunciante</a>
               </li>
               <li>
-                <a href="#Dados da vítima">Dados da <br /> vítima</a>
+                <a href="#Dados da Vítima">Dados da <br /> Vítima</a>
               </li>
               <li>
                 <a href="#Informações Legais"> Informações <br /> Legais</a>
               </li>
               <li>
-                <a href="#Dados do Agressor">Dados do <br /> agressor</a>
+                <a href="#Dados do Agressor">Dados do <br /> Agressor</a>
               </li>
               <li>
-                <a href="#Descrição da agressão">Descrição da <br />agressão</a>
+                <a href="#Descrição da Agressão">Descrição da <br />Agressão</a>
               </li>
             </ul>
           </div>

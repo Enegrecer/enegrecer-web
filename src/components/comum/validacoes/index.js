@@ -1,4 +1,4 @@
-export const campoObrigatorio = campo => (campo ? undefined : 'Campo Obrigatório');
+export const campoObrigatorio = campo => (campo ? undefined : 'Campo obrigatório.');
 
 export const campoMaiorQue255Caracteres = (campo) => {
   if (campo && campo.length > 255) {

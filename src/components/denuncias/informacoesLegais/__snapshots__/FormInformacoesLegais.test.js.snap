@@ -8,7 +8,7 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
     <campoTexto
       divClasse="input-field col s12 m6 l6"
       id="numero-boletim"
-      label="Número do Boletim de ocorrência"
+      label="Número do boletim de ocorrência"
       maxLen={40}
       state="numeroBoletim"
       type="text"
@@ -28,7 +28,7 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
     <campoTexto
       divClasse="input-field col s12 m6 l6"
       id="numero-processo"
-      label="Número do Processo"
+      label="Número do processo"
       maxLen={40}
       state="numeroProcesso"
       type="text"

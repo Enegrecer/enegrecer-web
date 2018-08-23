@@ -6,12 +6,12 @@ exports[`CampoTexto não deve possuir estrutura definida  1`] = `
   onChange={[Function]}
 >
   <div>
-    <input
-      maxLength={3}
-    />
     <label
       className="active"
       data-success="right"
+    />
+    <input
+      maxLength={3}
     />
   </div>
 </campoTexto>

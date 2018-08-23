@@ -28,16 +28,16 @@
     "lint"
   ],
   "scripts": {
-    "start": "yarn build-css-local && ./node_modules/.bin/react-scripts start",
+    "start": "yarn build-css-local && npx react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "test-local": "../node_modules/.bin/react-scripts test --env=jsdom",
+    "test-local": "npx react-scripts test --env=jsdom",
     "test-coverage": "react-scripts test --env=jsdom --coverage && ./node_modules/codeclimate-test-reporter/bin/codeclimate.js < ./coverage/lcov.info",
     "eject": "react-scripts eject",
-    "lint": "./node_modules/.bin/eslint src --fix",
-    "all-tests-local": "yarn test-local --coverage && ../node_modules/.bin/eslint src --fix",
+    "lint": "npx eslint src --fix",
+    "all-tests-local": "yarn test-local --coverage && npx eslint src --fix",
     "watch-lint": "esw -w src",
-    "build-css-local": "./node_modules/.bin/node-sass-chokidar src/ -o src/",
+    "build-css-local": "npx node-sass-chokidar src/ -o src/",
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
   },

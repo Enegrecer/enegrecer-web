@@ -22,13 +22,6 @@ exports[`Data deve possuir estrutura definida  1`] = `
     <div
       className=""
     >
-      <input
-        className="datepicker"
-        id="13"
-        maxLength={0}
-        placeholder="Data"
-        type="date"
-      />
       <label
         className="active"
         data-success="right"
@@ -36,6 +29,13 @@ exports[`Data deve possuir estrutura definida  1`] = `
       >
         Data
       </label>
+      <input
+        className="datepicker"
+        id="13"
+        maxLength={0}
+        placeholder="Data"
+        type="date"
+      />
     </div>
   </campoTexto>
 </Data>

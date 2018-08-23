@@ -12,6 +12,7 @@ const renderCampoTexto = ({
   const existeErroDeValidacao = touched && error;
   return (
     <div className={divClasse}>
+      <label className="active" data-error={error} data-success="right" htmlFor={id}>{label}</label>
       <input
         id={id}
         {...input}
@@ -20,7 +21,6 @@ const renderCampoTexto = ({
         maxLength={maxLen}
         placeholder={placeholder || undefined}
       />
-      <label className="active" data-error={error} data-success="right" htmlFor={id}>{label}</label>
     </div>
   );
 };

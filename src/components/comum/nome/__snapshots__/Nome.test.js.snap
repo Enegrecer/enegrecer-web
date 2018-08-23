@@ -28,12 +28,6 @@ exports[`Nome deve seguir a estrutura definida  1`] = `
     <div
       className="input-field col s12 m6 l6"
     >
-      <input
-        id="3"
-        maxLength={40}
-        placeholder="Nome (máximo de 40 caracteres)"
-        type="text"
-      />
       <label
         className="active"
         data-success="right"
@@ -41,6 +35,12 @@ exports[`Nome deve seguir a estrutura definida  1`] = `
       >
         Nome (máximo de 40 caracteres)
       </label>
+      <input
+        id="3"
+        maxLength={40}
+        placeholder="Nome (máximo de 40 caracteres)"
+        type="text"
+      />
     </div>
   </campoTexto>
 </nome>

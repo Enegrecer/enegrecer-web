@@ -35,7 +35,7 @@ exports[`Combo Estado deve possuir estrutura definida  1`] = `
       "TO",
     ]
   }
-  label="Selecione o Estado:"
+  label="Estado"
   onChange={[Function]}
   state="estado"
   valorPadrao="Selecione"

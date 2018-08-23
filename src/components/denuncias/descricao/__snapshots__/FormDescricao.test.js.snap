@@ -16,7 +16,7 @@ exports[`Form Descrição deve seguir a estrutura definida  1`] = `
           "Noite",
         ]
       }
-      label="Período*"
+      label="Período"
       onChange={[Function]}
       state="periodoAgressao"
       valorPadrao=""
@@ -39,7 +39,7 @@ exports[`Form Descrição deve seguir a estrutura definida  1`] = `
     <campoTexto
       divClasse="input-field col s12 m6 l6"
       id="bairro-descricao"
-      label="Bairro*"
+      label="Bairro"
       maxLen={40}
       placeholder=""
       state="bairroAgressao"

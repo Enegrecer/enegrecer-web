@@ -9,7 +9,7 @@ const genero = ({ id, divClasse, state }) => (
     label="Gênero"
     divClasse={divClasse}
     itens={['Feminino', 'Masculino']}
-    valorPadrao="Selecione seu gênero"
+    valorPadrao="Selecione"
   />
 );
 

@@ -12,10 +12,11 @@ exports[`AgressorForm deve seguir a estrutura definida  1`] = `
       state="nomeAgressor"
       validacoes={Array []}
     />
-    <genero
-      divClasse="col s12 m6 l6"
-      id="genero-agressor"
-      state="generoAgressor"
+    <Data
+      divClasse="input-field col s12 m6 l6"
+      id="data-nascimento-agressor"
+      label="Data de Nascimento"
+      state="dataNascimentoAgressor"
     />
   </div>
   <Endereco
@@ -26,17 +27,16 @@ exports[`AgressorForm deve seguir a estrutura definida  1`] = `
   <div
     className="row"
   >
-    <Data
-      divClasse="input-field col s12 m6 l6"
-      id="data-nascimento-agressor"
-      label="Data de Nascimento"
-      state="dataNascimentoAgressor"
-    />
     <comboRaca
       divClasse="col s12 m6 l6"
       id="raca-agressor"
       somenteRacasVitima={false}
       state="racaAgressor"
+    />
+    <genero
+      divClasse="col s12 m6 l6"
+      id="genero-agressor"
+      state="generoAgressor"
     />
   </div>
   <div
@@ -47,7 +47,7 @@ exports[`AgressorForm deve seguir a estrutura definida  1`] = `
       id="descricao-agressor"
       label="Descrição do agressor"
       maxLen={100}
-      placeholder=""
+      placeholder=" "
       state="descricaoAgressor"
       type="text"
       validacoes={

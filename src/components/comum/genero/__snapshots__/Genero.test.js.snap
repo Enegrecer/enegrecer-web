@@ -13,6 +13,6 @@ exports[`Genero deve possuir estrutura definida  1`] = `
   label="Gênero"
   onChange={[Function]}
   state="genero"
-  valorPadrao="Selecione seu gênero"
+  valorPadrao="Selecione"
 />
 `;

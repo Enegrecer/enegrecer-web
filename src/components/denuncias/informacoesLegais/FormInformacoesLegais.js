@@ -8,7 +8,7 @@ const FormInformacoesLegais = () => (
       <CampoTexto
         state="numeroBoletim"
         id="numero-boletim"
-        label="Número do Boletim de ocorrência"
+        label="Número do boletim de ocorrência"
         maxLen={40}
         type="text"
         divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
@@ -28,7 +28,7 @@ const FormInformacoesLegais = () => (
       <CampoTexto
         state="numeroProcesso"
         id="numero-processo"
-        label="Número do Processo"
+        label="Número do processo"
         type="text"
         maxLen={40}
         divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}

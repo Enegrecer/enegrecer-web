@@ -41,7 +41,7 @@ combobox.defaultProps = {
   label: '',
   divClasse: '',
   itens: [],
-  valorPadrao: '',
+  valorPadrao: 'Selecione',
   state: '',
   onChange: () => {}
 };

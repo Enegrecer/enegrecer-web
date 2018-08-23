@@ -13,7 +13,6 @@ const comboRaca = ({
     itens={(somenteRacasVitima) ? racasVitima : racasTestemunha}
     divClasse={divClasse}
     label="Raça"
-    valorPadrao="Selecione"
   />
 );
 

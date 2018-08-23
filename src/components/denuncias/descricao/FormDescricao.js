@@ -11,7 +11,7 @@ const descricao = () => (
       <Combobox
         state="periodoAgressao"
         id="periodo"
-        itens={[' ', 'Manhã', 'Tarde', 'Noite']}
+        itens={['Manhã', 'Tarde', 'Noite']}
         divClasse="col s12 m6 l6"
         label="Período"
       />

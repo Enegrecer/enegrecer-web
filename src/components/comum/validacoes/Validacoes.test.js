@@ -20,14 +20,14 @@ describe('Validacoes: limite do é 255 cararcteres', () => {
 });
 
 describe('Validacoes: Campo obrigatório', () => {
-  it('deve retornar mensagem de erro quando o campo está vazio  ', () => {
+  it('deve retornar mensagem de erro quando o campo está vazio', () => {
     const mensagem = campoObrigatorio('');
-    assert.equal('Campo Obrigatório', mensagem);
+    assert.equal('Campo obrigatório.', mensagem);
   });
 
-  it('deve retornar mensagem de erro quando o campo é undefined ', () => {
+  it('deve retornar mensagem de erro quando o campo é undefined', () => {
     const mensagem = campoObrigatorio(undefined);
-    assert.equal('Campo Obrigatório', mensagem);
+    assert.equal('Campo obrigatório.', mensagem);
   });
 
   it('deve retornar undefined quando o campo é preenchido', () => {

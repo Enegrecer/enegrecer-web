@@ -11,9 +11,9 @@ const descricao = () => (
       <Combobox
         state="periodoAgressao"
         id="periodo"
-        itens={[' ', 'Manhã', 'Tarde', 'Noite']}
+        itens={['Manhã', 'Tarde', 'Noite']}
         divClasse="col s12 m6 l6"
-        label="Período*"
+        label="Período"
       />
 
       <Data
@@ -30,7 +30,7 @@ const descricao = () => (
       <CampoTexto
         state="bairroAgressao"
         id="bairro-descricao"
-        label="Bairro*"
+        label="Bairro"
         maxLen={40}
         placeholder=""
         type="text"

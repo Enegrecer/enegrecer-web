@@ -26,6 +26,11 @@ export function colaboradores() {
       foto: 'https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fpessoas%2Fbarbara-tomaz.jpg?alt=media&token=c350dba2-eb28-46ce-a867-48d398a02d17',
     },
     {
+      nome: 'Bruna Castelo',
+      papel: 'DEVa',
+      foto: 'https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fpessoas%2Fbruna-castelo.jpg?alt=media&token=8d165c0d-41ed-4048-93c9-5bc5d0c95898',
+    },
+    {
       nome: 'Caique Peixoto',
       papel: 'DEV',
       foto: 'https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fpessoas%2Fcaique-peixoto.jpeg?alt=media&token=787a64be-811b-473b-a019-6dc95a2d5006',

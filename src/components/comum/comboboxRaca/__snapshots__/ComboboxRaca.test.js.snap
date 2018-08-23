@@ -10,10 +10,10 @@ exports[`Combobox Raça deve conter somente as raças Pardo e Negro quando somen
       "Parda",
     ]
   }
-  label="Selecione a Raça:"
+  label="Raça"
   onChange={[Function]}
   state="raca-testemunha"
-  valorPadrao="Selecione a Raça:"
+  valorPadrao="Selecione"
 />
 `;
 
@@ -30,9 +30,9 @@ exports[`Combobox Raça deve conter todas as raças quando somenteRacasVitima é
       "Preta",
     ]
   }
-  label="Selecione a Raça:"
+  label="Raça"
   onChange={[Function]}
   state="raca-testemunha"
-  valorPadrao="Selecione a Raça:"
+  valorPadrao="Selecione"
 />
 `;

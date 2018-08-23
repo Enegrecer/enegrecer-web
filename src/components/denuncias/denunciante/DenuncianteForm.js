@@ -46,6 +46,7 @@ class DenuncianteForm extends Component {
             id="nome-vitima"
             state="nomeDenunciante"
             validacoes={[campoObrigatorio]}
+            divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
           />
           <Data
             id="data-nascimento-denunciante"
@@ -67,10 +68,10 @@ class DenuncianteForm extends Component {
           <CampoTexto
             state="emailDenunciante"
             id="email-denunciante"
-            label="Email"
+            label="E-mail"
             maxLen={40}
             type="text"
-            placeholder="E-mail"
+            placeholder=" "
             validacoes={[campoObrigatorio, emailInvalido]}
             divClasse={`${ConstantesCSS.CLASSES_DIV_INPUT} col s12 m6 l6`}
           />

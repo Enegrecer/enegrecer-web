@@ -11,8 +11,7 @@ const comboEstado = ({
     id={id}
     itens={estados}
     divClasse={divClasse}
-    label="Selecione o Estado:"
-    valorPadrao="Selecione"
+    label="Estado"
     onChange={onChange}
   />
 );

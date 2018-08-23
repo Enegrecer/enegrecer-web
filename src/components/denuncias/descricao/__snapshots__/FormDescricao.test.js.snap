@@ -10,16 +10,15 @@ exports[`Form Descrição deve seguir a estrutura definida  1`] = `
       id="periodo"
       itens={
         Array [
-          " ",
           "Manhã",
           "Tarde",
           "Noite",
         ]
       }
-      label="Período*"
+      label="Período"
       onChange={[Function]}
       state="periodoAgressao"
-      valorPadrao=""
+      valorPadrao="Selecione"
     />
     <Data
       divClasse="input-field col s12 m6 l6"
@@ -39,7 +38,7 @@ exports[`Form Descrição deve seguir a estrutura definida  1`] = `
     <campoTexto
       divClasse="input-field col s12 m6 l6"
       id="bairro-descricao"
-      label="Bairro*"
+      label="Bairro"
       maxLen={40}
       placeholder=""
       state="bairroAgressao"

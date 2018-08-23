@@ -11,10 +11,10 @@ exports[`Nome deve seguir a estrutura definida  1`] = `
   <campoTexto
     divClasse="input-field col s12 m6 l6"
     id="3"
-    label="Nome (máximo de 40 caracteres)"
+    label="Nome"
     maxLen={40}
     onChange={[Function]}
-    placeholder="Nome (máximo de 40 caracteres)"
+    placeholder=" "
     state=""
     type="text"
     validacoes={
@@ -31,7 +31,7 @@ exports[`Nome deve seguir a estrutura definida  1`] = `
       <input
         id="3"
         maxLength={40}
-        placeholder="Nome (máximo de 40 caracteres)"
+        placeholder=" "
         type="text"
       />
       <label
@@ -39,7 +39,7 @@ exports[`Nome deve seguir a estrutura definida  1`] = `
         data-success="right"
         htmlFor="3"
       >
-        Nome (máximo de 40 caracteres)
+        Nome
       </label>
     </div>
   </campoTexto>

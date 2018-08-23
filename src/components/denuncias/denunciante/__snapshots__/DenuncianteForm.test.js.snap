@@ -6,7 +6,7 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
     className="row"
   >
     <nome
-      divClasse="col s12 m6 l6"
+      divClasse="input-field col s12 m6 l6"
       id="nome-vitima"
       onChange={[Function]}
       state="nomeDenunciante"
@@ -40,9 +40,9 @@ exports[`DenuncianteForm deve seguir a estrutura definida  1`] = `
     <campoTexto
       divClasse="input-field col s12 m6 l6"
       id="email-denunciante"
-      label="Email"
+      label="E-mail"
       maxLen={40}
-      placeholder="E-mail"
+      placeholder=" "
       state="emailDenunciante"
       type="text"
       validacoes={

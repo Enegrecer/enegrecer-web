@@ -28,7 +28,7 @@ const renderCampoTexto = ({
 const campoTexto = ({
   divClasse, id, type, onChange,
   inputClasse, maxLen, placeholder, label, state, validacoes, normalize
-}) => {
+} = this) => {
   if (state) {
     return (<Field
       name={state}

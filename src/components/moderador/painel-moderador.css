@@ -2,11 +2,15 @@
   background-color: #f8f8f8;
   height: 100%;
   padding: 25px;
+  font-size: 16px;
+}
+
+.painel-moderador label {
+  font-size: 16px;
 }
 
 .painel-moderador table thead tr th {
   color: #838383;
-  font-size: 16px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -52,6 +56,10 @@
   cursor: pointer;
 }
 
+table {
+  table-layout: fixed;
+}
+
 .painel-moderador table {
   margin-top: 20px;
 }
@@ -59,9 +67,7 @@
 .table-row {
   height: 70px;
   box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.15);
-  background-color: #fafafa;
   border: solid 1px #f0f0f0;
-  font-size: 16px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -73,9 +79,12 @@
 
 .table-row td {
   text-align: center;
-  font-size: 16px;
   color: #1d1d1d;
   padding: 0;
+}
+
+.table-row td a {
+  padding: 8px 11px;
 }
 
 .table-row .mais-detalhes {
@@ -109,6 +118,18 @@
 
 .descricao-denuncia-row {
   background: #fff;
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.descricao-denuncia-row td {
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1d1d1d;
+  padding: 15px 19px;
 }
 
 .table-row .botao-retrair {
@@ -135,7 +156,6 @@
   background-image: url(../../imagens/botao-remover-denuncia.svg);
   padding-left: 25px;
   text-align: center;
-  font-size: 16px;
   text-align: left;
   color: #ff0336;
   cursor: pointer;
@@ -157,7 +177,6 @@
 }
 
 .mais-informacoes-denuncia-container .dados-denunciante div label {
-  font-size: 16px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -169,7 +188,6 @@
 
 
 .mais-informacoes-denuncia-container .dados-denunciante div p {
-  font-size: 16px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -177,4 +195,8 @@
   letter-spacing: normal;
   text-align: left;
   color: #1d1d1d;
+}
+
+.botao-aceitar-denuncia {
+  background-color: #20a14f;
 }

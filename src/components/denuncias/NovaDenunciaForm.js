@@ -11,7 +11,7 @@ import DenuncianteContainer from '../../containers/denuncias/denunciante/Denunci
 
 const secoesForm = [
   {
-    titulo: 'Dados do denunciante',
+    titulo: 'Dados do Denunciante',
     subtitulo: 'Você poderia nos passar algumas informações suas?',
     texto: `Não se preocupe sua identidade será mantida em sigilo.
     Essas informações são importantes para futuramente darmos um retorno das
@@ -19,20 +19,12 @@ const secoesForm = [
     formulario: <DenuncianteContainer />
   },
   {
-    titulo: 'Dados da vítima',
+    titulo: 'Dados da Vítima',
     subtitulo: 'Me conte um pouco sobre a vítima',
     texto: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisl mi, egestas
     ac ipsum sit amet, blandit posuere metus. Donec imperdiet ut mi sed posuere. Pellentesque
     et varius sapien.`,
     formulario: <NovaVitimaContainer />
-  },
-  {
-    titulo: 'Informações Legais',
-    subtitulo: `Você conseguiu realizar um boletim de ocorrência? Ou tem informações caso
-    você não seja a vítima?`,
-    texto: `Essas informações são importantes para conseguirmos identificar a quantidade de
-    vítimas que conseguem reportar esse crime.`,
-    formulario: <FormInformacoesLegais />
   },
   {
     titulo: 'Dados do Agressor',
@@ -43,11 +35,19 @@ const secoesForm = [
     formulario: <AgressorForm />
   },
   {
-    titulo: 'Descrição da agressão',
+    titulo: 'Descrição da Agressão',
     subtitulo: 'Compreendemos o quanto é difícil externalizar a agressão em palavras.',
     texto: `Mas, é importante para que futuramente consigamos trabalhar para que essas agressões
     tenham um fim.`,
     formulario: <Descricao />
+  },
+  {
+    titulo: 'Informações Legais',
+    subtitulo: `Você conseguiu realizar um boletim de ocorrência? Ou tem informações caso
+    você não seja a vítima?`,
+    texto: `Essas informações são importantes para conseguirmos identificar a quantidade de
+    vítimas que conseguem reportar esse crime.`,
+    formulario: <FormInformacoesLegais />
   }
 ];
 

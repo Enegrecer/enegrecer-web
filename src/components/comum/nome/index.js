@@ -7,9 +7,9 @@ const nome = ({
   id, state, onChange, validacoes, divClasse
 }) => (<CampoTexto
   id={id}
-  label="Nome (máximo de 40 caracteres)"
+  label="Nome"
   maxLen={40}
-  placeholder="Nome (máximo de 40 caracteres)"
+  placeholder=" "
   type="text"
   divClasse={`input-field ${divClasse}`}
   onChange={onChange}

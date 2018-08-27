@@ -50,7 +50,8 @@ jobs:
         - export DISPLAY=:99.0
         - sh -e /etc/init.d/xvfb start
         - sleep 5
-      script: ./src/tests/functional/runSmokeTest.sh
+        - ./src/tests/functional/runSmokeTest.sh
+      script: protractor functional-tests.conf.js
 
 
     - stage: deploy

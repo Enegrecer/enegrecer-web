@@ -6,9 +6,9 @@ echo Instalando o Protractor globalmente...
 
 echo Atualizando o servidor do Selenium...
 
-    if [$ == true]
+    if [$0 == true]
     then webdriver-manager update
-    else exit $
+    else exit $0
     fi
 
 echo Iniciando o servidor...

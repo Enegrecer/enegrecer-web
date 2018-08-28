@@ -1,22 +1,16 @@
-#!/bin/bash
+#!/bin/sh
 
 echo Instalando o Protractor globalmente...
 
-    yarn global add protractor
+yarn global add protractor
 
-    echo "$?"
-
-echo Atualizando o servidor do Selenium...
-
-echo "$?"
-
-    if ["$?" -eq "0"]; then
-        echo Atualizando o servidor do Selenium...
-        webdriver-manager update
-    else
-        echo A atualização do servidor falhou e retornou o código "$?"!
-        exit $?
-    fi
+if [ "$?" -eq "0" ]; then
+    echo Atualizando o servidor do Selenium...
+    webdriver-manager update
+else
+    echo A atualização do servidor falhou e retornou o código "$?"!
+    exit "$?"
+fi
 
 echo Iniciando o servidor...
 

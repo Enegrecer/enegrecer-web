@@ -6,31 +6,30 @@ echo Instalando o Protractor globalmente...
 
 echo Atualizando o servidor do Selenium...
 
-    ra1 = $?;
-    if [ra1 = 0]
-    then webdriver-manager update
-    else exit $0
+    if [$? = 0];
+        then webdriver-manager update
+        else exit $?
     fi
 
 echo Iniciando o servidor...
 
-    if [$? = 0]
-    then webdriver-manager start --detach
-    else exit $1
+    if [$? = 0];
+        then webdriver-manager start --detach
+        else exit $?
     fi
 
 echo Executando os testes...
 
-    if [$? = 0]
-    then protractor functional-tests.conf.js
-    else exit $2
+    if [$? = 0];
+        then protractor functional-tests.conf.js
+        else exit $?
     fi
 
 echo Parando o servidor...
 
-    if [$? = 0]
-    then webdriver-manager shutdown
-    else exit $3
+    if [$? = 0];
+        then webdriver-manager shutdown
+        else exit $?
     fi
 
 exit

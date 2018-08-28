@@ -51,7 +51,7 @@ jobs:
         - export DISPLAY=:99.0
         - sh -e /etc/init.d/xvfb start
         - sleep 3
-        - yarn start
+        - npm start --detach 2>&1 &
         - sleep 5
       script: ./src/tests/functional/runSmokeTest.sh
 

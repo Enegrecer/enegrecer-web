@@ -12,25 +12,28 @@ else
     exit "$?"
 fi
 
-echo Iniciando o servidor...
+if [ "$?" -eq "0" ]; then
+    echo Iniciando o servidor...
+    webdriver-manager start --detach
+else
+    echo A iniciação do servidor falhou e retornou o código "$?"!
+    exit "$?"
+fi
 
-    if [$? = 0];
-        then webdriver-manager start --detach
-        else exit $?
-    fi
+if [ "$?" -eq "0" ]; then
+    echo Executando os testes...
+    protractor functional-tests.conf.js
+else
+    echo A execução dos testes falhou e retornou o código "$?"!
+    exit "$?"
+fi
 
-echo Executando os testes...
-
-    if [$? = 0];
-        then protractor functional-tests.conf.js
-        else exit $?
-    fi
-
-echo Parando o servidor...
-
-    if [$? = 0];
-        then webdriver-manager shutdown
-        else exit $?
-    fi
+if [ "$?" -eq "0" ]; then
+    echo Parando o servidor...
+    webdriver-manager shutdown
+else
+    echo O encerramento do servidor falhou e retornou o código "$?"!
+    exit "$?"
+fi
 
 exit

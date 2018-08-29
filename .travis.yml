@@ -17,11 +17,10 @@ node_js: '8'
 stages:
   - name: lint + test + security-tests
   - name: test-with-coverage
-    if: (branch = master AND NOT (type = pull_request ))
+    if: (branch = master AND NOT (type = pull_request))
   - name: smoke-test
-    if: (branch = waffle-292 AND NOT (type = pull-request ))
   - name: deploy
-    if: (branch = master AND NOT (type = pull_request ))
+    if: (branch = master AND NOT (type = pull_request))
 
 install:
   - yarn install
@@ -42,7 +41,6 @@ jobs:
       script: bash ci/security-checks.sh
     - stage: test-with-coverage
       script: yarn test-coverage
-
     - stage: smoke-test
       install:
       before_script:
@@ -50,12 +48,11 @@ jobs:
         - export DISPLAY=:99.0
         - sh -e /etc/init.d/xvfb start
         - sleep 3
-        - npm start --detach 2>&1 &
+        - yarn start --detach 2>&1 &
         - sleep 5
       script: ./src/tests/functional/runSmokeTest.sh
       after_script:
         - pkill node
-
     - stage: deploy
       before_script:
         - yarn run build-css

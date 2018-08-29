@@ -24,8 +24,6 @@ exports.config = {
   },
 
   onPrepare() {
-    browser.manage().window().maximize();
-    // browser.manage().window().setSize(new Dimension(1600, 900));
     browser.manage().timeouts().pageLoadTimeout(40000);
     const { Given, Then, When, Before } = require('cucumber');
     global.Given = Given;

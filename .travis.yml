@@ -43,7 +43,6 @@ jobs:
     - stage: test-with-coverage
       script: yarn test-coverage
 
-
     - stage: smoke-test
       install:
       before_script:
@@ -54,7 +53,8 @@ jobs:
         - npm start --detach 2>&1 &
         - sleep 5
       script: ./src/tests/functional/runSmokeTest.sh
-
+      after_script:
+        - pkill node
 
     - stage: deploy
       before_script:

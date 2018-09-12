@@ -311,6 +311,12 @@ exports[`Sobre possui a mesma estrutura 1`] = `
         papel="BA"
       />
       <Colaborador
+        foto="https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fpessoas%2Ftatiane-nogueira.png?alt=media&token=4ec16519-9158-41d9-b279-ca0b6d98e8ea"
+        key="Tatiane Aguirres Nogueira"
+        nome="Tatiane Aguirres Nogueira"
+        papel="DEVa"
+      />
+      <Colaborador
         foto="https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fpessoas%2Fthais-lopes.jpg?alt=media&token=6733cfb8-d256-4dfb-9673-d974683cac4f"
         key="Thais Lopes"
         nome="Thais Lopes"

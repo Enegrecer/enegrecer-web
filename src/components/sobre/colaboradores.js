@@ -191,6 +191,11 @@ export function colaboradores() {
       foto: 'https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fpessoas%2Fsergio-luis.jpg?alt=media&token=5f03b54b-5b15-4cbb-8bda-b20cf9750e33',
     },
     {
+      nome: 'Tatiane Aguirres Nogueira',
+      papel: 'DEVa',
+      foto: 'https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fpessoas%2Ftatiane-nogueira.png?alt=media&token=4ec16519-9158-41d9-b279-ca0b6d98e8ea',
+    },
+    {
       nome: 'Thais Lopes',
       papel: 'DEVa',
       foto: 'https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fpessoas%2Fthais-lopes.jpg?alt=media&token=6733cfb8-d256-4dfb-9673-d974683cac4f',

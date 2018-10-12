@@ -48,11 +48,11 @@
   	  	"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }],
         "prefer-const": "warn",
-        "jsx-a11y/label-has-for": {
+        "jsx-a11y/label-has-for": [1, {
           "required": {
             "some": [ "nesting", "id" ]
           }
-        },
+        }],
         "jsx-a11y/anchor-is-valid": [ "error", {
          "components": [ "Link" ],
          "specialLink": [ "to" ]

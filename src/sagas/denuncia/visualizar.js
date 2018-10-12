@@ -5,15 +5,7 @@ import { BUSCAR_DENUNCIA_POR_ID, buscaDenunciaPorIdSucesso }
 
 async function recuperaDenunciaPorIdDoFirebase(denunciaId) {
   const denunciaResponse = await ref.child('denuncias').child(denunciaId).orderByKey().once('value');
-  const denuncia = denunciaResponse.val();
-
-  const pessoasEnvolvidas = await ref.child('pessoasEnvolvidas')
-    .child(denunciaId).once('value');
-  denuncia.agressor = pessoasEnvolvidas.val().agressor;
-  denuncia.denunciante = pessoasEnvolvidas.val().denunciante;
-  denuncia.vitima = pessoasEnvolvidas.val().vitima;
-
-  return denuncia;
+  return denunciaResponse.val();
 }
 
 function* buscaDenunciaPorId(action) {
@@ -21,7 +13,7 @@ function* buscaDenunciaPorId(action) {
     const denuncia = yield call(() => recuperaDenunciaPorIdDoFirebase(action.payload));
     yield put(buscaDenunciaPorIdSucesso(denuncia));
   } catch (error) {
-    // yield put({ type: LISTA_DENUNCIAS_ERRO });
+    console.error(error);
   }
 }
 

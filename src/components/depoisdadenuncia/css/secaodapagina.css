@@ -8,7 +8,8 @@
 
 .depois_denuncia_secao .imagem_secao {
 	padding: 0 !important;
-	margin: 0;
+  margin: 0;
+  height: 64vh;
 }
 
 img {
@@ -54,4 +55,15 @@ img {
 	height: 11px;
   width: 69px;
   background-color: #ff0336;
+}
+
+@media(max-width: 768px)
+{
+  .conteudo_esquerdo  h1 {
+    font-size: 2.8rem;
+  }
+
+  .texto_secao p {
+    text-align: justify;
+  }
 }

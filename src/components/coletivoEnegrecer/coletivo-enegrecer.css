@@ -37,3 +37,14 @@
   width: 69px;
   background-color: #ff0336;
 }
+
+@media(max-width: 768px)
+{
+  .coletivo-enegrecer .conteudo h1 {
+    font-size: 3.1rem;
+  }
+
+  .texto_coletivo p {
+    text-align: justify;
+  }
+}

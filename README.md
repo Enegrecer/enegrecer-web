@@ -23,7 +23,7 @@ Antes de iniciar o desenvolvimento, você irá precisar configurar o seu ambient
 - [Yarn](https://yarnpkg.com/pt-BR/)
 - [Watchman](https://facebook.github.io/watchman/docs/install.html)
 - [Node.js](https://nodejs.org/) versão 9 ou superior
-- NVM (opcional): utilizado para gerênciar diferentes versões do Node e NPM.
+- NVM(https://github.com/creationix/nvm) (opcional): utilizado para gerênciar diferentes versões do Node e NPM.
   - [Linux e Mac](https://github.com/creationix/nvm)
   - [Windows](https://github.com/coreybutler/nvm-windows)
 - [Docker](https://www.docker.com/) (recomendado): utilizado para desenvolver o projeto utilizando conteinerização.

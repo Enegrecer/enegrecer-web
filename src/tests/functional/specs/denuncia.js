@@ -42,7 +42,7 @@ When('O usuário preenche os campos para o cadastro da denúncia', async () => {
   await denunciaPage.preencherCampoEmailDenunciante(emailDenunciante);
   const racaDecunciante = faker.random.arrayElement(['Preta', 'Parda']);
   await denunciaPage.preencherCampoRacaDenunciante(racaDecunciante);
-  const generoDenunciante = faker.random.arrayElement(['Feminino', 'Masculino']);
+  const generoDenunciante = faker.random.arrayElement(['Feminino', 'Masculino', 'Agênero', 'Andrógino', 'Bigênero', 'Cisgênero (Homem cisgênero)', 'Cisgênero (Mulher cisgênero)', 'Duplo espírito', 'Genderqueer', 'Gênero em Dúvida', 'Gênero Fluido', 'Gênero Não-conformista', 'Gênero Variante', 'Homem para Mulher (Male to Female – MTF)', 'Intersex', 'Mulher para homem (Female to Male – FTM)', 'Não-binário', 'Nenhum', 'Neutrois', 'Pangênero', 'Transgênero', 'Transexual (Mulher Transexual)', 'Transexual (Homem Transexual)', 'Transmasculino', 'Transfeminino']);
   await denunciaPage.preencherCampoGeneroDenunciante(generoDenunciante);
 
   const nomeVitima = faker.name.firstName();
@@ -56,7 +56,7 @@ When('O usuário preenche os campos para o cadastro da denúncia', async () => {
   await denunciaPage.preencherCampoTelefoneVitima(telefoneVitima);
   const racaVitima = faker.random.arrayElement(['Preta', 'Parda']);
   await denunciaPage.preencherCampoRacaVitima(racaVitima);
-  const generoVitima = faker.random.arrayElement(['Feminino', 'Masculino']);
+  const generoVitima = faker.random.arrayElement(['Feminino', 'Masculino', 'Agênero', 'Andrógino', 'Bigênero', 'Cisgênero (Homem cisgênero)', 'Cisgênero (Mulher cisgênero)', 'Duplo espírito', 'Genderqueer', 'Gênero em Dúvida', 'Gênero Fluido', 'Gênero Não-conformista', 'Gênero Variante', 'Homem para Mulher (Male to Female – MTF)', 'Intersex', 'Mulher para homem (Female to Male – FTM)', 'Não-binário', 'Nenhum', 'Neutrois', 'Pangênero', 'Transgênero', 'Transexual (Mulher Transexual)', 'Transexual (Homem Transexual)', 'Transmasculino', 'Transfeminino']);
   await denunciaPage.preencherCampoGeneroVitima(generoVitima);
 
   const descricaoAgressor = faker.lorem.sentence();

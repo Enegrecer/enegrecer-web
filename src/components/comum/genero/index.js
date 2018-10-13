@@ -8,7 +8,7 @@ const genero = ({ id, divClasse, state }) => (
     id={id}
     label="Gênero"
     divClasse={divClasse}
-    itens={['Feminino', 'Masculino']}
+    itens={['Feminino', 'Masculino', 'Agênero', 'Andrógino', 'Bigênero', 'Cisgênero (Homem cisgênero)', 'Cisgênero (Mulher cisgênero)', 'Duplo espírito', 'Genderqueer', 'Gênero em Dúvida', 'Gênero Fluido', 'Gênero Não-conformista', 'Gênero Variante', 'Homem para Mulher (Male to Female – MTF)', 'Intersex', 'Mulher para homem (Female to Male – FTM)', 'Não-binário', 'Nenhum', 'Neutrois', 'Pangênero', 'Transgênero', 'Transexual (Mulher Transexual)', 'Transexual (Homem Transexual)', 'Transmasculino', 'Transfeminino']}
   />
 );
 

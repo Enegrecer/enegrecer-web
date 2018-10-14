@@ -4,34 +4,32 @@
     /* height: 600px; */
     padding-left: 16%;
     float: left;
+    display: flex;
   }
 
   #nosso-objetivo {
-    height: 55%;
+    height: 304px;
     padding-left: 3%;
     padding-right: 3%;
     padding-top: 3%;
     background-color: #ffffff;
     float: left;
     position:relative;
-    margin-top: 13%;
-    margin-bottom: 30px;
+    margin-top: 137px;
   }
 
   #vermelho {
-    height: 440px;
+    height: 441px;
     background-color: #ff0336;
     padding: 30px;
     position: relative;
     margin-left: 1%;
     float: left;
-    margin-top: 0.5%;
   }
 
   #rectangle2 {
     width: 350px;
-    height: 92%;
-    border: 2px solid;
+    height: 424px;
     position: relative;
     margin-left: 1%;
     float: left;
@@ -54,7 +52,6 @@
   #rectangle21 {
     width: 50%;
     height: 100%;
-    border: 2px solid;
     position: relative;
     float: left;
   }
@@ -62,7 +59,6 @@
   #rectangle22 {
     width: 50%;
     height: 100%;
-    border: 2px solid;
     float: left;
   }
 
@@ -90,8 +86,8 @@
     background-color: #575757;
     position: relative;
     padding: 5%;
-    margin-left: 6%;
-    margin-bottom: 6%;
+    margin-left: 5%;
+    margin-bottom: 5%;
   }
 
 
@@ -102,6 +98,7 @@
     position: relative;
     padding: 5%;
     color: #4e4e4e;
+    margin-top: 6%;
   }
 
   #rectangle2 #cinzaClaro .numero, #rectangle2 #cinzaClaro .categoria {

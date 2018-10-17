@@ -1,0 +1,50 @@
+.coletivo-enegrecer {
+  background-color: #f8f8f8;
+}
+
+.coletivo-enegrecer .conteudo {
+  flex-direction: column;
+  padding: 0 2.5% 0 5%;
+}
+
+.coletivo-enegrecer .conteudo .titulo {
+  padding: 38px 51px 33px 0px;
+}
+.coletivo-enegrecer .conteudo h1 {
+  font-family: Roboto;
+  font-size: 48px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  color: #000000;
+  margin: 0 13px 0 0;
+}
+
+.coletivo-enegrecer .detalhe_titulo {
+  display: flex;
+  align-items: center;
+}
+
+.coletivo-enegrecer .imagem-coletivo {
+  width: 50%;
+  height: 50%;
+  margin-top: 10%;
+}
+
+.retangular-bloco {
+  height: 11px;
+  width: 69px;
+  background-color: #ff0336;
+}
+
+@media(max-width: 768px)
+{
+  .coletivo-enegrecer .conteudo h1 {
+    font-size: 3.1rem;
+  }
+
+  .texto_coletivo p {
+    text-align: justify;
+  }
+}

@@ -1,63 +1,73 @@
 {
-    "extends": "airbnb",
-    "parser": "babel-eslint",
-    "plugins": [
-        "react"
-    ],
-    "globals": {
-        "expect": true,
-        "it": true,
-        "jest": true
-    },
-    "env": {
-        "es6": true,
-        "mocha": true,
-        "node": true,
-        "browser": true
-    },
-    "settings": {
-        "react": {
-            "createClass": "createReactClass", // Regex for Component Factory to use, default to "createReactClass"
-            "pragma": "React",  // Pragma to use, default to "React"
-            "version": "16.2" // React version, default to the latest React stable release
-        }
-    },
-
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true,
-            "experimentalObjectRestSpread": true
-        },
-        "sourceType": "module",
-        "ecmaVersion": 8
-    },
-    "rules": {
-        "comma-dangle": 0,
-        "quotes": [ 2, "single", "avoid-escape" ],
-        "no-multiple-empty-lines": [ "error", { "max": 1, "maxEOF": 1, "maxBOF": 0 } ],
-        "padded-blocks": "warn",
-        "no-unused-vars": "warn",
-        "import/no-extraneous-dependencies": 0,
-        "import/prefer-default-export": 0,
-        "react/jsx-uses-react": "error",
-        "react/jsx-wrap-multilines": "warn",
-        "react/jsx-uses-vars": "error",
-        "react/require-default-props": "warn",
-        "react/no-array-index-key": "warn",
-        "no-constant-condition": "off",
-  	  	"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }],
-        "prefer-const": "warn",
-        "jsx-a11y/label-has-for": [1, {
-          "required": {
-            "some": [ "nesting", "id" ]
-          }
-        },
-        "jsx-a11y/href-no-hash": [0],
-        "jsx-a11y/anchor-is-valid": [ "error", {
-         "components": [ "Link" ],
-         "specialLink": [ "to" ]
-       }]
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "plugins": ["react"],
+  "globals": {
+    "expect": true,
+    "it": true,
+    "jest": true
+  },
+  "env": {
+    "es6": true,
+    "mocha": true,
+    "node": true,
+    "browser": true
+  },
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "16.2"
     }
+  },
 
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    },
+    "sourceType": "module",
+    "ecmaVersion": 8
+  },
+  "rules": {
+    "comma-dangle": 0,
+    "quotes": [2, "single", "avoid-escape"],
+    "no-multiple-empty-lines": [
+      "error",
+      { "max": 1, "maxEOF": 1, "maxBOF": 0 }
+    ],
+    "padded-blocks": "warn",
+    "no-unused-vars": "warn",
+    "import/no-extraneous-dependencies": 0,
+    "import/prefer-default-export": 0,
+    "react/jsx-uses-react": "error",
+    "react/jsx-wrap-multilines": "warn",
+    "react/jsx-uses-vars": "error",
+    "react/require-default-props": "warn",
+    "react/no-array-index-key": "warn",
+    "no-constant-condition": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "no-underscore-dangle": [
+      "error",
+      { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }
+    ],
+    "prefer-const": "warn",
+    "jsx-a11y/label-has-for": [
+      1,
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ]
+  },
+  "jsx-a11y/href-no-hash": [0],
+  "jsx-a11y/anchor-is-valid": [
+    "error",
+    {
+      "components": ["Link"],
+      "specialLink": ["to"]
+    }
+  ]
 }
+

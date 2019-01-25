@@ -51,29 +51,29 @@ class DenunciaRow extends Component {
           <Fragment>
             <tr className="descricao-denuncia-row">
               <td colSpan="2">
-                <label>Nome do Denunciante</label>
-                <p>{denunciante.nome}</p>
+                <label htmlFor="nome_denunciante">Nome do Denunciante</label>
+                <p id="nome_denunciante">{denunciante.nome}</p>
               </td>
               <td colSpan="1">
-                <label>E-mail</label>
-                <p>{denunciante.email}</p>
+                <label htmlFor="email_denunciante">E-mail</label>
+                <p id="email_denunciante">{denunciante.email}</p>
               </td>
 
               <td colSpan="1">
-                <label>Telefone</label>
-                <p>{denunciante.telefone}</p>
+                <label htmlFor="telefone_denunciante">Telefone</label>
+                <p id="telefone_denunciante">{denunciante.telefone}</p>
               </td>
 
               <td colSpan="4">
-                <label>Gênero</label>
-                <p>{denunciante.genero}</p>
+                <label htmlFor="genero_denunciante">Gênero</label>
+                <p id="genero_denunciante">{denunciante.genero}</p>
               </td>
             </tr>
 
             <tr className="descricao-denuncia-row">
               <td colSpan="8">
-                <label>Descrição Denúncia</label>
-                <p>{agressao.descricao}</p>
+                <label htmlFor="descricao_agressao">Descrição Denúncia</label>
+                <p id="descricao_agressao">{agressao.descricao}</p>
               </td>
             </tr>
 

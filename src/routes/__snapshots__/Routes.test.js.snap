@@ -48,7 +48,7 @@ exports[`Routes com moderador logado deve construir a pagina com menu para moder
         component={[Function]}
       />
     </Switch>
-    <Rodape />
+    <rodape />
   </div>
 </BrowserRouter>
 `;
@@ -101,7 +101,7 @@ exports[`Routes sem moderador logado deve construir a pagina com menu da página
         component={[Function]}
       />
     </Switch>
-    <Rodape />
+    <rodape />
   </div>
 </BrowserRouter>
 `;

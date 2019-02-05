@@ -7,7 +7,6 @@ exports[`Combobox deve possuir estrutura definida  1`] = `
   >
     <option
       disabled={true}
-      key=""
       selected={true}
       value=""
     />

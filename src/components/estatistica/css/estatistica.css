@@ -141,7 +141,7 @@
     width: 120px;
    height: 58px;
    font-family: Roboto;
-   font-size: 50px;
+   font-size: 43px;
    font-weight: 900;
    font-style: normal;
    font-stretch: normal;
@@ -161,6 +161,6 @@
     font-stretch: normal;
     line-height: normal;
     letter-spacing: normal;
-    text-align: center;
+    text-align: left;
     color: #ffffff;
   }

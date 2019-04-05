@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar deve ter a mesma estrutura de UI 1`] = `
+<div>
+  <div
+    className="navbar-fixed"
+  >
+    <nav>
+      <div
+        className="nav-wrapper"
+      >
+        <Link
+          className="logo-desktop brand-logo"
+          href="/"
+          replace={false}
+          to="/"
+        >
+          <img
+            alt="Logo Verdade Seja Dita"
+            src="logo.svg"
+          />
+        </Link>
+        <a
+          className="sidenav-trigger"
+          data-target="slide-out"
+          href="#!"
+        >
+          <i
+            className="material-icons"
+          >
+            menu
+          </i>
+        </a>
+        <ul
+          className="right hide-on-med-and-down"
+        >
+          <div
+            className="links"
+            key="7"
+          >
+            <ul>
+              <li
+                key="1"
+              >
+                <Link
+                  replace={false}
+                  to="/sobre"
+                >
+                  SOBRE
+                </Link>
+              </li>
+              <li
+                key="2"
+              >
+                <Link
+                  replace={false}
+                  to="/depois-denuncia"
+                >
+                  E DEPOIS DA DENÚNCIA?
+                </Link>
+              </li>
+              <li
+                key="3"
+              >
+                <Link
+                  replace={false}
+                  to="/coletivo-enegrecer"
+                >
+                  O COLETIVO ENEGRECER
+                </Link>
+              </li>
+              <li
+                key="4"
+              >
+                <Link
+                  className="denunciar"
+                  replace={false}
+                  to="/denunciar"
+                >
+                  DENUNCIAR
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <ul
+    className="sidenav"
+    id="slide-out"
+  >
+    <div
+      className="logo-wrapper"
+    >
+      <div
+        className="logo-mobile"
+      >
+        <Link
+          href="/"
+          replace={false}
+          to="/"
+        >
+          <img
+            alt="Logo Verdade Seja Dita"
+            src="logo.svg"
+          />
+        </Link>
+      </div>
+    </div>
+    <li>
+      <a
+        className="waves-effect"
+        href="/sobre"
+      >
+        <i
+          className="material-icons"
+        >
+          info
+        </i>
+        Sobre
+      </a>
+    </li>
+    <li>
+      <a
+        className="waves-effect"
+        href="/depois-denuncia"
+      >
+        <i
+          className="material-icons"
+        >
+          help
+        </i>
+        E depois da denúncia?
+      </a>
+    </li>
+    <li>
+      <a
+        className="waves-effect"
+        href="coletivo-enegrecer"
+      >
+        <i
+          className="material-icons"
+        >
+          supervisor_account
+        </i>
+        Coletivo Enegrecer
+      </a>
+    </li>
+    <li>
+      <a
+        className="waves-effect botao-denunciar"
+        href="/denunciar"
+      >
+        <i
+          className="material-icons"
+        >
+          add_comment
+        </i>
+        Denunciar
+      </a>
+    </li>
+  </ul>
+</div>
+`;

@@ -98,7 +98,7 @@ body {
     margin-left: 2px; }
 
 #banner {
-  height: 700px;
+  height: 72vh;
   width: 100%;
   background: url("https://firebasestorage.googleapis.com/v0/b/enegrecer-e37b3.appspot.com/o/fotos%2Fface.jpg?alt=media&token=6c97f3ad-47c1-440e-9221-9755687cab4b") no-repeat center top;
   -webkit-background-size: cover;
@@ -207,4 +207,18 @@ h4 {
   text-align: center;
   padding: 15px;
   cursor: pointer;
+}
+
+@media(max-width: 738px) {
+  #banner{
+    height: 55vh;
+  }
+
+  .AT-QUANDO-VOC-VAI {
+    margin-right: 0;
+  }
+
+  .denunciarHome .parte1 {
+    height: 33vh;
+  }
 }

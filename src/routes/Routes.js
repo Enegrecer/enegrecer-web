@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import HomePage from '../components/home/Home';
-import Menu from '../components/menu/Menu';
 import Navbar from '../components/navbar/Navbar';
 import Rodape from '../components/rodape/Rodape';
 import Sobre from '../components/sobrePortal/Sobre';

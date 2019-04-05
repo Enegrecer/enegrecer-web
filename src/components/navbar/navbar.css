@@ -78,4 +78,9 @@ nav .links > ul {
   nav .nav-wrapper {
     height: 70px;
   }
+
+  .navbar-fixed {
+    height: 70px;
+    background-color: black;
+  }
 }

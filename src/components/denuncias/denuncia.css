@@ -19,7 +19,7 @@ body {
 
 .form-title-bar {
   background: #000;
-  height: 93px;
+  height: auto;
   color: #9e9e9e;
   padding-left: 25px;
 }
@@ -45,7 +45,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-size: 25px;
+  font-size: 2.7vh;
   font-weight: 500;
   /* padding: 35px; */
 }
@@ -132,4 +132,10 @@ body {
 
 select {
   display: block;
+}
+
+@media (max-width: 994px) {
+  .side-menu-container {
+    display: none;
+  }
 }

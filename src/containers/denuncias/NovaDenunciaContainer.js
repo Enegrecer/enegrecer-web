@@ -32,7 +32,7 @@ class NovaDenunciaContainer extends React.Component {
     }
     return (
       <div className="row form-denuncia-container">
-        <div className="col s12 m12 l2 no-padding side-menu-container">
+        <div className="col l2 no-padding side-menu-container">
           <div className="form-title-bar side-menu">
             <span>Formulário de</span>
             <div>

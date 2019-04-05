@@ -209,7 +209,7 @@ h4 {
   cursor: pointer;
 }
 
-@media(max-width: 738px) {
+@media(max-width: 768px) {
   #banner{
     height: 55vh;
   }

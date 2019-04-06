@@ -110,15 +110,15 @@ exports[`Navbar deve ter a mesma estrutura de UI 1`] = `
     </div>
     <li>
       <a
-        className="waves-effect"
-        href="/sobre"
+        className="waves-effect botao-denunciar"
+        href="/denunciar"
       >
         <i
           className="material-icons"
         >
-          info
+          add_comment
         </i>
-        Sobre
+        Denunciar
       </a>
     </li>
     <li>
@@ -149,15 +149,15 @@ exports[`Navbar deve ter a mesma estrutura de UI 1`] = `
     </li>
     <li>
       <a
-        className="waves-effect botao-denunciar"
-        href="/denunciar"
+        className="waves-effect"
+        href="/sobre"
       >
         <i
           className="material-icons"
         >
-          add_comment
+          info
         </i>
-        Denunciar
+        Sobre
       </a>
     </li>
   </ul>

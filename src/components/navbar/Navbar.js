@@ -74,8 +74,8 @@ class Navbar extends Component {
             </div>
           </div>
           <li>
-            <a className="waves-effect" href="/sobre">
-              <i className="material-icons">info</i>Sobre
+            <a className="waves-effect botao-denunciar" href="/denunciar">
+              <i className="material-icons">add_comment</i>Denunciar
             </a>
           </li>
           <li>
@@ -89,8 +89,8 @@ class Navbar extends Component {
             </a>
           </li>
           <li>
-            <a className="waves-effect botao-denunciar" href="/denunciar">
-              <i className="material-icons">add_comment</i>Denunciar
+            <a className="waves-effect" href="/sobre">
+              <i className="material-icons">info</i>Sobre
             </a>
           </li>
         </ul>

@@ -65,7 +65,7 @@ const FormDenuncia = props => (
     ))}
 
     <br />
-    <button className="btn waves-effect waves-light" type="submit" name="action">
+    <button className="btn waves-effect waves-light botao-enviar" type="submit" name="action">
       Enviar Denúncia
     </button>
   </form>

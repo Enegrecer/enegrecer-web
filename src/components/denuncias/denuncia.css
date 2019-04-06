@@ -4,12 +4,6 @@ body {
 	font-family: Roboto;
 }
 
-@media (max-width: 992px) {
-  .form-sections-container {
-    margin-right: 0 !important;
-  }
-}
-
 /* Formularios */
 .form-denuncia-container {
   height: 100%;
@@ -39,6 +33,7 @@ body {
 .side-menu-container {
   display: flex;
   flex-direction: column;
+  position: fixed;
 }
 
 .side-menu {
@@ -47,7 +42,6 @@ body {
   align-items: flex-start;
   font-size: 2.7vh;
   font-weight: 500;
-  /* padding: 35px; */
 }
 
 .side-menu > div {
@@ -57,9 +51,9 @@ body {
 }
 
 .form-sections-container {
-  margin-top: -93px;
   margin-right: 40px;
   border-radius: 3px;
+  margin-left: 16.67%;
 }
 
 .menu-items {
@@ -137,5 +131,10 @@ select {
 @media (max-width: 994px) {
   .side-menu-container {
     display: none;
+  }
+
+  .form-sections-container {
+    margin-left: 0;
+    margin-right: 0;
   }
 }

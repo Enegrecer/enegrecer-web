@@ -27,6 +27,14 @@ const secoesForm = [
     formulario: <NovaVitimaContainer />
   },
   {
+    titulo: 'Informações Legais',
+    subtitulo: `Você conseguiu realizar um boletim de ocorrência? Ou tem informações caso
+    você não seja a vítima?`,
+    texto: `Essas informações são importantes para conseguirmos identificar a quantidade de
+    vítimas que conseguem reportar esse crime.`,
+    formulario: <FormInformacoesLegais />
+  },
+  {
     titulo: 'Dados do Agressor',
     subtitulo: 'Você se sente confortável em dividir conosco informações sobre o agressor?',
     texto: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisl mi, egestas
@@ -41,14 +49,6 @@ const secoesForm = [
     tenham um fim.`,
     formulario: <Descricao />
   },
-  {
-    titulo: 'Informações Legais',
-    subtitulo: `Você conseguiu realizar um boletim de ocorrência? Ou tem informações caso
-    você não seja a vítima?`,
-    texto: `Essas informações são importantes para conseguirmos identificar a quantidade de
-    vítimas que conseguem reportar esse crime.`,
-    formulario: <FormInformacoesLegais />
-  }
 ];
 
 const FormDenuncia = props => (

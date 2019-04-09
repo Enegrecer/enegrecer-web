@@ -6,7 +6,6 @@ exports[`NovaVitimaForm Component deve possuir estrutura definida  1`] = `
     className="row"
   >
     <checkBox
-      divClasse="col s12 m6 l6"
       id="souAVitima"
       label="Marque se você é a vítima"
       onChange={[Function]}

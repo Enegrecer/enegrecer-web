@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Field } from 'redux-form';
 
 const checkBox = ({
-  id, label, state, divClasse, onChange
+  id, label, state, onChange
 }) => (
   <p>
     <label htmlFor={id}>
@@ -17,7 +17,6 @@ checkBox.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string,
   state: PropTypes.string,
-  divClasse: PropTypes.string,
   onChange: PropTypes.func
 };
 
@@ -25,7 +24,6 @@ checkBox.defaultProps = {
   id: '',
   label: '',
   state: '',
-  divClasse: '',
   onChange: () => {}
 };
 

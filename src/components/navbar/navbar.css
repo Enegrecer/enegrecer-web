@@ -1,3 +1,7 @@
+.navbar {
+  height: 100px;
+}
+
 .logo-wrapper {
   background-color: black;
 }
@@ -8,18 +12,18 @@
 }
 
 nav .nav-wrapper {
-  padding-top: 10px; 
+  height: 100px;
   background-color: #000000;
 }
 
 nav .logo-desktop {
-  padding-left: 3.5%;
+  padding-left: 36px;
+  padding-top: 25px;
 }
 
 nav .links {
-  width: 59%;
-  padding-right: 30px;
-  padding-top: 3px;
+  padding-right: 34px;
+  margin-top: 18px;
 }
 
 nav .links > ul {
@@ -28,17 +32,16 @@ nav .links > ul {
 }
 
 .links ul > li > a {
-  width: 161px;
-  height: 16px;
   font-family: Roboto;
   font-size: 14px;
-  font-weight: bold;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
   color: #c3c3c3;
+  display: inline;
+  padding-right: 36px;
 }
 
 .links ul > li > a:hover {
@@ -71,7 +74,7 @@ nav .links > ul {
   letter-spacing: normal;
   text-align: center;
   color: #ffffff;
-  padding: 10px;
+  padding: 8px 22px;
 }
 
 @media(max-width: 768px) {

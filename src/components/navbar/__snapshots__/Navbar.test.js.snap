@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Navbar deve ter a mesma estrutura de UI 1`] = `
-<div>
+<div
+  className="navbar"
+>
   <div
     className="navbar-fixed"
   >

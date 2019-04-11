@@ -24,16 +24,20 @@ class DenunciaRow extends Component {
       <div className="card horizontal">
         <div className="card-image">{this.renderizaIconeDoCard(agressao.status)}</div>
         <div className="card-stacked">
-          <div className="card-content">
-            <p>Status da agressão: {agressao.status}</p>
-            <p>Data da agressão: {agressao.data}</p>
-            <p>Gênero da vítima: {vitima.genero}</p>
-            <p>Estado da agressão: {agressao.estado}</p>
+          <div className="card-content conteudo-card">
+            <div className="data-da-agressao">
+              Data da agressão:
+              <span> {agressao.data}</span>
+            </div>
+            <div className="descricao-agrecao">
+              Descrição:
+              <span> {agressao.descricao}</span>
+            </div>
           </div>
           <div className="card-action">
             <Link
               to={`/moderador/visualizar-denuncia/${denuncia.id}`}
-              className="mais-detalhes"
+              className="mais-detalhes waves-effect waves-light btn"
               onClick={this.cliqueDetalhesDenuncia}
             >
               {' '}
@@ -74,11 +78,19 @@ class DenunciaRow extends Component {
   );
 
   renderizaIconeDoCard = (statusDaAgressao) => {
-    if (statusDaAgressao === 'Classificada') {
-      return <i className="material-icons">check</i>;
+    if (statusDaAgressao.toLowerCase() === 'classificada') {
+      return (
+        <div className="icone-denuncia classificada">
+          <i className="medium material-icons">check</i>
+        </div>
+      );
     }
 
-    return <i className="material-icons">warning</i>;
+    return (
+      <div className="icone-denuncia nao-classificada">
+        <i className="medium material-icons">warning</i>
+      </div>
+    );
   };
 
   renderizaVersaoCorreta = (agressao, vitima, denuncia, expanded) => {
@@ -97,9 +109,7 @@ class DenunciaRow extends Component {
 
     return (
       <Fragment>
-        {
-          this.renderizaVersaoCorreta(agressao, vitima, denuncia, expanded)
-        }
+        {this.renderizaVersaoCorreta(agressao, vitima, denuncia, expanded)}
 
         {expanded && (
           <Fragment>

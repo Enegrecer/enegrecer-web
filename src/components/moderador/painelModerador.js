@@ -51,7 +51,7 @@ class PainelModerador extends Component {
         <div className="cabecalho">
           <div>
             <h2>Denúncias recebidas</h2>
-            <h3>Total de denúncias </h3>
+            <h3>Total de denúncias {denuncias.length} </h3>
           </div>
 
           <input type="button" value="Exportar em xls" />

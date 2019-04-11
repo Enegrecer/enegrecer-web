@@ -200,3 +200,41 @@ table {
 .botao-aceitar-denuncia {
   background-color: #20a14f;
 }
+
+.conteudo-card div {
+  font-weight: bold;
+}
+
+.descricao-agrecao {
+  width: 26.6vh;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.conteudo-card span {
+  font-weight: normal;
+}
+
+.icone-denuncia {
+  padding-top: 25%;
+  padding-left: 10%;
+}
+
+.nao-classificada{
+  color: red;
+}
+
+.classificada{
+  color: lightgreen;
+}
+
+.mais-detalhes {
+  height: 35px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  border: solid 1px #20a14f;
+  cursor: pointer;
+  font-size: 16px;
+  color: #20a14f;
+}

@@ -48,7 +48,7 @@ export function criarDenuncia(acao) {
       bairro: dados.bairroAgressao,
       cidade: dados.cidadeAgressao,
       data: dados.dataAgressao,
-      descricao: dados.dataAgressao,
+      descricao: dados.descricaoAgressao,
       endereco: dados.enderecoAgressao,
       periodo: dados.periodoAgressao,
       status: CLASSIFICACAO_DENUNCIA.NAO_CLASSIFICADA,

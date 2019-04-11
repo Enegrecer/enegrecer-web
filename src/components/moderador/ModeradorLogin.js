@@ -78,7 +78,7 @@ export default class ModeradorLogin extends Component {
 
     return (
       <div className="row login_moderador">
-        <form className="col s4 formulario_login_moderador" onSubmit={this.onSubmit}>
+        <form className="col s12 m4 formulario_login_moderador" onSubmit={this.onSubmit}>
           <div className="input-field col s12">
             <input
               id="login_moderador"

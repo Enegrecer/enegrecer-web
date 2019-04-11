@@ -13,11 +13,81 @@ class DenunciaRow extends Component {
 
   cliqueDetalhesDenuncia = () => {
     this.props.dispatch(detalhesDenuncia({ denuncia: this.props.denuncia }));
-  }
+  };
 
   mudaEstado = () => {
     this.setState({ expanded: !this.state.expanded });
-  }
+  };
+
+  versaoMobile = (agressao, vitima, denuncia) => (
+    <div className="col s12 m7">
+      <div className="card horizontal">
+        <div className="card-image">{this.renderizaIconeDoCard(agressao.status)}</div>
+        <div className="card-stacked">
+          <div className="card-content">
+            <p>Status da agressão: {agressao.status}</p>
+            <p>Data da agressão: {agressao.data}</p>
+            <p>Gênero da vítima: {vitima.genero}</p>
+            <p>Estado da agressão: {agressao.estado}</p>
+          </div>
+          <div className="card-action">
+            <Link
+              to={`/moderador/visualizar-denuncia/${denuncia.id}`}
+              className="mais-detalhes"
+              onClick={this.cliqueDetalhesDenuncia}
+            >
+              {' '}
+              mais detalhes
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  versaoDesktop = (agressao, vitima, denuncia, expanded) => (
+    <tr className="table-row">
+      <td>{agressao.status}</td>
+      <td>{agressao.data}</td>
+      <td>{vitima.genero}</td>
+      <td>{agressao.estado}</td>
+      <td>{agressao.cidade}</td>
+      <td>{agressao.bairro}</td>
+      <td>
+        <Link
+          to={`/moderador/visualizar-denuncia/${denuncia.id}`}
+          className="mais-detalhes"
+          onClick={this.cliqueDetalhesDenuncia}
+        >
+          {' '}
+          mais detalhes
+        </Link>
+      </td>
+      <td>
+        <input
+          type="button"
+          className={`botao-expandir-retrair ${expanded ? 'botao-retrair' : 'botao-expandir'}`}
+          onClick={this.mudaEstado}
+        />
+      </td>
+    </tr>
+  );
+
+  renderizaIconeDoCard = (statusDaAgressao) => {
+    if (statusDaAgressao === 'Classificada') {
+      return <i className="material-icons">check</i>;
+    }
+
+    return <i className="material-icons">warning</i>;
+  };
+
+  renderizaVersaoCorreta = (agressao, vitima, denuncia, expanded) => {
+    if (window.innerWidth < 994) {
+      return this.versaoMobile(agressao, vitima, denuncia);
+    }
+
+    return this.versaoDesktop(agressao, vitima, denuncia, expanded);
+  };
 
   render() {
     const { expanded } = this.state;
@@ -27,29 +97,10 @@ class DenunciaRow extends Component {
 
     return (
       <Fragment>
-        <tr className="table-row">
-          <td>{agressao.status}</td>
-          <td>{agressao.data}</td>
-          <td>{vitima.genero}</td>
-          <td>{agressao.estado}</td>
-          <td>{agressao.cidade}</td>
-          <td>{agressao.bairro}</td>
-          <td>
-            <Link
-              to={`/moderador/visualizar-denuncia/${denuncia.id}`}
-              className="mais-detalhes"
-              onClick={this.cliqueDetalhesDenuncia}
-            > mais detalhes
-            </Link>
-          </td>
-          <td>
-            <input
-              type="button"
-              className={`botao-expandir-retrair ${expanded ? 'botao-retrair' : 'botao-expandir'}`}
-              onClick={this.mudaEstado}
-            />
-          </td>
-        </tr>
+        {
+          this.renderizaVersaoCorreta(agressao, vitima, denuncia, expanded)
+        }
+
         {expanded && (
           <Fragment>
             <tr className="descricao-denuncia-row">
@@ -88,10 +139,7 @@ class DenunciaRow extends Component {
 
             <tr className="row-acoes-denuncia">
               <td colSpan="5">
-                <Combobox
-                  label="Classifique a denúncia"
-                  itens={['Injúria Racial', 'Racismo']}
-                />
+                <Combobox label="Classifique a denúncia" itens={['Injúria Racial', 'Racismo']} />
               </td>
               <td style={{ textAlign: 'right' }}>
                 <input className="remover-denuncia" type="button" value="Deletar" />
@@ -99,7 +147,12 @@ class DenunciaRow extends Component {
 
               <td colSpan="2" style={{ textAlign: 'center' }}>
                 <div className="waves-effect waves-light btn botao-aceitar-denuncia">
-                  <input type="button" className="aceitar-denuncia" value="aceitar denúncia" onClick={this.aceitarDenuncia} />
+                  <input
+                    type="button"
+                    className="aceitar-denuncia"
+                    value="aceitar denúncia"
+                    onClick={this.aceitarDenuncia}
+                  />
                 </div>
               </td>
             </tr>

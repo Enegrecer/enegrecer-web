@@ -201,6 +201,10 @@ table {
   background-color: #20a14f;
 }
 
+.aceitar-denuncia {
+  color: white;
+}
+
 .conteudo-card div {
   font-weight: bold;
 }

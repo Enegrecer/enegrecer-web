@@ -18,7 +18,7 @@ const combobox = ({
   ) : (
     <div>
       <select name="select">
-        <option key={label} value={label} disabled selected>{label}</option>
+        <option key={label} defaultValue={label}>{label}</option>
         {itens.map(item => (
           <option key={item} value={item}>{item}</option>
         ))}

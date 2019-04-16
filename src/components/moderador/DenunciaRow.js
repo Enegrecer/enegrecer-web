@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import M from 'materialize-css';
 import Combobox from '../comum/combobox';
 import './painel-moderador.css';
 import { detalhesDenuncia } from '../../actions/visualizarDenunciaActions';
@@ -9,6 +10,11 @@ class DenunciaRow extends Component {
   constructor(props) {
     super(props);
     this.state = { expanded: false };
+  }
+
+  componentDidMount() {
+    const elems = document.querySelectorAll('.modal');
+    M.Modal.init(elems, {});
   }
 
   cliqueDetalhesDenuncia = () => {
@@ -41,8 +47,14 @@ class DenunciaRow extends Component {
               onClick={this.cliqueDetalhesDenuncia}
             >
               {' '}
-              mais detalhes
+              detalhes
             </Link>
+            {agressao.status.toLowerCase() === 'classificada' ? null : (
+              <button
+                className="remover-denuncia btn-flat modal-trigger"
+                href="#remove-denuncia-modal"
+              />
+            )}
           </div>
         </div>
       </div>
@@ -110,6 +122,21 @@ class DenunciaRow extends Component {
     return (
       <Fragment>
         {this.renderizaVersaoCorreta(agressao, vitima, denuncia, expanded)}
+        <div id="remove-denuncia-modal" className="modal">
+          <div className="modal-content">
+            <h4>Gostaria de deletar a denúncia?</h4>
+            <div className="texto-modal-deletar">Ao deletar a denúncia ela não fará mais parte das estatísticas.</div>
+            <div className="alerta-modal-deletar">ATENÇÃO: essa ação não pode ser desfeita!</div>
+          </div>
+          <div className="modal-footer">
+            <button className="waves-effect waves-green btn-flat">
+              SIM
+            </button>
+            <a href="#!" className="modal-close waves-effect waves-green btn-flat">
+              NÃO
+            </a>
+          </div>
+        </div>
 
         {expanded && (
           <Fragment>
@@ -146,7 +173,9 @@ class DenunciaRow extends Component {
                 <Combobox label="Classifique a denúncia" itens={['Injúria Racial', 'Racismo']} />
               </td>
               <td style={{ textAlign: 'right' }}>
-                <input className="remover-denuncia" type="button" value="Deletar" />
+                <a className="remover-denuncia modal-trigger" href="#remove-denuncia-modal">
+                  Deletar
+                </a>
               </td>
 
               <td colSpan="2" style={{ textAlign: 'center' }}>
@@ -155,7 +184,7 @@ class DenunciaRow extends Component {
                     type="button"
                     className="aceitar-denuncia"
                     value="aceitar denúncia"
-                    onClick={this.aceitarDenuncia}
+                    onClick={() => null}
                   />
                 </div>
               </td>
@@ -180,7 +209,7 @@ DenunciaRow.propTypes = {
     vitima: PropTypes.shape({
       genero: PropTypes.string
     })
-  }).isRequired
+  }).isRequired,
 };
 
 export default DenunciaRow;

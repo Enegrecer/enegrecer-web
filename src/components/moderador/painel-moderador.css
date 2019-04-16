@@ -109,10 +109,10 @@ table {
   height: 70px;
   border: solid 1px #f0f0f0;
   width: 100%;
-  margin-left:0;
-  margin-right:0;
-  padding-left:0;
-  padding-right:0;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
   text-align: center;
 }
 
@@ -173,7 +173,6 @@ table {
 .mais-informacoes-denuncia-container .dados-denunciante {
   display: flex;
   flex-direction: row;
-
 }
 
 .mais-informacoes-denuncia-container .dados-denunciante div label {
@@ -185,7 +184,6 @@ table {
   text-align: left;
   color: #838383;
 }
-
 
 .mais-informacoes-denuncia-container .dados-denunciante div p {
   font-weight: normal;
@@ -225,11 +223,11 @@ table {
   padding-left: 10%;
 }
 
-.nao-classificada{
+.nao-classificada {
   color: red;
 }
 
-.classificada{
+.classificada {
   color: lightgreen;
 }
 
@@ -239,6 +237,50 @@ table {
   background-color: #ffffff;
   border: solid 1px #20a14f;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
   color: #20a14f;
+}
+
+.modal {
+  width: 335px;
+}
+
+.modal-content h4 {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.modal-content .texto-modal-deletar {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.modal-content .alerta-modal-deletar {
+  color: red;
+  padding-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .modal{
+    width: 100%;
+  }
+
+  .card-action .remover-denuncia {
+    margin-left: 15px;
+    padding-left: 8px;
+  }
 }

@@ -83,18 +83,11 @@ const mapDispatchToProps = dispatch =>
 
 function mapStateToProps(state) {
   return {
-<<<<<<< HEAD
     denuncias: Object.keys(state.listaDenunciaReducer.denuncias || '')
       .map(key => ({
         id: key,
         ...state.listaDenunciaReducer.denuncias[key]
       }))
-=======
-    denuncias: Object.keys(state.listaDenunciaReducer.denuncias).map(key => ({
-      id: key,
-      ...state.listaDenunciaReducer.denuncias[key]
-    }))
->>>>>>> Cria cards para melhor visualização das denuncias no painel do moderador mobile
   };
 }
 

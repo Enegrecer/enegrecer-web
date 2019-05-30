@@ -12,7 +12,7 @@ function logout() {
 
 const MenuModerador = () => (
   <div className="menu-container">
-    <img className src={logo} alt="Logo Verdade Seja Dita" />
+    <img src={logo} alt="Logo Verdade Seja Dita" />
     <input type="button" value="Sair" onClick={logout} />
   </div>
 );

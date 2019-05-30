@@ -50,9 +50,13 @@ class PainelModerador extends Component {
   }
 }
 
+PainelModerador.defaultProps = {
+  denuncias: []
+};
+
 PainelModerador.propTypes = {
   listaDenuncias: PropTypes.func.isRequired,
-  denuncias: PropTypes.arrayOf.isRequired
+  denuncias: PropTypes.arrayOf(String)
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
@@ -61,7 +65,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 
 function mapStateToProps(state) {
   return {
-    denuncias: Object.keys(state.listaDenunciaReducer.denuncias)
+    denuncias: Object.keys(state.listaDenunciaReducer.denuncias || '')
       .map(key => ({
         id: key,
         ...state.listaDenunciaReducer.denuncias[key]

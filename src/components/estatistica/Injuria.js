@@ -8,16 +8,15 @@ export default class Injuria extends Component {
     this.state = { totalDeDenunciaPorInjuria: '0' };
   }
 
-  componentDidMount() {     
-    const ref = firebaseApp.database().ref();     
-    ref.child('denuncias').orderByChild('idCategoria').equalTo('injuria')       
-    .once('value', (snapshot) => {         
-      this.setState({ totalDeDenunciaPorInjuria: snapshot.numChildren() });       
-    }, (err) => 
-    {         
-      console.error("Erro de requisição"); 
-  });   
-}
+  componentDidMount() {
+    const ref = firebaseApp.database().ref();
+    ref.child('denuncias').orderByChild('idCategoria').equalTo('injuria')
+      .once('value', (snapshot) => {
+        this.setState({ totalDeDenunciaPorInjuria: snapshot.numChildren() });
+      }, (err) => {
+        console.error('Erro de requisição');
+      });
+  }
 
   render() {
     return (<TipoDeEstatistica

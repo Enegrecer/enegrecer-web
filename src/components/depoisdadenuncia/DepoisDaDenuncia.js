@@ -21,7 +21,6 @@ const DepoisDaDenuncia = () => (
       nomeFoto="homem negro"
     />
 
-
   </div>
 );
 

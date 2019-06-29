@@ -20,7 +20,7 @@ export function temMenosDe29Anos(dataNascimento) {
   return calculaIdade(dataNascimento) <= 29;
 }
 
-export function obtemPorcentagemDeMulheres(total, totalMulheres) {   
-  const percentagem = total > 0 ? ((totalMulheres * 100) / total).toFixed(2) : 0;   
-  return `${percentagem}`; 
+export function obtemPorcentagemDeMulheres(total, totalMulheres) {
+  const percentagem = total > 0 ? ((totalMulheres * 100) / total).toFixed(2) : 0;
+  return `${percentagem}`;
 }

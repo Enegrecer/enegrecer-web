@@ -26,10 +26,10 @@
   align-items: center;
 }
 
-.coletivo-enegrecer .imagem-coletivo {
+.coletivo-enegrecer .imagem_coletivo {
   width: 50%;
   height: 50%;
-  margin-top: 10%;
+  margin-top: 25px;
 }
 
 .retangular-bloco {

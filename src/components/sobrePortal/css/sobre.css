@@ -8,6 +8,7 @@
 	padding: 0;
 	margin: 0;
 	background-color: #f8f8f8;
+	font-size: 20px;
 }
 
 .secao_sobre .foto_sobre {
@@ -37,6 +38,7 @@
 .secao_voluntarios .conteudo .texto_voluntarios {
 	height: 100%;
 	padding: 38px 51px 33px 51px;
+	font-size: 20px;
 }
 
 .detalhe_titulo {

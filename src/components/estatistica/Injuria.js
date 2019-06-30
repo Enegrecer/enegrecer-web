@@ -13,6 +13,8 @@ export default class Injuria extends Component {
     ref.child('denuncias').orderByChild('idCategoria').equalTo('injuria')
       .once('value', (snapshot) => {
         this.setState({ totalDeDenunciaPorInjuria: snapshot.numChildren() });
+      }, (err) => {
+        console.error('Erro de requisição');
       });
   }
 

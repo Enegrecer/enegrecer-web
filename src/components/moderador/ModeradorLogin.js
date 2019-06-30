@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
+import M from 'materialize-css';
 import { auth, storageKey } from '../../utils/firebaseUtils';
 import Modal from '../comum/modal/modal';
 
 import './moderador-login.css';
 
 const updateByPropertyName = (propertyName, value) => () => ({
-  [propertyName]: value,
+  [propertyName]: value
 });
 
 const ESTADO_INICIAL = {
   email: '',
   senha: '',
-  error: null,
+  error: null
 };
 
 export default class ModeradorLogin extends Component {
@@ -30,20 +31,20 @@ export default class ModeradorLogin extends Component {
       }
     });
 
-    window.$(document).ready(() => {
-      window.$('.modal').modal();
+    document.addEventListener('DOMContentLoaded', () => {
+      const elems = document.querySelectorAll('.modal');
+      M.Modal.init(elems, {});
     });
   }
 
   onSubmit = (event) => {
-    const {
-      email,
-      senha,
-    } = this.state;
+    const { email, senha } = this.state;
 
-    auth.signInWithEmailAndPassword(email, senha).then(() => {
-      window.location.href = '/moderador/painel';
-    })
+    auth
+      .signInWithEmailAndPassword(email, senha)
+      .then(() => {
+        window.location.href = '/moderador/painel';
+      })
       .catch((error) => {
         const message = this.trataMensagemDeErro(error);
         this.setState(updateByPropertyName('error', message));
@@ -57,46 +58,64 @@ export default class ModeradorLogin extends Component {
       });
 
     event.preventDefault();
-  }
+  };
 
   trataMensagemDeErro = (error) => {
     const errorMap = {
       'auth/wrong-password': 'Senha errada',
       'auth/user-not-found': 'Usuário não encontrado',
       'auth/user-disabled': 'Usuário inativo',
-      'auth/invalid-email': 'Email inválido',
+      'auth/invalid-email': 'Email inválido'
     };
 
     return errorMap[error.code];
-  }
+  };
 
   render() {
-    const {
-      email,
-      senha,
-      error,
-    } = this.state;
+    const { email, senha, error } = this.state;
 
-    const isInvalid =
-      senha === '' ||
-      email === '';
+    const isInvalid = senha === '' || email === '';
 
     return (
       <div className="row login_moderador">
-        <form className="col s4 formulario_login_moderador" onSubmit={this.onSubmit}>
+        <form className="col s12 m4 formulario_login_moderador" onSubmit={this.onSubmit}>
           <div className="input-field col s12">
-            <input id="login_moderador" type="text" className="validate" value={email} onChange={event => this.setState(updateByPropertyName('email', event.target.value))} />
+            <input
+              id="login_moderador"
+              type="text"
+              className="validate"
+              value={email}
+              onChange={event => this.setState(updateByPropertyName('email', event.target.value))}
+            />
             <label htmlFor="login_moderador">Login Moderador</label>
           </div>
           <div className="input-field col s12">
-            <input id="senha_moderador" type="password" className="validate" value={senha} onChange={event => this.setState(updateByPropertyName('senha', event.target.value))} />
+            <input
+              id="senha_moderador"
+              type="password"
+              className="validate"
+              value={senha}
+              onChange={event => this.setState(updateByPropertyName('senha', event.target.value))}
+            />
             <label htmlFor="senha_moderador">Senha Moderador</label>
           </div>
-          <button id="confirm-button" className="waves-effect waves-light btn" data-target="modal_erro" disabled={isInvalid} type="submit" name="action" >
-              Entrar
+          <button
+            id="confirm-button"
+            className="waves-effect waves-light btn"
+            data-target="modal_erro"
+            disabled={isInvalid}
+            type="submit"
+            name="action"
+          >
+            Entrar
           </button>
 
-          <Modal id="modal_erro" tituloModal="Erro ao logar" textoModal={error} textoBotao="FECHAR" />
+          <Modal
+            id="modal_erro"
+            tituloModal="Erro ao logar"
+            textoModal={error}
+            textoBotao="FECHAR"
+          />
         </form>
       </div>
     );

@@ -21,17 +21,21 @@ const secoesForm = [
   {
     titulo: 'Dados da Vítima',
     subtitulo: 'Me conte um pouco sobre a vítima',
-    texto: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisl mi, egestas
-    ac ipsum sit amet, blandit posuere metus. Donec imperdiet ut mi sed posuere. Pellentesque
-    et varius sapien.`,
+    texto: `Reforçamos que você não deve se preocupar, pois esses dados serão mantidos em sigilo.`,
     formulario: <NovaVitimaContainer />
+  },
+  {
+    titulo: 'Informações Legais',
+    subtitulo: `Você conseguiu realizar um boletim de ocorrência? Ou tem informações caso
+    você não seja a vítima?`,
+    texto: `Essas informações são importantes para conseguirmos identificar a quantidade de
+    vítimas que conseguem reportar esse crime.`,
+    formulario: <FormInformacoesLegais />
   },
   {
     titulo: 'Dados do Agressor',
     subtitulo: 'Você se sente confortável em dividir conosco informações sobre o agressor?',
-    texto: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisl mi, egestas
-    ac ipsum sit amet, blandit posuere metus. Donec imperdiet ut mi sed posuere.
-    Pellentesque et varius sapien.`,
+    texto: `É importante que você nos informe os dados e características do agressor, pois quanto mais embasada e detalhada for sua denúncia, há maior probabilidade de encontrá-lo.`,
     formulario: <AgressorForm />
   },
   {
@@ -41,14 +45,6 @@ const secoesForm = [
     tenham um fim.`,
     formulario: <Descricao />
   },
-  {
-    titulo: 'Informações Legais',
-    subtitulo: `Você conseguiu realizar um boletim de ocorrência? Ou tem informações caso
-    você não seja a vítima?`,
-    texto: `Essas informações são importantes para conseguirmos identificar a quantidade de
-    vítimas que conseguem reportar esse crime.`,
-    formulario: <FormInformacoesLegais />
-  }
 ];
 
 const FormDenuncia = props => (
@@ -65,7 +61,7 @@ const FormDenuncia = props => (
     ))}
 
     <br />
-    <button className="btn waves-effect waves-light" type="submit" name="action">
+    <button className="btn waves-effect waves-light botao-enviar" type="submit" name="action">
       Enviar Denúncia
     </button>
   </form>

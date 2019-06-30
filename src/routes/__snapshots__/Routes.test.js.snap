@@ -3,7 +3,7 @@
 exports[`Routes com moderador logado deve construir a pagina com menu para moderador 1`] = `
 <BrowserRouter>
   <div>
-    <Menu />
+    <Navbar />
     <Switch>
       <Route
         component={[Function]}
@@ -56,7 +56,7 @@ exports[`Routes com moderador logado deve construir a pagina com menu para moder
 exports[`Routes sem moderador logado deve construir a pagina com menu da página 1`] = `
 <BrowserRouter>
   <div>
-    <Menu />
+    <Navbar />
     <Switch>
       <Route
         component={[Function]}

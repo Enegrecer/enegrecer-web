@@ -21,9 +21,7 @@ const secoesForm = [
   {
     titulo: 'Dados da Vítima',
     subtitulo: 'Me conte um pouco sobre a vítima',
-    texto: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisl mi, egestas
-    ac ipsum sit amet, blandit posuere metus. Donec imperdiet ut mi sed posuere. Pellentesque
-    et varius sapien.`,
+    texto: `Reforçamos que você não deve se preocupar, pois esses dados serão mantidos em sigilo.`,
     formulario: <NovaVitimaContainer />
   },
   {
@@ -37,9 +35,7 @@ const secoesForm = [
   {
     titulo: 'Dados do Agressor',
     subtitulo: 'Você se sente confortável em dividir conosco informações sobre o agressor?',
-    texto: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisl mi, egestas
-    ac ipsum sit amet, blandit posuere metus. Donec imperdiet ut mi sed posuere.
-    Pellentesque et varius sapien.`,
+    texto: `É importante que você nos informe os dados e características do agressor, pois quanto mais embasada e detalhada for sua denúncia, há maior probabilidade de encontrá-lo.`,
     formulario: <AgressorForm />
   },
   {

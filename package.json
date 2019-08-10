@@ -37,7 +37,7 @@
     "eject": "react-scripts eject",
     "lint": "./node_modules/.bin/eslint src --fix",
     "test:functional": "./src/tests/functional/runSmokeTest.sh sh",
-    "all-tests-local": "yarn test-local --coverage && ../node_modules/.bin/eslint src --fix",
+    "all-tests-local": "yarn test-local --coverage && yarn run lint && yarn run test:functional",
     "watch-lint": "esw -w src",
     "build-css-local": "./node_modules/.bin/node-sass-chokidar src/ -o src/",
     "build-css": "node-sass-chokidar src/ -o src/",

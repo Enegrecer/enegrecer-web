@@ -32,7 +32,7 @@
     "start": "yarn build-css-local && ./node_modules/.bin/react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "test-local": "../node_modules/.bin/react-scripts test --env=jsdom",
+    "test-local": "./node_modules/.bin/react-scripts test --env=jsdom",
     "test-coverage": "react-scripts test --env=jsdom --coverage && ./node_modules/codeclimate-test-reporter/bin/codeclimate.js < ./coverage/lcov.info",
     "eject": "react-scripts eject",
     "lint": "./node_modules/.bin/eslint src --fix",

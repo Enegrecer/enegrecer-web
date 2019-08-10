@@ -19,7 +19,7 @@ if [ $StatusResult1 -eq "0" ]; then
         export StatusResult3=$?;
         if [ $StatusResult3 -eq "0" ]; then
             echo -e ${PURPLE}"\n\nExecutando os testes..."${NC}
-            protractor functional-tests.conf.js
+            protractor ./tests/functional/functional-tests.conf.js
             export StatusResult4=$?;
             if [ $StatusResult4 -eq "0" ]; then
                 echo -e ${PURPLE}"\n\nParando o servidor..."${NC}

@@ -50,7 +50,7 @@ jobs:
         - sleep 3
         - yarn start --detach 2>&1 &
         - sleep 5
-      script: ./src/tests/functional/runSmokeTest.sh
+      script: ./tests/functional/runSmokeTest.sh
       after_script:
         - pkill node
     - stage: deploy

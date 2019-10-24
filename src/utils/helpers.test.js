@@ -47,4 +47,11 @@ describe('Helpers functions', () => {
     const porcentagem = helpers.obtemPorcentagemDeMulheres(total, mulheres);
     expect(porcentagem).toBe(50);
   });
+
+  it('deve retornar zero se o total de mulheres for zero', () => {
+    const total = 0;
+    const mulheres = 0;
+    const porcentagem = helpers.obtemPorcentagemDeMulheres(total, mulheres);
+    expect(porcentagem).toBe(0);
+  });
 });

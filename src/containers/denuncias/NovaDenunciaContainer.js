@@ -32,7 +32,7 @@ class NovaDenunciaContainer extends React.Component {
     }
     return (
       <div className="row form-denuncia-container">
-        <div className="col s12 m12 l2 no-padding side-menu-container">
+        <div className="col l2 no-padding side-menu-container">
           <div className="form-title-bar side-menu">
             <span>Formulário de</span>
             <div>
@@ -61,7 +61,7 @@ class NovaDenunciaContainer extends React.Component {
           </div>
         </div>
 
-        <div className="col s12 m12 l10 no-padding">
+        <div className="col s12 m12 l12 no-padding">
           <div className="form-title-bar" />
           <div className="form-sections-container">
             <NovaDenunciaForm onSubmit={this.submeteFormulario} />
@@ -85,9 +85,6 @@ NovaDenunciaContainer.propTypes = {
 };
 
 NovaDenunciaContainer.defaultProps = {
-  // criarDenunciaRequisicao: () => {},
-  // denunciaCadastradaComSucesso: false,
-  // limpaEstadoUltimaDencunciaCadastrada: () => {},
   formDenuncia: {},
 };
 

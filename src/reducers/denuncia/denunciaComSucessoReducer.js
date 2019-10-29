@@ -1,6 +1,4 @@
-import {
-  CRIAR_DENUNCIA_SUCESSO, LIMPA_ESTADO_ULTIMA_DENUNCIA
-} from '../../actions/criarDenunciaActions';
+import { CRIAR_DENUNCIA_SUCESSO, LIMPA_ESTADO_ULTIMA_DENUNCIA } from '../../actions/criarDenunciaActions';
 
 const initialState = { denunciaCadastradaComSucesso: false };
 

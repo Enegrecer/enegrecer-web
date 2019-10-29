@@ -1,9 +1,7 @@
 import { call, put, take } from 'redux-saga/effects';
 import { ref } from '../../utils/firebaseUtils';
 import { CLASSIFICACAO_DENUNCIA } from '../../utils/constants';
-import {
-  CRIAR_DENUNCIA_REQUISICAO, criarDenunciaSucesso
-} from '../../actions/criarDenunciaActions';
+import { CRIAR_DENUNCIA_REQUISICAO, criarDenunciaSucesso } from '../../actions/criarDenunciaActions';
 
 const denunciaInicial = {
   bairroAgressao: '',
@@ -50,7 +48,7 @@ export function criarDenuncia(acao) {
       bairro: dados.bairroAgressao,
       cidade: dados.cidadeAgressao,
       data: dados.dataAgressao,
-      descricao: dados.dataAgressao,
+      descricao: dados.descricaoAgressao,
       endereco: dados.enderecoAgressao,
       periodo: dados.periodoAgressao,
       status: CLASSIFICACAO_DENUNCIA.NAO_CLASSIFICADA,

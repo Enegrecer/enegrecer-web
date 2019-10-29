@@ -10,11 +10,11 @@ const DenunciarHome = withRouter(({ history }) => (
     </div>
     <div className="parte2">
       <h6> Nos ajude fazendo uma denúncia</h6>
-      <div className="clearFix"></div>
+      <div className="clearFix" />
       <p> Gostaria de reportar uma situação em que
     foi discriminado ou que presenciou?
       </p>
-      <div className="clearFix"></div>
+      <div className="clearFix" />
       <div
         role="button"
         tabIndex="0"

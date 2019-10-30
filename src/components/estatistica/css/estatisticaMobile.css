@@ -160,3 +160,8 @@
       text-align: left;
       color: #4e4e4e;
   }
+@media (max-width: 1099px) {
+  #nosso-objetivo-mobile{
+    margin-top: 0;
+  }
+}

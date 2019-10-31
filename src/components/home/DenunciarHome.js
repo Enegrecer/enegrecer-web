@@ -5,14 +5,17 @@ import './css/home.css';
 
 const DenunciarHome = withRouter(({ history }) => (
   <div className="denunciarHome">
-    <div className="parte1 col s12 m6">
+    <div className="parte1">
       <img src={img} alt="Nos ajude fazendo uma denuncia" />
     </div>
-    <div className="parte2 col s12 m6">
+    <div className="parte2">
       <h6> Nos ajude fazendo uma denúncia</h6>
+      <div className="clearFix" />
+
       <p> Gostaria de reportar uma situação em que
     foi discriminado ou que presenciou?
       </p>
+      <div className="clearFix" />
       <div
         role="button"
         tabIndex="0"

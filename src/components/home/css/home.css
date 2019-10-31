@@ -240,3 +240,27 @@ h4 {
     width: 300px;
   }
 }
+@media (max-width: 560px) {
+  .denunciarHome .parte1{
+    height: auto;
+  }
+  .denunciarHome .parte1 img{
+    vertical-align: bottom;
+  }
+  .denunciarHome .parte2{
+    padding: 15px;
+  }
+  .denunciarHome .parte2 h6{
+    width: 100%;
+    text-align: center;
+  }
+  .denunciarHome .parte2 p{
+    width: 100%;
+    text-align: center;
+  }
+  .denunciarHome .bt_denuncia{
+    float: none;
+    margin: 0 auto;
+    display: inline-block;
+  }
+}

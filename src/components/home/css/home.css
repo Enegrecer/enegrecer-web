@@ -209,6 +209,33 @@ h4 {
   cursor: pointer;
 }
 
+.clearFix{
+  width:100%;
+  float: left;
+}
+
+@media (max-width: 1099px) {
+  .denunciarHome .parte1{
+    width:100%;
+  }
+  .denunciarHome .parte2{
+    width:100%;
+  }
+  .denunciarHome .parte2 h6{
+    float: right;
+    display: block;
+    width: 300px;
+  }
+  .denunciarHome .parte2 p{
+    display: block;
+    float: right;
+    width: 300px;
+  }
+  .denunciarHome .bt_denuncia{
+    float: right;
+    width: 300px;
+  }
+}
 @media(max-width: 768px) {
   #banner{
     height: 55vh;

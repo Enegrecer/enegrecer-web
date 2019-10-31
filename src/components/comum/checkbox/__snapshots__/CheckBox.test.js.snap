@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Checkbox deve possuir estrutura definida  1`] = `
-<div
-  className=""
->
-  <Field
-    component="input"
-    id="souAVitima"
-    name="souAVitima"
-    onChange={[Function]}
-    type="checkbox"
-  />
+<p>
   <label
     htmlFor="souAVitima"
   >
-    Sou a Vítima
+    <Field
+      component="input"
+      id="souAVitima"
+      name="souAVitima"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <span>
+      Sou a Vítima
+    </span>
   </label>
-</div>
+</p>
 `;

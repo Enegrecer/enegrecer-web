@@ -10,6 +10,7 @@ import './visualizarDenuncia.css';
 import { buscaDenunciaPorId } from '../../actions/visualizarDenunciaActions';
 
 function detalhesOuCarregamento(denuncia) {
+  const { denunciante, agressor, vitima } = denuncia.pessoasEnvolvidas;
   let componente;
 
   if (denuncia) {
@@ -20,39 +21,39 @@ function detalhesOuCarregamento(denuncia) {
         {
           id: 1,
           titulo: 'Nome denunciante',
-          descricao: denuncia ? `${denuncia.denunciante.nome}` : ''
+          descricao: denuncia ? `${denunciante.nome}` : ''
         },
         {
           id: 2,
           titulo: 'Telefone',
-          descricao: denuncia ? `${denuncia.denunciante.telefone}` : ''
+          descricao: denuncia ? `${denunciante.telefone}` : ''
         },
         {
           id: 3,
           titulo: 'Gênero',
-          descricao: denuncia ? `${denuncia.denunciante.genero}` : ''
+          descricao: denuncia ? `${denunciante.genero}` : ''
         },
         {
           id: 4,
           titulo: 'Raça / Cor',
-          descricao: denuncia ? `${denuncia.denunciante.raca}` : ''
+          descricao: denuncia ? `${denunciante.raca}` : ''
         }
       ],
       camposDireita: [
         {
           id: 1,
           titulo: 'Email',
-          descricao: denuncia ? `${denuncia.denunciante.email}` : ''
+          descricao: denuncia ? `${denunciante.email}` : ''
         },
         {
           id: 2,
           titulo: 'Cidade',
-          descricao: denuncia ? `${denuncia.denunciante.cidade}` : ''
+          descricao: denuncia ? `${denunciante.cidade}` : ''
         },
         {
           id: 3,
           titulo: 'Data de nascimento',
-          descricao: denuncia ? `${denuncia.denunciante.dataNascimento}` : ''
+          descricao: denuncia ? `${denunciante.dataNascimento}` : ''
         }
       ]
     };
@@ -64,34 +65,34 @@ function detalhesOuCarregamento(denuncia) {
         {
           id: 1,
           titulo: 'Nome',
-          descricao: denuncia ? `${denuncia.vitima.nome}` : ''
+          descricao: denuncia ? `${vitima.nome}` : ''
         },
         {
           id: 2,
           titulo: 'Telefone',
-          descricao: denuncia ? `${denuncia.vitima.telefone}` : ''
+          descricao: denuncia ? `${vitima.telefone}` : ''
         },
         {
           id: 3,
           titulo: 'Gênero',
-          descricao: denuncia ? `${denuncia.vitima.genero}` : ''
+          descricao: denuncia ? `${vitima.genero}` : ''
         }
       ],
       camposDireita: [
         {
           id: 1,
           titulo: 'Data de nascimento',
-          descricao: denuncia ? `${denuncia.vitima.dataNascimento}` : ''
+          descricao: denuncia ? `${vitima.dataNascimento}` : ''
         },
         {
           id: 2,
           titulo: 'Cidade',
-          descricao: denuncia ? `${denuncia.vitima.cidade}` : ''
+          descricao: denuncia ? `${vitima.cidade}` : ''
         },
         {
           id: 3,
           titulo: 'Raça / Cor',
-          descricao: denuncia ? `${denuncia.vitima.raca}` : ''
+          descricao: denuncia ? `${vitima.raca}` : ''
         }
       ]
     };
@@ -132,29 +133,29 @@ function detalhesOuCarregamento(denuncia) {
         {
           id: 1,
           titulo: 'Nome',
-          descricao: denuncia ? `${denuncia.agressor.nome}` : ''
+          descricao: denuncia ? `${agressor.nome}` : ''
         },
         {
           id: 2,
           titulo: 'Cidade',
-          descricao: denuncia ? `${denuncia.agressor.cidade}` : ''
+          descricao: denuncia ? `${agressor.cidade}` : ''
         },
         {
           id: 3,
           titulo: 'Raça / Cor',
-          descricao: denuncia ? `${denuncia.agressor.raca}` : ''
+          descricao: denuncia ? `${agressor.raca}` : ''
         }
       ],
       camposDireita: [
         {
           id: 1,
           titulo: 'Data de nascimento',
-          descricao: denuncia ? `${denuncia.agressor.dataNascimento}` : ''
+          descricao: denuncia ? `${agressor.dataNascimento}` : ''
         },
         {
           id: 2,
           titulo: 'Gênero',
-          descricao: denuncia ? `${denuncia.agressor.genero}` : ''
+          descricao: denuncia ? `${agressor.genero}` : ''
         }
       ]
     };
@@ -207,7 +208,7 @@ class VisualizarDenuncia extends Component {
 
     return (
       <div className="receptaculo">
-        {detalhesOuCarregamento(denuncia)}
+        {denuncia && detalhesOuCarregamento(denuncia)}
       </div>
     );
   }

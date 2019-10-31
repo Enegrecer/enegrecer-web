@@ -1,6 +1,16 @@
 {
   "name": "enegrecer",
   "version": "0.1.0",
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 35,
+        "lines": 60,
+        "functions": 47,
+        "statements": 50
+      }
+    }
+  },
   "private": true,
   "dependencies": {
     "chai-as-promised": "^7.1.1",
@@ -9,7 +19,8 @@
     "firebase": "^5.0.3",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
-    "materialize-css": "^0.100.2",
+    "jquery": "^3.3.1",
+    "materialize-css": "^1.0.0",
     "moment": "^2.19.4",
     "node-sass-chokidar": "^1.2.2",
     "protractor-cucumber-framework": "^6.0.0",
@@ -31,11 +42,12 @@
     "start": "yarn build-css-local && ./node_modules/.bin/react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "test-local": "../node_modules/.bin/react-scripts test --env=jsdom",
-    "test-coverage": "react-scripts test --env=jsdom --coverage && ./node_modules/codeclimate-test-reporter/bin/codeclimate.js < ./coverage/lcov.info",
+    "test-local": "./node_modules/.bin/react-scripts test --env=jsdom",
+    "test-coverage": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject",
     "lint": "./node_modules/.bin/eslint src --fix",
-    "all-tests-local": "yarn test-local --coverage && ../node_modules/.bin/eslint src --fix",
+    "test:functional": "./tests/functional/runSmokeTest.sh sh",
+    "all-tests-local": "yarn test-local --coverage && yarn run lint && yarn run test:functional",
     "watch-lint": "esw -w src",
     "build-css-local": "./node_modules/.bin/node-sass-chokidar src/ -o src/",
     "build-css": "node-sass-chokidar src/ -o src/",

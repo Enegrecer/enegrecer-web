@@ -94,7 +94,6 @@ class NovaVitimaForm extends Component {
           <CheckBox
             onChange={this.changeField}
             state="souAVitima"
-            divClasse="col s12 m6 l6"
             id="souAVitima"
             label="Marque se você é a vítima"
           />

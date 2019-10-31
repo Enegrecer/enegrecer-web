@@ -23,7 +23,7 @@ Antes de iniciar o desenvolvimento, você irá precisar configurar o seu ambient
 - [Yarn](https://yarnpkg.com/pt-BR/)
 - [Watchman](https://facebook.github.io/watchman/docs/install.html)
 - [Node.js](https://nodejs.org/) versão 9 ou superior
-- NVM (opcional): utilizado para gerênciar diferentes versões do Node e NPM.
+- [NVM](https://github.com/creationix/nvm) (opcional): utilizado para gerênciar diferentes versões do Node e NPM.
   - [Linux e Mac](https://github.com/creationix/nvm)
   - [Windows](https://github.com/coreybutler/nvm-windows)
 - [Docker](https://www.docker.com/) (recomendado): utilizado para desenvolver o projeto utilizando conteinerização.
@@ -96,29 +96,13 @@ O projeto está utilizando o [Jest](https://facebook.github.io/jest/) como frame
 
 Os testes funcionais E2E foram desenvolvidos utilizando Protractor, Page Objects e Cucumber. Para execução é necessário seguir os seguintes passos: 
 
-- Instalar o protractor global:
-  ```shell
-  yarn global add protractor
-  ```
-
-- Atualizar o servidor (Selenium server): 
-  ```shell
-  webdriver-manager update
-  ```
-  
-- Iniciar o servidor: 
-  ```shell
-  webdriver-manager start
-  ```
-
-- Executar os testes: 
-  ```shell
-  protractor functional-tests.conf.js
-  ```
-  
-**Observações**:
   - Para executar os testes funcionais a aplicação deve estar rodando local, veja a sessão [Rodando o projeto](#rodando-o-projeto) para mais detalhes.
-  - Ao iniciar o servidor com o comando ```webdriver-manager start``` o terminal ficará bloquado com tal execução, sendo necessário abrir uma nova janela para execução dos testes.
+
+  - Após ter a aplicação rodando, basta executar o comando:
+```shell
+yarn test:functional
+```
+
 
 ### Lint
 

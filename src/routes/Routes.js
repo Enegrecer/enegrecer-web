@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import HomePage from '../components/home/Home';
-import Menu from '../components/menu/Menu';
+import Navbar from '../components/navbar/Navbar';
 import Rodape from '../components/rodape/Rodape';
-import Sobre from '../components/sobre/Sobre';
-import ColetivoEnegrecer from '../components/coletivoEnegrecer/ColetivoEnegrecer';
+import Sobre from '../components/sobrePortal/Sobre';
+import ColetivoEnegrecer from '../components/sobreColetivo/ColetivoEnegrecer';
 import NovaDenunciaContainer from '../containers/denuncias/NovaDenunciaContainer';
 import DepoisDaDenuncia from '../components/depoisdadenuncia/DepoisDaDenuncia';
 import ModeradorLogin from '../components/moderador/ModeradorLogin';
@@ -18,7 +18,7 @@ import VisualizarDenunciaContainer from '../containers/denuncias/VisualizarDenun
 const Routes = () => (
   <BrowserRouter>
     <div>
-      {estaAutenticado() ? <MenuModerador /> : <Menu />}
+      {estaAutenticado() ? <MenuModerador /> : <Navbar />}
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/sobre" component={Sobre} />

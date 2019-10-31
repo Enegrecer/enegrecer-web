@@ -11,11 +11,11 @@ exports.config = {
   baseUrl: 'http://localhost:3000/',
   framework: 'custom',
   frameworkPath: require.resolve('protractor-cucumber-framework'),
-  specs: ['./src/tests/functional/features/*.feature'], 
+  specs: ['./features/*.feature'],
   restartBrowserBetweenTests: false,
   cucumberOpts: {
     require: [
-      './src/tests/functional/specs/*.js',
+      './specs/*.js',
     ],
     tags: [],
     strict: true,

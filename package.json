@@ -22,7 +22,7 @@
     "jquery": "^3.3.1",
     "materialize-css": "^1.0.0",
     "moment": "^2.19.4",
-    "node-sass-chokidar": "^1.2.2",
+    "node-sass-chokidar": "^1.4.0",
     "protractor-cucumber-framework": "^6.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

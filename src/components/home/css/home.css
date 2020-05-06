@@ -209,6 +209,61 @@ h4 {
   cursor: pointer;
 }
 
+.clearFix{
+  width:100%;
+  float: left;
+}
+
+@media (max-width: 1099px) {
+  #banner{
+    height: auto;
+    min-height: 400px;
+  }
+  .denunciarHome .parte1{
+    width:100%;
+  }
+  .denunciarHome .parte2{
+    width:100%;
+  }
+  .denunciarHome .parte2 h6{
+    float: right;
+    display: block;
+    width: 300px;
+  }
+  .denunciarHome .parte2 p{
+    display: block;
+    float: right;
+    width: 300px;
+  }
+  .denunciarHome .bt_denuncia{
+    float: right;
+    width: 300px;
+  }
+}
+@media (max-width: 560px) {
+  .denunciarHome .parte1{
+    height: auto;
+  }
+  .denunciarHome .parte1 img{
+    vertical-align: bottom;
+  }
+  .denunciarHome .parte2{
+    padding: 15px;
+  }
+  .denunciarHome .parte2 h6{
+    width: 100%;
+    text-align: center;
+  }
+  .denunciarHome .parte2 p{
+    width: 100%;
+    text-align: center;
+  }
+  .denunciarHome .bt_denuncia{
+    float: none;
+    margin: 0 auto;
+    display: inline-block;
+  }
+}
 @media(max-width: 768px) {
   #banner{
     height: 55vh;

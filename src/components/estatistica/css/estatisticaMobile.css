@@ -17,7 +17,7 @@
 
   .nossas-denuncias-mobile {
     width: 307px;
-    font-family: Roboto;
+    font-family: sans-serifo;
     font-size: 30px;
     font-weight: 900;
     font-style: normal;
@@ -42,7 +42,7 @@
 #rectangle2-mobile .numero,  #vermelhoMobile .numero {
    width: 120px;
    height: 58px;
-   font-family: Roboto;
+   font-family: sans-serifo;
    font-weight: 900;
    font-style: normal;
    font-stretch: normal;
@@ -55,7 +55,7 @@
   #rectangle2-mobile .categoria, #vermelhoMobile .categoria {
     width: 120px;
     height: 42px;
-    font-family: Roboto;
+    font-family: sans-serifo;
     font-size: 18px;
     font-weight: 500;
     font-style: normal;
@@ -134,7 +134,7 @@
   #nosso-objetivo-mobile h6 {
       width: 291px;
       height: 102px;
-      font-family: Roboto;
+      font-family: sans-serifo;
       font-size: 48px;
       font-weight: 500;
       font-style: normal;
@@ -148,7 +148,7 @@
   #nosso-objetivo-mobile p {
       width: 291px;
       height: 99px;
-      font-family: Roboto;
+      font-family: sans-serifo;
       font-size: 20px;
       font-weight: 500;
       font-style: normal;

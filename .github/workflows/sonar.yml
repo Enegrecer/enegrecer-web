@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+      - t2-manutencao
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:

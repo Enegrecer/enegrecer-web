@@ -14,7 +14,7 @@ export const nomeMaiorQue40Caracteres = (nome) => {
 };
 
 export const nomeNaoPodeTerCaracterEspecial = (nome) => {
-  const format = /[!@#$%^&*()_+-=[\]{};':"\\|,.<>/?]+/;
+  const format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
   if (format.test(nome)) {
     return 'Nome não pode ter caracteres especiais';
   }

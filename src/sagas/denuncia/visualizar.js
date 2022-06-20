@@ -13,7 +13,8 @@ function* buscaDenunciaPorId(action) {
     const denuncia = yield call(() => recuperaDenunciaPorIdDoFirebase(action.payload));
     yield put(buscaDenunciaPorIdSucesso(denuncia));
   } catch (error) {
-    throw error; // FIXME verificar melhor maneira para tratar esse erro.
+    console.log(error);
+    throw error; 
   }
 }
 

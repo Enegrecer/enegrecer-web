@@ -27,7 +27,6 @@ comboEstado.defaultProps = {
   id: '',
   state: '',
   divClasse: '',
-  onChange: () => {}
 };
 
 export default comboEstado;

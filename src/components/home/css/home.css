@@ -61,7 +61,7 @@
       margin-right: 0; }
 
 * {
-  font-family: 'sans-serifo', sans-serif;
+  font-family: 'sans-serif', sans-serif;
  }
 
 body {
@@ -117,7 +117,7 @@ h4 {
 
 .AT-QUANDO-VOC-VAI {
   width: 244px;
-  font-family: sans-serifo;
+  font-family: sans-serif;
   font-size: 3em;
   font-weight: 900;
   font-style: normal;
@@ -161,7 +161,7 @@ h4 {
 .parte2 h6 {
     width: 291px;
     height: 102px;
-    font-family: sans-serifo;
+    font-family: sans-serif;
     font-size: 48px;
     font-weight: 500;
     font-style: normal;
@@ -174,7 +174,7 @@ h4 {
 
 .parte2 p {
     width: 86%;
-    font-family: sans-serifo;
+    font-family: sans-serif;
     font-size: 20px;
     font-weight: 500;
     font-style: normal;
@@ -197,7 +197,7 @@ h4 {
   border-radius: 3px;
   background-color: #ff0336;
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.15);
-  font-family: sans-serifo;
+  font-family: sans-serif;
   font-size: 16px;
   font-weight: normal;
   font-style: normal;

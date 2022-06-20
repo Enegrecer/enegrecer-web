@@ -81,6 +81,7 @@ renderCampoTexto.defaultProps = {
   maxLen: '',
   placeholder: '',
   label: '',
+  onChange: () => {},
   divClasse: '',
   inputClasse: '',
   meta: {}

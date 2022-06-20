@@ -112,7 +112,7 @@ DenuncianteForm.propTypes = {
 
 DenuncianteForm.defaultProps = {
   formDenuncia: { values: {} },
-  changeFieldValue: () => { return null; }
+  changeFieldValue: () => {}
 };
 
 export default DenuncianteForm;

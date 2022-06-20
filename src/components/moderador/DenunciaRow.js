@@ -25,7 +25,7 @@ class DenunciaRow extends Component {
     this.setState({ expanded: !this.state.expanded });
   };
 
-  versaoMobile = (agressao, denuncia) => (
+  versaoMobile = (agressao, vitima, denuncia) => (
     <div className="col s12 m7">
       <div className="card horizontal">
         <div className="card-image">{this.renderizaIconeDoCard(agressao.status)}</div>

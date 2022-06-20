@@ -5,7 +5,7 @@ import Data from '../../comum/data';
 import Combobox from '../../comum/combobox';
 import Endereco from '../../comum/endereco';
 
-const Descricao = () => (
+const descricao = () => (
   <div>
     <div className="row">
       <Combobox
@@ -62,5 +62,5 @@ const Descricao = () => (
   </div>
 );
 
-export default Descricao;
+export default descricao;
 

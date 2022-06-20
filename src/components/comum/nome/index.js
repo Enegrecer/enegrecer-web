@@ -30,6 +30,7 @@ nome.propTypes = {
 
 nome.defaultProps = {
   id: '',
+  onChange: () => {},
   state: '',
   validacoes: [],
   divClasse: 'col s12 m6 l6'

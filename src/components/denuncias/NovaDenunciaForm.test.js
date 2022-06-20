@@ -14,7 +14,7 @@ describe('NovaDenunciaForm Component', () => {
   beforeEach(() => {
     store = createStore(combineReducers({ form: formReducer }));
     const props = {
-      submeteFormulario: () => { return null; }
+      submeteFormulario: () => { }
     };
     subject = mount(<Provider store={store}><NovaDenunciaForm {...props} /></Provider>);
   });

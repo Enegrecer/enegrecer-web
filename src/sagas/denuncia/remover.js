@@ -11,6 +11,7 @@ function* removeDenuncia(action) {
   try {
     yield call(() => removeDenunciaPorId(action.payload.idDenuncia));
   } catch (error) {
+    console.log(error)
     throw error;
   }
 }

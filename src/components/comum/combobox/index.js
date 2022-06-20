@@ -44,7 +44,6 @@ combobox.defaultProps = {
   itens: [],
   valorPadrao: 'Selecione',
   state: '',
-  onChange: () => {}
 };
 
 export default combobox;

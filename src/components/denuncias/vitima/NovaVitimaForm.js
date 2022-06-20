@@ -154,7 +154,7 @@ NovaVitimaForm.propTypes = {
 
 NovaVitimaForm.defaultProps = {
   formDenuncia: { values: {} },
-  changeFieldValue: () => {}
+  changeFieldValue: () => {return null;}
 };
 
 export default NovaVitimaForm;

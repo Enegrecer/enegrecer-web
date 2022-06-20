@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
 body {
-	font-family: sans-serif;
+	font-family: Roboto;
 }
 
 /* Formularios */
@@ -97,6 +97,7 @@ body {
 
 .form-section .form-body p {
   text-align: justify;
+  padding: 0 10px;
 }
 
 .form-section .title-body {
@@ -120,9 +121,7 @@ body {
 	color: #838383;
 }
 
-.form-section .form-body p {
-  padding: 0 10px;
-}
+
 
 select {
   display: block;

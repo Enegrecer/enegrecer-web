@@ -4,7 +4,7 @@ function temNumero(campo) {
 }
 
 function temCaractereEspecial(campo) {
-  const format = /[!@#$%^&*()_+-=[\]{};':"\\|,.<>/?]+/;
+  const format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
   return format.test(campo);
 }
 
@@ -89,8 +89,10 @@ function preencheuCampo(campo) {
 }
 
 function ehTelefoneValido(telefone) {
-  const telefoneValido = new RegExp('[(][1-9]{1}\\d[)][ ][2-9]\\d{3,4}-\\d{4}').test(telefone);
-  return telefoneValido;
+  var regExp = /^\+?\d{2}?\s*\(\d{2}\)?\s*\d{4,5}\-?\d{4}$/g;
+  var telefone = '+55 (55) 23321-5454';
+  var telefoneValido = regExp.test(telefone);
+    return telefoneValido;
 }
 
 function validaTelefone(telefone) {
@@ -101,8 +103,7 @@ function validaTelefone(telefone) {
 }
 
 function ehEmailValido(email) {
-  const emailValido = (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email));
-  return emailValido;
+  return emailValido = (/^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i.test(email));
 }
 
 function validaEmail(email) {

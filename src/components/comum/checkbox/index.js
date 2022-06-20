@@ -7,7 +7,7 @@ const checkBox = ({
 }) => (
   <p>
     <label htmlFor={id}>
-      <Field id={id} name={state} component="input" type="checkbox" onChange={(event, newValue) => onChange(newValue)} />
+      <Field id={id} name={state} component="input" type="checkbox" onChange={(_event, newValue) => onChange(newValue)} />
       <span>{label}</span>
     </label>
   </p>
@@ -24,7 +24,6 @@ checkBox.defaultProps = {
   id: '',
   label: '',
   state: '',
-  onChange: () => {}
 };
 
 export default checkBox;

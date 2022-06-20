@@ -246,7 +246,7 @@ table {
 }
 
 .modal-content h4 {
-  font-family: Roboto;
+  font-family: sans-serif;
   font-size: 20px;
   font-weight: 500;
   font-style: normal;
@@ -258,7 +258,7 @@ table {
 }
 
 .modal-content .texto-modal-deletar {
-  font-family: Roboto;
+  font-family: sans-serif;
   font-size: 16px;
   font-weight: normal;
   font-style: normal;

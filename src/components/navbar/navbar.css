@@ -32,7 +32,7 @@ nav .links > ul {
 }
 
 .links ul > li > a {
-  font-family: Roboto;
+  font-family: sans-serif;
   font-size: 14px;
   font-style: normal;
   font-stretch: normal;
@@ -47,7 +47,7 @@ nav .links > ul {
 .links ul > li > a:hover {
   width: 161px;
   height: 16px;
-  font-family: Roboto;
+  font-family: sans-serif;
   font-size: 14px;
   font-weight: bold;
   font-style: normal;
@@ -65,7 +65,7 @@ nav .links > ul {
   border-radius: 3px;
   background-color: #ff0336;
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.15);
-  font-family: Roboto;
+  font-family: sans-serif;
   font-size: 16px;
   font-weight: normal;
   font-style: normal;

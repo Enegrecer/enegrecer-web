@@ -9,7 +9,7 @@
   }
 
   .direitos label {
-    font-family: Roboto;
+    font-family: sans-serif;
     font-size: 12px;
     font-weight: 500;
     font-style: normal;
@@ -18,7 +18,6 @@
     letter-spacing: normal;
     text-align: left;
     color: #ffffff;
-    font-weight: 900;
   }
 
   .facebook {
